@@ -42,8 +42,8 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
 
 /* BUTTONS */
 /* HOME LAYOUT */
-.home-inner{display:flex;flex-direction:column;height:100%;justify-content:flex-start;overflow:hidden}
-.home-btn-groups{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.home-inner{display:flex;flex-direction:column;height:100%;justify-content:center;overflow:hidden;padding-bottom:8px}
+.home-btn-groups{display:flex;flex-direction:column;gap:8px;margin-top:6px}
 .home-bottom-btns{margin-top:0}
 .home-footer{text-align:center;font-size:.62rem;letter-spacing:.12em;color:rgba(255,255,255,.28);margin-top:6px;text-transform:uppercase;font-weight:600}
 .btn-list{display:flex;flex-direction:column;gap:7px;margin-top:0}
@@ -319,8 +319,8 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     <div class="home-inner">
 
       <!-- Logo -->
-      <div style="width:100%;position:relative;flex-shrink:0;margin-top:42px">
-        <img src="https://sport-fit.org/wp-content/uploads/2026/03/logo_home.jpg" alt="Sport&Fit GYM" style="width:100%;height:auto;max-height:45vh;display:block;object-fit:contain;object-position:center top;background:#000"/>
+      <div style="width:100%;position:relative;flex-shrink:0;margin-top:8px">
+        <img src="https://sport-fit.org/wp-content/uploads/2026/03/logo_home.jpg" alt="Sport&Fit GYM" style="width:100%;height:auto;max-height:32vh;display:block;object-fit:contain;object-position:center top;background:#000"/>
       </div>
 
       <!-- Bottoni -->
@@ -4584,25 +4584,25 @@ function showViewRaw(id){
     try{window.scrollTo(0,0);}catch(e){}
     try{var mc=document.getElementById('mainCont');if(mc)mc.scrollTop=0;}catch(e){}
 }
-var _viewHistory=[];
+var _viewHistory=['home-view'];
+var _navBusy=false;
 function showView(id){
     _viewHistory.push(id);
     showViewRaw(id);
     document.getElementById('bottomNav').style.display='none';
+    history.pushState({view:id}, '', window.location.href);
 }
 function goBack(id){
-    _viewHistory.pop();
-    var prev=_viewHistory.length>0?_viewHistory[_viewHistory.length-1]:id;
-    _viewHistory=_viewHistory.filter(function(v){return v!==prev;});
+    if(_viewHistory.length>1) _viewHistory.pop();
+    var prev=_viewHistory.length>0?_viewHistory[_viewHistory.length-1]:(id||'home-view');
     showViewRaw(prev);
     document.getElementById('bottomNav').style.display='none';
 }
 
-// Tasto fisico back Android
+// Tasto fisico back Android (Cordova/WebView)
 document.addEventListener('backbutton', function(e){
     e.preventDefault();
     if(_viewHistory.length>1){
-        var curr=_viewHistory[_viewHistory.length-1];
         _viewHistory.pop();
         var prev=_viewHistory[_viewHistory.length-1]||'home-view';
         showViewRaw(prev);
@@ -4610,19 +4610,27 @@ document.addEventListener('backbutton', function(e){
     }
 }, false);
 
-// Fallback per browser standard (popstate)
+// Back button browser standard (Chrome su Android)
 window.addEventListener('popstate', function(e){
+    if(_navBusy) return;
+    _navBusy=true;
+    setTimeout(function(){ _navBusy=false; }, 100);
     if(_viewHistory.length>1){
         _viewHistory.pop();
         var prev=_viewHistory[_viewHistory.length-1]||'home-view';
         showViewRaw(prev);
         document.getElementById('bottomNav').style.display='none';
+        // Mantieni sempre almeno uno stato nel browser per non uscire
+        if(_viewHistory.length<=1){
+            history.pushState({view:'home-view'}, '', window.location.href);
+        }
     } else {
-        history.pushState(null, '', window.location.href);
+        // Siamo su home - blocca uscita e rimetti stato
+        history.pushState({view:'home-view'}, '', window.location.href);
     }
 });
-// Push initial state per intercettare back
-history.pushState(null, '', window.location.href);
+// Push stato iniziale
+history.pushState({view:'home-view'}, '', window.location.href);
 
 // ─── TOAST ─────────────────────────────────────────────────────────────────
 let toastT;
