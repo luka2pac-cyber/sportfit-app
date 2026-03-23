@@ -584,6 +584,13 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       </button>
       <span class="prog-arr">›</span>
     </div>
+    <div class="prog-item" style="border:1.5px solid rgba(10,132,255,.35);background:rgba(10,132,255,.07)">
+      <button class="prog-item-btn" onclick="showView('mentzer-cons-view')">
+        <div class="prog-item-name">⚡ Mike Mentzer — Consolidated Routine</div>
+        <div class="prog-item-sub" data-t="mcons_prog_sub">HIT · 2 Allenamenti · 3 esercizi a sessione · Massimo recupero</div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
 
     <div class="prog-item">
       <button class="prog-item-btn" onclick="showView('dorian-info-view')">
@@ -1154,6 +1161,56 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
 
     <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#0047b3,var(--blue))" onclick="openWorkout('mentzer-3day','mentzer-info-view')"><span data-t="m_start_btn">💪 Inizia il Programma Mike Mentzer</span>
     </button>
+  </div>
+
+  <!-- MENTZER CONSOLIDATED VIEW -->
+  <div id="mentzer-cons-view" class="view">
+    <button onclick="goBack('heavy-duty-concepts')" class="back-btn">← Heavy Duty Concepts</button>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#0047b3,var(--blue))" onclick="openWorkout('mentzer-cons','mentzer-cons-view')"><span data-t="mcons_start_btn">⚡ Inizia la Consolidated Routine</span></button>
+    <div class="view-title" style="font-size:1.7rem">⚡ Mike Mentzer<br><span style="font-size:1.1rem;color:rgba(255,255,255,.5)">Consolidated Routine</span></div>
+
+    <div class="disclaimer red" style="margin-top:12px"><div class="disclaimer-icon">⚠️</div><div class="disclaimer-text"><b><span data-t="mcons_warn_title">Solo avanzati</span></b> — <span data-t="mcons_warn_text">Richiede esperienza nel valutare il cedimento muscolare e la tecnica HIT.</span></div></div>
+
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title purple">📌 <span data-t="mcons_phi_title">Filosofia Consolidated</span></div>
+      <div class="ai-bullet"><span data-t="mcons_phi1">Numero minimo di esercizi — solo movimenti composti multi-articolari</span></div>
+      <div class="ai-bullet"><span data-t="mcons_phi2">3 esercizi per allenamento sono sufficienti per il massimo stimolo</span></div>
+      <div class="ai-bullet"><span data-t="mcons_phi3">Riposo tra sessioni: Lunedì A → Sabato B → Giovedì A...</span></div>
+      <div class="ai-bullet"><span data-t="mcons_phi4">Meno = più: il corpo cresce nel riposo, non durante l'allenamento</span></div>
+    </div>
+
+    <div class="ai-block">
+      <div class="ai-block-title blue">🅰 <span data-t="mcons_a_title">Allenamento A</span></div>
+      <div class="ai-stat-row"><span class="ai-stat-label">1.</span><span class="ai-stat-val"><span data-t="mcons_a1">Squat o Leg Press — 1 serie (8–12 rip. al cedimento)</span></span></div>
+      <div class="ai-stat-row"><span class="ai-stat-label">2.</span><span class="ai-stat-val"><span data-t="mcons_a2">Lat Machine presa stretta supina — 1 serie (6–10 rip. al cedimento)</span></span></div>
+      <div class="ai-stat-row"><span class="ai-stat-label">3.</span><span class="ai-stat-val"><span data-t="mcons_a3">Dips alle Parallele — 1 serie (6–10 rip. al cedimento)</span></span></div>
+    </div>
+
+    <div class="ai-block">
+      <div class="ai-block-title red">🅱 <span data-t="mcons_b_title">Allenamento B</span></div>
+      <div class="ai-stat-row"><span class="ai-stat-label">1.</span><span class="ai-stat-val"><span data-t="mcons_b1">Stacchi Trap Bar o Classici — 1 serie (5–8 rip. STOP prima cedimento)</span></span></div>
+      <div class="ai-stat-row"><span class="ai-stat-label">2.</span><span class="ai-stat-val"><span data-t="mcons_b2">Press Militare (seduto o in piedi) — 1 serie (6–10 rip. al cedimento)</span></span></div>
+      <div class="ai-stat-row"><span class="ai-stat-label">3.</span><span class="ai-stat-val"><span data-t="mcons_b3">Polpacci in Piedi — 1 serie (12–20 rip. al cedimento)</span></span></div>
+    </div>
+
+    <div class="ai-block">
+      <div class="ai-block-title gold">🗓 <span data-t="mcons_sched_title">Esempio Programma</span></div>
+      <div class="ai-stat-row"><span class="ai-stat-label"><span data-t="mcons_sched_mon">Lunedì</span></span><span class="ai-stat-val"><span data-t="mcons_sched_a">Allenamento A</span></span></div>
+      <div class="ai-stat-row"><span class="ai-stat-label"><span data-t="mcons_sched_rest1">Mar–Ven</span></span><span class="ai-stat-val"><span data-t="mcons_sched_rest">Riposo</span></span></div>
+      <div class="ai-stat-row"><span class="ai-stat-label"><span data-t="mcons_sched_sat">Sabato</span></span><span class="ai-stat-val"><span data-t="mcons_sched_b">Allenamento B</span></span></div>
+      <div class="ai-stat-row"><span class="ai-stat-label"><span data-t="mcons_sched_rest2">Dom–Mer</span></span><span class="ai-stat-val"><span data-t="mcons_sched_rest">Riposo</span></span></div>
+      <div class="ai-stat-row"><span class="ai-stat-label"><span data-t="mcons_sched_thu">Giovedì</span></span><span class="ai-stat-val"><span data-t="mcons_sched_repeat">Allenamento A... e così via</span></span></div>
+    </div>
+
+    <div class="ai-block">
+      <div class="ai-block-title green">📈 <span data-t="mcons_prog_title">Progressione</span></div>
+      <div class="ai-bullet"><span data-t="mcons_prog1">Ad ogni sessione cerca di fare 1 rep in più o aumentare il peso</span></div>
+      <div class="ai-bullet"><span data-t="mcons_prog2">Se non progredisci → aggiungi 1 giorno extra di riposo</span></div>
+      <div class="ai-bullet"><span data-t="mcons_prog3">Tempo 4-2-4: 4 sec negativa — 2 sec contrazione — 4 sec positiva</span></div>
+      <div class="ai-bullet"><span data-t="mcons_prog4">Ogni serie al cedimento assoluto (eccetto stacchi — fermati prima)</span></div>
+    </div>
+
+    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#0047b3,var(--blue))" onclick="openWorkout('mentzer-cons','mentzer-cons-view')"><span data-t="mcons_start_btn">⚡ Inizia la Consolidated Routine</span></button>
   </div>
 
   <!-- CUSTOM PLAN VIEW -->
@@ -2556,7 +2613,7 @@ const T = {
     d_dc_pull3:'PULL B3', d_dc_pull3_name:'Tirata — Schiena · Bicipiti · Avambracci',
     d_dc_legs3:'LEGS C3', d_dc_legs3_name:'Gambe · Polpacci',
     d_g1_badge_ul:'GAMBE', d_g1_name_ul:'GIORNO GAMBE',
-    d_g2_badge_ul:'UPPER', d_g2_name_ul:'PARTE SUPERIORE',  },
+    d_g2_badge_ul:'UPPER', d_g2_name_ul:'PARTE SUPERIORE',
       ul_2day_u_pills:[['3-4×','/ sett.'],['~70-90 min','/ sessione'],['12-16 sett.','']],
     abc_3day_u_pills:[['3×','/ sett.'],['~70-90 min','/ sessione'],['12-16 sett.','']],
     classic_4day_u_pills:[['4×','/ sett.'],['~70-90 min','/ sessione'],['12-16 sett.','']],
@@ -2616,6 +2673,33 @@ const T = {
     dc_upper_label:'Upper / Lower',
     m_split_title:'🗓 Split 3 Giorni',
     m_start_btn:'💪 Inizia il Programma Mike Mentzer',
+    mcons_start_btn:'⚡ Inizia la Consolidated Routine',
+    mcons_prog_sub:'HIT · 2 Allenamenti · 3 esercizi a sessione · Massimo recupero',
+    mcons_warn_title:'Solo avanzati',
+    mcons_warn_text:'Richiede esperienza nel valutare il cedimento muscolare e la tecnica HIT.',
+    mcons_phi_title:'Filosofia Consolidated',
+    mcons_phi1:'Numero minimo di esercizi — solo movimenti composti multi-articolari',
+    mcons_phi2:'3 esercizi per allenamento sono sufficienti per il massimo stimolo',
+    mcons_phi3:'Riposo tra sessioni: Lunedì A → Sabato B → Giovedì A...',
+    mcons_phi4:'Meno = più: il corpo cresce nel riposo, non durante l\'allenamento',
+    mcons_a_title:'Allenamento A',
+    mcons_a1:'Squat o Leg Press — 1 serie (8–12 rip. al cedimento)',
+    mcons_a2:'Lat Machine presa stretta supina — 1 serie (6–10 rip. al cedimento)',
+    mcons_a3:'Dips alle Parallele — 1 serie (6–10 rip. al cedimento)',
+    mcons_b_title:'Allenamento B',
+    mcons_b1:'Stacchi Trap Bar o Classici — 1 serie (5–8 rip. STOP prima cedimento)',
+    mcons_b2:'Press Militare (seduto o in piedi) — 1 serie (6–10 rip. al cedimento)',
+    mcons_b3:'Polpacci in Piedi — 1 serie (12–20 rip. al cedimento)',
+    mcons_sched_title:'Esempio Programma',
+    mcons_sched_mon:'Lunedì', mcons_sched_sat:'Sabato', mcons_sched_thu:'Giovedì',
+    mcons_sched_rest1:'Mar–Ven', mcons_sched_rest2:'Dom–Mer',
+    mcons_sched_a:'Allenamento A', mcons_sched_b:'Allenamento B',
+    mcons_sched_rest:'Riposo', mcons_sched_repeat:'Allenamento A... e così via',
+    mcons_prog_title:'Progressione',
+    mcons_prog1:'Ad ogni sessione cerca di fare 1 rep in più o aumentare il peso',
+    mcons_prog2:'Se non progredisci → aggiungi 1 giorno extra di riposo',
+    mcons_prog3:'Tempo 4-2-4: 4 sec negativa — 2 sec contrazione — 4 sec positiva',
+    mcons_prog4:'Ogni serie al cedimento assoluto (eccetto stacchi — fermati prima)',
     ai_goal_forza:'Aumentare la forza',
     ai_goal_recovery:'Recovery dopo infortunio',
     ai_nutri_hint:'Vai prima in Nutrizione & Macros per calcolare i tuoi valori.',
@@ -2671,6 +2755,7 @@ const T = {
     booty_desc_ph:'Inserisci qui la descrizione del programma Booty Builder by Alessia Taglioni.',
     booty_struct_ph:'Inserisci qui la struttura del programma (giorni, split, durata...).',
     booty_start:'🍑 Inizia il Programma',
+  },
 en:{
 
     ai_massa_u:'Increase muscle mass',
@@ -2721,6 +2806,33 @@ en:{
     dc_upper_label:'Upper / Lower',
     m_split_title:'🗓 3-Day Split',
     m_start_btn:'💪 Start Mike Mentzer Program',
+    mcons_start_btn:'⚡ Start Consolidated Routine',
+    mcons_prog_sub:'HIT · 2 Workouts · 3 exercises per session · Maximum recovery',
+    mcons_warn_title:'Advanced only',
+    mcons_warn_text:'Requires experience in evaluating muscular failure and HIT technique.',
+    mcons_phi_title:'Consolidated Philosophy',
+    mcons_phi1:'Minimum number of exercises — compound multi-joint movements only',
+    mcons_phi2:'3 exercises per workout are enough for maximum stimulus',
+    mcons_phi3:'Rest between sessions: Monday A → Saturday B → Thursday A...',
+    mcons_phi4:'Less = more: the body grows during rest, not during training',
+    mcons_a_title:'Workout A',
+    mcons_a1:'Squat or Leg Press — 1 set (8–12 reps to failure)',
+    mcons_a2:'Close-Grip Underhand Pulldown — 1 set (6–10 reps to failure)',
+    mcons_a3:'Parallel Bar Dips — 1 set (6–10 reps to failure)',
+    mcons_b_title:'Workout B',
+    mcons_b1:'Trap Bar or Conventional Deadlift — 1 set (5–8 reps, STOP before failure)',
+    mcons_b2:'Overhead Press (seated or standing) — 1 set (6–10 reps to failure)',
+    mcons_b3:'Standing Calf Raise — 1 set (12–20 reps to failure)',
+    mcons_sched_title:'Sample Schedule',
+    mcons_sched_mon:'Monday', mcons_sched_sat:'Saturday', mcons_sched_thu:'Thursday',
+    mcons_sched_rest1:'Tue–Fri', mcons_sched_rest2:'Sun–Wed',
+    mcons_sched_a:'Workout A', mcons_sched_b:'Workout B',
+    mcons_sched_rest:'Rest', mcons_sched_repeat:'Workout A... and so on',
+    mcons_prog_title:'Progression',
+    mcons_prog1:'Each session try to do 1 more rep or increase the weight',
+    mcons_prog2:'If not progressing → add 1 extra rest day',
+    mcons_prog3:'Tempo 4-2-4: 4 sec negative — 2 sec contraction — 4 sec positive',
+    mcons_prog4:'Every set to absolute failure (except deadlifts — stop before failure)',
     ai_goal_forza:'Increase strength',
     ai_goal_recovery:'Recovery after injury',
     ai_nutri_hint:'Go to Nutrition & Macros first to calculate your values.',
@@ -4074,7 +4186,7 @@ const WID_MAP = {'lpp':'lpp','ini-u':'ini_u','lyle-gbr':'lyle_gbr','ini-d':'ini_
   'quick-d':'quick_d','quick-d-basic':'quick_d_basic',
   'corto-u-adv':'quick_u','corto-u-bas':'quick_u_basic',
   'corto-d-adv':'quick_d','corto-d-bas':'quick_d_basic',
-  'dc-3day':'dc_3day','dc-4day':'dc_4day','mentzer-3day':'mentzer_3day','dorian-bg':'dorian_bg','arthur-hit':'arthur_hit','ken-hit':'ken_hit','ken-bm':'ken_bm','phat':'phat','phul':'phul','bret':'bret','ashley':'ashley'
+  'dc-3day':'dc_3day','dc-4day':'dc_4day','mentzer-3day':'mentzer_3day','mentzer-cons':'mentzer_cons','dorian-bg':'dorian_bg','arthur-hit':'arthur_hit','ken-hit':'ken_hit','ken-bm':'ken_bm','phat':'phat','phul':'phul','bret':'bret','ashley':'ashley'
 };
 
 // Map old IDs
@@ -4084,8 +4196,8 @@ function getWorkoutLocalized(wId){
     const baseId = WID_MAP[wId] || wId;
     const base = WORKOUTS_BASE[baseId];
     if(!base) return null;
-    const labelMap = {lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label'};
-    const pillsMap = {lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills'};
+    const labelMap = {lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label'};
+    const pillsMap = {lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills'};
     const days = base.days.map(day=>{
         let badge, name;
         // DC 3-day: a=Upper A1, b=Lower B1, g1=Upper A2, g2=Lower B2, g3=Upper A3, full=Lower B3
@@ -4327,7 +4439,7 @@ function renderEx(wId,dId,eIdx,ex){
             </div>
         </div>`;
     }).join('')+'</div>';
-    const _advancedWIds = ['dc-3day','dc-4day','mentzer-3day','lyle-gbr','dorian-bg','phat','phul','bret','ashley'];
+    const _advancedWIds = ['dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley'];
     const _noImg = _advancedWIds.includes(wId);
     const imgKey = _noImg ? null : (EX_NAME_MAP[ex.it] || EX_NAME_MAP[ex.en] || null);
     const imgSrc = imgKey ? EX_IMAGES[imgKey] : null;
