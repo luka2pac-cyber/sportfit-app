@@ -4585,12 +4585,11 @@ function showViewRaw(id){
     try{var mc=document.getElementById('mainCont');if(mc)mc.scrollTop=0;}catch(e){}
 }
 var _viewHistory=['home-view'];
-var _navBusy=false;
 function showView(id){
     _viewHistory.push(id);
     showViewRaw(id);
     document.getElementById('bottomNav').style.display='none';
-    history.pushState({view:id}, '', window.location.href);
+    try{ window.parent.postMessage({sfNav:'push'}, '*'); }catch(e){}
 }
 function goBack(id){
     if(_viewHistory.length>1) _viewHistory.pop();
@@ -4598,39 +4597,29 @@ function goBack(id){
     showViewRaw(prev);
     document.getElementById('bottomNav').style.display='none';
 }
-
-// Tasto fisico back Android (Cordova/WebView)
-document.addEventListener('backbutton', function(e){
-    e.preventDefault();
+function sfHandleBack(){
     if(_viewHistory.length>1){
         _viewHistory.pop();
         var prev=_viewHistory[_viewHistory.length-1]||'home-view';
         showViewRaw(prev);
         document.getElementById('bottomNav').style.display='none';
+        return true;
     }
-}, false);
-
-// Back button browser standard (Chrome su Android)
-window.addEventListener('popstate', function(e){
-    if(_navBusy) return;
-    _navBusy=true;
-    setTimeout(function(){ _navBusy=false; }, 100);
-    if(_viewHistory.length>1){
-        _viewHistory.pop();
-        var prev=_viewHistory[_viewHistory.length-1]||'home-view';
-        showViewRaw(prev);
-        document.getElementById('bottomNav').style.display='none';
-        // Mantieni sempre almeno uno stato nel browser per non uscire
-        if(_viewHistory.length<=1){
-            history.pushState({view:'home-view'}, '', window.location.href);
-        }
-    } else {
-        // Siamo su home - blocca uscita e rimetti stato
-        history.pushState({view:'home-view'}, '', window.location.href);
+    return false;
+}
+// Prejema back ukaz od WordPress iframe starša
+window.addEventListener('message', function(e){
+    if(e.data && e.data.sfBack){
+        var handled=sfHandleBack();
+        try{ window.parent.postMessage({sfBackResult:handled}, '*'); }catch(e){}
     }
 });
-// Push stato iniziale
-history.pushState({view:'home-view'}, '', window.location.href);
+// Back button ko se app odpre direktno (ne v iframe)
+window.addEventListener('popstate', function(e){
+    sfHandleBack();
+    history.pushState({view:'sf'}, '', window.location.href);
+});
+history.pushState({view:'sf'}, '', window.location.href);
 
 // ─── TOAST ─────────────────────────────────────────────────────────────────
 let toastT;
