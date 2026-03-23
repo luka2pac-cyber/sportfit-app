@@ -20,11 +20,12 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
 .container{width:100%;max-width:430px;margin:0 auto;padding:48px 16px 90px}
 
 .view{display:none;animation:fadeUp .22s ease}
-.view.active{display:block}
+.view.active{display:block;position:fixed;inset:0;z-index:500;background:#000;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;padding:16px 16px 90px;max-width:430px;left:50%;transform:translateX(-50%);width:100%}
 #home-view{position:fixed;inset:0;z-index:500;background:#000;display:none}
-#home-view.active{display:flex!important;flex-direction:column;overflow:hidden}
+#home-view.active{display:flex!important;flex-direction:column;overflow:hidden;padding:0;max-width:100%;transform:none;left:0}
 .view-scroll{padding:8px 16px 80px}
 .view-hdr{display:flex;align-items:center;justify-content:space-between;padding:8px 14px 6px;border-bottom:1px solid rgba(255,255,255,.07);background:#000;position:sticky;top:0;z-index:10}
+.view.active:has(.view-hdr){padding:0}
 @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
 /* BRAND */
