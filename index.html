@@ -364,7 +364,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('ini-u','uomini-level')"><div class="prog-item-name">🟢 <span data-t="level_beginner">Iniziale</span></div><div class="prog-item-sub" data-t="see_programs">Vedi programmi</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="showView('uomini-inter-menu')"><div class="prog-item-name">🔵 <span data-t="level_intermediate">Intermedio</span></div><div class="prog-item-sub" data-t="see_programs">Vedi programmi</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="showView('uomini-heavy-menu')"><div class="prog-item-name">🔴 <span data-t="level_advanced">Avanzato</span></div><div class="prog-item-sub" data-t="see_programs">Vedi programmi</div></button><span class="prog-arr">›</span></div>
-    <div class="prog-item" style="border:1.5px solid rgba(10,132,255,.35);background:rgba(10,132,255,.07)"><button class="prog-item-btn" onclick="showView('uomini-corto-menu')"><div class="prog-item-name">⏱ <span data-t="allenamenti_30_btn">Allenamenti 30 min</span></div><div class="prog-item-sub" data-t="corto_sub_u">A/B Full Body · Basic & Intermedio · 2–4x sett.</div></button><span class="prog-arr">›</span></div>
+    <div class="prog-item" style="border:1.5px solid rgba(10,132,255,.35);background:rgba(10,132,255,.07)"><button class="prog-item-btn" onclick="showView('uomini-corto-menu')"><div class="prog-item-name">⏱ <span data-t="allenamenti_30_btn">Allenamenti 30-40 min</span></div><div class="prog-item-sub" data-t="corto_sub_u">A/B Full Body · Basic & Intermedio · 2–4x sett.</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item" style="border:1.5px solid rgba(48,209,88,.35);background:rgba(48,209,88,.07)"><button class="prog-item-btn" onclick="showView('custom-plan-view')"><div class="prog-item-name">🛠 <span data-t="make_own_plan">Crea il tuo programma</span></div><div class="prog-item-sub" data-t="make_own_plan_sub">Scegli giorni, muscoli ed esercizi personalizzati</div></button><span class="prog-arr">›</span></div></div>
   </div>
 
@@ -377,6 +377,13 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('ul_2day_u','uomini-inter-menu')"><div class="prog-item-name">🟡 <span data-t="ul_2day_u_label">Upper/Lower 2 Giorni</span></div><div class="prog-item-sub" data-t="ul_2day_sub">2 giorni · Upper/Lower · 16 sett.</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('classic_4day_u','uomini-inter-menu')"><div class="prog-item-name">🟢 <span data-t="classic_4day_u_label">Classic Split 4 Giorni</span></div><div class="prog-item-sub" data-t="classic_4day_sub">4 giorni · Split · 16 sett.</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('fb-ab-u','uomini-inter-menu')"><div class="prog-item-name">🟣 <span data-t="fb_ab_u_label">Full Body A/B</span></div><div class="prog-item-sub" data-t="fb_ab_sub">2–3x / settimana · Full Body · 16 sett.</div></button><span class="prog-arr">›</span></div>
+    <div class="prog-item" style="border:1.5px solid rgba(255,214,10,.3);background:rgba(255,214,10,.05)">
+      <button class="prog-item-btn" onclick="showView('lyle-info-view')">
+        <div class="prog-item-name">📊 <span data-t="lyle_btn">Lyle McDonald GBR</span></div>
+        <div class="prog-item-sub"><span data-t="lyle_sub">Generic Bulking Routine — Upper/Lower 4 giorni</span></div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
   </div>
 
   <!-- HEAVY DUTY MENU UOMO -->
@@ -385,6 +392,14 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     <div class="view-title"><span class="c-red" data-t="advanced_title">Avanzato</span></div>
     <div style="color:rgba(255,255,255,.5);font-size:.82rem;line-height:1.5;margin-bottom:16px;padding:0 2px" data-t="advanced_desc">Programmi per atleti esperti con almeno 3-4 anni di allenamento. Alta intensità, tecniche avanzate e progressione continua.</div>
 
+    <div class="prog-item" style="border:1.5px solid rgba(255,149,0,.35);background:rgba(255,149,0,.07)">
+      <button class="prog-item-btn" onclick="showView('powerbuilding-concepts')">
+        <div class="prog-item-name">🏗️ Powerbuilding Concepts</div>
+        <div class="prog-item-sub">PHAT · PHUL · Madcow · WS4SB · Upper/Lower by Luka</div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+
     <div class="prog-item">
       <button class="prog-item-btn" onclick="showView('heavy-duty-concepts')">
         <div class="prog-item-name">📖 <span data-t="hdc_title">Heavy Duty Concepts</span></div>
@@ -392,30 +407,43 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       </button>
       <span class="prog-arr">›</span>
     </div>
+  </div>
 
-    <div class="prog-item" style="border:1.5px solid rgba(255,214,10,.3);background:rgba(255,214,10,.05)">
-      <button class="prog-item-btn" onclick="showView('lyle-info-view')">
-        <div class="prog-item-name">📊 <span data-t="lyle_btn">Lyle McDonald GBR</span></div>
-        <div class="prog-item-sub"><span data-t="lyle_sub">Generic Bulking Routine — Upper/Lower 4 giorni</span></div>
-      </button>
-      <span class="prog-arr">›</span>
-    </div>
+  <!-- POWERBUILDING CONCEPTS VIEW -->
+  <div id="powerbuilding-concepts" class="view">
+    <button onclick="goBack('uomini-heavy-menu')" class="back-btn">← <span data-t="advanced_title">Avanzato</span></button>
+    <div class="view-title" style="font-size:1.8rem">🏗️ Powerbuilding<br><span style="font-size:1.2rem;color:rgba(255,255,255,.5)">Forza + Massa</span></div>
+
     <div class="prog-item" style="border:1.5px solid rgba(10,132,255,.35);background:rgba(10,132,255,.07)">
       <button class="prog-item-btn" onclick="showView('phat-info-view')">
-        <div class="prog-item-name">&#9889; <span data-t="phat_btn">PHAT &#8212; Layne Norton</span></div>
-        <div class="prog-item-sub"><span data-t="phat_sub">Power Hypertrophy Adaptive Training &#8212; 5 giorni</span></div>
+        <div class="prog-item-name">⚡ PHAT — Layne Norton</div>
+        <div class="prog-item-sub">Power Hypertrophy Adaptive Training · 5 giorni</div>
       </button>
       <span class="prog-arr">›</span>
     </div>
     <div class="prog-item" style="border:1.5px solid rgba(48,209,88,.35);background:rgba(48,209,88,.07)">
       <button class="prog-item-btn" onclick="showView('phul-info-view')">
-        <div class="prog-item-name">&#128170; <span data-t="phul_btn">PHUL &#8212; Power Hypertrophy</span></div>
-        <div class="prog-item-sub"><span data-t="phul_sub">Upper/Lower 4 giorni &#8212; Forza + Massa</span></div>
+        <div class="prog-item-name">💪 PHUL — Power Hypertrophy</div>
+        <div class="prog-item-sub">Upper/Lower 4 giorni · Forza + Massa</div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+    <div class="prog-item" style="border:1.5px solid rgba(48,209,88,.35);background:rgba(48,209,88,.07)">
+      <button class="prog-item-btn" onclick="showView('madcow-info-view')">
+        <div class="prog-item-name">🏋️ Madcow 5×5</div>
+        <div class="prog-item-sub">3 giorni · Lun/Mer/Ven · Heavy-Light-Medium · 8-12 sett.</div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+    <div class="prog-item" style="border:1.5px solid rgba(255,59,48,.35);background:rgba(255,59,48,.07)">
+      <button class="prog-item-btn" onclick="showView('ws4sb-info-view')">
+        <div class="prog-item-name">🏈 WS4SB — Joe DeFranco</div>
+        <div class="prog-item-sub">3 giorni · ME Upper / Lower / Rep Upper · Template flessibile</div>
       </button>
       <span class="prog-arr">›</span>
     </div>
     <div class="prog-item" style="border:1.5px solid rgba(255,149,0,.35);background:rgba(255,149,0,.07)">
-      <button class="prog-item-btn" onclick="openWorkout('ul-pb-u','uomini-heavy-menu')">
+      <button class="prog-item-btn" onclick="openWorkout('ul-pb-u','powerbuilding-concepts')">
         <div class="prog-item-name">⚡ Upper/Lower Powerbuilding <span style="font-size:.7rem;opacity:.6">by Luka</span></div>
         <div class="prog-item-sub">4 giorni · Upper/Lower · ME + Volume · Periodizzazione 4 sett.</div>
       </button>
@@ -425,7 +453,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
 
   <!-- PHAT INFO VIEW -->
   <div id="phat-info-view" class="view">
-    <button onclick="goBack('uomini-heavy-menu')" class="back-btn">&#8592; <span data-t="advanced_title">Avanzato</span></button>
+    <button onclick="goBack('powerbuilding-concepts')" class="back-btn">&#8592; <span data-t="advanced_title">Avanzato</span></button>
     <div style="text-align:center;margin-bottom:12px">
       <img src="https://sport-fit.org/wp-content/uploads/2026/03/advanced_section.jpg" style="max-width:120px;height:auto;border-radius:14px;display:inline-block"/>
       <div style="margin-top:6px;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:900;color:#fff;text-transform:uppercase">Layne Norton</div>
@@ -510,7 +538,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
 
   <!-- PHUL INFO VIEW -->
   <div id="phul-info-view" class="view">
-    <button onclick="goBack('uomini-heavy-menu')" class="back-btn">&#8592; <span data-t="advanced_title">Avanzato</span></button>
+    <button onclick="goBack('powerbuilding-concepts')" class="back-btn">&#8592; <span data-t="advanced_title">Avanzato</span></button>
     <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#1a3a00,var(--green))" onclick="openWorkout('phul','phul-info-view')">
       <span data-t="phul_start_btn">&#128170; Inizia il Programma PHUL</span>
     </button>
@@ -577,6 +605,108 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     </div>
     <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#1a3a00,var(--green))" onclick="openWorkout('phul','phul-info-view')">
       <span data-t="phul_start_btn">&#128170; Inizia il Programma PHUL</span>
+    </button>
+  </div>
+
+  <!-- MADCOW 5×5 INFO VIEW -->
+  <div id="madcow-info-view" class="view">
+    <button onclick="goBack('powerbuilding-concepts')" class="back-btn">← <span data-t="advanced_title">Avanzato</span></button>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#1a3a00,var(--green))" onclick="openWorkout('madcow-u','madcow-info-view')">
+      💪 <span data-t="madcow_start_btn">Inizia Madcow 5×5</span>
+    </button>
+    <div class="view-title" style="font-size:1.7rem">💪 Madcow 5×5</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:4px"><b style="color:#fff"><span data-t="madcow_subtitle">Ispirato a Bill Starr 5×5</span></b></div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px"><span data-t="madcow_days">3 giorni / settimana · Lun · Mer · Ven</span></div>
+    <div class="disclaimer red"><div class="disclaimer-icon">⚠️</div><div class="disclaimer-text"><b data-t="madcow_level">Intermedio / Avanzato</b> — <span data-t="madcow_ideal">Ideale dopo StrongLifts 5×5 o quando la progressione lineare si blocca.</span></div></div>
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title red">📌 <span data-t="madcow_phi_title">Filosofia</span></div>
+      <div class="ai-bullet"><span data-t="madcow_phi1">Heavy · Light · Medium — 3 sessioni diverse ogni settimana, non ripetitive</span></div>
+      <div class="ai-bullet"><b>Ramp sets:</b> <span data-t="madcow_phi2">ogni serie aumenta il peso fino al top set — non serie piatte</span></div>
+      <div class="ai-bullet"><span data-t="madcow_phi3">Progressione settimanale (+2.5% al top set), non ogni allenamento</span></div>
+      <div class="ai-bullet"><span data-t="madcow_phi4">Solo esercizi composti: Squat, Panca, Rematore, Stacco, OHP</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title gold">📅 <span data-t="madcow_sch_title">Schema settimanale</span></div>
+      <div class="ai-stat-row" style="align-items:flex-start;padding:7px 0">
+        <span class="ai-stat-label" style="min-width:80px">🔴 <span data-t="madcow_d1_lbl">Lunedì</span></span>
+        <span class="ai-stat-val" style="text-align:right;line-height:1.5" data-t="madcow_d1">Squat · Panca · Rematore — 5×5 (volume)</span>
+      </div>
+      <div class="ai-stat-row" style="align-items:flex-start;padding:7px 0">
+        <span class="ai-stat-label" style="min-width:80px">🔵 <span data-t="madcow_d2_lbl">Mercoledì</span></span>
+        <span class="ai-stat-val" style="text-align:right;line-height:1.5" data-t="madcow_d2">Squat leggero · OHP · Stacco — recupero</span>
+      </div>
+      <div class="ai-stat-row" style="align-items:flex-start;padding:7px 0">
+        <span class="ai-stat-label" style="min-width:80px">🟢 <span data-t="madcow_d3_lbl">Venerdì</span></span>
+        <span class="ai-stat-val" style="text-align:right;line-height:1.5" data-t="madcow_d3">Squat · Panca · Rematore — 1×3 PR + 1×8 back-off</span>
+      </div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title blue">⚡ <span data-t="madcow_rules_title">Regole chiave</span></div>
+      <div class="ai-bullet"><b data-t="madcow_r1_lbl">Lunedì:</b> <span data-t="madcow_r1">5 serie ascendenti × 5 reps — l'ultima è il top set</span></div>
+      <div class="ai-bullet"><b data-t="madcow_r2_lbl">Mercoledì:</b> <span data-t="madcow_r2">Squat al 70-80% del Lunedì · OHP o Press Inclinata · Stacco pesante</span></div>
+      <div class="ai-bullet"><b data-t="madcow_r3_lbl">Venerdì PR Day:</b> <span data-t="madcow_r3">ramp 4×5 → 1×3 nuovo record → 1×8 back-off (75% del top set)</span></div>
+      <div class="ai-bullet"><b data-t="madcow_r4_lbl">Progressione:</b> <span data-t="madcow_r4">+2.5% al top set ogni settimana dal venerdì. Se fallisci, ripeti stesso peso</span></div>
+      <div class="ai-bullet"><b data-t="madcow_r5_lbl">Durata:</b> <span data-t="madcow_r5">8-12 settimane, fino a quando smetti di progredire</span></div>
+    </div>
+    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#1a3a00,var(--green))" onclick="openWorkout('madcow-u','madcow-info-view')">
+      💪 <span data-t="madcow_start_btn">Inizia Madcow 5×5</span>
+    </button>
+  </div>
+
+  <!-- WS4SB INFO VIEW -->
+  <div id="ws4sb-info-view" class="view">
+    <button onclick="goBack('powerbuilding-concepts')" class="back-btn">← <span data-t="advanced_title">Avanzato</span></button>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#7a0000,var(--red))" onclick="openWorkout('ws4sb-u','ws4sb-info-view')">
+      🏈 <span data-t="ws4sb_start_btn">Inizia WS4SB</span>
+    </button>
+    <img src="https://sport-fit.org/wp-content/uploads/2026/03/joe-defranco.jpg"
+         alt=""
+         onerror="this.style.display='none'"
+         style="width:100%;max-height:220px;object-fit:cover;object-position:center top;border-radius:14px;margin-bottom:14px;display:block"/>
+    <div class="view-title" style="font-size:1.7rem">🏈 WS4SB</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:4px"><b style="color:#fff">Westside for Skinny Bastards</b></div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px"><span data-t="ws4sb_days">Joe DeFranco · 3 giorni / settimana</span></div>
+    <div class="disclaimer red"><div class="disclaimer-icon">⚠️</div><div class="disclaimer-text"><b data-t="ws4sb_level">Intermedio / Avanzato</b> — <span data-t="ws4sb_ideal">Ideale per atleti e chi vuole forza + massa insieme.</span></div></div>
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title red">📌 <span data-t="ws4sb_phi_title">Filosofia</span></div>
+      <div class="ai-bullet"><span data-t="ws4sb_phi1">Basato sul metodo Westside Barbell, adattato per atleti naturali e hardgainer</span></div>
+      <div class="ai-bullet"><span data-t="ws4sb_phi2">Max Effort: lavora fino a un massimale su 3-5 reps — cambia esercizio ogni 2-3 settimane</span></div>
+      <div class="ai-bullet"><span data-t="ws4sb_phi3">Rep Upper: 3 serie al massimo delle ripetizioni — non cedimento sui primi 2 set</span></div>
+      <div class="ai-bullet"><span data-t="ws4sb_phi4">Obiettivo: battere il record personale ogni settimana</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title gold">📅 <span data-t="ws4sb_sch_title">Schema settimanale</span></div>
+      <div class="ai-stat-row" style="align-items:flex-start;padding:7px 0">
+        <span class="ai-stat-label" style="min-width:80px">🔴 <span data-t="ws4sb_d1_lbl">Giorno 1</span></span>
+        <span class="ai-stat-val" style="text-align:right;line-height:1.5">
+          <span style="font-size:.65rem;color:rgba(255,255,255,.4);display:block" data-t="ws4sb_d1_day">Lunedì</span>
+          <span data-t="ws4sb_d1">ME Upper — Petto · Schiena · Spalle · Tricipiti</span>
+        </span>
+      </div>
+      <div class="ai-stat-row" style="align-items:flex-start;padding:7px 0">
+        <span class="ai-stat-label" style="min-width:80px">🔵 <span data-t="ws4sb_d2_lbl">Giorno 2</span></span>
+        <span class="ai-stat-val" style="text-align:right;line-height:1.5">
+          <span style="font-size:.65rem;color:rgba(255,255,255,.4);display:block" data-t="ws4sb_d2_day">Mercoledì</span>
+          <span data-t="ws4sb_d2">Lower — Gambe · Glutei · Femorali</span>
+        </span>
+      </div>
+      <div class="ai-stat-row" style="align-items:flex-start;padding:7px 0">
+        <span class="ai-stat-label" style="min-width:80px">🟢 <span data-t="ws4sb_d3_lbl">Giorno 3</span></span>
+        <span class="ai-stat-val" style="text-align:right;line-height:1.5">
+          <span style="font-size:.65rem;color:rgba(255,255,255,.4);display:block" data-t="ws4sb_d3_day">Venerdì</span>
+          <span data-t="ws4sb_d3">Rep Upper — Petto · Schiena · Spalle · Bicipiti</span>
+        </span>
+      </div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title blue">⚡ <span data-t="ws4sb_rules_title">Regole chiave</span></div>
+      <div class="ai-bullet"><b data-t="ws4sb_r1_lbl">Max Effort:</b> <span data-t="ws4sb_r1">inizia al 50% 1RM, aggiungi 5kg ogni set fino a non riuscire 3 reps. Cambia esercizio ogni 2-3 sett.</span></div>
+      <div class="ai-bullet"><b data-t="ws4sb_r2_lbl">Rep Upper:</b> <span data-t="ws4sb_r2">set 1-2 lascia 1-2 reps nel serbatoio — set 3 vai al massimo</span></div>
+      <div class="ai-bullet"><b data-t="ws4sb_r3_lbl">Lower:</b> <span data-t="ws4sb_r3">rotazione tra Max Effort e Box Squat dinamico ogni 2 settimane</span></div>
+      <div class="ai-bullet"><b data-t="ws4sb_r4_lbl">Progressione:</b> <span data-t="ws4sb_r4">ogni settimana devi battere il tuo record — se non migliori, cambia variabile</span></div>
+    </div>
+    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#7a0000,var(--red))" onclick="openWorkout('ws4sb-u','ws4sb-info-view')">
+      🏈 <span data-t="ws4sb_start_btn">Inizia WS4SB</span>
     </button>
   </div>
 
@@ -754,7 +884,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('ini-d','donne-level')"><div class="prog-item-name">🟢 <span data-t="level_beginner">Iniziale</span></div><div class="prog-item-sub" data-t="see_programs">Vedi programmi</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="showView('donne-inter-menu')"><div class="prog-item-name">🔵 <span data-t="level_intermediate">Intermedio</span></div><div class="prog-item-sub" data-t="see_programs">Vedi programmi</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item" style="border:1.5px solid rgba(255,59,48,.35);background:rgba(255,59,48,.07)"><button class="prog-item-btn" onclick="showView('donne-avanzato-menu')"><div class="prog-item-name">🔴 <span data-t="level_advanced">Avanzato</span></div><div class="prog-item-sub" data-t="see_programs">Vedi programmi</div></button><span class="prog-arr">›</span></div>
-    <div class="prog-item" style="border:1.5px solid rgba(255,107,157,.35);background:rgba(255,107,157,.07)"><button class="prog-item-btn" onclick="showView('donne-corto-menu')"><div class="prog-item-name">⏱ <span data-t="allenamenti_30_btn">Allenamenti 30 min</span></div><div class="prog-item-sub" data-t="corto_info">Full Body A/B · Superset · Efficiente e completo</div></button><span class="prog-arr">›</span></div>
+    <div class="prog-item" style="border:1.5px solid rgba(255,107,157,.35);background:rgba(255,107,157,.07)"><button class="prog-item-btn" onclick="showView('donne-corto-menu')"><div class="prog-item-name">⏱ <span data-t="allenamenti_30_btn">Allenamenti 30-40 min</span></div><div class="prog-item-sub" data-t="corto_info">Full Body A/B · Superset · Efficiente e completo</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item" style="border:1.5px solid rgba(48,209,88,.35);background:rgba(48,209,88,.07)"><button class="prog-item-btn" onclick="showView('custom-plan-view')"><div class="prog-item-name">🛠 <span data-t="make_own_plan">Crea il tuo programma</span></div><div class="prog-item-sub" data-t="make_own_plan_sub">Scegli giorni, muscoli ed esercizi personalizzati</div></button><span class="prog-arr">›</span></div>
   </div>
 
@@ -774,6 +904,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     </div>
     <div id="workout-title" class="view-title"></div>
     <div id="workout-pills" class="pills"></div>
+    <div id="workout-note"></div>
     <div class="disclaimer"><div class="disclaimer-icon">⚠️</div><div class="disclaimer-text"><b data-t="disc_w_t">Avviso</b> — <span data-t="disc_w">Programmi a scopo informativo.</span></div></div>
     <div id="workout-body"></div>
   </div>
@@ -781,7 +912,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
   <!-- LYLE McDONALD GBR VIEW -->
   <div id="lyle-info-view" class="view">
     <div class="view-hdr">
-      <button onclick="goBack('uomini-heavy-menu')" class="back-btn">← <span data-t="advanced_title">Avanzato</span></button>
+      <button onclick="goBack('uomini-inter-menu')" class="back-btn">← <span data-t="advanced_title">Avanzato</span></button>
     </div>
     <div class="view-scroll">
     <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#0047b3,var(--blue))" onclick="openWorkout('lyle-gbr','lyle-info-view')"><span data-t="lyle_start_btn">💪 Vai al Programma GBR</span></button>
@@ -909,7 +1040,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
 
   <div id="uomini-corto-menu" class="view">
     <button onclick="goBack('uomini-level')" class="back-btn">← <span data-t="level_men">Uomo</span></button>
-    <div class="view-title" style="font-size:2rem">⏱ <span class="c-blue" data-t="corto_title">Allenamento 30 min</span></div>
+    <div class="view-title" style="font-size:2rem">⏱ <span class="c-blue" data-t="corto_title">Allenamenti 30-40 min</span></div>
     <div style="color:rgba(255,255,255,.45);font-size:.78rem;margin-bottom:8px" data-t="corto_desc">Full Body A/B · Superset · Efficiente e completo</div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('corto-u-bas','uomini-corto-menu')">
       <div class="prog-item-name">🟢 <span data-t="corto_basic">Basic A/B</span></div>
@@ -930,7 +1061,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
   <!-- CORTO DONNA MENU -->
   <div id="donne-corto-menu" class="view">
     <button onclick="goBack('donne-level')" class="back-btn">← <span data-t="level_women">Donna</span></button>
-    <div class="view-title" style="font-size:2rem">⏱ <span class="c-pink" data-t="corto_title">Allenamento 30 min</span></div>
+    <div class="view-title" style="font-size:2rem">⏱ <span class="c-pink" data-t="corto_title">Allenamenti 30-40 min</span></div>
     <div style="color:rgba(255,255,255,.45);font-size:.78rem;margin-bottom:8px" data-t="corto_desc">Full Body A/B · Superset · Efficiente e completo</div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('corto-d-bas','donne-corto-menu')">
       <div class="prog-item-name">🟢 <span data-t="corto_basic">Basic A/B</span></div>
@@ -2032,8 +2163,8 @@ const T = {
     corto_adv_pills:[['30 min',''],['A/B',''],['Rest-Pause',''],['2-4x','sett.']],
     dc_pills:[['Rest-Pause',''],['3x','sett.'],['Avanzato',''],['Blast/Cruise','']],
     mentzer_pills:[['4-2-4','tempo'],['1 set','cedimento'],['HIT',''],['48-96h','riposo']],
-    quick_workout:'Allenamento 30 min',
-    allenamenti_30_btn:'Allenamenti 30 min',
+    quick_workout:'Allenamenti 30-40 min',
+    allenamenti_30_btn:'Allenamenti 30-40 min',
     quick_u_label:'30 Min Uomo Avanzato', quick_u_pills:[['2-4×','/ sett.'],['30 min','/ sessione'],['Full Body','']],
     quick_u_basic_label:'30 Min Uomo Base', quick_u_basic_pills:[['2×','/ sett.'],['30 min','/ sessione'],['12-16 sett.','']],
     quick_d_label:'30 Min Donna Avanzato', quick_d_pills:[['2-4×','/ sett.'],['30 min','/ sessione'],['Full Body','']],
@@ -2128,7 +2259,7 @@ const T = {
     corto_btn:'Allenamento Corto 30 min',
     corto_sub_u:'A/B Full Body · Basic & Intermedio · 2-4x sett.',
     corto_sub_d:'A/B Full Body · Basic & Intermedio · 2-4x sett.',
-    corto_title:'Allenamento 30 min',
+    corto_title:'Allenamenti 30-40 min',
     corto_desc:'Corpo Completo A/B · Superserie · Efficiente e completo',
     corto_basic:'Basic A/B',
     corto_basic_sub_u:'Superset · 3 serie · Ideale per iniziare i 30 min',
@@ -2156,8 +2287,8 @@ const T = {
     corto_d_bas_sub:'Superset · 3 serie · Ideale per iniziare i 30 min',
     corto_info:'Full Body A/B · Superset · Efficiente e completo',
     mentzer_sub:'HIT · 4-2-4 Tempo · 1 Set al cedimento assoluto',
-    quick_workout:'Allenamento 30 min',
-    allenamenti_30_btn:'Allenamenti 30 min',
+    quick_workout:'Allenamenti 30-40 min',
+    allenamenti_30_btn:'Allenamenti 30-40 min',
     disc_w_t:"Avviso importante",
     disc_w:"Programmi a scopo informativo. Consultare un medico prima di iniziare. Sport&Fit GYM non risponde di infortuni.",
     disc_n_t:"Avviso nutrizionale",
@@ -2504,6 +2635,55 @@ const T = {
     lpp4_u_label:'Heavy Duty LPP-4 by Luka',
     lpp4_u_pills:[['4×','/ sett.'],['60-75 min','/ sessione'],['Legs/Push/Pull','rotazione']],
     level_lpp4_u:'AVANZATO',
+    ws4sb_u_label:'WS4SB — DeFranco',
+    ws4sb_u_pills:[['3×','/ sett.'],['60-75 min','/ sessione'],['Template','flessibile']],
+    level_ws4sb_u:'AVANZATO',
+    madcow_u_label:'Madcow 5×5',
+    madcow_u_pills:[['3×','/ sett.'],['60-75 min','/ sessione'],['8-12','settimane']],
+    level_madcow_u:'INTERMEDIO / AVANZATO',
+    madcow_start_btn:'Inizia Madcow 5×5',
+    madcow_subtitle:'Ispirato a Bill Starr 5×5',
+    madcow_days:'3 giorni / settimana · Lun · Mer · Ven',
+    madcow_level:'Intermedio / Avanzato',
+    madcow_ideal:'Ideale dopo StrongLifts 5×5 o quando la progressione lineare si blocca.',
+    madcow_phi_title:'Filosofia',
+    madcow_phi1:'Heavy · Light · Medium — 3 sessioni diverse ogni settimana, non ripetitive',
+    madcow_phi2:'ogni serie aumenta il peso fino al top set — non serie piatte',
+    madcow_phi3:'Progressione settimanale (+2.5% al top set), non ogni allenamento',
+    madcow_phi4:'Solo esercizi composti: Squat, Panca, Rematore, Stacco, OHP',
+    madcow_sch_title:'Schema settimanale',
+    madcow_d1_lbl:'Lunedì',madcow_d2_lbl:'Mercoledì',madcow_d3_lbl:'Venerdì',
+    madcow_d1:'Squat · Panca · Rematore — 5×5 (volume)',
+    madcow_d2:'Squat leggero · OHP · Stacco — recupero',
+    madcow_d3:'Squat · Panca · Rematore — 1×3 PR + 1×8 back-off',
+    madcow_rules_title:'Regole chiave',
+    madcow_r1_lbl:'Lunedì:',madcow_r2_lbl:'Mercoledì:',madcow_r3_lbl:'Venerdì PR Day:',madcow_r4_lbl:'Progressione:',madcow_r5_lbl:'Durata:',
+    madcow_r1:'5 serie ascendenti × 5 reps — l\'ultima è il top set',
+    madcow_r2:'Squat al 70-80% del Lunedì · OHP o Press Inclinata · Stacco pesante',
+    madcow_r3:'ramp 4×5 → 1×3 nuovo record → 1×8 back-off (75% del top set)',
+    madcow_r4:'+2.5% al top set ogni settimana dal venerdì. Se fallisci, ripeti stesso peso',
+    madcow_r5:'8-12 settimane, fino a quando smetti di progredire',
+    ws4sb_start_btn:'Inizia WS4SB',
+    ws4sb_days:'Joe DeFranco · 3 giorni / settimana',
+    ws4sb_level:'Intermedio / Avanzato',
+    ws4sb_ideal:'Ideale per atleti e chi vuole forza + massa insieme.',
+    ws4sb_phi_title:'Filosofia',
+    ws4sb_phi1:'Basato sul metodo Westside Barbell, adattato per atleti naturali e hardgainer',
+    ws4sb_phi2:'Max Effort: lavora fino a un massimale su 3-5 reps — cambia esercizio ogni 2-3 settimane',
+    ws4sb_phi3:'Rep Upper: 3 serie al massimo delle ripetizioni — non cedimento sui primi 2 set',
+    ws4sb_phi4:'Obiettivo: battere il record personale ogni settimana',
+    ws4sb_sch_title:'Schema settimanale',
+    ws4sb_d1_lbl:'Giorno 1',ws4sb_d2_lbl:'Giorno 2',ws4sb_d3_lbl:'Giorno 3',
+    ws4sb_d1_day:'Lunedì',ws4sb_d2_day:'Mercoledì',ws4sb_d3_day:'Venerdì',
+    ws4sb_d1:'ME Upper — Petto · Schiena · Spalle · Tricipiti',
+    ws4sb_d2:'Lower — Gambe · Glutei · Femorali',
+    ws4sb_d3:'Rep Upper — Petto · Schiena · Spalle · Bicipiti',
+    ws4sb_rules_title:'Regole chiave',
+    ws4sb_r1_lbl:'Max Effort:',ws4sb_r2_lbl:'Rep Upper:',ws4sb_r3_lbl:'Lower:',ws4sb_r4_lbl:'Progressione:',
+    ws4sb_r1:'inizia al 50% 1RM, aggiungi 5kg ogni set fino a non riuscire 3 reps. Cambia esercizio ogni 2-3 sett.',
+    ws4sb_r2:'set 1-2 lascia 1-2 reps nel serbatoio — set 3 vai al massimo',
+    ws4sb_r3:'rotazione tra Max Effort e Box Squat dinamico ogni 2 settimane',
+    ws4sb_r4:'ogni settimana devi battere il tuo record — se non migliori, cambia variabile',
     ken_btn:'Dr. Ken Leistner - Steel Tip HIT',
     ken_sub:'Full Body 2x / sett. - Squat 20 reps - 1 Serie al cedimento',
     ken_sub2:'2 giorni / settimana - Full Body - Squat 20 reps',
@@ -2942,8 +3122,8 @@ en:{
     corto_adv_pills:[['30 min',''],['A/B',''],['Rest-Pause',''],['2-4x','/week']],
     dc_pills:[['Rest-Pause',''],['3x','/week'],['Advanced',''],['Blast/Cruise','']],
     mentzer_pills:[['4-2-4','tempo'],['1 set','failure'],['HIT',''],['48-96h','rest']],
-    quick_workout:'30 min Workout',
-    allenamenti_30_btn:'30 min Workouts',
+    quick_workout:'30-40 min Workouts',
+    allenamenti_30_btn:'30-40 min Workouts',
     quick_u_label:'30 Min Men Advanced', quick_u_pills:[['2×','/ week'],['30 min','/ session'],['12-16 wks','']],
     quick_u_basic_label:'30 Min Men Basic', quick_u_basic_pills:[['2×','/ week'],['30 min','/ session'],['12-16 wks','']],
     quick_d_label:'30 Min Women Advanced', quick_d_pills:[['2×','/ week'],['30 min','/ session'],['12-16 wks','']],
@@ -3018,7 +3198,7 @@ en:{
     corto_btn:'Short Workout 30 min',
     corto_sub_u:'A/B Full Body · Basic & Intermediate · 2-4x/week',
     corto_sub_d:'A/B Full Body · Basic & Intermediate · 2-4x/week',
-    corto_title:'30 min Workout',
+    corto_title:'30-40 min Workouts',
     corto_desc:'Full Body A/B · Superset · Efficient and complete',
     corto_basic:'Basic A/B',
     corto_basic_sub_u:'Superset · 3 sets · Ideal to start 30 min',
@@ -3046,8 +3226,8 @@ en:{
     corto_d_bas_sub:'Superset · 3 sets · Ideal to start 30 min',
     corto_info:'Full Body A/B · Superset · Efficient and complete',
     mentzer_sub:'HIT · 4-2-4 Tempo · 1 Set to absolute failure',
-    quick_workout:'30 min Workout',
-    allenamenti_30_btn:'30 min Workouts',
+    quick_workout:'30-40 min Workouts',
+    allenamenti_30_btn:'30-40 min Workouts',
     disc_w_t:"Important notice",
     disc_w:"For informational purposes only. Consult a doctor before starting. Sport&Fit GYM is not liable for injuries.",
     disc_n_t:"Nutritional notice",
@@ -3394,6 +3574,61 @@ en:{
     lpp4_u_label:'Heavy Duty LPP-4 by Luka',
     lpp4_u_pills:[['4×','/ week'],['60-75 min','/ session'],['Legs/Push/Pull','rotation']],
     level_lpp4_u:'ADVANCED',
+    ws4sb_u_label:'WS4SB — DeFranco',
+    ws4sb_u_pills:[['3×','/ week'],['60-75 min','/ session'],['Flexible','template']],
+    level_ws4sb_u:'ADVANCED',
+    madcow_u_label:'Madcow 5×5',
+    madcow_u_pills:[['3×','/ week'],['60-75 min','/ session'],['8-12','weeks']],
+    level_madcow_u:'INTERMEDIATE / ADVANCED',
+    madcow_start_btn:'Start Madcow 5×5',
+    madcow_subtitle:'Inspired by Bill Starr 5×5',
+    madcow_days:'3 days / week · Mon · Wed · Fri',
+    madcow_level:'Intermediate / Advanced',
+    madcow_ideal:'Ideal after StrongLifts 5×5 or when linear progression stalls.',
+    madcow_phi_title:'Philosophy',
+    madcow_phi1:'Heavy · Light · Medium — 3 different sessions each week, non-repetitive',
+    madcow_phi2:'each set increases weight to the top set — no straight sets',
+    madcow_phi3:'Weekly progression (+2.5% to top set), not every session',
+    madcow_phi4:'Compound lifts only: Squat, Bench, Row, Deadlift, OHP',
+    madcow_sch_title:'Weekly Schedule',
+    madcow_d1_lbl:'Monday',madcow_d2_lbl:'Wednesday',madcow_d3_lbl:'Friday',
+    madcow_d1:'Squat · Bench · Row — 5×5 (volume)',
+    madcow_d2:'Light Squat · OHP · Deadlift — recovery',
+    madcow_d3:'Squat · Bench · Row — 1×3 PR + 1×8 back-off',
+    madcow_rules_title:'Key Rules',
+    madcow_r1_lbl:'Monday:',madcow_r2_lbl:'Wednesday:',madcow_r3_lbl:'Friday PR Day:',madcow_r4_lbl:'Progression:',madcow_r5_lbl:'Duration:',
+    madcow_r1:'5 ascending sets × 5 reps — last set is the top set',
+    madcow_r2:'Squat at 70-80% of Monday · OHP or Incline Press · Heavy Deadlift',
+    madcow_r3:'ramp 4×5 → 1×3 new PR → 1×8 back-off (75% of top set)',
+    madcow_r4:'+2.5% to top set every week on Friday. If you fail, repeat same weight',
+    madcow_r5:'8-12 weeks, until you stop progressing',
+    ws4sb_start_btn:'Start WS4SB',
+    ws4sb_days:'Joe DeFranco · 3 days / week',
+    ws4sb_level:'Intermediate / Advanced',
+    ws4sb_ideal:'Ideal for athletes and those who want strength + size together.',
+    ws4sb_phi_title:'Philosophy',
+    ws4sb_phi1:'Based on Westside Barbell method, adapted for natural athletes and hardgainers',
+    ws4sb_phi2:'Max Effort: work up to a 3-5 rep max — rotate exercise every 2-3 weeks',
+    ws4sb_phi3:'Rep Upper: 3 sets of max reps — do not go to failure on first 2 sets',
+    ws4sb_phi4:'Goal: beat your personal record every week',
+    ws4sb_sch_title:'Weekly Schedule',
+    ws4sb_d1_lbl:'Day 1',ws4sb_d2_lbl:'Day 2',ws4sb_d3_lbl:'Day 3',
+    ws4sb_d1_day:'Monday',ws4sb_d2_day:'Wednesday',ws4sb_d3_day:'Friday',
+    ws4sb_d1:'ME Upper — Chest · Back · Shoulders · Triceps',
+    ws4sb_d2:'Lower — Legs · Glutes · Hamstrings',
+    ws4sb_d3:'Rep Upper — Chest · Back · Shoulders · Biceps',
+    ws4sb_rules_title:'Key Rules',
+    ws4sb_r1_lbl:'Max Effort:',ws4sb_r2_lbl:'Rep Upper:',ws4sb_r3_lbl:'Lower:',ws4sb_r4_lbl:'Progression:',
+    ws4sb_r1:'start at 50% 1RM, add 5kg each set until you can\'t get 3 reps. Rotate exercise every 2-3 weeks.',
+    ws4sb_r2:'sets 1-2 leave 1-2 reps in the tank — set 3 go all out',
+    ws4sb_r3:'alternate between Max Effort and dynamic Box Squat every 2 weeks',
+    ws4sb_r4:'beat your record every week — if you don\'t improve, change a variable',
+    ken_hit_label:'Dr. Ken Leistner - Steel Tip HIT',
+    ken_bm_label:'Dr. Ken Leistner - Brutal Minimalism',
+    ken_hit_pills:[['2 days','/ week'],['Full Body',''],['Squat','20 reps']],
+    ken_bm_pills:[['Full Body',''],['1 set / ex',''],['To failure','']],
+    arthur_hit_label:'Arthur Jones - Consolidated Routine HIT',
+    arthur_hit_pills:[['1-2x','/ week'],['5 exercises',''],['Tempo','2-1-4']],
 
     d_fb_name:'Full Body',
     level_ini_u:'BEGINNER',
@@ -3569,74 +3804,82 @@ const WORKOUTS_BASE = {
                 {it:'Spinte in Basso',en:'Tricep Pushdown',s:3,r:'15',rest:'2 min'}]}]},
     // ── 30 MIN UOMO BASIC ────────────────────────────────────────────────
     quick_u_basic:{gender:'uomo',
+        note_it:'🔵 A1+A2 · 🔴 B1+B2 · 🟢 C1+C2 = <b>Superserie</b> — esegui i due esercizi consecutivamente con 10-20s di pausa, poi riposa 60-90s prima del giro successivo.',
+        note_en:'🔵 A1+A2 · 🔴 B1+B2 · 🟢 C1+C2 = <b>Superset</b> — perform the two exercises back-to-back with 10-20s rest, then rest 60-90s before the next round.',
         days:[
             {id:'a',color:'var(--blue)',exercises:[
-                {it:'Press Spalle Macchina',en:'Machine Shoulder Press',s:3,r:'15-10',rest:'1-2 min'},
-                {it:'Pulley / Rematore Macchina',en:'Pulldown / Machine Row',s:3,r:'15-10',rest:'1-2 min'},
-                {it:'Leg Extension / Affondi / Leg Press',en:'Leg Ext / Lunges / Leg Press',s:3,r:'15-10',rest:'2-3 min'},
-                {it:'Dip / Flessioni Strette / Panca Stretta',en:'Dips / Close Push-Up / CGBP',s:3,r:'15-10',rest:'2-3 min'},
-                {it:'Iperestensioni 45° / RDL',en:'Hyperextension / RDL',s:3,r:'15-10',rest:'1-2 min'},
-                {it:'Addominali',en:'Abs',s:3,r:'15-10',rest:'2 min'}]},
+                {it:'🔵 A1 · Press Spalle Macchina',en:'🔵 A1 · Machine Shoulder Press',s:3,r:'15-10',rest:'1-2 min'},
+                {it:'🔵 A2 · Pulley / Rematore Macchina',en:'🔵 A2 · Pulldown / Machine Row',s:3,r:'15-10',rest:'60-90s'},
+                {it:'🔴 B1 · Leg Extension / Affondi / Leg Press',en:'🔴 B1 · Leg Ext / Lunges / Leg Press',s:3,r:'15-10',rest:'1-2 min'},
+                {it:'🔴 B2 · Dip / Flessioni Strette / Panca Stretta',en:'🔴 B2 · Dips / Close Push-Up / CGBP',s:3,r:'15-10',rest:'60-90s'},
+                {it:'🟢 C1 · Iperestensioni 45° / RDL',en:'🟢 C1 · Hyperextension / RDL',s:3,r:'15-10',rest:'1-2 min'},
+                {it:'🟢 C2 · Addominali',en:'🟢 C2 · Abs',s:3,r:'15-10',rest:'60-90s'}]},
             {id:'b',color:'var(--red)',exercises:[
-                {it:'Leg Press / Hack Squat / Squat',en:'Leg Press / Hack Squat / Squat',s:3,r:'12-8',rest:'2-3 min'},
-                {it:'Leg Curl',en:'Leg Curl',s:2,r:'15-10',rest:'1-2 min'},
-                {it:'Press Macchina Inclinata',en:'Incline Machine Press',s:3,r:'15-10',rest:'1-2 min'},
-                {it:'Tirate al Mento Presa Supina',en:'Upright Row Supine Grip',s:3,r:'15-10',rest:'2 min'},
-                {it:'Spinte in Basso',en:'Tricep Pushdown',s:2,r:'15-10',rest:'2 min'},
-                {it:'Alzate Laterali',en:'Lateral Raise',s:2,r:'15-10',rest:'1-2 min'}]}]},
+                {it:'🔵 A1 · Leg Press / Hack Squat / Squat',en:'🔵 A1 · Leg Press / Hack Squat / Squat',s:3,r:'12-8',rest:'2-3 min'},
+                {it:'🔵 A2 · Leg Curl',en:'🔵 A2 · Leg Curl',s:2,r:'15-10',rest:'60-90s'},
+                {it:'🔴 B1 · Press Macchina Inclinata',en:'🔴 B1 · Incline Machine Press',s:3,r:'15-10',rest:'1-2 min'},
+                {it:'🔴 B2 · Tirate al Mento Presa Supina',en:'🔴 B2 · Upright Row Supine Grip',s:3,r:'15-10',rest:'60-90s'},
+                {it:'🟢 C1 · Spinte in Basso',en:'🟢 C1 · Tricep Pushdown',s:2,r:'15-10',rest:'1-2 min'},
+                {it:'🟢 C2 · Alzate Laterali',en:'🟢 C2 · Lateral Raise',s:2,r:'15-10',rest:'60-90s'}]}]},
     // ── 30 MIN UOMO AVANZATO ──────────────────────────────────────────────
     quick_u:{gender:'uomo',
+        note_it:'⚡ <b>Rest-Pause (RP)</b> — Vai al cedimento, riposa 20-30s respirando, riprendi al cedimento, riposa 20-30s, ultima spinta al cedimento = 1 serie RP completa. Tra gli esercizi riposa 2-3 min.',
+        note_en:'⚡ <b>Rest-Pause (RP)</b> — Go to failure, rest 20-30s breathing, push to failure again, rest 20-30s, final push to failure = 1 complete RP set. Rest 2-3 min between exercises.',
         days:[
             {id:'a',color:'var(--blue)',exercises:[
-                {it:'Leg Press / Hack Squat / Squat',en:'Leg Press / Hack Squat / Squat',s:1,r:'10-8 (cedimento)',rest:'2-3 min'},
-                {it:'A1 Press Spalle (superset)',en:'A1 Shoulder Press (superset)',s:1,r:'10-8 RP',rest:'2-3 min'},
-                {it:'A2 Tirate al Mento Presa Stretta Supina',en:'A2 Upright Row Close Supine',s:1,r:'10-8 RP',rest:'2 min'},
-                {it:'B1 Leg Curl',en:'B1 Leg Curl',s:1,r:'10-8 RP',rest:'1-2 min'},
-                {it:'B2 Dip / Flessioni / CGBP',en:'B2 Dips / Close Push-Up / CGBP',s:1,r:'12-10 RP',rest:'2-3 min'},
-                {it:'Addominali',en:'Abs',s:3,r:'15-10 ced',rest:'2 min'}]},
+                {it:'Leg Press / Hack Squat / Squat',en:'Leg Press / Hack Squat / Squat',s:1,r:'10-8 RP'},
+                {it:'Press Spalle',en:'Shoulder Press',s:1,r:'10-8 RP'},
+                {it:'Tirate al Mento Presa Stretta Supina',en:'Upright Row Close Supine',s:1,r:'10-8 RP'},
+                {it:'Leg Curl',en:'Leg Curl',s:1,r:'12-10'},
+                {it:'Dip / Flessioni / CGBP',en:'Dips / Close Push-Up / CGBP',s:1,r:'12-10 RP'},
+                {it:'Addominali',en:'Abs',s:3,r:'15-10 ced'}]},
             {id:'b',color:'var(--red)',exercises:[
-                {it:'A1 Press Macchina Inclinata 30°',en:'A1 Incline Machine Press 30°',s:1,r:'10-8 RP',rest:'1-2 min'},
-                {it:'A2 Pulley / Row Machine',en:'A2 Pulldown / Row Machine',s:1,r:'10-8 RP',rest:'2-3 min'},
-                {it:'RDL (manubri / multipower / barra)',en:'RDL (dumbbells / smith / barbell)',s:2,r:'10-8',rest:'2-3 min'},
-                {it:'Leg Extension',en:'Leg Extension',s:1,r:'15-12 RP',rest:'2-3 min'},
-                {it:'C1 Spinte in Basso',en:'C1 Tricep Pushdown',s:1,r:'15-12 RP',rest:'2 min'},
-                {it:'C2 Curl Bicipiti',en:'C2 Bicep Curl',s:1,r:'15-12 RP',rest:'1-2 min'}]}]},
+                {it:'Press Macchina Inclinata 30°',en:'Incline Machine Press 30°',s:1,r:'10-8 RP'},
+                {it:'Pulley / Row Machine',en:'Pulldown / Row Machine',s:1,r:'10-8 RP'},
+                {it:'RDL (manubri / multipower / barra) — no cedimento',en:'RDL (dumbbells / smith / barbell) — no failure',s:2,r:'10-8'},
+                {it:'Leg Extension',en:'Leg Extension',s:1,r:'15-12 RP'},
+                {it:'Curl Bicipiti',en:'Bicep Curl',s:1,r:'15-12 RP'},
+                {it:'Calf Raise',en:'Calf Raise',s:1,r:'12-10 RP'}]}]},
     // ── 30 MIN DONNA BASIC ────────────────────────────────────────────────
     quick_d_basic:{gender:'donna',
+        note_it:'🩷 A1+A2 · 🔴 B1+B2 = <b>Superserie</b> — esegui i due esercizi consecutivamente con 10-20s di pausa, poi riposa 60-90s prima del giro successivo.',
+        note_en:'🩷 A1+A2 · 🔴 B1+B2 = <b>Superset</b> — perform the two exercises back-to-back with 10-20s rest, then rest 60-90s before the next round.',
         days:[
             {id:'a',color:'var(--pink)',exercises:[
                 {it:'Squat / Macchina Squat / Leg Press',en:'Squat / Machine Squat / Leg Press',s:3,r:'10-8',rest:'1-2 min'},
-                {it:'A1 Pulley / Rematore Macchina',en:'A1 Pulldown / Machine Row',s:3,r:'15-10',rest:'1-2 min'},
-                {it:'A2 Press Panca 45° Macchina / Manubri',en:'A2 Incline Press 45° Machine/DB',s:3,r:'15-10',rest:'1-2 min'},
+                {it:'🩷 A1 · Pulley / Rematore Macchina',en:'🩷 A1 · Pulldown / Machine Row',s:3,r:'15-10',rest:'1-2 min'},
+                {it:'🩷 A2 · Press Panca 45° Macchina / Manubri',en:'🩷 A2 · Incline Press 45° Machine/DB',s:3,r:'15-10',rest:'60-90s'},
                 {it:'Iperestensioni 45° / RDL',en:'Hyperextension / RDL',s:3,r:'15-10',rest:'1-2 min'},
-                {it:'B1 Alzate Laterali',en:'B1 Lateral Raise',s:3,r:'15-10',rest:'1-2 min'},
-                {it:'B2 Addominali',en:'B2 Abs',s:3,r:'15-10',rest:'2 min'}]},
+                {it:'🔴 B1 · Alzate Laterali',en:'🔴 B1 · Lateral Raise',s:3,r:'15-10',rest:'1-2 min'},
+                {it:'🔴 B2 · Addominali',en:'🔴 B2 · Abs',s:3,r:'15-10',rest:'60-90s'}]},
             {id:'b',color:'var(--gold)',exercises:[
                 {it:'Hip Thrust',en:'Hip Thrust',s:3,r:'12-8',rest:'2-3 min'},
-                {it:'A1 Press Spalle Macchina / Manubri',en:'A1 Shoulder Press Machine/DB',s:3,r:'15-10',rest:'1-2 min'},
-                {it:'A2 Tirate al Mento Presa Supina',en:'A2 Upright Row Supine Grip',s:3,r:'15-10',rest:'2 min'},
+                {it:'🩷 A1 · Press Spalle Macchina / Manubri',en:'🩷 A1 · Shoulder Press Machine/DB',s:3,r:'15-10',rest:'1-2 min'},
+                {it:'🩷 A2 · Tirate al Mento Presa Supina',en:'🩷 A2 · Upright Row Supine Grip',s:3,r:'15-10',rest:'60-90s'},
                 {it:'Leg Press / Affondi / Affondi Statici',en:'Leg Press / Lunges / Static Lunges',s:3,r:'12-10',rest:'2-3 min'},
-                {it:'B1 Leg Curl',en:'B1 Leg Curl',s:3,r:'15-10',rest:'1-2 min'},
-                {it:'B2 Dip / Dip sulla Panca',en:'B2 Dips / Bench Dips',s:3,r:'15-10',rest:'2-3 min'}]}]},
+                {it:'🔴 B1 · Leg Curl',en:'🔴 B1 · Leg Curl',s:3,r:'15-10',rest:'1-2 min'},
+                {it:'🔴 B2 · Dip / Dip sulla Panca',en:'🔴 B2 · Dips / Bench Dips',s:3,r:'15-10',rest:'60-90s'}]}]},
     // ── 30 MIN DONNA AVANZATO ─────────────────────────────────────────────
     quick_d:{gender:'donna',
+        note_it:'🩷 A1+A2 · 🔴 B1+B2 · 🟢 C1+C2 = <b>Superserie</b> — esegui i due esercizi consecutivamente con 10-20s di pausa, poi riposa 60-90s prima del giro successivo.',
+        note_en:'🩷 A1+A2 · 🔴 B1+B2 · 🟢 C1+C2 = <b>Superset</b> — perform the two exercises back-to-back with 10-20s rest, then rest 60-90s before the next round.',
         days:[
             {id:'a',color:'var(--pink)',exercises:[
                 {it:'Leg Press / Macchina Squat',en:'Leg Press / Machine Squat',s:2,r:'8-6 / 12-10 ced',rest:'1-2 min'},
-                {it:'A1 Press Spalle Macchina',en:'A1 Machine Shoulder Press',s:2,r:'15-10 ced',rest:'1-2 min'},
-                {it:'A2 Tirate al Mento (stretta o larga)',en:'A2 Upright Row (close or wide)',s:2,r:'15-10 ced',rest:'2 min'},
-                {it:'B1 RDL',en:'B1 Romanian Deadlift',s:2,r:'12-8',rest:'2-3 min'},
-                {it:'B2 Adduttore',en:'B2 Adductor',s:1,r:'20-12 ced',rest:'1-2 min'},
-                {it:'C1 Alzate Laterali',en:'C1 Lateral Raise',s:2,r:'15-10 ced',rest:'1-2 min'},
-                {it:'C2 Curl Bicipiti',en:'C2 Bicep Curl',s:2,r:'15-10 ced',rest:'1-2 min'}]},
+                {it:'🩷 A1 · Press Spalle Macchina',en:'🩷 A1 · Machine Shoulder Press',s:2,r:'15-10 ced',rest:'1-2 min'},
+                {it:'🩷 A2 · Tirate al Mento (stretta o larga)',en:'🩷 A2 · Upright Row (close or wide)',s:2,r:'15-10 ced',rest:'60-90s'},
+                {it:'🔴 B1 · RDL',en:'🔴 B1 · Romanian Deadlift',s:2,r:'12-8',rest:'2-3 min'},
+                {it:'🔴 B2 · Adduttore',en:'🔴 B2 · Adductor',s:1,r:'20-12 ced',rest:'60-90s'},
+                {it:'🟢 C1 · Alzate Laterali',en:'🟢 C1 · Lateral Raise',s:2,r:'15-10 ced',rest:'1-2 min'},
+                {it:'🟢 C2 · Curl Bicipiti',en:'🟢 C2 · Bicep Curl',s:2,r:'15-10 ced',rest:'60-90s'}]},
             {id:'b',color:'var(--gold)',exercises:[
                 {it:'Hip Thrust',en:'Hip Thrust',s:2,r:'15-10 ced',rest:'2-3 min'},
-                {it:'A1 Pulley / Row Machine',en:'A1 Pulldown / Row Machine',s:2,r:'15-10 ced',rest:'2-3 min'},
-                {it:'A2 Press Inclinata 45°',en:'A2 Incline Press 45°',s:2,r:'15-10 ced',rest:'2-3 min'},
-                {it:'B1 Leg Extension',en:'B1 Leg Extension',s:2,r:'15-10 ced',rest:'2-3 min'},
-                {it:'B2 Leg Curl',en:'B2 Leg Curl',s:1,r:'15-10 ced',rest:'1-2 min'},
-                {it:'C1 Dip / Dip sulla Panca',en:'C1 Dips / Bench Dips',s:2,r:'15-10 ced',rest:'2-3 min'},
-                {it:'C2 Addominali',en:'C2 Abs',s:3,r:'20-15',rest:'2 min'}]}]},
+                {it:'🩷 A1 · Pulley / Row Machine',en:'🩷 A1 · Pulldown / Row Machine',s:2,r:'15-10 ced',rest:'2-3 min'},
+                {it:'🩷 A2 · Press Inclinata 45°',en:'🩷 A2 · Incline Press 45°',s:2,r:'15-10 ced',rest:'60-90s'},
+                {it:'🔴 B1 · Leg Extension',en:'🔴 B1 · Leg Extension',s:2,r:'15-10 ced',rest:'2-3 min'},
+                {it:'🔴 B2 · Leg Curl',en:'🔴 B2 · Leg Curl',s:1,r:'15-10 ced',rest:'60-90s'},
+                {it:'🟢 C1 · Dip / Dip sulla Panca',en:'🟢 C1 · Dips / Bench Dips',s:2,r:'15-10 ced',rest:'2-3 min'},
+                {it:'🟢 C2 · Addominali',en:'🟢 C2 · Abs',s:3,r:'20-15',rest:'60-90s'}]}]},
         // ── DC TRAINING 3-DAY — Upper(A) / Lower(B) — 3 rotazioni ─────────────
     dc_3day:{gender:'uomo',
         days:[
@@ -4146,30 +4389,30 @@ const WORKOUTS_BASE = {
     arthur_hit:{gender:'uomo',
         days:[
             {id:'aj_fb',color:'var(--gold)',exercises:[
-                {it:'Leg Press o Squat',en:'Leg Press or Squat',s:1,r:'12-20 (cedimento · TUL 45-90 sec)'},
-                {it:'Lat Machine o Trazioni',en:'Lat Pulldown or Chin-ups',s:1,r:'6-10 (cedimento · TUL 45-90 sec)'},
-                {it:'Dips alle Parallele',en:'Parallel Bar Dips',s:1,r:'6-10 (cedimento · TUL 45-90 sec)'},
-                {it:'Stacchi o Stacchi Gambe Tese',en:'Deadlift or SLDL',s:1,r:'10-15 (cedimento · TUL 45-90 sec)'},
-                {it:'Press Militare',en:'Overhead Press',s:1,r:'6-10 (cedimento · TUL 45-90 sec)'}]}]}
+                {it:'Leg Press o Squat',en:'Leg Press or Squat',s:1,r:'12-20 (failure · TUL 45-90 sec)'},
+                {it:'Lat Machine o Trazioni',en:'Lat Pulldown or Chin-ups',s:1,r:'6-10 (failure · TUL 45-90 sec)'},
+                {it:'Dips alle Parallele',en:'Parallel Bar Dips',s:1,r:'6-10 (failure · TUL 45-90 sec)'},
+                {it:'Stacchi o Stacchi Gambe Tese',en:'Deadlift or SLDL',s:1,r:'10-15 (failure · TUL 45-90 sec)'},
+                {it:'Press Militare',en:'Overhead Press',s:1,r:'6-10 (failure · TUL 45-90 sec)'}]}]}
 ,
     ken_hit:{gender:'uomo',
         days:[
             {id:'ken_fb',color:'var(--orange)',exercises:[
-                {it:'Squat Completo',en:'Full Barbell Squat',s:1,r:'15-20 (cedimento — respira tra le reps)'},
-                {it:'Pullover con Bilanciere o Manubrio',en:'Barbell or DB Pullover',s:1,r:'10 (cedimento)'},
-                {it:'Press Militare in Piedi',en:'Standing Barbell Press',s:1,r:'10 (cedimento)'},
-                {it:'Trazioni o Lat Machine',en:'Chin-ups or Lat Pulldown',s:1,r:'10 (cedimento)'},
-                {it:'Dips alle Parallele',en:'Parallel Bar Dips',s:1,r:'12 (cedimento)'},
-                {it:'Curl Bilanciere',en:'Barbell Curl',s:1,r:'10 (cedimento)'},
-                {it:'Alzate con Bilanciere (Shrug)',en:'Barbell Shrug',s:1,r:'15 (cedimento)'},
-                {it:'Stacchi a Gambe Tese',en:'Stiff-Legged Deadlift',s:1,r:'15 (cedimento)'}]}]},
+                {it:'Squat Completo',en:'Full Barbell Squat',s:1,r:'15-20 (failure — breathe between reps)'},
+                {it:'Pullover con Bilanciere o Manubrio',en:'Barbell or DB Pullover',s:1,r:'10 (failure)'},
+                {it:'Press Militare in Piedi',en:'Standing Barbell Press',s:1,r:'10 (failure)'},
+                {it:'Trazioni o Lat Machine',en:'Chin-ups or Lat Pulldown',s:1,r:'10 (failure)'},
+                {it:'Dips alle Parallele',en:'Parallel Bar Dips',s:1,r:'12 (failure)'},
+                {it:'Curl Bilanciere',en:'Barbell Curl',s:1,r:'10 (failure)'},
+                {it:'Alzate con Bilanciere (Shrug)',en:'Barbell Shrug',s:1,r:'15 (failure)'},
+                {it:'Stacchi a Gambe Tese',en:'Stiff-Legged Deadlift',s:1,r:'15 (failure)'}]}]},
     ken_bm:{gender:'uomo',
         days:[
             {id:'ken_bm_day',color:'var(--red)',exercises:[
-                {it:'Squat (barra sulle spalle fino al cedimento)',en:'Barbell Squat (bar stays on back)',s:1,r:'20-30 (niente riposo — respira in piedi)'},
-                {it:'Panca Piana o Dips',en:'Bench Press or Parallel Dips',s:1,r:'10-12 (cedimento)'},
-                {it:'Rematore Bilanciere in Piedi',en:'Bent-Over Barbell Row',s:1,r:'10-12 (cedimento)'},
-                {it:'Stacchi (Trap Bar o classici)',en:'Deadlift (Trap Bar or conventional)',s:1,r:'15 (cedimento)'}]}]}
+                {it:'Squat (barra sulle spalle fino al cedimento)',en:'Barbell Squat (bar stays on back)',s:1,r:'20-30 (no rest — breathe standing)'},
+                {it:'Panca Piana o Dips',en:'Bench Press or Parallel Dips',s:1,r:'10-12 (failure)'},
+                {it:'Rematore Bilanciere in Piedi',en:'Bent-Over Barbell Row',s:1,r:'10-12 (failure)'},
+                {it:'Stacchi (Trap Bar o classici)',en:'Deadlift (Trap Bar or conventional)',s:1,r:'15 (failure)'}]}]}
 ,
     // ── LYLE McDONALD GENERIC BULKING ROUTINE ─────────────────────────────
     lyle_gbr:{gender:'uomo',
@@ -4205,24 +4448,68 @@ const WORKOUTS_BASE = {
                 {it:'Crunch / Addominali',en:'Abs / Crunches',s:3,r:'15-20',rest:'1 min'}
             ]}
         ]},
+    // ── MADCOW 5×5 ────────────────────────────────────────────────────────
+    madcow_u:{gender:'uomo',
+        days:[
+            {id:'madcow_a',color:'var(--red)',exercises:[
+                {it:'A. Squat — 5 serie ascendenti × 5 reps (ramp fino al top set)',en:'A. Squat — 5 ascending sets × 5 reps (ramp to top set)',s:5,r:'5 (ramp → top set)',rest:'3-5 min'},
+                {it:'B. Panca Piana — 5 serie ascendenti × 5 reps',en:'B. Bench Press — 5 ascending sets × 5 reps',s:5,r:'5 (ramp → top set)',rest:'3-5 min'},
+                {it:'C. Rematore Bilanciere — 5 serie ascendenti × 5 reps',en:'C. Barbell Row — 5 ascending sets × 5 reps',s:5,r:'5 (ramp → top set)',rest:'3-5 min'},
+                {it:'D. Accessori (opzionale): Dip / Trazione / Curl / Addominali',en:'D. Accessories (optional): Dip / Chin-up / Curl / Abs',s:2,r:'8-12',rest:'2 min'}]},
+            {id:'madcow_b',color:'var(--blue)',exercises:[
+                {it:'A. Squat — 4 serie × 5 reps al 70-80% del top set lunedì',en:'A. Squat — 4 sets × 5 reps at 70-80% of Monday top set',s:4,r:'5 (light)',rest:'2-3 min'},
+                {it:'B. Press Militare / Press Inclinata — 4 serie ascendenti × 5 reps',en:'B. Overhead Press / Incline Press — 4 ascending sets × 5 reps',s:4,r:'5 (ramp → top set)',rest:'3-5 min'},
+                {it:'C. Stacco da Terra — 4 serie ascendenti × 5 reps (1 top set pesante)',en:'C. Deadlift — 4 ascending sets × 5 reps (1 heavy top set)',s:4,r:'5 (ramp → top set)',rest:'3-5 min'},
+                {it:'D. Accessori (opzionale): Trazioni / Curl / Addominali',en:'D. Accessories (optional): Chin-ups / Curl / Abs',s:2,r:'8-12',rest:'2 min'}]},
+            {id:'madcow_c',color:'var(--green)',exercises:[
+                {it:'A. Squat — 4 serie × 5 (ramp) + 1 × 3 (nuovo record) + 1 × 8 (back-off)',en:'A. Squat — 4 sets × 5 (ramp) + 1 × 3 (new PR) + 1 × 8 (back-off)',s:'4+1+1',r:'5 / 3 PR / 8 back-off',rest:'3-5 min'},
+                {it:'B. Panca Piana — 4 × 5 (ramp) + 1 × 3 (nuovo record) + 1 × 8 (back-off)',en:'B. Bench Press — 4 × 5 (ramp) + 1 × 3 (new PR) + 1 × 8 (back-off)',s:'4+1+1',r:'5 / 3 PR / 8 back-off',rest:'3-5 min'},
+                {it:'C. Rematore Bilanciere — 4 × 5 (ramp) + 1 × 3 (nuovo record) + 1 × 8 (back-off)',en:'C. Barbell Row — 4 × 5 (ramp) + 1 × 3 (new PR) + 1 × 8 (back-off)',s:'4+1+1',r:'5 / 3 PR / 8 back-off',rest:'3-5 min'},
+                {it:'D. Accessori (opzionale): Dip / Trazione / Curl / Addominali',en:'D. Accessories (optional): Dip / Chin-up / Curl / Abs',s:2,r:'8-12',rest:'2 min'}]}
+        ]},
+    // ── WESTSIDE FOR SKINNY BASTARDS — Joe DeFranco ───────────────────────
+    ws4sb_u:{gender:'uomo',
+        days:[
+            {id:'ws4sb_meu',color:'var(--red)',exercises:[
+                {it:'A. MAX EFFORT (3-5RM): Panca Piana / Floor Press / Board Press / Press Inclinata / Press Manubri',en:'A. MAX EFFORT (3-5RM): Bench Press / Floor Press / Board Press / Incline Press / DB Press',s:'3-5RM',r:'3-5 (max set)',rest:'3-5 min'},
+                {it:'B. Supplemental Press (3-4×6-10): Press Inclinata Manubri / Dip / Panca Stretta / Push-Up Appesantito',en:'B. Supplemental Press (3-4×6-10): Incline DB Press / Dip / CGBP / Weighted Push-Up',s:3,r:'6-10',rest:'2-3 min'},
+                {it:'C. Horizontal Row (4×10-15): Rematore BB / Rematore Manubrio / Chest-Supported Row / Seated Row',en:'C. Horizontal Row (4×10-15): BB Row / DB Row / Chest-Supported Row / Seated Row',s:4,r:'10-15',rest:'2 min'},
+                {it:'D. Spalle Post. / Upper Back (2-3×12-15): Face Pull / Alzate Posteriori / Band Pull-Apart / Shrug',en:'D. Rear Delt / Upper Back (2-3×12-15): Face Pull / Rear Delt Fly / Band Pull-Apart / Shrug',s:2,r:'12-15',rest:'1-2 min'},
+                {it:'E. Addominali Appesantiti (3-4×8-15): Ab Wheel / Crunch con Disco / Pallof Press / Dragon Flag',en:'E. Weighted Abs (3-4×8-15): Ab Wheel / Weighted Crunch / Pallof Press / Dragon Flag',s:3,r:'8-15',rest:'1-2 min'}]},
+            {id:'ws4sb_lo',color:'var(--blue)',exercises:[
+                {it:'A. MAX EFFORT (3-5RM): Stacco da Terra / Box Squat / Squat / Trap Bar DL / Stacco Sumo',en:'A. MAX EFFORT (3-5RM): Deadlift / Box Squat / Squat / Trap Bar DL / Sumo DL',s:'3-5RM',r:'3-5 (max set)',rest:'3-5 min'},
+                {it:'B. Unilateral (3-4×8-15): Bulgarian Split Squat / Affondi / Step Up / Leg Press Monolat.',en:'B. Unilateral (3-4×8-15): Bulgarian Split Squat / Lunges / Step Up / Single Leg Press',s:3,r:'8-15',rest:'2-3 min'},
+                {it:'C. Hip Extension (3-4×8-15): Iperestensioni / RDL / Good Morning / Hip Thrust / Pull-Through',en:'C. Hip Extension (3-4×8-15): Hyperextension / RDL / Good Morning / Hip Thrust / Pull-Through',s:3,r:'8-15',rest:'2 min'},
+                {it:'D. Addominali — Circuito (nessuna pausa tra gli esercizi)',en:'D. Ab Circuit (no rest between exercises)',s:3,r:'circuit',rest:'1 min between circuits'}]},
+            {id:'ws4sb_reu',color:'var(--green)',exercises:[
+                {it:'A. RIPETIZIONI MAX (3 serie): Panca Piana / Dip / Press Manubri / Push-Up — 3 serie al massimo (non cedimento su set 1-2)',en:'A. MAX REPS (3 sets): Bench Press / Dip / DB Press / Push-Up — 3 sets max reps (leave 1-2 reps in tank on sets 1-2)',s:3,r:'max reps',rest:'60-90s'},
+                {it:'B. Horizontal Row (4×10-15): Rematore BB / Rematore Manubrio / Seated Row / T-Bar Row',en:'B. Horizontal Row (4×10-15): BB Row / DB Row / Seated Row / T-Bar Row',s:4,r:'10-15',rest:'2 min'},
+                {it:'C. Spalle Post. / Upper Back (2-3×12-15): Face Pull / Alzate Posteriori / Band Pull-Apart',en:'C. Rear Delt / Upper Back (2-3×12-15): Face Pull / Rear Delt Fly / Band Pull-Apart',s:2,r:'12-15',rest:'1-2 min'},
+                {it:'D. Alzate Laterali / Shrug (3×10-15)',en:'D. Lateral Raise / Shrug (3×10-15)',s:3,r:'10-15',rest:'1-2 min'},
+                {it:'E. Curl Bicipiti (3×8-10): Curl BB / Curl Manubri / Curl Martello / Curl Scott',en:'E. Bicep Curl (3×8-10): BB Curl / DB Curl / Hammer Curl / Preacher Curl',s:3,r:'8-10',rest:'1-2 min'}]}
+        ]},
     // ── HEAVY DUTY LPP-4 by Luka ──────────────────────────────────────────
     lpp4_u:{gender:'uomo',
         days:[
             {id:'lpp4_a1',color:'var(--green)',exercises:[
-                {it:'Leg Press 45° o 90°',en:'Leg Press 45 or 90 degree',s:'1+1',r:'8-6 / 10-8',rest:'3 min'},
+                {it:'Leg Press 45° o 90°',en:'Leg Press 45 or 90 degree',s:1,r:'8-6',rest:'3 min'},
+                {it:'',en:'',s:1,r:'10-8',rest:'3 min'},
                 {it:'Hack Squat',en:'Hack Squat',s:1,r:'12-10',rest:'2-3 min'},
                 {it:'Leg Curl',en:'Leg Curl',s:2,r:'12-10',rest:'2 min'},
                 {it:'Adduttore',en:'Adductor',s:2,r:'15-12',rest:'1-2 min'},
                 {it:'Calf Raise in Piedi',en:'Standing Calf Raise',s:2,r:'15-12',rest:'1-2 min'}]},
             {id:'lpp4_b1',color:'var(--gold)',exercises:[
-                {it:'Panca Inclinata Smith',en:'Incline Smith Press',s:'1+1',r:'8-6 / 12-10',rest:'3 min'},
-                {it:'Press Spalle Smith',en:'Shoulder Smith Press',s:'1+1',r:'8-6 / 12-10',rest:'3 min'},
+                {it:'Panca Inclinata Smith',en:'Incline Smith Press',s:1,r:'8-6',rest:'3 min'},
+                {it:'',en:'',s:1,r:'12-10',rest:'3 min'},
+                {it:'Press Spalle Smith',en:'Shoulder Smith Press',s:1,r:'8-6',rest:'3 min'},
+                {it:'',en:'',s:1,r:'12-10',rest:'3 min'},
                 {it:'CGBP su Smith (Presa Stretta)',en:'Close Grip Bench Press on Smith',s:1,r:'12-10',rest:'2 min'},
                 {it:'Pec Deck / Crossover',en:'Pec Deck / Crossover',s:1,r:'12-10',rest:'1-2 min'},
                 {it:'Alzate Laterali',en:'Lateral Raises',s:2,r:'12-10',rest:'1-2 min'},
                 {it:'Pushdown Tricipiti',en:'Triceps Pushdown',s:1,r:'15-12',rest:'1-2 min'}]},
             {id:'lpp4_c1',color:'var(--blue)',exercises:[
-                {it:'Lat Machine Presa Supina / Neutra',en:'Suppinated/Neutral Grip Pulldown',s:'1+1',r:'8-6 / 12-10',rest:'3 min'},
+                {it:'Lat Machine Presa Supina / Neutra',en:'Suppinated/Neutral Grip Pulldown',s:1,r:'8-6',rest:'3 min'},
+                {it:'',en:'',s:1,r:'12-10',rest:'3 min'},
                 {it:'Pulley / Rematore Manubrio',en:'Pulley / DB Row',s:1,r:'10-8',rest:'2 min'},
                 {it:'Rematore Schiena Alta / Macchina',en:'Upper Back Row / Machine Row',s:1,r:'10-8',rest:'2 min'},
                 {it:'Spalle Posteriori',en:'Rear Delt / Back Shoulders',s:2,r:'15-12',rest:'1-2 min'},
@@ -4231,7 +4518,8 @@ const WORKOUTS_BASE = {
             {id:'lpp4_a2',color:'var(--green)',exercises:[
                 {it:'Leg Curl Monolaterale',en:'One Leg Curl',s:2,r:'12-10',rest:'2 min'},
                 {it:'Leg Extension Monolaterale',en:'One Leg Extension',s:2,r:'12-10',rest:'2 min'},
-                {it:'RDL (senza cedimento)',en:'RDL (no failure)',s:'1+1',r:'8-6 / 12-10',rest:'3 min'},
+                {it:'RDL (senza cedimento)',en:'RDL (no failure)',s:1,r:'8-6',rest:'3 min'},
+                {it:'',en:'',s:1,r:'12-10',rest:'3 min'},
                 {it:'Hip Thrust',en:'Hip Thrust',s:1,r:'10-8',rest:'2-3 min'},
                 {it:'Calf Raise Seduto',en:'Seated Calf Raise',s:2,r:'15-12',rest:'1-2 min'}]},
             {id:'lpp4_b2',color:'var(--gold)',exercises:[
@@ -4243,7 +4531,8 @@ const WORKOUTS_BASE = {
                 {it:'Estensioni Sopra la Testa',en:'Overhead Triceps Extension',s:2,r:'12-10',rest:'1-2 min'}]},
             {id:'lpp4_c2',color:'var(--blue)',exercises:[
                 {it:'Lat Machine / High Row',en:'Lat Pulldowns / High Row',s:2,r:'10-8',rest:'2-3 min'},
-                {it:'T-Bar Row / Rematore Bilanciere',en:'T-Bar Row / Bent Row',s:'1+1',r:'8-6 / 10-8',rest:'3 min'},
+                {it:'T-Bar Row / Rematore Bilanciere',en:'T-Bar Row / Bent Row',s:1,r:'8-6',rest:'3 min'},
+                {it:'',en:'',s:1,r:'10-8',rest:'3 min'},
                 {it:'Spalle Posteriori',en:'Rear Delt / Back Shoulders',s:2,r:'15-12',rest:'1-2 min'},
                 {it:'Curl Bilanciere / Manubri',en:'DB / BB Biceps Curl',s:2,r:'12-10',rest:'1-2 min'},
                 {it:'Curl su Panca Scott',en:'Scott Curl',s:1,r:'12-10',rest:'1-2 min'}]}
@@ -4290,7 +4579,9 @@ const WID_MAP = {'lpp':'lpp','ini-u':'ini_u','lyle-gbr':'lyle_gbr','ini-d':'ini_
   'corto-d-adv':'quick_d','corto-d-bas':'quick_d_basic',
   'dc-3day':'dc_3day','dc-4day':'dc_4day','mentzer-3day':'mentzer_3day','mentzer-cons':'mentzer_cons','dorian-bg':'dorian_bg','arthur-hit':'arthur_hit','ken-hit':'ken_hit','ken-bm':'ken_bm','phat':'phat','phul':'phul','bret':'bret','ashley':'ashley',
   'ul-pb-u':'ul_pb_u',
-  'lpp4-u':'lpp4_u'
+  'lpp4-u':'lpp4_u',
+  'ws4sb-u':'ws4sb_u',
+  'madcow-u':'madcow_u'
 };
 
 // Map old IDs
@@ -4300,8 +4591,8 @@ function getWorkoutLocalized(wId){
     const baseId = WID_MAP[wId] || wId;
     const base = WORKOUTS_BASE[baseId];
     if(!base) return null;
-    const labelMap = {lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',lpp4_u:'lpp4_u_label'};
-    const pillsMap = {lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',lpp4_u:'lpp4_u_pills'};
+    const labelMap = {lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label'};
+    const pillsMap = {lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',lpp4_u:'lpp4_u_pills',ws4sb_u:'ws4sb_u_pills',madcow_u:'madcow_u_pills'};
     const days = base.days.map(day=>{
         let badge, name;
         // DC 3-day: a=Upper A1, b=Lower B1, g1=Upper A2, g2=Lower B2, g3=Upper A3, full=Lower B3
@@ -4382,6 +4673,12 @@ function getWorkoutLocalized(wId){
         }else if(day.id==='lpp4_a2'){badge='LEGS A2';name=lang==='it'?'Gambe · Femorali · Glutei':'Legs · Hamstrings · Glutes';
         }else if(day.id==='lpp4_b2'){badge='PUSH B2';name=lang==='it'?'Petto · Spalle · Tricipiti (Vol.)':'Chest · Shoulders · Triceps (Vol.)';
         }else if(day.id==='lpp4_c2'){badge='PULL C2';name=lang==='it'?'Schiena · Bicipiti (Vol.)':'Back · Biceps (Vol.)';
+        }else if(day.id==='ws4sb_meu'){badge='ME UPPER';name=lang==='it'?'Petto · Schiena · Spalle · Tricipiti — Forza Max':'Chest · Back · Shoulders · Triceps — Max Effort';
+        }else if(day.id==='ws4sb_lo'){badge='LOWER';name=lang==='it'?'Gambe · Glutei · Femorali — Forza Max':'Legs · Glutes · Hamstrings — Max Effort';
+        }else if(day.id==='ws4sb_reu'){badge='REP UPPER';name=lang==='it'?'Petto · Schiena · Spalle · Bicipiti — Volume':'Chest · Back · Shoulders · Biceps — Volume';
+        }else if(day.id==='madcow_a'){badge='LUNEDÌ';name=lang==='it'?'Squat · Panca · Rematore — Volume (5×5)':'Squat · Bench · Row — Volume (5×5)';
+        }else if(day.id==='madcow_b'){badge='MERCOLEDÌ';name=lang==='it'?'Squat Leggero · OHP · Stacco — Recupero':'Light Squat · OHP · Deadlift — Recovery';
+        }else if(day.id==='madcow_c'){badge='VENERDÌ';name=lang==='it'?'Squat · Panca · Rematore — Record (3RM + 8)':'Squat · Bench · Row — PR Day (3RM + 8)';
         }else{badge=t('d_full_badge');name=t('d_full_name');}
         const exercises = day.exercises.map(ex=>({...ex, name: lang==='en' ? ex.en : ex.it}));
         return {...day, badge, name, exercises};
@@ -4390,6 +4687,7 @@ function getWorkoutLocalized(wId){
         label: t(labelMap[baseId]),
         pills: (T[lang][pillsMap[baseId]] || T.it[pillsMap[baseId]]) || [],
         gender: base.gender,
+        note: lang==='en' ? (base.note_en||null) : (base.note_it||null),
         days
     };
 }
@@ -4487,6 +4785,8 @@ function openWorkout(wId,backView){
     const levelCol=levelTxt.includes('Principi')||levelTxt.includes('Begin')?'var(--green)':levelTxt.includes('Inter')?'var(--blue)':'var(--red)';
     const levelHtml=levelTxt?`<div class="pill">${levelTxt}</div>`:'';
     document.getElementById('workout-pills').innerHTML=levelHtml+(Array.isArray(w.pills)?w.pills:[]).map(p=>Array.isArray(p)?`<div class="pill"><strong>${p[0]}</strong>${p[1]?' '+p[1]:''}</div>`:`<div class="pill">${p}</div>`).join('');
+    const noteEl=document.getElementById('workout-note');
+    if(noteEl)noteEl.innerHTML=w.note?`<div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:10px 14px;margin:10px 0;font-size:.78rem;line-height:1.6;color:rgba(255,255,255,.7)">${w.note}</div>`:'';
     document.getElementById('workout-body').innerHTML=w.days.map(day=>renderDay(wId,day)).join('')+'<div style="height:20px"></div>';
     document.getElementById('bottomNav').style.display='flex';
     setNavActive('scheda');
@@ -4553,7 +4853,7 @@ function renderEx(wId,dId,eIdx,ex){
             </div>
         </div>`;
     }).join('')+'</div>';
-    const _advancedWIds = ['dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','lpp4-u'];
+    const _advancedWIds = ['dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','lpp4-u','quick-u','quick-u-basic','corto-u-adv','corto-u-bas','quick-d','quick-d-basic','corto-d-adv','corto-d-bas','ws4sb-u','madcow-u'];
     const _noImg = _advancedWIds.includes(wId);
     const imgKey = _noImg ? null : (EX_NAME_MAP[ex.it] || EX_NAME_MAP[ex.en] || null);
     const imgSrc = imgKey ? EX_IMAGES[imgKey] : null;
