@@ -370,7 +370,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
   <!-- LIVELLI UOMO -->
   <div id="uomini-level" class="view">
     <button onclick="goBack('home-view')" class="back-btn">← <span data-t="back_home">Home</span></button>
-    <div class="view-title"><span data-t="level_title">Livello</span><br><span class="c-red" data-t="level_men">Uomo</span></div>
+    <div class="view-title"><span data-t="level_title">Biblioteca Allenamenti</span><br><span class="c-red" data-t="level_men">Uomo</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('ini-u','uomini-level')"><div class="prog-item-name">🟢 <span data-t="level_beginner">Iniziale</span></div><div class="prog-item-sub" data-t="see_programs">Vedi programmi</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="showView('uomini-inter-menu')"><div class="prog-item-name">🔵 <span data-t="level_intermediate">Intermedio</span></div><div class="prog-item-sub" data-t="see_programs">Vedi programmi</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="showView('uomini-heavy-menu')"><div class="prog-item-name">🔴 <span data-t="level_advanced">Avanzato</span></div><div class="prog-item-sub" data-t="see_programs">Vedi programmi</div></button><span class="prog-arr">›</span></div>
@@ -402,6 +402,14 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     <div class="view-title"><span class="c-red" data-t="advanced_title">Avanzato</span></div>
     <div style="color:rgba(255,255,255,.5);font-size:.82rem;line-height:1.5;margin-bottom:16px;padding:0 2px" data-t="advanced_desc">Programmi per atleti esperti con almeno 3-4 anni di allenamento. Alta intensità, tecniche avanzate e progressione continua.</div>
 
+    <div class="prog-item" style="border:1.5px solid rgba(255,59,48,.35);background:rgba(255,59,48,.07)">
+      <button class="prog-item-btn" onclick="showView('bb-methods-view')">
+        <div class="prog-item-name">🏆 BB Methods &amp; Splits</div>
+        <div class="prog-item-sub">Mountain Dog · John Meadows · Metodi ipertrofia avanzati</div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+
     <div class="prog-item" style="border:1.5px solid rgba(255,149,0,.35);background:rgba(255,149,0,.07)">
       <button class="prog-item-btn" onclick="showView('powerbuilding-concepts')">
         <div class="prog-item-name">🏗️ Powerbuilding Concepts</div>
@@ -417,6 +425,59 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       </button>
       <span class="prog-arr">›</span>
     </div>
+  </div>
+
+  <!-- BB METHODS & SPLITS VIEW -->
+  <div id="bb-methods-view" class="view">
+    <button onclick="goBack('uomini-heavy-menu')" class="back-btn">← <span data-t="advanced_title">Avanzato</span></button>
+    <div class="view-title" style="font-size:1.8rem">🏆 BB Methods<br><span style="font-size:1.2rem;color:rgba(255,255,255,.5)">&amp; Splits</span></div>
+    <div class="prog-item" style="border:1.5px solid rgba(255,59,48,.35);background:rgba(255,59,48,.07)">
+      <button class="prog-item-btn" onclick="showView('meadows-info-view')">
+        <div class="prog-item-name">🐕 Mountain Dog PPL — <span style="font-size:.8rem;opacity:.7">John Meadows</span></div>
+        <div class="prog-item-sub">Push · Pull · Legs · 4 Fasi · Attivazione → Esplosiva → Pump → Stretch</div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+  </div>
+
+  <!-- MOUNTAIN DOG INFO VIEW -->
+  <div id="meadows-info-view" class="view">
+    <button onclick="goBack('bb-methods-view')" class="back-btn">← BB Methods &amp; Splits</button>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#7a0000,var(--red))" onclick="openWorkout('meadows-ppl','meadows-info-view')">
+      🐕 <span data-t="meadows_start_btn">Inizia Mountain Dog PPL</span>
+    </button>
+    <img src="https://sport-fit.org/wp-content/uploads/2026/03/4XVYS2R.jpg"
+         alt="John Meadows"
+         onerror="this.style.display='none'"
+         style="width:100%;max-height:220px;object-fit:cover;object-position:center top;border-radius:14px;margin-bottom:14px;display:block;background:#1c1c1e"/>
+    <div class="view-title" style="font-size:1.7rem">🐕 Mountain Dog PPL</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:4px"><b style="color:#fff">John Meadows — Mountain Dog Training</b></div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px"><span data-t="meadows_days">Push · Pull · Legs · 3-6 giorni / settimana</span></div>
+    <div class="disclaimer red"><div class="disclaimer-icon">⚠️</div><div class="disclaimer-text"><b data-t="meadows_level">Intermedio / Avanzato</b> — <span data-t="meadows_ideal">Ideale per chi vuole massimizzare l'ipertrofia con un approccio scientifico e strutturato.</span></div></div>
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title red">📌 <span data-t="meadows_phi_title">Le 4 Fasi — Ogni Giorno</span></div>
+      <div class="ai-bullet">🔵 <b data-t="meadows_p1_lbl">Attivazione:</b> <span data-t="meadows_p1">2 serie leggere da 12-15 reps — connessione mentale al muscolo, nessun cedimento</span></div>
+      <div class="ai-bullet">🔴 <b data-t="meadows_p2_lbl">Esplosiva:</b> <span data-t="meadows_p2">2-4 serie pesanti da 6-10 reps — lavora esplosivo, lascia 1 rep nel serbatoio</span></div>
+      <div class="ai-bullet">🟡 <b data-t="meadows_p3_lbl">Pump Supramax:</b> <span data-t="meadows_p3">1-2 serie al cedimento con drop set — isolamento, massimo afflusso di sangue</span></div>
+      <div class="ai-bullet">🟢 <b data-t="meadows_p4_lbl">Stretch Caricato:</b> <span data-t="meadows_p4">1 serie da 30-60 secondi in posizione di massimo allungamento sotto carico</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title gold">📅 <span data-t="meadows_sch_title">Schema PPL</span></div>
+      <div class="ai-stat-row" style="padding:6px 0"><span class="ai-stat-label" style="min-width:70px">🔴 PUSH</span><span class="ai-stat-val" data-t="meadows_d1">Petto · Spalle · Tricipiti</span></div>
+      <div class="ai-stat-row" style="padding:6px 0"><span class="ai-stat-label" style="min-width:70px">🔵 PULL</span><span class="ai-stat-val" data-t="meadows_d2">Schiena · Bicipiti · Deltoidi Posteriori</span></div>
+      <div class="ai-stat-row" style="padding:6px 0"><span class="ai-stat-label" style="min-width:70px">🟢 LEGS</span><span class="ai-stat-val" data-t="meadows_d3">Gambe · Femorali · Polpacci</span></div>
+      <div style="margin-top:8px;font-size:.72rem;color:rgba(255,255,255,.45)" data-t="meadows_freq_note">Rotazione continua: ogni giorno il prossimo in sequenza. 3 giorni = 1 ciclo, 6 giorni = 2 cicli.</div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title blue">⚡ <span data-t="meadows_rules_title">Regole chiave</span></div>
+      <div class="ai-bullet"><b data-t="meadows_r1_lbl">Fase Esplosiva:</b> <span data-t="meadows_r1">bilanciere → 6-10 reps; manubri → 8-10 reps. Mai sotto 6 reps con manubri</span></div>
+      <div class="ai-bullet"><b data-t="meadows_r2_lbl">Meadows Row:</b> <span data-t="meadows_r2">bilanciere landmine — presa pronata sul lato spesso, gomito alto, contrai la schiena</span></div>
+      <div class="ai-bullet"><b data-t="meadows_r3_lbl">Stretch caricato:</b> <span data-t="meadows_r3">posizione di massimo allungamento sotto carico leggero — 30-60s. Potente stimolo per la crescita</span></div>
+      <div class="ai-bullet"><b data-t="meadows_r4_lbl">Drop set Pump:</b> <span data-t="meadows_r4">vai al cedimento, scala il peso del 20-30%, riprendi fino al cedimento = 1 drop set</span></div>
+    </div>
+    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#7a0000,var(--red))" onclick="openWorkout('meadows-ppl','meadows-info-view')">
+      🐕 <span data-t="meadows_start_btn">Inizia Mountain Dog PPL</span>
+    </button>
   </div>
 
   <!-- POWERBUILDING CONCEPTS VIEW -->
@@ -787,12 +848,15 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       <div style="margin-top:6px;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:900;color:#fff;text-transform:uppercase">Dr. Ken Leistner</div>
       <div style="font-size:.7rem;color:rgba(255,255,255,.45);margin-top:2px"><span data-t="ken_founder">Iron Island Gym &#8212; The Steel Tip &#8212; 1948-2019</span></div>
     </div>
-    <div style="display:flex;gap:8px;margin-bottom:14px">
+    <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
       <button class="ai-send-btn" style="flex:1;background:linear-gradient(135deg,#5a2d00,rgba(255,149,0,.9))" onclick="openWorkout('ken_hit','ken-info-view')">
         <span data-t="ken_start_btn">&#128165; Steel Tip HIT</span>
       </button>
       <button class="ai-send-btn" style="flex:1;background:linear-gradient(135deg,#5a0000,rgba(255,45,45,.9))" onclick="openWorkout('ken_bm','ken-info-view')">
         <span data-t="ken_bm_btn">&#128293; Brutal Minimalism</span>
+      </button>
+      <button class="ai-send-btn" style="flex:1;min-width:100%;background:linear-gradient(135deg,#003a5a,rgba(10,132,255,.9))" onclick="openWorkout('ken-pp','ken-info-view')">
+        <span data-t="ken_pp_btn">🔄 Push/Pull Split</span>
       </button>
     </div>
     <div class="view-title" style="font-size:1.5rem">&#128165; Steel Tip HIT</div>
@@ -892,7 +956,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
   <!-- LIVELLI DONNA -->
   <div id="donne-level" class="view">
     <button onclick="goBack('home-view')" class="back-btn">← <span data-t="back_home">Home</span></button>
-    <div class="view-title"><span data-t="level_title">Livello</span><br><span class="c-pink" data-t="level_women">Donna</span></div>
+    <div class="view-title"><span data-t="level_title">Biblioteca Allenamenti</span><br><span class="c-pink" data-t="level_women">Donna</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('ini-d','donne-level')"><div class="prog-item-name">🟢 <span data-t="level_beginner">Iniziale</span></div><div class="prog-item-sub" data-t="see_programs">Vedi programmi</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="showView('donne-inter-menu')"><div class="prog-item-name">🔵 <span data-t="level_intermediate">Intermedio</span></div><div class="prog-item-sub" data-t="see_programs">Vedi programmi</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item" style="border:1.5px solid rgba(255,59,48,.35);background:rgba(255,59,48,.07)"><button class="prog-item-btn" onclick="showView('donne-avanzato-menu')"><div class="prog-item-name">🔴 <span data-t="level_advanced">Avanzato</span></div><div class="prog-item-sub" data-t="see_programs">Vedi programmi</div></button><span class="prog-arr">›</span></div>
@@ -2156,7 +2220,7 @@ const T = {
     home_title1:'Inizia il tuo', home_title2:'Percorso Fitness',
     btn_men:'Uomini', btn_women:'Donne',
     btn_nutrition:'Nutrizione & Macros', btn_favorites:'Programmi Preferiti',
-    level_title:'Livello', level_men:'Uomo', level_women:'Donna',
+    level_title:'Biblioteca Allenamenti', level_men:'Uomo', level_women:'Donna',
     level_beginner:'Iniziale', level_intermediate:'Intermedio', level_advanced:'Avanzato',
     per_week:'settimana', see_programs:'Vedi programmi', coming_soon:'In arrivo...',
     programs_title:'Programmi', days:'giorni', weeks:'sett.',
@@ -2657,6 +2721,28 @@ const T = {
     lpp30_u_label:'30 min Legs Push Pull',
     lpp30_u_pills:[['3 giorni','rotazione'],['30-40 min','/ sessione'],['RP','metodo']],
     level_lpp30_u:'AVANZATO',
+    meadows_ppl_label:'Mountain Dog PPL — John Meadows',
+    meadows_ppl_pills:[['3-6×','/ sett.'],['60-75 min','/ sessione'],['4 Fasi','metodo']],
+    level_meadows_ppl:'AVANZATO',
+    meadows_start_btn:'Inizia Mountain Dog PPL',
+    meadows_days:'Push · Pull · Legs · 3-6 giorni / settimana',
+    meadows_level:'Intermedio / Avanzato',
+    meadows_ideal:'Ideale per chi vuole massimizzare l\'ipertrofia con un approccio scientifico e strutturato.',
+    meadows_phi_title:'Le 4 Fasi — Ogni Giorno',
+    meadows_p1_lbl:'Attivazione:',meadows_p2_lbl:'Esplosiva:',meadows_p3_lbl:'Pump Supramax:',meadows_p4_lbl:'Stretch Caricato:',
+    meadows_p1:'2 serie leggere da 12-15 reps — connessione mentale al muscolo, nessun cedimento',
+    meadows_p2:'2-4 serie pesanti da 6-10 reps — lavora esplosivo, lascia 1 rep nel serbatoio',
+    meadows_p3:'1-2 serie al cedimento con drop set — isolamento, massimo afflusso di sangue',
+    meadows_p4:'1 serie da 30-60 secondi in posizione di massimo allungamento sotto carico',
+    meadows_sch_title:'Schema PPL',
+    meadows_d1:'Petto · Spalle · Tricipiti',meadows_d2:'Schiena · Bicipiti · Deltoidi Posteriori',meadows_d3:'Gambe · Femorali · Polpacci',
+    meadows_freq_note:'Rotazione continua: ogni giorno il prossimo in sequenza. 3 giorni = 1 ciclo, 6 giorni = 2 cicli.',
+    meadows_rules_title:'Regole chiave',
+    meadows_r1_lbl:'Fase Esplosiva:',meadows_r2_lbl:'Meadows Row:',meadows_r3_lbl:'Stretch caricato:',meadows_r4_lbl:'Drop set Pump:',
+    meadows_r1:'bilanciere → 6-10 reps; manubri → 8-10 reps. Mai sotto 6 reps con manubri',
+    meadows_r2:'bilanciere landmine — presa pronata sul lato spesso, gomito alto, contrai la schiena',
+    meadows_r3:'posizione di massimo allungamento sotto carico leggero — 30-60s. Potente stimolo per la crescita',
+    meadows_r4:'vai al cedimento, scala il peso del 20-30%, riprendi fino al cedimento = 1 drop set',
     madcow_u_label:'Madcow 5×5',
     madcow_u_pills:[['3×','/ sett.'],['60-75 min','/ sessione'],['8-12','settimane']],
     level_madcow_u:'INTERMEDIO / AVANZATO',
@@ -2727,8 +2813,11 @@ const T = {
     ken_sq3:'Dr. Ken a 53 anni e 72 kg: Squat 185 kg x 23 reps.',
     ken_hit_label:'Dr. Ken Leistner - Steel Tip HIT',
     ken_bm_label:'Dr. Ken Leistner - Brutal Minimalism',
+    ken_pp_label:'Dr. Ken Leistner - Push/Pull Split',
     ken_hit_pills:[['2 giorni','/ sett.'],['Full Body',''],['Squat','20 reps']],
     ken_bm_pills:[['Full Body',''],['1 serie / vaja',''],['Cedimento','']],
+    ken_pp_pills:[['3×','/ sett.'],['Push / Pull','A/B'],['1 serie','cedimento']],
+    level_ken_pp:'AVANZATO',
     arthur_btn:'Arthur Jones - Consolidated Routine HIT',
     arthur_sub:'Ideal Workout Avanzato - 5 vaje - 1 serie al cedimento assoluto',
     arthur_sub2:'1-2 volte / settimana - 5 vaje - cedimento assoluto',
@@ -2765,6 +2854,7 @@ const T = {
     arthur_hit_label:'Arthur Jones - Consolidated Routine HIT',
     arthur_hit_pills:[['1-2x','/ sett.'],['5 vaje',''],['Tempo','2-1-4']],
     ken_bm_btn:'Brutal Minimalism',
+    ken_pp_btn:'Push/Pull Split',
     ken_bm_title:'Brutal Minimalism - Per Atleti NFL',
     ken_bm_desc:'Dr. Ken prescriveva questo programma agli atleti con poco tempo ma bisogno di forza massima. 4 vaje, 1 serie ciascuna al cedimento assoluto.',
     ken_bm_ex1:'Squat - 1x20-30 reps (barra NON lasciata - respira in piedi)',
@@ -3118,7 +3208,7 @@ en:{
     home_title1:'Start your', home_title2:'Fitness Journey',
     btn_men:'Men', btn_women:'Women',
     btn_nutrition:'Nutrition & Macros', btn_favorites:'Favorite Programs',
-    level_title:'Level', level_men:'Men', level_women:'Women',
+    level_title:'Training Library', level_men:'Men', level_women:'Women',
     level_beginner:'Beginner', level_intermediate:'Intermediate', level_advanced:'Advanced',
     per_week:'week', see_programs:'View programs', coming_soon:'Coming soon...',
     programs_title:'Programs', days:'days', weeks:'wks.',
@@ -3599,6 +3689,28 @@ en:{
     lpp30_u_label:'30 min Legs Push Pull',
     lpp30_u_pills:[['3 days','rotation'],['30-40 min','/ session'],['RP','method']],
     level_lpp30_u:'ADVANCED',
+    meadows_ppl_label:'Mountain Dog PPL — John Meadows',
+    meadows_ppl_pills:[['3-6×','/ week'],['60-75 min','/ session'],['4 Phases','method']],
+    level_meadows_ppl:'ADVANCED',
+    meadows_start_btn:'Start Mountain Dog PPL',
+    meadows_days:'Push · Pull · Legs · 3-6 days / week',
+    meadows_level:'Intermediate / Advanced',
+    meadows_ideal:'Ideal for those who want to maximize hypertrophy with a scientific and structured approach.',
+    meadows_phi_title:'The 4 Phases — Every Session',
+    meadows_p1_lbl:'Activation:',meadows_p2_lbl:'Explosive:',meadows_p3_lbl:'Supramax Pump:',meadows_p4_lbl:'Loaded Stretch:',
+    meadows_p1:'2 light sets of 12-15 reps — mind-muscle connection, no failure',
+    meadows_p2:'2-4 heavy sets of 6-10 reps — explosive concentric, leave 1 rep in tank',
+    meadows_p3:'1-2 sets to failure with drop set — isolation, maximum blood flow',
+    meadows_p4:'1 set of 30-60 seconds held at maximum stretch under load',
+    meadows_sch_title:'PPL Schedule',
+    meadows_d1:'Chest · Shoulders · Triceps',meadows_d2:'Back · Biceps · Rear Delts',meadows_d3:'Legs · Hamstrings · Calves',
+    meadows_freq_note:'Continuous rotation: next workout each day. 3 days = 1 cycle, 6 days = 2 cycles.',
+    meadows_rules_title:'Key Rules',
+    meadows_r1_lbl:'Explosive Phase:',meadows_r2_lbl:'Meadows Row:',meadows_r3_lbl:'Loaded Stretch:',meadows_r4_lbl:'Drop Set Pump:',
+    meadows_r1:'barbell → 6-10 reps; dumbbells → 8-10 reps. Never below 6 reps with dumbbells',
+    meadows_r2:'landmine barbell — pronated grip on thick sleeve, drive elbow high, squeeze the back',
+    meadows_r3:'maximum stretch position under light load — 30-60s. Powerful growth stimulus',
+    meadows_r4:'go to failure, drop weight 20-30%, push again to failure = 1 drop set',
     madcow_u_label:'Madcow 5×5',
     madcow_u_pills:[['3×','/ week'],['60-75 min','/ session'],['8-12','weeks']],
     level_madcow_u:'INTERMEDIATE / ADVANCED',
@@ -3647,8 +3759,12 @@ en:{
     ws4sb_r4:'beat your record every week — if you don\'t improve, change a variable',
     ken_hit_label:'Dr. Ken Leistner - Steel Tip HIT',
     ken_bm_label:'Dr. Ken Leistner - Brutal Minimalism',
+    ken_pp_label:'Dr. Ken Leistner - Push/Pull Split',
     ken_hit_pills:[['2 days','/ week'],['Full Body',''],['Squat','20 reps']],
     ken_bm_pills:[['Full Body',''],['1 set / ex',''],['To failure','']],
+    ken_pp_pills:[['3×','/ week'],['Push / Pull','A/B'],['1 set','failure']],
+    level_ken_pp:'ADVANCED',
+    ken_pp_btn:'Push/Pull Split',
     arthur_hit_label:'Arthur Jones - Consolidated Routine HIT',
     arthur_hit_pills:[['1-2x','/ week'],['5 exercises',''],['Tempo','2-1-4']],
 
@@ -4436,6 +4552,24 @@ const WORKOUTS_BASE = {
                 {it:'Rematore Bilanciere in Piedi',en:'Bent-Over Barbell Row',s:1,r:'10-12 (failure)'},
                 {it:'Stacchi (Trap Bar o classici)',en:'Deadlift (Trap Bar or conventional)',s:1,r:'15 (failure)'}]}]}
 ,
+    // ── DR. KEN PUSH/PULL SPLIT ───────────────────────────────────────────
+    ken_pp:{gender:'uomo',
+        days:[
+            {id:'ken_pp_a',color:'var(--red)',exercises:[
+                {it:'Squat con Bilanciere (Quadricipiti)',en:'Barbell Squat (Quads)',s:1,r:'15-20 (failure)'},
+                {it:'Panca Piana con Bilanciere (Petto)',en:'Barbell Bench Press (Chest)',s:1,r:'8-10 (failure)'},
+                {it:'Leg Press (accessorio quadricipiti)',en:'Leg Press (Quads accessory)',s:1,r:'15-20 (slow negative — failure)'},
+                {it:'Press Militare Seduto (Spalle)',en:'Seated Overhead Press (Shoulders)',s:1,r:'8-10 (failure)'},
+                {it:'Alzate Laterali con Manubri',en:'Dumbbell Lateral Raises',s:1,r:'15-20 (failure)'},
+                {it:'Pushdown Tricipiti con Corda',en:'Triceps Rope Pushdown',s:1,r:'12-15 (failure)'}]},
+            {id:'ken_pp_b',color:'var(--blue)',exercises:[
+                {it:'Stacco da Terra (RPE 9 — no cedimento)',en:'Deadlift (RPE 9 — stop 1 rep shy of failure)',s:1,r:'5 (RPE 9)'},
+                {it:'Trazioni Appesantite / Lat Machine',en:'Weighted Pull-ups / Lat Pulldown',s:1,r:'8-12 (failure)'},
+                {it:'RDL — Stacco Rumeno (Femorali)',en:'Romanian Deadlift (Hamstrings)',s:1,r:'10-12 (failure — focus stretch)'},
+                {it:'Rematore Bilanciere / Manubri (Schiena)',en:'Barbell or DB Row (Back)',s:1,r:'8-12 (failure)'},
+                {it:'Curl Bilanciere (Bicipiti)',en:'Barbell Curl (Biceps)',s:1,r:'8-12 (slow negative — failure)'},
+                {it:'Farmer\'s Walk / Ab Wheel (Core)',en:'Farmer\'s Walk / Ab Wheel Rollout (Core)',s:1,r:'max distanza/tempo (failure)'}]}
+        ]},
     // ── LYLE McDONALD GENERIC BULKING ROUTINE ─────────────────────────────
     lyle_gbr:{gender:'uomo',
         days:[
@@ -4469,6 +4603,34 @@ const WORKOUTS_BASE = {
                 {it:'Calf Raise Seduto',en:'Seated Calf Raise',s:3,r:'10-12',rest:'1-2 min'},
                 {it:'Crunch / Addominali',en:'Abs / Crunches',s:3,r:'15-20',rest:'1 min'}
             ]}
+        ]},
+    // ── MOUNTAIN DOG PPL — John Meadows ──────────────────────────────────
+    meadows_ppl:{gender:'uomo',
+        days:[
+            {id:'md_push',color:'var(--red)',exercises:[
+                {it:'🔵 ATTIVAZIONE · Pec Deck / Croci ai Cavi',en:'🔵 ACTIVATION · Pec Deck / Cable Fly',s:2,r:'12-15 (connessione mentale — no cedimento)'},
+                {it:'🔴 ESPLOSIVA · Panca Inclinata Manubri / Smith',en:'🔴 EXPLOSIVE · Incline DB Press / Smith Press',s:3,r:'6-10 (pesante — 1 rep nel serbatoio)'},
+                {it:'🔴 ESPLOSIVA · Press Spalle Seduto (manubri / bilanciere)',en:'🔴 EXPLOSIVE · Seated Shoulder Press (DB / BB)',s:3,r:'8-10 (pesante — 1 rep nel serbatoio)'},
+                {it:'🟡 PUMP · Dip alle Parallele / Crossover',en:'🟡 PUMP · Parallel Dips / Cable Crossover',s:1,r:'cedimento + drop set (pump massimo)'},
+                {it:'🟡 PUMP · Alzate Laterali ai Cavi',en:'🟡 PUMP · Cable Lateral Raises',s:2,r:'15-20 (cedimento)'},
+                {it:'🟡 PUMP · Spinte in Basso Corda / Overhead Ext.',en:'🟡 PUMP · Rope Pushdown / Overhead Extension',s:2,r:'12-15 (cedimento)'},
+                {it:'🟢 STRETCH · Croci Manubri — tieni 30-60s in basso',en:'🟢 STRETCH · DB Fly — hold 30-60s at bottom',s:1,r:'30-60 sec tenuta caricata'}]},
+            {id:'md_pull',color:'var(--blue)',exercises:[
+                {it:'🔵 ATTIVAZIONE · Pulley / Lat Machine presa neutra',en:'🔵 ACTIVATION · Pulley / Neutral Grip Pulldown',s:2,r:'12-15 (connessione mentale — no cedimento)'},
+                {it:'🔴 ESPLOSIVA · Meadows Row (bilanciere landmine)',en:'🔴 EXPLOSIVE · Meadows Row (landmine barbell)',s:4,r:'8-10 (pesante — contrai schiena)'},
+                {it:'🔴 ESPLOSIVA · Rematore Bilanciere / T-Bar',en:'🔴 EXPLOSIVE · Bent Row / T-Bar Row',s:3,r:'8-10 (pesante — 1 rep nel serbatoio)'},
+                {it:'🟡 PUMP · Rematore Macchina / Seated Row',en:'🟡 PUMP · Machine Row / Seated Cable Row',s:2,r:'10-12 (cedimento — squeeze)'},
+                {it:'🟡 PUMP · Curl Bilanciere / Manubri',en:'🟡 PUMP · Barbell / Dumbbell Curl',s:3,r:'10-12 (cedimento — fase eccentrica lenta)'},
+                {it:'🟡 PUMP · Spalle Posteriori — alzate',en:'🟡 PUMP · Rear Delt Fly',s:3,r:'15-20 (cedimento)'},
+                {it:'🟢 STRETCH · Trazione / Pulley — tieni 30-60s in fondo',en:'🟢 STRETCH · Pull-up / Pulldown — hold 30-60s at bottom',s:1,r:'30-60 sec tenuta caricata'}]},
+            {id:'md_legs',color:'var(--green)',exercises:[
+                {it:'🔵 ATTIVAZIONE · Leg Curl sdraiato / Leg Extension',en:'🔵 ACTIVATION · Lying Leg Curl / Leg Extension',s:2,r:'15-20 (connessione mentale — no cedimento)'},
+                {it:'🔴 ESPLOSIVA · Squat con Bilanciere',en:'🔴 EXPLOSIVE · Barbell Squat',s:4,r:'6-10 (pesante — esplosivo in concentrico)'},
+                {it:'🔴 ESPLOSIVA · Stacco Rumeno (RDL)',en:'🔴 EXPLOSIVE · Romanian Deadlift (RDL)',s:3,r:'8-10 (pesante — focus stretch femorali)'},
+                {it:'🟡 PUMP · Leg Press',en:'🟡 PUMP · Leg Press',s:2,r:'15-20 (cedimento — negativo lento)'},
+                {it:'🟡 PUMP · Leg Curl seduto / sdraiato',en:'🟡 PUMP · Seated / Lying Leg Curl',s:2,r:'12-15 (cedimento)'},
+                {it:'🟡 PUMP · Polpacci in piedi',en:'🟡 PUMP · Standing Calf Raise',s:3,r:'12-15 (cedimento + pausa in basso)'},
+                {it:'🟢 STRETCH · Affondi con manubri — tieni 30-60s in basso',en:'🟢 STRETCH · DB Lunges — hold 30-60s at bottom',s:1,r:'30-60 sec tenuta caricata'}]}
         ]},
     // ── 30 MIN LEGS PUSH PULL ─────────────────────────────────────────────
     lpp30_u:{gender:'uomo',
@@ -4624,7 +4786,9 @@ const WID_MAP = {'lpp':'lpp','ini-u':'ini_u','lyle-gbr':'lyle_gbr','ini-d':'ini_
   'lpp4-u':'lpp4_u',
   'ws4sb-u':'ws4sb_u',
   'madcow-u':'madcow_u',
-  'lpp30-u':'lpp30_u'
+  'lpp30-u':'lpp30_u',
+  'ken-pp':'ken_pp',
+  'meadows-ppl':'meadows_ppl'
 };
 
 // Map old IDs
@@ -4634,8 +4798,8 @@ function getWorkoutLocalized(wId){
     const baseId = WID_MAP[wId] || wId;
     const base = WORKOUTS_BASE[baseId];
     if(!base) return null;
-    const labelMap = {lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label',lpp30_u:'lpp30_u_label'};
-    const pillsMap = {lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',lpp4_u:'lpp4_u_pills',ws4sb_u:'ws4sb_u_pills',madcow_u:'madcow_u_pills',lpp30_u:'lpp30_u_pills'};
+    const labelMap = {lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',ken_pp:'ken_pp_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label',lpp30_u:'lpp30_u_label',meadows_ppl:'meadows_ppl_label'};
+    const pillsMap = {lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',ken_pp:'ken_pp_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',lpp4_u:'lpp4_u_pills',ws4sb_u:'ws4sb_u_pills',madcow_u:'madcow_u_pills',lpp30_u:'lpp30_u_pills',meadows_ppl:'meadows_ppl_pills'};
     const days = base.days.map(day=>{
         let badge, name;
         // DC 3-day: a=Upper A1, b=Lower B1, g1=Upper A2, g2=Lower B2, g3=Upper A3, full=Lower B3
@@ -4684,6 +4848,8 @@ function getWorkoutLocalized(wId){
         }else if(day.id==='lyle_lb'){badge='LOWER B';name=t('lyle_lb_name')||(lang==='it'?'Lower B — Ipertrofia':'Lower B — Hypertrophy');
         }else if(day.id==='ken_fb'){badge='STEEL TIP HIT';name=lang==='it'?'Full Body HIT · Squat 15-20 reps':'Full Body HIT · 15-20 rep Squat';
         }else if(day.id==='ken_bm'){badge='BRUTAL MINIMALISM';name=lang==='it'?'Brutal Minimalism · Atleti NFL':'Brutal Minimalism · NFL Athletes';
+        }else if(day.id==='ken_pp_a'){badge='PUSH';name=lang==='it'?'Quadricipiti · Petto · Spalle · Tricipiti':'Quads · Chest · Shoulders · Triceps';
+        }else if(day.id==='ken_pp_b'){badge='PULL';name=lang==='it'?'Femorali · Schiena · Bicipiti · Core':'Hamstrings · Back · Biceps · Core';
         }else if(day.id==='aj_fb'){badge='FULL BODY';name=lang==='it'?'HIT Nautilus · 1 serie al cedimento':'HIT Nautilus · 1 set to failure';
         }else if(day.id==='dy_d1'){badge=t('dy_d1_badge')||(lang==='it'?'DAY 1':'DAY 1');name=t('dy_d1_name')||(lang==='it'?'Deltoidi · Trapezi · Tricipiti · Addominali':'Delts · Traps · Triceps · Abs');
         }else if(day.id==='dy_d2'){badge=t('dy_d2_badge')||(lang==='it'?'DAY 2':'DAY 2');name=t('dy_d2_name')||(lang==='it'?'Schiena · Deltoide Post. · Stacchi':'Back · Rear Delts · Deadlifts');
@@ -4725,6 +4891,9 @@ function getWorkoutLocalized(wId){
         }else if(day.id==='lpp30_legs'){badge='LEGS';name=lang==='it'?'Gambe · Quadricipiti · Femorali · Polpacci':'Legs · Quads · Hamstrings · Calves';
         }else if(day.id==='lpp30_push'){badge='PUSH';name=lang==='it'?'Petto · Spalle · Tricipiti':'Chest · Shoulders · Triceps';
         }else if(day.id==='lpp30_pull'){badge='PULL';name=lang==='it'?'Schiena · Bicipiti':'Back · Biceps';
+        }else if(day.id==='md_push'){badge='PUSH';name=lang==='it'?'Petto · Spalle · Tricipiti — 4 Fasi':'Chest · Shoulders · Triceps — 4 Phases';
+        }else if(day.id==='md_pull'){badge='PULL';name=lang==='it'?'Schiena · Bicipiti · Deltoidi Post. — 4 Fasi':'Back · Biceps · Rear Delts — 4 Phases';
+        }else if(day.id==='md_legs'){badge='LEGS';name=lang==='it'?'Gambe · Femorali · Polpacci — 4 Fasi':'Legs · Hamstrings · Calves — 4 Phases';
         }else{badge=t('d_full_badge');name=t('d_full_name');}
         const exercises = day.exercises.map(ex=>({...ex, name: lang==='en' ? ex.en : ex.it}));
         return {...day, badge, name, exercises};
@@ -4899,7 +5068,7 @@ function renderEx(wId,dId,eIdx,ex){
             </div>
         </div>`;
     }).join('')+'</div>';
-    const _advancedWIds = ['dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','lpp4-u','quick-u','quick-u-basic','corto-u-adv','corto-u-bas','quick-d','quick-d-basic','corto-d-adv','corto-d-bas','ws4sb-u','madcow-u','lpp30-u'];
+    const _advancedWIds = ['dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','lpp4-u','quick-u','quick-u-basic','corto-u-adv','corto-u-bas','quick-d','quick-d-basic','corto-d-adv','corto-d-bas','ws4sb-u','madcow-u','lpp30-u','ken-pp','meadows-ppl'];
     const _noImg = _advancedWIds.includes(wId);
     const imgKey = _noImg ? null : (EX_NAME_MAP[ex.it] || EX_NAME_MAP[ex.en] || null);
     const imgSrc = imgKey ? EX_IMAGES[imgKey] : null;
