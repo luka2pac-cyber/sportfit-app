@@ -149,7 +149,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
 .kg{font-size:.65rem;font-weight:700;color:rgba(255,255,255,.55)}
 
 /* WORKOUT HDR */
-.workout-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.workout-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;position:relative}
 .prog-heart{background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.25);border-radius:12px;padding:10px 14px;font-size:1.4rem;cursor:pointer;line-height:1}
 
 /* ATTIVI */
@@ -322,6 +322,13 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       <!-- Logo -->
       <div style="width:100%;position:relative;flex-shrink:0;margin-top:8px">
         <img src="https://sport-fit.org/wp-content/uploads/2026/03/logo_home.jpg" alt="Sport&Fit GYM" style="width:100%;height:auto;max-height:32vh;display:block;object-fit:contain;object-position:center top;background:#000"/>
+      </div>
+
+      <!-- Training App tag -->
+      <div style="text-align:center;padding:10px 0 6px;flex-shrink:0;display:flex;align-items:center;gap:10px;padding-left:16px;padding-right:16px">
+        <div style="flex:1;height:1px;background:rgba(255,255,255,.2)"></div>
+        <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;font-weight:900;letter-spacing:8px;text-transform:uppercase;color:rgba(255,255,255,.6)">TRAINING APP</span>
+        <div style="flex:1;height:1px;background:rgba(255,255,255,.2)"></div>
       </div>
 
       <!-- Bottoni -->
@@ -614,6 +621,9 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#1a3a00,var(--green))" onclick="openWorkout('madcow-u','madcow-info-view')">
       💪 <span data-t="madcow_start_btn">Inizia Madcow 5×5</span>
     </button>
+    <img src="https://sport-fit.org/wp-content/uploads/2026/03/5x5-bill-starr.jpg"
+         alt="Bill Starr 5x5"
+         style="width:100%;max-height:220px;object-fit:cover;object-position:center top;border-radius:14px;margin-bottom:14px;display:block;background:#1c1c1e"/>
     <div class="view-title" style="font-size:1.7rem">💪 Madcow 5×5</div>
     <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:4px"><b style="color:#fff"><span data-t="madcow_subtitle">Ispirato a Bill Starr 5×5</span></b></div>
     <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px"><span data-t="madcow_days">3 giorni / settimana · Lun · Mer · Ven</span></div>
@@ -659,10 +669,9 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#7a0000,var(--red))" onclick="openWorkout('ws4sb-u','ws4sb-info-view')">
       🏈 <span data-t="ws4sb_start_btn">Inizia WS4SB</span>
     </button>
-    <img src="https://sport-fit.org/wp-content/uploads/2026/03/joe-defranco.jpg"
-         alt=""
-         onerror="this.style.display='none'"
-         style="width:100%;max-height:220px;object-fit:cover;object-position:center top;border-radius:14px;margin-bottom:14px;display:block"/>
+    <img src="https://sport-fit.org/wp-content/uploads/2026/03/Joe-DeFranco-headshot-2023-1024x1024-1.webp"
+         alt="Joe DeFranco"
+         style="width:100%;max-height:220px;object-fit:cover;object-position:center top;border-radius:14px;margin-bottom:14px;display:block;background:#1c1c1e"/>
     <div class="view-title" style="font-size:1.7rem">🏈 WS4SB</div>
     <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:4px"><b style="color:#fff">Westside for Skinny Bastards</b></div>
     <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px"><span data-t="ws4sb_days">Joe DeFranco · 3 giorni / settimana</span></div>
@@ -900,7 +909,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
   <div id="workout-view" class="view">
     <div class="workout-hdr">
       <button id="workout-back-btn" class="back-btn" style="margin-bottom:0">← <span data-t="back_btn">Indietro</span></button>
-      <button class="prog-heart" id="workout-heart-btn" onclick="toggleAttivoWorkout()">🤍</button>
+      <button class="prog-heart" id="workout-heart-btn" onclick="toggleAttivoWorkout()" style="position:absolute;left:50%;transform:translateX(-50%)">🤍</button>
     </div>
     <div id="workout-title" class="view-title"></div>
     <div id="workout-pills" class="pills"></div>
