@@ -1059,8 +1059,12 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       <div class="prog-item-sub" data-t="corto_u_bas_sub">Superset · 3 serie · Ideale per iniziare i 30 min</div>
     </button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('corto-u-adv','uomini-corto-menu')">
-      <div class="prog-item-name">🟡 <span data-t="corto_adv">Intermedio A/B — Rest-Pause</span></div>
+      <div class="prog-item-name">🟡 <span data-t="corto_adv">Avanzato A/B — Rest-Pause</span></div>
       <div class="prog-item-sub" data-t="corto_u_adv_sub">RP · Alta intensità · Meno serie, più stimolo</div>
+    </button><span class="prog-arr">›</span></div>
+    <div class="prog-item" style="border:1.5px solid rgba(255,59,48,.35);background:rgba(255,59,48,.07)"><button class="prog-item-btn" onclick="openWorkout('lpp30-u','uomini-corto-menu')">
+      <div class="prog-item-name">🔴 <span>30 min Legs Push Pull</span></div>
+      <div class="prog-item-sub">3 giorni rotazione · LEGS / PUSH / PULL · RP · Avanzato</div>
     </button><span class="prog-arr">›</span></div>
     <div style="background:rgba(10,132,255,.08);border:1px solid rgba(10,132,255,.2);border-radius:12px;padding:12px 14px;margin-top:14px;font-size:.73rem;color:rgba(255,255,255,.55);line-height:1.65">
       <strong style="color:rgba(10,132,255,.9)"><span data-t="corto_how_title">📋 Come funziona</span></strong><br>
@@ -2177,10 +2181,10 @@ const T = {
     mentzer_pills:[['4-2-4','tempo'],['1 set','cedimento'],['HIT',''],['48-96h','riposo']],
     quick_workout:'Allenamenti 30-40 min',
     allenamenti_30_btn:'Allenamenti 30-40 min',
-    quick_u_label:'30 Min Uomo Avanzato', quick_u_pills:[['2-4×','/ sett.'],['30 min','/ sessione'],['Full Body','']],
-    quick_u_basic_label:'30 Min Uomo Base', quick_u_basic_pills:[['2×','/ sett.'],['30 min','/ sessione'],['12-16 sett.','']],
-    quick_d_label:'30 Min Donna Avanzato', quick_d_pills:[['2-4×','/ sett.'],['30 min','/ sessione'],['Full Body','']],
-    quick_d_basic_label:'30 Min Donna Base', quick_d_basic_pills:[['2×','/ sett.'],['30 min','/ sessione'],['12-16 sett.','']],
+    quick_u_label:'Avanzato A/B — Rest-Pause', quick_u_pills:[['2-4×','/ sett.'],['30 min','/ sessione'],['Full Body','']],
+    quick_u_basic_label:'Basic A/B', quick_u_basic_pills:[['2×','/ sett.'],['30 min','/ sessione'],['12-16 sett.','']],
+    quick_d_label:'Avanzato A/B', quick_d_pills:[['2-4×','/ sett.'],['30 min','/ sessione'],['Full Body','']],
+    quick_d_basic_label:'Basic A/B', quick_d_basic_pills:[['2×','/ sett.'],['30 min','/ sessione'],['12-16 sett.','']],
     mentzer_label:'Heavy Duty Classic', quick_u_pills:[['2×','/ sett.'],['30 min','/ sessione'],['12-16 sett.','']],
     quick_d_label:'Allenamento Corto Donna', quick_d_pills:[['2×','/ sett.'],['30 min','/ sessione'],['12-16 sett.','']],
     btn_body:'Body Analysis',
@@ -2276,7 +2280,7 @@ const T = {
     corto_basic:'Basic A/B',
     corto_basic_sub_u:'Superset · 3 serie · Ideale per iniziare i 30 min',
     corto_basic_sub_d:'Superset · 3 serie · Ideale per iniziare i 30 min',
-    corto_adv:'Intermedio A/B',
+    corto_adv:'Avanzato A/B — Rest-Pause',
     corto_adv_sub_u:'RP · Alta intensita · Meno serie, piu stimolo',
     corto_adv_sub_d:'Cedimento · Alta intensita · Focus glutes & corpo',
     dc_sub:'DoggCrapp · Rest-Pause · 3x/sett. · Alta intensità',
@@ -2650,6 +2654,9 @@ const T = {
     ws4sb_u_label:'WS4SB — DeFranco',
     ws4sb_u_pills:[['3×','/ sett.'],['60-75 min','/ sessione'],['Template','flessibile']],
     level_ws4sb_u:'AVANZATO',
+    lpp30_u_label:'30 min Legs Push Pull',
+    lpp30_u_pills:[['3 giorni','rotazione'],['30-40 min','/ sessione'],['RP','metodo']],
+    level_lpp30_u:'AVANZATO',
     madcow_u_label:'Madcow 5×5',
     madcow_u_pills:[['3×','/ sett.'],['60-75 min','/ sessione'],['8-12','settimane']],
     level_madcow_u:'INTERMEDIO / AVANZATO',
@@ -3136,10 +3143,10 @@ en:{
     mentzer_pills:[['4-2-4','tempo'],['1 set','failure'],['HIT',''],['48-96h','rest']],
     quick_workout:'30-40 min Workouts',
     allenamenti_30_btn:'30-40 min Workouts',
-    quick_u_label:'30 Min Men Advanced', quick_u_pills:[['2×','/ week'],['30 min','/ session'],['12-16 wks','']],
-    quick_u_basic_label:'30 Min Men Basic', quick_u_basic_pills:[['2×','/ week'],['30 min','/ session'],['12-16 wks','']],
-    quick_d_label:'30 Min Women Advanced', quick_d_pills:[['2×','/ week'],['30 min','/ session'],['12-16 wks','']],
-    quick_d_basic_label:'30 Min Women Basic', quick_d_basic_pills:[['2×','/ week'],['30 min','/ session'],['12-16 wks','']],
+    quick_u_label:'Advanced A/B — Rest-Pause', quick_u_pills:[['2×','/ week'],['30 min','/ session'],['12-16 wks','']],
+    quick_u_basic_label:'Basic A/B', quick_u_basic_pills:[['2×','/ week'],['30 min','/ session'],['12-16 wks','']],
+    quick_d_label:'Advanced A/B', quick_d_pills:[['2×','/ week'],['30 min','/ session'],['12-16 wks','']],
+    quick_d_basic_label:'Basic A/B', quick_d_basic_pills:[['2×','/ week'],['30 min','/ session'],['12-16 wks','']],
     mentzer_label:'Heavy Duty Classic', quick_u_pills:[['2×','/ week'],['30 min','/ session'],['12-16 wks','']],
     quick_d_label:'Quick Workout Women', quick_d_pills:[['2×','/ week'],['30 min','/ session'],['12-16 wks','']],
     btn_body:'Body Analysis',
@@ -3215,7 +3222,7 @@ en:{
     corto_basic:'Basic A/B',
     corto_basic_sub_u:'Superset · 3 sets · Ideal to start 30 min',
     corto_basic_sub_d:'Superset · 3 sets · Ideal to start 30 min',
-    corto_adv:'Intermediate A/B',
+    corto_adv:'Advanced A/B — Rest-Pause',
     corto_adv_sub_u:'RP · High intensity · Fewer sets, more stimulus',
     corto_adv_sub_d:'Failure · High intensity · Focus glutes & body',
     dc_sub:'DoggCrapp · Rest-Pause · 3x/week · High intensity',
@@ -3589,6 +3596,9 @@ en:{
     ws4sb_u_label:'WS4SB — DeFranco',
     ws4sb_u_pills:[['3×','/ week'],['60-75 min','/ session'],['Flexible','template']],
     level_ws4sb_u:'ADVANCED',
+    lpp30_u_label:'30 min Legs Push Pull',
+    lpp30_u_pills:[['3 days','rotation'],['30-40 min','/ session'],['RP','method']],
+    level_lpp30_u:'ADVANCED',
     madcow_u_label:'Madcow 5×5',
     madcow_u_pills:[['3×','/ week'],['60-75 min','/ session'],['8-12','weeks']],
     level_madcow_u:'INTERMEDIATE / ADVANCED',
@@ -4460,6 +4470,26 @@ const WORKOUTS_BASE = {
                 {it:'Crunch / Addominali',en:'Abs / Crunches',s:3,r:'15-20',rest:'1 min'}
             ]}
         ]},
+    // ── 30 MIN LEGS PUSH PULL ─────────────────────────────────────────────
+    lpp30_u:{gender:'uomo',
+        note_it:'⚡ <b>RP (Rest-Pause doppia)</b> — vai al cedimento → riposa 30s → vai al cedimento → riposa 30s → ultima spinta al cedimento = 1 serie RP. Pausa tra serie normali: 90-120s. <b>Alternativa:</b> 2 serie normali al cedimento da 15-10 reps.',
+        note_en:'⚡ <b>RP (Double Rest-Pause)</b> — go to failure → rest 30s → go to failure → rest 30s → final push to failure = 1 RP set. Rest between normal sets: 90-120s. Alternative: 2 straight sets to failure 15-10 reps.',
+        days:[
+            {id:'lpp30_legs',color:'var(--red)',exercises:[
+                {it:'Leg Press / Hack Squat',en:'Leg Press / Hack Squat',s:1,r:'10-8 RP'},
+                {it:'🔵 A1 · Leg Extension (superset)',en:'🔵 A1 · Leg Extension (superset)',s:1,r:'12-10 (cedimento / failure)'},
+                {it:'🔵 A2 · Leg Curl',en:'🔵 A2 · Leg Curl',s:1,r:'12-10 (cedimento / failure)'},
+                {it:'RDL manubri / barra — no cedimento',en:'RDL dumbbells / barbell — no failure',s:2,r:'12-8'},
+                {it:'Polpacci',en:'Calf Raise',s:1,r:'15-10 RP'}]},
+            {id:'lpp30_push',color:'var(--blue)',exercises:[
+                {it:'Press Inclinata Macchina 30°',en:'Incline Machine Press 30°',s:1,r:'10-8 RP'},
+                {it:'Press Spalle Macchina',en:'Machine Shoulder Press',s:1,r:'10-8 RP'},
+                {it:'Dip / Panca Stretta',en:'Dip / Close Grip Bench',s:1,r:'10-8 RP'}]},
+            {id:'lpp30_pull',color:'var(--green)',exercises:[
+                {it:'Tirate al Mento (presa neutra o supina)',en:'Upright Row / Pulldown (neutral or supine grip)',s:1,r:'10-8 RP'},
+                {it:'Pulley / Rematore Macchina',en:'Pulley / Machine Row',s:1,r:'10-8 RP'},
+                {it:'Curl Bicipiti (manubri / barra)',en:'Bicep Curl (dumbbells / barbell)',s:1,r:'12-10 RP'}]}
+        ]},
     // ── MADCOW 5×5 ────────────────────────────────────────────────────────
     madcow_u:{gender:'uomo',
         days:[
@@ -4593,7 +4623,8 @@ const WID_MAP = {'lpp':'lpp','ini-u':'ini_u','lyle-gbr':'lyle_gbr','ini-d':'ini_
   'ul-pb-u':'ul_pb_u',
   'lpp4-u':'lpp4_u',
   'ws4sb-u':'ws4sb_u',
-  'madcow-u':'madcow_u'
+  'madcow-u':'madcow_u',
+  'lpp30-u':'lpp30_u'
 };
 
 // Map old IDs
@@ -4603,8 +4634,8 @@ function getWorkoutLocalized(wId){
     const baseId = WID_MAP[wId] || wId;
     const base = WORKOUTS_BASE[baseId];
     if(!base) return null;
-    const labelMap = {lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label'};
-    const pillsMap = {lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',lpp4_u:'lpp4_u_pills',ws4sb_u:'ws4sb_u_pills',madcow_u:'madcow_u_pills'};
+    const labelMap = {lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label',lpp30_u:'lpp30_u_label'};
+    const pillsMap = {lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',lpp4_u:'lpp4_u_pills',ws4sb_u:'ws4sb_u_pills',madcow_u:'madcow_u_pills',lpp30_u:'lpp30_u_pills'};
     const days = base.days.map(day=>{
         let badge, name;
         // DC 3-day: a=Upper A1, b=Lower B1, g1=Upper A2, g2=Lower B2, g3=Upper A3, full=Lower B3
@@ -4691,6 +4722,9 @@ function getWorkoutLocalized(wId){
         }else if(day.id==='madcow_a'){badge='LUNEDÌ';name=lang==='it'?'Squat · Panca · Rematore — Volume (5×5)':'Squat · Bench · Row — Volume (5×5)';
         }else if(day.id==='madcow_b'){badge='MERCOLEDÌ';name=lang==='it'?'Squat Leggero · OHP · Stacco — Recupero':'Light Squat · OHP · Deadlift — Recovery';
         }else if(day.id==='madcow_c'){badge='VENERDÌ';name=lang==='it'?'Squat · Panca · Rematore — Record (3RM + 8)':'Squat · Bench · Row — PR Day (3RM + 8)';
+        }else if(day.id==='lpp30_legs'){badge='LEGS';name=lang==='it'?'Gambe · Quadricipiti · Femorali · Polpacci':'Legs · Quads · Hamstrings · Calves';
+        }else if(day.id==='lpp30_push'){badge='PUSH';name=lang==='it'?'Petto · Spalle · Tricipiti':'Chest · Shoulders · Triceps';
+        }else if(day.id==='lpp30_pull'){badge='PULL';name=lang==='it'?'Schiena · Bicipiti':'Back · Biceps';
         }else{badge=t('d_full_badge');name=t('d_full_name');}
         const exercises = day.exercises.map(ex=>({...ex, name: lang==='en' ? ex.en : ex.it}));
         return {...day, badge, name, exercises};
@@ -4865,7 +4899,7 @@ function renderEx(wId,dId,eIdx,ex){
             </div>
         </div>`;
     }).join('')+'</div>';
-    const _advancedWIds = ['dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','lpp4-u','quick-u','quick-u-basic','corto-u-adv','corto-u-bas','quick-d','quick-d-basic','corto-d-adv','corto-d-bas','ws4sb-u','madcow-u'];
+    const _advancedWIds = ['dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','lpp4-u','quick-u','quick-u-basic','corto-u-adv','corto-u-bas','quick-d','quick-d-basic','corto-d-adv','corto-d-bas','ws4sb-u','madcow-u','lpp30-u'];
     const _noImg = _advancedWIds.includes(wId);
     const imgKey = _noImg ? null : (EX_NAME_MAP[ex.it] || EX_NAME_MAP[ex.en] || null);
     const imgSrc = imgKey ? EX_IMAGES[imgKey] : null;
