@@ -438,6 +438,110 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       </button>
       <span class="prog-arr">›</span>
     </div>
+    <div class="prog-item" style="border:1.5px solid rgba(255,149,0,.35);background:rgba(255,149,0,.07)">
+      <button class="prog-item-btn" onclick="showView('carter-info-view')">
+        <div class="prog-item-name">💪 Base Building — <span style="font-size:.8rem;opacity:.7">Paul Carter</span></div>
+        <div class="prog-item-sub">3 giorni · Cicli progressivi + AMRAP · Forza & Massa</div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+    <div class="prog-item" style="border:1.5px solid rgba(255,214,10,.35);background:rgba(255,214,10,.07)">
+      <button class="prog-item-btn" onclick="showView('gironda-info-view')">
+        <div class="prog-item-name">💡 8×8 Honest Workout — <span style="font-size:.8rem;opacity:.7">Vince Gironda</span></div>
+        <div class="prog-item-sub">4 Day Split + Full Body · 8×8 · 30s riposo · Density Training</div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+  </div>
+
+  <!-- PAUL CARTER INFO VIEW -->
+  <div id="carter-info-view" class="view">
+    <button onclick="goBack('bb-methods-view')" class="back-btn">← BB Methods &amp; Splits</button>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#7a3a00,rgba(255,149,0,.9))" onclick="openWorkout('carter-bb','carter-info-view')">
+      💪 <span data-t="carter_start_btn">Inizia Base Building</span>
+    </button>
+    <img src="https://sport-fit.org/wp-content/uploads/2026/03/Paul-Carter.jpg"
+         alt="Paul Carter" onerror="this.style.display='none'"
+         style="width:100%;max-height:220px;object-fit:cover;object-position:center top;border-radius:14px;margin-bottom:14px;display:block;background:#1c1c1e"/>
+    <div class="view-title" style="font-size:1.7rem">💪 Base Building</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:4px"><b style="color:#fff">Paul Carter — Lift Run Bang</b></div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px"><span data-t="carter_days">3 giorni / settimana · Split Squat&amp;Pull / Push / Pull</span></div>
+    <div class="disclaimer red"><div class="disclaimer-icon">⚠️</div><div class="disclaimer-text"><b data-t="carter_level">Intermedio / Avanzato</b> — <span data-t="carter_ideal">Ideale per chi stagna sui programmi lineari e vuole costruire una base solida di forza + massa.</span></div></div>
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title gold">⚙️ <span data-t="carter_cycle_title">Come funziona il Ciclo</span></div>
+      <div class="ai-bullet"><span data-t="carter_cycle1">Parti con un peso che puoi fare per 5 reps. Aggiungi carico ogni set: 5→4→3→2→1 rep (ramp up)</span></div>
+      <div class="ai-bullet"><span data-t="carter_cycle2">Torna al peso di partenza e fai quante reps riesci (AMRAP back-off) — questo è il tuo punteggio della settimana</span></div>
+      <div class="ai-bullet"><span data-t="carter_cycle3">La settimana successiva: batti quel numero di reps o aggiungi peso. Se fallisci, ripeti stesso peso</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title red">📌 <span data-t="carter_phi_title">Filosofia</span></div>
+      <div class="ai-bullet"><span data-t="carter_phi1">Cicli progressivi sui fondamentali — batti i reps ogni settimana</span></div>
+      <div class="ai-bullet"><b data-t="carter_phi2_lbl">Rest-Pause:</b> <span data-t="carter_phi2">vai al cedimento, riposa 60s, fai il 50% delle reps del set precedente</span></div>
+      <div class="ai-bullet"><b data-t="carter_phi3_lbl">350 Method:</b> <span data-t="carter_phi3">3 serie, obiettivo 50 reps totali con 2 min riposo tra i set</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title blue">📅 <span data-t="carter_sch_title">Schema settimanale</span></div>
+      <div class="ai-stat-row" style="padding:6px 0"><span class="ai-stat-label" style="min-width:90px">🔴 <span data-t="carter_d1_lbl">Giorno 1</span></span><span class="ai-stat-val" data-t="carter_d1_val">Squat &amp; Pull — Gambe + Schiena</span></div>
+      <div class="ai-stat-row" style="padding:6px 0"><span class="ai-stat-label" style="min-width:90px">🔵 <span data-t="carter_d2_lbl">Giorno 2</span></span><span class="ai-stat-val" data-t="carter_d2_val">Push — Petto · Spalle · Tricipiti</span></div>
+      <div class="ai-stat-row" style="padding:6px 0"><span class="ai-stat-label" style="min-width:90px">🟢 <span data-t="carter_d3_lbl">Giorno 3</span></span><span class="ai-stat-val" data-t="carter_d3_val">Pull — Schiena · Bicipiti</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title red">⚡ <span data-t="carter_rules_title">Regole chiave</span></div>
+      <div class="ai-bullet"><b data-t="carter_r1_lbl">T-Bar Row:</b> <span data-t="carter_r1">aggiungi peso ogni set mantenendo 15 reps — vai avanti finché non riesci più</span></div>
+      <div class="ai-bullet"><b data-t="carter_r2_lbl">Trazioni:</b> <span data-t="carter_r2">ciclo progressivo + back-off con solo peso corporeo al 50% delle reps</span></div>
+      <div class="ai-bullet"><b data-t="carter_r3_lbl">Rotazione:</b> <span data-t="carter_r3">Squat e Stacco si alternano ogni allenamento. Panca e Inclinata idem</span></div>
+    </div>
+    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#7a3a00,rgba(255,149,0,.9))" onclick="openWorkout('carter-bb','carter-info-view')">
+      💪 <span data-t="carter_start_btn">Inizia Base Building</span>
+    </button>
+  </div>
+
+  <!-- VINCE GIRONDA INFO VIEW -->
+  <div id="gironda-info-view" class="view">
+    <button onclick="goBack('bb-methods-view')" class="back-btn">← BB Methods &amp; Splits</button>
+    <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
+      <button class="ai-send-btn" style="flex:1;background:linear-gradient(135deg,#4a3800,rgba(255,214,10,.8))" onclick="openWorkout('gironda-4day','gironda-info-view')">
+        💡 <span data-t="gironda_4day_btn">4 Day Split</span>
+      </button>
+      <button class="ai-send-btn" style="flex:1;background:linear-gradient(135deg,#003a5a,rgba(10,132,255,.9))" onclick="openWorkout('gironda-fb','gironda-info-view')">
+        🌐 <span data-t="gironda_fb_btn">Full Body 8×8</span>
+      </button>
+    </div>
+    <img src="https://sport-fit.org/wp-content/uploads/2026/03/vince.jpg"
+         alt="Vince Gironda" onerror="this.style.display='none'"
+         style="width:100%;max-height:220px;object-fit:cover;object-position:center top;border-radius:14px;margin-bottom:14px;display:block;background:#1c1c1e"/>
+    <div class="view-title" style="font-size:1.7rem">💡 8×8 Honest Workout</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:4px"><b style="color:#fff">Vince Gironda — Iron Guru · 1917-1997</b></div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px"><span data-t="gironda_coaches">Coach di Arnold, Larry Scott, Lou Ferrigno, Frank Zane</span></div>
+    <div class="disclaimer" style="background:rgba(255,214,10,.08);border-left:3px solid var(--gold)"><div class="disclaimer-icon">💡</div><div class="disclaimer-text"><b data-t="gironda_density_lbl">Density Training</b> — <span data-t="gironda_density_desc">Gironda lo chiamava "l'allenamento onesto" perché costringe a usare pesi più leggeri e far lavorare davvero il muscolo.</span></div></div>
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title gold">📌 <span data-t="gironda_phi_title">Filosofia 8×8</span></div>
+      <div class="ai-bullet"><span data-t="gironda_phi1">8 serie × 8 reps per esercizio — stesso peso su tutte le serie</span></div>
+      <div class="ai-bullet"><span data-t="gironda_phi2">Riposo brevissimo: <b>15-30 secondi</b> tra le serie — è la chiave del metodo</span></div>
+      <div class="ai-bullet"><span data-t="gironda_phi3">Usa 60-70% del tuo 1RM — sembrerà facile, ma non lo sarà dalla serie 4 in poi</span></div>
+      <div class="ai-bullet"><span data-t="gironda_phi4">Progressione: prima riduci il riposo (fino a 15s), poi aumenta il peso</span></div>
+      <div class="ai-bullet"><span data-t="gironda_phi5">⚠️ <b>No Squat classico</b> — Gironda lo bandiva. Usa Hack Squat o Sissy Squat</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title blue">📅 <span data-t="gironda_compare_title">4 Day Split vs Full Body</span></div>
+      <div class="ai-stat-row" style="padding:6px 0"><span class="ai-stat-label" style="min-width:80px">4 Day</span><span class="ai-stat-val" data-t="gironda_4day_desc">Lun/Gio: Petto+Schiena · Mar/Ven: Sp+Br · Mer: Gambe</span></div>
+      <div class="ai-stat-row" style="padding:6px 0"><span class="ai-stat-label" style="min-width:80px">Full Body</span><span class="ai-stat-val" data-t="gironda_fb_desc">3×/sett. · 1 esercizio per muscolo · 8×8 tutto</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title red">⚡ <span data-t="gironda_rules_title">Regole chiave</span></div>
+      <div class="ai-bullet"><b data-t="gironda_r1_lbl">Superset:</b> <span data-t="gironda_r1">nel 4 Day Split accoppia sempre antagonisti (petto + schiena, bicipiti + tricipiti)</span></div>
+      <div class="ai-bullet"><b data-t="gironda_r2_lbl">Esercizi preferiti:</b> <span data-t="gironda_r2">Panca al collo, Trazioni sterno, Hack Squat, Drag Curl, Dip a V</span></div>
+      <div class="ai-bullet"><b data-t="gironda_r3_lbl">Polpacci:</b> <span data-t="gironda_r3">Gironda usava 8×20 reps — volume altissimo per massima crescita</span></div>
+      <div class="ai-bullet"><b data-t="gironda_r4_lbl">Durata:</b> <span data-t="gironda_r4">ideale 4-8 settimane come shock training, poi cambio programma</span></div>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:16px;flex-wrap:wrap">
+      <button class="ai-send-btn" style="flex:1;background:linear-gradient(135deg,#4a3800,rgba(255,214,10,.8))" onclick="openWorkout('gironda-4day','gironda-info-view')">
+        💡 <span data-t="gironda_4day_btn">4 Day Split</span>
+      </button>
+      <button class="ai-send-btn" style="flex:1;background:linear-gradient(135deg,#003a5a,rgba(10,132,255,.9))" onclick="openWorkout('gironda-fb','gironda-info-view')">
+        🌐 <span data-t="gironda_fb_btn">Full Body 8×8</span>
+      </button>
+    </div>
   </div>
 
   <!-- MOUNTAIN DOG INFO VIEW -->
@@ -2724,6 +2828,56 @@ const T = {
     meadows_ppl_label:'Mountain Dog PPL — John Meadows',
     meadows_ppl_pills:[['3-6×','/ sett.'],['60-75 min','/ sessione'],['4 Fasi','metodo']],
     level_meadows_ppl:'AVANZATO',
+    carter_bb_label:'Base Building — Paul Carter',
+    carter_bb_pills:[['3×','/ sett.'],['60-75 min','/ sessione'],['Progressione','cicli']],
+    level_carter_bb:'INTERMEDIO / AVANZATO',
+    carter_start_btn:'Inizia Base Building',
+    carter_days:'3 giorni / settimana · Split Squat&Pull / Push / Pull',
+    carter_level:'Intermedio / Avanzato',
+    carter_ideal:'Ideale per chi stagna sui programmi lineari e vuole costruire una base solida di forza + massa.',
+    carter_cycle_title:'Come funziona il Ciclo',
+    carter_cycle1:'Parti con un peso che puoi fare per 5 reps. Aggiungi carico ogni set: 5→4→3→2→1 rep (ramp up)',
+    carter_cycle2:'Torna al peso di partenza e fai quante reps riesci (AMRAP back-off) — questo è il tuo punteggio della settimana',
+    carter_cycle3:'La settimana successiva: batti quel numero di reps o aggiungi peso. Se fallisci, ripeti stesso peso',
+    carter_phi_title:'Filosofia',
+    carter_phi1:'Cicli progressivi sui fondamentali — batti i reps ogni settimana',
+    carter_phi2_lbl:'Rest-Pause:',carter_phi2:'vai al cedimento, riposa 60s, fai il 50% delle reps del set precedente',
+    carter_phi3_lbl:'350 Method:',carter_phi3:'3 serie, obiettivo 50 reps totali con 2 min riposo tra i set',
+    carter_sch_title:'Schema settimanale',
+    carter_d1_lbl:'Giorno 1',carter_d2_lbl:'Giorno 2',carter_d3_lbl:'Giorno 3',
+    carter_d1_val:'Squat & Pull — Gambe + Schiena',
+    carter_d2_val:'Push — Petto · Spalle · Tricipiti',
+    carter_d3_val:'Pull — Schiena · Bicipiti',
+    carter_rules_title:'Regole chiave',
+    carter_r1_lbl:'T-Bar Row:',carter_r2_lbl:'Trazioni:',carter_r3_lbl:'Rotazione:',
+    carter_r1:'aggiungi peso ogni set mantenendo 15 reps — vai avanti finché non riesci più',
+    carter_r2:'ciclo progressivo + back-off con solo peso corporeo al 50% delle reps',
+    carter_r3:'Squat e Stacco si alternano ogni allenamento. Panca e Inclinata idem',
+    gironda_4day_label:'Gironda 4 Day Split — 8×8',
+    gironda_4day_pills:[['4×','/ sett.'],['45-60 min','/ sessione'],['8×8','density']],
+    level_gironda_4day:'AVANZATO',
+    gironda_fb_label:'Gironda Full Body — 8×8',
+    gironda_fb_pills:[['3×','/ sett.'],['45-60 min','/ sessione'],['8×8','density']],
+    level_gironda_fb:'INTERMEDIO / AVANZATO',
+    gironda_4day_btn:'4 Day Split',gironda_fb_btn:'Full Body 8×8',
+    gironda_coaches:'Coach di Arnold, Larry Scott, Lou Ferrigno, Frank Zane',
+    gironda_density_lbl:'Density Training',
+    gironda_density_desc:'Gironda lo chiamava "l\'allenamento onesto" perché costringe a usare pesi più leggeri e far lavorare davvero il muscolo.',
+    gironda_phi_title:'Filosofia 8×8',
+    gironda_phi1:'8 serie × 8 reps per esercizio — stesso peso su tutte le serie',
+    gironda_phi2:'Riposo brevissimo: 15-30 secondi tra le serie — è la chiave del metodo',
+    gironda_phi3:'Usa 60-70% del tuo 1RM — sembrerà facile, ma non lo sarà dalla serie 4 in poi',
+    gironda_phi4:'Progressione: prima riduci il riposo (fino a 15s), poi aumenta il peso',
+    gironda_phi5:'⚠️ No Squat classico — Gironda lo bandiva. Usa Hack Squat o Sissy Squat',
+    gironda_compare_title:'4 Day Split vs Full Body',
+    gironda_4day_desc:'Lun/Gio: Petto+Schiena · Mar/Ven: Sp+Br · Mer: Gambe',
+    gironda_fb_desc:'3×/sett. · 1 esercizio per muscolo · 8×8 tutto',
+    gironda_rules_title:'Regole chiave',
+    gironda_r1_lbl:'Superset:',gironda_r2_lbl:'Esercizi preferiti:',gironda_r3_lbl:'Polpacci:',gironda_r4_lbl:'Durata:',
+    gironda_r1:'nel 4 Day Split accoppia sempre antagonisti (petto + schiena, bicipiti + tricipiti)',
+    gironda_r2:'Panca al collo, Trazioni sterno, Hack Squat, Drag Curl, Dip a V',
+    gironda_r3:'Gironda usava 8×20 reps — volume altissimo per massima crescita',
+    gironda_r4:'ideale 4-8 settimane come shock training, poi cambio programma',
     meadows_start_btn:'Inizia Mountain Dog PPL',
     meadows_days:'Push · Pull · Legs · 3-6 giorni / settimana',
     meadows_level:'Intermedio / Avanzato',
@@ -3692,6 +3846,56 @@ en:{
     meadows_ppl_label:'Mountain Dog PPL — John Meadows',
     meadows_ppl_pills:[['3-6×','/ week'],['60-75 min','/ session'],['4 Phases','method']],
     level_meadows_ppl:'ADVANCED',
+    carter_bb_label:'Base Building — Paul Carter',
+    carter_bb_pills:[['3×','/ week'],['60-75 min','/ session'],['Progression','cycles']],
+    level_carter_bb:'INTERMEDIATE / ADVANCED',
+    carter_start_btn:'Start Base Building',
+    carter_days:'3 days / week · Split Squat&Pull / Push / Pull',
+    carter_level:'Intermediate / Advanced',
+    carter_ideal:'Ideal for those stalling on linear programs who want to build a solid foundation of strength + mass.',
+    carter_cycle_title:'How the Cycle Works',
+    carter_cycle1:'Start with a weight you can do for 5 reps. Add load each set: 5→4→3→2→1 rep (ramp up)',
+    carter_cycle2:'Return to your starting weight and do as many reps as possible (AMRAP back-off) — this is your score for the week',
+    carter_cycle3:'Next week: beat that rep count or add weight. If you fail, repeat the same weight',
+    carter_phi_title:'Philosophy',
+    carter_phi1:'Progressive cycles on the fundamentals — beat your reps every week',
+    carter_phi2_lbl:'Rest-Pause:',carter_phi2:'go to failure, rest 60s, do 50% of the reps from the previous set',
+    carter_phi3_lbl:'350 Method:',carter_phi3:'3 sets, target 50 total reps with 2 min rest between sets',
+    carter_sch_title:'Weekly Schedule',
+    carter_d1_lbl:'Day 1',carter_d2_lbl:'Day 2',carter_d3_lbl:'Day 3',
+    carter_d1_val:'Squat & Pull — Legs + Back',
+    carter_d2_val:'Push — Chest · Shoulders · Triceps',
+    carter_d3_val:'Pull — Back · Biceps',
+    carter_rules_title:'Key Rules',
+    carter_r1_lbl:'T-Bar Row:',carter_r2_lbl:'Chin-ups:',carter_r3_lbl:'Rotation:',
+    carter_r1:'add weight each set maintaining 15 reps — keep going until you can\'t anymore',
+    carter_r2:'progressive cycle + back-off with bodyweight only at 50% of the reps',
+    carter_r3:'Squat and Deadlift alternate each session. Bench and Incline Press idem',
+    gironda_4day_label:'Gironda 4 Day Split — 8×8',
+    gironda_4day_pills:[['4×','/ week'],['45-60 min','/ session'],['8×8','density']],
+    level_gironda_4day:'ADVANCED',
+    gironda_fb_label:'Gironda Full Body — 8×8',
+    gironda_fb_pills:[['3×','/ week'],['45-60 min','/ session'],['8×8','density']],
+    level_gironda_fb:'INTERMEDIATE / ADVANCED',
+    gironda_4day_btn:'4 Day Split',gironda_fb_btn:'Full Body 8×8',
+    gironda_coaches:'Coach of Arnold, Larry Scott, Lou Ferrigno, Frank Zane',
+    gironda_density_lbl:'Density Training',
+    gironda_density_desc:'Gironda called it the "honest workout" because it forces you to use lighter weights and truly work the muscle.',
+    gironda_phi_title:'8×8 Philosophy',
+    gironda_phi1:'8 sets × 8 reps per exercise — same weight across all sets',
+    gironda_phi2:'Very short rest: 15-30 seconds between sets — this is the key to the method',
+    gironda_phi3:'Use 60-70% of your 1RM — it will feel easy, but not after set 4',
+    gironda_phi4:'Progression: first reduce rest (down to 15s), then increase weight',
+    gironda_phi5:'⚠️ No classic Squat — Gironda banned it. Use Hack Squat or Sissy Squat',
+    gironda_compare_title:'4 Day Split vs Full Body',
+    gironda_4day_desc:'Mon/Thu: Chest+Back · Tue/Fri: Sh+Arms · Wed: Legs',
+    gironda_fb_desc:'3×/week · 1 exercise per muscle · 8×8 everything',
+    gironda_rules_title:'Key Rules',
+    gironda_r1_lbl:'Superset:',gironda_r2_lbl:'Favorite exercises:',gironda_r3_lbl:'Calves:',gironda_r4_lbl:'Duration:',
+    gironda_r1:'in the 4 Day Split always pair antagonists (chest + back, biceps + triceps)',
+    gironda_r2:'Bench to Neck, Sternum Chin-up, Hack Squat, Drag Curl, V-Bar Dips',
+    gironda_r3:'Gironda used 8×20 reps — very high volume for maximum calf growth',
+    gironda_r4:'ideal for 4-8 weeks as shock training, then switch program',
     meadows_start_btn:'Start Mountain Dog PPL',
     meadows_days:'Push · Pull · Legs · 3-6 days / week',
     meadows_level:'Intermediate / Advanced',
@@ -4604,33 +4808,87 @@ const WORKOUTS_BASE = {
                 {it:'Crunch / Addominali',en:'Abs / Crunches',s:3,r:'15-20',rest:'1 min'}
             ]}
         ]},
+    // ── PAUL CARTER — BASE BUILDING 3-DAY SPLIT ──────────────────────────
+    carter_bb:{gender:'uomo',
+        note_it:'⚙️ <b>Ciclo progressivo:</b> parti con un peso da 5 reps → aggiungi carico ogni set (5→4→3→2→1) → torna al peso iniziale e fai quante reps riesci (AMRAP back-off). Ogni settimana batti quel numero o aggiungi peso.',
+        note_en:'⚙️ <b>Progressive Cycle:</b> start with a 5-rep weight → add load each set (5→4→3→2→1) → return to starting weight and do as many reps as possible (AMRAP back-off). Each week beat that number or add weight.',
+        days:[
+            {id:'carter_d1',color:'var(--red)',exercises:[
+                {it:'Squat con Bilanciere (ciclo progressivo)',en:'Barbell Squat (progressive cycle)',s:'ciclo',r:'5-4-3-2-1 + AMRAP back-off'},
+                {it:'Stacco da Terra (rotazione con Squat)',en:'Deadlift (rotate with Squat)',s:'ciclo',r:'5-4-3-2-1 + AMRAP back-off'},
+                {it:'Leg Press',en:'Leg Press',s:1,r:'30-50 (no failure)'},
+                {it:'Curl Femorali / RDL',en:'Leg Curl / RDL',s:3,r:'10-12'}]},
+            {id:'carter_d2',color:'var(--blue)',exercises:[
+                {it:'Panca Piana / Inclinata (rotazione)',en:'Bench Press / Incline Press (rotate)',s:'ciclo',r:'5-4-3-2-1 + AMRAP back-off'},
+                {it:'Press Inclinata Manubri / Piana Manubri (rotazione)',en:'Incline DB Press / Flat DB Press (rotate)',s:1,r:'20-30 rest-pause'},
+                {it:'Alzate Laterali / Upright Row (rotazione)',en:'Lateral Raises / Upright Row (rotate)',s:5,r:'10'},
+                {it:'Spinte in Basso / Overhead Extension (rotazione)',en:'Pushdown / Overhead Extension (rotate)',s:5,r:'10'}]},
+            {id:'carter_d3',color:'var(--green)',exercises:[
+                {it:'T-Bar Row — aggiungi peso ogni set fino a fallire 15 reps',en:'T-Bar Row — add weight each set until you fail at 15',s:6,r:'15 (add weight each set)'},
+                {it:'Trazioni (ciclo progressivo)',en:'Chin-ups (progressive cycle)',s:'ciclo',r:'cycle + 50% back-off BW'},
+                {it:'Pullovers',en:'Pullovers',s:1,r:'30-40 rest-pause'},
+                {it:'Curl EZ / Curl Scott (rotazione)',en:'EZ Curl / Preacher Curl (rotate)',s:1,r:'20-30 rest-pause'}]}
+        ]},
+    // ── VINCE GIRONDA — 4 DAY SPLIT 8×8 ─────────────────────────────────
+    gironda_4day:{gender:'uomo',
+        days:[
+            {id:'gironda_chest_back',color:'var(--red)',exercises:[
+                {it:'🔵 SS1 · Panca Inclinata / Panca al Collo',en:'🔵 SS1 · Incline Press / Bench Press to Neck',s:4,r:'8 (30s rest)'},
+                {it:'🔵 SS1 · Dip a V / Dip alle Parallele',en:'🔵 SS1 · V-Bar Dips / Parallel Dips',s:4,r:'8 (30s rest)'},
+                {it:'🔴 SS2 · Lat Machine / Trazioni Sterno',en:'🔴 SS2 · Lat Pulldown / Sternum Chin-up',s:4,r:'8 (30s rest)'},
+                {it:'🔴 SS2 · Rematore Seduto / Rematore Macchina',en:'🔴 SS2 · Seated Row / Machine Row',s:4,r:'8 (30s rest)'}]},
+            {id:'gironda_sh_arms',color:'var(--blue)',exercises:[
+                {it:'Press Militare Seduto',en:'Seated Military Press',s:8,r:'8 (30s rest)'},
+                {it:'Alzate Laterali',en:'Lateral Raises',s:8,r:'8 (30s rest)'},
+                {it:'🔵 SS1 · Curl Inclinato Manubri / Drag Curl',en:'🔵 SS1 · Incline DB Curl / Drag Curl',s:4,r:'8 (30s rest)'},
+                {it:'🔵 SS1 · Curl Zottman',en:'🔵 SS1 · Zottman Curl',s:4,r:'8 (30s rest)'},
+                {it:'🔴 SS2 · Dip Parallele / French Press',en:'🔴 SS2 · Parallel Dips / French Press',s:4,r:'8 (30s rest)'},
+                {it:'🔴 SS2 · Estensioni Overhead ai Cavi',en:'🔴 SS2 · Kneeling Cable Overhead Extension',s:4,r:'8 (30s rest)'}]},
+            {id:'gironda_legs',color:'var(--green)',exercises:[
+                {it:'Hack Squat (NO Squat classico — Gironda lo bandiva)',en:'Hack Squat (NO classic Squat — Gironda banned it)',s:8,r:'8 (30s rest)'},
+                {it:'Sissy Squat appesantito',en:'Weighted Sissy Squat',s:4,r:'8 (30s rest)'},
+                {it:'Leg Curl sdraiato',en:'Lying Leg Curl',s:8,r:'8 (30s rest)'},
+                {it:'Polpacci — Donkey Calf Raise / Leg Press Calves',en:'Calves — Donkey Calf Raise / Leg Press Calves',s:8,r:'20 (20s rest)'}]}
+        ]},
+    // ── VINCE GIRONDA — FULL BODY 8×8 ────────────────────────────────────
+    gironda_fb:{gender:'uomo',
+        days:[
+            {id:'gironda_full',color:'var(--gold)',exercises:[
+                {it:'Panca Inclinata / Panca al Collo',en:'Incline Press / Bench to Neck',s:8,r:'8 (30s rest)'},
+                {it:'Lat Machine / Trazioni Sterno',en:'Lat Pulldown / Sternum Chin-up',s:8,r:'8 (30s rest)'},
+                {it:'Hack Squat',en:'Hack Squat',s:8,r:'8 (30s rest)'},
+                {it:'Press Militare',en:'Overhead Press',s:8,r:'8 (30s rest)'},
+                {it:'Curl Inclinato / Drag Curl',en:'Incline DB Curl / Drag Curl',s:8,r:'8 (30s rest)'},
+                {it:'Dip alle Parallele',en:'Parallel Dips',s:8,r:'8 (30s rest)'},
+                {it:'Polpacci — Donkey Calf Raise',en:'Donkey Calf Raise',s:8,r:'20 (20s rest)'}]}
+        ]},
     // ── MOUNTAIN DOG PPL — John Meadows ──────────────────────────────────
     meadows_ppl:{gender:'uomo',
         days:[
             {id:'md_push',color:'var(--red)',exercises:[
-                {it:'🔵 ATTIVAZIONE · Pec Deck / Croci ai Cavi',en:'🔵 ACTIVATION · Pec Deck / Cable Fly',s:2,r:'12-15 (connessione mentale — no cedimento)'},
-                {it:'🔴 ESPLOSIVA · Panca Inclinata Manubri / Smith',en:'🔴 EXPLOSIVE · Incline DB Press / Smith Press',s:3,r:'6-10 (pesante — 1 rep nel serbatoio)'},
-                {it:'🔴 ESPLOSIVA · Press Spalle Seduto (manubri / bilanciere)',en:'🔴 EXPLOSIVE · Seated Shoulder Press (DB / BB)',s:3,r:'8-10 (pesante — 1 rep nel serbatoio)'},
-                {it:'🟡 PUMP · Dip alle Parallele / Crossover',en:'🟡 PUMP · Parallel Dips / Cable Crossover',s:1,r:'cedimento + drop set (pump massimo)'},
-                {it:'🟡 PUMP · Alzate Laterali ai Cavi',en:'🟡 PUMP · Cable Lateral Raises',s:2,r:'15-20 (cedimento)'},
-                {it:'🟡 PUMP · Spinte in Basso Corda / Overhead Ext.',en:'🟡 PUMP · Rope Pushdown / Overhead Extension',s:2,r:'12-15 (cedimento)'},
-                {it:'🟢 STRETCH · Croci Manubri — tieni 30-60s in basso',en:'🟢 STRETCH · DB Fly — hold 30-60s at bottom',s:1,r:'30-60 sec tenuta caricata'}]},
+                {it:'🔵 ATTIVAZIONE · Pec Deck / Croci ai Cavi',en:'🔵 ACTIVATION · Pec Deck / Cable Fly',s:2,r:'12-15 (mind-muscle — no failure)'},
+                {it:'🔴 ESPLOSIVA · Panca Inclinata Manubri / Smith',en:'🔴 EXPLOSIVE · Incline DB Press / Smith Press',s:3,r:'6-10 (heavy — 1 rep in tank)'},
+                {it:'🔴 ESPLOSIVA · Press Spalle Seduto (manubri / bilanciere)',en:'🔴 EXPLOSIVE · Seated Shoulder Press (DB / BB)',s:3,r:'8-10 (heavy — 1 rep in tank)'},
+                {it:'🟡 PUMP · Dip alle Parallele / Crossover',en:'🟡 PUMP · Parallel Dips / Cable Crossover',s:1,r:'failure + drop set'},
+                {it:'🟡 PUMP · Alzate Laterali ai Cavi',en:'🟡 PUMP · Cable Lateral Raises',s:2,r:'15-20 (failure)'},
+                {it:'🟡 PUMP · Spinte in Basso Corda / Overhead Ext.',en:'🟡 PUMP · Rope Pushdown / Overhead Extension',s:2,r:'12-15 (failure)'},
+                {it:'🟢 STRETCH · Croci Manubri — tieni 30-60s in basso',en:'🟢 STRETCH · DB Fly — hold 30-60s at bottom',s:1,r:'30-60 sec loaded hold'}]},
             {id:'md_pull',color:'var(--blue)',exercises:[
-                {it:'🔵 ATTIVAZIONE · Pulley / Lat Machine presa neutra',en:'🔵 ACTIVATION · Pulley / Neutral Grip Pulldown',s:2,r:'12-15 (connessione mentale — no cedimento)'},
-                {it:'🔴 ESPLOSIVA · Meadows Row (bilanciere landmine)',en:'🔴 EXPLOSIVE · Meadows Row (landmine barbell)',s:4,r:'8-10 (pesante — contrai schiena)'},
-                {it:'🔴 ESPLOSIVA · Rematore Bilanciere / T-Bar',en:'🔴 EXPLOSIVE · Bent Row / T-Bar Row',s:3,r:'8-10 (pesante — 1 rep nel serbatoio)'},
-                {it:'🟡 PUMP · Rematore Macchina / Seated Row',en:'🟡 PUMP · Machine Row / Seated Cable Row',s:2,r:'10-12 (cedimento — squeeze)'},
-                {it:'🟡 PUMP · Curl Bilanciere / Manubri',en:'🟡 PUMP · Barbell / Dumbbell Curl',s:3,r:'10-12 (cedimento — fase eccentrica lenta)'},
-                {it:'🟡 PUMP · Spalle Posteriori — alzate',en:'🟡 PUMP · Rear Delt Fly',s:3,r:'15-20 (cedimento)'},
-                {it:'🟢 STRETCH · Trazione / Pulley — tieni 30-60s in fondo',en:'🟢 STRETCH · Pull-up / Pulldown — hold 30-60s at bottom',s:1,r:'30-60 sec tenuta caricata'}]},
+                {it:'🔵 ATTIVAZIONE · Pulley / Lat Machine presa neutra',en:'🔵 ACTIVATION · Pulley / Neutral Grip Pulldown',s:2,r:'12-15 (mind-muscle — no failure)'},
+                {it:'🔴 ESPLOSIVA · Meadows Row (bilanciere landmine)',en:'🔴 EXPLOSIVE · Meadows Row (landmine barbell)',s:4,r:'8-10 (heavy — squeeze back)'},
+                {it:'🔴 ESPLOSIVA · Rematore Bilanciere / T-Bar',en:'🔴 EXPLOSIVE · Bent Row / T-Bar Row',s:3,r:'8-10 (heavy — 1 rep in tank)'},
+                {it:'🟡 PUMP · Rematore Macchina / Seated Row',en:'🟡 PUMP · Machine Row / Seated Cable Row',s:2,r:'10-12 (failure — squeeze)'},
+                {it:'🟡 PUMP · Curl Bilanciere / Manubri',en:'🟡 PUMP · Barbell / Dumbbell Curl',s:3,r:'10-12 (failure — slow eccentric)'},
+                {it:'🟡 PUMP · Spalle Posteriori — alzate',en:'🟡 PUMP · Rear Delt Fly',s:3,r:'15-20 (failure)'},
+                {it:'🟢 STRETCH · Trazione / Pulley — tieni 30-60s in fondo',en:'🟢 STRETCH · Pull-up / Pulldown — hold 30-60s at bottom',s:1,r:'30-60 sec loaded hold'}]},
             {id:'md_legs',color:'var(--green)',exercises:[
-                {it:'🔵 ATTIVAZIONE · Leg Curl sdraiato / Leg Extension',en:'🔵 ACTIVATION · Lying Leg Curl / Leg Extension',s:2,r:'15-20 (connessione mentale — no cedimento)'},
-                {it:'🔴 ESPLOSIVA · Squat con Bilanciere',en:'🔴 EXPLOSIVE · Barbell Squat',s:4,r:'6-10 (pesante — esplosivo in concentrico)'},
-                {it:'🔴 ESPLOSIVA · Stacco Rumeno (RDL)',en:'🔴 EXPLOSIVE · Romanian Deadlift (RDL)',s:3,r:'8-10 (pesante — focus stretch femorali)'},
-                {it:'🟡 PUMP · Leg Press',en:'🟡 PUMP · Leg Press',s:2,r:'15-20 (cedimento — negativo lento)'},
-                {it:'🟡 PUMP · Leg Curl seduto / sdraiato',en:'🟡 PUMP · Seated / Lying Leg Curl',s:2,r:'12-15 (cedimento)'},
-                {it:'🟡 PUMP · Polpacci in piedi',en:'🟡 PUMP · Standing Calf Raise',s:3,r:'12-15 (cedimento + pausa in basso)'},
-                {it:'🟢 STRETCH · Affondi con manubri — tieni 30-60s in basso',en:'🟢 STRETCH · DB Lunges — hold 30-60s at bottom',s:1,r:'30-60 sec tenuta caricata'}]}
+                {it:'🔵 ATTIVAZIONE · Leg Curl sdraiato / Leg Extension',en:'🔵 ACTIVATION · Lying Leg Curl / Leg Extension',s:2,r:'15-20 (mind-muscle — no failure)'},
+                {it:'🔴 ESPLOSIVA · Squat con Bilanciere',en:'🔴 EXPLOSIVE · Barbell Squat',s:4,r:'6-10 (heavy — explosive concentric)'},
+                {it:'🔴 ESPLOSIVA · Stacco Rumeno (RDL)',en:'🔴 EXPLOSIVE · Romanian Deadlift (RDL)',s:3,r:'8-10 (heavy — focus hamstring stretch)'},
+                {it:'🟡 PUMP · Leg Press',en:'🟡 PUMP · Leg Press',s:2,r:'15-20 (failure — slow negative)'},
+                {it:'🟡 PUMP · Leg Curl seduto / sdraiato',en:'🟡 PUMP · Seated / Lying Leg Curl',s:2,r:'12-15 (failure)'},
+                {it:'🟡 PUMP · Polpacci in piedi',en:'🟡 PUMP · Standing Calf Raise',s:3,r:'12-15 (failure + pause at bottom)'},
+                {it:'🟢 STRETCH · Affondi con manubri — tieni 30-60s in basso',en:'🟢 STRETCH · DB Lunges — hold 30-60s at bottom',s:1,r:'30-60 sec loaded hold'}]}
         ]},
     // ── 30 MIN LEGS PUSH PULL ─────────────────────────────────────────────
     lpp30_u:{gender:'uomo',
@@ -4788,7 +5046,10 @@ const WID_MAP = {'lpp':'lpp','ini-u':'ini_u','lyle-gbr':'lyle_gbr','ini-d':'ini_
   'madcow-u':'madcow_u',
   'lpp30-u':'lpp30_u',
   'ken-pp':'ken_pp',
-  'meadows-ppl':'meadows_ppl'
+  'meadows-ppl':'meadows_ppl',
+  'carter-bb':'carter_bb',
+  'gironda-4day':'gironda_4day',
+  'gironda-fb':'gironda_fb'
 };
 
 // Map old IDs
@@ -4798,8 +5059,8 @@ function getWorkoutLocalized(wId){
     const baseId = WID_MAP[wId] || wId;
     const base = WORKOUTS_BASE[baseId];
     if(!base) return null;
-    const labelMap = {lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',ken_pp:'ken_pp_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label',lpp30_u:'lpp30_u_label',meadows_ppl:'meadows_ppl_label'};
-    const pillsMap = {lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',ken_pp:'ken_pp_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',lpp4_u:'lpp4_u_pills',ws4sb_u:'ws4sb_u_pills',madcow_u:'madcow_u_pills',lpp30_u:'lpp30_u_pills',meadows_ppl:'meadows_ppl_pills'};
+    const labelMap = {lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',ken_pp:'ken_pp_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label',lpp30_u:'lpp30_u_label',meadows_ppl:'meadows_ppl_label',carter_bb:'carter_bb_label',gironda_4day:'gironda_4day_label',gironda_fb:'gironda_fb_label'};
+    const pillsMap = {lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',ken_pp:'ken_pp_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',lpp4_u:'lpp4_u_pills',ws4sb_u:'ws4sb_u_pills',madcow_u:'madcow_u_pills',lpp30_u:'lpp30_u_pills',meadows_ppl:'meadows_ppl_pills',carter_bb:'carter_bb_pills',gironda_4day:'gironda_4day_pills',gironda_fb:'gironda_fb_pills'};
     const days = base.days.map(day=>{
         let badge, name;
         // DC 3-day: a=Upper A1, b=Lower B1, g1=Upper A2, g2=Lower B2, g3=Upper A3, full=Lower B3
@@ -4894,6 +5155,13 @@ function getWorkoutLocalized(wId){
         }else if(day.id==='md_push'){badge='PUSH';name=lang==='it'?'Petto · Spalle · Tricipiti — 4 Fasi':'Chest · Shoulders · Triceps — 4 Phases';
         }else if(day.id==='md_pull'){badge='PULL';name=lang==='it'?'Schiena · Bicipiti · Deltoidi Post. — 4 Fasi':'Back · Biceps · Rear Delts — 4 Phases';
         }else if(day.id==='md_legs'){badge='LEGS';name=lang==='it'?'Gambe · Femorali · Polpacci — 4 Fasi':'Legs · Hamstrings · Calves — 4 Phases';
+        }else if(day.id==='carter_d1'){badge='SQUAT & PULL';name=lang==='it'?'Gambe · Schiena — Progressione + AMRAP':'Legs · Back — Progression + AMRAP';
+        }else if(day.id==='carter_d2'){badge='PUSH';name=lang==='it'?'Petto · Spalle · Tricipiti':'Chest · Shoulders · Triceps';
+        }else if(day.id==='carter_d3'){badge='PULL';name=lang==='it'?'Schiena · Bicipiti — T-Bar + Trazioni':'Back · Biceps — T-Bar + Chin-ups';
+        }else if(day.id==='gironda_chest_back'){badge='PETTO & SCHIENA';name=lang==='it'?'Superset Antagonisti — 8×8 · 30s riposo':'Chest & Back Superset — 8×8 · 30s rest';
+        }else if(day.id==='gironda_sh_arms'){badge='SPALLE & BRACCIA';name=lang==='it'?'Spalle · Bicipiti · Tricipiti — 8×8':'Shoulders · Biceps · Triceps — 8×8';
+        }else if(day.id==='gironda_legs'){badge='GAMBE';name=lang==='it'?'Hack Squat · Femorali · Polpacci — 8×8':'Hack Squat · Hamstrings · Calves — 8×8';
+        }else if(day.id==='gironda_full'){badge='FULL BODY';name=lang==='it'?'Corpo Completo — 8×8 · 30s riposo':'Full Body — 8×8 · 30s rest';
         }else{badge=t('d_full_badge');name=t('d_full_name');}
         const exercises = day.exercises.map(ex=>({...ex, name: lang==='en' ? ex.en : ex.it}));
         return {...day, badge, name, exercises};
@@ -5068,7 +5336,7 @@ function renderEx(wId,dId,eIdx,ex){
             </div>
         </div>`;
     }).join('')+'</div>';
-    const _advancedWIds = ['dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','lpp4-u','quick-u','quick-u-basic','corto-u-adv','corto-u-bas','quick-d','quick-d-basic','corto-d-adv','corto-d-bas','ws4sb-u','madcow-u','lpp30-u','ken-pp','meadows-ppl'];
+    const _advancedWIds = ['dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','lpp4-u','quick-u','quick-u-basic','corto-u-adv','corto-u-bas','quick-d','quick-d-basic','corto-d-adv','corto-d-bas','ws4sb-u','madcow-u','lpp30-u','ken-pp','meadows-ppl','carter-bb','gironda-4day','gironda-fb'];
     const _noImg = _advancedWIds.includes(wId);
     const imgKey = _noImg ? null : (EX_NAME_MAP[ex.it] || EX_NAME_MAP[ex.en] || null);
     const imgSrc = imgKey ? EX_IMAGES[imgKey] : null;
