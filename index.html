@@ -413,7 +413,14 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     <div class="prog-item" style="border:1.5px solid rgba(255,149,0,.35);background:rgba(255,149,0,.07)">
       <button class="prog-item-btn" onclick="showView('powerbuilding-concepts')">
         <div class="prog-item-name">🏗️ Powerbuilding Concepts</div>
-        <div class="prog-item-sub">PHAT · PHUL · Madcow · WS4SB · Upper/Lower by Luka</div>
+        <div class="prog-item-sub">PHAT · PHUL · Upper/Lower by Luka</div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+    <div class="prog-item" style="border:1.5px solid rgba(10,132,255,.35);background:rgba(10,132,255,.07)">
+      <button class="prog-item-btn" onclick="showView('strength-power')">
+        <div class="prog-item-name">💪 Strength &amp; Power</div>
+        <div class="prog-item-sub">Starting Strength · 5/3/1 · Texas Method · Smolov Jr. · Madcow · WS4SB</div>
       </button>
       <span class="prog-arr">›</span>
     </div>
@@ -438,10 +445,17 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       </button>
       <span class="prog-arr">›</span>
     </div>
+    <div class="prog-item" style="border:1.5px solid rgba(10,132,255,.35);background:rgba(10,132,255,.07)">
+      <button class="prog-item-btn" onclick="showView('hst-info-view')">
+        <div class="prog-item-name">🔬 HST — <span style="font-size:.8rem;opacity:.7">Bryan Haycock</span></div>
+        <div class="prog-item-sub">Full Body 3× / sett. · 15→10→5 reps · Carico progressivo ogni sessione</div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
     <div class="prog-item" style="border:1.5px solid rgba(255,149,0,.35);background:rgba(255,149,0,.07)">
       <button class="prog-item-btn" onclick="showView('carter-info-view')">
         <div class="prog-item-name">💪 Base Building — <span style="font-size:.8rem;opacity:.7">Paul Carter</span></div>
-        <div class="prog-item-sub">3 giorni · Cicli progressivi + AMRAP · Forza & Massa</div>
+        <div class="prog-item-sub">3 giorni · Cicli progressivi + AMRAP · Forza &amp; Massa</div>
       </button>
       <span class="prog-arr">›</span>
     </div>
@@ -452,6 +466,50 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       </button>
       <span class="prog-arr">›</span>
     </div>
+  </div>
+
+  <!-- HST INFO VIEW -->
+  <div id="hst-info-view" class="view">
+    <button onclick="goBack('bb-methods-view')" class="back-btn">← BB Methods &amp; Splits</button>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#003a5a,rgba(10,132,255,.9))" onclick="openWorkout('hst-u','hst-info-view')">
+      🔬 <span data-t="hst_start_btn">Inizia HST</span>
+    </button>
+    <img src="https://sport-fit.org/wp-content/uploads/2026/03/Bryan_Haycock.jpg"
+         alt="Bryan Haycock" onerror="this.style.display='none'"
+         style="width:100%;max-height:220px;object-fit:cover;object-position:center top;border-radius:14px;margin-bottom:14px;display:block;background:#1c1c1e"/>
+    <div class="view-title" style="font-size:1.7rem">🔬 HST</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:4px"><b style="color:#fff">Bryan Haycock — Hypertrophy-Specific Training (2000)</b></div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px"><span data-t="hst_days">Full Body · 3 giorni / settimana · 6-8 settimane per ciclo</span></div>
+    <div class="disclaimer" style="background:rgba(10,132,255,.08);border-left:3px solid var(--blue)"><div class="disclaimer-icon">🔬</div><div class="disclaimer-text"><b data-t="hst_level">Intermedio / Avanzato</b> — <span data-t="hst_ideal">Basato sulla fisiologia dell'ipertrofia. Il carico meccanico progressivo ogni sessione — non il cedimento — è lo stimolo principale per la crescita muscolare.</span></div></div>
+
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title blue">🧬 <span data-t="hst_phi_title">Principi Scientifici</span></div>
+      <div class="ai-bullet"><b data-t="hst_phi1_lbl">Frequenza:</b> <span data-t="hst_phi1">ogni muscolo viene allenato ogni 48 ore — l'attività anabolica rimane alta costantemente</span></div>
+      <div class="ai-bullet"><b data-t="hst_phi2_lbl">Carico progressivo:</b> <span data-t="hst_phi2">il peso aumenta ogni sessione verso il massimale del blocco — non andare mai al cedimento</span></div>
+      <div class="ai-bullet"><b data-t="hst_phi3_lbl">Repeated Bout Effect:</b> <span data-t="hst_phi3">il muscolo si adatta rapidamente allo stesso stimolo — per questo le reps scendono e il carico sale ogni 2 settimane</span></div>
+      <div class="ai-bullet"><b data-t="hst_phi4_lbl">Strategic Deconditioning:</b> <span data-t="hst_phi4">9-14 giorni di pausa dopo il ciclo — il muscolo "dimentica" l'adattamento e diventa di nuovo sensibile al carico</span></div>
+    </div>
+
+    <div class="ai-block">
+      <div class="ai-block-title gold">📅 <span data-t="hst_sch_title">Struttura del Ciclo (6-8 settimane)</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:85px">🔵 Sett. 1-2</span><span class="ai-stat-val" data-t="hst_w1">2×15 reps — carico aumenta ogni sessione verso il tuo 15RM</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:85px">🟢 Sett. 3-4</span><span class="ai-stat-val" data-t="hst_w2">2×10 reps — carico aumenta ogni sessione verso il tuo 10RM</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:85px">🔴 Sett. 5-6</span><span class="ai-stat-val" data-t="hst_w3">2×5 reps — carico aumenta ogni sessione verso il tuo 5RM</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:85px">⚫ Sett. 7-8</span><span class="ai-stat-val" data-t="hst_w4">2×5 @5RM oppure Negativi (eccentrico pesante) — opzionale</span></div>
+      <div style="margin-top:8px;font-size:.72rem;color:rgba(255,255,255,.45)" data-t="hst_sch_note">Lun · Mer · Ven — Full Body ogni sessione. Dopo il ciclo: 9-14 giorni di deconditioning strategico.</div>
+    </div>
+
+    <div class="ai-block">
+      <div class="ai-block-title red">⚡ <span data-t="hst_rules_title">Regole chiave</span></div>
+      <div class="ai-bullet"><b data-t="hst_r1_lbl">Mai al cedimento:</b> <span data-t="hst_r1">lo stimolo è il carico meccanico progressivo, non la fatica. Fermati 1-2 reps prima del cedimento</span></div>
+      <div class="ai-bullet"><b data-t="hst_r2_lbl">1-2 serie per esercizio:</b> <span data-t="hst_r2">volume basso per sessione, alta frequenza. La seconda serie produce poco stimolo aggiuntivo</span></div>
+      <div class="ai-bullet"><b data-t="hst_r3_lbl">Esercizi composti:</b> <span data-t="hst_r3">70% composti + 30% isolamento. Squat, Panca, Rematore, Press sono il nucleo del programma</span></div>
+      <div class="ai-bullet"><b data-t="hst_r4_lbl">Trova i tuoi RM:</b> <span data-t="hst_r4">prima del ciclo devi conoscere il 15RM, 10RM e 5RM per ogni esercizio — sono la base dei calcoli</span></div>
+    </div>
+
+    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#003a5a,rgba(10,132,255,.9))" onclick="openWorkout('hst-u','hst-info-view')">
+      🔬 <span data-t="hst_start_btn">Inizia HST</span>
+    </button>
   </div>
 
   <!-- PAUL CARTER INFO VIEW -->
@@ -584,11 +642,340 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     </button>
   </div>
 
+  <!-- STRENGTH & POWER VIEW -->
+  <div id="strength-power" class="view">
+    <button onclick="goBack('uomini-heavy-menu')" class="back-btn">← <span data-t="advanced_title">Avanzato</span></button>
+    <div class="view-title" style="font-size:1.8rem">💪 Strength<br><span style="font-size:1.2rem;color:rgba(255,255,255,.5)">&amp; Power</span></div>
+    <div class="prog-item" style="border:1.5px solid rgba(48,209,88,.35);background:rgba(48,209,88,.07)">
+      <button class="prog-item-btn" onclick="showView('ss-info-view')">
+        <div class="prog-item-name">🟢 Starting Strength — <span style="font-size:.8rem;opacity:.7">Mark Rippetoe</span></div>
+        <div class="prog-item-sub">3 giorni · Full Body · Squat ogni sessione · Progressione lineare</div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+    <div class="prog-item" style="border:1.5px solid rgba(10,132,255,.35);background:rgba(10,132,255,.07)">
+      <button class="prog-item-btn" onclick="showView('w531-info-view')">
+        <div class="prog-item-name">⚡ 5/3/1 — <span style="font-size:.8rem;opacity:.7">Jim Wendler</span></div>
+        <div class="prog-item-sub">4 giorni · 4 fondamentali · Cicli 4 sett. · AMRAP · BBB</div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+    <div class="prog-item" style="border:1.5px solid rgba(255,214,10,.35);background:rgba(255,214,10,.07)">
+      <button class="prog-item-btn" onclick="showView('tm-info-view')">
+        <div class="prog-item-name">🏋️ Texas Method — <span style="font-size:.8rem;opacity:.7">Rippetoe/Pendlay</span></div>
+        <div class="prog-item-sub">3 giorni · Volume → Recovery → Intensity · PR ogni venerdì</div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+    <div class="prog-item" style="border:1.5px solid rgba(255,59,48,.35);background:rgba(255,59,48,.07)">
+      <button class="prog-item-btn" onclick="showView('smolov-info-view')">
+        <div class="prog-item-name">🔥 Smolov Jr. — <span style="font-size:.8rem;opacity:.7">Sergey Smolov</span></div>
+        <div class="prog-item-sub">3 settimane · 4×/sett. · 1 alzata · 6×6 / 7×5 / 8×4 / 10×3</div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+    <div class="prog-item" style="border:1.5px solid rgba(48,209,88,.35);background:rgba(48,209,88,.07)">
+      <button class="prog-item-btn" onclick="showView('madcow-info-view')">
+        <div class="prog-item-name">🏋️ Madcow 5×5 — <span style="font-size:.8rem;opacity:.7">Bill Starr</span></div>
+        <div class="prog-item-sub">3 giorni · Lun/Mer/Ven · Heavy-Light-Medium · 8-12 sett.</div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+    <div class="prog-item" style="border:1.5px solid rgba(255,59,48,.35);background:rgba(255,59,48,.07)">
+      <button class="prog-item-btn" onclick="showView('ws4sb-info-view')">
+        <div class="prog-item-name">🏈 WS4SB — <span style="font-size:.8rem;opacity:.7">Joe DeFranco</span></div>
+        <div class="prog-item-sub">3 giorni · ME Upper / Lower / Rep Upper · Per atleti</div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+  </div>
+
+  <!-- SMOLOV JR INFO VIEW -->
+  <div id="smolov-info-view" class="view">
+    <button onclick="goBack('strength-power')" class="back-btn">← Strength &amp; Power</button>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#7a0000,var(--red))" onclick="openWorkout('smolov-jr','smolov-info-view')">
+      🔥 <span data-t="smolov_start_btn">Inizia Smolov Jr.</span>
+    </button>
+    <img src="https://sport-fit.org/wp-content/uploads/2026/03/smolov.jpg"
+         alt="Smolov Jr." onerror="this.style.display='none'"
+         style="width:100%;max-height:220px;object-fit:cover;object-position:center top;border-radius:14px;margin-bottom:14px;display:block;background:#1c1c1e"/>
+    <div class="view-title" style="font-size:1.7rem">🔥 Smolov Jr.</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:4px"><b style="color:#fff">Sergey Smolov — adattato da Pavel Tsatsouline (2001)</b></div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px"><span data-t="smolov_days">3 settimane · 4 giorni / settimana · 1 alzata sola</span></div>
+    <div class="disclaimer red"><div class="disclaimer-icon">⚠️</div><div class="disclaimer-text"><b data-t="smolov_level">Avanzato</b> — <span data-t="smolov_ideal">Ciclo di picco a breve termine per Squat o Panca. Non è un programma di forza generale — è un blocco di specializzazione brutale. Guadagni tipici: +7-15kg in 3 settimane.</span></div></div>
+
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title red">⚠️ <span data-t="smolov_warn_title">Squat + Panca — si può fare insieme</span></div>
+      <div class="ai-bullet"><span data-t="smolov_warn1">La Panca non stanca il SNC come lo Squat — farli insieme è fattibile per atleti avanzati</span></div>
+      <div class="ai-bullet"><span data-t="smolov_warn2">Nessun altro esercizio pesante per gambe durante il ciclo. Solo lavoro leggero accessorio</span></div>
+      <div class="ai-bullet"><span data-t="smolov_warn3">Sonno, alimentazione e recupero devono essere ottimali. Se sei stressato, rimanda</span></div>
+    </div>
+
+    <div class="ai-block">
+      <div class="ai-block-title gold">📅 <span data-t="smolov_sch_title">Schema settimanale (ripetuto 3 volte)</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:80px">🔵 Giorno 1</span><span class="ai-stat-val" data-t="smolov_d1">6×6 @70% — 36 reps totali · il più "facile"</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:80px">🟢 Giorno 2</span><span class="ai-stat-val" data-t="smolov_d2">7×5 @75% — 35 reps totali · equilibrio volume/intensità</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:80px">🟡 Giorno 3</span><span class="ai-stat-val" data-t="smolov_d3">8×4 @80% — 32 reps totali · pesante, tecnica ferrea</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:80px">🔴 Giorno 4</span><span class="ai-stat-val" data-t="smolov_d4">10×3 @85% — 30 reps totali · il giorno più duro 🔥</span></div>
+      <div style="margin-top:8px;font-size:.72rem;color:rgba(255,255,255,.45)" data-t="smolov_rest_note">Riposo 3-5 min tra le serie. Giorno 1→riposo→Giorno 2→Giorno 3→Giorno 4 (poi riposo prima di settimana successiva).</div>
+    </div>
+
+    <div class="ai-block">
+      <div class="ai-block-title blue">📊 <span data-t="smolov_prog_title">Progressione settimanale</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:70px">🔵 Sett. 1</span><span class="ai-stat-val" data-t="smolov_w1">Pesi base — tutti i giorni al 70/75/80/85% del tuo 1RM</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:70px">🟢 Sett. 2</span><span class="ai-stat-val" data-t="smolov_w2">+2.5-5kg su tutti i giorni (se sett.1 era gestibile)</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:70px">🔴 Sett. 3</span><span class="ai-stat-val" data-t="smolov_w3">+2.5-5kg ancora · poi riposo 1 settimana → test nuovo 1RM</span></div>
+    </div>
+
+    <div class="ai-block">
+      <div class="ai-block-title green">⚡ <span data-t="smolov_rules_title">Regole chiave</span></div>
+      <div class="ai-bullet"><b data-t="smolov_r1_lbl">Riposo tra serie:</b> <span data-t="smolov_r1">3-5 minuti — non meno. Le serie sono troppe per accorciarli</span></div>
+      <div class="ai-bullet"><b data-t="smolov_r2_lbl">Se non riesci i reps:</b> <span data-t="smolov_r2">riduci il peso di 2.5-5kg. Meglio meno peso che reps mancati</span></div>
+      <div class="ai-bullet"><b data-t="smolov_r3_lbl">Dopo il ciclo:</b> <span data-t="smolov_r3">1 settimana di riposo/deload, poi testa il nuovo massimale</span></div>
+      <div class="ai-bullet"><b data-t="smolov_r4_lbl">2 cicli di fila:</b> <span data-t="smolov_r4">possibile con 1 settimana di riposo tra i due. Guadagni totali: fino a +25kg</span></div>
+    </div>
+
+    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#7a0000,var(--red))" onclick="openWorkout('smolov-jr','smolov-info-view')">
+      🔥 <span data-t="smolov_start_btn">Inizia Smolov Jr.</span>
+    </button>
+  </div>
+
+  <!-- TEXAS METHOD INFO VIEW -->
+  <div id="tm-info-view" class="view">
+    <button onclick="goBack('strength-power')" class="back-btn">← Strength &amp; Power</button>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#4a3800,rgba(255,214,10,.85))" onclick="openWorkout('texas-method','tm-info-view')">
+      🏋️ <span data-t="tm_start_btn">Inizia Texas Method</span>
+    </button>
+    <img src="https://sport-fit.org/wp-content/uploads/2026/03/Texas-Method-Feature-Graphic.png"
+         alt="Texas Method" onerror="this.style.display='none'"
+         style="width:100%;max-height:220px;object-fit:cover;object-position:center top;border-radius:14px;margin-bottom:14px;display:block;background:#1c1c1e"/>
+    <div class="view-title" style="font-size:1.7rem">🏋️ Texas Method</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:4px"><b style="color:#fff">Mark Rippetoe &amp; Glenn Pendlay — Wichita Falls Athletic Club</b></div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px"><span data-t="tm_days">3 giorni / settimana · Volume → Recovery → Intensity</span></div>
+    <div class="disclaimer" style="background:rgba(255,214,10,.08);border-left:3px solid var(--gold)"><div class="disclaimer-icon">🏋️</div><div class="disclaimer-text"><b data-t="tm_level">Intermedio</b> — <span data-t="tm_ideal">Ideale dopo Starting Strength o StrongLifts quando la progressione ogni sessione si blocca. Obiettivo: un nuovo PR ogni venerdì.</span></div></div>
+
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title red">📌 <span data-t="tm_phi_title">Filosofia — 3 giorni, 3 obiettivi</span></div>
+      <div class="ai-bullet">🔴 <b data-t="tm_phi1_lbl">Volume Day (Lunedì):</b> <span data-t="tm_phi1">5×5 pesante — crei lo stress che forza l'adattamento. Faticoso, ma essenziale</span></div>
+      <div class="ai-bullet">🔵 <b data-t="tm_phi2_lbl">Recovery Day (Mercoledì):</b> <span data-t="tm_phi2">leggero al 80% del lunedì — mantieni la tecnica senza stancarti per venerdì</span></div>
+      <div class="ai-bullet">🟡 <b data-t="tm_phi3_lbl">Intensity Day (Venerdì):</b> <span data-t="tm_phi3">1×5 nuovo PR — esprimi l'adattamento della settimana. Aggiungi peso ogni venerdì</span></div>
+    </div>
+
+    <div class="ai-block">
+      <div class="ai-block-title gold">📅 <span data-t="tm_sch_title">Schema settimana tipo</span></div>
+      <div class="ai-stat-row" style="padding:6px 0">
+        <span class="ai-stat-label" style="min-width:85px">🔴 <span data-t="tm_d1_lbl">Lunedì</span></span>
+        <span class="ai-stat-val" data-t="tm_d1">Squat 5×5 · Panca o Press 5×5 · Stacco 1×5</span>
+      </div>
+      <div class="ai-stat-row" style="padding:6px 0">
+        <span class="ai-stat-label" style="min-width:85px">🔵 <span data-t="tm_d2_lbl">Mercoledì</span></span>
+        <span class="ai-stat-val" data-t="tm_d2">Squat 2×5 leggero · Press o Panca 3×5 · Trazioni 3×max</span>
+      </div>
+      <div class="ai-stat-row" style="padding:6px 0">
+        <span class="ai-stat-label" style="min-width:85px">🟡 <span data-t="tm_d3_lbl">Venerdì</span></span>
+        <span class="ai-stat-val" data-t="tm_d3">Squat 1×5 PR 🎯 · Panca o Press 1×5 PR 🎯 · Power Clean 5×3</span>
+      </div>
+      <div style="margin-top:8px;font-size:.72rem;color:rgba(255,255,255,.45)" data-t="tm_alt_note">Panca e Press Militare si alternano: settimana 1 Panca sul volume/PR, settimana 2 Press sul volume/PR.</div>
+    </div>
+
+    <div class="ai-block">
+      <div class="ai-block-title blue">📊 <span data-t="tm_pct_title">Percentuali di partenza</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:85px">🔴 <span data-t="tm_vol_lbl">Volume</span></span><span class="ai-stat-val" data-t="tm_vol_pct">5×5 @77% del 1RM — es. 1RM 100kg → 77kg per 5 serie</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:85px">🔵 <span data-t="tm_rec_lbl">Recovery</span></span><span class="ai-stat-val" data-t="tm_rec_pct">2×5 @62% del 1RM (80% del peso del lunedì)</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:85px">🟡 <span data-t="tm_int_lbl">Intensity</span></span><span class="ai-stat-val" data-t="tm_int_pct">1×5 @85%+ del 1RM — nuovo record ogni settimana</span></div>
+    </div>
+
+    <div class="ai-block">
+      <div class="ai-block-title green">⚡ <span data-t="tm_rules_title">Progressione &amp; Regole</span></div>
+      <div class="ai-bullet"><b data-t="tm_r1_lbl">Progressione:</b> <span data-t="tm_r1">ogni venerdì +5kg Squat, +2.5kg Panca/Press. Niente calcoli — aggiungi e basta</span></div>
+      <div class="ai-bullet"><b data-t="tm_r2_lbl">Se non riesci il PR venerdì:</b> <span data-t="tm_r2">riduci il volume del lunedì da 5×5 a 4×5 o 3×5. Non aumentare il peso del venerdì</span></div>
+      <div class="ai-bullet"><b data-t="tm_r3_lbl">Power Clean:</b> <span data-t="tm_r3">sostituibile con Stacco Deficit o Stacco Classico se non conosci il Clean</span></div>
+      <div class="ai-bullet"><b data-t="tm_r4_lbl">Durata:</b> <span data-t="tm_r4">ideale per 6-12 mesi. Dopo, passa a 5/3/1 o un programma di periodizzazione avanzata</span></div>
+    </div>
+
+    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#4a3800,rgba(255,214,10,.85))" onclick="openWorkout('texas-method','tm-info-view')">
+      🏋️ <span data-t="tm_start_btn">Inizia Texas Method</span>
+    </button>
+  </div>
+
+  <!-- 5/3/1 INFO VIEW -->
+  <div id="w531-info-view" class="view">
+    <button onclick="goBack('strength-power')" class="back-btn">← Strength &amp; Power</button>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#003a5a,rgba(10,132,255,.9))" onclick="openWorkout('wendler-531','w531-info-view')">
+      ⚡ <span data-t="w531_start_btn">Inizia 5/3/1</span>
+    </button>
+    <img src="https://sport-fit.org/wp-content/uploads/2026/03/jim-wendler.jpg"
+         alt="Jim Wendler" onerror="this.style.display='none'"
+         style="width:100%;max-height:220px;object-fit:cover;object-position:center top;border-radius:14px;margin-bottom:14px;display:block;background:#1c1c1e"/>
+    <div class="view-title" style="font-size:1.7rem">⚡ 5/3/1</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:4px"><b style="color:#fff">Jim Wendler — 5/3/1 (2009)</b></div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px"><span data-t="w531_days">4 giorni / settimana · 4 alzate fondamentali · Cicli da 4 settimane</span></div>
+    <div class="disclaimer" style="background:rgba(10,132,255,.08);border-left:3px solid var(--blue)"><div class="disclaimer-icon">⚡</div><div class="disclaimer-text"><b data-t="w531_level">Intermedio / Avanzato</b> — <span data-t="w531_ideal">Il programma forza più usato al mondo. Progressione lenta e costante per anni. Wendler: "Inizia leggero. Inizia molto leggero."</span></div></div>
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title gold">⚙️ <span data-t="w531_tm_title">Training Max (TM) — La base di tutto</span></div>
+      <div class="ai-bullet"><span data-t="w531_tm1">TM = 90% del tuo vero 1RM. Esempio: Squat 100kg → TM = 90kg</span></div>
+      <div class="ai-bullet"><span data-t="w531_tm2">Tutte le percentuali si calcolano sul TM, non sul massimo vero</span></div>
+      <div class="ai-bullet"><span data-t="w531_tm3">Dopo ogni ciclo: +2.5kg Panca/Press, +5kg Squat/Stacco al TM</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title red">📅 <span data-t="w531_cycle_title">Il Ciclo 4 Settimane</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:70px">🔵 Sett. 1</span><span class="ai-stat-val" data-t="w531_w1">3×5 — 65% · 75% · 85%+ AMRAP</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:70px">🔴 Sett. 2</span><span class="ai-stat-val" data-t="w531_w2">3×3 — 70% · 80% · 90%+ AMRAP</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:70px">🟡 Sett. 3</span><span class="ai-stat-val" data-t="w531_w3">5/3/1 — 75% · 85% · 95%+ AMRAP</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:70px">🟢 Sett. 4</span><span class="ai-stat-val" data-t="w531_w4">Deload — 40% · 50% · 60% (recupero)</span></div>
+      <div style="margin-top:8px;font-size:.72rem;color:rgba(255,255,255,.45)" data-t="w531_amrap_note">Il "+" = AMRAP — vai al massimo delle reps con buona tecnica.</div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title blue">📋 <span data-t="w531_sch_title">Schema settimanale</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:70px">Lunedì</span><span class="ai-stat-val" data-t="w531_d1">Press Militare + BBB + Assistenza</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:70px">Mercoledì</span><span class="ai-stat-val" data-t="w531_d2">Stacco da Terra + BBB + Assistenza</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:70px">Venerdì</span><span class="ai-stat-val" data-t="w531_d3">Panca Piana + BBB + Assistenza</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:70px">Sabato</span><span class="ai-stat-val" data-t="w531_d4">Squat + BBB + Assistenza</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title green">💪 <span data-t="w531_bbb_title">BBB — Boring But Big</span></div>
+      <div class="ai-bullet"><span data-t="w531_bbb1">Dopo le serie principali: 5×10 dello stesso esercizio al 50-60% del TM</span></div>
+      <div class="ai-bullet"><span data-t="w531_bbb2">Es: Panca 5/3/1 → poi 5×10 Panca al 50% TM. Volume alto, peso leggero</span></div>
+      <div class="ai-bullet"><span data-t="w531_bbb3">Costruisce massa muscolare mentre aumenti la forza sui fondamentali</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title purple">⚡ <span data-t="w531_rules_title">Regole di Wendler</span></div>
+      <div class="ai-bullet"><b data-t="w531_r1_lbl">Inizia leggero:</b> <span data-t="w531_r1">anche se il peso sembra ridicolo. La progressione ti porterà lontano in 6-12 mesi</span></div>
+      <div class="ai-bullet"><b data-t="w531_r2_lbl">Non saltare il deload:</b> <span data-t="w531_r2">la settimana 4 leggera è fondamentale per il recupero a lungo termine</span></div>
+      <div class="ai-bullet"><b data-t="w531_r3_lbl">Se stalli:</b> <span data-t="w531_r3">riduci il TM del 10% e ricomincia. Non aumentare il TM se non completi le reps</span></div>
+      <div class="ai-bullet"><b data-t="w531_r4_lbl">Non 2 giorni di fila:</b> <span data-t="w531_r4">minimo 1 giorno di recupero tra le sessioni</span></div>
+    </div>
+    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#003a5a,rgba(10,132,255,.9))" onclick="openWorkout('wendler-531','w531-info-view')">
+      ⚡ <span data-t="w531_start_btn">Inizia 5/3/1</span>
+    </button>
+  </div>
+  <!-- STARTING STRENGTH INFO VIEW -->
+  <div id="ss-info-view" class="view">
+    <button onclick="goBack('strength-power')" class="back-btn">← Strength &amp; Power</button>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#1a3a00,var(--green))" onclick="openWorkout('ss-u','ss-info-view')">
+      🟢 <span data-t="ss_start_btn">Inizia Starting Strength</span>
+    </button>
+    <img src="https://sport-fit.org/wp-content/uploads/2026/03/Mark-Rippetoe-Headshot.webp"
+         alt="Mark Rippetoe" onerror="this.style.display='none'"
+         style="width:100%;max-height:220px;object-fit:cover;object-position:center top;border-radius:14px;margin-bottom:14px;display:block;background:#1c1c1e"/>
+    <div class="view-title" style="font-size:1.7rem">🟢 Starting Strength</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:4px"><b style="color:#fff">Mark Rippetoe — Starting Strength (2005)</b></div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px"><span data-t="ss_days">3 giorni / settimana · Full Body · Progressione lineare</span></div>
+    <div class="disclaimer" style="background:rgba(48,209,88,.08);border-left:3px solid var(--green)"><div class="disclaimer-icon">🟢</div><div class="disclaimer-text"><b data-t="ss_level">Iniziale / Intermedio</b> — <span data-t="ss_ideal">Il primo programma serio con il bilanciere. Costruisce forza reale sui fondamentali prima di qualsiasi altro metodo.</span></div></div>
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title green">📌 <span data-t="ss_phi_title">Filosofia</span></div>
+      <div class="ai-bullet"><span data-t="ss_phi1">Progressione lineare: aggiungi peso ad ogni allenamento — 2.5kg per Squat/Panca/Press, 5kg per Stacco</span></div>
+      <div class="ai-bullet"><span data-t="ss_phi2">Lo Squat è il re — si esegue OGNI sessione perché è il movimento che costruisce più forza su tutto il corpo</span></div>
+      <div class="ai-bullet"><span data-t="ss_phi3">Volume basso, intensità alta — 3×5 su tutto. Abbastanza per crescere, abbastanza per recuperare</span></div>
+      <div class="ai-bullet"><span data-t="ss_phi4">Funziona finché funziona — quando la progressione si blocca, si passa a Madcow o Texas Method</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title gold">📅 <span data-t="ss_sch_title">Schema A/B — settimana esempio</span></div>
+      <div class="ai-stat-row" style="padding:6px 0"><span class="ai-stat-label" style="min-width:80px">🔴 Lun A</span><span class="ai-stat-val" data-t="ss_day_a">Squat 3×5 · Panca 3×5 · Stacco 1×5</span></div>
+      <div class="ai-stat-row" style="padding:6px 0"><span class="ai-stat-label" style="min-width:80px">🔵 Mer B</span><span class="ai-stat-val" data-t="ss_day_b">Squat 3×5 · Press Mil. 3×5 · Stacco 1×5</span></div>
+      <div class="ai-stat-row" style="padding:6px 0"><span class="ai-stat-label" style="min-width:80px">🔴 Ven A</span><span class="ai-stat-val" data-t="ss_day_a2">Squat 3×5 · Panca 3×5 · Stacco 1×5</span></div>
+      <div style="margin-top:8px;font-size:.72rem;color:rgba(255,255,255,.45)" data-t="ss_rotate_note">A e B si alternano ogni settimana — Panca e Press Militare si scambiano.</div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title blue">⚡ <span data-t="ss_rules_title">Regole chiave</span></div>
+      <div class="ai-bullet"><b data-t="ss_r1_lbl">Peso iniziale:</b> <span data-t="ss_r1">inizia leggero — 50-60% del tuo massimo stimato. La progressione è rapida all'inizio</span></div>
+      <div class="ai-bullet"><b data-t="ss_r2_lbl">Stacco:</b> <span data-t="ss_r2">1 sola serie da 5 reps, ma pesante. Il volume basso protegge la schiena e permette più carico</span></div>
+      <div class="ai-bullet"><b data-t="ss_r3_lbl">Quando smetti di progredire:</b> <span data-t="ss_r3">prova 3 volte con lo stesso peso — se ancora non riesci, scala del 10% e riparti</span></div>
+      <div class="ai-bullet"><b data-t="ss_r4_lbl">Chin-up:</b> <span data-t="ss_r4">aggiunti opzionalmente come assistenza — fai quante reps riesci, aggiungi peso quando arrivi a 3×8</span></div>
+      <div class="ai-bullet"><b data-t="ss_r5_lbl">Dopo 3-6 mesi:</b> <span data-t="ss_r5">passa a Madcow 5×5 o Texas Method per continuare i progressi</span></div>
+    </div>
+    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#1a3a00,var(--green))" onclick="openWorkout('ss-u','ss-info-view')">
+      🟢 <span data-t="ss_start_btn">Inizia Starting Strength</span>
+    </button>
+  </div>
+
+  <!-- UPPER/LOWER POWERBUILDING INFO VIEW -->
+  <div id="ulpb-info-view" class="view">
+    <button onclick="goBack('powerbuilding-concepts')" class="back-btn">← Powerbuilding</button>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#1a3a00,var(--green))" onclick="openWorkout('ul-pb-u','ulpb-info-view')">
+      ⚡ <span data-t="ulpb_start_btn">Inizia Upper/Lower Powerbuilding</span>
+    </button>
+    <div style="text-align:center;margin-bottom:14px">
+      <img src="https://sport-fit.org/wp-content/uploads/2026/03/logo_home.jpg" alt="Sport&Fit GYM"
+           style="max-height:80px;border-radius:12px;display:inline-block"/>
+      <div style="margin-top:6px;font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:2px">Upper/Lower Powerbuilding</div>
+      <div style="font-size:.7rem;color:rgba(255,255,255,.4);margin-top:2px">Created by Luka</div>
+    </div>
+    <div class="view-title" style="font-size:1.6rem">⚡ Upper/Lower Powerbuilding</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px">4 giorni / settimana · Upper/Lower · Forza + Ipertrofia · 8 sett. + Deload</div>
+    <div class="disclaimer" style="background:rgba(255,149,0,.08);border-left:3px solid rgba(255,149,0,.8)"><div class="disclaimer-icon">⚠️</div><div class="disclaimer-text"><b data-t="ulpb_level">Avanzato</b> — <span data-t="ulpb_ideal">Ideale per chi ha almeno 2 anni di esperienza e vuole combinare forza nei fondamentali con volume ipertrofico. No cedimento sugli esercizi base.</span></div></div>
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title red">📌 <span data-t="ulpb_phi_title">Filosofia</span></div>
+      <div class="ai-bullet"><span data-t="ulpb_phi1">2 giorni Upper + 2 giorni Lower ogni settimana — ogni gruppo muscolare colpito 2× / sett.</span></div>
+      <div class="ai-bullet"><span data-t="ulpb_phi2">Giorno ME (Max Effort): fondamentali pesanti con reps che scendono ogni settimana → forza</span></div>
+      <div class="ai-bullet"><span data-t="ulpb_phi3">Giorno Volume: range 8-15 reps con doppia progressione → ipertrofia</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title gold">📅 <span data-t="ulpb_sch_title">Schema settimanale</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:90px">🔴 Lun</span><span class="ai-stat-val" data-t="ulpb_d1">Lower ME — Squat + Stacco pesante, reps che scendono</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:90px">🔵 Mar</span><span class="ai-stat-val" data-t="ulpb_d2">Upper Volume — Petto · Schiena · Spalle · Braccia</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:90px">🟢 Gio</span><span class="ai-stat-val" data-t="ulpb_d3">Lower Volume — Squat · Gambe · Femorali · Polpacci</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:90px">🟡 Ven</span><span class="ai-stat-val" data-t="ulpb_d4">Upper ME — Panca + Press pesante, reps che scendono</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title blue">⚡ <span data-t="ulpb_prog_title">Progressione</span></div>
+      <div class="ai-bullet"><b data-t="ulpb_p1_lbl">Esercizi base (ME):</b> <span data-t="ulpb_p1">Sett.1: 3×6 → Sett.2: 3×4 → Sett.3: 3×3 → Sett.4: 3×2 — peso aumenta ogni settimana. No cedimento</span></div>
+      <div class="ai-bullet"><b data-t="ulpb_p2_lbl">Esercizi volume (range):</b> <span data-t="ulpb_p2">Doppia progressione — es. 3×8-10: prima porta tutte le serie a 10 reps, poi aggiungi peso e riparti da 8</span></div>
+      <div class="ai-bullet"><b data-t="ulpb_p3_lbl">Deload (sett. 9):</b> <span data-t="ulpb_p3">1 settimana con tutti i pesi al 70% — poi ricomincia il ciclo</span></div>
+    </div>
+    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#1a3a00,var(--green))" onclick="openWorkout('ul-pb-u','ulpb-info-view')">
+      ⚡ <span data-t="ulpb_start_btn">Inizia Upper/Lower Powerbuilding</span>
+    </button>
+  </div>
+
+  <!-- LPP4 HEAVY DUTY INFO VIEW -->
+  <div id="lpp4-info-view" class="view">
+    <button onclick="goBack('heavy-duty-concepts')" class="back-btn">← Heavy Duty</button>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#1a3a00,var(--green))" onclick="openWorkout('lpp4-u','lpp4-info-view')">
+      🦵 <span data-t="lpp4_start_btn">Inizia Heavy Duty LPP-4</span>
+    </button>
+    <div style="text-align:center;margin-bottom:14px">
+      <img src="https://sport-fit.org/wp-content/uploads/2026/03/logo_home.jpg" alt="Sport&Fit GYM"
+           style="max-height:80px;border-radius:12px;display:inline-block"/>
+      <div style="margin-top:6px;font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:2px">Heavy Duty LPP-4</div>
+      <div style="font-size:.7rem;color:rgba(255,255,255,.4);margin-top:2px">Created by Luka</div>
+    </div>
+    <div class="view-title" style="font-size:1.6rem">🦵 Heavy Duty LPP-4</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px">4 giorni · Legs / Push / Pull · Rotazione A1 B1 C1 A2 B2 C2 · 8 sett. + Deload · <b style="color:rgba(255,255,255,.7)">Lun · Mar · Gio · Ven</b></div>
+    <div class="disclaimer" style="background:rgba(48,209,88,.08);border-left:3px solid var(--green)"><div class="disclaimer-icon">🦵</div><div class="disclaimer-text"><b data-t="lpp4_level">Avanzato</b> — <span data-t="lpp4_ideal">Ispirato ai principi Heavy Duty di Mentzer ma in formato LPP. Alta intensità, cedimento su quasi tutti gli esercizi, volume controllato.</span></div></div>
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title red">📌 <span data-t="lpp4_phi_title">Filosofia Heavy Duty LPP</span></div>
+      <div class="ai-bullet"><span data-t="lpp4_phi1">Rotazione 6 sessioni: Legs A → Push B → Pull C → Legs A2 → Push B2 → Pull C2</span></div>
+      <div class="ai-bullet"><span data-t="lpp4_phi2">Alta intensità: cedimento su tutti gli esercizi eccetto RDL — vai fino all'ultima rep possibile</span></div>
+      <div class="ai-bullet"><span data-t="lpp4_phi3">Volume basso per sessione — 1-2 serie per esercizio, massima concentrazione su ogni set</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title gold">📅 <span data-t="lpp4_sch_title">Rotazione sessioni</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:40px">A1</span><span class="ai-stat-val" data-t="lpp4_d1">Legs — Quadricipiti · Femorali · Glutei · Polpacci <span style="color:rgba(255,255,255,.35);font-size:.7rem">(Lunedì)</span></span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:40px">B1</span><span class="ai-stat-val" data-t="lpp4_d2">Push — Petto · Spalle · Tricipiti <span style="color:rgba(255,255,255,.35);font-size:.7rem">(Martedì)</span></span></div>
+      <div class="ai-stat-row" style="padding:5px 0;opacity:.35"><span class="ai-stat-label" style="min-width:40px">—</span><span class="ai-stat-val">Riposo (Mercoledì)</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:40px">C1</span><span class="ai-stat-val" data-t="lpp4_d3">Pull — Schiena · Bicipiti · Deltoidi Post. <span style="color:rgba(255,255,255,.35);font-size:.7rem">(Giovedì)</span></span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:40px">A2</span><span class="ai-stat-val" data-t="lpp4_d4">Legs — esercizi diversi da A1 (RDL, Hip Thrust...) <span style="color:rgba(255,255,255,.35);font-size:.7rem">(Venerdì)</span></span></div>
+      <div class="ai-stat-row" style="padding:5px 0;opacity:.35"><span class="ai-stat-label" style="min-width:40px">—</span><span class="ai-stat-val">Riposo (Sab/Dom)</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:40px">B2</span><span class="ai-stat-val" data-t="lpp4_d5">Push — esercizi diversi da B1 (macchine, manubri) <span style="color:rgba(255,255,255,.35);font-size:.7rem">(Lunedì)</span></span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:40px">C2</span><span class="ai-stat-val" data-t="lpp4_d6">Pull — esercizi diversi da C1 <span style="color:rgba(255,255,255,.35);font-size:.7rem">(Martedì)</span></span></div>
+      <div style="margin-top:8px;font-size:.72rem;color:rgba(255,255,255,.4)">Poi ricomincia da A1 il Giovedì successivo e così via.</div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title blue">⚡ <span data-t="lpp4_prog_title">Progressione</span></div>
+      <div class="ai-bullet"><b data-t="lpp4_p1_lbl">Esercizi con range (es. 8-6):</b> <span data-t="lpp4_p1">doppia progressione — prima porta le reps al limite alto del range (8), poi aggiungi peso e riparti dal basso (6)</span></div>
+      <div class="ai-bullet"><b data-t="lpp4_p2_lbl">Cedimento:</b> <span data-t="lpp4_p2">ogni serie va al cedimento muscolare assoluto — eccetto RDL per sicurezza della schiena</span></div>
+      <div class="ai-bullet"><b data-t="lpp4_p3_lbl">Deload (sett. 9):</b> <span data-t="lpp4_p3">1 settimana con tutti i pesi al 70% — no cedimento, recupero completo</span></div>
+    </div>
+    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#1a3a00,var(--green))" onclick="openWorkout('lpp4-u','lpp4-info-view')">
+      🦵 <span data-t="lpp4_start_btn">Inizia Heavy Duty LPP-4</span>
+    </button>
+  </div>
+
   <!-- POWERBUILDING CONCEPTS VIEW -->
   <div id="powerbuilding-concepts" class="view">
     <button onclick="goBack('uomini-heavy-menu')" class="back-btn">← <span data-t="advanced_title">Avanzato</span></button>
     <div class="view-title" style="font-size:1.8rem">🏗️ Powerbuilding<br><span style="font-size:1.2rem;color:rgba(255,255,255,.5)">Forza + Massa</span></div>
-
     <div class="prog-item" style="border:1.5px solid rgba(10,132,255,.35);background:rgba(10,132,255,.07)">
       <button class="prog-item-btn" onclick="showView('phat-info-view')">
         <div class="prog-item-name">⚡ PHAT — Layne Norton</div>
@@ -603,22 +990,8 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       </button>
       <span class="prog-arr">›</span>
     </div>
-    <div class="prog-item" style="border:1.5px solid rgba(48,209,88,.35);background:rgba(48,209,88,.07)">
-      <button class="prog-item-btn" onclick="showView('madcow-info-view')">
-        <div class="prog-item-name">🏋️ Madcow 5×5</div>
-        <div class="prog-item-sub">3 giorni · Lun/Mer/Ven · Heavy-Light-Medium · 8-12 sett.</div>
-      </button>
-      <span class="prog-arr">›</span>
-    </div>
-    <div class="prog-item" style="border:1.5px solid rgba(255,59,48,.35);background:rgba(255,59,48,.07)">
-      <button class="prog-item-btn" onclick="showView('ws4sb-info-view')">
-        <div class="prog-item-name">🏈 WS4SB — Joe DeFranco</div>
-        <div class="prog-item-sub">3 giorni · ME Upper / Lower / Rep Upper · Template flessibile</div>
-      </button>
-      <span class="prog-arr">›</span>
-    </div>
     <div class="prog-item" style="border:1.5px solid rgba(255,149,0,.35);background:rgba(255,149,0,.07)">
-      <button class="prog-item-btn" onclick="openWorkout('ul-pb-u','powerbuilding-concepts')">
+      <button class="prog-item-btn" onclick="showView('ulpb-info-view')">
         <div class="prog-item-name">⚡ Upper/Lower Powerbuilding <span style="font-size:.7rem;opacity:.6">by Luka</span></div>
         <div class="prog-item-sub">4 giorni · Upper/Lower · ME + Volume · Periodizzazione 4 sett.</div>
       </button>
@@ -785,7 +1158,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
 
   <!-- MADCOW 5×5 INFO VIEW -->
   <div id="madcow-info-view" class="view">
-    <button onclick="goBack('powerbuilding-concepts')" class="back-btn">← <span data-t="advanced_title">Avanzato</span></button>
+    <button onclick="goBack('strength-power')" class="back-btn">← <span data-t="advanced_title">Avanzato</span></button>
     <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#1a3a00,var(--green))" onclick="openWorkout('madcow-u','madcow-info-view')">
       💪 <span data-t="madcow_start_btn">Inizia Madcow 5×5</span>
     </button>
@@ -833,7 +1206,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
 
   <!-- WS4SB INFO VIEW -->
   <div id="ws4sb-info-view" class="view">
-    <button onclick="goBack('powerbuilding-concepts')" class="back-btn">← <span data-t="advanced_title">Avanzato</span></button>
+    <button onclick="goBack('strength-power')" class="back-btn">← <span data-t="advanced_title">Avanzato</span></button>
     <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#7a0000,var(--red))" onclick="openWorkout('ws4sb-u','ws4sb-info-view')">
       🏈 <span data-t="ws4sb_start_btn">Inizia WS4SB</span>
     </button>
@@ -936,7 +1309,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       <span class="prog-arr">›</span>
     </div>
     <div class="prog-item" style="border:1.5px solid rgba(48,209,88,.35);background:rgba(48,209,88,.07)">
-      <button class="prog-item-btn" onclick="openWorkout('lpp4-u','heavy-duty-concepts')">
+      <button class="prog-item-btn" onclick="showView('lpp4-info-view')">
         <div class="prog-item-name">🦵 Heavy Duty LPP-4 <span style="font-size:.7rem;opacity:.6">by Luka</span></div>
         <div class="prog-item-sub">4 giorni · Legs / Push / Pull · Rotazione A1 B1 C1 A2 B2 C2</div>
       </button>
@@ -1085,6 +1458,85 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     <div id="workout-title" class="view-title"></div>
     <div id="workout-pills" class="pills"></div>
     <div id="workout-note"></div>
+    <div id="wendler-calc-section" style="display:none;margin-bottom:14px">
+      <div class="ai-block" style="border:1px solid rgba(10,132,255,.35);background:rgba(10,132,255,.06)">
+        <div class="ai-block-title blue">🧮 <span id="wc-title">Calcola i tuoi pesi</span></div>
+        <div style="font-size:.72rem;color:rgba(255,255,255,.45);margin-bottom:10px" id="wc-sub">Inserisci i massimali — i pesi si aggiornano automaticamente nel programma</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <div>
+            <div style="font-size:.65rem;color:rgba(255,255,255,.45);margin-bottom:3px" id="wc-sq-lbl">Squat 1RM (kg)</div>
+            <input id="wc-sq" type="number" min="0" step="2.5" placeholder="es. 100" oninput="calcWendler()"
+              style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px;color:#fff;font-size:1rem;font-family:inherit"/>
+          </div>
+          <div>
+            <div style="font-size:.65rem;color:rgba(255,255,255,.45);margin-bottom:3px" id="wc-dl-lbl">Stacco 1RM (kg)</div>
+            <input id="wc-dl" type="number" min="0" step="2.5" placeholder="es. 120" oninput="calcWendler()"
+              style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px;color:#fff;font-size:1rem;font-family:inherit"/>
+          </div>
+          <div>
+            <div style="font-size:.65rem;color:rgba(255,255,255,.45);margin-bottom:3px" id="wc-bp-lbl">Panca 1RM (kg)</div>
+            <input id="wc-bp" type="number" min="0" step="2.5" placeholder="es. 80" oninput="calcWendler()"
+              style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px;color:#fff;font-size:1rem;font-family:inherit"/>
+          </div>
+          <div>
+            <div style="font-size:.65rem;color:rgba(255,255,255,.45);margin-bottom:3px" id="wc-op-lbl">Press 1RM (kg)</div>
+            <input id="wc-op" type="number" min="0" step="2.5" placeholder="es. 50" oninput="calcWendler()"
+              style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px;color:#fff;font-size:1rem;font-family:inherit"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="tm-calc-section" style="display:none;margin-bottom:14px">
+      <div class="ai-block" style="border:1px solid rgba(255,214,10,.35);background:rgba(255,214,10,.06)">
+        <div class="ai-block-title gold">🧮 <span id="tmc-title">Calcola i tuoi pesi</span></div>
+        <div style="font-size:.72rem;color:rgba(255,255,255,.45);margin-bottom:10px" id="tmc-sub">Inserisci i massimali — Volume/Recovery/Intensity si compilano automaticamente</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <div>
+            <div style="font-size:.65rem;color:rgba(255,255,255,.45);margin-bottom:3px">Squat 1RM (kg)</div>
+            <input id="tmc-sq" type="number" min="0" step="2.5" placeholder="es. 100" oninput="calcTexas()"
+              style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px;color:#fff;font-size:1rem;font-family:inherit"/>
+          </div>
+          <div>
+            <div style="font-size:.65rem;color:rgba(255,255,255,.45);margin-bottom:3px">Stacco 1RM (kg)</div>
+            <input id="tmc-dl" type="number" min="0" step="2.5" placeholder="es. 120" oninput="calcTexas()"
+              style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px;color:#fff;font-size:1rem;font-family:inherit"/>
+          </div>
+          <div>
+            <div style="font-size:.65rem;color:rgba(255,255,255,.45);margin-bottom:3px">Panca 1RM (kg)</div>
+            <input id="tmc-bp" type="number" min="0" step="2.5" placeholder="es. 80" oninput="calcTexas()"
+              style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px;color:#fff;font-size:1rem;font-family:inherit"/>
+          </div>
+          <div>
+            <div style="font-size:.65rem;color:rgba(255,255,255,.45);margin-bottom:3px">Press 1RM (kg)</div>
+            <input id="tmc-op" type="number" min="0" step="2.5" placeholder="es. 50" oninput="calcTexas()"
+              style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px;color:#fff;font-size:1rem;font-family:inherit"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="smolov-calc-section" style="display:none;margin-bottom:14px">
+      <div class="ai-block" style="border:1px solid rgba(255,59,48,.35);background:rgba(255,59,48,.06)">
+        <div class="ai-block-title red">🧮 <span id="smc-title">Calcola i tuoi pesi</span></div>
+        <div style="font-size:.72rem;color:rgba(255,255,255,.45);margin-bottom:10px" id="smc-sub">Inserisci i massimali — tutti i giorni si compilano automaticamente</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
+          <div>
+            <div style="font-size:.65rem;color:rgba(255,255,255,.45);margin-bottom:3px" id="smc-sq-lbl">Squat 1RM (kg)</div>
+            <input id="smc-sq" type="number" min="0" step="2.5" placeholder="es. 120" oninput="calcSmolov()"
+              style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px;color:#fff;font-size:1rem;font-family:inherit"/>
+          </div>
+          <div>
+            <div style="font-size:.65rem;color:rgba(255,255,255,.45);margin-bottom:3px" id="smc-bp-lbl">Panca 1RM (kg)</div>
+            <input id="smc-bp" type="number" min="0" step="2.5" placeholder="es. 100" oninput="calcSmolov()"
+              style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px;color:#fff;font-size:1rem;font-family:inherit"/>
+          </div>
+          <div style="grid-column:1/-1">
+            <div style="font-size:.65rem;color:rgba(255,255,255,.45);margin-bottom:3px" id="smc-inc-lbl">Incremento sett. 2 e 3 (kg)</div>
+            <input id="smc-inc" type="number" min="0" step="2.5" placeholder="es. 5" value="5" oninput="calcSmolov()"
+              style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px;color:#fff;font-size:1rem;font-family:inherit"/>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="disclaimer"><div class="disclaimer-icon">⚠️</div><div class="disclaimer-text"><b data-t="disc_w_t">Avviso</b> — <span data-t="disc_w">Programmi a scopo informativo.</span></div></div>
     <div id="workout-body"></div>
   </div>
@@ -1227,7 +1679,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       <div class="prog-item-sub" data-t="corto_u_bas_sub">Superset · 3 serie · Ideale per iniziare i 30 min</div>
     </button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('corto-u-adv','uomini-corto-menu')">
-      <div class="prog-item-name">🟡 <span data-t="corto_adv">Avanzato A/B — Rest-Pause</span></div>
+      <div class="prog-item-name">🟡 <span data-t="corto_adv">Avanzato A/B</span></div>
       <div class="prog-item-sub" data-t="corto_u_adv_sub">RP · Alta intensità · Meno serie, più stimolo</div>
     </button><span class="prog-arr">›</span></div>
     <div class="prog-item" style="border:1.5px solid rgba(255,59,48,.35);background:rgba(255,59,48,.07)"><button class="prog-item-btn" onclick="openWorkout('lpp30-u','uomini-corto-menu')">
@@ -1607,6 +2059,55 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
         <div class="prog-item-sub"><span data-t="ashley_sub">Forza &amp; Corpo Completo &#8212; 5 giorni</span></div>
       </button>
       <span class="prog-arr">›</span>
+    </div>
+    <div class="prog-item" style="border:1.5px solid rgba(10,132,255,.35);background:rgba(10,132,255,.07)">
+      <button class="prog-item-btn" onclick="showView('tls-info-view')">
+        <div class="prog-item-name">💪 Thinner Leaner Stronger — <span style="font-size:.8rem;opacity:.7">Michael Matthews</span></div>
+        <div class="prog-item-sub">3 · 4 · 5 giorni / sett. · 8-10 reps · Forza &amp; Definizione</div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+  </div>
+
+  <!-- TLS INFO VIEW -->
+  <div id="tls-info-view" class="view">
+    <button onclick="goBack('donne-avanzato-menu')" class="back-btn">← <span data-t="level_advanced">Avanzato</span></button>
+    <img src="https://sport-fit.org/wp-content/uploads/2026/03/thiner-elaner.jpg"
+         alt="Thinner Leaner Stronger" onerror="this.style.display='none'"
+         style="width:100%;max-height:220px;object-fit:cover;object-position:center top;border-radius:14px;margin-bottom:14px;display:block;background:#1c1c1e"/>
+    <div class="view-title" style="font-size:1.6rem">💪 Thinner Leaner Stronger</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:4px"><b style="color:#fff">Michael Matthews — Legion Athletics (2012)</b></div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px">3 · 4 · 5 giorni / settimana · 8-10 reps · 8 settimane + deload</div>
+    <div class="disclaimer" style="background:rgba(10,132,255,.08);border-left:3px solid var(--blue)"><div class="disclaimer-icon">💪</div><div class="disclaimer-text"><b data-t="tls_level">Intermedio / Avanzato</b> — <span data-t="tls_ideal">Programma scientifico per donne focalizzato su forza + estetica. Pesi liberi e composti al centro. Enfasi su gambe e glutei. Oltre 300.000 donne lo hanno completato.</span></div></div>
+
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title blue">📌 <span data-t="tls_phi_title">Principi fondamentali</span></div>
+      <div class="ai-bullet"><b data-t="tls_phi1_lbl">Hard sets 8-10 reps:</b> <span data-t="tls_phi1">ogni serie va portata a 1-2 reps dal cedimento. Peso ~70-75% del 1RM. Non eseguire mai al cedimento assoluto</span></div>
+      <div class="ai-bullet"><b data-t="tls_phi2_lbl">Progressione doppia:</b> <span data-t="tls_phi2">quando arrivi a 10 reps su tutte le serie → aggiungi peso e riparti da 8. Semplice ed efficace</span></div>
+      <div class="ai-bullet"><b data-t="tls_phi3_lbl">Composti prima:</b> <span data-t="tls_phi3">squat, stacco, panca, rematore sempre prima nella sessione quando hai più energia</span></div>
+      <div class="ai-bullet"><b data-t="tls_phi4_lbl">Focus gambe/glutei:</b> <span data-t="tls_phi4">più volume per gambe e glutei rispetto ai programmi maschili</span></div>
+    </div>
+
+    <div class="ai-block">
+      <div class="ai-block-title red">⚡ <span data-t="tls_rules_title">Regole chiave</span></div>
+      <div class="ai-bullet"><b data-t="tls_r1_lbl">Riscaldamento:</b> <span data-t="tls_r1">2 serie di riscaldamento prima dei composti — 50% del peso ×6 reps, poi 70% ×4 reps</span></div>
+      <div class="ai-bullet"><b data-t="tls_r2_lbl">Riposo:</b> <span data-t="tls_r2">2-4 min tra i composti pesanti, 1-2 min tra gli esercizi di isolamento</span></div>
+      <div class="ai-bullet"><b data-t="tls_r3_lbl">Deload (sett. 9):</b> <span data-t="tls_r3">1 settimana con tutti i pesi ridotti — poi ricomincia il ciclo aggiungendo peso</span></div>
+      <div class="ai-bullet"><b data-t="tls_r4_lbl">Non fare "bulking":</b> <span data-t="tls_r4">il programma funziona sia per perdere grasso che per costruire muscolo — dipende dalla dieta</span></div>
+    </div>
+
+    <div class="ai-block">
+      <div class="ai-block-title gold">🏋️ <span data-t="tls_ver_title">Scegli la tua versione</span></div>
+      <div style="font-size:.72rem;color:rgba(255,255,255,.45);margin-bottom:10px" data-t="tls_ver_sub">Tutte e 3 usano gli stessi principi — cambia solo la frequenza e la struttura</div>
+      <button class="ai-send-btn" style="margin-bottom:8px;background:linear-gradient(135deg,#003a5a,rgba(10,132,255,.7))" onclick="openWorkout('tls-3d','tls-info-view')">
+        💪 <span data-t="tls_btn3">3 giorni — Full Body</span>
+      </button>
+      <button class="ai-send-btn" style="margin-bottom:8px;background:linear-gradient(135deg,#003a5a,rgba(10,132,255,.85))" onclick="openWorkout('tls-4d','tls-info-view')">
+        💪 <span data-t="tls_btn4">4 giorni — Upper/Lower</span>
+      </button>
+      <button class="ai-send-btn" style="background:linear-gradient(135deg,#003a5a,rgba(10,132,255,1))" onclick="openWorkout('tls-d','tls-info-view')">
+        💪 <span data-t="tls_btn5">5 giorni — Push/Pull/Lower</span>
+      </button>
     </div>
   </div>
 
@@ -2448,7 +2949,7 @@ const T = {
     corto_basic:'Basic A/B',
     corto_basic_sub_u:'Superset · 3 serie · Ideale per iniziare i 30 min',
     corto_basic_sub_d:'Superset · 3 serie · Ideale per iniziare i 30 min',
-    corto_adv:'Avanzato A/B — Rest-Pause',
+    corto_adv:'Avanzato A/B',
     corto_adv_sub_u:'RP · Alta intensita · Meno serie, piu stimolo',
     corto_adv_sub_d:'Cedimento · Alta intensita · Focus glutes & corpo',
     dc_sub:'DoggCrapp · Rest-Pause · 3x/sett. · Alta intensità',
@@ -2814,11 +3315,89 @@ const T = {
     ashley_founder:'IFBB Pro & Strength Coach',
     ashley_label:'Ashley Horner - Strong',
     ashley_pills:[['4 giorni','/ sett.'],['Upper/Lower',''],['12','sett.']],
-    ul_pb_u_label:'Upper/Lower Powerbuilding by Luka',
+    tls_d_label:'Thinner Leaner Stronger — 5 giorni',
+    tls_d_pills:[['5×','/ sett.'],['8-10','reps'],['Lun·Mar·Mer','Ven·Sab']],
+    level_tls_d:'INTERMEDIO / AVANZATO',
+    tls_3d_label:'Thinner Leaner Stronger — 3 giorni',
+    tls_3d_pills:[['3×','/ sett.'],['Full Body',''],['8-10','reps']],
+    level_tls_3d:'INTERMEDIO / AVANZATO',
+    tls_4d_label:'Thinner Leaner Stronger — 4 giorni',
+    tls_4d_pills:[['4×','/ sett.'],['Upper/Lower',''],['8-10','reps']],
+    level_tls_4d:'INTERMEDIO / AVANZATO',
+    tls_3d_label:'Thinner Leaner Stronger — 3 giorni',
+    tls_3d_pills:[['3×','/ sett.'],['Full Body',''],['8-10','reps']],
+    level_tls_3d:'INTERMEDIO / AVANZATO',
+    tls_4d_label:'Thinner Leaner Stronger — 4 giorni',
+    tls_4d_pills:[['4×','/ sett.'],['Upper/Lower',''],['8-10','reps']],
+    level_tls_4d:'INTERMEDIO / AVANZATO',
+    tls_start_btn:'Inizia Thinner Leaner Stronger',
+    tls_days:'5 giorni / settimana · Push · Pull · Lower · Upper · Lower · 8 settimane + deload',
+    tls_level:'Intermedio / Avanzato',
+    tls_ideal:'Programma scientifico per donne focalizzato su forza + estetica. Pesi liberi e composti al centro. Enfasi su gambe e glutei. Oltre 300.000 donne lo hanno completato.',
+    tls_phi_title:'Principi fondamentali',
+    tls_phi1_lbl:'Hard sets 8-10 reps:',tls_phi2_lbl:'Progressione doppia:',tls_phi3_lbl:'Composti prima:',tls_phi4_lbl:'Focus gambe/glutei:',
+    tls_phi1:'ogni serie va portata a 1-2 reps dal cedimento. Peso ~70-75% del 1RM. Non eseguire mai al cedimento assoluto',
+    tls_phi2:'quando arrivi a 10 reps su tutte le serie → aggiungi peso e riparti da 8. Semplice ed efficace',
+    tls_phi3:'squat, stacco, panca, rematore sempre prima nella sessione quando hai più energia',
+    tls_phi4:'2 giorni Lower su 5 — più volume per gambe e glutei rispetto ai programmi maschili',
+    tls_sch_title:'Schema 5 giorni',
+    tls_d1:'Push — Petto · Spalle · Tricipiti',tls_d2:'Pull — Schiena · Bicipiti · Stacco',
+    tls_d3:'Lower A — Squat · RDL · Hip Thrust · Polpacci',
+    tls_d4:'Upper — Petto · Schiena · Spalle · Braccia',
+    tls_d5:'Lower B — Hack Squat · Hip Thrust · BSS · Abductor',
+    tls_sch_note:'Riposo Sab/Dom. 8 settimane di ciclo, poi 1 settimana di deload con tutti i pesi ridotti.',
+    tls_rules_title:'Regole chiave',
+    tls_r1_lbl:'Riscaldamento:',tls_r2_lbl:'Riposo:',tls_r3_lbl:'Deload (sett. 9):',tls_r4_lbl:'Non fare "bulking":',
+    tls_r1:'2 serie di riscaldamento prima dei composti — 50% del peso ×6 reps, poi 70% ×4 reps',
+    tls_r2:'2-4 min tra i composti pesanti, 1-2 min tra gli esercizi di isolamento',
+    tls_r3:'1 settimana con tutti i pesi ridotti — poi ricomincia il ciclo aggiungendo peso',
+    tls_r4:'il programma funziona sia per perdere grasso che per costruire muscolo — dipende dalla dieta',
+    tls_ver_title:'Scegli la tua versione',
+    tls_ver_sub:'Tutte e 3 usano gli stessi principi — cambia solo la frequenza e la struttura',
+    tls_btn3:'3 giorni — Full Body',
+    tls_btn4:'4 giorni — Upper/Lower',
+    tls_btn5:'5 giorni — Push/Pull/Lower',
     ul_pb_u_pills:[['4×','/ sett.'],['75-90 min','/ sessione'],['Periodizzazione','4 sett.']],
+    level_ul_pb_u:'AVANZATO',
+    ulpb_start_btn:'Inizia Upper/Lower Powerbuilding',
+    ulpb_level:'Avanzato',
+    ulpb_ideal:'Ideale per chi ha almeno 2 anni di esperienza e vuole combinare forza nei fondamentali con volume ipertrofico. No cedimento sugli esercizi base.',
+    ulpb_phi_title:'Filosofia',
+    ulpb_phi1:'2 giorni Upper + 2 giorni Lower ogni settimana — ogni gruppo muscolare colpito 2× / sett.',
+    ulpb_phi2:'Giorno ME (Max Effort): fondamentali pesanti con reps che scendono ogni settimana → forza',
+    ulpb_phi3:'Giorno Volume: range 8-15 reps con doppia progressione → ipertrofia',
+    ulpb_sch_title:'Schema settimanale',
+    ulpb_d1:'Lower ME — Squat + Stacco pesante, reps che scendono',
+    ulpb_d2:'Upper Volume — Petto · Schiena · Spalle · Braccia',
+    ulpb_d3:'Lower Volume — Squat · Gambe · Femorali · Polpacci',
+    ulpb_d4:'Upper ME — Panca + Press pesante, reps che scendono',
+    ulpb_prog_title:'Progressione',
+    ulpb_p1_lbl:'Esercizi base (ME):',ulpb_p2_lbl:'Esercizi volume (range):',ulpb_p3_lbl:'Deload (sett. 9):',
+    ulpb_p1:'Sett.1: 3×6 → Sett.2: 3×4 → Sett.3: 3×3 → Sett.4: 3×2 — peso aumenta ogni settimana. No cedimento',
+    ulpb_p2:'Doppia progressione — es. 3×8-10: prima porta tutte le serie a 10 reps, poi aggiungi peso e riparti da 8',
+    ulpb_p3:'1 settimana con tutti i pesi al 70% — poi ricomincia il ciclo',
     lpp4_u_label:'Heavy Duty LPP-4 by Luka',
     lpp4_u_pills:[['4×','/ sett.'],['60-75 min','/ sessione'],['Legs/Push/Pull','rotazione']],
     level_lpp4_u:'AVANZATO',
+    lpp4_start_btn:'Inizia Heavy Duty LPP-4',
+    lpp4_level:'Avanzato',
+    lpp4_ideal:'Ispirato ai principi Heavy Duty di Mentzer ma in formato LPP. Alta intensità, cedimento su quasi tutti gli esercizi, volume controllato.',
+    lpp4_phi_title:'Filosofia Heavy Duty LPP',
+    lpp4_phi1:'Rotazione 6 sessioni: Legs A → Push B → Pull C → Legs A2 → Push B2 → Pull C2',
+    lpp4_phi2:'Alta intensità: cedimento su tutti gli esercizi eccetto RDL — vai fino all\'ultima rep possibile',
+    lpp4_phi3:'Volume basso per sessione — 1-2 serie per esercizio, massima concentrazione su ogni set',
+    lpp4_sch_title:'Rotazione sessioni',
+    lpp4_d1:'Legs — Quadricipiti · Femorali · Glutei · Polpacci',
+    lpp4_d2:'Push — Petto · Spalle · Tricipiti',
+    lpp4_d3:'Pull — Schiena · Bicipiti · Deltoidi Post.',
+    lpp4_d4:'Legs — esercizi diversi da A1 (RDL, Hip Thrust...)',
+    lpp4_d5:'Push — esercizi diversi da B1 (macchine, manubri)',
+    lpp4_d6:'Pull — esercizi diversi da C1',
+    lpp4_prog_title:'Progressione',
+    lpp4_p1_lbl:'Esercizi con range (es. 8-6):',lpp4_p2_lbl:'Cedimento:',lpp4_p3_lbl:'Deload (sett. 9):',
+    lpp4_p1:'doppia progressione — prima porta le reps al limite alto del range (8), poi aggiungi peso e riparti dal basso (6)',
+    lpp4_p2:'ogni serie va al cedimento muscolare assoluto — eccetto RDL per sicurezza della schiena',
+    lpp4_p3:'1 settimana con tutti i pesi al 70% — no cedimento, recupero completo',
     ws4sb_u_label:'WS4SB — DeFranco',
     ws4sb_u_pills:[['3×','/ sett.'],['60-75 min','/ sessione'],['Template','flessibile']],
     level_ws4sb_u:'AVANZATO',
@@ -2831,6 +3410,31 @@ const T = {
     carter_bb_label:'Base Building — Paul Carter',
     carter_bb_pills:[['3×','/ sett.'],['60-75 min','/ sessione'],['Progressione','cicli']],
     level_carter_bb:'INTERMEDIO / AVANZATO',
+    hst_u_label:'HST — Hypertrophy Specific Training',
+    hst_u_pills:[['3×','/ sett.'],['6-8','settimane'],['15→10→5','reps']],
+    level_hst_u:'INTERMEDIO / AVANZATO',
+    hst_start_btn:'Inizia HST',
+    hst_days:'Full Body · 3 giorni / settimana · 6-8 settimane per ciclo',
+    hst_level:'Intermedio / Avanzato',
+    hst_ideal:'Basato sulla fisiologia dell\'ipertrofia. Il carico meccanico progressivo ogni sessione — non il cedimento — è lo stimolo principale per la crescita muscolare.',
+    hst_phi_title:'Principi Scientifici',
+    hst_phi1_lbl:'Frequenza:',hst_phi2_lbl:'Carico progressivo:',hst_phi3_lbl:'Repeated Bout Effect:',hst_phi4_lbl:'Strategic Deconditioning:',
+    hst_phi1:'ogni muscolo viene allenato ogni 48 ore — l\'attività anabolica rimane alta costantemente',
+    hst_phi2:'il peso aumenta ogni sessione verso il massimale del blocco — non andare mai al cedimento',
+    hst_phi3:'il muscolo si adatta rapidamente allo stesso stimolo — per questo le reps scendono e il carico sale ogni 2 settimane',
+    hst_phi4:'9-14 giorni di pausa dopo il ciclo — il muscolo "dimentica" l\'adattamento e diventa di nuovo sensibile al carico',
+    hst_sch_title:'Struttura del Ciclo (6-8 settimane)',
+    hst_w1:'2×15 reps — carico aumenta ogni sessione verso il tuo 15RM',
+    hst_w2:'2×10 reps — carico aumenta ogni sessione verso il tuo 10RM',
+    hst_w3:'2×5 reps — carico aumenta ogni sessione verso il tuo 5RM',
+    hst_w4:'2×5 @5RM oppure Negativi (eccentrico pesante) — opzionale',
+    hst_sch_note:'Lun · Mer · Ven — Full Body ogni sessione. Dopo il ciclo: 9-14 giorni di deconditioning strategico.',
+    hst_rules_title:'Regole chiave',
+    hst_r1_lbl:'Mai al cedimento:',hst_r2_lbl:'1-2 serie per esercizio:',hst_r3_lbl:'Esercizi composti:',hst_r4_lbl:'Trova i tuoi RM:',
+    hst_r1:'lo stimolo è il carico meccanico progressivo, non la fatica. Fermati 1-2 reps prima del cedimento',
+    hst_r2:'volume basso per sessione, alta frequenza. La seconda serie produce poco stimolo aggiuntivo',
+    hst_r3:'70% composti + 30% isolamento. Squat, Panca, Rematore, Press sono il nucleo del programma',
+    hst_r4:'prima del ciclo devi conoscere il 15RM, 10RM e 5RM per ogni esercizio — sono la base dei calcoli',
     carter_start_btn:'Inizia Base Building',
     carter_days:'3 giorni / settimana · Split Squat&Pull / Push / Pull',
     carter_level:'Intermedio / Avanzato',
@@ -2859,6 +3463,118 @@ const T = {
     gironda_fb_label:'Gironda Full Body — 8×8',
     gironda_fb_pills:[['3×','/ sett.'],['45-60 min','/ sessione'],['8×8','density']],
     level_gironda_fb:'INTERMEDIO / AVANZATO',
+    ss_u_label:'Starting Strength — Mark Rippetoe',
+    ss_u_pills:[['3×','/ sett.'],['45-60 min','/ sessione'],['Progressione','lineare']],
+    level_ss_u:'INIZIALE / INTERMEDIO',
+    wendler_531_label:'5/3/1 — Jim Wendler',
+    wendler_531_pills:[['4×','/ sett.'],['45-60 min','/ sessione'],['Cicli','4 settimane']],
+    level_wendler_531:'INTERMEDIO / AVANZATO',
+    texas_method_label:'Texas Method — Rippetoe/Pendlay',
+    texas_method_pills:[['3×','/ sett.'],['60-75 min','/ sessione'],['PR','ogni venerdì']],
+    level_texas_method:'INTERMEDIO',
+    smolov_jr_label:'Smolov Jr. — Peaking Block',
+    smolov_jr_pills:[['4×','/ sett.'],['3','settimane'],['1 alzata','specializzazione']],
+    level_smolov_jr:'AVANZATO',
+    smolov_start_btn:'Inizia Smolov Jr.',
+    smolov_days:'3 settimane · 4 giorni / settimana · 1 alzata sola',
+    smolov_level:'Avanzato',
+    smolov_ideal:'Ciclo di picco a breve termine per Squat o Panca. Non è un programma di forza generale — è un blocco di specializzazione brutale. Guadagni tipici: +7-15kg in 3 settimane.',
+    smolov_warn_title:'Squat + Panca — si può fare insieme',
+    smolov_warn1:'La Panca non stanca il SNC come lo Squat — farli insieme è fattibile per atleti avanzati',
+    smolov_warn2:'Nessun altro esercizio pesante per gambe durante il ciclo. Solo lavoro leggero accessorio',
+    smolov_warn3:'Sonno, alimentazione e recupero devono essere ottimali. Se sei stressato, rimanda',
+    smolov_sch_title:'Schema settimanale (ripetuto 3 volte)',
+    smolov_d1:'6×6 @70% — 36 reps totali · il più "facile"',
+    smolov_d2:'7×5 @75% — 35 reps totali · equilibrio volume/intensità',
+    smolov_d3:'8×4 @80% — 32 reps totali · pesante, tecnica ferrea',
+    smolov_d4:'10×3 @85% — 30 reps totali · il giorno più duro 🔥',
+    smolov_rest_note:'Riposo 3-5 min tra le serie. Giorno 1→riposo→Giorno 2→Giorno 3→Giorno 4.',
+    smolov_prog_title:'Progressione settimanale',
+    smolov_w1:'Pesi base — tutti i giorni al 70/75/80/85% del tuo 1RM',
+    smolov_w2:'+2.5-5kg su tutti i giorni (se sett.1 era gestibile)',
+    smolov_w3:'+2.5-5kg ancora · poi riposo 1 settimana → test nuovo 1RM',
+    smolov_rules_title:'Regole chiave',
+    smolov_r1_lbl:'Riposo tra serie:',smolov_r2_lbl:'Se non riesci i reps:',smolov_r3_lbl:'Dopo il ciclo:',smolov_r4_lbl:'2 cicli di fila:',
+    smolov_r1:'3-5 minuti — non meno. Le serie sono troppe per accorciarli',
+    smolov_r2:'riduci il peso di 2.5-5kg. Meglio meno peso che reps mancati',
+    smolov_r3:'1 settimana di riposo/deload, poi testa il nuovo massimale',
+    smolov_r4:'possibile con 1 settimana di riposo tra i due. Guadagni totali: fino a +25kg',
+    tm_start_btn:'Inizia Texas Method',
+    tm_days:'3 giorni / settimana · Volume → Recovery → Intensity',
+    tm_level:'Intermedio',
+    tm_ideal:'Ideale dopo Starting Strength o StrongLifts quando la progressione ogni sessione si blocca. Obiettivo: un nuovo PR ogni venerdì.',
+    tm_phi_title:'Filosofia — 3 giorni, 3 obiettivi',
+    tm_phi1_lbl:'Volume Day (Lunedì):',tm_phi2_lbl:'Recovery Day (Mercoledì):',tm_phi3_lbl:'Intensity Day (Venerdì):',
+    tm_phi1:'5×5 pesante — crei lo stress che forza l\'adattamento. Faticoso, ma essenziale',
+    tm_phi2:'leggero al 80% del lunedì — mantieni la tecnica senza stancarti per venerdì',
+    tm_phi3:'1×5 nuovo PR — esprimi l\'adattamento della settimana. Aggiungi peso ogni venerdì',
+    tm_sch_title:'Schema settimana tipo',
+    tm_d1_lbl:'Lunedì',tm_d2_lbl:'Mercoledì',tm_d3_lbl:'Venerdì',
+    tm_d1:'Squat 5×5 · Panca o Press 5×5 · Stacco 1×5',
+    tm_d2:'Squat 2×5 leggero · Press o Panca 3×5 · Trazioni 3×max',
+    tm_d3:'Squat 1×5 PR 🎯 · Panca o Press 1×5 PR 🎯 · Power Clean 5×3',
+    tm_alt_note:'Panca e Press Militare si alternano: settimana 1 Panca, settimana 2 Press.',
+    tm_pct_title:'Percentuali di partenza',
+    tm_vol_lbl:'Volume',tm_rec_lbl:'Recovery',tm_int_lbl:'Intensity',
+    tm_vol_pct:'5×5 @77% del 1RM — es. 1RM 100kg → 77kg per 5 serie',
+    tm_rec_pct:'2×5 @62% del 1RM (80% del peso del lunedì)',
+    tm_int_pct:'1×5 @85%+ del 1RM — nuovo record ogni settimana',
+    tm_rules_title:'Progressione & Regole',
+    tm_r1_lbl:'Progressione:',tm_r2_lbl:'Se non riesci il PR:',tm_r3_lbl:'Power Clean:',tm_r4_lbl:'Durata:',
+    tm_r1:'ogni venerdì +5kg Squat, +2.5kg Panca/Press. Niente calcoli — aggiungi e basta',
+    tm_r2:'riduci il volume del lunedì da 5×5 a 4×5 o 3×5. Non aumentare il peso del venerdì',
+    tm_r3:'sostituibile con Stacco Deficit o Stacco Classico se non conosci il Clean',
+    tm_r4:'ideale per 6-12 mesi. Dopo, passa a 5/3/1 o un programma di periodizzazione avanzata',
+    w531_start_btn:'Inizia 5/3/1',
+    w531_days:'4 giorni / settimana · 4 alzate fondamentali · Cicli da 4 settimane',
+    w531_level:'Intermedio / Avanzato',
+    w531_ideal:'Il programma forza più usato al mondo. Progressione lenta e costante per anni. Wendler: "Inizia leggero. Inizia molto leggero."',
+    w531_tm_title:'Training Max (TM) — La base di tutto',
+    w531_tm1:'TM = 90% del tuo vero 1RM. Esempio: Squat 100kg → TM = 90kg',
+    w531_tm2:'Tutte le percentuali si calcolano sul TM, non sul massimo vero',
+    w531_tm3:'Dopo ogni ciclo: +2.5kg Panca/Press, +5kg Squat/Stacco al TM',
+    w531_cycle_title:'Il Ciclo 4 Settimane',
+    w531_w1:'3×5 — 65% · 75% · 85%+ AMRAP',
+    w531_w2:'3×3 — 70% · 80% · 90%+ AMRAP',
+    w531_w3:'5/3/1 — 75% · 85% · 95%+ AMRAP',
+    w531_w4:'Deload — 40% · 50% · 60% (recupero)',
+    w531_amrap_note:'Il "+" = AMRAP — vai al massimo delle reps con buona tecnica.',
+    w531_sch_title:'Schema settimanale',
+    w531_d1:'Press Militare + BBB + Assistenza',
+    w531_d2:'Stacco da Terra + BBB + Assistenza',
+    w531_d3:'Panca Piana + BBB + Assistenza',
+    w531_d4:'Squat + BBB + Assistenza',
+    w531_bbb_title:'BBB — Boring But Big',
+    w531_bbb1:'Dopo le serie principali: 5×10 dello stesso esercizio al 50-60% del TM',
+    w531_bbb2:'Es: Panca 5/3/1 → poi 5×10 Panca al 50% TM. Volume alto, peso leggero',
+    w531_bbb3:'Costruisce massa muscolare mentre aumenti la forza sui fondamentali',
+    w531_rules_title:'Regole di Wendler',
+    w531_r1_lbl:'Inizia leggero:',w531_r2_lbl:'Non saltare il deload:',w531_r3_lbl:'Se stalli:',w531_r4_lbl:'Non 2 giorni di fila:',
+    w531_r1:'anche se il peso sembra ridicolo. La progressione ti porterà lontano in 6-12 mesi',
+    w531_r2:'la settimana 4 leggera è fondamentale per il recupero a lungo termine',
+    w531_r3:'riduci il TM del 10% e ricomincia. Non aumentare il TM se non completi le reps',
+    w531_r4:'minimo 1 giorno di recupero tra le sessioni',
+    ss_start_btn:'Inizia Starting Strength',
+    ss_days:'3 giorni / settimana · Full Body · Progressione lineare',
+    ss_level:'Iniziale / Intermedio',
+    ss_ideal:'Il primo programma serio con il bilanciere. Costruisce forza reale sui fondamentali prima di qualsiasi altro metodo.',
+    ss_phi_title:'Filosofia',
+    ss_phi1:'Progressione lineare: aggiungi peso ad ogni allenamento — 2.5kg per Squat/Panca/Press, 5kg per Stacco',
+    ss_phi2:'Lo Squat è il re — si esegue OGNI sessione perché è il movimento che costruisce più forza su tutto il corpo',
+    ss_phi3:'Volume basso, intensità alta — 3×5 su tutto. Abbastanza per crescere, abbastanza per recuperare',
+    ss_phi4:'Funziona finché funziona — quando la progressione si blocca, si passa a Madcow o Texas Method',
+    ss_sch_title:'Schema A/B — settimana esempio',
+    ss_day_a:'Squat 3×5 · Panca 3×5 · Stacco 1×5',
+    ss_day_b:'Squat 3×5 · Press Mil. 3×5 · Stacco 1×5',
+    ss_day_a2:'Squat 3×5 · Panca 3×5 · Stacco 1×5',
+    ss_rotate_note:'A e B si alternano ogni settimana — Panca e Press Militare si scambiano.',
+    ss_rules_title:'Regole chiave',
+    ss_r1_lbl:'Peso iniziale:',ss_r2_lbl:'Stacco:',ss_r3_lbl:'Quando smetti di progredire:',ss_r4_lbl:'Chin-up:',ss_r5_lbl:'Dopo 3-6 mesi:',
+    ss_r1:'inizia leggero — 50-60% del tuo massimo stimato. La progressione è rapida all\'inizio',
+    ss_r2:'1 sola serie da 5 reps, ma pesante. Il volume basso protegge la schiena e permette più carico',
+    ss_r3:'prova 3 volte con lo stesso peso — se ancora non riesci, scala del 10% e riparti',
+    ss_r4:'aggiunti opzionalmente come assistenza — fai quante reps riesci, aggiungi peso quando arrivi a 3×8',
+    ss_r5:'passa a Madcow 5×5 o Texas Method per continuare i progressi',
     gironda_4day_btn:'4 Day Split',gironda_fb_btn:'Full Body 8×8',
     gironda_coaches:'Coach di Arnold, Larry Scott, Lou Ferrigno, Frank Zane',
     gironda_density_lbl:'Density Training',
@@ -3466,7 +4182,7 @@ en:{
     corto_basic:'Basic A/B',
     corto_basic_sub_u:'Superset · 3 sets · Ideal to start 30 min',
     corto_basic_sub_d:'Superset · 3 sets · Ideal to start 30 min',
-    corto_adv:'Advanced A/B — Rest-Pause',
+    corto_adv:'Advanced A/B',
     corto_adv_sub_u:'RP · High intensity · Fewer sets, more stimulus',
     corto_adv_sub_d:'Failure · High intensity · Focus glutes & body',
     dc_sub:'DoggCrapp · Rest-Pause · 3x/week · High intensity',
@@ -3832,11 +4548,84 @@ en:{
     ashley_founder:'IFBB Pro & Strength Coach',
     ashley_label:'Ashley Horner - Strong',
     ashley_pills:[['4 days','/ week'],['Upper/Lower',''],['12','weeks']],
+    tls_d_label:'Thinner Leaner Stronger — 5 days',
+    tls_d_pills:[['5×','/ week'],['8-10','reps'],['Mon·Tue·Wed','Fri·Sat']],
+    level_tls_d:'INTERMEDIATE / ADVANCED',
+    tls_3d_label:'Thinner Leaner Stronger — 3 days',
+    tls_3d_pills:[['3×','/ week'],['Full Body',''],['8-10','reps']],
+    level_tls_3d:'INTERMEDIATE / ADVANCED',
+    tls_4d_label:'Thinner Leaner Stronger — 4 days',
+    tls_4d_pills:[['4×','/ week'],['Upper/Lower',''],['8-10','reps']],
+    level_tls_4d:'INTERMEDIATE / ADVANCED',
+    tls_start_btn:'Start Thinner Leaner Stronger',
+    tls_days:'5 days / week · Push · Pull · Lower · Upper · Lower · 8 weeks + deload',
+    tls_level:'Intermediate / Advanced',
+    tls_ideal:'Science-based program for women focused on strength + aesthetics. Free weights and compound exercises at the core. Emphasis on legs and glutes. Over 300,000 women have completed it.',
+    tls_phi_title:'Core Principles',
+    tls_phi1_lbl:'Hard sets 8-10 reps:',tls_phi2_lbl:'Double progression:',tls_phi3_lbl:'Compounds first:',tls_phi4_lbl:'Leg/glute focus:',
+    tls_phi1:'each set goes to 1-2 reps before failure. Weight ~70-75% of 1RM. Never go to absolute failure',
+    tls_phi2:'when you hit 10 reps on all sets → add weight and restart from 8. Simple and effective',
+    tls_phi3:'squat, deadlift, bench, row always first when you have the most energy',
+    tls_phi4:'2 Lower days out of 5 — more leg and glute volume than male programs',
+    tls_sch_title:'5-Day Schedule',
+    tls_d1:'Push — Chest · Shoulders · Triceps',tls_d2:'Pull — Back · Biceps · Deadlift',
+    tls_d3:'Lower A — Squat · RDL · Hip Thrust · Calves',
+    tls_d4:'Upper — Chest · Back · Shoulders · Arms',
+    tls_d5:'Lower B — Hack Squat · Hip Thrust · BSS · Abductor',
+    tls_sch_note:'Rest Thu and Sun. 8-week cycle, then 1 deload week with reduced weights.',
+    tls_rules_title:'Key Rules',
+    tls_r1_lbl:'Warm-up:',tls_r2_lbl:'Rest:',tls_r3_lbl:'Deload (week 9):',tls_r4_lbl:'No "bulking":',
+    tls_r1:'2 warm-up sets before compounds — 50% weight ×6 reps, then 70% ×4 reps',
+    tls_r2:'2-4 min between heavy compounds, 1-2 min between isolation exercises',
+    tls_r3:'1 week with all weights reduced — then restart the cycle adding weight',
+    tls_r4:'the program works for both fat loss and muscle building — depends on diet',
+    tls_ver_title:'Choose your version',
+    tls_ver_sub:'All 3 use the same principles — only frequency and structure change',
+    tls_btn3:'3 days — Full Body',
+    tls_btn4:'4 days — Upper/Lower',
+    tls_btn5:'5 days — Push/Pull/Lower',
     ul_pb_u_label:'Upper/Lower Powerbuilding by Luka',
     ul_pb_u_pills:[['4×','/ week'],['75-90 min','/ session'],['Periodization','4 wks']],
+    level_ul_pb_u:'ADVANCED',
+    ulpb_start_btn:'Start Upper/Lower Powerbuilding',
+    ulpb_level:'Advanced',
+    ulpb_ideal:'Ideal for those with at least 2 years of experience who want to combine strength on fundamentals with hypertrophy volume. No failure on base exercises.',
+    ulpb_phi_title:'Philosophy',
+    ulpb_phi1:'2 Upper days + 2 Lower days per week — each muscle group hit 2× / week',
+    ulpb_phi2:'ME Day (Max Effort): heavy fundamentals with decreasing reps each week → strength',
+    ulpb_phi3:'Volume Day: 8-15 rep ranges with double progression → hypertrophy',
+    ulpb_sch_title:'Weekly Schedule',
+    ulpb_d1:'Lower ME — Heavy Squat + Deadlift, reps decrease',
+    ulpb_d2:'Upper Volume — Chest · Back · Shoulders · Arms',
+    ulpb_d3:'Lower Volume — Squat · Legs · Hamstrings · Calves',
+    ulpb_d4:'Upper ME — Heavy Bench + Press, reps decrease',
+    ulpb_prog_title:'Progression',
+    ulpb_p1_lbl:'Base exercises (ME):',ulpb_p2_lbl:'Volume exercises (range):',ulpb_p3_lbl:'Deload (week 9):',
+    ulpb_p1:'Wk1: 3×6 → Wk2: 3×4 → Wk3: 3×3 → Wk4: 3×2 — weight increases each week. No failure',
+    ulpb_p2:'Double progression — e.g. 3×8-10: first get all sets to 10 reps, then add weight and restart at 8',
+    ulpb_p3:'1 week with all weights at 70% — then restart the cycle',
     lpp4_u_label:'Heavy Duty LPP-4 by Luka',
     lpp4_u_pills:[['4×','/ week'],['60-75 min','/ session'],['Legs/Push/Pull','rotation']],
     level_lpp4_u:'ADVANCED',
+    lpp4_start_btn:'Start Heavy Duty LPP-4',
+    lpp4_level:'Advanced',
+    lpp4_ideal:'Inspired by Mentzer\'s Heavy Duty principles in LPP format. High intensity, failure on almost all exercises, controlled volume.',
+    lpp4_phi_title:'Heavy Duty LPP Philosophy',
+    lpp4_phi1:'6-session rotation: Legs A → Push B → Pull C → Legs A2 → Push B2 → Pull C2',
+    lpp4_phi2:'High intensity: failure on all exercises except RDL — push to the last possible rep',
+    lpp4_phi3:'Low volume per session — 1-2 sets per exercise, maximum focus on every set',
+    lpp4_sch_title:'Session Rotation',
+    lpp4_d1:'Legs — Quads · Hamstrings · Glutes · Calves',
+    lpp4_d2:'Push — Chest · Shoulders · Triceps',
+    lpp4_d3:'Pull — Back · Biceps · Rear Delts',
+    lpp4_d4:'Legs — different exercises from A1 (RDL, Hip Thrust...)',
+    lpp4_d5:'Push — different exercises from B1 (machines, dumbbells)',
+    lpp4_d6:'Pull — different exercises from C1',
+    lpp4_prog_title:'Progression',
+    lpp4_p1_lbl:'Range exercises (e.g. 8-6):',lpp4_p2_lbl:'Failure:',lpp4_p3_lbl:'Deload (week 9):',
+    lpp4_p1:'double progression — first get reps to the top of the range (8), then add weight and restart from the bottom (6)',
+    lpp4_p2:'every set goes to absolute muscular failure — except RDL for lower back safety',
+    lpp4_p3:'1 week with all weights at 70% — no failure, full recovery',
     ws4sb_u_label:'WS4SB — DeFranco',
     ws4sb_u_pills:[['3×','/ week'],['60-75 min','/ session'],['Flexible','template']],
     level_ws4sb_u:'ADVANCED',
@@ -3849,6 +4638,31 @@ en:{
     carter_bb_label:'Base Building — Paul Carter',
     carter_bb_pills:[['3×','/ week'],['60-75 min','/ session'],['Progression','cycles']],
     level_carter_bb:'INTERMEDIATE / ADVANCED',
+    hst_u_label:'HST — Hypertrophy Specific Training',
+    hst_u_pills:[['3×','/ week'],['6-8','weeks'],['15→10→5','reps']],
+    level_hst_u:'INTERMEDIATE / ADVANCED',
+    hst_start_btn:'Start HST',
+    hst_days:'Full Body · 3 days / week · 6-8 week cycle',
+    hst_level:'Intermediate / Advanced',
+    hst_ideal:'Based on the physiology of hypertrophy. Progressive mechanical load every session — not failure — is the primary stimulus for muscle growth.',
+    hst_phi_title:'Scientific Principles',
+    hst_phi1_lbl:'Frequency:',hst_phi2_lbl:'Progressive load:',hst_phi3_lbl:'Repeated Bout Effect:',hst_phi4_lbl:'Strategic Deconditioning:',
+    hst_phi1:'every muscle is trained every 48 hours — anabolic activity stays consistently high',
+    hst_phi2:'weight increases every session towards the block maximum — never go to failure',
+    hst_phi3:'the muscle adapts rapidly to the same stimulus — that\'s why reps drop and load increases every 2 weeks',
+    hst_phi4:'9-14 days rest after the cycle — the muscle "forgets" the adaptation and becomes sensitive to load again',
+    hst_sch_title:'Cycle Structure (6-8 weeks)',
+    hst_w1:'2×15 reps — load increases each session toward your 15RM',
+    hst_w2:'2×10 reps — load increases each session toward your 10RM',
+    hst_w3:'2×5 reps — load increases each session toward your 5RM',
+    hst_w4:'2×5 @5RM or Negatives (heavy eccentric) — optional',
+    hst_sch_note:'Mon · Wed · Fri — Full Body every session. After cycle: 9-14 days strategic deconditioning.',
+    hst_rules_title:'Key Rules',
+    hst_r1_lbl:'Never to failure:',hst_r2_lbl:'1-2 sets per exercise:',hst_r3_lbl:'Compound exercises:',hst_r4_lbl:'Find your RMs:',
+    hst_r1:'the stimulus is progressive mechanical load, not fatigue. Stop 1-2 reps before failure',
+    hst_r2:'low volume per session, high frequency. The second set produces little additional stimulus',
+    hst_r3:'70% compound + 30% isolation. Squat, Bench, Row, Press are the core of the program',
+    hst_r4:'before the cycle you need to know your 15RM, 10RM and 5RM for each exercise — they\'re the basis of all calculations',
     carter_start_btn:'Start Base Building',
     carter_days:'3 days / week · Split Squat&Pull / Push / Pull',
     carter_level:'Intermediate / Advanced',
@@ -3877,6 +4691,118 @@ en:{
     gironda_fb_label:'Gironda Full Body — 8×8',
     gironda_fb_pills:[['3×','/ week'],['45-60 min','/ session'],['8×8','density']],
     level_gironda_fb:'INTERMEDIATE / ADVANCED',
+    ss_u_label:'Starting Strength — Mark Rippetoe',
+    ss_u_pills:[['3×','/ week'],['45-60 min','/ session'],['Linear','progression']],
+    level_ss_u:'BEGINNER / INTERMEDIATE',
+    wendler_531_label:'5/3/1 — Jim Wendler',
+    wendler_531_pills:[['4×','/ week'],['45-60 min','/ session'],['4-week','cycles']],
+    level_wendler_531:'INTERMEDIATE / ADVANCED',
+    texas_method_label:'Texas Method — Rippetoe/Pendlay',
+    texas_method_pills:[['3×','/ week'],['60-75 min','/ session'],['PR','every Friday']],
+    level_texas_method:'INTERMEDIATE',
+    smolov_jr_label:'Smolov Jr. — Peaking Block',
+    smolov_jr_pills:[['4×','/ week'],['3','weeks'],['1 lift','specialization']],
+    level_smolov_jr:'ADVANCED',
+    smolov_start_btn:'Start Smolov Jr.',
+    smolov_days:'3 weeks · 4 days / week · 1 lift only',
+    smolov_level:'Advanced',
+    smolov_ideal:'Short-term peaking block for Squat or Bench Press. Not a general strength program — it\'s a brutal specialization block. Typical gains: +7-15kg in 3 weeks.',
+    smolov_warn_title:'Squat + Bench — can be done together',
+    smolov_warn1:'Bench Press does not tax the CNS like Squat — running both together is feasible for advanced lifters',
+    smolov_warn2:'No other heavy leg work during the cycle. Only light accessory work',
+    smolov_warn3:'Sleep, nutrition and recovery must be optimal. If stressed, postpone',
+    smolov_sch_title:'Weekly Schedule (repeated 3 times)',
+    smolov_d1:'6×6 @70% — 36 total reps · the "easiest" day',
+    smolov_d2:'7×5 @75% — 35 total reps · balanced volume/intensity',
+    smolov_d3:'8×4 @80% — 32 total reps · heavy, strict technique',
+    smolov_d4:'10×3 @85% — 30 total reps · the hardest day 🔥',
+    smolov_rest_note:'Rest 3-5 min between sets. Day 1→rest→Day 2→Day 3→Day 4.',
+    smolov_prog_title:'Weekly Progression',
+    smolov_w1:'Base weights — all days at 70/75/80/85% of your 1RM',
+    smolov_w2:'+2.5-5kg on all days (if Week 1 was manageable)',
+    smolov_w3:'+2.5-5kg again · then 1 week rest → test new 1RM',
+    smolov_rules_title:'Key Rules',
+    smolov_r1_lbl:'Rest between sets:',smolov_r2_lbl:'If you miss reps:',smolov_r3_lbl:'After the cycle:',smolov_r4_lbl:'2 cycles back-to-back:',
+    smolov_r1:'3-5 minutes — no less. Too many sets to shorten rest',
+    smolov_r2:'reduce weight by 2.5-5kg. Better less weight than missed reps',
+    smolov_r3:'1 week rest/deload, then test your new maximum',
+    smolov_r4:'possible with 1 rest week between cycles. Total gains: up to +25kg',
+    tm_start_btn:'Start Texas Method',
+    tm_days:'3 days / week · Volume → Recovery → Intensity',
+    tm_level:'Intermediate',
+    tm_ideal:'Ideal after Starting Strength or StrongLifts when session-to-session progress stalls. Goal: a new PR every Friday.',
+    tm_phi_title:'Philosophy — 3 days, 3 goals',
+    tm_phi1_lbl:'Volume Day (Monday):',tm_phi2_lbl:'Recovery Day (Wednesday):',tm_phi3_lbl:'Intensity Day (Friday):',
+    tm_phi1:'heavy 5×5 — you create the stress that forces adaptation. Hard, but essential',
+    tm_phi2:'light at 80% of Monday — maintain technique without fatiguing yourself for Friday',
+    tm_phi3:'1×5 new PR — express the week\'s adaptation. Add weight every Friday',
+    tm_sch_title:'Sample Week Schedule',
+    tm_d1_lbl:'Monday',tm_d2_lbl:'Wednesday',tm_d3_lbl:'Friday',
+    tm_d1:'Squat 5×5 · Bench or Press 5×5 · Deadlift 1×5',
+    tm_d2:'Squat 2×5 light · Press or Bench 3×5 · Pull-ups 3×max',
+    tm_d3:'Squat 1×5 PR 🎯 · Bench or Press 1×5 PR 🎯 · Power Clean 5×3',
+    tm_alt_note:'Bench and Overhead Press alternate: week 1 Bench on volume/PR, week 2 Press on volume/PR.',
+    tm_pct_title:'Starting Percentages',
+    tm_vol_lbl:'Volume',tm_rec_lbl:'Recovery',tm_int_lbl:'Intensity',
+    tm_vol_pct:'5×5 @77% of 1RM — e.g. 1RM 100kg → 77kg for 5 sets',
+    tm_rec_pct:'2×5 @62% of 1RM (80% of Monday\'s weight)',
+    tm_int_pct:'1×5 @85%+ of 1RM — new record every week',
+    tm_rules_title:'Progression & Rules',
+    tm_r1_lbl:'Progression:',tm_r2_lbl:'If PR fails:',tm_r3_lbl:'Power Clean:',tm_r4_lbl:'Duration:',
+    tm_r1:'every Friday +5kg Squat, +2.5kg Bench/Press. No calculations — just add weight',
+    tm_r2:'reduce Monday volume from 5×5 to 4×5 or 3×5. Don\'t increase Friday weight',
+    tm_r3:'can be replaced with Deficit Deadlift or conventional Deadlift if you can\'t do Cleans',
+    tm_r4:'ideal for 6-12 months. Afterwards move to 5/3/1 or advanced periodization',
+    w531_start_btn:'Start 5/3/1',
+    w531_days:'4 days / week · 4 main lifts · 4-week cycles',
+    w531_level:'Intermediate / Advanced',
+    w531_ideal:'The most used strength program in the world. Slow, steady progress for years, not weeks. Wendler: "Start light. Start very light."',
+    w531_tm_title:'Training Max (TM) — The Foundation',
+    w531_tm1:'TM = 90% of your true 1RM. Example: Squat 100kg → TM = 90kg',
+    w531_tm2:'All percentages are calculated from TM, not your true max',
+    w531_tm3:'After each cycle: +2.5kg Bench/Press, +5kg Squat/Deadlift to TM',
+    w531_cycle_title:'The 4-Week Cycle',
+    w531_w1:'3×5 — 65% · 75% · 85%+ AMRAP',
+    w531_w2:'3×3 — 70% · 80% · 90%+ AMRAP',
+    w531_w3:'5/3/1 — 75% · 85% · 95%+ AMRAP',
+    w531_w4:'Deload — 40% · 50% · 60% (recovery)',
+    w531_amrap_note:'"+" means AMRAP — push for max reps with good technique.',
+    w531_sch_title:'Weekly Schedule',
+    w531_d1:'Overhead Press + BBB + Assistance',
+    w531_d2:'Deadlift + BBB + Assistance',
+    w531_d3:'Bench Press + BBB + Assistance',
+    w531_d4:'Squat + BBB + Assistance',
+    w531_bbb_title:'BBB — Boring But Big',
+    w531_bbb1:'After main sets: 5×10 of the same lift at 50-60% TM',
+    w531_bbb2:'Ex: Bench 5/3/1 → then 5×10 Bench at 50% TM. High volume, light weight',
+    w531_bbb3:'Builds muscle mass while increasing strength on the main lifts',
+    w531_rules_title:'Wendler\'s Rules',
+    w531_r1_lbl:'Start light:',w531_r2_lbl:'Never skip deload:',w531_r3_lbl:'If you stall:',w531_r4_lbl:'No 2 days in a row:',
+    w531_r1:'even if the weight feels ridiculous. Progression will take you far in 6-12 months',
+    w531_r2:'week 4 light work is essential for long-term recovery and progress',
+    w531_r3:'reduce TM by 10% and restart. Do not increase TM if you don\'t complete the reps',
+    w531_r4:'minimum 1 rest day between sessions',
+    ss_start_btn:'Start Starting Strength',
+    ss_days:'3 days / week · Full Body · Linear progression',
+    ss_level:'Beginner / Intermediate',
+    ss_ideal:'The first serious barbell program. Builds real strength on the fundamentals before anything else.',
+    ss_phi_title:'Philosophy',
+    ss_phi1:'Linear progression: add weight every session — 2.5kg for Squat/Bench/Press, 5kg for Deadlift',
+    ss_phi2:'Squat is king — performed EVERY session because it builds the most full-body strength',
+    ss_phi3:'Low volume, high intensity — 3×5 on everything. Enough to grow, enough to recover',
+    ss_phi4:'Work it until it stops working — when progress stalls, move to Madcow or Texas Method',
+    ss_sch_title:'A/B Schedule — example week',
+    ss_day_a:'Squat 3×5 · Bench 3×5 · Deadlift 1×5',
+    ss_day_b:'Squat 3×5 · Press 3×5 · Deadlift 1×5',
+    ss_day_a2:'Squat 3×5 · Bench 3×5 · Deadlift 1×5',
+    ss_rotate_note:'A and B alternate each week — Bench and Overhead Press swap.',
+    ss_rules_title:'Key Rules',
+    ss_r1_lbl:'Starting weight:',ss_r2_lbl:'Deadlift:',ss_r3_lbl:'When you stall:',ss_r4_lbl:'Chin-ups:',ss_r5_lbl:'After 3-6 months:',
+    ss_r1:'start light — 50-60% of your estimated max. Progression is fast at the beginning',
+    ss_r2:'1 set of 5 reps only, but heavy. Low volume protects the back and allows more load',
+    ss_r3:'try 3 times with the same weight — if you still can\'t progress, deload 10% and restart',
+    ss_r4:'added optionally as assistance — do max reps, add weight when you reach 3×8',
+    ss_r5:'move to Madcow 5×5 or Texas Method to keep progressing',
     gironda_4day_btn:'4 Day Split',gironda_fb_btn:'Full Body 8×8',
     gironda_coaches:'Coach of Arnold, Larry Scott, Lou Ferrigno, Frank Zane',
     gironda_density_lbl:'Density Training',
@@ -4110,18 +5036,18 @@ const WORKOUTS_BASE = {
                 {it:'Tirate al Mento',en:'Upright Row',s:3,r:'12-10',rest:'2 min'},
                 {it:'Affondi',en:'Lunges',s:3,r:'12-10',rest:'2-3 min'},
                 {it:'Dip',en:'Dip',s:3,r:'15-10',rest:'2-3 min'},
-                {it:'Iperstensioni / Stacchi Gambe Tese',en:'Hyperextension / Straight Leg Deadlift',s:3,r:'15',rest:'2 min'},
+                {it:'Iperstensioni / Stacchi Gambe Tese',en:'Hyperextension / Straight Leg Deadlift',s:3,r:'15-10',rest:'2 min'},
                 {it:'Curl Bicipiti',en:'Bicep Curl',s:3,r:'15-10',rest:'1-2 min'},
-                {it:'Polpacci',en:'Calf Raise',s:3,r:'15',rest:'1-2 min'}]},
+                {it:'Polpacci',en:'Calf Raise',s:3,r:'15-10',rest:'1-2 min'}]},
             {id:'b',color:'var(--gold)',exercises:[
                 {it:'Stacchi Sumo',en:'Sumo Deadlift',s:3,r:'12-10',rest:'2-3 min'},
                 {it:'Press su Panca Inclinata',en:'Incline Press',s:3,r:'12-10',rest:'2-3 min'},
                 {it:'Rematore Macchina',en:'Machine Row',s:3,r:'12-10',rest:'1-2 min'},
                 {it:'Step sulla Pedana',en:'Step Up',s:3,r:'12',rest:'2 min'},
-                {it:'Alzate Laterali',en:'Lateral Raise',s:3,r:'15',rest:'1-2 min'},
+                {it:'Alzate Laterali',en:'Lateral Raise',s:3,r:'15-10',rest:'1-2 min'},
                 {it:'Leg Curl',en:'Leg Curl',s:3,r:'15-10',rest:'1-2 min'},
-                {it:'Hip Thrust',en:'Hip Thrust',s:3,r:'15',rest:'2-3 min'},
-                {it:'Macchina Glutei',en:'Glute Machine',s:3,r:'30-20',rest:'1-2 min'},
+                {it:'Hip Thrust',en:'Hip Thrust',s:3,r:'15-10',rest:'2-3 min'},
+                {it:'Adduttore',en:'Adductor Machine',s:3,r:'30-20',rest:'1-2 min'},
                 {it:'Addominali',en:'Abs',s:3,r:'20-15',rest:'2 min'}]}]},
     // ── UPPER/LOWER DONNA ─────────────────────────────────────────────────
     ul_d:{gender:'donna',
@@ -4140,10 +5066,10 @@ const WORKOUTS_BASE = {
                 {it:'Tirate al Mento',en:'Upright Row',s:3,r:'15-10',rest:'2 min'},
                 {it:'Press su Panca Inclinata',en:'Incline Press',s:3,r:'15-10',rest:'2-3 min'},
                 {it:'Rematore Macchina',en:'Machine Row',s:3,r:'15-10',rest:'1-2 min'},
-                {it:'Alzate Laterali',en:'Lateral Raise',s:3,r:'15',rest:'1-2 min'},
-                {it:'Spalle Posteriori',en:'Rear Delt Fly',s:3,r:'15',rest:'2 min'},
-                {it:'Curl Bicipiti',en:'Bicep Curl',s:3,r:'15',rest:'1-2 min'},
-                {it:'Spinte in Basso',en:'Tricep Pushdown',s:3,r:'15',rest:'2 min'}]}]},
+                {it:'Alzate Laterali',en:'Lateral Raise',s:3,r:'15-10',rest:'1-2 min'},
+                {it:'Spalle Posteriori',en:'Rear Delt Fly',s:3,r:'15-10',rest:'2 min'},
+                {it:'Curl Bicipiti',en:'Bicep Curl',s:3,r:'15-10',rest:'1-2 min'},
+                {it:'Spinte in Basso',en:'Tricep Pushdown',s:3,r:'15-10',rest:'2 min'}]}]},
     // ── 30 MIN UOMO BASIC ────────────────────────────────────────────────
     quick_u_basic:{gender:'uomo',
         note_it:'🔵 A1+A2 · 🔴 B1+B2 · 🟢 C1+C2 = <b>Superserie</b> — esegui i due esercizi consecutivamente con 10-20s di pausa, poi riposa 60-90s prima del giro successivo.',
@@ -4728,6 +5654,103 @@ const WORKOUTS_BASE = {
                 {it:'Polpacci Seduto',en:'Seated Calf Raise',s:4,r:'15-20'},
                 {it:'Russian Twist con peso',en:'Weighted Russian Twist',s:3,r:'20 (tot)'}]}]}
 ,
+    // ── THINNER LEANER STRONGER — MICHAEL MATTHEWS ─────────────────────────
+    tls_3d:{gender:'donna',
+        note_it:'💪 <b>Full Body 3× / sett. — Lun · Mer · Ven</b> · Hard sets 8-10 reps @70-75% 1RM — fermati a 1-2 reps dal cedimento. Composti prima, isolamento alla fine. Riposo 2-4 min tra composti, 1-2 min isolamento. <b>8 settimane + 1 deload al 70%.</b>',
+        note_en:'💪 <b>Full Body 3× / week — Mon · Wed · Fri</b> · Hard sets 8-10 reps @70-75% 1RM — stop 1-2 reps before failure. Compound first, isolation last. Rest 2-4 min between compounds, 1-2 min isolation. <b>8 weeks + 1 deload at 70%.</b>',
+        days:[
+            {id:'tls3_fb',color:'var(--blue)',exercises:[
+                {it:'Squat Bilanciere',en:'Barbell Back Squat',s:3,r:'8-10',rest:'3-4 min'},
+                {it:'Romanian Deadlift',en:'Romanian Deadlift',s:3,r:'8-10',rest:'2-3 min'},
+                {it:'Hip Thrust Bilanciere',en:'Barbell Hip Thrust',s:3,r:'10-12',rest:'2 min'},
+                {it:'Panca Piana / Inclinata',en:'Bench Press / Incline Press',s:3,r:'8-10',rest:'2-3 min'},
+                {it:'Rematore Bilanciere / Macchina',en:'Barbell Row / Machine Row',s:3,r:'8-10',rest:'2 min'},
+                {it:'Press Militare Manubri',en:'DB Overhead Press',s:3,r:'8-10',rest:'2 min'},
+                {it:'Alzate Laterali',en:'Lateral Raises',s:2,r:'10-12',rest:'1 min'},
+                {it:'Curl Bilanciere',en:'Barbell Curl',s:2,r:'10-12',rest:'1 min'},
+                {it:'Estensioni Tricipiti',en:'Triceps Extension',s:2,r:'10-12',rest:'1 min'},
+                {it:'Calf Raise',en:'Calf Raise',s:3,r:'12-15',rest:'1 min'}]}
+        ]},
+    tls_4d:{gender:'donna',
+        note_it:'💪 <b>Upper/Lower 4× / sett. — Lun · Mar · Gio · Ven</b> · Hard sets 8-10 reps @70-75% 1RM — fermati a 1-2 reps dal cedimento. Composti prima, isolamento alla fine. Riposo 2-4 min tra composti, 1-2 min isolamento. <b>8 settimane + 1 deload al 70%.</b>',
+        note_en:'💪 <b>Upper/Lower 4× / week — Mon · Tue · Thu · Fri</b> · Hard sets 8-10 reps @70-75% 1RM — stop 1-2 reps before failure. Compound first, isolation last. Rest 2-4 min between compounds, 1-2 min isolation. <b>8 weeks + 1 deload at 70%.</b>',
+        days:[
+            {id:'tls4_ua',color:'var(--blue)',exercises:[
+                {it:'Panca Piana Bilanciere',en:'Barbell Bench Press',s:3,r:'8-10',rest:'2-3 min'},
+                {it:'Rematore Bilanciere',en:'Bent-Over Row',s:3,r:'8-10',rest:'2-3 min'},
+                {it:'Press Militare Bilanciere',en:'Overhead Barbell Press',s:3,r:'8-10',rest:'2 min'},
+                {it:'Lat Machine Presa Larga',en:'Wide Grip Lat Pulldown',s:3,r:'8-10',rest:'2 min'},
+                {it:'Alzate Laterali Manubri',en:'DB Lateral Raises',s:3,r:'10-12',rest:'1 min'},
+                {it:'Curl Bilanciere',en:'Barbell Curl',s:2,r:'10-12',rest:'1 min'},
+                {it:'Pushdown Tricipiti',en:'Triceps Pushdown',s:2,r:'10-12',rest:'1 min'}]},
+            {id:'tls4_la',color:'var(--gold)',exercises:[
+                {it:'Squat Bilanciere',en:'Barbell Back Squat',s:3,r:'8-10',rest:'3-4 min'},
+                {it:'Romanian Deadlift',en:'Romanian Deadlift',s:3,r:'8-10',rest:'2-3 min'},
+                {it:'Hip Thrust Bilanciere',en:'Barbell Hip Thrust',s:3,r:'10-12',rest:'2 min'},
+                {it:'Affondi / Bulgarian Split Squat',en:'Lunges / Bulgarian Split Squat',s:3,r:'10-12 p.g.',rest:'2 min'},
+                {it:'Leg Curl',en:'Leg Curl',s:3,r:'10-12',rest:'1-2 min'},
+                {it:'Calf Raise',en:'Calf Raise',s:4,r:'12-15',rest:'1 min'}]},
+            {id:'tls4_ub',color:'var(--green)',exercises:[
+                {it:'Press Inclinata Manubri',en:'Incline DB Press',s:3,r:'8-10',rest:'2-3 min'},
+                {it:'Trazioni / Lat Machine Presa Stretta',en:'Pull-ups / Close Grip Pulldown',s:3,r:'8-10',rest:'2 min'},
+                {it:'Press Spalle Manubri',en:'DB Shoulder Press',s:3,r:'8-10',rest:'2 min'},
+                {it:'Rematore Manubrio / Pulley',en:'One-Arm DB Row / Cable Row',s:3,r:'8-10',rest:'2 min'},
+                {it:'Croci Manubri / Crossover',en:'DB Flyes / Cable Crossover',s:2,r:'10-12',rest:'1 min'},
+                {it:'Alzate Laterali Cavi',en:'Cable Lateral Raises',s:2,r:'10-12',rest:'1 min'},
+                {it:'Curl Martello',en:'Hammer Curl',s:2,r:'10-12',rest:'1 min'},
+                {it:'Dips / Estensioni Overhead',en:'Dips / Overhead Extension',s:2,r:'10-12',rest:'1 min'}]},
+            {id:'tls4_lb',color:'var(--red)',exercises:[
+                {it:'Hack Squat / Leg Press',en:'Hack Squat / Leg Press',s:3,r:'8-10',rest:'3 min'},
+                {it:'Hip Thrust Manubri / Macchina',en:'DB Hip Thrust / Machine',s:3,r:'10-12',rest:'2 min'},
+                {it:'Split Squat Bulgaro',en:'Bulgarian Split Squat',s:3,r:'10-12 p.g.',rest:'2-3 min'},
+                {it:'Abductor Machine',en:'Abductor Machine',s:3,r:'12-15',rest:'1 min'},
+                {it:'Leg Extension',en:'Leg Extension',s:3,r:'10-12',rest:'1-2 min'},
+                {it:'Leg Curl Sdraiato',en:'Lying Leg Curl',s:3,r:'10-12',rest:'1-2 min'},
+                {it:'Calf Raise Seduto',en:'Seated Calf Raise',s:4,r:'12-15',rest:'1 min'}]}
+        ]},
+    tls_d:{gender:'donna',
+        note_it:'💪 <b>5 giorni — Lun · Mar · Mer · Ven · Sab (riposo Gio e Dom)</b> · Hard sets 8-10 reps @70-75% 1RM — fermati a 1-2 reps dal cedimento. Composti prima, isolamento alla fine. Riposo 2-4 min tra composti, 1-2 min isolamento. <b>8 settimane + 1 deload al 70%.</b>',
+        note_en:'💪 <b>5 days — Mon · Tue · Wed · Fri · Sat (rest Thu and Sun)</b> · Hard sets 8-10 reps @70-75% 1RM — stop 1-2 reps before failure. Compound first, isolation last. Rest 2-4 min between compounds, 1-2 min isolation. <b>8 weeks + 1 deload at 70%.</b>',
+        days:[
+            {id:'tls_push',color:'var(--red)',exercises:[
+                {it:'Panca Piana Bilanciere',en:'Barbell Bench Press',s:3,r:'8-10',rest:'2-3 min'},
+                {it:'Press Inclinata Manubri',en:'Incline DB Press',s:3,r:'8-10',rest:'2-3 min'},
+                {it:'Press Militare Bilanciere / Manubri',en:'Overhead Barbell / DB Press',s:3,r:'8-10',rest:'2-3 min'},
+                {it:'Alzate Laterali Manubri',en:'DB Lateral Raises',s:3,r:'10-12',rest:'1-2 min'},
+                {it:'Croci Manubri / Crossover',en:'DB Flyes / Cable Crossover',s:2,r:'10-12',rest:'1-2 min'},
+                {it:'Estensioni Tricipiti / Pushdown',en:'Triceps Extension / Pushdown',s:2,r:'10-12',rest:'1-2 min'}]},
+            {id:'tls_pull',color:'var(--blue)',exercises:[
+                {it:'Stacco da Terra',en:'Deadlift',s:3,r:'8-10',rest:'3-4 min'},
+                {it:'Rematore Bilanciere',en:'Bent-Over Barbell Row',s:3,r:'8-10',rest:'2-3 min'},
+                {it:'Lat Machine / Trazioni',en:'Lat Pulldown / Pull-ups',s:3,r:'8-10',rest:'2 min'},
+                {it:'Rematore Manubrio / T-Bar',en:'One-Arm DB Row / T-Bar Row',s:3,r:'8-10',rest:'2 min'},
+                {it:'Curl Bilanciere',en:'Barbell Curl',s:3,r:'8-10',rest:'1-2 min'},
+                {it:'Curl Martello Manubri',en:'Hammer Curl',s:2,r:'10-12',rest:'1-2 min'}]},
+            {id:'tls_lower',color:'var(--gold)',exercises:[
+                {it:'Squat Bilanciere',en:'Barbell Back Squat',s:3,r:'8-10',rest:'3-4 min'},
+                {it:'Romanian Deadlift / Stacco Rumeno',en:'Romanian Deadlift',s:3,r:'8-10',rest:'2-3 min'},
+                {it:'Leg Press',en:'Leg Press',s:3,r:'8-10',rest:'2-3 min'},
+                {it:'Hip Thrust Bilanciere',en:'Barbell Hip Thrust',s:3,r:'10-12',rest:'2 min'},
+                {it:'Affondi / Bulgarian Split Squat',en:'Lunges / Bulgarian Split Squat',s:3,r:'10-12 (p.g.)',rest:'2 min'},
+                {it:'Leg Curl',en:'Leg Curl',s:3,r:'10-12',rest:'1-2 min'},
+                {it:'Calf Raise',en:'Calf Raise',s:4,r:'12-15',rest:'1 min'}]},
+            {id:'tls_upper',color:'var(--green)',exercises:[
+                {it:'Panca Inclinata Bilanciere',en:'Incline Barbell Press',s:3,r:'8-10',rest:'2-3 min'},
+                {it:'Trazioni / Lat Machine',en:'Pull-ups / Lat Pulldown',s:3,r:'8-10',rest:'2 min'},
+                {it:'Press Spalle Manubri',en:'DB Shoulder Press',s:3,r:'8-10',rest:'2 min'},
+                {it:'Rematore Macchina / Pulley',en:'Machine Row / Cable Row',s:3,r:'8-10',rest:'2 min'},
+                {it:'Alzate Laterali',en:'Lateral Raises',s:3,r:'10-12',rest:'1 min'},
+                {it:'Curl Manubri Inclinato',en:'Incline DB Curl',s:2,r:'10-12',rest:'1 min'},
+                {it:'Dips / Estensioni Overhead',en:'Dips / Overhead Extension',s:2,r:'10-12',rest:'1 min'}]},
+            {id:'tls_lower2',color:'var(--red)',exercises:[
+                {it:'Squat Frontale / Hack Squat',en:'Front Squat / Hack Squat',s:3,r:'8-10',rest:'3-4 min'},
+                {it:'Hip Thrust Manubri / Macchina',en:'DB Hip Thrust / Machine',s:3,r:'10-12',rest:'2 min'},
+                {it:'Split Squat Bulgaro',en:'Bulgarian Split Squat',s:3,r:'10-12 (p.g.)',rest:'2-3 min'},
+                {it:'Leg Extension',en:'Leg Extension',s:3,r:'10-12',rest:'1-2 min'},
+                {it:'Leg Curl Sdraiato',en:'Lying Leg Curl',s:3,r:'10-12',rest:'1-2 min'},
+                {it:'Abductor Machine',en:'Abductor Machine',s:3,r:'12-15',rest:'1 min'},
+                {it:'Calf Raise Seduto',en:'Seated Calf Raise',s:4,r:'12-15',rest:'1 min'}]}
+        ]},
     arthur_hit:{gender:'uomo',
         days:[
             {id:'aj_fb',color:'var(--gold)',exercises:[
@@ -4808,24 +5831,126 @@ const WORKOUTS_BASE = {
                 {it:'Crunch / Addominali',en:'Abs / Crunches',s:3,r:'15-20',rest:'1 min'}
             ]}
         ]},
+    // ── SMOLOV JR ─────────────────────────────────────────────────────────
+    smolov_jr:{gender:'uomo',
+        note_it:'🔥 <b>Squat + Panca insieme è fattibile</b> — la Panca non stanca il SNC come lo Squat. Usa la calcolatrice sopra con i tuoi massimali separati. Incremento settimanale: +5kg Squat, +2.5kg Panca. Riposa 3-5 min tra le serie. Nessun altro esercizio pesante per gambe.',
+        note_en:'🔥 <b>Squat + Bench together is feasible</b> — Bench Press does not tax the CNS like Squat does. Use the calculator above with your separate maxes. Weekly increment: +5kg Squat, +2.5kg Bench. Rest 3-5 min between sets. No other heavy leg work.',
+        days:[
+            {id:'smolv_d1',color:'var(--blue)',exercises:[
+                {it:'Squat con Bilanciere — Giorno 1',en:'Barbell Squat — Day 1',s:6,r:'6 @70% 1RM'},
+                {it:'Panca Piana — Giorno 1',en:'Bench Press — Day 1',s:6,r:'6 @70% 1RM'}]},
+            {id:'smolv_d2',color:'var(--green)',exercises:[
+                {it:'Squat con Bilanciere — Giorno 2',en:'Barbell Squat — Day 2',s:7,r:'5 @75% 1RM'},
+                {it:'Panca Piana — Giorno 2',en:'Bench Press — Day 2',s:7,r:'5 @75% 1RM'}]},
+            {id:'smolv_d3',color:'var(--gold)',exercises:[
+                {it:'Squat con Bilanciere — Giorno 3',en:'Barbell Squat — Day 3',s:8,r:'4 @80% 1RM'},
+                {it:'Panca Piana — Giorno 3',en:'Bench Press — Day 3',s:8,r:'4 @80% 1RM'}]},
+            {id:'smolv_d4',color:'var(--red)',exercises:[
+                {it:'Squat con Bilanciere — Giorno 4',en:'Barbell Squat — Day 4',s:10,r:'3 @85% 1RM'},
+                {it:'Panca Piana — Giorno 4',en:'Bench Press — Day 4',s:10,r:'3 @85% 1RM'}]}
+        ]},
+    // ── TEXAS METHOD ──────────────────────────────────────────────────────
+    texas_method:{gender:'uomo',
+        note_it:'📋 <b>Struttura settimanale:</b> Lunedì = Volume (5×5 @77% 1RM) → Mercoledì = Recovery (leggero, tecnica) → Venerdì = Intensity (1×5 nuovo PR @85%+). <b>Progressione:</b> ogni venerdì aggiungi +5kg Squat, +2.5kg Panca/Press. Se non riesci il PR, riduci il volume del lunedì.',
+        note_en:'📋 <b>Weekly structure:</b> Monday = Volume (5×5 @77% 1RM) → Wednesday = Recovery (light, technique) → Friday = Intensity (1×5 new PR @85%+). <b>Progression:</b> every Friday add +5kg Squat, +2.5kg Bench/Press. If PR fails, reduce Monday volume.',
+        days:[
+            {id:'tm_volume',color:'var(--red)',exercises:[
+                {it:'Squat con Bilanciere — Volume',en:'Barbell Squat — Volume',s:5,r:'5 @77% 1RM'},
+                {it:'Panca Piana / Press Militare (alterni ogni sett.)',en:'Bench Press / Overhead Press (alternate weekly)',s:5,r:'5 @77% 1RM'},
+                {it:'Stacco da Terra',en:'Deadlift',s:1,r:'5 @77% 1RM'},
+                {it:'Assistenza · Trazioni / Rematore',en:'Assistance · Pull-ups / Row',s:3,r:'max / 10-12'}]},
+            {id:'tm_recovery',color:'var(--blue)',exercises:[
+                {it:'Squat con Bilanciere — Recovery',en:'Barbell Squat — Recovery',s:2,r:'5 @62% 1RM (80% del lunedì)'},
+                {it:'Press Militare / Panca Piana (l\'altro dell\'alternanza)',en:'Overhead Press / Bench Press (other of alternation)',s:3,r:'5 @70% 1RM'},
+                {it:'Trazioni / Chin-up',en:'Pull-ups / Chin-ups',s:3,r:'max reps'},
+                {it:'Iperestensioni',en:'Back Extensions',s:5,r:'10'}]},
+            {id:'tm_intensity',color:'var(--gold)',exercises:[
+                {it:'Squat con Bilanciere — INTENSITY (nuovo PR)',en:'Barbell Squat — INTENSITY (new PR)',s:1,r:'5+ @85%+ 1RM — NUOVO PR'},
+                {it:'Panca Piana / Press Militare — INTENSITY (nuovo PR)',en:'Bench Press / Press — INTENSITY (new PR)',s:1,r:'5+ @85%+ 1RM — NUOVO PR'},
+                {it:'Power Clean / Stacco Deficit (alternativa)',en:'Power Clean / Deficit Deadlift (alternative)',s:5,r:'3 @70% 1RM'},
+                {it:'Trazioni / Chin-up',en:'Pull-ups / Chin-ups',s:3,r:'max reps'}]}
+        ]},
+    // ── 5/3/1 — JIM WENDLER ──────────────────────────────────────────────
+    wendler_531:{gender:'uomo',
+        note_it:'⚡ <b>Training Max (TM) = 90% del tuo vero 1RM.</b> Tutte le percentuali si calcolano sul TM. L\'ultima serie di ogni settimana è <b>AMRAP</b> (quante reps riesci con buona tecnica). Dopo ogni ciclo di 4 sett.: +2.5kg Panca/Press, +5kg Squat/Stacco. <b>BBB (Boring But Big):</b> dopo le serie principali, fai 5×10 dello stesso esercizio al 50-60% del TM.',
+        note_en:'⚡ <b>Training Max (TM) = 90% of your true 1RM.</b> All percentages are calculated from TM. The last set each week is <b>AMRAP</b> (as many reps as possible with good form). After each 4-week cycle: +2.5kg Bench/Press, +5kg Squat/Deadlift. <b>BBB (Boring But Big):</b> after main sets, do 5×10 of the same lift at 50-60% TM.',
+        days:[
+            {id:'w531_press',color:'var(--blue)',exercises:[
+                {it:'Press Militare @65% TM',en:'Overhead Press @65% TM',s:1,r:'5 reps'},
+                {it:'Press Militare @75% TM',en:'Overhead Press @75% TM',s:1,r:'5 reps'},
+                {it:'Press Militare @85% TM',en:'Overhead Press @85% TM',s:1,r:'5+ AMRAP'},
+                {it:'BBB · Press Militare @50-60% TM',en:'BBB · Overhead Press @50-60% TM',s:5,r:'10'},
+                {it:'Assistenza · Dip / Trazioni',en:'Assistance · Dips / Pull-ups',s:3,r:'10-15'},
+                {it:'Assistenza · Addominali / Core',en:'Assistance · Abs / Core',s:3,r:'15-20'}]},
+            {id:'w531_dl',color:'var(--red)',exercises:[
+                {it:'Stacco da Terra @70% TM',en:'Deadlift @70% TM',s:1,r:'5 reps'},
+                {it:'Stacco da Terra @80% TM',en:'Deadlift @80% TM',s:1,r:'5 reps'},
+                {it:'Stacco da Terra @90% TM',en:'Deadlift @90% TM',s:1,r:'5+ AMRAP'},
+                {it:'BBB · Stacco o Leg Press @50-60% TM',en:'BBB · Deadlift or Leg Press @50-60% TM',s:5,r:'10'},
+                {it:'Assistenza · Curl Bilanciere / Rematore',en:'Assistance · Barbell Curl / Row',s:3,r:'10-15'},
+                {it:'Assistenza · Addominali / Iperestensioni',en:'Assistance · Abs / Hyperextension',s:3,r:'15-20'}]},
+            {id:'w531_bench',color:'var(--green)',exercises:[
+                {it:'Panca Piana @65% TM',en:'Bench Press @65% TM',s:1,r:'5 reps'},
+                {it:'Panca Piana @75% TM',en:'Bench Press @75% TM',s:1,r:'5 reps'},
+                {it:'Panca Piana @85% TM',en:'Bench Press @85% TM',s:1,r:'5+ AMRAP'},
+                {it:'BBB · Panca Piana @50-60% TM',en:'BBB · Bench Press @50-60% TM',s:5,r:'10'},
+                {it:'Assistenza · Dip / Rematore Manubri',en:'Assistance · Dips / DB Row',s:3,r:'10-15'},
+                {it:'Assistenza · Addominali / Core',en:'Assistance · Abs / Core',s:3,r:'15-20'}]},
+            {id:'w531_squat',color:'var(--gold)',exercises:[
+                {it:'Squat @70% TM',en:'Squat @70% TM',s:1,r:'5 reps'},
+                {it:'Squat @80% TM',en:'Squat @80% TM',s:1,r:'5 reps'},
+                {it:'Squat @90% TM',en:'Squat @90% TM',s:1,r:'5+ AMRAP'},
+                {it:'BBB · Squat @50-60% TM',en:'BBB · Squat @50-60% TM',s:5,r:'10'},
+                {it:'Assistenza · Leg Curl / RDL',en:'Assistance · Leg Curl / RDL',s:3,r:'10-15'},
+                {it:'Assistenza · Addominali / Core',en:'Assistance · Abs / Core',s:3,r:'15-20'}]}
+        ]},
+    // ── STARTING STRENGTH — MARK RIPPETOE ────────────────────────────────
+    ss_u:{gender:'uomo',
+        days:[
+            {id:'ss_a',color:'var(--red)',exercises:[
+                {it:'Squat con Bilanciere',en:'Barbell Squat',s:3,r:'5 (+2.5kg ogni sessione)'},
+                {it:'Panca Piana con Bilanciere',en:'Barbell Bench Press',s:3,r:'5 (+2.5kg ogni sessione)'},
+                {it:'Stacco da Terra',en:'Deadlift',s:1,r:'5 (+5kg ogni sessione)'},
+                {it:'Trazioni (opzionale)',en:'Chin-ups (optional)',s:3,r:'max reps'}]},
+            {id:'ss_b',color:'var(--blue)',exercises:[
+                {it:'Squat con Bilanciere',en:'Barbell Squat',s:3,r:'5 (+2.5kg ogni sessione)'},
+                {it:'Press Militare con Bilanciere',en:'Overhead Press',s:3,r:'5 (+2.5kg ogni sessione)'},
+                {it:'Stacco da Terra',en:'Deadlift',s:1,r:'5 (+5kg ogni sessione)'},
+                {it:'Trazioni (opzionale)',en:'Chin-ups (optional)',s:3,r:'max reps'}]}
+        ]},
+    // ── HST — HYPERTROPHY SPECIFIC TRAINING ───────────────────────────────
+    hst_u:{gender:'uomo',
+        note_it:'📊 <b>3 blocchi × 2 settimane:</b> Sett.1-2 = 2×15 reps | Sett.3-4 = 2×10 reps | Sett.5-6 = 2×5 reps. <b>Carico aumenta ogni sessione</b> verso il massimale del blocco. Non andare al cedimento — il carico meccanico progressivo è lo stimolo, non la fatica. Dopo 6-8 settimane: <b>Strategic Deconditioning</b> di 9-14 giorni prima del prossimo ciclo.',
+        note_en:'📊 <b>3 blocks × 2 weeks:</b> Wk1-2 = 2×15 reps | Wk3-4 = 2×10 reps | Wk5-6 = 2×5 reps. <b>Load increases every session</b> towards the block max. Do NOT go to failure — progressive mechanical load is the stimulus, not fatigue. After 6-8 weeks: <b>Strategic Deconditioning</b> of 9-14 days before next cycle.',
+        days:[
+            {id:'hst_full',color:'var(--blue)',exercises:[
+                {it:'Squat con Bilanciere',en:'Barbell Squat',s:2,r:'15→10→5 (aumenta ogni sessione)'},
+                {it:'Panca Piana / Inclinata',en:'Bench Press / Incline Press',s:2,r:'15→10→5 (aumenta ogni sessione)'},
+                {it:'Rematore Bilanciere / Pulley',en:'Barbell Row / Pulldown',s:2,r:'15→10→5 (aumenta ogni sessione)'},
+                {it:'Press Militare',en:'Overhead Press',s:2,r:'15→10→5 (aumenta ogni sessione)'},
+                {it:'Stacco da Terra / RDL',en:'Deadlift / RDL',s:2,r:'15→10→5 (aumenta ogni sessione)'},
+                {it:'Curl Bilanciere / Manubri',en:'Barbell / DB Curl',s:2,r:'15→10→5 (aumenta ogni sessione)'},
+                {it:'Tricipiti — Dip / Pushdown',en:'Triceps — Dip / Pushdown',s:2,r:'15→10→5 (aumenta ogni sessione)'},
+                {it:'Polpacci — Calf Raise',en:'Calf Raise',s:2,r:'15→10→5 (aumenta ogni sessione)'}]}
+        ]},
     // ── PAUL CARTER — BASE BUILDING 3-DAY SPLIT ──────────────────────────
     carter_bb:{gender:'uomo',
-        note_it:'⚙️ <b>Ciclo progressivo:</b> parti con un peso da 5 reps → aggiungi carico ogni set (5→4→3→2→1) → torna al peso iniziale e fai quante reps riesci (AMRAP back-off). Ogni settimana batti quel numero o aggiungi peso.',
-        note_en:'⚙️ <b>Progressive Cycle:</b> start with a 5-rep weight → add load each set (5→4→3→2→1) → return to starting weight and do as many reps as possible (AMRAP back-off). Each week beat that number or add weight.',
+        note_it:'⚙️ <b>Ciclo progressivo (es. Squat 100kg 1RM):</b> 5 reps @70% → 4 reps @75% → 3 reps @80% → 2 reps @85% → 1 rep @90%. Poi torna al peso di partenza (70%) e fai quante reps riesci (AMRAP back-off). Ogni settimana batti quel numero o aggiungi 2.5kg. <b>Rest-Pause:</b> vai al cedimento → riposa 60s → fai il 50% delle reps. <b>350 Method:</b> 3 serie, obiettivo 50 reps totali, 2 min riposo.',
+        note_en:'⚙️ <b>Progressive Cycle (e.g. Squat 100kg 1RM):</b> 5 reps @70% → 4 reps @75% → 3 reps @80% → 2 reps @85% → 1 rep @90%. Then return to start weight (70%) and do as many reps as possible (AMRAP back-off). Each week beat that number or add 2.5kg. <b>Rest-Pause:</b> go to failure → rest 60s → do 50% of previous reps. <b>350 Method:</b> 3 sets, target 50 total reps, 2 min rest.',
         days:[
             {id:'carter_d1',color:'var(--red)',exercises:[
-                {it:'Squat con Bilanciere (ciclo progressivo)',en:'Barbell Squat (progressive cycle)',s:'ciclo',r:'5-4-3-2-1 + AMRAP back-off'},
-                {it:'Stacco da Terra (rotazione con Squat)',en:'Deadlift (rotate with Squat)',s:'ciclo',r:'5-4-3-2-1 + AMRAP back-off'},
+                {it:'Squat con Bilanciere',en:'Barbell Squat',s:6,r:'5@70%→4@75%→3@80%→2@85%→1@90%→AMRAP@70%'},
+                {it:'Stacco da Terra (rotazione con Squat)',en:'Deadlift (rotate with Squat)',s:6,r:'5@70%→4@75%→3@80%→2@85%→1@90%→AMRAP@70%'},
                 {it:'Leg Press',en:'Leg Press',s:1,r:'30-50 (no failure)'},
                 {it:'Curl Femorali / RDL',en:'Leg Curl / RDL',s:3,r:'10-12'}]},
             {id:'carter_d2',color:'var(--blue)',exercises:[
-                {it:'Panca Piana / Inclinata (rotazione)',en:'Bench Press / Incline Press (rotate)',s:'ciclo',r:'5-4-3-2-1 + AMRAP back-off'},
+                {it:'Panca Piana / Inclinata (rotazione)',en:'Bench Press / Incline Press (rotate)',s:6,r:'5@70%→4@75%→3@80%→2@85%→1@90%→AMRAP@70%'},
                 {it:'Press Inclinata Manubri / Piana Manubri (rotazione)',en:'Incline DB Press / Flat DB Press (rotate)',s:1,r:'20-30 rest-pause'},
                 {it:'Alzate Laterali / Upright Row (rotazione)',en:'Lateral Raises / Upright Row (rotate)',s:5,r:'10'},
                 {it:'Spinte in Basso / Overhead Extension (rotazione)',en:'Pushdown / Overhead Extension (rotate)',s:5,r:'10'}]},
             {id:'carter_d3',color:'var(--green)',exercises:[
                 {it:'T-Bar Row — aggiungi peso ogni set fino a fallire 15 reps',en:'T-Bar Row — add weight each set until you fail at 15',s:6,r:'15 (add weight each set)'},
-                {it:'Trazioni (ciclo progressivo)',en:'Chin-ups (progressive cycle)',s:'ciclo',r:'cycle + 50% back-off BW'},
+                {it:'Trazioni (ciclo progressivo)',en:'Chin-ups (progressive cycle)',s:6,r:'5@BW→4@+5kg→3@+10kg→2@+15kg→1@+20kg→AMRAP@BW'},
                 {it:'Pullovers',en:'Pullovers',s:1,r:'30-40 rest-pause'},
                 {it:'Curl EZ / Curl Scott (rotazione)',en:'EZ Curl / Preacher Curl (rotate)',s:1,r:'20-30 rest-pause'}]}
         ]},
@@ -5039,7 +6164,7 @@ const WID_MAP = {'lpp':'lpp','ini-u':'ini_u','lyle-gbr':'lyle_gbr','ini-d':'ini_
   'quick-d':'quick_d','quick-d-basic':'quick_d_basic',
   'corto-u-adv':'quick_u','corto-u-bas':'quick_u_basic',
   'corto-d-adv':'quick_d','corto-d-bas':'quick_d_basic',
-  'dc-3day':'dc_3day','dc-4day':'dc_4day','mentzer-3day':'mentzer_3day','mentzer-cons':'mentzer_cons','dorian-bg':'dorian_bg','arthur-hit':'arthur_hit','ken-hit':'ken_hit','ken-bm':'ken_bm','phat':'phat','phul':'phul','bret':'bret','ashley':'ashley',
+  'dc-3day':'dc_3day','dc-4day':'dc_4day','mentzer-3day':'mentzer_3day','mentzer-cons':'mentzer_cons','dorian-bg':'dorian_bg','arthur-hit':'arthur_hit','ken-hit':'ken_hit','ken-bm':'ken_bm','phat':'phat','phul':'phul','bret':'bret','ashley':'ashley','tls-d':'tls_d','tls-3d':'tls_3d','tls-4d':'tls_4d',
   'ul-pb-u':'ul_pb_u',
   'lpp4-u':'lpp4_u',
   'ws4sb-u':'ws4sb_u',
@@ -5048,8 +6173,13 @@ const WID_MAP = {'lpp':'lpp','ini-u':'ini_u','lyle-gbr':'lyle_gbr','ini-d':'ini_
   'ken-pp':'ken_pp',
   'meadows-ppl':'meadows_ppl',
   'carter-bb':'carter_bb',
+  'hst-u':'hst_u',
   'gironda-4day':'gironda_4day',
-  'gironda-fb':'gironda_fb'
+  'gironda-fb':'gironda_fb',
+  'ss-u':'ss_u',
+  'wendler-531':'wendler_531',
+  'texas-method':'texas_method',
+  'smolov-jr':'smolov_jr'
 };
 
 // Map old IDs
@@ -5059,8 +6189,8 @@ function getWorkoutLocalized(wId){
     const baseId = WID_MAP[wId] || wId;
     const base = WORKOUTS_BASE[baseId];
     if(!base) return null;
-    const labelMap = {lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',ken_pp:'ken_pp_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label',lpp30_u:'lpp30_u_label',meadows_ppl:'meadows_ppl_label',carter_bb:'carter_bb_label',gironda_4day:'gironda_4day_label',gironda_fb:'gironda_fb_label'};
-    const pillsMap = {lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',ken_pp:'ken_pp_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',lpp4_u:'lpp4_u_pills',ws4sb_u:'ws4sb_u_pills',madcow_u:'madcow_u_pills',lpp30_u:'lpp30_u_pills',meadows_ppl:'meadows_ppl_pills',carter_bb:'carter_bb_pills',gironda_4day:'gironda_4day_pills',gironda_fb:'gironda_fb_pills'};
+    const labelMap = {lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',ken_pp:'ken_pp_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label',lpp30_u:'lpp30_u_label',meadows_ppl:'meadows_ppl_label',carter_bb:'carter_bb_label',gironda_4day:'gironda_4day_label',gironda_fb:'gironda_fb_label',ss_u:'ss_u_label',wendler_531:'wendler_531_label',texas_method:'texas_method_label',smolov_jr:'smolov_jr_label',hst_u:'hst_u_label',tls_d:'tls_d_label',tls_3d:'tls_3d_label',tls_4d:'tls_4d_label'};
+    const pillsMap = {lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',ken_pp:'ken_pp_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',lpp4_u:'lpp4_u_pills',ws4sb_u:'ws4sb_u_pills',madcow_u:'madcow_u_pills',lpp30_u:'lpp30_u_pills',meadows_ppl:'meadows_ppl_pills',carter_bb:'carter_bb_pills',gironda_4day:'gironda_4day_pills',gironda_fb:'gironda_fb_pills',ss_u:'ss_u_pills',wendler_531:'wendler_531_pills',texas_method:'texas_method_pills',smolov_jr:'smolov_jr_pills',hst_u:'hst_u_pills',tls_d:'tls_d_pills',tls_3d:'tls_3d_pills',tls_4d:'tls_4d_pills'};
     const days = base.days.map(day=>{
         let badge, name;
         // DC 3-day: a=Upper A1, b=Lower B1, g1=Upper A2, g2=Lower B2, g3=Upper A3, full=Lower B3
@@ -5162,6 +6292,30 @@ function getWorkoutLocalized(wId){
         }else if(day.id==='gironda_sh_arms'){badge='SPALLE & BRACCIA';name=lang==='it'?'Spalle · Bicipiti · Tricipiti — 8×8':'Shoulders · Biceps · Triceps — 8×8';
         }else if(day.id==='gironda_legs'){badge='GAMBE';name=lang==='it'?'Hack Squat · Femorali · Polpacci — 8×8':'Hack Squat · Hamstrings · Calves — 8×8';
         }else if(day.id==='gironda_full'){badge='FULL BODY';name=lang==='it'?'Corpo Completo — 8×8 · 30s riposo':'Full Body — 8×8 · 30s rest';
+        }else if(day.id==='ss_a'){badge='SESSIONE A';name=lang==='it'?'Squat · Panca · Stacco — Progressione Lineare':'Squat · Bench · Deadlift — Linear Progression';
+        }else if(day.id==='ss_b'){badge='SESSIONE B';name=lang==='it'?'Squat · Press Militare · Stacco — Progressione Lineare':'Squat · Overhead Press · Deadlift — Linear Progression';
+        }else if(day.id==='w531_press'){badge='PRESS';name=lang==='it'?'Press Militare — Settimana corrente + BBB':'Overhead Press — Current week + BBB';
+        }else if(day.id==='w531_dl'){badge='STACCO';name=lang==='it'?'Stacco da Terra — Settimana corrente + BBB':'Deadlift — Current week + BBB';
+        }else if(day.id==='w531_bench'){badge='PANCA';name=lang==='it'?'Panca Piana — Settimana corrente + BBB':'Bench Press — Current week + BBB';
+        }else if(day.id==='w531_squat'){badge='SQUAT';name=lang==='it'?'Squat — Settimana corrente + BBB':'Squat — Current week + BBB';
+        }else if(day.id==='tm_volume'){badge='VOLUME';name=lang==='it'?'Lunedì — 5×5 · Stress settimanale':'Monday — 5×5 · Weekly stimulus';
+        }else if(day.id==='tm_recovery'){badge='RECOVERY';name=lang==='it'?'Mercoledì — Leggero · Tecnica':'Wednesday — Light · Technique';
+        }else if(day.id==='tm_intensity'){badge='INTENSITY';name=lang==='it'?'Venerdì — 1×5 Nuovo PR 🎯':'Friday — 1×5 New PR 🎯';
+        }else if(day.id==='smolv_d1'){badge='GIORNO 1';name=lang==='it'?'6×6 @70% — Volume alto, peso moderato':'6×6 @70% — High volume, moderate load';
+        }else if(day.id==='smolv_d2'){badge='GIORNO 2';name=lang==='it'?'7×5 @75% — Volume/Intensità bilanciati':'7×5 @75% — Balanced volume/intensity';
+        }else if(day.id==='smolv_d3'){badge='GIORNO 3';name=lang==='it'?'8×4 @80% — Pesante, tecnica ferrea':'8×4 @80% — Heavy, strict technique';
+        }else if(day.id==='smolv_d4'){badge='GIORNO 4';name=lang==='it'?'10×3 @85% — Il giorno più duro 🔥':'10×3 @85% — The hardest day 🔥';
+        }else if(day.id==='hst_full'){badge='FULL BODY';name=lang==='it'?'3× / sett. — Carico aumenta ogni sessione':'3× / week — Load increases every session';
+        }else if(day.id==='tls_push'){badge='PUSH';name=lang==='it'?'Lun — Petto · Spalle · Tricipiti':'Mon — Chest · Shoulders · Triceps';
+        }else if(day.id==='tls_pull'){badge='PULL';name=lang==='it'?'Mar — Schiena · Bicipiti · Stacco':'Tue — Back · Biceps · Deadlift';
+        }else if(day.id==='tls_lower'){badge='LOWER A';name=lang==='it'?'Mer — Gambe · Glutei · Polpacci':'Wed — Legs · Glutes · Calves';
+        }else if(day.id==='tls_upper'){badge='UPPER';name=lang==='it'?'Ven — Petto · Schiena · Spalle · Braccia':'Fri — Chest · Back · Shoulders · Arms';
+        }else if(day.id==='tls_lower2'){badge='LOWER B';name=lang==='it'?'Sab — Gambe · Glutei (focus posteriore)':'Sat — Legs · Glutes (posterior focus)';
+        }else if(day.id==='tls3_fb'){badge='FULL BODY';name=lang==='it'?'Lun · Mer · Ven — Full Body':'Mon · Wed · Fri — Full Body';
+        }else if(day.id==='tls4_ua'){badge='UPPER A';name=lang==='it'?'Lun — Petto · Schiena · Spalle · Braccia':'Mon — Chest · Back · Shoulders · Arms';
+        }else if(day.id==='tls4_la'){badge='LOWER A';name=lang==='it'?'Mar — Squat · Hip Thrust · Femorali · Polpacci':'Tue — Squat · Hip Thrust · Hamstrings · Calves';
+        }else if(day.id==='tls4_ub'){badge='UPPER B';name=lang==='it'?'Gio — Petto · Schiena · Spalle · Braccia':'Thu — Chest · Back · Shoulders · Arms';
+        }else if(day.id==='tls4_lb'){badge='LOWER B';name=lang==='it'?'Ven — Hack Squat · Hip Thrust · Glutei · Polpacci':'Fri — Hack Squat · Hip Thrust · Glutes · Calves';
         }else{badge=t('d_full_badge');name=t('d_full_name');}
         const exercises = day.exercises.map(ex=>({...ex, name: lang==='en' ? ex.en : ex.it}));
         return {...day, badge, name, exercises};
@@ -5215,6 +6369,90 @@ function toggleAttivo(wId,e){
     updateAttiviBtnLabel();
 }
 function toggleAttivoWorkout(){if(activeWId)toggleAttivo(activeWId,null)}
+
+function calcSmolov(){
+  const sq=parseFloat(document.getElementById('smc-sq').value)||0;
+  const bp=parseFloat(document.getElementById('smc-bp').value)||0;
+  const inc=parseFloat(document.getElementById('smc-inc').value)||5;
+  if(!sq&&!bp)return;
+  try{localStorage.setItem('smolov_maxes',JSON.stringify({sq,bp,inc}));}catch(e){}
+  const round=v=>Math.round(v*2)/2;
+  const wId='smolov-jr';
+  const days=[
+    {dId:'smolv_d1',pct:0.70,s:6},
+    {dId:'smolv_d2',pct:0.75,s:7},
+    {dId:'smolv_d3',pct:0.80,s:8},
+    {dId:'smolv_d4',pct:0.85,s:10}
+  ];
+  days.forEach(d=>{
+    // Squat = eIdx 0
+    if(sq){
+      const kg=round(sq*d.pct);
+      for(let s=0;s<d.s;s++){
+        setW(wId,d.dId,0,s,String(kg));
+        const el=document.getElementById('inp_'+wId+'_'+d.dId+'_0_'+s);
+        if(el)el.value=kg;
+      }
+    }
+    // Bench = eIdx 1
+    if(bp){
+      const kg=round(bp*d.pct);
+      for(let s=0;s<d.s;s++){
+        setW(wId,d.dId,1,s,String(kg));
+        const el=document.getElementById('inp_'+wId+'_'+d.dId+'_1_'+s);
+        if(el)el.value=kg;
+      }
+    }
+  });
+}
+function calcTexas(){
+  const sq=parseFloat(document.getElementById("tmc-sq").value)||0;
+  const dl=parseFloat(document.getElementById("tmc-dl").value)||0;
+  const bp=parseFloat(document.getElementById("tmc-bp").value)||0;
+  const op=parseFloat(document.getElementById("tmc-op").value)||0;
+  try{localStorage.setItem("texas_maxes",JSON.stringify({sq,dl,bp,op}));}catch(e){}
+  const round=v=>Math.round(v*2)/2;
+  const wId="texas-method";
+  if(sq){const vol=round(sq*0.77),rec=round(sq*0.62),intens=round(sq*0.85);for(let s=0;s<5;s++){setW(wId,"tm_volume",0,s,String(vol));const i=document.getElementById("inp_"+wId+"_tm_volume_0_"+s);if(i)i.value=vol;}for(let s=0;s<2;s++){setW(wId,"tm_recovery",0,s,String(rec));const i=document.getElementById("inp_"+wId+"_tm_recovery_0_"+s);if(i)i.value=rec;}setW(wId,"tm_intensity",0,0,String(intens));const ii=document.getElementById("inp_"+wId+"_tm_intensity_0_0");if(ii)ii.value=intens;}
+  if(bp){const vol=round(bp*0.77),rec=round(bp*0.70),intens=round(bp*0.85);for(let s=0;s<5;s++){setW(wId,"tm_volume",1,s,String(vol));const i=document.getElementById("inp_"+wId+"_tm_volume_1_"+s);if(i)i.value=vol;}for(let s=0;s<3;s++){setW(wId,"tm_recovery",1,s,String(rec));const i=document.getElementById("inp_"+wId+"_tm_recovery_1_"+s);if(i)i.value=rec;}setW(wId,"tm_intensity",1,0,String(intens));const ii=document.getElementById("inp_"+wId+"_tm_intensity_1_0");if(ii)ii.value=intens;}
+  if(!bp&&op){const vol=round(op*0.77),rec=round(op*0.70),intens=round(op*0.85);for(let s=0;s<5;s++){setW(wId,"tm_volume",1,s,String(vol));const i=document.getElementById("inp_"+wId+"_tm_volume_1_"+s);if(i)i.value=vol;}for(let s=0;s<3;s++){setW(wId,"tm_recovery",1,s,String(rec));const i=document.getElementById("inp_"+wId+"_tm_recovery_1_"+s);if(i)i.value=rec;}setW(wId,"tm_intensity",1,0,String(intens));const ii=document.getElementById("inp_"+wId+"_tm_intensity_1_0");if(ii)ii.value=intens;}
+  if(dl){const vol=round(dl*0.77);setW(wId,"tm_volume",2,0,String(vol));const i=document.getElementById("inp_"+wId+"_tm_volume_2_0");if(i)i.value=vol;}
+}
+function calcWendler(){
+  const sq=parseFloat(document.getElementById('wc-sq').value)||0;
+  const dl=parseFloat(document.getElementById('wc-dl').value)||0;
+  const bp=parseFloat(document.getElementById('wc-bp').value)||0;
+  const op=parseFloat(document.getElementById('wc-op').value)||0;
+  try{localStorage.setItem('wendler_maxes',JSON.stringify({sq,dl,bp,op}));}catch(e){}
+  const round=v=>Math.round(v*2)/2; // round to 0.5
+  const tm=v=>round(v*0.9);
+  // Map: dayId → [1RM value, main pcts, BBB pct]
+  const dayMap={
+    'w531_press':{val:op, main:[0.65,0.75,0.85], bbb:0.55},
+    'w531_dl':   {val:dl, main:[0.70,0.80,0.90], bbb:0.55},
+    'w531_bench':{val:bp, main:[0.65,0.75,0.85], bbb:0.55},
+    'w531_squat':{val:sq, main:[0.70,0.80,0.90], bbb:0.55}
+  };
+  const wId='wendler-531';
+  Object.entries(dayMap).forEach(([dId,cfg])=>{
+    if(!cfg.val) return;
+    const tmVal=tm(cfg.val);
+    // Fill 3 main sets (eIdx 0,1,2 — each is 1 set, sIdx=0)
+    cfg.main.forEach((pct,eIdx)=>{
+      const kg=round(tmVal*pct);
+      setW(wId,dId,eIdx,0,String(kg));
+      const inp=document.getElementById(`inp_${wId}_${dId}_${eIdx}_0`);
+      if(inp){inp.value=kg;}
+    });
+    // Fill BBB 5 sets (eIdx=3, sIdx 0-4)
+    const bbbKg=round(tmVal*cfg.bbb);
+    for(let s=0;s<5;s++){
+      setW(wId,dId,3,s,String(bbbKg));
+      const inp=document.getElementById(`inp_${wId}_${dId}_3_${s}`);
+      if(inp){inp.value=bbbKg;}
+    }
+  });
+}
 function updateWorkoutHeart(wId){
     const btn=document.getElementById('workout-heart-btn');
     if(!btn)return;
@@ -5274,6 +6512,66 @@ function openWorkout(wId,backView){
     document.getElementById('bottomNav').style.display='flex';
     setNavActive('scheda');
     updateWorkoutHeart(wId);
+    // Wendler calculator
+    const wcSection=document.getElementById('wendler-calc-section');
+    if(wcSection){
+      if(wId==='wendler-531'){
+        wcSection.style.display='block';
+        
+        document.getElementById('wc-title').textContent=lang==='en'?'Calculate your weights':'Calcola i tuoi pesi';
+        document.getElementById('wc-sub').textContent=lang==='en'?'Enter your 1RM maxes — the app calculates all cycle weights':'Inserisci i tuoi massimali (1RM) — l\'app calcola tutti i pesi del ciclo';
+        document.getElementById('wc-sq-lbl').textContent=lang==='en'?'Squat 1RM (kg)':'Squat 1RM (kg)';
+        document.getElementById('wc-dl-lbl').textContent=lang==='en'?'Deadlift 1RM (kg)':'Stacco 1RM (kg)';
+        document.getElementById('wc-bp-lbl').textContent=lang==='en'?'Bench Press 1RM (kg)':'Panca 1RM (kg)';
+        document.getElementById('wc-op-lbl').textContent=lang==='en'?'Press 1RM (kg)':'Press 1RM (kg)';
+        // restore saved values
+        try{const sv=JSON.parse(localStorage.getItem('wendler_maxes')||'{}');
+          if(sv.sq)document.getElementById('wc-sq').value=sv.sq;
+          if(sv.dl)document.getElementById('wc-dl').value=sv.dl;
+          if(sv.bp)document.getElementById('wc-bp').value=sv.bp;
+          if(sv.op)document.getElementById('wc-op').value=sv.op;
+          calcWendler();
+        }catch(e){}
+      } else {
+        wcSection.style.display='none';
+      }
+    }
+    const tmSection=document.getElementById('tm-calc-section');
+    if(tmSection){
+      if(wId==='texas-method'){
+        tmSection.style.display='block';
+        document.getElementById('tmc-title').textContent=lang==='en'?'Calculate your weights':'Calcola i tuoi pesi';
+        document.getElementById('tmc-sub').textContent=lang==='en'?'Enter 1RM — Volume/Recovery/Intensity fill automatically':'Inserisci i massimali — Volume/Recovery/Intensity si compilano automaticamente';
+        try{const sv=JSON.parse(localStorage.getItem('texas_maxes')||'{}');
+          if(sv.sq)document.getElementById('tmc-sq').value=sv.sq;
+          if(sv.dl)document.getElementById('tmc-dl').value=sv.dl;
+          if(sv.bp)document.getElementById('tmc-bp').value=sv.bp;
+          if(sv.op)document.getElementById('tmc-op').value=sv.op;
+          calcTexas();
+        }catch(e){}
+      } else {
+        tmSection.style.display='none';
+      }
+    }
+    const smSection=document.getElementById('smolov-calc-section');
+    if(smSection){
+      if(wId==='smolov-jr'){
+        smSection.style.display='block';
+        document.getElementById('smc-title').textContent=lang==='en'?'Calculate your weights':'Calcola i tuoi pesi';
+        document.getElementById('smc-sub').textContent=lang==='en'?'Enter your 1RM — all days fill automatically':'Inserisci il tuo 1RM — tutti i giorni si compilano automaticamente';
+        document.getElementById('smc-sq-lbl').textContent=lang==='en'?'Squat 1RM (kg)':'Squat 1RM (kg)';
+        document.getElementById('smc-bp-lbl').textContent=lang==='en'?'Bench 1RM (kg)':'Panca 1RM (kg)';
+        document.getElementById('smc-inc-lbl').textContent=lang==='en'?'Weekly increment wk2 & wk3 (kg)':'Incremento sett. 2 e 3 (kg)';
+        try{const sv=JSON.parse(localStorage.getItem('smolov_maxes')||'{}');
+          if(sv.sq)document.getElementById('smc-sq').value=sv.sq;
+          if(sv.bp)document.getElementById('smc-bp').value=sv.bp;
+          if(sv.inc)document.getElementById('smc-inc').value=sv.inc;
+          calcSmolov();
+        }catch(e){}
+      } else {
+        smSection.style.display='none';
+      }
+    }
     showViewRaw('workout-view');
 }
 
@@ -5336,7 +6634,7 @@ function renderEx(wId,dId,eIdx,ex){
             </div>
         </div>`;
     }).join('')+'</div>';
-    const _advancedWIds = ['dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','lpp4-u','quick-u','quick-u-basic','corto-u-adv','corto-u-bas','quick-d','quick-d-basic','corto-d-adv','corto-d-bas','ws4sb-u','madcow-u','lpp30-u','ken-pp','meadows-ppl','carter-bb','gironda-4day','gironda-fb'];
+    const _advancedWIds = ['dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','lpp4-u','quick-u','quick-u-basic','corto-u-adv','corto-u-bas','quick-d','quick-d-basic','corto-d-adv','corto-d-bas','ws4sb-u','madcow-u','lpp30-u','ken-pp','meadows-ppl','carter-bb','hst-u','gironda-4day','gironda-fb','ss-u','wendler-531','texas-method','smolov-jr','tls-d','tls-3d','tls-4d'];
     const _noImg = _advancedWIds.includes(wId);
     const imgKey = _noImg ? null : (EX_NAME_MAP[ex.it] || EX_NAME_MAP[ex.en] || null);
     const imgSrc = imgKey ? EX_IMAGES[imgKey] : null;
