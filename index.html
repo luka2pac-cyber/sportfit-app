@@ -374,11 +374,270 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('ini-u','uomini-level')"><div class="prog-item-name">🟢 <span data-t="level_beginner">Iniziale</span></div><div class="prog-item-sub" data-t="see_programs">Vedi programmi</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="showView('uomini-inter-menu')"><div class="prog-item-name">🔵 <span data-t="level_intermediate">Intermedio</span></div><div class="prog-item-sub" data-t="see_programs">Vedi programmi</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="showView('uomini-heavy-menu')"><div class="prog-item-name">🔴 <span data-t="level_advanced">Avanzato</span></div><div class="prog-item-sub" data-t="see_programs">Vedi programmi</div></button><span class="prog-arr">›</span></div>
-    <div class="prog-item" style="border:1.5px solid rgba(10,132,255,.35);background:rgba(10,132,255,.07)"><button class="prog-item-btn" onclick="showView('uomini-corto-menu')"><div class="prog-item-name">⏱ <span data-t="allenamenti_30_btn">Allenamenti 30-40 min</span></div><div class="prog-item-sub" data-t="corto_sub_u">A/B Full Body · Basic & Intermedio · 2–4x sett.</div></button><span class="prog-arr">›</span></div>
+    <div class="prog-item" style="border:1.5px solid rgba(255,159,10,.35);background:rgba(255,159,10,.07)"><button class="prog-item-btn" onclick="showView('uomini-corto-menu')"><div class="prog-item-name">⏱ <span data-t="allenamenti_30_btn">Allenamenti 30-40 min</span></div><div class="prog-item-sub" data-t="corto_sub_u">A/B Full Body · Basic & Intermedio · 2–4x sett.</div></button><span class="prog-arr">›</span></div>
+    <div class="prog-item" style="border:1.5px solid rgba(255,55,95,.35);background:rgba(255,55,95,.07)"><button class="prog-item-btn" onclick="showView('specialization-menu')"><div class="prog-item-name">🎯 <span data-t="spec_btn">Specialization Programs</span></div><div class="prog-item-sub" data-t="spec_sub">Braccia · Spalle · Petto · Focus muscolare 6-8 sett.</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item" style="border:1.5px solid rgba(48,209,88,.35);background:rgba(48,209,88,.07)"><button class="prog-item-btn" onclick="showView('custom-plan-view')"><div class="prog-item-name">🛠 <span data-t="make_own_plan">Crea il tuo programma</span></div><div class="prog-item-sub" data-t="make_own_plan_sub">Scegli giorni, muscoli ed esercizi personalizzati</div></button><span class="prog-arr">›</span></div></div>
   </div>
 
-  <!-- INTER MENU UOMO -->
+  <!-- SPECIALIZATION MENU -->
+  <div id="specialization-menu" class="view">
+    <button onclick="goBack('uomini-level')" class="back-btn">← <span data-t="level_men">Uomo</span></button>
+    <div class="view-title" style="font-size:1.8rem">🎯 Specialization<br><span style="font-size:1.2rem;color:rgba(255,255,255,.5)" data-t="spec_title_sub">Focus Muscolare</span></div>
+    <div style="color:rgba(255,255,255,.5);font-size:.82rem;line-height:1.5;margin-bottom:16px;padding:0 2px" data-t="spec_desc">Programmi di 6-8 settimane focalizzati su un singolo gruppo muscolare. Da aggiungere al programma principale o da usare in periodi dedicati.</div>
+
+    <!-- BRACCIA -->
+    <div style="font-size:.7rem;font-weight:800;color:rgba(255,255,255,.35);letter-spacing:2px;text-transform:uppercase;margin:12px 0 8px;padding:0 2px" data-t="spec_arms_title">💪 Braccia</div>
+    <div class="prog-item" style="border:1.5px solid rgba(255,214,10,.35);background:rgba(255,214,10,.07)">
+      <button class="prog-item-btn" onclick="showView('poliquin-arms-info-view')">
+        <div class="prog-item-name">📖 6-12-25 Method — <span style="font-size:.8rem;opacity:.7">Charles Poliquin</span></div>
+        <div class="prog-item-sub"><span data-t="poliquin_arms_sub">6-12-25 · Giant Set · Bicipiti + Tricipiti · 3× / sett.</span></div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+    <div class="prog-item" style="border:1.5px solid rgba(10,132,255,.35);background:rgba(10,132,255,.07)">
+      <button class="prog-item-btn" onclick="showView('layne-arms-info-view')">
+        <div class="prog-item-name">⚡ Arm Specialization — <span style="font-size:.8rem;opacity:.7">Layne Norton</span></div>
+        <div class="prog-item-sub"><span data-t="layne_arms_sub">PHAT approach · Forza + Volume</span></div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+    <div class="prog-item" style="border:1.5px solid rgba(255,59,48,.35);background:rgba(255,59,48,.07)">
+      <button class="prog-item-btn" onclick="showView('meadows-arms-info-view')">
+        <div class="prog-item-name">💪 Arm Program — <span style="font-size:.8rem;opacity:.7">John Meadows</span></div>
+        <div class="prog-item-sub"><span data-t="meadows_arms_sub">Mountain Dog · Pump + Stretch</span></div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+
+    <!-- SPALLE -->
+    <div style="font-size:.7rem;font-weight:800;color:rgba(255,255,255,.35);letter-spacing:2px;text-transform:uppercase;margin:12px 0 8px;padding:0 2px" data-t="spec_shoulders_title">🔵 Spalle</div>
+    <div class="prog-item" style="border:1.5px solid rgba(255,59,48,.35);background:rgba(255,59,48,.07)">
+      <button class="prog-item-btn" onclick="showView('meadows-shoulders-info-view')">
+        <div class="prog-item-name">🎯 3D Shoulders — <span style="font-size:.8rem;opacity:.7">John Meadows</span></div>
+        <div class="prog-item-sub"><span data-t="meadows_sh_sub">3 teste · Alta frequenza laterali</span></div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+    <div class="prog-item" style="border:1.5px solid rgba(100,210,255,.35);background:rgba(100,210,255,.06)">
+      <button class="prog-item-btn" onclick="showView('dante-shoulders-info-view')">
+        <div class="prog-item-name">💥 Shoulder Blast — <span style="font-size:.8rem;opacity:.7">Dante Trudel</span></div>
+        <div class="prog-item-sub"><span data-t="dante_sh_sub">DC Blast · Rest-Pause + Extreme Stretch</span></div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+
+    <!-- PETTO -->
+    <div style="font-size:.7rem;font-weight:800;color:rgba(255,255,255,.35);letter-spacing:2px;text-transform:uppercase;margin:12px 0 8px;padding:0 2px" data-t="spec_chest_title">🔴 Petto</div>
+    <div class="prog-item" style="border:1.5px solid rgba(255,59,48,.35);background:rgba(255,59,48,.07)">
+      <button class="prog-item-btn" onclick="showView('meadows-chest-info-view')">
+        <div class="prog-item-name">🔥 Chest Program — <span style="font-size:.8rem;opacity:.7">John Meadows</span></div>
+        <div class="prog-item-sub"><span data-t="meadows_chest_sub">4 Fasi · Attivazione → Pump → Stretch</span></div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+  </div>
+
+  <!-- POLIQUIN 6-12-25 INFO VIEW -->
+  <div id="poliquin-arms-info-view" class="view">
+    <button onclick="goBack('specialization-menu')" class="back-btn">← Specialization</button>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#3a2a00,rgba(255,214,10,.9))" onclick="openWorkout('poliquin-arms','poliquin-arms-info-view')">
+      📖 <span data-t="poliquin_arms_start">Inizia 6-12-25 Method</span>
+    </button>
+    <div class="view-title" style="font-size:1.5rem">📖 6-12-25 Method</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:6px">Charles Poliquin — The 6-12-25 Giant Set Method</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px" data-t="poliquin_arms_meta">3× / sett. · Giant Set 6-12-25 · Bicipiti + Tricipiti · Stress metabolico massimo</div>
+    <div class="disclaimer" style="background:rgba(255,149,0,.08);border-left:3px solid rgba(255,149,0,.8)"><div class="disclaimer-icon">⚠️</div><div class="disclaimer-text"><b data-t="poliquin_arms_level">Intermedio / Avanzato</b> — <span data-t="poliquin_arms_ideal">Il metodo più famoso di Poliquin per le braccia. Giant set 3 esercizi senza riposo: 6 reps pesante → 12 reps moderato → 25 reps pump. Combina tensione meccanica, danno muscolare e stress metabolico in un unico set.</span></div></div>
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title red">📌 <span data-t="poliquin_arms_phi_title">Come funziona il Giant Set</span></div>
+      <div class="ai-bullet"><span data-t="poliquin_arms_phi1">6 reps — esercizio compound pesante: tensione meccanica (es. Dip appesantito, Chin-up)</span></div>
+      <div class="ai-bullet"><span data-t="poliquin_arms_phi2">12 reps — isolamento moderato: danno muscolare (es. Skull Crusher, Curl Inclinato)</span></div>
+      <div class="ai-bullet"><span data-t="poliquin_arms_phi3">25 reps — pump leggero: stress metabolico (es. Cable Pushdown, Cable Curl)</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title gold">📅 <span data-t="poliquin_arms_sch_title">Regole Giant Set</span></div>
+      <div class="ai-stat-row" style="padding:4px 0"><span class="ai-stat-label" style="min-width:80px">Regola 1</span><span class="ai-stat-val" data-t="poliquin_arms_w1">0s riposo tra esercizio 1→2→3 — nessuna pausa nel giant set</span></div>
+      <div class="ai-stat-row" style="padding:4px 0"><span class="ai-stat-label" style="min-width:80px">Regola 2</span><span class="ai-stat-val" data-t="poliquin_arms_w2">2-3 min riposo dopo aver completato tutti e 3 gli esercizi</span></div>
+      <div class="ai-stat-row" style="padding:4px 0"><span class="ai-stat-label" style="min-width:80px">Regola 3</span><span class="ai-stat-val" data-t="poliquin_arms_w3">4 giant set per gruppo muscolare — prima tricipiti, poi bicipiti</span></div>
+      <div class="ai-stat-row" style="padding:4px 0"><span class="ai-stat-label" style="min-width:80px">Cedimento</span><span class="ai-stat-val" data-t="poliquin_arms_w4">6 reps: 1-2 reps dal cedimento. 12 reps: al cedimento. 25 reps: al cedimento con buona tecnica</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title blue">⚡ <span data-t="poliquin_arms_prog_title">Progressione</span></div>
+      <div class="ai-bullet"><b data-t="poliquin_arms_p1_lbl">Esercizio 6 reps:</b> <span data-t="poliquin_arms_p1">aggiungi 2-5% di peso quando completi tutte le serie senza cedere la tecnica</span></div>
+      <div class="ai-bullet"><b data-t="poliquin_arms_p2_lbl">Esercizio 12 reps:</b> <span data-t="poliquin_arms_p2">aumenta peso quando arrivi a 12 reps pulite su tutte le serie</span></div>
+      <div class="ai-bullet"><b data-t="poliquin_arms_p3_lbl">Esercizio 25 reps:</b> <span data-t="poliquin_arms_p3">peso leggero, focus su pump e connessione mente-muscolo — non aumentare troppo il carico</span></div>
+    </div>
+    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#3a2a00,rgba(255,214,10,.9))" onclick="openWorkout('poliquin-arms','poliquin-arms-info-view')">
+      📖 <span data-t="poliquin_arms_start">Inizia 6-12-25 Method</span>
+    </button>
+  </div>
+
+  <!-- LAYNE NORTON ARM SPECIALIZATION INFO VIEW -->
+  <div id="layne-arms-info-view" class="view">
+    <button onclick="goBack('specialization-menu')" class="back-btn">← Specialization</button>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#003a5a,rgba(10,132,255,.9))" onclick="openWorkout('layne-arms','layne-arms-info-view')">
+      ⚡ <span data-t="layne_arms_start">Inizia Arm Specialization</span>
+    </button>
+    <div class="view-title" style="font-size:1.5rem">⚡ Arm Specialization</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:6px">Layne Norton — PHAT Arm Approach</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px" data-t="layne_arms_meta">2× / sett. · Power + Hypertrophy · Bicipiti + Tricipiti</div>
+    <div class="disclaimer" style="background:rgba(255,149,0,.08);border-left:3px solid rgba(255,149,0,.8)"><div class="disclaimer-icon">⚠️</div><div class="disclaimer-text"><b data-t="layne_arms_level">Intermedio / Avanzato</b> — <span data-t="layne_arms_ideal">Basato sulla filosofia PHAT di Layne Norton: un giorno forza (basse reps, pesante) e un giorno volume (alte reps, pump). Combinare forza e ipertrofia per massimizzare la crescita delle braccia.</span></div></div>
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title red">📌 <span data-t="layne_arms_phi_title">Filosofia</span></div>
+      <div class="ai-bullet"><span data-t="layne_arms_phi1">Giorno Power: 3-5 reps pesante — costruisce forza e densità muscolare</span></div>
+      <div class="ai-bullet"><span data-t="layne_arms_phi2">Giorno Hypertrophy: 8-15 reps moderato — massimizza volume e pump</span></div>
+      <div class="ai-bullet"><span data-t="layne_arms_phi3">La forza acquisita nel Power day si trasferisce direttamente in più volume nel Hypertrophy day</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title gold">📅 <span data-t="layne_arms_sch_title">Schema settimanale</span></div>
+      <div class="ai-stat-row" style="padding:4px 0"><span class="ai-stat-label" style="min-width:80px">🔴 Lun</span><span class="ai-stat-val" data-t="layne_arms_d1">Power Arms — 3-5 reps · Curl bilanciere, Skull crusher pesante</span></div>
+      <div class="ai-stat-row" style="padding:4px 0"><span class="ai-stat-label" style="min-width:80px">🔵 Gio</span><span class="ai-stat-val" data-t="layne_arms_d2">Hypertrophy Arms — 8-15 reps · Superset bicipiti/tricipiti ad alto volume</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title blue">⚡ <span data-t="layne_arms_prog_title">Progressione</span></div>
+      <div class="ai-bullet"><b data-t="layne_arms_p1_lbl">Power day:</b> <span data-t="layne_arms_p1">progressione lineare — aggiungi 1-2.5kg ogni settimana</span></div>
+      <div class="ai-bullet"><b data-t="layne_arms_p2_lbl">Hypertrophy day:</b> <span data-t="layne_arms_p2">doppia progressione — porta le reps al massimo, poi aggiungi peso</span></div>
+      <div class="ai-bullet"><b data-t="layne_arms_p3_lbl">Riposo:</b> <span data-t="layne_arms_p3">2-3 min Power day, 60-90s Hypertrophy day nei superset</span></div>
+    </div>
+    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#003a5a,rgba(10,132,255,.9))" onclick="openWorkout('layne-arms','layne-arms-info-view')">
+      ⚡ <span data-t="layne_arms_start">Inizia Arm Specialization</span>
+    </button>
+  </div>
+
+  <!-- MEADOWS ARM PROGRAM INFO VIEW -->
+  <div id="meadows-arms-info-view" class="view">
+    <button onclick="goBack('specialization-menu')" class="back-btn">← Specialization</button>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#7a0000,rgba(255,59,48,.9))" onclick="openWorkout('meadows-arms','meadows-arms-info-view')">
+      💪 <span data-t="meadows_arms_start">Inizia Arm Program</span>
+    </button>
+    <div class="view-title" style="font-size:1.5rem">💪 Arm Program</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:6px">John Meadows — Mountain Dog Arms</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px" data-t="meadows_arms_meta">2× / sett. · 4 Fasi · Attivazione → Esplosiva → Pump → Stretch</div>
+    <div class="disclaimer" style="background:rgba(255,149,0,.08);border-left:3px solid rgba(255,149,0,.8)"><div class="disclaimer-icon">⚠️</div><div class="disclaimer-text"><b data-t="meadows_arms_level">Avanzato</b> — <span data-t="meadows_arms_ideal">Il metodo Mountain Dog applicato alle braccia. Meadows era famoso per braccia enormi. Il segreto: Extreme Stretching dopo ogni esercizio per massimizzare la fascia muscolare e il recupero.</span></div></div>
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title red">📌 <span data-t="meadows_arms_phi_title">Le 4 Fasi Mountain Dog</span></div>
+      <div class="ai-bullet"><span data-t="meadows_arms_phi1">🔵 ATTIVAZIONE: 2×15 a bassa intensità per connessione neuromuscolare</span></div>
+      <div class="ai-bullet"><span data-t="meadows_arms_phi2">🔴 ESPLOSIVA: 3×6-10 pesante con massima esplosività concentrica</span></div>
+      <div class="ai-bullet"><span data-t="meadows_arms_phi3">🟡 PUMP: serie al cedimento con drop set e rest-pause per massimizzare il pump</span></div>
+      <div class="ai-bullet"><span data-t="meadows_arms_phi4">🟢 STRETCH: 60-90 secondi di stretch con carico per espandere la fascia muscolare</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title gold">📅 <span data-t="meadows_arms_sch_title">Schema</span></div>
+      <div class="ai-stat-row" style="padding:4px 0"><span class="ai-stat-label" style="min-width:80px">Sessione 1</span><span class="ai-stat-val" data-t="meadows_arms_d1">Bicipiti A + Tricipiti A — focus pesi liberi</span></div>
+      <div class="ai-stat-row" style="padding:4px 0"><span class="ai-stat-label" style="min-width:80px">Sessione 2</span><span class="ai-stat-val" data-t="meadows_arms_d2">Bicipiti B + Tricipiti B — focus cavi e macchine</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title blue">⚡ Progressione &amp; Regole</div>
+      <div class="ai-bullet"><b>Esplosiva:</b> <span>aggiungi peso quando completi tutte le serie mantenendo l'esplosività concentrica</span></div>
+      <div class="ai-bullet"><b>Pump:</b> <span>stessa resistenza, focus su pump e cedimento — non aumentare il carico</span></div>
+      <div class="ai-bullet"><b>Extreme Stretch:</b> <span>obbligatorio dopo ogni gruppo — 60-90s con carico, mai saltarlo</span></div>
+      <div class="ai-bullet"><b>Riposo:</b> <span>60-90s tra serie Esplosive, 45s tra Pump, 0s tra Attivazione e serie successiva</span></div>
+    </div>
+    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#7a0000,rgba(255,59,48,.9))" onclick="openWorkout('meadows-arms','meadows-arms-info-view')">
+      💪 <span data-t="meadows_arms_start">Inizia Arm Program</span>
+    </button>
+  </div>
+
+  <!-- MEADOWS 3D SHOULDERS INFO VIEW -->
+  <div id="meadows-shoulders-info-view" class="view">
+    <button onclick="goBack('specialization-menu')" class="back-btn">← Specialization</button>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#7a0000,rgba(255,59,48,.9))" onclick="openWorkout('meadows-shoulders','meadows-shoulders-info-view')">
+      🎯 <span data-t="meadows_sh_start">Inizia 3D Shoulders</span>
+    </button>
+    <div class="view-title" style="font-size:1.5rem">🎯 3D Shoulders</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:6px">John Meadows — Mountain Dog Shoulders</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px" data-t="meadows_sh_meta">2× / sett. · Anteriore · Laterale · Posteriore</div>
+    <div class="disclaimer" style="background:rgba(255,149,0,.08);border-left:3px solid rgba(255,149,0,.8)"><div class="disclaimer-icon">⚠️</div><div class="disclaimer-text"><b data-t="meadows_sh_level">Avanzato</b> — <span data-t="meadows_sh_ideal">Meadows credeva che spalle 3D richiedessero attenzione specifica su tutte e 3 le teste del deltoide. Alta frequenza sulle alzate laterali con metodo rest-pause e stretch.</span></div></div>
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title red">📌 <span data-t="meadows_sh_phi_title">Filosofia</span></div>
+      <div class="ai-bullet"><span data-t="meadows_sh_phi1">Deltoide anteriore: già stimolato da panca e press — lavoro minimo necessario</span></div>
+      <div class="ai-bullet"><span data-t="meadows_sh_phi2">Deltoide laterale: focus principale — alzate laterali ad alta frequenza 2-3× / sett.</span></div>
+      <div class="ai-bullet"><span data-t="meadows_sh_phi3">Deltoide posteriore: face pull e reverse fly — fondamentale per la salute e l'estetica</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title gold">📅 <span data-t="meadows_sh_sch_title">Schema</span></div>
+      <div class="ai-stat-row" style="padding:4px 0"><span class="ai-stat-label" style="min-width:80px">Sessione 1</span><span class="ai-stat-val" data-t="meadows_sh_d1">Press pesante + Laterali al cedimento + Posteriori</span></div>
+      <div class="ai-stat-row" style="padding:4px 0"><span class="ai-stat-label" style="min-width:80px">Sessione 2</span><span class="ai-stat-val" data-t="meadows_sh_d2">Laterali alta frequenza + Face pull + Stretch deltoide</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title blue">⚡ Progressione &amp; Regole</div>
+      <div class="ai-bullet"><b>Press:</b> <span>progressione lineare — aggiungi 2.5kg quando completi tutte le serie</span></div>
+      <div class="ai-bullet"><b>Laterali:</b> <span>non aumentare troppo il carico — la connessione mente-muscolo è più importante del peso</span></div>
+      <div class="ai-bullet"><b>Posteriori:</b> <span>obbligatori ogni sessione — fondamentale per la salute della cuffia dei rotatori</span></div>
+      <div class="ai-bullet"><b>Riposo:</b> <span>2 min dopo Press, 60-90s dopo Laterali, 45s dopo Posteriori</span></div>
+    </div>
+    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#7a0000,rgba(255,59,48,.9))" onclick="openWorkout('meadows-shoulders','meadows-shoulders-info-view')">
+      🎯 <span data-t="meadows_sh_start">Inizia 3D Shoulders</span>
+    </button>
+  </div>
+
+  <!-- DANTE TRUDEL SHOULDER BLAST INFO VIEW -->
+  <div id="dante-shoulders-info-view" class="view">
+    <button onclick="goBack('specialization-menu')" class="back-btn">← Specialization</button>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#003a5a,rgba(100,210,255,.9))" onclick="openWorkout('dante-shoulders','dante-shoulders-info-view')">
+      💥 <span data-t="dante_sh_start">Inizia Shoulder Blast</span>
+    </button>
+    <div class="view-title" style="font-size:1.5rem">💥 Shoulder Blast</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:6px">Dante Trudel — DC Training Specialization</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px" data-t="dante_sh_meta">3× / sett. · Rest-Pause · Extreme Stretch · Blast/Cruise</div>
+    <div class="disclaimer" style="background:rgba(255,149,0,.08);border-left:3px solid rgba(255,149,0,.8)"><div class="disclaimer-icon">⚠️</div><div class="disclaimer-text"><b data-t="dante_sh_level">Avanzato</b> — <span data-t="dante_sh_ideal">Il metodo DC Blast applicato alle spalle. Brutale ed efficace. Dante sosteneva che le spalle rispondono bene all'alta frequenza con rest-pause spinto. Solo per chi tollera alto stress di allenamento.</span></div></div>
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title red">📌 <span data-t="dante_sh_phi_title">Filosofia DC Blast</span></div>
+      <div class="ai-bullet"><span data-t="dante_sh_phi1">Rest-Pause: vai al cedimento → riposa 10 respiri → altri reps → ancora 10 respiri → fino all'esaurimento</span></div>
+      <div class="ai-bullet"><span data-t="dante_sh_phi2">Extreme Stretching: 60-90s di stretch statico con carico dopo ogni esercizio</span></div>
+      <div class="ai-bullet"><span data-t="dante_sh_phi3">Blast/Cruise: 6-8 sett. intenso poi 1-2 sett. leggere al 60% — recupero attivo obbligatorio</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title gold">📅 <span data-t="dante_sh_sch_title">Schema 3× / sett.</span></div>
+      <div class="ai-stat-row" style="padding:4px 0"><span class="ai-stat-label" style="min-width:80px">Ogni sess.</span><span class="ai-stat-val" data-t="dante_sh_d1">Press militare rest-pause + Laterali rest-pause + Posteriori rest-pause + Extreme Stretch</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title blue">⚡ Progressione &amp; Regole</div>
+      <div class="ai-bullet"><b>Rest-Pause:</b> <span>cedimento → 10 respiri profondi → altri reps → 10 respiri → fino all'esaurimento — conta come 1 serie</span></div>
+      <div class="ai-bullet"><b>Extreme Stretch:</b> <span>60-90s stretch statico con carico dopo ogni esercizio — obbligatorio, non negoziabile</span></div>
+      <div class="ai-bullet"><b>Progressione:</b> <span>aumenta peso quando nel 1° mini-set fai più reps rispetto alla sessione precedente</span></div>
+      <div class="ai-bullet"><b>Riposo tra sessioni:</b> <span>almeno 48h — non allenare spalle con altra sessione nel frattempo</span></div>
+      <div class="ai-bullet"><b>Cruise:</b> <span>dopo 6-8 sett. fai 1-2 sett. con 60% del carico, stessa struttura — recupero obbligatorio</span></div>
+    </div>
+    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#003a5a,rgba(100,210,255,.9))" onclick="openWorkout('dante-shoulders','dante-shoulders-info-view')">
+      💥 <span data-t="dante_sh_start">Inizia Shoulder Blast</span>
+    </button>
+  </div>
+
+  <!-- MEADOWS CHEST PROGRAM INFO VIEW -->
+  <div id="meadows-chest-info-view" class="view">
+    <button onclick="goBack('specialization-menu')" class="back-btn">← Specialization</button>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#7a0000,rgba(255,59,48,.9))" onclick="openWorkout('meadows-chest','meadows-chest-info-view')">
+      🔥 <span data-t="meadows_chest_start">Inizia Chest Program</span>
+    </button>
+    <div class="view-title" style="font-size:1.5rem">🔥 Chest Program</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:6px">John Meadows — Mountain Dog Chest</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px" data-t="meadows_chest_meta">2× / sett. · 4 Fasi · Attivazione → Esplosiva → Pump → Stretch</div>
+    <div class="disclaimer" style="background:rgba(255,149,0,.08);border-left:3px solid rgba(255,149,0,.8)"><div class="disclaimer-icon">⚠️</div><div class="disclaimer-text"><b data-t="meadows_chest_level">Avanzato</b> — <span data-t="meadows_chest_ideal">Meadows aveva uno dei petti più sviluppati nel bodybuilding naturale. Il segreto: iniziare con isolamento (pec deck) per attivare il petto PRIMA del press pesante, poi finire con stretch estremo sotto carico.</span></div></div>
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title red">📌 <span data-t="meadows_chest_phi_title">Le 4 Fasi</span></div>
+      <div class="ai-bullet"><span data-t="meadows_chest_phi1">🔵 ATTIVAZIONE: Pec deck / Croci cavi — connessione mente-muscolo prima del pesante</span></div>
+      <div class="ai-bullet"><span data-t="meadows_chest_phi2">🔴 ESPLOSIVA: Press inclinata pesante / Dip appesantito — forza e massa</span></div>
+      <div class="ai-bullet"><span data-t="meadows_chest_phi3">🟡 PUMP: Crossover / Pec deck al cedimento con drop set — massimo pump</span></div>
+      <div class="ai-bullet"><span data-t="meadows_chest_phi4">🟢 STRETCH: Croci con manubri tenute 60s in basso — espansione fascia petto</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title gold">📅 <span data-t="meadows_chest_sch_title">Schema</span></div>
+      <div class="ai-stat-row" style="padding:4px 0"><span class="ai-stat-label" style="min-width:80px">Sessione 1</span><span class="ai-stat-val" data-t="meadows_chest_d1">Petto Upper — focus inclinata, stress superiore</span></div>
+      <div class="ai-stat-row" style="padding:4px 0"><span class="ai-stat-label" style="min-width:80px">Sessione 2</span><span class="ai-stat-val" data-t="meadows_chest_d2">Petto Full — piana + croci + stretch estremo</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title blue">⚡ Progressione &amp; Regole</div>
+      <div class="ai-bullet"><b>Attivazione:</b> <span>peso fisso leggero — non aumentare mai, serve solo per attivare la connessione mente-muscolo</span></div>
+      <div class="ai-bullet"><b>Press pesante:</b> <span>progressione lineare — aggiungi 2.5kg quando completi tutte le serie</span></div>
+      <div class="ai-bullet"><b>Pump + Drop set:</b> <span>non aumentare il carico — porta al cedimento poi drop immediato del 20-30%</span></div>
+      <div class="ai-bullet"><b>Extreme Stretch:</b> <span>croci manubri tenute 60s in posizione di massimo stretch — obbligatorio ogni sessione</span></div>
+      <div class="ai-bullet"><b>Riposo:</b> <span>2 min dopo Press, 60s dopo Pump, 0s tra Attivazione e serie successiva</span></div>
+    </div>
+    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#7a0000,rgba(255,59,48,.9))" onclick="openWorkout('meadows-chest','meadows-chest-info-view')">
+      🔥 <span data-t="meadows_chest_start">Inizia Chest Program</span>
+    </button>
+  </div>
+
   <div id="uomini-inter-menu" class="view">
     <button onclick="goBack('uomini-level')" class="back-btn">← <span data-t="back_levels">Livelli</span></button>
     <div class="view-title"><span data-t="programs_title">Programmi</span><br><span class="c-blue" data-t="level_intermediate">Intermedio</span></div>
@@ -3600,6 +3859,120 @@ const T = {
     meadows_ppl_label:'Mountain Dog PPL — John Meadows',
     meadows_ppl_pills:[['3-6×','/ sett.'],['60-75 min','/ sessione'],['4 Fasi','metodo']],
     level_meadows_ppl:'AVANZATO',
+    spec_btn:'Specialization Programs',
+    spec_sub:'Braccia · Spalle · Petto · Focus muscolare 6-8 sett.',
+    spec_title_sub:'Focus Muscolare',
+    spec_desc:'Programmi di 6-8 settimane focalizzati su un singolo gruppo muscolare. Da aggiungere al programma principale o da usare in periodi dedicati.',
+    spec_arms_title:'💪 Braccia',
+    spec_shoulders_title:'🔵 Spalle',
+    spec_chest_title:'🔴 Petto',
+    poliquin_arms_label:'6-12-25 Method — Charles Poliquin',
+    poliquin_arms_pills:[['3×','/ sett.'],['Giant Set','6-12-25'],['Bi+Tri','']],
+    level_poliquin_arms:'INTERMEDIO / AVANZATO',
+    poliquin_arms_sub:'6-12-25 · Giant Set · Bicipiti + Tricipiti · 3× / sett.',
+    poliquin_arms_start:'Inizia 6-12-25 Method',
+    poliquin_arms_meta:'3× / sett. · Giant Set 6-12-25 · Bicipiti + Tricipiti · Stress metabolico massimo',
+    poliquin_arms_level:'Intermedio / Avanzato',
+    poliquin_arms_ideal:'Il metodo più famoso di Poliquin per le braccia. Giant set 3 esercizi senza riposo: 6 reps pesante → 12 reps moderato → 25 reps pump. Combina tensione meccanica, danno muscolare e stress metabolico in un unico set.',
+    poliquin_arms_phi_title:'Come funziona il Giant Set',
+    poliquin_arms_phi1:'6 reps — esercizio compound pesante: tensione meccanica (es. Dip appesantito, Chin-up)',
+    poliquin_arms_phi2:'12 reps — isolamento moderato: danno muscolare (es. Skull Crusher, Curl Inclinato)',
+    poliquin_arms_phi3:'25 reps — pump leggero: stress metabolico (es. Cable Pushdown, Cable Curl)',
+    poliquin_arms_sch_title:'Regole Giant Set',
+    poliquin_arms_w1:'0s riposo tra esercizio 1→2→3 — nessuna pausa nel giant set',
+    poliquin_arms_w2:'2-3 min riposo dopo aver completato tutti e 3 gli esercizi',
+    poliquin_arms_w3:'4 giant set per gruppo muscolare — prima tricipiti, poi bicipiti',
+    poliquin_arms_w4:'6 reps: 1-2 reps dal cedimento. 12 reps: al cedimento. 25 reps: al cedimento con buona tecnica',
+    poliquin_arms_prog_title:'Progressione',
+    poliquin_arms_p1_lbl:'Esercizio 6 reps:',
+    poliquin_arms_p1:'aggiungi 2-5% di peso quando completi tutte le serie senza cedere la tecnica',
+    poliquin_arms_p2_lbl:'Esercizio 12 reps:',
+    poliquin_arms_p2:'aumenta peso quando arrivi a 12 reps pulite su tutte le serie',
+    poliquin_arms_p3_lbl:'Esercizio 25 reps:',
+    poliquin_arms_p3:'peso leggero, focus su pump e connessione mente-muscolo — non aumentare troppo il carico',
+    layne_arms_label:'Arm Specialization — Layne Norton',
+    layne_arms_pills:[['2×','/ sett.'],['Power+','Hyper'],['PHAT','']],
+    level_layne_arms:'INTERMEDIO / AVANZATO',
+    layne_arms_sub:'PHAT approach · Forza + Volume',
+    layne_arms_start:'Inizia Arm Specialization',
+    layne_arms_meta:'2× / sett. · Power + Hypertrophy · Bicipiti + Tricipiti',
+    layne_arms_level:'Intermedio / Avanzato',
+    layne_arms_ideal:'Basato sulla filosofia PHAT di Layne Norton: un giorno forza (basse reps, pesante) e un giorno volume (alte reps, pump). Combinare forza e ipertrofia per massimizzare la crescita delle braccia.',
+    layne_arms_phi_title:'Filosofia',
+    layne_arms_phi1:'Giorno Power: 3-5 reps pesante — costruisce forza e densità muscolare',
+    layne_arms_phi2:'Giorno Hypertrophy: 8-15 reps moderato — massimizza volume e pump',
+    layne_arms_phi3:'La forza acquisita nel Power day si trasferisce direttamente in più volume nel Hypertrophy day',
+    layne_arms_sch_title:'Schema settimanale',
+    layne_arms_d1:'Power Arms — 3-5 reps · Curl bilanciere, Skull crusher pesante',
+    layne_arms_d2:'Hypertrophy Arms — 8-15 reps · Superset bicipiti/tricipiti ad alto volume',
+    layne_arms_prog_title:'Progressione',
+    layne_arms_p1_lbl:'Power day:',
+    layne_arms_p1:'progressione lineare — aggiungi 1-2.5kg ogni settimana',
+    layne_arms_p2_lbl:'Hypertrophy day:',
+    layne_arms_p2:'doppia progressione — porta le reps al massimo, poi aggiungi peso',
+    layne_arms_p3_lbl:'Riposo:',
+    layne_arms_p3:'2-3 min Power day, 60-90s Hypertrophy day nei superset',
+    meadows_arms_label:'💪 Arm Program — John Meadows',
+    meadows_arms_pills:[['2×','/ sett.'],['4 Fasi','MD'],['Mountain','Dog']],
+    level_meadows_arms:'AVANZATO',
+    meadows_arms_sub:'Mountain Dog · Pump + Stretch',
+    meadows_arms_start:'Inizia Arm Program',
+    meadows_arms_meta:'2× / sett. · 4 Fasi · Attivazione → Esplosiva → Pump → Stretch',
+    meadows_arms_level:'Avanzato',
+    meadows_arms_ideal:'Il metodo Mountain Dog applicato alle braccia. Meadows era famoso per braccia enormi. Il segreto: Extreme Stretching dopo ogni esercizio per massimizzare la fascia muscolare e il recupero.',
+    meadows_arms_phi_title:'Le 4 Fasi Mountain Dog',
+    meadows_arms_phi1:'🔵 ATTIVAZIONE: 2×15 a bassa intensità per connessione neuromuscolare',
+    meadows_arms_phi2:'🔴 ESPLOSIVA: 3×6-10 pesante con massima esplosività concentrica',
+    meadows_arms_phi3:'🟡 PUMP: serie al cedimento con drop set e rest-pause per massimizzare il pump',
+    meadows_arms_phi4:'🟢 STRETCH: 60-90 secondi di stretch con carico per espandere la fascia muscolare',
+    meadows_arms_sch_title:'Schema',
+    meadows_arms_d1:'Braccia A — Bicipiti + Tricipiti · focus pesi liberi',
+    meadows_arms_d2:'Braccia B — Bicipiti + Tricipiti · focus cavi e macchine',
+    meadows_sh_label:'🎯 3D Shoulders — John Meadows',
+    meadows_sh_pills:[['2×','/ sett.'],['3 Teste','deltoide'],['Rest-Pause','']],
+    level_meadows_sh:'AVANZATO',
+    meadows_sh_sub:'3 teste · Alta frequenza laterali',
+    meadows_sh_start:'Inizia 3D Shoulders',
+    meadows_sh_meta:'2× / sett. · Anteriore · Laterale · Posteriore',
+    meadows_sh_level:'Avanzato',
+    meadows_sh_ideal:'Meadows credeva che spalle 3D richiedessero attenzione specifica su tutte e 3 le teste del deltoide. Alta frequenza sulle alzate laterali con metodo rest-pause e stretch.',
+    meadows_sh_phi_title:'Filosofia',
+    meadows_sh_phi1:'Deltoide anteriore: già stimolato da panca e press — lavoro minimo necessario',
+    meadows_sh_phi2:'Deltoide laterale: focus principale — alzate laterali ad alta frequenza 2-3× / sett.',
+    meadows_sh_phi3:'Deltoide posteriore: face pull e reverse fly — fondamentale per la salute e l\'estetica',
+    meadows_sh_sch_title:'Schema',
+    meadows_sh_d1:'Sessione 1 — Press pesante + Laterali al cedimento + Posteriori',
+    meadows_sh_d2:'Sessione 2 — Laterali alta frequenza + Face pull + Stretch deltoide',
+    dante_sh_label:'Shoulder Blast — Dante Trudel',
+    dante_sh_pills:[['3×','/ sett.'],['Rest-Pause','DC'],['Blast/','Cruise']],
+    level_dante_sh:'AVANZATO',
+    dante_sh_sub:'DC Blast · Rest-Pause + Extreme Stretch',
+    dante_sh_start:'Inizia Shoulder Blast',
+    dante_sh_meta:'3× / sett. · Rest-Pause · Extreme Stretch · Blast/Cruise',
+    dante_sh_level:'Avanzato',
+    dante_sh_ideal:'Il metodo DC Blast applicato alle spalle. Brutale ed efficace. Dante sosteneva che le spalle rispondono bene all\'alta frequenza con rest-pause spinto. Solo per chi tollera alto stress di allenamento.',
+    dante_sh_phi_title:'Filosofia DC Blast',
+    dante_sh_phi1:'Rest-Pause: vai al cedimento → 10 respiri profondi → altri reps → ancora 10 respiri → fino all\'esaurimento',
+    dante_sh_phi2:'Extreme Stretching: 60-90s di stretch statico con carico dopo ogni esercizio',
+    dante_sh_phi3:'Blast/Cruise: 6-8 sett. intenso poi 1-2 sett. leggere al 60% — recupero attivo obbligatorio',
+    dante_sh_sch_title:'Schema 3× / sett.',
+    dante_sh_d1:'Press militare rest-pause + Laterali rest-pause + Posteriori rest-pause + Extreme Stretch',
+    meadows_chest_label:'🔥 Chest Program — John Meadows',
+    meadows_chest_pills:[['2×','/ sett.'],['4 Fasi','MD'],['Mountain','Dog']],
+    level_meadows_chest:'AVANZATO',
+    meadows_chest_sub:'4 Fasi · Attivazione → Pump → Stretch',
+    meadows_chest_start:'Inizia Chest Program',
+    meadows_chest_meta:'2× / sett. · 4 Fasi · Attivazione → Esplosiva → Pump → Stretch',
+    meadows_chest_level:'Avanzato',
+    meadows_chest_ideal:'Meadows aveva uno dei petti più sviluppati nel bodybuilding naturale. Il segreto: iniziare con isolamento (pec deck) per attivare il petto PRIMA del press pesante, poi finire con stretch estremo sotto carico.',
+    meadows_chest_phi_title:'Le 4 Fasi',
+    meadows_chest_phi1:'🔵 ATTIVAZIONE: Pec deck / Croci cavi — connessione mente-muscolo prima del pesante',
+    meadows_chest_phi2:'🔴 ESPLOSIVA: Press inclinata pesante / Dip appesantito — forza e massa',
+    meadows_chest_phi3:'🟡 PUMP: Crossover / Pec deck al cedimento con drop set — massimo pump',
+    meadows_chest_phi4:'🟢 STRETCH: Croci con manubri tenute 60s in basso — espansione fascia petto',
+    meadows_chest_sch_title:'Schema',
+    meadows_chest_d1:'Petto A — focus inclinata, stress superiore',
+    meadows_chest_d2:'Petto B — piana + croci + stretch estremo',
     pp23_luka_u_label:'Push/Pull 2-3 Day by Luka',
     pp23_luka_u_pills:[['2-3×','/ sett.'],['Push·Pull',''],['Doppia','Progr.']],
     level_pp23_luka_u:'AVANZATO',
@@ -4905,6 +5278,120 @@ en:{
     meadows_ppl_label:'Mountain Dog PPL — John Meadows',
     meadows_ppl_pills:[['3-6×','/ week'],['60-75 min','/ session'],['4 Phases','method']],
     level_meadows_ppl:'ADVANCED',
+    spec_btn:'Specialization Programs',
+    spec_sub:'Arms · Shoulders · Chest · Muscle Focus 6-8 weeks',
+    spec_title_sub:'Muscle Focus',
+    spec_desc:'6-8 week programs focused on a single muscle group. Add to your main program or use during dedicated specialization periods.',
+    spec_arms_title:'💪 Arms',
+    spec_shoulders_title:'🔵 Shoulders',
+    spec_chest_title:'🔴 Chest',
+    poliquin_arms_label:'6-12-25 Method — Charles Poliquin',
+    poliquin_arms_pills:[['3×','/ week'],['Giant Set','6-12-25'],['Bi+Tri','']],
+    level_poliquin_arms:'INTERMEDIATE / ADVANCED',
+    poliquin_arms_sub:'6-12-25 · Giant Set · Biceps + Triceps · 3× / week',
+    poliquin_arms_start:'Start 6-12-25 Method',
+    poliquin_arms_meta:'3× / week · Giant Set 6-12-25 · Biceps + Triceps · Maximum metabolic stress',
+    poliquin_arms_level:'Intermediate / Advanced',
+    poliquin_arms_ideal:'Poliquin\'s most famous arm method. Giant set of 3 exercises with no rest: 6 reps heavy → 12 reps moderate → 25 reps pump. Combines mechanical tension, muscle damage and metabolic stress in one set.',
+    poliquin_arms_phi_title:'How the Giant Set Works',
+    poliquin_arms_phi1:'6 reps — heavy compound: mechanical tension (e.g. Weighted Dip, Chin-up)',
+    poliquin_arms_phi2:'12 reps — moderate isolation: muscle damage (e.g. Skull Crusher, Incline Curl)',
+    poliquin_arms_phi3:'25 reps — light pump: metabolic stress (e.g. Cable Pushdown, Cable Curl)',
+    poliquin_arms_sch_title:'Giant Set Rules',
+    poliquin_arms_w1:'0s rest between exercise 1→2→3 — no pause inside the giant set',
+    poliquin_arms_w2:'2-3 min rest after completing all 3 exercises',
+    poliquin_arms_w3:'4 giant sets per muscle group — triceps first, then biceps',
+    poliquin_arms_w4:'6 reps: stop 1-2 reps before failure. 12 reps: go to failure. 25 reps: go to failure with good technique',
+    poliquin_arms_prog_title:'Progression',
+    poliquin_arms_p1_lbl:'6 rep exercise:',
+    poliquin_arms_p1:'add 2-5% weight when you complete all sets without breaking form',
+    poliquin_arms_p2_lbl:'12 rep exercise:',
+    poliquin_arms_p2:'increase weight when you reach 12 clean reps on all sets',
+    poliquin_arms_p3_lbl:'25 rep exercise:',
+    poliquin_arms_p3:'light weight, focus on pump and mind-muscle connection — don\'t increase load too much',
+    layne_arms_label:'Arm Specialization — Layne Norton',
+    layne_arms_pills:[['2×','/ week'],['Power+','Hyper'],['PHAT','']],
+    level_layne_arms:'INTERMEDIATE / ADVANCED',
+    layne_arms_sub:'PHAT approach · Strength + Volume',
+    layne_arms_start:'Start Arm Specialization',
+    layne_arms_meta:'2× / week · Power + Hypertrophy · Biceps + Triceps',
+    layne_arms_level:'Intermediate / Advanced',
+    layne_arms_ideal:'Based on Layne Norton\'s PHAT philosophy: one strength day (low reps, heavy) and one volume day (high reps, pump). Combining strength and hypertrophy to maximize arm growth.',
+    layne_arms_phi_title:'Philosophy',
+    layne_arms_phi1:'Power day: 3-5 reps heavy — builds strength and muscle density',
+    layne_arms_phi2:'Hypertrophy day: 8-15 reps moderate — maximizes volume and pump',
+    layne_arms_phi3:'Strength gained on Power day directly transfers to more volume on Hypertrophy day',
+    layne_arms_sch_title:'Weekly Schedule',
+    layne_arms_d1:'Power Arms — 3-5 reps · Barbell curl, Heavy skull crusher',
+    layne_arms_d2:'Hypertrophy Arms — 8-15 reps · Biceps/triceps superset high volume',
+    layne_arms_prog_title:'Progression',
+    layne_arms_p1_lbl:'Power day:',
+    layne_arms_p1:'linear progression — add 1-2.5kg every week',
+    layne_arms_p2_lbl:'Hypertrophy day:',
+    layne_arms_p2:'double progression — max out reps, then add weight',
+    layne_arms_p3_lbl:'Rest:',
+    layne_arms_p3:'2-3 min Power day, 60-90s Hypertrophy day in supersets',
+    meadows_arms_label:'💪 Arm Program — John Meadows',
+    meadows_arms_pills:[['2×','/ week'],['4 Phases','MD'],['Mountain','Dog']],
+    level_meadows_arms:'ADVANCED',
+    meadows_arms_sub:'Mountain Dog · Pump + Stretch',
+    meadows_arms_start:'Start Arm Program',
+    meadows_arms_meta:'2× / week · 4 Phases · Activation → Explosive → Pump → Stretch',
+    meadows_arms_level:'Advanced',
+    meadows_arms_ideal:'Mountain Dog method applied to arms. Meadows was famous for massive arms. The secret: Extreme Stretching after every exercise to maximize muscle fascia and recovery.',
+    meadows_arms_phi_title:'The 4 Mountain Dog Phases',
+    meadows_arms_phi1:'🔵 ACTIVATION: 2×15 low intensity for neuromuscular connection',
+    meadows_arms_phi2:'🔴 EXPLOSIVE: 3×6-10 heavy with maximum concentric explosiveness',
+    meadows_arms_phi3:'🟡 PUMP: failure sets with drop sets and rest-pause to maximize pump',
+    meadows_arms_phi4:'🟢 STRETCH: 60-90 seconds loaded stretch to expand muscle fascia',
+    meadows_arms_sch_title:'Schedule',
+    meadows_arms_d1:'Arms A — Biceps + Triceps · Free weights focus',
+    meadows_arms_d2:'Arms B — Biceps + Triceps · Cables and machines focus',
+    meadows_sh_label:'🎯 3D Shoulders — John Meadows',
+    meadows_sh_pills:[['2×','/ week'],['3 Heads','delt'],['Rest-Pause','']],
+    level_meadows_sh:'ADVANCED',
+    meadows_sh_sub:'3 heads · High frequency lateral raises',
+    meadows_sh_start:'Start 3D Shoulders',
+    meadows_sh_meta:'2× / week · Anterior · Lateral · Posterior',
+    meadows_sh_level:'Advanced',
+    meadows_sh_ideal:'Meadows believed 3D shoulders require specific attention on all 3 deltoid heads. High frequency on lateral raises with rest-pause method and stretch.',
+    meadows_sh_phi_title:'Philosophy',
+    meadows_sh_phi1:'Anterior delt: already stimulated by bench and press — minimal extra work needed',
+    meadows_sh_phi2:'Lateral delt: main focus — lateral raises at high frequency 2-3× / week',
+    meadows_sh_phi3:'Posterior delt: face pulls and reverse fly — essential for health and aesthetics',
+    meadows_sh_sch_title:'Schedule',
+    meadows_sh_d1:'Session 1 — Heavy press + Lateral raises to failure + Rear delts',
+    meadows_sh_d2:'Session 2 — High frequency laterals + Face pull + Delt stretch',
+    dante_sh_label:'Shoulder Blast — Dante Trudel',
+    dante_sh_pills:[['3×','/ week'],['Rest-Pause','DC'],['Blast/','Cruise']],
+    level_dante_sh:'ADVANCED',
+    dante_sh_sub:'DC Blast · Rest-Pause + Extreme Stretch',
+    dante_sh_start:'Start Shoulder Blast',
+    dante_sh_meta:'3× / week · Rest-Pause · Extreme Stretch · Blast/Cruise',
+    dante_sh_level:'Advanced',
+    dante_sh_ideal:'DC Blast method applied to shoulders. Brutal and effective. Dante believed shoulders respond well to high frequency with intense rest-pause. For those who tolerate high training stress only.',
+    dante_sh_phi_title:'DC Blast Philosophy',
+    dante_sh_phi1:'Rest-Pause: go to failure → 10 deep breaths → more reps → 10 breaths → until exhaustion',
+    dante_sh_phi2:'Extreme Stretching: 60-90s static stretch with load after every exercise',
+    dante_sh_phi3:'Blast/Cruise: 6-8 weeks intense then 1-2 weeks light at 60% — mandatory active recovery',
+    dante_sh_sch_title:'Schedule 3× / week',
+    dante_sh_d1:'Military press rest-pause + Lateral raises rest-pause + Rear delts rest-pause + Extreme Stretch',
+    meadows_chest_label:'🔥 Chest Program — John Meadows',
+    meadows_chest_pills:[['2×','/ week'],['4 Phases','MD'],['Mountain','Dog']],
+    level_meadows_chest:'ADVANCED',
+    meadows_chest_sub:'4 Phases · Activation → Pump → Stretch',
+    meadows_chest_start:'Start Chest Program',
+    meadows_chest_meta:'2× / week · 4 Phases · Activation → Explosive → Pump → Stretch',
+    meadows_chest_level:'Advanced',
+    meadows_chest_ideal:'Meadows had one of the most developed chests in natural bodybuilding. The secret: start with isolation (pec deck) to ACTIVATE the chest BEFORE heavy pressing, then finish with extreme loaded stretch.',
+    meadows_chest_phi_title:'The 4 Phases',
+    meadows_chest_phi1:'🔵 ACTIVATION: Pec deck / Cable fly — mind-muscle connection before heavy work',
+    meadows_chest_phi2:'🔴 EXPLOSIVE: Heavy incline press / Weighted dip — strength and mass',
+    meadows_chest_phi3:'🟡 PUMP: Crossover / Pec deck to failure with drop set — maximum pump',
+    meadows_chest_phi4:'🟢 STRETCH: DB fly held 60s at bottom — chest fascia expansion',
+    meadows_chest_sch_title:'Schedule',
+    meadows_chest_d1:'Chest A — Upper focus, incline stress',
+    meadows_chest_d2:'Chest B — Flat press + fly + extreme stretch',
     pp23_luka_u_label:'Push/Pull 2-3 Day by Luka',
     pp23_luka_u_pills:[['2-3×','/ week'],['Push·Pull',''],['Double','Progr.']],
     level_pp23_luka_u:'ADVANCED',
@@ -5745,20 +6232,19 @@ const WORKOUTS_BASE = {
 
     mentzer_3day:{gender:'uomo',
         days:[
-            {id:'g1',color:'var(--red)',exercises:[
+            {id:'mtz_chest_back',color:'var(--red)',exercises:[
                 {it:'Pec Deck / Croci ai Cavi',en:'Pec Deck / Cable Crossover',s:1,r:'6-10 (cedimento)'},
                 {it:'Press Inclinata',en:'Incline Bench Press',s:1,r:'6-8 (cedimento)'},
                 {it:'Pullover ai Cavi',en:'Cable Pullover',s:1,r:'12-15 (cedimento)'},
                 {it:'Lat Machine Presa Chiusa (soprammano)',en:'Close-Grip Pulldown Overhand',s:1,r:'6-8 (cedimento)'},
-                {it:'T-Bar Row / Rematore Macchina',en:'T-Bar Row / Machine Row',s:1,r:'6-8 (cedimento)'},
-                {it:'Stacchi da Terra',en:'Deadlift',s:1,r:'6-8 (STOP prima del cedimento)'}]},
-            {id:'g2',color:'var(--blue)',exercises:[
+                {it:'T-Bar Row / Rematore Macchina',en:'T-Bar Row / Machine Row',s:1,r:'6-8 (cedimento)'}]},
+            {id:'mtz_legs_abs',color:'var(--blue)',exercises:[
                 {it:'Leg Extension',en:'Leg Extension',s:1,r:'8-15 (cedimento)'},
                 {it:'Leg Press / Hack Squat / Smith Squat (ruota)',en:'Leg Press / Hack / Smith Squat (rotate)',s:1,r:'6-8 (cedimento)'},
                 {it:'Leg Curl',en:'Leg Curl',s:1,r:'8-12 (cedimento)'},
                 {it:'Polpacci in Piedi',en:'Standing Calf Raise',s:1,r:'12-20 (cedimento)'},
                 {it:'Sit-Up / Addominali',en:'Sit-Ups / Abs',s:1,r:'12-20 (cedimento)'}]},
-            {id:'g3',color:'var(--green)',exercises:[
+            {id:'mtz_sh_arms',color:'var(--green)',exercises:[
                 {it:'Press Spalle Smith / Macchina',en:'Smith / Machine Shoulder Press',s:1,r:'6-8 (cedimento)'},
                 {it:'Alzate Laterali Manubri',en:'DB Lateral Raises',s:1,r:'6-10 (cedimento)'},
                 {it:'Curl Bilanciere / Manubri',en:'Barbell / DB Curl',s:1,r:'6-10 (cedimento)'},
@@ -6335,6 +6821,120 @@ const WORKOUTS_BASE = {
         ]},
     // ── MOUNTAIN DOG PPL — John Meadows ──────────────────────────────────
     // ── PUSH/PULL 2-3 DAY BY LUKA (UOMO) ─────────────────────────────────
+    // ── SPECIALIZATION PROGRAMS ───────────────────────────────────────────
+    poliquin_arms:{gender:'uomo',
+        note_it:'📖 <b>6-12-25 Method — Charles Poliquin</b> — Giant set 3 esercizi SENZA riposo: <b>6 reps</b> = compound pesante (tensione meccanica) → <b>12 reps</b> = isolamento moderato (danno muscolare) → <b>25 reps</b> = pump leggero (stress metabolico). Riposo 2-3 min tra i giant set. Bicipiti + Tricipiti nella stessa sessione. 3 sessioni diverse a settimana con esercizi ruotati.',
+        note_en:'📖 <b>6-12-25 Method — Charles Poliquin</b> — Giant set 3 exercises with NO rest: <b>6 reps</b> = heavy compound (mechanical tension) → <b>12 reps</b> = moderate isolation (muscle damage) → <b>25 reps</b> = light pump (metabolic stress). Rest 2-3 min between giant sets. Biceps + Triceps in same session. 3 different sessions per week with rotated exercises.',
+        days:[
+            {id:'pol_arms_a',label_it:'SESSIONE A',label_en:'SESSION A',color:'var(--gold)',exercises:[
+                {it:'A1 · TRICIPITI · Dip Appesantito / Panca Presa Stretta',en:'A1 · TRICEPS · Weighted Dip / Close-Grip Bench',s:4,r:'6 (compound pesante)',rest:'0s → A2 subito'},
+                {it:'A2 · TRICIPITI · Skull Crusher EZ Bar',en:'A2 · TRICEPS · EZ Bar Skull Crusher',s:4,r:'12 (isolamento moderato)',rest:'0s → A3 subito'},
+                {it:'A3 · TRICIPITI · Cable Pushdown Corda',en:'A3 · TRICEPS · Rope Cable Pushdown',s:4,r:'25 (pump leggero)',rest:'2-3 min → ripeti'},
+                {it:'B1 · BICIPITI · Curl Bilanciere / Chin-up Appesantito',en:'B1 · BICEPS · Barbell Curl / Weighted Chin-up',s:4,r:'6 (compound pesante)',rest:'0s → B2 subito'},
+                {it:'B2 · BICIPITI · Curl Inclinato Manubri 45°',en:'B2 · BICEPS · Incline DB Curl 45°',s:4,r:'12 (isolamento moderato)',rest:'0s → B3 subito'},
+                {it:'B3 · BICIPITI · Curl Cavo Bassa Carrucola',en:'B3 · BICEPS · Low Cable Curl',s:4,r:'25 (pump leggero)',rest:'2-3 min → ripeti'}]},
+            {id:'pol_arms_b',label_it:'SESSIONE B',label_en:'SESSION B',color:'var(--blue)',exercises:[
+                {it:'A1 · TRICIPITI · French Press Bilanciere / EZ Bar',en:'A1 · TRICEPS · Barbell / EZ Bar French Press',s:4,r:'6 (compound pesante)',rest:'0s → A2 subito'},
+                {it:'A2 · TRICIPITI · Overhead Extension Manubrio',en:'A2 · TRICEPS · DB Overhead Extension',s:4,r:'12 (isolamento moderato)',rest:'0s → A3 subito'},
+                {it:'A3 · TRICIPITI · Pushdown Presa Inversa Cavo',en:'A3 · TRICEPS · Reverse Grip Pushdown',s:4,r:'25 (pump leggero)',rest:'2-3 min → ripeti'},
+                {it:'B1 · BICIPITI · Curl Scott (Preacher) EZ Bar',en:'B1 · BICEPS · EZ Preacher Curl',s:4,r:'6 (compound pesante)',rest:'0s → B2 subito'},
+                {it:'B2 · BICIPITI · Curl Hammer Manubri',en:'B2 · BICEPS · Hammer Curl DB',s:4,r:'12 (isolamento moderato)',rest:'0s → B3 subito'},
+                {it:'B3 · BICIPITI · Curl Cavo Alta Carrucola',en:'B3 · BICEPS · High Cable Curl',s:4,r:'25 (pump leggero)',rest:'2-3 min → ripeti'}]},
+            {id:'pol_arms_c',label_it:'SESSIONE C',label_en:'SESSION C',color:'var(--red)',exercises:[
+                {it:'A1 · TRICIPITI · Dip Parallele Appesantito (variante B)',en:'A1 · TRICEPS · Weighted Parallel Dip (variant B)',s:4,r:'6 (compound pesante)',rest:'0s → A2 subito'},
+                {it:'A2 · TRICIPITI · Overhead Extension Cavo',en:'A2 · TRICEPS · Cable Overhead Extension',s:4,r:'12 (isolamento moderato)',rest:'0s → A3 subito'},
+                {it:'A3 · TRICIPITI · Kickback Cavo / Single Pushdown',en:'A3 · TRICEPS · Cable Kickback / Single Pushdown',s:4,r:'25 (pump leggero)',rest:'2-3 min → ripeti'},
+                {it:'B1 · BICIPITI · Curl Bilanciere Presa Inversa',en:'B1 · BICEPS · Reverse Barbell Curl',s:4,r:'6 (compound pesante)',rest:'0s → B2 subito'},
+                {it:'B2 · BICIPITI · Curl Concentrazione Manubrio',en:'B2 · BICEPS · Concentration Curl',s:4,r:'12 (isolamento moderato)',rest:'0s → B3 subito'},
+                {it:'B3 · BICIPITI · Curl Manubri Bilaterale Leggero',en:'B3 · BICEPS · Light DB Curl bilateral',s:4,r:'25 (pump leggero)',rest:'2-3 min → ripeti'}]}
+        ]},
+    layne_arms:{gender:'uomo',
+        note_it:'⚡ <b>Arm Specialization — Layne Norton</b> — 2 sessioni / sett. <b>Power day:</b> 3-5 reps pesante, progressione lineare (+1-2.5kg/sett.). <b>Hypertrophy day:</b> superset 8-15 reps, doppia progressione. Riposo 2-3 min Power, 60-90s Hypertrophy nei superset.',
+        note_en:'⚡ <b>Arm Specialization — Layne Norton</b> — 2 sessions / week. <b>Power day:</b> 3-5 reps heavy, linear progression (+1-2.5kg/wk). <b>Hypertrophy day:</b> superset 8-15 reps, double progression. Rest 2-3 min Power, 60-90s Hypertrophy in supersets.',
+        days:[
+            {id:'layne_arm_pow',label_it:'POWER ARMS',label_en:'POWER ARMS',color:'var(--red)',exercises:[
+                {it:'Curl Bilanciere',en:'Barbell Curl',s:4,r:'3-5',rest:'3 min'},
+                {it:'Skull Crusher EZ Bar',en:'EZ Bar Skull Crusher',s:4,r:'3-5',rest:'3 min'},
+                {it:'Curl Inclinato Manubri',en:'Incline DB Curl',s:3,r:'5-8',rest:'2 min'},
+                {it:'French Press Bilanciere',en:'Barbell French Press',s:3,r:'5-8',rest:'2 min'}]},
+            {id:'layne_arm_hyp',label_it:'HYPERTROPHY ARMS',label_en:'HYPERTROPHY ARMS',color:'var(--blue)',exercises:[
+                {it:'A1 · Curl Hammer / Manubri',en:'A1 · Hammer / DB Curl',s:4,r:'8-12',rest:'10s'},
+                {it:'A2 · Pushdown Corda',en:'A2 · Rope Pushdown',s:4,r:'10-15',rest:'90s'},
+                {it:'B1 · Curl ai Cavi Alta Carrucola',en:'B1 · High Cable Curl',s:3,r:'10-15',rest:'10s'},
+                {it:'B2 · Overhead Extension Cavo',en:'B2 · Cable Overhead Extension',s:3,r:'10-15',rest:'90s'},
+                {it:'C1 · Curl Scott',en:'C1 · Preacher Curl',s:3,r:'10-15',rest:'10s'},
+                {it:'C2 · Dip alle Parallele',en:'C2 · Parallel Bar Dip',s:3,r:'10-15',rest:'90s'}]}
+        ]},
+    meadows_arms:{gender:'uomo',
+        note_it:'🐕 <b>Arm Program — John Meadows</b> — 4 Fasi: 🔵 Attivazione (2×15, mind-muscle) → 🔴 Esplosiva (3×6-10, pesante) → 🟡 Pump (cedimento + drop set) → 🟢 Stretch (60-90s carico). Extreme Stretch obbligatorio dopo ogni gruppo. 2 sessioni / sett. con angolazioni diverse.',
+        note_en:'🐕 <b>Arm Program — John Meadows</b> — 4 Phases: 🔵 Activation (2×15, mind-muscle) → 🔴 Explosive (3×6-10, heavy) → 🟡 Pump (failure + drop set) → 🟢 Stretch (60-90s loaded). Extreme Stretch mandatory after each muscle group. 2 sessions / week with different angles.',
+        days:[
+            {id:'md_arms_a',label_it:'BRACCIA A',label_en:'ARMS A',color:'var(--red)',exercises:[
+                {it:'🔵 ATTIVAZIONE · Curl Manubri Concentrazione',en:'🔵 ACTIVATION · Concentration Curl',s:2,r:'15 (mind-muscle — no failure)'},
+                {it:'🔴 ESPLOSIVA · Curl Bilanciere (supinazione)',en:'🔴 EXPLOSIVE · Barbell Curl (supinated)',s:3,r:'6-10 (esplosivo — 1 rep in tank)'},
+                {it:'🟡 PUMP · Curl Hammer + Drop Set',en:'🟡 PUMP · Hammer Curl + Drop Set',s:2,r:'failure + drop'},
+                {it:'🟢 STRETCH · Curl Inclinato Manubri — tieni stretch 5s ogni rep',en:'🟢 STRETCH · Incline DB Curl — 5s stretch each rep',s:1,r:'10-12 (slow stretch)'},
+                {it:'🔵 ATTIVAZIONE · Pushdown Corda bassa intensità',en:'🔵 ACTIVATION · Rope Pushdown light',s:2,r:'15 (mind-muscle)'},
+                {it:'🔴 ESPLOSIVA · French Press EZ Bar',en:'🔴 EXPLOSIVE · EZ Bar French Press',s:3,r:'6-10 (esplosivo)'},
+                {it:'🟡 PUMP · Overhead Extension + Drop Set',en:'🟡 PUMP · Overhead Extension + Drop Set',s:2,r:'failure + drop'},
+                {it:'🟢 STRETCH · Dip tieni posizione bassa 30-60s',en:'🟢 STRETCH · Dip hold bottom position 30-60s',s:1,r:'30-60 sec loaded stretch'}]},
+            {id:'md_arms_b',label_it:'BRACCIA B',label_en:'ARMS B',color:'var(--blue)',exercises:[
+                {it:'🔵 ATTIVAZIONE · Curl Cavo Alta Carrucola',en:'🔵 ACTIVATION · High Cable Curl',s:2,r:'15 (mind-muscle)'},
+                {it:'🔴 ESPLOSIVA · Curl Scott (Preacher) EZ Bar',en:'🔴 EXPLOSIVE · EZ Preacher Curl',s:3,r:'6-10 (esplosivo)'},
+                {it:'🟡 PUMP · Curl Manubri + Rest-Pause',en:'🟡 PUMP · DB Curl + Rest-Pause',s:2,r:'failure + 10 respiri + max'},
+                {it:'🟢 STRETCH · Curl Inclinato 90° tieni stretch basso',en:'🟢 STRETCH · Incline Curl hold bottom stretch',s:1,r:'60-90 sec loaded hold'},
+                {it:'🔵 ATTIVAZIONE · Pushdown Presa Inversa Cavo',en:'🔵 ACTIVATION · Reverse Grip Pushdown',s:2,r:'15 (mind-muscle)'},
+                {it:'🔴 ESPLOSIVA · Dip Appesantito',en:'🔴 EXPLOSIVE · Weighted Dip',s:3,r:'6-10 (esplosivo)'},
+                {it:'🟡 PUMP · Kickback Cavo + Rest-Pause',en:'🟡 PUMP · Cable Kickback + Rest-Pause',s:2,r:'failure + 10 respiri + max'},
+                {it:'🟢 STRETCH · Overhead Extension — tieni basso 60s',en:'🟢 STRETCH · Overhead Extension — hold bottom 60s',s:1,r:'60-90 sec loaded stretch'}]}
+        ]},
+    meadows_shoulders:{gender:'uomo',
+        note_it:'🐕 <b>3D Shoulders — John Meadows</b> — 2 sessioni / sett. Focus principale: deltoide laterale ad alta frequenza con rest-pause. Posteriore obbligatorio ogni sessione per salute rotatori. Extreme Stretch deltoide anteriore dopo il press.',
+        note_en:'🐕 <b>3D Shoulders — John Meadows</b> — 2 sessions / week. Main focus: lateral delt with high frequency and rest-pause. Rear delt mandatory every session for rotator cuff health. Extreme Stretch on anterior delt after pressing.',
+        days:[
+            {id:'md_sh_a',label_it:'SPALLE A',label_en:'SHOULDERS A',color:'var(--red)',exercises:[
+                {it:'🔵 ATTIVAZIONE · Alzate Laterali Leggere (mind-muscle)',en:'🔵 ACTIVATION · Light Lateral Raises (mind-muscle)',s:2,r:'15-20 (no failure)'},
+                {it:'🔴 ESPLOSIVA · Press Militare Seduto (manubri/bilanciere)',en:'🔴 EXPLOSIVE · Seated OH Press (DB/BB)',s:4,r:'6-10 (heavy — 1 in tank)'},
+                {it:'🟡 PUMP · Alzate Laterali Cavo + Rest-Pause',en:'🟡 PUMP · Cable Lateral Raise + Rest-Pause',s:3,r:'failure + 10 respiri + max'},
+                {it:'🟡 PUMP · Alzate Laterali Macchina + Drop Set',en:'🟡 PUMP · Machine Lateral Raise + Drop Set',s:2,r:'failure + drop'},
+                {it:'Face Pull Corda — Deltoide Posteriore',en:'Face Pull Rope — Rear Delt',s:3,r:'15-20'},
+                {it:'🟢 STRETCH · Croci Posteriori Seduto — tieni stretch 5s',en:'🟢 STRETCH · Seated Rear Fly — hold 5s stretch',s:1,r:'12-15 (slow)'}]},
+            {id:'md_sh_b',label_it:'SPALLE B',label_en:'SHOULDERS B',color:'var(--blue)',exercises:[
+                {it:'🔵 ATTIVAZIONE · Alzate Frontali Leggere (mind-muscle)',en:'🔵 ACTIVATION · Light Front Raises (mind-muscle)',s:2,r:'15 (no failure)'},
+                {it:'🔴 ESPLOSIVA · Arnold Press / Press Manubri',en:'🔴 EXPLOSIVE · Arnold Press / DB Press',s:4,r:'8-12'},
+                {it:'🟡 PUMP · Alzate Laterali Manubri + Rest-Pause',en:'🟡 PUMP · DB Lateral Raise + Rest-Pause',s:3,r:'failure + 10 respiri + max'},
+                {it:'🟡 PUMP · Upright Row Cavo Basso',en:'🟡 PUMP · Low Cable Upright Row',s:2,r:'12-15'},
+                {it:'Reverse Pec Deck — Deltoide Posteriore',en:'Reverse Pec Deck — Rear Delt',s:4,r:'15-20'},
+                {it:'🟢 STRETCH · Alzata Laterale — tieni posizione alta 30s',en:'🟢 STRETCH · Lateral Raise — hold top position 30s',s:1,r:'10-12 (slow)'}]}
+        ]},
+    dante_shoulders:{gender:'uomo',
+        note_it:'💥 <b>Shoulder Blast — Dante Trudel (DC Training)</b> — 3× / sett. <b>Rest-Pause:</b> vai al cedimento → 10 respiri profondi → altri reps → 10 respiri → finale. <b>Extreme Stretch:</b> 60-90s stretch statico con carico. <b>Blast 6-8 sett.</b> poi 1-2 sett. Cruise al 60%.',
+        note_en:'💥 <b>Shoulder Blast — Dante Trudel (DC Training)</b> — 3× / week. <b>Rest-Pause:</b> go to failure → 10 deep breaths → more reps → 10 breaths → final. <b>Extreme Stretch:</b> 60-90s static stretch with load. <b>Blast 6-8 weeks</b> then 1-2 weeks Cruise at 60%.',
+        days:[
+            {id:'dc_sh_blast',label_it:'SHOULDER BLAST',label_en:'SHOULDER BLAST',color:'var(--cyan,#64d2ff)',exercises:[
+                {it:'Press Militare — Rest-Pause al cedimento',en:'Military Press — Rest-Pause to failure',s:1,r:'Rest-Pause (failure + 10 respiri × 3)'},
+                {it:'Alzate Laterali Manubri — Rest-Pause',en:'DB Lateral Raises — Rest-Pause',s:1,r:'Rest-Pause (failure + 10 respiri × 3)'},
+                {it:'Alzate Laterali Cavo Basso — Rest-Pause',en:'Low Cable Lateral Raise — Rest-Pause',s:1,r:'Rest-Pause (failure + 10 respiri × 2)'},
+                {it:'Reverse Pec Deck / Face Pull — Posteriore',en:'Reverse Pec Deck / Face Pull — Rear Delt',s:1,r:'Rest-Pause (failure + 10 respiri × 2)'},
+                {it:'🟢 EXTREME STRETCH · Alzata Laterale con manubrio leggero — 60-90s',en:'🟢 EXTREME STRETCH · Light DB Lateral hold — 60-90s',s:1,r:'60-90 sec static stretch'}]}
+        ]},
+    meadows_chest:{gender:'uomo',
+        note_it:'🐕 <b>Chest Program — John Meadows</b> — 2 sessioni / sett. Il segreto di Meadows: inizia con isolamento (pec deck) per ATTIVARE il petto prima del press. Extreme Stretch finale obbligatorio. 4 Fasi: Attivazione → Esplosiva → Pump → Stretch.',
+        note_en:'🐕 <b>Chest Program — John Meadows</b> — 2 sessions / week. Meadows secret: start with isolation (pec deck) to ACTIVATE chest before pressing. Extreme Stretch at end is mandatory. 4 Phases: Activation → Explosive → Pump → Stretch.',
+        days:[
+            {id:'md_chest_a',label_it:'PETTO A',label_en:'CHEST A',color:'var(--red)',exercises:[
+                {it:'🔵 ATTIVAZIONE · Pec Deck / Croci Cavi Bassi',en:'🔵 ACTIVATION · Pec Deck / Low Cable Fly',s:2,r:'15 (mind-muscle — no failure)'},
+                {it:'🔴 ESPLOSIVA · Press Inclinata Manubri / Smith',en:'🔴 EXPLOSIVE · Incline DB Press / Smith',s:4,r:'6-10 (esplosivo — 1 rep in tank)'},
+                {it:'🔴 ESPLOSIVA · Dip Appesantito (busto avanti)',en:'🔴 EXPLOSIVE · Weighted Chest Dip (lean forward)',s:3,r:'8-12'},
+                {it:'🟡 PUMP · Crossover / Pec Deck al cedimento + Drop',en:'🟡 PUMP · Cable Crossover / Pec Deck failure + Drop',s:2,r:'failure + drop set'},
+                {it:'🟢 STRETCH · Croci Manubri — tieni 60s in basso',en:'🟢 STRETCH · DB Fly — hold 60s at bottom',s:1,r:'60 sec loaded stretch'}]},
+            {id:'md_chest_b',label_it:'PETTO B',label_en:'CHEST B',color:'var(--blue)',exercises:[
+                {it:'🔵 ATTIVAZIONE · Croci Cavi Alti (upper chest)',en:'🔵 ACTIVATION · High Cable Fly (upper chest)',s:2,r:'15 (mind-muscle)'},
+                {it:'🔴 ESPLOSIVA · Panca Piana Bilanciere / Smith',en:'🔴 EXPLOSIVE · Flat Barbell / Smith Press',s:4,r:'6-10 (esplosivo)'},
+                {it:'🔴 ESPLOSIVA · Press Inclinata Cavi / Macchina',en:'🔴 EXPLOSIVE · Incline Cable / Machine Press',s:3,r:'8-12'},
+                {it:'🟡 PUMP · Croci Manubri + Rest-Pause',en:'🟡 PUMP · DB Fly + Rest-Pause',s:2,r:'failure + 10 respiri + max'},
+                {it:'🟢 STRETCH · Croci Manubri Inclinata — tieni 60-90s',en:'🟢 STRETCH · Incline DB Fly — hold 60-90s',s:1,r:'60-90 sec loaded stretch'}]}
+        ]},
     pp23_luka_u:{gender:'uomo',
         note_it:'🔀 <b>Push/Pull 2-3 Day by Luka</b> — Alterna PUSH e PULL ogni sessione. <b>Doppia progressione:</b> es. 8-6 = porta prima tutte le serie a 8 reps, poi aggiungi 2.5kg e riparti da 6. Riposo 2-3 min composti, 1-2 min isolamenti. Fermati a 1-2 reps dal cedimento. <b>Deload ogni 10-12 sett.</b> al 60-65%.',
         note_en:'🔀 <b>Push/Pull 2-3 Day by Luka</b> — Alternate PUSH and PULL each session. <b>Double progression:</b> e.g. 8-6 = first reach 8 reps on all sets, then add 2.5kg and restart at 6. Rest 2-3 min compounds, 1-2 min isolation. Stop 1-2 reps before failure. <b>Deload every 10-12 weeks</b> at 60-65%.',
@@ -6634,7 +7234,7 @@ const WID_MAP = {'lpp':'lpp','ini-u':'ini_u','lyle-gbr':'lyle_gbr','ini-d':'ini_
   'lpp30-u':'lpp30_u',
   'lpp6-u':'lpp6_u',
   'ken-pp':'ken_pp',
-  'meadows-ppl':'meadows_ppl','adv-lpp6-u':'adv_lpp6_u','pp23-luka-u':'pp23_luka_u',
+  'meadows-ppl':'meadows_ppl','adv-lpp6-u':'adv_lpp6_u','pp23-luka-u':'pp23_luka_u','poliquin-arms':'poliquin_arms','layne-arms':'layne_arms','meadows-arms':'meadows_arms','meadows-shoulders':'meadows_shoulders','dante-shoulders':'dante_shoulders','meadows-chest':'meadows_chest',
   'carter-bb':'carter_bb',
   'hst-u':'hst_u',
   'gironda-4day':'gironda_4day',
@@ -6652,7 +7252,7 @@ function getWorkoutLocalized(wId){
     const baseId = WID_MAP[wId] || wId;
     const base = WORKOUTS_BASE[baseId];
     if(!base) return null;
-    const labelMap = {lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',ken_pp:'ken_pp_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label',lpp30_u:'lpp30_u_label',meadows_ppl:'meadows_ppl_label',adv_lpp6_u:'adv_lpp6_u_label',pp23_luka_u:'pp23_luka_u_label',carter_bb:'carter_bb_label',gironda_4day:'gironda_4day_label',gironda_fb:'gironda_fb_label',ss_u:'ss_u_label',wendler_531:'wendler_531_label',texas_method:'texas_method_label',smolov_jr:'smolov_jr_label',hst_u:'hst_u_label',tls_d:'tls_d_label',tls_3d:'tls_3d_label',tls_4d:'tls_4d_label',lpp6_u:'lpp6_u_label',pp_luka_d:'pp_luka_d_label'};
+    const labelMap = {lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',ken_pp:'ken_pp_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label',lpp30_u:'lpp30_u_label',meadows_ppl:'meadows_ppl_label',adv_lpp6_u:'adv_lpp6_u_label',pp23_luka_u:'pp23_luka_u_label',poliquin_arms:'poliquin_arms_label',layne_arms:'layne_arms_label',meadows_arms:'meadows_arms_label',meadows_shoulders:'meadows_sh_label',dante_shoulders:'dante_sh_label',meadows_chest:'meadows_chest_label',carter_bb:'carter_bb_label',gironda_4day:'gironda_4day_label',gironda_fb:'gironda_fb_label',ss_u:'ss_u_label',wendler_531:'wendler_531_label',texas_method:'texas_method_label',smolov_jr:'smolov_jr_label',hst_u:'hst_u_label',tls_d:'tls_d_label',tls_3d:'tls_3d_label',tls_4d:'tls_4d_label',lpp6_u:'lpp6_u_label',pp_luka_d:'pp_luka_d_label'};
     const pillsMap = {lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',ken_pp:'ken_pp_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',lpp4_u:'lpp4_u_pills',ws4sb_u:'ws4sb_u_pills',madcow_u:'madcow_u_pills',lpp30_u:'lpp30_u_pills',meadows_ppl:'meadows_ppl_pills',carter_bb:'carter_bb_pills',gironda_4day:'gironda_4day_pills',gironda_fb:'gironda_fb_pills',ss_u:'ss_u_pills',wendler_531:'wendler_531_pills',texas_method:'texas_method_pills',smolov_jr:'smolov_jr_pills',hst_u:'hst_u_pills',tls_d:'tls_d_pills',tls_3d:'tls_3d_pills',tls_4d:'tls_4d_pills',lpp6_u:'lpp6_u_pills'};
     const days = base.days.map(day=>{
         let badge, name;
@@ -6696,6 +7296,9 @@ function getWorkoutLocalized(wId){
         }else if(day.id==='d2'){badge='PUSH A3';name=t('d_dc_push3_name')||'Push A3';
         }else if(day.id==='d3'){badge='PULL B3';name=t('d_dc_pull3_name')||'Pull B3';
         }else if(day.id==='e1'){badge='LEGS C3';name=t('d_dc_legs3_name')||'Legs C3';
+        }else if(day.id==='mtz_chest_back'){badge='PETTO · SCHIENA';name=lang==='it'?'Pre-Exhaust Petto → Press → Pre-Exhaust Schiena → Rematori → Stacco':'Pre-Exhaust Chest → Press → Pre-Exhaust Back → Rows → Deadlift';
+        }else if(day.id==='mtz_legs_abs'){badge='GAMBE · ABS';name=lang==='it'?'Pre-Exhaust Gambe → Leg Press → Leg Curl → Polpacci → Addominali':'Pre-Exhaust Legs → Leg Press → Leg Curl → Calves → Abs';
+        }else if(day.id==='mtz_sh_arms'){badge='SPALLE · BRACCIA';name=lang==='it'?'Press Spalle → Laterali → Bicipiti → Tricipiti':'Shoulder Press → Lateral Raises → Biceps → Triceps';
         }else if(day.id==='lyle_ua'){badge='UPPER A';name=t('lyle_ua_name')||(lang==='it'?'Upper A — Forza':'Upper A — Strength');
         }else if(day.id==='lyle_la'){badge='LOWER A';name=t('lyle_la_name')||(lang==='it'?'Lower A — Forza':'Lower A — Strength');
         }else if(day.id==='lyle_ub'){badge='UPPER B';name=t('lyle_ub_name')||(lang==='it'?'Upper B — Ipertrofia':'Upper B — Hypertrophy');
@@ -6787,6 +7390,19 @@ function getWorkoutLocalized(wId){
         }else if(day.id==='tls4_lb'){badge='LOWER B';name=lang==='it'?'Ven — Hack Squat · Hip Thrust · Glutei · Polpacci':'Fri — Hack Squat · Hip Thrust · Glutes · Calves';
         }else if(day.id==='pp23u_push'){badge='PUSH';name=lang==='it'?'Quadricipiti · Petto · Spalle · Tricipiti':'Quads · Chest · Shoulders · Triceps';
         }else if(day.id==='pp23u_pull'){badge='PULL';name=lang==='it'?'Schiena · Femorali · Bicipiti · Polpacci':'Back · Hamstrings · Biceps · Calves';
+        }else if(day.id==='pol_arms_a'){badge='SESSION A';name=lang==='it'?'Bicipiti · Tricipiti — Superset A':'Biceps · Triceps — Superset A';
+        }else if(day.id==='pol_arms_b'){badge='SESSION B';name=lang==='it'?'Bicipiti · Tricipiti — Superset B':'Biceps · Triceps — Superset B';
+        }else if(day.id==='pol_arms_c'){badge='SESSION C';name=lang==='it'?'Bicipiti · Tricipiti — Superset C':'Biceps · Triceps — Superset C';
+        }else if(day.id==='layne_arm_pow'){badge='POWER';name=lang==='it'?'Braccia — Forza · 3-5 reps':'Arms — Strength · 3-5 reps';
+        }else if(day.id==='layne_arm_hyp'){badge='HYPERTROPHY';name=lang==='it'?'Braccia — Volume · Superset 8-15 reps':'Arms — Volume · Superset 8-15 reps';
+        }else if(day.id==='md_arms_a'){badge='BRACCIA A';name=lang==='it'?'Bicipiti + Tricipiti — Pesi Liberi':'Biceps + Triceps — Free Weights';
+        }else if(day.id==='md_arms_b'){badge='BRACCIA B';name=lang==='it'?'Bicipiti + Tricipiti — Cavi e Macchine':'Biceps + Triceps — Cables & Machines';
+        }else if(day.id==='md_sh_a'){badge='SPALLE A';name=lang==='it'?'Press + Laterali + Posteriori':'Press + Laterals + Rear Delt';
+        }else if(day.id==='md_sh_b'){badge='SPALLE B';name=lang==='it'?'Arnold Press + Laterali + Posteriori':'Arnold Press + Laterals + Rear Delt';
+        }else if(day.id==='dc_sh_blast'){badge='SHOULDER BLAST';name=lang==='it'?'Rest-Pause · Extreme Stretch · DC Method':'Rest-Pause · Extreme Stretch · DC Method';
+        }else if(day.id==='md_chest_a'){badge='PETTO A';name=lang==='it'?'Press Inclinata · Dip · Pump · Stretch':'Incline Press · Dip · Pump · Stretch';
+        }else if(day.id==='md_chest_b'){badge='PETTO B';name=lang==='it'?'Panca Piana · Croci · Pump · Stretch':'Flat Press · Fly · Pump · Stretch';
+        }else if(day.id==='dc_chest_blast'){badge='CHEST BLAST';name=lang==='it'?'Rest-Pause · Extreme Stretch Obbligatorio':'Rest-Pause · Mandatory Extreme Stretch';
         }else if(day.id==='ppluka_push'){badge='PUSH';name=lang==='it'?'Quadricipiti · Spalle · Tricipiti · Addominali':'Quads · Shoulders · Triceps · Abs';
         }else if(day.id==='ppluka_pull'){badge='PULL';name=lang==='it'?'Schiena · Femorali · Bicipiti · Polpacci':'Back · Hamstrings · Biceps · Calves';
         }else if(day.id==='advlpp6_la'){badge='LEGS A';name=lang==='it'?'Quadricipiti · Femorali · Polpacci · Addominali':'Quads · Hamstrings · Calves · Abs';
@@ -7171,7 +7787,7 @@ function renderEx(wId,dId,eIdx,ex){
             </div>
         </div>`;
     }).join('')+'</div>';
-    const _advancedWIds = ['dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','lpp4-u','quick-u','quick-u-basic','corto-u-adv','corto-u-bas','quick-d','quick-d-basic','corto-d-adv','corto-d-bas','ws4sb-u','madcow-u','lpp30-u','lpp6-u','ken-pp','meadows-ppl','adv-lpp6-u','pp23-luka-u','carter-bb','hst-u','gironda-4day','gironda-fb','ss-u','wendler-531','texas-method','smolov-jr','tls-d','tls-3d','tls-4d','pp-luka-d'];
+    const _advancedWIds = ['dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','lpp4-u','quick-u','quick-u-basic','corto-u-adv','corto-u-bas','quick-d','quick-d-basic','corto-d-adv','corto-d-bas','ws4sb-u','madcow-u','lpp30-u','lpp6-u','ken-pp','meadows-ppl','adv-lpp6-u','pp23-luka-u','poliquin-arms','layne-arms','meadows-arms','meadows-shoulders','dante-shoulders','meadows-chest','carter-bb','hst-u','gironda-4day','gironda-fb','ss-u','wendler-531','texas-method','smolov-jr','tls-d','tls-3d','tls-4d','pp-luka-d'];
     const _noImg = _advancedWIds.includes(wId);
     const imgKey = _noImg ? null : (EX_NAME_MAP[ex.it] || EX_NAME_MAP[ex.en] || null);
     const imgSrc = imgKey ? EX_IMAGES[imgKey] : null;
