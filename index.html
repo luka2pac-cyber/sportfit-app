@@ -383,7 +383,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     <button onclick="goBack('uomini-level')" class="back-btn">← <span data-t="back_levels">Livelli</span></button>
     <div class="view-title"><span data-t="programs_title">Programmi</span><br><span class="c-blue" data-t="level_intermediate">Intermedio</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('lpp','uomini-inter-menu')"><div class="prog-item-name">🔵 Legs Push Pull</div><div class="prog-item-sub" data-t="lpp_sub">3 giorni · 3–6x / settimana</div></button><span class="prog-arr">›</span></div>
-    <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('abc_3day_u','uomini-inter-menu')"><div class="prog-item-name">🔴 <span data-t="abc_3day_u_label">ABC 3 Giorni</span></div><div class="prog-item-sub" data-t="abc_3day_sub">3 giorni · A/B/C · 16 sett.</div></button><span class="prog-arr">›</span></div>
+    <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('abc_3day_u','uomini-inter-menu')"><div class="prog-item-name">🔴 <span data-t="abc_3day_u_label">Full Body A/B/C</span></div><div class="prog-item-sub" data-t="abc_3day_sub">3 giorni · A/B/C · 16 sett.</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('ul_2day_u','uomini-inter-menu')"><div class="prog-item-name">🟡 <span data-t="ul_2day_u_label">Upper/Lower 2 Giorni</span></div><div class="prog-item-sub" data-t="ul_2day_sub">2 giorni · Upper/Lower · 16 sett.</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('classic_4day_u','uomini-inter-menu')"><div class="prog-item-name">🟢 <span data-t="classic_4day_u_label">Classic Split 4 Giorni</span></div><div class="prog-item-sub" data-t="classic_4day_sub">4 giorni · Split · 16 sett.</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('fb-ab-u','uomini-inter-menu')"><div class="prog-item-name">🟣 <span data-t="fb_ab_u_label">Full Body A/B</span></div><div class="prog-item-sub" data-t="fb_ab_sub">2–3x / settimana · Full Body · 16 sett.</div></button><span class="prog-arr">›</span></div>
@@ -391,6 +391,13 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       <button class="prog-item-btn" onclick="showView('lyle-info-view')">
         <div class="prog-item-name">📊 <span data-t="lyle_btn">Lyle McDonald GBR</span></div>
         <div class="prog-item-sub"><span data-t="lyle_sub">Generic Bulking Routine — Upper/Lower 4 giorni</span></div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+    <div class="prog-item" style="border:1.5px solid rgba(48,209,88,.3);background:rgba(48,209,88,.05)">
+      <button class="prog-item-btn" onclick="openWorkout('lpp6-u','uomini-inter-menu')">
+        <div class="prog-item-name">🟢 LPP 6 Sessioni <span style="font-size:.7rem;opacity:.6">by Luka</span></div>
+        <div class="prog-item-sub">4-5× / sett. · Gambe · Spinte · Rematori · A+B</div>
       </button>
       <span class="prog-arr">›</span>
     </div>
@@ -466,6 +473,100 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       </button>
       <span class="prog-arr">›</span>
     </div>
+    <div class="prog-item" style="border:1.5px solid rgba(52,199,89,.35);background:rgba(52,199,89,.07)">
+      <button class="prog-item-btn" onclick="showView('adv-lpp6-info-view')">
+        <div class="prog-item-name">🦵 Advanced LPP 6-Day <span style="font-size:.7rem;opacity:.6">by Luka</span></div>
+        <div class="prog-item-sub"><span data-t="advlpp6_sub">Legs A · Push A · Pull A · Legs B · Push B · Pull B · 4-6× / sett.</span></div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+    <div class="prog-item" style="border:1.5px solid rgba(100,210,255,.35);background:rgba(100,210,255,.06)">
+      <button class="prog-item-btn" onclick="showView('pp23-luka-u-info-view')">
+        <div class="prog-item-name">🔀 Push/Pull 2-3 Day <span style="font-size:.7rem;opacity:.6">by Luka</span></div>
+        <div class="prog-item-sub"><span data-t="pp23u_sub">Push · Pull · 2-3× / sett. · Doppia progressione</span></div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+  </div>
+
+  <!-- PUSH/PULL 2-3 DAY BY LUKA (UOMO) INFO VIEW -->
+  <div id="pp23-luka-u-info-view" class="view">
+    <button onclick="goBack('bb-methods-view')" class="back-btn">← BB Methods &amp; Splits</button>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#003a5a,rgba(100,210,255,.9))" onclick="openWorkout('pp23-luka-u','pp23-luka-u-info-view')">
+      🔀 <span data-t="pp23u_start_btn">Inizia Push/Pull 2-3 Day</span>
+    </button>
+    <div style="text-align:center;margin-bottom:14px">
+      <img src="https://sport-fit.org/wp-content/uploads/2026/03/logo_home.jpg" alt="Sport&amp;Fit GYM"
+           style="max-height:80px;border-radius:12px;display:inline-block"/>
+      <div style="margin-top:6px;font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:2px">Push / Pull 2-3 Day</div>
+      <div style="font-size:.7rem;color:rgba(255,255,255,.4);margin-top:2px">Created by Luka</div>
+    </div>
+    <div class="view-title" style="font-size:1.6rem">🔀 Push/Pull 2-3 Day</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px" data-t="pp23u_meta">2-3 giorni / settimana · Push + Pull · Doppia progressione · Deload ogni 10-12 sett.</div>
+    <div class="disclaimer" style="background:rgba(255,149,0,.08);border-left:3px solid rgba(255,149,0,.8)"><div class="disclaimer-icon">⚠️</div><div class="disclaimer-text"><b data-t="pp23u_level">Avanzato</b> — <span data-t="pp23u_ideal">Ideale per chi ha esperienza e vuole un programma flessibile da 2 a 3 sessioni a settimana. Ogni sessione colpisce tutto il corpo — gambe incluse in entrambe le giornate. Alta efficienza per chi ha poco tempo.</span></div></div>
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title red">📌 <span data-t="pp23u_phi_title">Filosofia</span></div>
+      <div class="ai-bullet"><span data-t="pp23u_phi1">2 sessioni alternanti: PUSH (gambe + petto + spalle + tricipiti) e PULL (schiena + femorali + bicipiti)</span></div>
+      <div class="ai-bullet"><span data-t="pp23u_phi2">Ogni sessione coinvolge le gambe — Squat/Leg Press nel PUSH, RDL/Leg Curl nel PULL</span></div>
+      <div class="ai-bullet"><span data-t="pp23u_phi3">Flessibilità totale: 2× o 3× a settimana — il corpo si adatta alla frequenza disponibile</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title gold">📅 <span data-t="pp23u_sch_title">Schema sessioni</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:80px">🟢 PUSH</span><span class="ai-stat-val" data-t="pp23u_sch1">Squat · Press Inclinata · Affondi · Dip · Leg Ext · Laterali · French Press/Pushdown · Abs</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:80px">🔵 PULL</span><span class="ai-stat-val" data-t="pp23u_sch2">Lat Machine · RDL/Stacco · Rematore · Leg Curl · Face Pull · Biceps Curl · Polpacci</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title blue">⚡ <span data-t="pp23u_prog_title">Progressione &amp; Deload</span></div>
+      <div class="ai-bullet"><b data-t="pp23u_p1_lbl">Doppia progressione:</b> <span data-t="pp23u_p1">es. 8-6 → porta prima tutte le serie a 8 reps con lo stesso peso, poi aggiungi 2.5kg e riparti da 6</span></div>
+      <div class="ai-bullet"><b data-t="pp23u_p2_lbl">Deload:</b> <span data-t="pp23u_p2">ogni 10-12 settimane — 1 settimana con pesi al 60-65%, stesse serie e reps. Recupero attivo</span></div>
+      <div class="ai-bullet"><b data-t="pp23u_p3_lbl">Riposo:</b> <span data-t="pp23u_p3">2-3 min sui composti (Squat, RDL, Press Inclinata), 1-2 min sugli isolamenti</span></div>
+      <div class="ai-bullet"><b data-t="pp23u_p4_lbl">Cedimento:</b> <span data-t="pp23u_p4">fermati sempre a 1-2 reps dal cedimento — tecnica prima di tutto</span></div>
+    </div>
+    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#003a5a,rgba(100,210,255,.9))" onclick="openWorkout('pp23-luka-u','pp23-luka-u-info-view')">
+      🔀 <span data-t="pp23u_start_btn">Inizia Push/Pull 2-3 Day</span>
+    </button>
+  </div>
+
+  <!-- ADVANCED LPP 6-DAY BY LUKA INFO VIEW -->
+  <div id="adv-lpp6-info-view" class="view">
+    <button onclick="goBack('bb-methods-view')" class="back-btn">← BB Methods &amp; Splits</button>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#003a1a,rgba(52,199,89,.9))" onclick="openWorkout('adv-lpp6-u','adv-lpp6-info-view')">
+      🦵 <span data-t="advlpp6_start_btn">Inizia Advanced LPP 6-Day</span>
+    </button>
+    <div style="text-align:center;margin-bottom:14px">
+      <img src="https://sport-fit.org/wp-content/uploads/2026/03/logo_home.jpg" alt="Sport&amp;Fit GYM"
+           style="max-height:80px;border-radius:12px;display:inline-block"/>
+      <div style="margin-top:6px;font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:2px">Advanced LPP 6-Day</div>
+      <div style="font-size:.7rem;color:rgba(255,255,255,.4);margin-top:2px">Created by Luka</div>
+    </div>
+    <div class="view-title" style="font-size:1.6rem">🦵 Advanced LPP 6-Day</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px" data-t="advlpp6_meta">4-6 giorni / settimana · Legs · Push · Pull · Doppia progressione · Deload ogni 10-12 sett.</div>
+    <div class="disclaimer" style="background:rgba(255,149,0,.08);border-left:3px solid rgba(255,149,0,.8)"><div class="disclaimer-icon">⚠️</div><div class="disclaimer-text"><b data-t="advlpp6_level">Avanzato</b> — <span data-t="advlpp6_ideal">Per atleti con almeno 2-3 anni di esperienza. Alto volume, alta frequenza — ogni gruppo muscolare colpito 2× ogni 5-6 giorni. Richiede recupero ottimale: sonno, alimentazione e gestione dello stress.</span></div></div>
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title red">📌 <span data-t="advlpp6_phi_title">Filosofia</span></div>
+      <div class="ai-bullet"><span data-t="advlpp6_phi1">6 sessioni in rotazione continua: Legs A → Push A → Pull A → Legs B → Push B → Pull B → ripeti</span></div>
+      <div class="ai-bullet"><span data-t="advlpp6_phi2">Versione A = esercizi base pesanti (8-6 reps) — Versione B = varianti e angolazioni diverse</span></div>
+      <div class="ai-bullet"><span data-t="advlpp6_phi3">Flessibilità: 4, 5 o 6 sessioni a settimana — salta una sessione se hai bisogno di riposo</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title gold">📅 <span data-t="advlpp6_sch_title">Rotazione</span></div>
+      <div class="ai-stat-row" style="padding:4px 0"><span class="ai-stat-label" style="min-width:80px">🟢 Sess. 1</span><span class="ai-stat-val" data-t="advlpp6_d1">Legs A — Leg Press · Affondi · Leg Curl · Adduttori · Polpacci · Abs</span></div>
+      <div class="ai-stat-row" style="padding:4px 0"><span class="ai-stat-label" style="min-width:80px">🔴 Sess. 2</span><span class="ai-stat-val" data-t="advlpp6_d2">Push A — Press Inclinata · Panca Piatta · Pec Deck · Laterali · Tricipiti</span></div>
+      <div class="ai-stat-row" style="padding:4px 0"><span class="ai-stat-label" style="min-width:80px">🔵 Sess. 3</span><span class="ai-stat-val" data-t="advlpp6_d3">Pull A — High Row · Rematore · Upper Back · Face Pull · Curl Inclinato · Scott</span></div>
+      <div class="ai-stat-row" style="padding:4px 0"><span class="ai-stat-label" style="min-width:80px">🟡 Sess. 4</span><span class="ai-stat-val" data-t="advlpp6_d4">Legs B — Hack Squat · Leg Curl · RDL · Leg Extension · Polpacci · Abs</span></div>
+      <div class="ai-stat-row" style="padding:4px 0"><span class="ai-stat-label" style="min-width:80px">🟠 Sess. 5</span><span class="ai-stat-val" data-t="advlpp6_d5">Push B — Shoulder Press · Dip · Pec Deck · Laterali · French Press · Kickback</span></div>
+      <div class="ai-stat-row" style="padding:4px 0"><span class="ai-stat-label" style="min-width:80px">⚪ Sess. 6</span><span class="ai-stat-val" data-t="advlpp6_d6">Pull B — Lat Pulldown · Pulley · T-Bar Row · Rear Delt · Biceps Curl · Hammer</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title blue">⚡ <span data-t="advlpp6_prog_title">Progressione &amp; Deload</span></div>
+      <div class="ai-bullet"><b data-t="advlpp6_p1_lbl">Doppia progressione:</b> <span data-t="advlpp6_p1">es. 8-6 → porta prima tutte le serie a 8 reps con lo stesso peso, poi aggiungi 2.5kg e riparti da 6</span></div>
+      <div class="ai-bullet"><b data-t="advlpp6_p2_lbl">Deload:</b> <span data-t="advlpp6_p2">ogni 10-12 settimane — 1 settimana con pesi al 60-65%, stesse serie e reps. Recupero attivo, non riposo totale</span></div>
+      <div class="ai-bullet"><b data-t="advlpp6_p3_lbl">Riposo:</b> <span data-t="advlpp6_p3">2-3 min sui composti (Leg Press, Hack Squat, RDL), 1-2 min sugli isolamenti</span></div>
+      <div class="ai-bullet"><b data-t="advlpp6_p4_lbl">Cedimento:</b> <span data-t="advlpp6_p4">fermati sempre a 1-2 reps dal cedimento — eccetto ultimi isolamenti dove puoi arrivare al limite</span></div>
+    </div>
+    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#003a1a,rgba(52,199,89,.9))" onclick="openWorkout('adv-lpp6-u','adv-lpp6-info-view')">
+      🦵 <span data-t="advlpp6_start_btn">Inizia Advanced LPP 6-Day</span>
+    </button>
   </div>
 
   <!-- HST INFO VIEW -->
@@ -1076,7 +1177,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     <div class="ai-block">
       <div class="ai-block-title blue">&#128202; <span data-t="phat_prog_title">Progressione</span></div>
       <div class="ai-bullet"><span data-t="phat_prog1">Power days: aumenta peso ogni settimana (Linear Progression)</span></div>
-      <div class="ai-bullet"><span data-t="phat_prog2">Hypertrophy days: stesso peso del Power day moltiplicato x 60-70%</span></div>
+      <div class="ai-bullet"><span data-t="phat_prog2">Hypertrophy days: peso del Power day diminuito del 70% (usa il 60-70% del peso usato nel Power day)</span></div>
       <div class="ai-bullet"><span data-t="phat_prog3">Se completi tutte le reps con buona forma, aumenta il peso la settimana dopo</span></div>
     </div>
     <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#0047b3,var(--blue))" onclick="openWorkout('phat','phat-info-view')">
@@ -1479,9 +1580,27 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
               style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px;color:#fff;font-size:1rem;font-family:inherit"/>
           </div>
           <div>
-            <div style="font-size:.65rem;color:rgba(255,255,255,.45);margin-bottom:3px" id="wc-op-lbl">Press 1RM (kg)</div>
+            <div style="font-size:.65rem;color:rgba(255,255,255,.45);margin-bottom:3px" id="wc-op-lbl">Military Press 1RM (kg)</div>
             <input id="wc-op" type="number" min="0" step="2.5" placeholder="es. 50" oninput="calcWendler()"
               style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px;color:#fff;font-size:1rem;font-family:inherit"/>
+          </div>
+        </div>
+        <!-- WEEK SELECTOR -->
+        <div style="margin-top:12px">
+          <div style="font-size:.65rem;color:rgba(255,255,255,.45);margin-bottom:6px" id="wc-week-lbl">Settimana del ciclo</div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
+            <button onclick="setWendlerWeek(1)" id="ww-btn-1" style="padding:8px 4px;border-radius:10px;border:1px solid rgba(10,132,255,.6);background:rgba(10,132,255,.3);color:#fff;font-size:.75rem;font-weight:700;font-family:inherit;cursor:pointer">
+              Sett.1<br><span style="font-size:.6rem;opacity:.7">3×5</span>
+            </button>
+            <button onclick="setWendlerWeek(2)" id="ww-btn-2" style="padding:8px 4px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;font-size:.75rem;font-weight:700;font-family:inherit;cursor:pointer">
+              Sett.2<br><span style="font-size:.6rem;opacity:.7">3×3</span>
+            </button>
+            <button onclick="setWendlerWeek(3)" id="ww-btn-3" style="padding:8px 4px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;font-size:.75rem;font-weight:700;font-family:inherit;cursor:pointer">
+              Sett.3<br><span style="font-size:.6rem;opacity:.7">5/3/1</span>
+            </button>
+            <button onclick="setWendlerWeek(4)" id="ww-btn-4" style="padding:8px 4px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;font-size:.75rem;font-weight:700;font-family:inherit;cursor:pointer">
+              Sett.4<br><span style="font-size:.6rem;opacity:.7">Deload</span>
+            </button>
           </div>
         </div>
       </div>
@@ -1540,8 +1659,6 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     <div class="disclaimer"><div class="disclaimer-icon">⚠️</div><div class="disclaimer-text"><b data-t="disc_w_t">Avviso</b> — <span data-t="disc_w">Programmi a scopo informativo.</span></div></div>
     <div id="workout-body"></div>
   </div>
-
-  <!-- LYLE McDONALD GBR VIEW -->
   <div id="lyle-info-view" class="view">
     <div class="view-hdr">
       <button onclick="goBack('uomini-inter-menu')" class="back-btn">← <span data-t="advanced_title">Avanzato</span></button>
@@ -1608,6 +1725,13 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     <div class="view-title"><span data-t="history_title1">La tua</span><br><span class="c-blue" data-t="history_title2">Storia</span></div>
     <div class="storia-tabs" id="storiaTabs"></div>
     <div id="storiaBody"></div>
+    <div class="ai-block" style="margin-top:20px;border:1px solid rgba(255,59,48,.35);background:rgba(255,59,48,.06)">
+      <div class="ai-block-title red">⚙️ <span data-t="data_mgmt_title">Gestione Dati</span></div>
+      <div style="font-size:.75rem;color:rgba(255,255,255,.5);margin-bottom:12px" data-t="data_mgmt_sub">Cancella i record personali salvati in questa sessione</div>
+      <button onclick="resetAllPR()" style="width:100%;background:rgba(255,59,48,.15);border:1px solid rgba(255,59,48,.5);border-radius:12px;padding:12px;color:var(--red);font-family:inherit;font-size:.85rem;font-weight:700;cursor:pointer">
+        🗑️ <span data-t="reset_all_pr">Cancella tutti i PR</span>
+      </button>
+    </div>
   </div>
 
   <!-- NUTRIZIONE VIEW -->
@@ -2067,6 +2191,50 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       </button>
       <span class="prog-arr">›</span>
     </div>
+    <div class="prog-item" style="border:1.5px solid rgba(52,199,89,.35);background:rgba(52,199,89,.07)">
+      <button class="prog-item-btn" onclick="showView('pp-luka-d-info-view')">
+        <div class="prog-item-name">🔀 Push/Pull 2-3x <span style="font-size:.7rem;opacity:.6">by Luka</span></div>
+        <div class="prog-item-sub"><span data-t="ppluka_d_sub">Push · Pull · 2-3× / sett. · Corpo Completo</span></div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+  </div>
+
+  <!-- PUSH/PULL BY LUKA (DONNA) INFO VIEW -->
+  <div id="pp-luka-d-info-view" class="view">
+    <button onclick="goBack('donne-avanzato-menu')" class="back-btn">← <span data-t="level_advanced">Avanzato</span></button>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#003a1a,rgba(52,199,89,.9))" onclick="openWorkout('pp-luka-d','pp-luka-d-info-view')">
+      🔀 <span data-t="ppluka_d_start_btn">Inizia Push/Pull by Luka</span>
+    </button>
+    <div style="text-align:center;margin-bottom:14px">
+      <img src="https://sport-fit.org/wp-content/uploads/2026/03/logo_home.jpg" alt="Sport&amp;Fit GYM"
+           style="max-height:80px;border-radius:12px;display:inline-block"/>
+      <div style="margin-top:6px;font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:2px">Push / Pull</div>
+      <div style="font-size:.7rem;color:rgba(255,255,255,.4);margin-top:2px">Created by Luka</div>
+    </div>
+    <div class="view-title" style="font-size:1.6rem">🔀 Push/Pull 2-3x</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px" data-t="ppluka_d_meta">2-3 giorni / settimana · Push + Pull · Corpo Completo · Doppia progressione</div>
+    <div class="disclaimer" style="background:rgba(255,149,0,.08);border-left:3px solid rgba(255,149,0,.8)"><div class="disclaimer-icon">⚠️</div><div class="disclaimer-text"><b data-t="ppluka_d_level">Avanzato</b> — <span data-t="ppluka_d_ideal">Ideale per chi ha già esperienza in palestra e vuole un programma flessibile che si adatta ai giorni disponibili. Doppia progressione su tutti gli esercizi.</span></div></div>
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title red">📌 <span data-t="ppluka_d_phi_title">Filosofia</span></div>
+      <div class="ai-bullet"><span data-t="ppluka_d_phi1">2 sessioni alternanti: PUSH (gambe + spinte + tricipiti) e PULL (schiena + femorali + bicipiti)</span></div>
+      <div class="ai-bullet"><span data-t="ppluka_d_phi2">Flessibilità: puoi fare 2× o 3× a settimana secondo disponibilità — il corpo si adatta</span></div>
+      <div class="ai-bullet"><span data-t="ppluka_d_phi3">Doppia progressione: es. 8-6 = prima porta tutte le serie a 8 reps, poi aggiungi peso e riparti da 6</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title gold">📅 <span data-t="ppluka_d_sch_title">Schema</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:80px">🟢 PUSH</span><span class="ai-stat-val" data-t="ppluka_d_sch1">Squat · Spalle · Affondi · Dip · Leg Ext · Laterali · Tricipiti · Addominali</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:80px">🔵 PULL</span><span class="ai-stat-val" data-t="ppluka_d_sch2">Lat Machine · Hip Thrust · Rematore · RDL · Leg Curl · Face Pull · Bicipiti · Polpacci</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title blue">⚡ <span data-t="ppluka_d_prog_title">Progressione</span></div>
+      <div class="ai-bullet"><b data-t="ppluka_d_p1_lbl">Doppia progressione:</b> <span data-t="ppluka_d_p1">Range es. 8-6 → prima porta tutte le serie a 8 reps con lo stesso peso, poi aggiungi 2.5kg e riparti da 6</span></div>
+      <div class="ai-bullet"><b data-t="ppluka_d_p2_lbl">Riposo:</b> <span data-t="ppluka_d_p2">2-3 min sui composti (Squat, Hip Thrust, RDL), 1-2 min sugli isolamenti</span></div>
+      <div class="ai-bullet"><b data-t="ppluka_d_p3_lbl">Tecnica:</b> <span data-t="ppluka_d_p3">Fermati sempre a 1-2 reps dal cedimento — no cedimento muscolare completo</span></div>
+    </div>
+    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#003a1a,rgba(52,199,89,.9))" onclick="openWorkout('pp-luka-d','pp-luka-d-info-view')">
+      🔀 <span data-t="ppluka_d_start_btn">Inizia Push/Pull by Luka</span>
+    </button>
   </div>
 
   <!-- TLS INFO VIEW -->
@@ -2833,7 +3001,7 @@ const T = {
     back_home:'Home', back_levels:'Livelli', back_btn:'Indietro',
     advanced_soon:'Programma avanzato<br>in arrivo...',
     favorites_title1:'I miei', favorites_title2:'Preferiti',
-    history_title1:'La tua', history_title2:'Storia',
+    history_title1:'La tua', history_title2:'Storia', data_mgmt_title:'Gestione Dati', data_mgmt_sub:'Cancella i record personali salvati', reset_all_pr:'Cancella tutti i PR',
     nutri_title1:'Nutrizione', nutri_title2:'& Macros',
     nutri_data_hdr:'I tuoi dati', nutri_weight:'Peso corporeo',
     nutri_height:'Altezza', nutri_age:'Età', nutri_years:'anni',
@@ -3002,7 +3170,7 @@ const T = {
     abc_u_pills:[['3×','/ sett.'],['~70-90 min','/ sessione'],['12-16 sett.','']],
     ul_u_base_pills:[['2-4×','/ sett.'],['~70-90 min','/ sessione'],['12-16 sett.','']],
     classic_4u_pills:[['4×','/ sett.'],['~70-90 min','/ sessione'],['12-16 sett.','']],
-    abc_3day_u_label:'ABC 3 Giorni',
+    abc_3day_u_label:'Full Body A/B/C',
     ul_2day_u_label:'Superiore/Inferiore 3-4 Giorni',
     classic_4day_u_label:'Classic Split 4 Giorni',
     fb_ab_u_label:'Corpo Completo A/B', fb_ab_u_pills:[['2-3×','/ sett.'],['~55 min','/ sessione'],['12-16 sett.','']],
@@ -3205,7 +3373,7 @@ const T = {
     phat_rest2_day:'Domenica',
     phat_prog_title:'Progressione',
     phat_prog1:'Power days: aumenta peso ogni settimana (Linear Progression)',
-    phat_prog2:'Hypertrophy days: stesso peso del Power day moltiplicato x 60-70%',
+    phat_prog2:'Hypertrophy days: peso del Power day diminuito del 70% (usa il 60-70% del peso usato nel Power day)',
     phat_prog3:'Se completi tutte le reps con buona forma, aumenta il peso la settimana dopo',
     phat_label:'PHAT - Layne Norton',
     phat_pills:[['5 giorni','/ sett.'],['12-16','sett.'],['Power+Hyper','']],
@@ -3318,6 +3486,28 @@ const T = {
     tls_d_label:'Thinner Leaner Stronger — 5 giorni',
     tls_d_pills:[['5×','/ sett.'],['8-10','reps'],['Lun·Mar·Mer','Ven·Sab']],
     level_tls_d:'INTERMEDIO / AVANZATO',
+    pp_luka_d_label:'Push/Pull 2-3x by Luka',
+    pp_luka_d_pills:[['2-3×','/ sett.'],['Push·Pull',''],['Doppia','Progr.']],
+    level_pp_luka_d:'AVANZATO',
+    ppluka_d_sub:'Push · Pull · 2-3× / sett. · Corpo Completo',
+    ppluka_d_start_btn:'Inizia Push/Pull by Luka',
+    ppluka_d_meta:'2-3 giorni / settimana · Push + Pull · Corpo Completo · Doppia progressione',
+    ppluka_d_level:'Avanzato',
+    ppluka_d_ideal:'Ideale per chi ha già esperienza in palestra e vuole un programma flessibile che si adatta ai giorni disponibili. Doppia progressione su tutti gli esercizi.',
+    ppluka_d_phi_title:'Filosofia',
+    ppluka_d_phi1:'2 sessioni alternanti: PUSH (gambe + spinte + tricipiti) e PULL (schiena + femorali + bicipiti)',
+    ppluka_d_phi2:'Flessibilità: puoi fare 2× o 3× a settimana secondo disponibilità — il corpo si adatta',
+    ppluka_d_phi3:'Doppia progressione: es. 8-6 = prima porta tutte le serie a 8 reps, poi aggiungi peso e riparti da 6',
+    ppluka_d_sch_title:'Schema',
+    ppluka_d_sch1:'Squat · Spalle · Affondi · Dip · Leg Ext · Laterali · Tricipiti · Addominali',
+    ppluka_d_sch2:'Lat Machine · Hip Thrust · Rematore · RDL · Leg Curl · Face Pull · Bicipiti · Polpacci',
+    ppluka_d_prog_title:'Progressione',
+    ppluka_d_p1_lbl:'Doppia progressione:',
+    ppluka_d_p1:'Range es. 8-6 → prima porta tutte le serie a 8 reps con lo stesso peso, poi aggiungi 2.5kg e riparti da 6',
+    ppluka_d_p2_lbl:'Riposo:',
+    ppluka_d_p2:'2-3 min sui composti (Squat, Hip Thrust, RDL), 1-2 min sugli isolamenti',
+    ppluka_d_p3_lbl:'Tecnica:',
+    ppluka_d_p3:'Fermati sempre a 1-2 reps dal cedimento — no cedimento muscolare completo',
     tls_3d_label:'Thinner Leaner Stronger — 3 giorni',
     tls_3d_pills:[['3×','/ sett.'],['Full Body',''],['8-10','reps']],
     level_tls_3d:'INTERMEDIO / AVANZATO',
@@ -3402,11 +3592,66 @@ const T = {
     ws4sb_u_pills:[['3×','/ sett.'],['60-75 min','/ sessione'],['Template','flessibile']],
     level_ws4sb_u:'AVANZATO',
     lpp30_u_label:'30 min Legs Push Pull',
+    lpp6_u_label:'LPP 6 Sessioni by Luka',
+    lpp6_u_pills:[['4-5×','/ sett.'],['3 serie','/ esercizio'],['Gambe·Spinte','Rematori']],
+    level_lpp6_u:'INTERMEDIO',
     lpp30_u_pills:[['3 giorni','rotazione'],['30-40 min','/ sessione'],['RP','metodo']],
     level_lpp30_u:'AVANZATO',
     meadows_ppl_label:'Mountain Dog PPL — John Meadows',
     meadows_ppl_pills:[['3-6×','/ sett.'],['60-75 min','/ sessione'],['4 Fasi','metodo']],
     level_meadows_ppl:'AVANZATO',
+    pp23_luka_u_label:'Push/Pull 2-3 Day by Luka',
+    pp23_luka_u_pills:[['2-3×','/ sett.'],['Push·Pull',''],['Doppia','Progr.']],
+    level_pp23_luka_u:'AVANZATO',
+    pp23u_sub:'Push · Pull · 2-3× / sett. · Doppia progressione',
+    pp23u_start_btn:'Inizia Push/Pull 2-3 Day',
+    pp23u_meta:'2-3 giorni / settimana · Push + Pull · Doppia progressione · Deload ogni 10-12 sett.',
+    pp23u_level:'Avanzato',
+    pp23u_ideal:'Ideale per chi ha esperienza e vuole un programma flessibile da 2 a 3 sessioni a settimana. Ogni sessione colpisce tutto il corpo — gambe incluse in entrambe le giornate. Alta efficienza per chi ha poco tempo.',
+    pp23u_phi_title:'Filosofia',
+    pp23u_phi1:'2 sessioni alternanti: PUSH (gambe + petto + spalle + tricipiti) e PULL (schiena + femorali + bicipiti)',
+    pp23u_phi2:'Ogni sessione coinvolge le gambe — Squat/Leg Press nel PUSH, RDL/Leg Curl nel PULL',
+    pp23u_phi3:'Flessibilità totale: 2× o 3× a settimana — il corpo si adatta alla frequenza disponibile',
+    pp23u_sch_title:'Schema sessioni',
+    pp23u_sch1:'Squat · Press Inclinata · Affondi · Dip · Leg Ext · Laterali · French Press/Pushdown · Abs',
+    pp23u_sch2:'Lat Machine · RDL/Stacco · Rematore · Leg Curl · Face Pull · Biceps Curl · Polpacci',
+    pp23u_prog_title:'Progressione & Deload',
+    pp23u_p1_lbl:'Doppia progressione:',
+    pp23u_p1:'es. 8-6 → porta prima tutte le serie a 8 reps con lo stesso peso, poi aggiungi 2.5kg e riparti da 6',
+    pp23u_p2_lbl:'Deload:',
+    pp23u_p2:'ogni 10-12 settimane — 1 settimana con pesi al 60-65%, stesse serie e reps. Recupero attivo',
+    pp23u_p3_lbl:'Riposo:',
+    pp23u_p3:'2-3 min sui composti (Squat, RDL, Press Inclinata), 1-2 min sugli isolamenti',
+    pp23u_p4_lbl:'Cedimento:',
+    pp23u_p4:'fermati sempre a 1-2 reps dal cedimento — tecnica prima di tutto',
+    adv_lpp6_u_label:'Advanced LPP 6-Day by Luka',
+    adv_lpp6_u_pills:[['4-6×','/ sett.'],['Legs·Push','Pull'],['Doppia','Progr.']],
+    level_adv_lpp6_u:'AVANZATO',
+    advlpp6_sub:'Legs A · Push A · Pull A · Legs B · Push B · Pull B · 4-6× / sett.',
+    advlpp6_start_btn:'Inizia Advanced LPP 6-Day',
+    advlpp6_meta:'4-6 giorni / settimana · Legs · Push · Pull · Doppia progressione · Deload ogni 10-12 sett.',
+    advlpp6_level:'Avanzato',
+    advlpp6_ideal:'Per atleti con almeno 2-3 anni di esperienza. Alto volume, alta frequenza — ogni gruppo muscolare colpito 2× ogni 5-6 giorni. Richiede recupero ottimale: sonno, alimentazione e gestione dello stress.',
+    advlpp6_phi_title:'Filosofia',
+    advlpp6_phi1:'6 sessioni in rotazione continua: Legs A → Push A → Pull A → Legs B → Push B → Pull B → ripeti',
+    advlpp6_phi2:'Versione A = esercizi base pesanti (8-6 reps) — Versione B = varianti e angolazioni diverse',
+    advlpp6_phi3:'Flessibilità: 4, 5 o 6 sessioni a settimana — salta una sessione se hai bisogno di riposo',
+    advlpp6_sch_title:'Rotazione',
+    advlpp6_d1:'Legs A — Leg Press · Affondi · Leg Curl · Adduttori · Polpacci · Abs',
+    advlpp6_d2:'Push A — Press Inclinata · Panca Piatta · Pec Deck · Laterali · Tricipiti',
+    advlpp6_d3:'Pull A — High Row · Rematore · Upper Back · Face Pull · Curl Inclinato · Scott',
+    advlpp6_d4:'Legs B — Hack Squat · Leg Curl · RDL · Leg Extension · Polpacci · Abs',
+    advlpp6_d5:'Push B — Shoulder Press · Dip · Pec Deck · Laterali · French Press · Kickback',
+    advlpp6_d6:'Pull B — Lat Pulldown · Pulley · T-Bar Row · Rear Delt · Biceps Curl · Hammer',
+    advlpp6_prog_title:'Progressione & Deload',
+    advlpp6_p1_lbl:'Doppia progressione:',
+    advlpp6_p1:'es. 8-6 → porta prima tutte le serie a 8 reps con lo stesso peso, poi aggiungi 2.5kg e riparti da 6',
+    advlpp6_p2_lbl:'Deload:',
+    advlpp6_p2:'ogni 10-12 settimane — 1 settimana con pesi al 60-65%, stesse serie e reps. Recupero attivo, non riposo totale',
+    advlpp6_p3_lbl:'Riposo:',
+    advlpp6_p3:'2-3 min sui composti (Leg Press, Hack Squat, RDL), 1-2 min sugli isolamenti',
+    advlpp6_p4_lbl:'Cedimento:',
+    advlpp6_p4:'fermati sempre a 1-2 reps dal cedimento — eccetto ultimi isolamenti dove puoi arrivare al limite',
     carter_bb_label:'Base Building — Paul Carter',
     carter_bb_pills:[['3×','/ sett.'],['60-75 min','/ sessione'],['Progressione','cicli']],
     level_carter_bb:'INTERMEDIO / AVANZATO',
@@ -3766,7 +4011,7 @@ const T = {
     abc_u_pills:[['3x','/ week'],['~70-90 min','/ session'],['12-16 wks','']],
     ul_u_base_pills:[['2-4x','/ week'],['~70-90 min','/ session'],['12-16 wks','']],
     classic_4u_pills:[['4x','/ week'],['~70-90 min','/ session'],['12-16 wks','']],
-    abc_3day_u_label:'ABC 3 Giorni',
+    abc_3day_u_label:'Full Body A/B/C',
     ul_2day_u_label:'Superiore/Inferiore 3-4 Giorni',
     classic_4day_u_label:'Classic Split 4 Giorni',
     fb_ab_u_label:'Corpo Completo A/B', fb_ab_u_pills:[['2-3×','/ week'],['~55 min','/ session'],['12-16 wks','']],
@@ -4086,7 +4331,7 @@ en:{
     back_home:'Home', back_levels:'Levels', back_btn:'Back',
     advanced_soon:'Advanced program<br>coming soon...',
     favorites_title1:'My', favorites_title2:'Favorites',
-    history_title1:'Your', history_title2:'History',
+    history_title1:'Your', history_title2:'History', data_mgmt_title:'Data Management', data_mgmt_sub:'Delete personal records saved in this session', reset_all_pr:'Delete all PRs',
     nutri_title1:'Nutrition', nutri_title2:'& Macros',
     nutri_data_hdr:'Your data', nutri_weight:'Body weight',
     nutri_height:'Height', nutri_age:'Age', nutri_years:'years',
@@ -4235,7 +4480,7 @@ en:{
     abc_u_pills:[['3x','/ week'],['~70-90 min','/ session'],['12-16 wks','']],
     ul_u_base_pills:[['2-4x','/ week'],['~70-90 min','/ session'],['12-16 wks','']],
     classic_4u_pills:[['4x','/ week'],['~70-90 min','/ session'],['12-16 wks','']],
-    abc_3day_u_label:'ABC 3-Day',
+    abc_3day_u_label:'Full Body A/B/C',
     ul_2day_u_label:'Upper/Lower 3-4 Day',
     classic_4day_u_label:'Classic Split 4-Day',
     fb_ab_u_label:'Full Body A/B', fb_ab_u_pills:[['2-3×','/ week'],['~55 min','/ session'],['12-16 wks','']],
@@ -4550,6 +4795,28 @@ en:{
     ashley_pills:[['4 days','/ week'],['Upper/Lower',''],['12','weeks']],
     tls_d_label:'Thinner Leaner Stronger — 5 days',
     tls_d_pills:[['5×','/ week'],['8-10','reps'],['Mon·Tue·Wed','Fri·Sat']],
+    pp_luka_d_label:'Push/Pull 2-3x by Luka',
+    pp_luka_d_pills:[['2-3×','/ week'],['Push·Pull',''],['Double','Progr.']],
+    level_pp_luka_d:'ADVANCED',
+    ppluka_d_sub:'Push · Pull · 2-3× / week · Full Body',
+    ppluka_d_start_btn:'Start Push/Pull by Luka',
+    ppluka_d_meta:'2-3 days / week · Push + Pull · Full Body · Double progression',
+    ppluka_d_level:'Advanced',
+    ppluka_d_ideal:'Ideal for those with gym experience who want a flexible program that adapts to available days. Double progression on all exercises.',
+    ppluka_d_phi_title:'Philosophy',
+    ppluka_d_phi1:'2 alternating sessions: PUSH (legs + pressing + triceps) and PULL (back + hamstrings + biceps)',
+    ppluka_d_phi2:'Flexibility: train 2× or 3× per week based on availability — the body adapts',
+    ppluka_d_phi3:'Double progression: e.g. 8-6 = first reach 8 reps on all sets, then add weight and restart at 6',
+    ppluka_d_sch_title:'Schedule',
+    ppluka_d_sch1:'Squat · Shoulder Press · Lunges · Dip · Leg Ext · Laterals · Triceps · Abs',
+    ppluka_d_sch2:'Lat Pulldown · Hip Thrust · Row · RDL · Leg Curl · Face Pull · Biceps · Calves',
+    ppluka_d_prog_title:'Progression',
+    ppluka_d_p1_lbl:'Double progression:',
+    ppluka_d_p1:'Range e.g. 8-6 → first reach 8 reps on all sets with same weight, then add 2.5kg and restart at 6',
+    ppluka_d_p2_lbl:'Rest:',
+    ppluka_d_p2:'2-3 min on compounds (Squat, Hip Thrust, RDL), 1-2 min on isolation exercises',
+    ppluka_d_p3_lbl:'Technique:',
+    ppluka_d_p3:'Always stop 1-2 reps before failure — never train to absolute muscular failure',
     level_tls_d:'INTERMEDIATE / ADVANCED',
     tls_3d_label:'Thinner Leaner Stronger — 3 days',
     tls_3d_pills:[['3×','/ week'],['Full Body',''],['8-10','reps']],
@@ -4630,11 +4897,66 @@ en:{
     ws4sb_u_pills:[['3×','/ week'],['60-75 min','/ session'],['Flexible','template']],
     level_ws4sb_u:'ADVANCED',
     lpp30_u_label:'30 min Legs Push Pull',
+    lpp6_u_label:'LPP 6 Sessions by Luka',
+    lpp6_u_pills:[['4-5×','/ week'],['3 sets','/ exercise'],['Legs·Push','Pull']],
+    level_lpp6_u:'INTERMEDIATE',
     lpp30_u_pills:[['3 days','rotation'],['30-40 min','/ session'],['RP','method']],
     level_lpp30_u:'ADVANCED',
     meadows_ppl_label:'Mountain Dog PPL — John Meadows',
     meadows_ppl_pills:[['3-6×','/ week'],['60-75 min','/ session'],['4 Phases','method']],
     level_meadows_ppl:'ADVANCED',
+    pp23_luka_u_label:'Push/Pull 2-3 Day by Luka',
+    pp23_luka_u_pills:[['2-3×','/ week'],['Push·Pull',''],['Double','Progr.']],
+    level_pp23_luka_u:'ADVANCED',
+    pp23u_sub:'Push · Pull · 2-3× / week · Double progression',
+    pp23u_start_btn:'Start Push/Pull 2-3 Day',
+    pp23u_meta:'2-3 days / week · Push + Pull · Double progression · Deload every 10-12 weeks',
+    pp23u_level:'Advanced',
+    pp23u_ideal:'Ideal for experienced lifters who want a flexible program with 2 to 3 sessions per week. Each session hits the full body — legs included in both days. Highly efficient for those with limited time.',
+    pp23u_phi_title:'Philosophy',
+    pp23u_phi1:'2 alternating sessions: PUSH (legs + chest + shoulders + triceps) and PULL (back + hamstrings + biceps)',
+    pp23u_phi2:'Each session involves legs — Squat/Leg Press in PUSH, RDL/Leg Curl in PULL',
+    pp23u_phi3:'Total flexibility: 2× or 3× per week — the body adapts to available frequency',
+    pp23u_sch_title:'Session layout',
+    pp23u_sch1:'Squat · Incline Press · Lunges · Dip · Leg Ext · Lateral Raises · French Press/Pushdown · Abs',
+    pp23u_sch2:'Lat Pulldown · RDL/Deadlift · Cable Row · Leg Curl · Face Pulls · Biceps Curl · Calves',
+    pp23u_prog_title:'Progression & Deload',
+    pp23u_p1_lbl:'Double progression:',
+    pp23u_p1:'e.g. 8-6 → first reach 8 reps on all sets with same weight, then add 2.5kg and restart at 6',
+    pp23u_p2_lbl:'Deload:',
+    pp23u_p2:'every 10-12 weeks — 1 week at 60-65% weight, same sets and reps. Active recovery',
+    pp23u_p3_lbl:'Rest:',
+    pp23u_p3:'2-3 min on compounds (Squat, RDL, Incline Press), 1-2 min on isolation exercises',
+    pp23u_p4_lbl:'Failure:',
+    pp23u_p4:'always stop 1-2 reps before failure — technique comes first',
+    adv_lpp6_u_label:'Advanced LPP 6-Day by Luka',
+    adv_lpp6_u_pills:[['4-6×','/ week'],['Legs·Push','Pull'],['Double','Progr.']],
+    level_adv_lpp6_u:'ADVANCED',
+    advlpp6_sub:'Legs A · Push A · Pull A · Legs B · Push B · Pull B · 4-6× / week',
+    advlpp6_start_btn:'Start Advanced LPP 6-Day',
+    advlpp6_meta:'4-6 days / week · Legs · Push · Pull · Double progression · Deload every 10-12 weeks',
+    advlpp6_level:'Advanced',
+    advlpp6_ideal:'For athletes with at least 2-3 years of experience. High volume, high frequency — each muscle group hit 2× every 5-6 days. Requires optimal recovery: sleep, nutrition and stress management.',
+    advlpp6_phi_title:'Philosophy',
+    advlpp6_phi1:'6 sessions in continuous rotation: Legs A → Push A → Pull A → Legs B → Push B → Pull B → repeat',
+    advlpp6_phi2:'Version A = heavy base exercises (8-6 reps) — Version B = variations and different angles',
+    advlpp6_phi3:'Flexibility: 4, 5 or 6 sessions per week — skip a session if you need extra rest',
+    advlpp6_sch_title:'Rotation',
+    advlpp6_d1:'Legs A — Leg Press · Lunges · Leg Curl · Adductors · Calves · Abs',
+    advlpp6_d2:'Push A — Incline Press · Flat Press · Pec Deck · Laterals · Triceps',
+    advlpp6_d3:'Pull A — High Row · Machine Row · Upper Back · Face Pull · Incline Curl · Scott',
+    advlpp6_d4:'Legs B — Hack Squat · Leg Curl · RDL · Leg Extension · Calves · Abs',
+    advlpp6_d5:'Push B — Shoulder Press · Dip · Pec Deck · Laterals · French Press · Kickback',
+    advlpp6_d6:'Pull B — Lat Pulldown · Pulley · T-Bar Row · Rear Delt · Biceps Curl · Hammer',
+    advlpp6_prog_title:'Progression & Deload',
+    advlpp6_p1_lbl:'Double progression:',
+    advlpp6_p1:'e.g. 8-6 → first reach 8 reps on all sets with same weight, then add 2.5kg and restart at 6',
+    advlpp6_p2_lbl:'Deload:',
+    advlpp6_p2:'every 10-12 weeks — 1 week at 60-65% weight, same sets and reps. Active recovery, not complete rest',
+    advlpp6_p3_lbl:'Rest:',
+    advlpp6_p3:'2-3 min on compounds (Leg Press, Hack Squat, RDL), 1-2 min on isolation exercises',
+    advlpp6_p4_lbl:'Failure:',
+    advlpp6_p4:'always stop 1-2 reps before failure — except last isolation exercises where you can push to the limit',
     carter_bb_label:'Base Building — Paul Carter',
     carter_bb_pills:[['3×','/ week'],['60-75 min','/ session'],['Progression','cycles']],
     level_carter_bb:'INTERMEDIATE / ADVANCED',
@@ -5751,6 +6073,30 @@ const WORKOUTS_BASE = {
                 {it:'Abductor Machine',en:'Abductor Machine',s:3,r:'12-15',rest:'1 min'},
                 {it:'Calf Raise Seduto',en:'Seated Calf Raise',s:4,r:'12-15',rest:'1 min'}]}
         ]},
+    // ── PUSH/PULL BY LUKA (DONNA) ──────────────────────────────────────────
+    pp_luka_d:{gender:'donna',
+        note_it:'🔀 <b>Push/Pull 2-3× / sett. by Luka</b> — Alterna PUSH e PULL ogni sessione. <b>Doppia progressione:</b> es. 8-6 = porta prima tutte le serie a 8 reps, poi aggiungi 2.5kg e riparti da 6. Riposo 2-3 min sui composti (Squat, Hip Thrust, RDL), 1-2 min isolamenti. Fermati a 1-2 reps dal cedimento.',
+        note_en:'🔀 <b>Push/Pull 2-3× / week by Luka</b> — Alternate PUSH and PULL each session. <b>Double progression:</b> e.g. 8-6 = first reach 8 reps on all sets, then add 2.5kg and restart at 6. Rest 2-3 min on compounds (Squat, Hip Thrust, RDL), 1-2 min isolation. Stop 1-2 reps before failure.',
+        days:[
+            {id:'ppluka_push',label_it:'PUSH',label_en:'PUSH',color:'var(--green)',exercises:[
+                {it:'Squat / Machine Squat / Leg Press',en:'Squat / Machine Squat / Leg Press',s:3,r:'8-6',rest:'2-3 min'},
+                {it:'Shoulder Press (Macchina / Manubri / Bilanciere)',en:'Shoulder Press (Machine / DB / BB)',s:3,r:'10-8',rest:'2 min'},
+                {it:'Affondi / Bulgarian Split Squat',en:'Lunges / Bulgarian Split Squat',s:3,r:'10-8',rest:'2 min'},
+                {it:'Dip / Panca Presa Stretta',en:'Dip / Close Grip Bench Press',s:3,r:'12-10',rest:'2 min'},
+                {it:'Leg Extension',en:'Leg Extension',s:2,r:'12-10',rest:'1-2 min'},
+                {it:'Alzate Laterali',en:'Lateral Raises',s:3,r:'12-10',rest:'1 min'},
+                {it:'Pushdown Tricipiti',en:'Triceps Pushdown',s:2,r:'15-12',rest:'1 min'},
+                {it:'Addominali',en:'Abs',s:3,r:'15-20',rest:'1 min'}]},
+            {id:'ppluka_pull',label_it:'PULL',label_en:'PULL',color:'var(--blue)',exercises:[
+                {it:'Lat Machine Presa Stretta / Lat Pulldown',en:'Close Grip Pulldown / Lat Pulldown',s:3,r:'8-6',rest:'2-3 min'},
+                {it:'Hip Thrust',en:'Hip Thrust',s:3,r:'10-8',rest:'2-3 min'},
+                {it:'Pulley / Rematore Macchina',en:'Pulley / Machine Row',s:3,r:'10-8',rest:'2 min'},
+                {it:'RDL — Stacco Rumeno',en:'RDL — Romanian Deadlift',s:3,r:'10-8',rest:'2-3 min'},
+                {it:'Leg Curl',en:'Leg Curl',s:2,r:'12-10',rest:'1-2 min'},
+                {it:'Face Pull',en:'Face Pulls',s:2,r:'12-10',rest:'1 min'},
+                {it:'Curl Bilanciere / Manubri',en:'Biceps Curl',s:3,r:'12-10',rest:'1 min'},
+                {it:'Calf Raise',en:'Calf Raises',s:3,r:'15-10',rest:'1 min'}]}
+        ]},
     arthur_hit:{gender:'uomo',
         days:[
             {id:'aj_fb',color:'var(--gold)',exercises:[
@@ -5988,6 +6334,77 @@ const WORKOUTS_BASE = {
                 {it:'Polpacci — Donkey Calf Raise',en:'Donkey Calf Raise',s:8,r:'20 (20s rest)'}]}
         ]},
     // ── MOUNTAIN DOG PPL — John Meadows ──────────────────────────────────
+    // ── PUSH/PULL 2-3 DAY BY LUKA (UOMO) ─────────────────────────────────
+    pp23_luka_u:{gender:'uomo',
+        note_it:'🔀 <b>Push/Pull 2-3 Day by Luka</b> — Alterna PUSH e PULL ogni sessione. <b>Doppia progressione:</b> es. 8-6 = porta prima tutte le serie a 8 reps, poi aggiungi 2.5kg e riparti da 6. Riposo 2-3 min composti, 1-2 min isolamenti. Fermati a 1-2 reps dal cedimento. <b>Deload ogni 10-12 sett.</b> al 60-65%.',
+        note_en:'🔀 <b>Push/Pull 2-3 Day by Luka</b> — Alternate PUSH and PULL each session. <b>Double progression:</b> e.g. 8-6 = first reach 8 reps on all sets, then add 2.5kg and restart at 6. Rest 2-3 min compounds, 1-2 min isolation. Stop 1-2 reps before failure. <b>Deload every 10-12 weeks</b> at 60-65%.',
+        days:[
+            {id:'pp23u_push',label_it:'PUSH',label_en:'PUSH',color:'var(--green)',exercises:[
+                {it:'Squat / Machine Squat / Leg Press',en:'Squat / Machine Squat / Leg Press',s:3,r:'8-6',rest:'2-3 min'},
+                {it:'Press Inclinata (Manubri / Bilanciere / Macchina / Smith)',en:'Incline Press (DB / BB / Machine / Smith)',s:3,r:'8-6',rest:'2-3 min'},
+                {it:'Affondi / Bulgarian Squat / Leg Press Unilaterale',en:'Lunges / Bulgarian Squat / One Leg Press',s:3,r:'10-8',rest:'2 min'},
+                {it:'Dip / Panca Presa Stretta',en:'Dip / Close Grip Bench Press',s:3,r:'10-8',rest:'2 min'},
+                {it:'Leg Extension',en:'Leg Extension',s:2,r:'12-10',rest:'1-2 min'},
+                {it:'Alzate Laterali',en:'Lateral Raises',s:3,r:'12-10',rest:'1 min'},
+                {it:'French Press / Pushdown Tricipiti',en:'French Press / Triceps Pushdown',s:3,r:'15-12',rest:'1 min'},
+                {it:'Addominali',en:'Abs',s:3,r:'15-20',rest:'1 min'}]},
+            {id:'pp23u_pull',label_it:'PULL',label_en:'PULL',color:'var(--blue)',exercises:[
+                {it:'Lat Machine Presa Stretta / Lat Pulldown',en:'Close Grip Pulldown / Lat Pulldown',s:3,r:'8-6',rest:'2-3 min'},
+                {it:'RDL / Stacco Convenzionale',en:'RDL / Conventional Deadlift',s:3,r:'10-8',rest:'2-3 min'},
+                {it:'Pulley / Rematore Macchina',en:'Pulley / Machine Row',s:3,r:'10-8',rest:'2 min'},
+                {it:'Leg Curl',en:'Leg Curl',s:3,r:'12-10',rest:'1-2 min'},
+                {it:'Face Pull',en:'Face Pulls',s:2,r:'12-10',rest:'1 min'},
+                {it:'Curl Bilanciere / Manubri',en:'Biceps Curl (BB / DB)',s:3,r:'12-10',rest:'1 min'},
+                {it:'Calf Raise',en:'Calf Raises',s:3,r:'15-10',rest:'1 min'}]}
+        ]},
+    // ── ADVANCED LPP 6-DAY BY LUKA ────────────────────────────────────────
+    adv_lpp6_u:{gender:'uomo',
+        note_it:'🦵 <b>Advanced LPP 6-Day by Luka</b> — Rotazione: Legs A → Push A → Pull A → Legs B → Push B → Pull B → ripeti. <b>Doppia progressione:</b> es. 8-6 = porta prima tutte le serie a 8 reps, poi aggiungi 2.5kg e riparti da 6. Riposo 2-3 min composti, 1-2 min isolamenti. Fermati a 1-2 reps dal cedimento. <b>Deload ogni 10-12 sett.</b> al 60-65% del carico.',
+        note_en:'🦵 <b>Advanced LPP 6-Day by Luka</b> — Rotation: Legs A → Push A → Pull A → Legs B → Push B → Pull B → repeat. <b>Double progression:</b> e.g. 8-6 = first reach 8 reps on all sets, then add 2.5kg and restart at 6. Rest 2-3 min compounds, 1-2 min isolation. Stop 1-2 reps before failure. <b>Deload every 10-12 weeks</b> at 60-65% load.',
+        days:[
+            {id:'advlpp6_la',label_it:'LEGS A',label_en:'LEGS A',color:'var(--green)',exercises:[
+                {it:'Leg Press / Squat',en:'Leg Press / Squat',s:3,r:'8-6',rest:'2-3 min'},
+                {it:'Affondi Statici / Bulgarian Squat',en:'Static Lunges / Bulgarian Squat',s:3,r:'10-8',rest:'2 min'},
+                {it:'Leg Curl',en:'Leg Curl',s:3,r:'12-10',rest:'1-2 min'},
+                {it:'Adduttori / Abductor Machine',en:'Adductor / Abductor Machine',s:2,r:'15-12',rest:'1 min'},
+                {it:'Polpacci su Leg Press',en:'Calves on Leg Press',s:3,r:'15-10',rest:'1 min'},
+                {it:'Abs — Leg Raises',en:'Abs — Leg Raises',s:3,r:'15-10',rest:'1 min'}]},
+            {id:'advlpp6_pa',label_it:'PUSH A',label_en:'PUSH A',color:'var(--red)',exercises:[
+                {it:'Press Inclinata (Manubri / Smith)',en:'Incline Press (Dumbbells / Smith)',s:3,r:'8-6',rest:'2-3 min'},
+                {it:'Panca Piana (Smith / Bilanciere / Manubri / Chest Press)',en:'Flat Press (Smith / BB / DB / Chest Press)',s:3,r:'10-8',rest:'2-3 min'},
+                {it:'Pec Deck / Crossover',en:'Pec Deck / Crossover',s:3,r:'12-10',rest:'1-2 min'},
+                {it:'Alzate Laterali Macchina',en:'Machine Lateral Raises',s:3,r:'12-10',rest:'1 min'},
+                {it:'Estensioni Overhead Tricipiti',en:'Overhead Triceps Extension',s:3,r:'12-10',rest:'1-2 min'},
+                {it:'Pushdown Tricipiti',en:'Triceps Pushdown',s:2,r:'15-12',rest:'1 min'}]},
+            {id:'advlpp6_pla',label_it:'PULL A',label_en:'PULL A',color:'var(--blue)',exercises:[
+                {it:'High Row / Lat Machine Presa Stretta',en:'High Row / Narrow Grip Pulldown',s:3,r:'8-6',rest:'2-3 min'},
+                {it:'Rematore Macchina / Manubrio',en:'One Arm Machine Row / DB Row',s:3,r:'10-8',rest:'2 min'},
+                {it:'Upper Back Row (Macchina / Lying DB)',en:'Upper Back Row (Machine / Lying DB)',s:2,r:'12-8',rest:'2 min'},
+                {it:'Face Pull',en:'Face Pulls',s:3,r:'12-10',rest:'1 min'},
+                {it:'Curl Inclinato 45° / Bayesian Curl',en:'45° Incline DB Curl / Bayesian Curl',s:3,r:'12-10',rest:'1 min'},
+                {it:'Scott Curl (Macchina / Manubri)',en:'Scott Curl (Machine / DB)',s:3,r:'12-10',rest:'1 min'}]},
+            {id:'advlpp6_lb',label_it:'LEGS B',label_en:'LEGS B',color:'var(--gold)',exercises:[
+                {it:'Hack Squat',en:'Hack Squat',s:3,r:'10-8',rest:'2-3 min'},
+                {it:'Leg Curl Unilaterale',en:'One Leg Curl',s:3,r:'12-10',rest:'1-2 min'},
+                {it:'RDL — Stacco Rumeno',en:'RDL — Romanian Deadlift',s:3,r:'10-8',rest:'2-3 min'},
+                {it:'Leg Extension',en:'Leg Extension',s:3,r:'15-10',rest:'1-2 min'},
+                {it:'Polpacci in Piedi',en:'Standing Calf Raises',s:3,r:'10-8',rest:'1 min'},
+                {it:'Abs — Crunch',en:'Abs — Crunch',s:3,r:'15-12',rest:'1 min'}]},
+            {id:'advlpp6_pb',label_it:'PUSH B',label_en:'PUSH B',color:'var(--orange,#ff9500)',exercises:[
+                {it:'Shoulder Press (Macchina / Smith / Bilanciere / Manubri)',en:'Shoulder Press (Machine / Smith / BB / DB)',s:3,r:'8-6',rest:'2-3 min'},
+                {it:'Dip / Panca Declinata',en:'Dip / Decline Chest Press',s:3,r:'12-10',rest:'2 min'},
+                {it:'Pec Deck / Crossover',en:'Pec Deck / Crossover',s:3,r:'12-10',rest:'1-2 min'},
+                {it:'Alzate Laterali Cavi / Manubri',en:'Cable / DB Lateral Raises',s:3,r:'12-10',rest:'1 min'},
+                {it:'French Press',en:'French Press',s:3,r:'12-10',rest:'1-2 min'},
+                {it:'Kickback ai Cavi / Single Pushdown',en:'Cable Kickback / Single Pushdown',s:2,r:'15-12',rest:'1 min'}]},
+            {id:'advlpp6_plb',label_it:'PULL B',label_en:'PULL B',color:'var(--purple,#bf5af2)',exercises:[
+                {it:'Lat Pulldown / Pulldown Machine',en:'Lat Pulldown / Pulldown Machine',s:3,r:'10-8',rest:'2-3 min'},
+                {it:'Pulley / Rematore Macchina',en:'Pulley / Machine Row',s:3,r:'10-8',rest:'2 min'},
+                {it:'Wide T-Bar Row / Bent Over Row',en:'Wide T-Bar Row / Bent Over Row',s:2,r:'12-10',rest:'2 min'},
+                {it:'Spalle Posteriori (Pec Deck / Cavi)',en:'Rear Delts (Pec Deck / Cable)',s:3,r:'15-10',rest:'1 min'},
+                {it:'Curl Bilanciere / Manubri',en:'Biceps Curl (BB / DB)',s:3,r:'12-10',rest:'1 min'},
+                {it:'Hammer Curl',en:'Hammer Curl',s:3,r:'12-10',rest:'1 min'}]}
+        ]},
     meadows_ppl:{gender:'uomo',
         days:[
             {id:'md_push',color:'var(--red)',exercises:[
@@ -6016,6 +6433,51 @@ const WORKOUTS_BASE = {
                 {it:'🟢 STRETCH · Affondi con manubri — tieni 30-60s in basso',en:'🟢 STRETCH · DB Lunges — hold 30-60s at bottom',s:1,r:'30-60 sec loaded hold'}]}
         ]},
     // ── 30 MIN LEGS PUSH PULL ─────────────────────────────────────────────
+    lpp6_u:{gender:'uomo',
+        note_it:'🟢 <b>LPP 6 Sessioni by Luka</b> — Rotazione: Gambe A → Spinte A → Rematori A → Gambe B → Spinte B → Rematori B. <b>4-5 sessioni / sett.</b>, doppia progressione (es. 12-10: prima arriva a 12 reps su tutte le serie, poi aggiungi peso e riparti da 10). Macchine e cavi — ideale per principianti/intermedi che imparano la tecnica.',
+        note_en:'🟢 <b>LPP 6 Sessions by Luka</b> — Rotation: Legs A → Push A → Pull A → Legs B → Push B → Pull B. <b>4-5 sessions / week</b>, double progression (e.g. 12-10: first reach 12 reps on all sets, then add weight and restart at 10). Machines and cables — ideal for beginners/intermediates learning technique.',
+        days:[
+            {id:'lpp6_ga',color:'var(--green)',exercises:[
+                {it:'Macchina Squat',en:'Machine Squat',s:3,r:'10-8',rest:'1 min'},
+                {it:'Leg Press 45° o 90°',en:'Leg Press 45 or 90 degree',s:3,r:'12-8',rest:'1 min'},
+                {it:'Leg Curl Monolaterale',en:'Single Leg Curl',s:3,r:'12-10',rest:'1-2 min'},
+                {it:'Iperestensioni 45°',en:'Back Extension 45°',s:3,r:'15-10',rest:'2 min'},
+                {it:'Polpacci da Seduto',en:'Seated Calf Raise',s:3,r:'15-10',rest:'1-2 min'},
+                {it:'Addominali — Alzate delle Gambe',en:'Abs — Leg Raises',s:3,r:'15-10',rest:'1-2 min'}]},
+            {id:'lpp6_sa',color:'var(--red)',exercises:[
+                {it:'Chest Press / Panca Piana Macchina',en:'Chest Press / Machine Bench Press',s:3,r:'12-10',rest:'2 min'},
+                {it:'Press Macchina Panca Inclinata 30°',en:'Incline Machine Press 30°',s:3,r:'12-10',rest:'2 min'},
+                {it:'Pec Deck / Croci Macchina',en:'Pec Deck / Machine Flyes',s:3,r:'15-10',rest:'1-2 min'},
+                {it:'Shoulder Press Macchina + Alzate Laterali',en:'Machine Shoulder Press + Lateral Raises',s:3,r:'12-10',rest:'2 min'},
+                {it:'Spinte in Basso (Tricipiti)',en:'Triceps Pushdown',s:3,r:'15-12',rest:'1 min'}]},
+            {id:'lpp6_ra',color:'var(--blue)',exercises:[
+                {it:'Rematore Macchina Braccio Singolo',en:'Single Arm Machine Row',s:3,r:'12-10',rest:'2 min'},
+                {it:'Pulldown Presa Stretta',en:'Close Grip Pulldown',s:3,r:'12-10',rest:'2 min'},
+                {it:'Rematore Alto Macchina',en:'High Row Machine',s:3,r:'12-10',rest:'2 min'},
+                {it:'Spalle Posteriori — Macchina o Cavi',en:'Rear Delts — Machine or Cables',s:3,r:'15-12',rest:'1 min'},
+                {it:'Curl al Cavo con Barra Dritta',en:'Straight Bar Cable Curl',s:3,r:'12-8',rest:'1-2 min'},
+                {it:'Curl su Panca Scott Macchina',en:'Machine Scott Curl',s:3,r:'15-10',rest:'1-2 min'}]},
+            {id:'lpp6_gb',color:'var(--green)',exercises:[
+                {it:'Leg Curl',en:'Leg Curl',s:3,r:'15-10',rest:'1-2 min'},
+                {it:'Leg Extension',en:'Leg Extension',s:3,r:'15-10',rest:'1-2 min'},
+                {it:'Iperestensioni 90°',en:'Back Extension 90°',s:3,r:'15-10',rest:'1-2 min'},
+                {it:'Affondi o Step sulla Pedana',en:'Lunges or Step-Up',s:3,r:'12-10',rest:'2 min'},
+                {it:'Polpacci in Piedi',en:'Standing Calf Raise',s:3,r:'15-10',rest:'1-2 min'},
+                {it:'Addominali — Crunch',en:'Abs — Crunch',s:3,r:'15-10',rest:'1-2 min'}]},
+            {id:'lpp6_sb',color:'var(--red)',exercises:[
+                {it:'Press Spalle con Manubri da Seduto',en:'Seated DB Shoulder Press',s:3,r:'12-8',rest:'2 min'},
+                {it:'Alzate Laterali Macchina o Manubri Seduto',en:'Machine or Seated DB Lateral Raises',s:3,r:'15-10',rest:'1 min'},
+                {it:'Pec Deck / Croci Macchina',en:'Pec Deck / Machine Flyes',s:3,r:'15-10',rest:'2 min'},
+                {it:'Chest Press Sedile Max Alto',en:'Chest Press Seat Max High',s:3,r:'15-12',rest:'2 min'},
+                {it:'French Press — Spaccanaso',en:'French Press — Skull Crusher',s:3,r:'12-8',rest:'2 min'},
+                {it:'Estensioni Dietro la Testa — Manubrio o Cavi',en:'Overhead Extension — DB or Cable',s:3,r:'15-10',rest:'2 min'}]},
+            {id:'lpp6_rb',color:'var(--blue)',exercises:[
+                {it:'Lat Machine Presa Larga / Pulldown',en:'Wide Grip Lat Pulldown',s:3,r:'15-10',rest:'2 min'},
+                {it:'Pulley Rematore Presa Stretta',en:'Close Grip Cable Row',s:3,r:'15-10',rest:'2 min'},
+                {it:'Pulldown Braccio Singolo',en:'Single Arm Pulldown',s:3,r:'15-10',rest:'2 min'},
+                {it:'Spalle Posteriori — Macchina o Cavi',en:'Rear Delts — Machine or Cables',s:3,r:'15-10',rest:'2 min'},
+                {it:'Bicipiti — Hammer Curl / Martello',en:'Biceps — Hammer Curl',s:3,r:'15-10',rest:'2 min'}]}
+        ]},
     lpp30_u:{gender:'uomo',
         note_it:'⚡ <b>RP (Rest-Pause doppia)</b> — vai al cedimento → riposa 30s → vai al cedimento → riposa 30s → ultima spinta al cedimento = 1 serie RP. Pausa tra serie normali: 90-120s. <b>Alternativa:</b> 2 serie normali al cedimento da 15-10 reps.',
         note_en:'⚡ <b>RP (Double Rest-Pause)</b> — go to failure → rest 30s → go to failure → rest 30s → final push to failure = 1 RP set. Rest between normal sets: 90-120s. Alternative: 2 straight sets to failure 15-10 reps.',
@@ -6164,14 +6626,15 @@ const WID_MAP = {'lpp':'lpp','ini-u':'ini_u','lyle-gbr':'lyle_gbr','ini-d':'ini_
   'quick-d':'quick_d','quick-d-basic':'quick_d_basic',
   'corto-u-adv':'quick_u','corto-u-bas':'quick_u_basic',
   'corto-d-adv':'quick_d','corto-d-bas':'quick_d_basic',
-  'dc-3day':'dc_3day','dc-4day':'dc_4day','mentzer-3day':'mentzer_3day','mentzer-cons':'mentzer_cons','dorian-bg':'dorian_bg','arthur-hit':'arthur_hit','ken-hit':'ken_hit','ken-bm':'ken_bm','phat':'phat','phul':'phul','bret':'bret','ashley':'ashley','tls-d':'tls_d','tls-3d':'tls_3d','tls-4d':'tls_4d',
+  'dc-3day':'dc_3day','dc-4day':'dc_4day','mentzer-3day':'mentzer_3day','mentzer-cons':'mentzer_cons','dorian-bg':'dorian_bg','arthur-hit':'arthur_hit','ken-hit':'ken_hit','ken-bm':'ken_bm','phat':'phat','phul':'phul','bret':'bret','ashley':'ashley','tls-d':'tls_d','tls-3d':'tls_3d','tls-4d':'tls_4d','pp-luka-d':'pp_luka_d',
   'ul-pb-u':'ul_pb_u',
   'lpp4-u':'lpp4_u',
   'ws4sb-u':'ws4sb_u',
   'madcow-u':'madcow_u',
   'lpp30-u':'lpp30_u',
+  'lpp6-u':'lpp6_u',
   'ken-pp':'ken_pp',
-  'meadows-ppl':'meadows_ppl',
+  'meadows-ppl':'meadows_ppl','adv-lpp6-u':'adv_lpp6_u','pp23-luka-u':'pp23_luka_u',
   'carter-bb':'carter_bb',
   'hst-u':'hst_u',
   'gironda-4day':'gironda_4day',
@@ -6189,8 +6652,8 @@ function getWorkoutLocalized(wId){
     const baseId = WID_MAP[wId] || wId;
     const base = WORKOUTS_BASE[baseId];
     if(!base) return null;
-    const labelMap = {lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',ken_pp:'ken_pp_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label',lpp30_u:'lpp30_u_label',meadows_ppl:'meadows_ppl_label',carter_bb:'carter_bb_label',gironda_4day:'gironda_4day_label',gironda_fb:'gironda_fb_label',ss_u:'ss_u_label',wendler_531:'wendler_531_label',texas_method:'texas_method_label',smolov_jr:'smolov_jr_label',hst_u:'hst_u_label',tls_d:'tls_d_label',tls_3d:'tls_3d_label',tls_4d:'tls_4d_label'};
-    const pillsMap = {lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',ken_pp:'ken_pp_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',lpp4_u:'lpp4_u_pills',ws4sb_u:'ws4sb_u_pills',madcow_u:'madcow_u_pills',lpp30_u:'lpp30_u_pills',meadows_ppl:'meadows_ppl_pills',carter_bb:'carter_bb_pills',gironda_4day:'gironda_4day_pills',gironda_fb:'gironda_fb_pills',ss_u:'ss_u_pills',wendler_531:'wendler_531_pills',texas_method:'texas_method_pills',smolov_jr:'smolov_jr_pills',hst_u:'hst_u_pills',tls_d:'tls_d_pills',tls_3d:'tls_3d_pills',tls_4d:'tls_4d_pills'};
+    const labelMap = {lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',ken_pp:'ken_pp_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label',lpp30_u:'lpp30_u_label',meadows_ppl:'meadows_ppl_label',adv_lpp6_u:'adv_lpp6_u_label',pp23_luka_u:'pp23_luka_u_label',carter_bb:'carter_bb_label',gironda_4day:'gironda_4day_label',gironda_fb:'gironda_fb_label',ss_u:'ss_u_label',wendler_531:'wendler_531_label',texas_method:'texas_method_label',smolov_jr:'smolov_jr_label',hst_u:'hst_u_label',tls_d:'tls_d_label',tls_3d:'tls_3d_label',tls_4d:'tls_4d_label',lpp6_u:'lpp6_u_label',pp_luka_d:'pp_luka_d_label'};
+    const pillsMap = {lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',ken_pp:'ken_pp_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',lpp4_u:'lpp4_u_pills',ws4sb_u:'ws4sb_u_pills',madcow_u:'madcow_u_pills',lpp30_u:'lpp30_u_pills',meadows_ppl:'meadows_ppl_pills',carter_bb:'carter_bb_pills',gironda_4day:'gironda_4day_pills',gironda_fb:'gironda_fb_pills',ss_u:'ss_u_pills',wendler_531:'wendler_531_pills',texas_method:'texas_method_pills',smolov_jr:'smolov_jr_pills',hst_u:'hst_u_pills',tls_d:'tls_d_pills',tls_3d:'tls_3d_pills',tls_4d:'tls_4d_pills',lpp6_u:'lpp6_u_pills'};
     const days = base.days.map(day=>{
         let badge, name;
         // DC 3-day: a=Upper A1, b=Lower B1, g1=Upper A2, g2=Lower B2, g3=Upper A3, full=Lower B3
@@ -6312,10 +6775,26 @@ function getWorkoutLocalized(wId){
         }else if(day.id==='tls_upper'){badge='UPPER';name=lang==='it'?'Ven — Petto · Schiena · Spalle · Braccia':'Fri — Chest · Back · Shoulders · Arms';
         }else if(day.id==='tls_lower2'){badge='LOWER B';name=lang==='it'?'Sab — Gambe · Glutei (focus posteriore)':'Sat — Legs · Glutes (posterior focus)';
         }else if(day.id==='tls3_fb'){badge='FULL BODY';name=lang==='it'?'Lun · Mer · Ven — Full Body':'Mon · Wed · Fri — Full Body';
+        }else if(day.id==='lpp6_ga'){badge='GAMBE A';name=lang==='it'?'Quadricipiti · Femorali · Polpacci · Addominali':'Quads · Hamstrings · Calves · Abs';
+        }else if(day.id==='lpp6_sa'){badge='SPINTE A';name=lang==='it'?'Petto · Spalle · Tricipiti':'Chest · Shoulders · Triceps';
+        }else if(day.id==='lpp6_ra'){badge='REMATORI A';name=lang==='it'?'Schiena · Bicipiti · Deltoidi Post.':'Back · Biceps · Rear Delts';
+        }else if(day.id==='lpp6_gb'){badge='GAMBE B';name=lang==='it'?'Femorali · Quadricipiti · Polpacci · Addominali':'Hamstrings · Quads · Calves · Abs';
+        }else if(day.id==='lpp6_sb'){badge='SPINTE B';name=lang==='it'?'Spalle · Tricipiti · Petto':'Shoulders · Triceps · Chest';
+        }else if(day.id==='lpp6_rb'){badge='REMATORI B';name=lang==='it'?'Schiena · Bicipiti · Deltoidi Post.':'Back · Biceps · Rear Delts';
         }else if(day.id==='tls4_ua'){badge='UPPER A';name=lang==='it'?'Lun — Petto · Schiena · Spalle · Braccia':'Mon — Chest · Back · Shoulders · Arms';
         }else if(day.id==='tls4_la'){badge='LOWER A';name=lang==='it'?'Mar — Squat · Hip Thrust · Femorali · Polpacci':'Tue — Squat · Hip Thrust · Hamstrings · Calves';
         }else if(day.id==='tls4_ub'){badge='UPPER B';name=lang==='it'?'Gio — Petto · Schiena · Spalle · Braccia':'Thu — Chest · Back · Shoulders · Arms';
         }else if(day.id==='tls4_lb'){badge='LOWER B';name=lang==='it'?'Ven — Hack Squat · Hip Thrust · Glutei · Polpacci':'Fri — Hack Squat · Hip Thrust · Glutes · Calves';
+        }else if(day.id==='pp23u_push'){badge='PUSH';name=lang==='it'?'Quadricipiti · Petto · Spalle · Tricipiti':'Quads · Chest · Shoulders · Triceps';
+        }else if(day.id==='pp23u_pull'){badge='PULL';name=lang==='it'?'Schiena · Femorali · Bicipiti · Polpacci':'Back · Hamstrings · Biceps · Calves';
+        }else if(day.id==='ppluka_push'){badge='PUSH';name=lang==='it'?'Quadricipiti · Spalle · Tricipiti · Addominali':'Quads · Shoulders · Triceps · Abs';
+        }else if(day.id==='ppluka_pull'){badge='PULL';name=lang==='it'?'Schiena · Femorali · Bicipiti · Polpacci':'Back · Hamstrings · Biceps · Calves';
+        }else if(day.id==='advlpp6_la'){badge='LEGS A';name=lang==='it'?'Quadricipiti · Femorali · Polpacci · Addominali':'Quads · Hamstrings · Calves · Abs';
+        }else if(day.id==='advlpp6_pa'){badge='PUSH A';name=lang==='it'?'Petto · Spalle · Tricipiti':'Chest · Shoulders · Triceps';
+        }else if(day.id==='advlpp6_pla'){badge='PULL A';name=lang==='it'?'Schiena · Bicipiti · Deltoidi Post.':'Back · Biceps · Rear Delts';
+        }else if(day.id==='advlpp6_lb'){badge='LEGS B';name=lang==='it'?'Femorali · Quadricipiti · Polpacci · Addominali':'Hamstrings · Quads · Calves · Abs';
+        }else if(day.id==='advlpp6_pb'){badge='PUSH B';name=lang==='it'?'Spalle · Petto · Tricipiti':'Shoulders · Chest · Triceps';
+        }else if(day.id==='advlpp6_plb'){badge='PULL B';name=lang==='it'?'Schiena · Bicipiti · Deltoidi Post.':'Back · Biceps · Rear Delts';
         }else{badge=t('d_full_badge');name=t('d_full_name');}
         const exercises = day.exercises.map(ex=>({...ex, name: lang==='en' ? ex.en : ex.it}));
         return {...day, badge, name, exercises};
@@ -6353,6 +6832,40 @@ const getW=(wId,dId,eIdx,sIdx)=>localStorage.getItem(SK.w(wId,dId,eIdx,sIdx))||'
 const setW=(wId,dId,eIdx,sIdx,v)=>v?localStorage.setItem(SK.w(wId,dId,eIdx,sIdx),v):localStorage.removeItem(SK.w(wId,dId,eIdx,sIdx));
 const getPR=(wId,dId,eIdx)=>parseFloat(localStorage.getItem(SK.pr(wId,dId,eIdx))||'0');
 const setPR_=(wId,dId,eIdx,v)=>localStorage.setItem(SK.pr(wId,dId,eIdx),v);
+function sfConfirm(msg, onYes){
+    const ov=document.getElementById('sfConfirmOverlay');
+    const msgEl=document.getElementById('sfConfirmMsg');
+    const yesBtn=document.getElementById('sfConfirmYes');
+    const noBtn=document.getElementById('sfConfirmNo');
+    msgEl.textContent=msg;
+    yesBtn.textContent=lang==='en'?'Confirm':'Conferma';
+    noBtn.textContent=lang==='en'?'Cancel':'Annulla';
+    ov.style.display='flex';
+    const close=()=>{ov.style.display='none'; yesBtn.onclick=null; noBtn.onclick=null;};
+    yesBtn.onclick=()=>{close(); onYes();};
+    noBtn.onclick=()=>close();
+}
+function resetPR(wId,dId,eIdx){
+    const msg=lang==='en'?'Delete this PR?':'Cancellare questo PR?';
+    sfConfirm(msg, function(){
+        localStorage.removeItem(SK.pr(wId,dId,eIdx));
+        const badge=document.getElementById(`prbadge_${wId}_${dId}_${eIdx}`);
+        if(badge){badge.style.display='none';}
+        document.querySelectorAll('.is-pr').forEach(el=>{el.classList.remove('is-pr');});
+        showToast(lang==='en'?'PR deleted':'PR cancellato');
+    });
+}
+function resetAllPR(){
+    const msg=lang==='en'?'Delete ALL personal records?\nThis cannot be undone.':'Cancellare TUTTI i record personali?\nQuesta azione non si può annullare.';
+    sfConfirm(msg, function(){
+        const keys=[];
+        for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&k.startsWith('sf_pr_'))keys.push(k);}
+        keys.forEach(k=>localStorage.removeItem(k));
+        document.querySelectorAll('.chip-pr').forEach(b=>{b.style.display='none';});
+        document.querySelectorAll('.is-pr').forEach(el=>{el.classList.remove('is-pr');});
+        showToast(lang==='en'?'All PR deleted':'Tutti i PR cancellati');
+    });
+}
 const getHist=(wId)=>{try{return JSON.parse(localStorage.getItem(SK.hist(wId))||'[]')}catch{return[]}};
 const getAttivi=()=>{try{return JSON.parse(localStorage.getItem(SK.attivi)||'[]')}catch{return[]}};
 const saveAttivi=(a)=>localStorage.setItem(SK.attivi,JSON.stringify(a));
@@ -6418,33 +6931,56 @@ function calcTexas(){
   if(!bp&&op){const vol=round(op*0.77),rec=round(op*0.70),intens=round(op*0.85);for(let s=0;s<5;s++){setW(wId,"tm_volume",1,s,String(vol));const i=document.getElementById("inp_"+wId+"_tm_volume_1_"+s);if(i)i.value=vol;}for(let s=0;s<3;s++){setW(wId,"tm_recovery",1,s,String(rec));const i=document.getElementById("inp_"+wId+"_tm_recovery_1_"+s);if(i)i.value=rec;}setW(wId,"tm_intensity",1,0,String(intens));const ii=document.getElementById("inp_"+wId+"_tm_intensity_1_0");if(ii)ii.value=intens;}
   if(dl){const vol=round(dl*0.77);setW(wId,"tm_volume",2,0,String(vol));const i=document.getElementById("inp_"+wId+"_tm_volume_2_0");if(i)i.value=vol;}
 }
+let _wendlerWeek = 1;
+function setWendlerWeek(w){
+    _wendlerWeek = w;
+    try{localStorage.setItem('wendler_week',String(w));}catch(e){}
+    // Update button styles
+    [1,2,3,4].forEach(n=>{
+        const btn=document.getElementById(`ww-btn-${n}`);
+        if(!btn)return;
+        if(n===w){
+            btn.style.borderColor='rgba(10,132,255,.6)';
+            btn.style.background='rgba(10,132,255,.3)';
+        } else {
+            btn.style.borderColor='rgba(255,255,255,.15)';
+            btn.style.background='rgba(255,255,255,.06)';
+        }
+    });
+    calcWendler();
+}
 function calcWendler(){
   const sq=parseFloat(document.getElementById('wc-sq').value)||0;
   const dl=parseFloat(document.getElementById('wc-dl').value)||0;
   const bp=parseFloat(document.getElementById('wc-bp').value)||0;
   const op=parseFloat(document.getElementById('wc-op').value)||0;
   try{localStorage.setItem('wendler_maxes',JSON.stringify({sq,dl,bp,op}));}catch(e){}
-  const round=v=>Math.round(v*2)/2; // round to 0.5
+  const round=v=>Math.round(v*2)/2;
   const tm=v=>round(v*0.9);
-  // Map: dayId → [1RM value, main pcts, BBB pct]
+  // Percentuali per settimana: [s1, s2, s3] per alzate press/bench, [s1,s2,s3] per squat/dl
+  const weekPcts = {
+    1: { press: [0.65, 0.75, 0.85], squat: [0.65, 0.75, 0.85], bbb: 0.55 },
+    2: { press: [0.70, 0.80, 0.90], squat: [0.70, 0.80, 0.90], bbb: 0.55 },
+    3: { press: [0.75, 0.85, 0.95], squat: [0.75, 0.85, 0.95], bbb: 0.55 },
+    4: { press: [0.40, 0.50, 0.60], squat: [0.40, 0.50, 0.60], bbb: 0.40 }
+  };
+  const wPct = weekPcts[_wendlerWeek] || weekPcts[1];
   const dayMap={
-    'w531_press':{val:op, main:[0.65,0.75,0.85], bbb:0.55},
-    'w531_dl':   {val:dl, main:[0.70,0.80,0.90], bbb:0.55},
-    'w531_bench':{val:bp, main:[0.65,0.75,0.85], bbb:0.55},
-    'w531_squat':{val:sq, main:[0.70,0.80,0.90], bbb:0.55}
+    'w531_press':{val:op,  pcts:wPct.press, bbb:wPct.bbb},
+    'w531_dl':   {val:dl,  pcts:wPct.squat, bbb:wPct.bbb},
+    'w531_bench':{val:bp,  pcts:wPct.press, bbb:wPct.bbb},
+    'w531_squat':{val:sq,  pcts:wPct.squat, bbb:wPct.bbb}
   };
   const wId='wendler-531';
   Object.entries(dayMap).forEach(([dId,cfg])=>{
     if(!cfg.val) return;
     const tmVal=tm(cfg.val);
-    // Fill 3 main sets (eIdx 0,1,2 — each is 1 set, sIdx=0)
-    cfg.main.forEach((pct,eIdx)=>{
+    cfg.pcts.forEach((pct,eIdx)=>{
       const kg=round(tmVal*pct);
       setW(wId,dId,eIdx,0,String(kg));
       const inp=document.getElementById(`inp_${wId}_${dId}_${eIdx}_0`);
       if(inp){inp.value=kg;}
     });
-    // Fill BBB 5 sets (eIdx=3, sIdx 0-4)
     const bbbKg=round(tmVal*cfg.bbb);
     for(let s=0;s<5;s++){
       setW(wId,dId,3,s,String(bbbKg));
@@ -6523,14 +7059,15 @@ function openWorkout(wId,backView){
         document.getElementById('wc-sq-lbl').textContent=lang==='en'?'Squat 1RM (kg)':'Squat 1RM (kg)';
         document.getElementById('wc-dl-lbl').textContent=lang==='en'?'Deadlift 1RM (kg)':'Stacco 1RM (kg)';
         document.getElementById('wc-bp-lbl').textContent=lang==='en'?'Bench Press 1RM (kg)':'Panca 1RM (kg)';
-        document.getElementById('wc-op-lbl').textContent=lang==='en'?'Press 1RM (kg)':'Press 1RM (kg)';
+        document.getElementById('wc-op-lbl').textContent=lang==='en'?'Military Press 1RM (kg)':'Military Press 1RM (kg)';
         // restore saved values
         try{const sv=JSON.parse(localStorage.getItem('wendler_maxes')||'{}');
           if(sv.sq)document.getElementById('wc-sq').value=sv.sq;
           if(sv.dl)document.getElementById('wc-dl').value=sv.dl;
           if(sv.bp)document.getElementById('wc-bp').value=sv.bp;
           if(sv.op)document.getElementById('wc-op').value=sv.op;
-          calcWendler();
+          const savedWeek=parseInt(localStorage.getItem('wendler_week')||'1');
+          setWendlerWeek(savedWeek);
         }catch(e){}
       } else {
         wcSection.style.display='none';
@@ -6588,7 +7125,7 @@ function renderDay(wId,day){
 }
 function renderEx(wId,dId,eIdx,ex){
     const pr=getPR(wId,dId,eIdx);
-    const prHtml=pr>0?`<span class="chip chip-pr" id="prbadge_${wId}_${dId}_${eIdx}">PR ${pr}kg</span>`
+    const prHtml=pr>0?`<span class="chip chip-pr" id="prbadge_${wId}_${dId}_${eIdx}" onclick="resetPR('${wId}','${dId}',${eIdx})" title="Tocca per cancellare PR" style="cursor:pointer">PR ${pr}kg</span>`
                      :`<span class="chip chip-pr" id="prbadge_${wId}_${dId}_${eIdx}" style="display:none"></span>`;
     const hist=getHist(wId);
     const pastSessions=hist.filter(h=>new Date(h.date).toDateString()!==new Date().toDateString()).slice(0,2).reverse();
@@ -6634,7 +7171,7 @@ function renderEx(wId,dId,eIdx,ex){
             </div>
         </div>`;
     }).join('')+'</div>';
-    const _advancedWIds = ['dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','lpp4-u','quick-u','quick-u-basic','corto-u-adv','corto-u-bas','quick-d','quick-d-basic','corto-d-adv','corto-d-bas','ws4sb-u','madcow-u','lpp30-u','ken-pp','meadows-ppl','carter-bb','hst-u','gironda-4day','gironda-fb','ss-u','wendler-531','texas-method','smolov-jr','tls-d','tls-3d','tls-4d'];
+    const _advancedWIds = ['dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','lpp4-u','quick-u','quick-u-basic','corto-u-adv','corto-u-bas','quick-d','quick-d-basic','corto-d-adv','corto-d-bas','ws4sb-u','madcow-u','lpp30-u','lpp6-u','ken-pp','meadows-ppl','adv-lpp6-u','pp23-luka-u','carter-bb','hst-u','gironda-4day','gironda-fb','ss-u','wendler-531','texas-method','smolov-jr','tls-d','tls-3d','tls-4d','pp-luka-d'];
     const _noImg = _advancedWIds.includes(wId);
     const imgKey = _noImg ? null : (EX_NAME_MAP[ex.it] || EX_NAME_MAP[ex.en] || null);
     const imgSrc = imgKey ? EX_IMAGES[imgKey] : null;
@@ -7263,22 +7800,61 @@ function saveCustomPlan() {
 // ─── SERVICE WORKER ──────────────────────────────────────────────────────
 if('serviceWorker' in navigator){
     var _swCode = [
-        "const CACHE='sportfit-v1';",
-        "self.addEventListener('install',function(e){self.skipWaiting();});",
-        "self.addEventListener('activate',function(e){e.waitUntil(clients.claim());});",
+        "const CACHE='sportfit-v2';",
+        "const FONTS=[",
+        "  'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Barlow:wght@400;600&display=swap',",
+        "  'https://fonts.gstatic.com'",
+        "];",
+        "self.addEventListener('install',function(e){",
+        "  self.skipWaiting();",
+        "  e.waitUntil(",
+        "    caches.open(CACHE).then(function(ca){",
+        "      return Promise.all([",
+        "        ca.add(new Request(self.registration.scope,{mode:'no-cors'})).catch(function(){}),",
+        "        FONTS.map(function(u){return ca.add(new Request(u,{mode:'no-cors'})).catch(function(){});});",
+        "      ]);",
+        "    })",
+        "  );",
+        "});",
+        "self.addEventListener('activate',function(e){",
+        "  e.waitUntil(",
+        "    caches.keys().then(function(keys){",
+        "      return Promise.all(keys.filter(function(k){return k!==CACHE;}).map(function(k){return caches.delete(k);}));",
+        "    }).then(function(){return clients.claim();})","  );",
+        "});",
         "self.addEventListener('fetch',function(e){",
+        "  var url=e.request.url;",
+        "  if(e.request.mode==='navigate'){",
+        "    e.respondWith(caches.match(e.request).then(function(c){",
+        "      return c||fetch(e.request).then(function(r){",
+        "        var cl=r.clone();caches.open(CACHE).then(function(ca){ca.put(e.request,cl);});",
+        "        return r;",
+        "      }).catch(function(){return caches.match('/');});",
+        "    }));",
+        "    return;",
+        "  }",
         "  e.respondWith(caches.match(e.request).then(function(c){",
         "    if(c)return c;",
         "    return fetch(e.request).then(function(r){",
-        "      if(!r||r.status!==200)return r;",
+        "      if(!r||r.status!==200||r.type==='opaque')return r;",
         "      var cl=r.clone();caches.open(CACHE).then(function(ca){ca.put(e.request,cl);});",
         "      return r;",
-        "    }).catch(function(){return c;});",
+        "    }).catch(function(){return c||new Response('',{status:503});});",
         "  }));",
         "});"
     ].join('\n');
     var _swBlob = new Blob([_swCode],{type:'application/javascript'});
-    navigator.serviceWorker.register(URL.createObjectURL(_swBlob)).catch(function(){});
+    var _swURL = URL.createObjectURL(_swBlob);
+    navigator.serviceWorker.register(_swURL).then(function(reg){
+        // Pre-cache current page on first registration
+        if(reg.installing){
+            caches.open('sportfit-v2').then(function(ca){
+                ca.put(window.location.href, new Response(document.documentElement.outerHTML, {
+                    headers:{'Content-Type':'text/html; charset=utf-8'}
+                }));
+            });
+        }
+    }).catch(function(){});
 }
 
 
@@ -7584,5 +8160,15 @@ function dietRenderSaved(){
     try{dietRenderSaved();}catch(e){}
 })();
 </script>
+<!-- Custom confirm modal (confirm() bloccato in iframe) -->
+<div id="sfConfirmOverlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9999;align-items:center;justify-content:center;">
+  <div style="background:#1c1c1e;border-radius:18px;padding:24px 20px;max-width:300px;width:90%;box-shadow:0 8px 40px rgba(0,0,0,.8);text-align:center;">
+    <div id="sfConfirmMsg" style="font-size:.95rem;color:#fff;margin-bottom:20px;line-height:1.4;"></div>
+    <div style="display:flex;gap:10px;">
+      <button id="sfConfirmNo" style="flex:1;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);color:#fff;font-size:.9rem;font-weight:600;font-family:inherit;cursor:pointer;" data-t="cancel_btn">Annulla</button>
+      <button id="sfConfirmYes" style="flex:1;padding:12px;border-radius:12px;border:none;background:var(--red,#ff3b30);color:#fff;font-size:.9rem;font-weight:700;font-family:inherit;cursor:pointer;" data-t="confirm_btn">Conferma</button>
+    </div>
+  </div>
+</div>
 </body>
 </html>
