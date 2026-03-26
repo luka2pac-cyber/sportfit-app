@@ -142,6 +142,26 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
 .ex-row.open .sets-table-wrap{display:block}
 .set-row{display:flex;align-items:center;gap:10px;padding:11px 12px;border-bottom:1px solid rgba(255,255,255,.05)}
 .set-row:last-child{border-bottom:none}
+.set-timer-btn{background:rgba(10,132,255,.2);border:1px solid rgba(10,132,255,.5);border-radius:8px;color:#0a84ff;font-size:.72rem;font-weight:700;padding:7px 10px;cursor:pointer;flex-shrink:0;line-height:1;transition:background .15s,color .15s;white-space:nowrap}
+.set-timer-btn:active{background:rgba(10,132,255,.4);color:#fff}
+.timer-banner{position:fixed;bottom:0;left:0;right:0;background:#111;border-top:1px solid rgba(255,255,255,.12);padding:12px 16px 24px;transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);z-index:999}
+.timer-banner.tb-visible{transform:translateY(0)}
+.timer-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px}
+.timer-display{font-size:2.2rem;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-1px}
+.timer-display.tb-warn{color:#ff9f0a}
+.timer-display.tb-done{color:#30d158}
+.timer-label{font-size:.65rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px}
+.tb-presets{display:flex;gap:5px}
+.tb-preset{padding:6px 10px;border-radius:7px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:rgba(255,255,255,.55);font-size:.7rem;font-weight:700;cursor:pointer;font-family:inherit}
+.tb-preset.tb-active{border-color:rgba(10,132,255,.6);background:rgba(10,132,255,.2);color:#fff}
+.tb-bar-bg{height:4px;background:rgba(255,255,255,.1);border-radius:2px;margin-bottom:11px;overflow:hidden}
+.tb-bar-fill{height:100%;background:linear-gradient(90deg,#0a84ff,#30d158);border-radius:2px;transition:width .5s linear}
+.tb-bar-fill.tb-warn{background:linear-gradient(90deg,#ff9f0a,#ff453a)}
+.tb-controls{display:flex;gap:7px}
+.tb-btn{flex:1;padding:10px 6px;border-radius:10px;border:none;font-size:.78rem;font-weight:700;cursor:pointer;font-family:inherit}
+.tb-stop{background:rgba(255,59,48,.15);color:#ff453a;border:1px solid rgba(255,59,48,.3)}
+.tb-add{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.15)}
+.tb-skip{background:rgba(52,199,89,.15);color:#30d158;border:1px solid rgba(52,199,89,.3)}
 .set-num{font-size:.72rem;font-weight:800;color:#fff;width:52px;flex-shrink:0;text-transform:uppercase}
 .set-reps{font-size:.76rem;color:rgba(255,255,255,.85);flex:1}
 .w-wrap{display:flex;align-items:center;gap:5px}
@@ -312,7 +332,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     <span class="nav-icon">🏋️</span><span class="nav-lbl" data-t="nav_workout">Scheda</span>
   </button>
   <button class="nav-btn" id="nav-storia" onclick="navTo('storia')">
-    <span class="nav-icon">📈</span><span class="nav-lbl" data-t="nav_history">Storia</span>
+    <span class="nav-icon">🏆</span><span class="nav-lbl" data-t="nav_pr">PR</span>
   </button>
 </nav>
 
@@ -397,14 +417,14 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     <div class="prog-item" style="border:1.5px solid rgba(10,132,255,.35);background:rgba(10,132,255,.07)">
       <button class="prog-item-btn" onclick="showView('layne-arms-info-view')">
         <div class="prog-item-name">⚡ Arm Specialization — <span style="font-size:.8rem;opacity:.7">Layne Norton</span></div>
-        <div class="prog-item-sub"><span data-t="layne_arms_sub">PHAT approach · Forza + Volume</span></div>
+        <div class="prog-item-sub"><span data-t="layne_arms_sub">2× / sett. · PHAT approach · Forza + Volume</span></div>
       </button>
       <span class="prog-arr">›</span>
     </div>
     <div class="prog-item" style="border:1.5px solid rgba(255,59,48,.35);background:rgba(255,59,48,.07)">
       <button class="prog-item-btn" onclick="showView('meadows-arms-info-view')">
         <div class="prog-item-name">💪 Arm Program — <span style="font-size:.8rem;opacity:.7">John Meadows</span></div>
-        <div class="prog-item-sub"><span data-t="meadows_arms_sub">Mountain Dog · Pump + Stretch</span></div>
+        <div class="prog-item-sub"><span data-t="meadows_arms_sub">2× / sett. · Mountain Dog · Pump + Stretch</span></div>
       </button>
       <span class="prog-arr">›</span>
     </div>
@@ -414,14 +434,14 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     <div class="prog-item" style="border:1.5px solid rgba(255,59,48,.35);background:rgba(255,59,48,.07)">
       <button class="prog-item-btn" onclick="showView('meadows-shoulders-info-view')">
         <div class="prog-item-name">🎯 3D Shoulders — <span style="font-size:.8rem;opacity:.7">John Meadows</span></div>
-        <div class="prog-item-sub"><span data-t="meadows_sh_sub">3 teste · Alta frequenza laterali</span></div>
+        <div class="prog-item-sub"><span data-t="meadows_sh_sub">2× / sett. · 3 teste · Alta frequenza laterali</span></div>
       </button>
       <span class="prog-arr">›</span>
     </div>
     <div class="prog-item" style="border:1.5px solid rgba(100,210,255,.35);background:rgba(100,210,255,.06)">
       <button class="prog-item-btn" onclick="showView('dante-shoulders-info-view')">
         <div class="prog-item-name">💥 Shoulder Blast — <span style="font-size:.8rem;opacity:.7">Dante Trudel</span></div>
-        <div class="prog-item-sub"><span data-t="dante_sh_sub">DC Blast · Rest-Pause + Extreme Stretch</span></div>
+        <div class="prog-item-sub"><span data-t="dante_sh_sub">3× / sett. · DC Blast · Rest-Pause + Extreme Stretch</span></div>
       </button>
       <span class="prog-arr">›</span>
     </div>
@@ -431,7 +451,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     <div class="prog-item" style="border:1.5px solid rgba(255,59,48,.35);background:rgba(255,59,48,.07)">
       <button class="prog-item-btn" onclick="showView('meadows-chest-info-view')">
         <div class="prog-item-name">🔥 Chest Program — <span style="font-size:.8rem;opacity:.7">John Meadows</span></div>
-        <div class="prog-item-sub"><span data-t="meadows_chest_sub">4 Fasi · Attivazione → Pump → Stretch</span></div>
+        <div class="prog-item-sub"><span data-t="meadows_chest_sub">2× / sett. · 4 Fasi · Attivazione → Pump → Stretch</span></div>
       </button>
       <span class="prog-arr">›</span>
     </div>
@@ -497,6 +517,8 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       <div class="ai-bullet"><b data-t="layne_arms_p1_lbl">Power day:</b> <span data-t="layne_arms_p1">progressione lineare — aggiungi 1-2.5kg ogni settimana</span></div>
       <div class="ai-bullet"><b data-t="layne_arms_p2_lbl">Hypertrophy day:</b> <span data-t="layne_arms_p2">doppia progressione — porta le reps al massimo, poi aggiungi peso</span></div>
       <div class="ai-bullet"><b data-t="layne_arms_p3_lbl">Riposo:</b> <span data-t="layne_arms_p3">2-3 min Power day, 60-90s Hypertrophy day nei superset</span></div>
+      <div class="ai-bullet"><b>Cedimento Power day:</b> <span>1-2 reps dal cedimento (RIR 1-2) — mai al cedimento assoluto per preservare la tecnica</span></div>
+      <div class="ai-bullet"><b>Cedimento Hypertrophy day:</b> <span>ultima serie di ogni superset al cedimento — le altre a RIR 1</span></div>
     </div>
     <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#003a5a,rgba(10,132,255,.9))" onclick="openWorkout('layne-arms','layne-arms-info-view')">
       ⚡ <span data-t="layne_arms_start">Inizia Arm Specialization</span>
@@ -531,6 +553,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       <div class="ai-bullet"><b>Pump:</b> <span>stessa resistenza, focus su pump e cedimento — non aumentare il carico</span></div>
       <div class="ai-bullet"><b>Extreme Stretch:</b> <span>obbligatorio dopo ogni gruppo — 60-90s con carico, mai saltarlo</span></div>
       <div class="ai-bullet"><b>Riposo:</b> <span>60-90s tra serie Esplosive, 45s tra Pump, 0s tra Attivazione e serie successiva</span></div>
+      <div class="ai-bullet"><b>Cedimento:</b> <span>Attivazione: mai al cedimento (RIR 3-4). Esplosiva: RIR 1-2. Pump: al cedimento con drop set. Stretch: no cedimento, focus su allungamento massimo</span></div>
     </div>
     <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#7a0000,rgba(255,59,48,.9))" onclick="openWorkout('meadows-arms','meadows-arms-info-view')">
       💪 <span data-t="meadows_arms_start">Inizia Arm Program</span>
@@ -564,6 +587,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       <div class="ai-bullet"><b>Laterali:</b> <span>non aumentare troppo il carico — la connessione mente-muscolo è più importante del peso</span></div>
       <div class="ai-bullet"><b>Posteriori:</b> <span>obbligatori ogni sessione — fondamentale per la salute della cuffia dei rotatori</span></div>
       <div class="ai-bullet"><b>Riposo:</b> <span>2 min dopo Press, 60-90s dopo Laterali, 45s dopo Posteriori</span></div>
+      <div class="ai-bullet"><b>Cedimento:</b> <span>Press: RIR 1-2. Laterali: al cedimento sull'ultima serie. Posteriori: al cedimento — carichi leggeri, nessun rischio</span></div>
     </div>
     <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#7a0000,rgba(255,59,48,.9))" onclick="openWorkout('meadows-shoulders','meadows-shoulders-info-view')">
       🎯 <span data-t="meadows_sh_start">Inizia 3D Shoulders</span>
@@ -632,6 +656,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       <div class="ai-bullet"><b>Pump + Drop set:</b> <span>non aumentare il carico — porta al cedimento poi drop immediato del 20-30%</span></div>
       <div class="ai-bullet"><b>Extreme Stretch:</b> <span>croci manubri tenute 60s in posizione di massimo stretch — obbligatorio ogni sessione</span></div>
       <div class="ai-bullet"><b>Riposo:</b> <span>2 min dopo Press, 60s dopo Pump, 0s tra Attivazione e serie successiva</span></div>
+      <div class="ai-bullet"><b>Cedimento:</b> <span>Attivazione: mai al cedimento (RIR 4-5). Press: RIR 1-2. Pump: al cedimento assoluto + drop. Stretch: no cedimento</span></div>
     </div>
     <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#7a0000,rgba(255,59,48,.9))" onclick="openWorkout('meadows-chest','meadows-chest-info-view')">
       🔥 <span data-t="meadows_chest_start">Inizia Chest Program</span>
@@ -641,17 +666,32 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
   <div id="uomini-inter-menu" class="view">
     <button onclick="goBack('uomini-level')" class="back-btn">← <span data-t="back_levels">Livelli</span></button>
     <div class="view-title"><span data-t="programs_title">Programmi</span><br><span class="c-blue" data-t="level_intermediate">Intermedio</span></div>
+    <div style="display:flex;align-items:center;gap:10px;margin:8px 0 10px">
+      <div style="flex:1;height:1px;background:rgba(255,214,10,.25)"></div>
+      <div style="font-size:.62rem;font-weight:800;color:rgba(255,214,10,.7);letter-spacing:2px;text-transform:uppercase;white-space:nowrap" data-t="freq_div_2_3">📅 2-3 GIORNI / SETT.</div>
+      <div style="flex:1;height:1px;background:rgba(255,214,10,.25)"></div>
+    </div>
+    <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('fb-ab-u','uomini-inter-menu')"><div class="prog-item-name">🟣 <span data-t="fb_ab_u_label">Full Body A/B</span></div><div class="prog-item-sub" data-t="fb_ab_sub">2–3x / settimana · Full Body · 16 sett.</div></button><span class="prog-arr">›</span></div>
+    <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('ul_2day_u','uomini-inter-menu')"><div class="prog-item-name">🟡 <span data-t="ul_2day_u_label">Upper/Lower 2 Giorni</span></div><div class="prog-item-sub" data-t="ul_2day_sub">2 giorni · Upper/Lower · 16 sett.</div></button><span class="prog-arr">›</span></div>
+    <div style="display:flex;align-items:center;gap:10px;margin:16px 0 10px">
+      <div style="flex:1;height:1px;background:rgba(255,214,10,.25)"></div>
+      <div style="font-size:.62rem;font-weight:800;color:rgba(255,214,10,.7);letter-spacing:2px;text-transform:uppercase;white-space:nowrap" data-t="freq_div_3_4">📅 3-4 GIORNI / SETT.</div>
+      <div style="flex:1;height:1px;background:rgba(255,214,10,.25)"></div>
+    </div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('lpp','uomini-inter-menu')"><div class="prog-item-name">🔵 Legs Push Pull</div><div class="prog-item-sub" data-t="lpp_sub">3 giorni · 3–6x / settimana</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('abc_3day_u','uomini-inter-menu')"><div class="prog-item-name">🔴 <span data-t="abc_3day_u_label">Full Body A/B/C</span></div><div class="prog-item-sub" data-t="abc_3day_sub">3 giorni · A/B/C · 16 sett.</div></button><span class="prog-arr">›</span></div>
-    <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('ul_2day_u','uomini-inter-menu')"><div class="prog-item-name">🟡 <span data-t="ul_2day_u_label">Upper/Lower 2 Giorni</span></div><div class="prog-item-sub" data-t="ul_2day_sub">2 giorni · Upper/Lower · 16 sett.</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('classic_4day_u','uomini-inter-menu')"><div class="prog-item-name">🟢 <span data-t="classic_4day_u_label">Classic Split 4 Giorni</span></div><div class="prog-item-sub" data-t="classic_4day_sub">4 giorni · Split · 16 sett.</div></button><span class="prog-arr">›</span></div>
-    <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('fb-ab-u','uomini-inter-menu')"><div class="prog-item-name">🟣 <span data-t="fb_ab_u_label">Full Body A/B</span></div><div class="prog-item-sub" data-t="fb_ab_sub">2–3x / settimana · Full Body · 16 sett.</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item" style="border:1.5px solid rgba(255,214,10,.3);background:rgba(255,214,10,.05)">
       <button class="prog-item-btn" onclick="showView('lyle-info-view')">
         <div class="prog-item-name">📊 <span data-t="lyle_btn">Lyle McDonald GBR</span></div>
         <div class="prog-item-sub"><span data-t="lyle_sub">Generic Bulking Routine — Upper/Lower 4 giorni</span></div>
       </button>
       <span class="prog-arr">›</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;margin:16px 0 10px">
+      <div style="flex:1;height:1px;background:rgba(255,214,10,.25)"></div>
+      <div style="font-size:.62rem;font-weight:800;color:rgba(255,214,10,.7);letter-spacing:2px;text-transform:uppercase;white-space:nowrap" data-t="freq_div_4_6">📅 4-6 GIORNI / SETT.</div>
+      <div style="flex:1;height:1px;background:rgba(255,214,10,.25)"></div>
     </div>
     <div class="prog-item" style="border:1.5px solid rgba(48,209,88,.3);background:rgba(48,209,88,.05)">
       <button class="prog-item-btn" onclick="openWorkout('lpp6-u','uomini-inter-menu')">
@@ -1805,7 +1845,17 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
   <div id="donne-inter-menu" class="view">
     <button onclick="goBack('donne-level')" class="back-btn">← <span data-t="back_levels">Livelli</span></button>
     <div class="view-title"><span data-t="programs_title">Programmi</span><br><span class="c-pink" data-t="level_intermediate">Intermedio</span></div>
+    <div style="display:flex;align-items:center;gap:10px;margin:8px 0 10px">
+      <div style="flex:1;height:1px;background:rgba(255,214,10,.25)"></div>
+      <div style="font-size:.62rem;font-weight:800;color:rgba(255,214,10,.7);letter-spacing:2px;text-transform:uppercase;white-space:nowrap" data-t="freq_div_2_3">📅 2-3 GIORNI / SETT.</div>
+      <div style="flex:1;height:1px;background:rgba(255,214,10,.25)"></div>
+    </div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('ab-d','donne-inter-menu')"><div class="prog-item-name">🩷 <span data-t="ab_d_label">AB Donna</span></div><div class="prog-item-sub" data-t="ab_d_sub">2–3x / settimana · Metodo ABAB · 16 sett.</div></button><span class="prog-arr">›</span></div>
+    <div style="display:flex;align-items:center;gap:10px;margin:16px 0 10px">
+      <div style="flex:1;height:1px;background:rgba(255,214,10,.25)"></div>
+      <div style="font-size:.62rem;font-weight:800;color:rgba(255,214,10,.7);letter-spacing:2px;text-transform:uppercase;white-space:nowrap" data-t="freq_div_2_4">📅 2-4 GIORNI / SETT.</div>
+      <div style="flex:1;height:1px;background:rgba(255,214,10,.25)"></div>
+    </div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('ul-d','donne-inter-menu')"><div class="prog-item-name">💙 <span data-t="ul_d_label">Upper/Lower Donna</span></div><div class="prog-item-sub" data-t="ul_d_sub">2–4x / settimana · Gambe + Parte Sup. · 16 sett.</div></button><span class="prog-arr">›</span></div>
   </div>
 
@@ -1981,9 +2031,9 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
 
   <!-- STORIA VIEW -->
   <div id="storia-view" class="view">
-    <div class="view-title"><span data-t="history_title1">La tua</span><br><span class="c-blue" data-t="history_title2">Storia</span></div>
-    <div class="storia-tabs" id="storiaTabs"></div>
-    <div id="storiaBody"></div>
+    <div class="view-title" style="padding-top:36px">🏆 <span class="c-gold" data-t="pr_title">Record Personali</span></div>
+    <div style="color:rgba(255,255,255,.45);font-size:.78rem;margin-bottom:16px" data-t="pr_sub">I tuoi massimali per ogni esercizio — aggiornati automaticamente durante l'allenamento</div>
+    <div id="prBody"></div>
     <div class="ai-block" style="margin-top:20px;border:1px solid rgba(255,59,48,.35);background:rgba(255,59,48,.06)">
       <div class="ai-block-title red">⚙️ <span data-t="data_mgmt_title">Gestione Dati</span></div>
       <div style="font-size:.75rem;color:rgba(255,255,255,.5);margin-bottom:12px" data-t="data_mgmt_sub">Cancella i record personali salvati in questa sessione</div>
@@ -3421,7 +3471,7 @@ const T = {
     ai_custom_title:'AI Trening Personalizzato', ai_custom_sub:'AI crea un programma completo, salvalo nei preferiti',
     ai_rec_title:'Programma Consigliato', ai_rec_sub:'AI sceglie il programma migliore per il tuo obiettivo',
     ai_cardio_title:'Piano Cardio', ai_cardio_sub:'Consigli su tipo, frequenza e durata', var2:'Variante 2', var3:'Variante 3', var4:'Variante 4',
-    nav_workout:'Scheda', nav_history:'Storia',
+    nav_workout:'Scheda', nav_history:'Storia', nav_pr:'PR', freq_div_2_3:'📅 2-3 GIORNI / SETT.', freq_div_2_4:'📅 2-4 GIORNI / SETT.', freq_div_3_4:'📅 3-4 GIORNI / SETT.', freq_div_4_6:'📅 4-6 GIORNI / SETT.', pr_title:'Record Personali', pr_sub:'I tuoi massimali per ogni esercizio — aggiornati durante l\'allenamento',
     // New programs
     abc_u_label:'ABC 3-Day',
     ul_u_base_label:'Superiore/Inferiore Base',
@@ -3893,7 +3943,7 @@ const T = {
     layne_arms_label:'Arm Specialization — Layne Norton',
     layne_arms_pills:[['2×','/ sett.'],['Power+','Hyper'],['PHAT','']],
     level_layne_arms:'INTERMEDIO / AVANZATO',
-    layne_arms_sub:'PHAT approach · Forza + Volume',
+    layne_arms_sub:'2× / sett. · PHAT approach · Forza + Volume',
     layne_arms_start:'Inizia Arm Specialization',
     layne_arms_meta:'2× / sett. · Power + Hypertrophy · Bicipiti + Tricipiti',
     layne_arms_level:'Intermedio / Avanzato',
@@ -3915,7 +3965,7 @@ const T = {
     meadows_arms_label:'💪 Arm Program — John Meadows',
     meadows_arms_pills:[['2×','/ sett.'],['4 Fasi','MD'],['Mountain','Dog']],
     level_meadows_arms:'AVANZATO',
-    meadows_arms_sub:'Mountain Dog · Pump + Stretch',
+    meadows_arms_sub:'2× / sett. · Mountain Dog · Pump + Stretch',
     meadows_arms_start:'Inizia Arm Program',
     meadows_arms_meta:'2× / sett. · 4 Fasi · Attivazione → Esplosiva → Pump → Stretch',
     meadows_arms_level:'Avanzato',
@@ -3931,7 +3981,7 @@ const T = {
     meadows_sh_label:'🎯 3D Shoulders — John Meadows',
     meadows_sh_pills:[['2×','/ sett.'],['3 Teste','deltoide'],['Rest-Pause','']],
     level_meadows_sh:'AVANZATO',
-    meadows_sh_sub:'3 teste · Alta frequenza laterali',
+    meadows_sh_sub:'2× / sett. · 3 teste · Alta frequenza laterali',
     meadows_sh_start:'Inizia 3D Shoulders',
     meadows_sh_meta:'2× / sett. · Anteriore · Laterale · Posteriore',
     meadows_sh_level:'Avanzato',
@@ -3946,7 +3996,7 @@ const T = {
     dante_sh_label:'Shoulder Blast — Dante Trudel',
     dante_sh_pills:[['3×','/ sett.'],['Rest-Pause','DC'],['Blast/','Cruise']],
     level_dante_sh:'AVANZATO',
-    dante_sh_sub:'DC Blast · Rest-Pause + Extreme Stretch',
+    dante_sh_sub:'3× / sett. · DC Blast · Rest-Pause + Extreme Stretch',
     dante_sh_start:'Inizia Shoulder Blast',
     dante_sh_meta:'3× / sett. · Rest-Pause · Extreme Stretch · Blast/Cruise',
     dante_sh_level:'Avanzato',
@@ -3960,7 +4010,7 @@ const T = {
     meadows_chest_label:'🔥 Chest Program — John Meadows',
     meadows_chest_pills:[['2×','/ sett.'],['4 Fasi','MD'],['Mountain','Dog']],
     level_meadows_chest:'AVANZATO',
-    meadows_chest_sub:'4 Fasi · Attivazione → Pump → Stretch',
+    meadows_chest_sub:'2× / sett. · 4 Fasi · Attivazione → Pump → Stretch',
     meadows_chest_start:'Inizia Chest Program',
     meadows_chest_meta:'2× / sett. · 4 Fasi · Attivazione → Esplosiva → Pump → Stretch',
     meadows_chest_level:'Avanzato',
@@ -4845,7 +4895,7 @@ en:{
     ai_custom_title:'Custom AI Workout', ai_custom_sub:'AI creates a full program, save to favorites',
     ai_rec_title:'Recommended Program', ai_rec_sub:'AI picks the best program for your goal',
     ai_cardio_title:'Cardio Plan', ai_cardio_sub:'Tips on type, frequency and duration', var2:'Option 2', var3:'Option 3', var4:'Option 4',
-    nav_workout:'Workout', nav_history:'History',
+    nav_workout:'Workout', nav_history:'History', nav_pr:'PR', freq_div_2_3:'📅 2-3 DAYS / WEEK', freq_div_2_4:'📅 2-4 DAYS / WEEK', freq_div_3_4:'📅 3-4 DAYS / WEEK', freq_div_4_6:'📅 4-6 DAYS / WEEK', pr_title:'Personal Records', pr_sub:'Your best lifts per exercise — updated automatically during training',
     // New programs
     abc_u_label:'ABC 3-Day',
     ul_u_base_label:'Upper Lower Base',
@@ -5312,7 +5362,7 @@ en:{
     layne_arms_label:'Arm Specialization — Layne Norton',
     layne_arms_pills:[['2×','/ week'],['Power+','Hyper'],['PHAT','']],
     level_layne_arms:'INTERMEDIATE / ADVANCED',
-    layne_arms_sub:'PHAT approach · Strength + Volume',
+    layne_arms_sub:'2× / week · PHAT approach · Strength + Volume',
     layne_arms_start:'Start Arm Specialization',
     layne_arms_meta:'2× / week · Power + Hypertrophy · Biceps + Triceps',
     layne_arms_level:'Intermediate / Advanced',
@@ -5334,7 +5384,7 @@ en:{
     meadows_arms_label:'💪 Arm Program — John Meadows',
     meadows_arms_pills:[['2×','/ week'],['4 Phases','MD'],['Mountain','Dog']],
     level_meadows_arms:'ADVANCED',
-    meadows_arms_sub:'Mountain Dog · Pump + Stretch',
+    meadows_arms_sub:'2× / sett. · Mountain Dog · Pump + Stretch',
     meadows_arms_start:'Start Arm Program',
     meadows_arms_meta:'2× / week · 4 Phases · Activation → Explosive → Pump → Stretch',
     meadows_arms_level:'Advanced',
@@ -5350,7 +5400,7 @@ en:{
     meadows_sh_label:'🎯 3D Shoulders — John Meadows',
     meadows_sh_pills:[['2×','/ week'],['3 Heads','delt'],['Rest-Pause','']],
     level_meadows_sh:'ADVANCED',
-    meadows_sh_sub:'3 heads · High frequency lateral raises',
+    meadows_sh_sub:'2× / week · 3 heads · High frequency lateral raises',
     meadows_sh_start:'Start 3D Shoulders',
     meadows_sh_meta:'2× / week · Anterior · Lateral · Posterior',
     meadows_sh_level:'Advanced',
@@ -5365,7 +5415,7 @@ en:{
     dante_sh_label:'Shoulder Blast — Dante Trudel',
     dante_sh_pills:[['3×','/ week'],['Rest-Pause','DC'],['Blast/','Cruise']],
     level_dante_sh:'ADVANCED',
-    dante_sh_sub:'DC Blast · Rest-Pause + Extreme Stretch',
+    dante_sh_sub:'3× / sett. · DC Blast · Rest-Pause + Extreme Stretch',
     dante_sh_start:'Start Shoulder Blast',
     dante_sh_meta:'3× / week · Rest-Pause · Extreme Stretch · Blast/Cruise',
     dante_sh_level:'Advanced',
@@ -5379,7 +5429,7 @@ en:{
     meadows_chest_label:'🔥 Chest Program — John Meadows',
     meadows_chest_pills:[['2×','/ week'],['4 Phases','MD'],['Mountain','Dog']],
     level_meadows_chest:'ADVANCED',
-    meadows_chest_sub:'4 Phases · Activation → Pump → Stretch',
+    meadows_chest_sub:'2× / week · 4 Phases · Activation → Pump → Stretch',
     meadows_chest_start:'Start Chest Program',
     meadows_chest_meta:'2× / week · 4 Phases · Activation → Explosive → Pump → Stretch',
     meadows_chest_level:'Advanced',
@@ -7480,6 +7530,7 @@ function resetAllPR(){
         document.querySelectorAll('.chip-pr').forEach(b=>{b.style.display='none';});
         document.querySelectorAll('.is-pr').forEach(el=>{el.classList.remove('is-pr');});
         showToast(lang==='en'?'All PR deleted':'Tutti i PR cancellati');
+        buildPR();
     });
 }
 const getHist=(wId)=>{try{return JSON.parse(localStorage.getItem(SK.hist(wId))||'[]')}catch{return[]}};
@@ -7785,6 +7836,7 @@ function renderEx(wId,dId,eIdx,ex){
                     type="number" step="0.5" min="0" placeholder="—" value="${w}"
                     oninput="onWInput('${wId}','${dId}',${eIdx},${s},this)" onclick="event.stopPropagation()" inputmode="decimal"/>
             </div>
+            <button class="set-timer-btn" onclick="event.stopPropagation();sfStartTimer()">⏱ Rest</button>
         </div>`;
     }).join('')+'</div>';
     const _advancedWIds = ['dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','lpp4-u','quick-u','quick-u-basic','corto-u-adv','corto-u-bas','quick-d','quick-d-basic','corto-d-adv','corto-d-bas','ws4sb-u','madcow-u','lpp30-u','lpp6-u','ken-pp','meadows-ppl','adv-lpp6-u','pp23-luka-u','poliquin-arms','layne-arms','meadows-arms','meadows-shoulders','dante-shoulders','meadows-chest','carter-bb','hst-u','gironda-4day','gironda-fb','ss-u','wendler-531','texas-method','smolov-jr','tls-d','tls-3d','tls-4d','pp-luka-d'];
@@ -8032,7 +8084,7 @@ function togglePasto(pid){
 function navTo(tab){
     setNavActive(tab);
     if(tab==='scheda')showViewRaw('workout-view');
-    else if(tab==='storia'){buildStoria();showViewRaw('storia-view')}
+    else if(tab==='storia'){buildPR();showViewRaw('storia-view')}
 }
 function setNavActive(tab){
     document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
@@ -8786,5 +8838,124 @@ function dietRenderSaved(){
     </div>
   </div>
 </div>
+
+<!-- REST TIMER BANNER -->
+<div class="timer-banner" id="sfTimerBanner">
+  <div class="timer-top">
+    <div>
+      <div class="timer-label">⏱ <span id="sfTimerLabel">Riposo</span></div>
+      <div class="timer-display" id="sfTimerDisplay">1:30</div>
+    </div>
+    <div class="tb-presets">
+      <button class="tb-preset" onclick="sfSetDuration(60)" id="sfP60">1 min</button>
+      <button class="tb-preset tb-active" onclick="sfSetDuration(90)" id="sfP90">1:30</button>
+      <button class="tb-preset" onclick="sfSetDuration(120)" id="sfP120">2 min</button>
+      <button class="tb-preset" onclick="sfSetDuration(180)" id="sfP180">3 min</button>
+    </div>
+  </div>
+  <div class="tb-bar-bg"><div class="tb-bar-fill" id="sfTimerFill" style="width:100%"></div></div>
+  <div class="tb-controls">
+    <button class="tb-btn tb-stop" onclick="sfStopTimer()">✕ Stop</button>
+    <button class="tb-btn tb-add" onclick="sfAddTime(15)">+15s</button>
+    <button class="tb-btn tb-add" onclick="sfAddTime(30)">+30s</button>
+    <button class="tb-btn tb-skip" onclick="sfSkipTimer()">Skip ›</button>
+  </div>
+</div>
+
+<script>
+// ─── REST TIMER ─────────────────────────────────────────────────────────────
+let _sfTimerDur=90,_sfTimerRem=90,_sfTimerInt=null,_sfAudioUnlocked=false;
+const _sfBase='https://sport-fit.org/wp-content/uploads/2026/03/';
+const _sfSounds={warn:_sfBase+'timer-warn.wav',done1:_sfBase+'timer-done1.wav',done2:_sfBase+'timer-done2.wav',done3:_sfBase+'timer-done3.wav'};
+function _sfUnlockAudio(){
+  if(_sfAudioUnlocked)return; _sfAudioUnlocked=true;
+  Object.values(_sfSounds).forEach(src=>{const a=new Audio(src);a.volume=0;a.play().then(()=>a.pause()).catch(()=>{});});
+}
+document.addEventListener('touchstart',_sfUnlockAudio,{once:true});
+document.addEventListener('click',_sfUnlockAudio,{once:true});
+function _sfPlay(src,delay){setTimeout(()=>{try{new Audio(src).play().catch(()=>{});}catch(e){}},delay||0);}
+function _sfBeepWarn(){_sfPlay(_sfSounds.warn,0);_sfPlay(_sfSounds.warn,210);}
+function _sfBeepDone(){_sfPlay(_sfSounds.done1,0);_sfPlay(_sfSounds.done2,185);_sfPlay(_sfSounds.done3,370);}
+function _sfFmtTime(s){return Math.floor(s/60)+':'+(String(s%60).padStart(2,'0'));}
+function _sfUpdateTimer(){
+  const disp=document.getElementById('sfTimerDisplay');
+  const fill=document.getElementById('sfTimerFill');
+  if(!disp||!fill)return;
+  disp.textContent=_sfFmtTime(_sfTimerRem);
+  fill.style.width=((_sfTimerRem/_sfTimerDur)*100)+'%';
+  const warn=_sfTimerRem<=10;
+  disp.className='timer-display'+(warn?' tb-warn':'');
+  fill.className='tb-bar-fill'+(warn?' tb-warn':'');
+  const lbl=document.getElementById('sfTimerLabel');
+  if(lbl)lbl.textContent=(typeof lang!=='undefined'&&lang==='en')?'Rest':'Riposo';
+}
+function sfStartTimer(){
+  _sfUnlockAudio();
+  if(_sfTimerInt)clearInterval(_sfTimerInt);
+  _sfTimerRem=_sfTimerDur;
+  document.getElementById('sfTimerBanner').classList.add('tb-visible');
+  _sfUpdateTimer();
+  _sfTimerInt=setInterval(()=>{
+    _sfTimerRem--;_sfUpdateTimer();
+    if(_sfTimerRem===10)_sfBeepWarn();
+    if(_sfTimerRem<=0){
+      clearInterval(_sfTimerInt);_sfTimerInt=null;
+      _sfBeepDone();
+      if(navigator.vibrate)navigator.vibrate([200,100,200]);
+      const d=document.getElementById('sfTimerDisplay');
+      if(d){d.className='timer-display tb-done';d.textContent='✓';}
+      setTimeout(()=>{document.getElementById('sfTimerBanner').classList.remove('tb-visible');},2000);
+    }
+  },1000);
+}
+function sfStopTimer(){if(_sfTimerInt){clearInterval(_sfTimerInt);_sfTimerInt=null;}document.getElementById('sfTimerBanner').classList.remove('tb-visible');}
+function sfSkipTimer(){if(_sfTimerInt){clearInterval(_sfTimerInt);_sfTimerInt=null;}_sfPlay(_sfSounds.done3,0);document.getElementById('sfTimerBanner').classList.remove('tb-visible');}
+function sfAddTime(s){_sfTimerRem=Math.min(_sfTimerRem+s,600);_sfUpdateTimer();}
+function sfSetDuration(s){
+  _sfTimerDur=s;
+  document.querySelectorAll('.tb-preset').forEach(b=>b.classList.remove('tb-active'));
+  const btn=document.getElementById('sfP'+s);if(btn)btn.classList.add('tb-active');
+  if(_sfTimerInt){_sfTimerRem=s;_sfUpdateTimer();}else sfStartTimer();
+}
+
+// ─── PR VIEW ─────────────────────────────────────────────────────────────────
+function buildPR(){
+  const el=document.getElementById('prBody');
+  if(!el)return;
+  const isIt=(typeof lang!=='undefined')?lang==='it':true;
+  const byProgram={};
+  const allIds=Object.keys(WID_MAP).concat(['lpp','ini-u','ini-d','fb-ab-u','ul-2day-u','abc-3day-u','classic-4day-u','ul-u-base','abc-u','classic-4u','lyle-gbr','dc-3day','dc-4day','mentzer-3day','mentzer-cons','dorian-bg','arthur-hit','ken-hit','ken-bm','phat','phul','bret','ashley','ul-pb-u','lpp4-u','ws4sb-u','madcow-u','lpp30-u','lpp6-u','ken-pp','pp-luka-d','ss-u','wendler-531','texas-method','smolov-jr','hst-u','gironda-4day','gironda-fb','tls-d','tls-3d','tls-4d']);
+  allIds.forEach(wId=>{
+    const w=getWorkoutLocalized(wId);if(!w)return;
+    w.days.forEach(day=>{
+      day.exercises.forEach((ex,eIdx)=>{
+        const val=getPR(wId,day.id,eIdx);
+        if(val>0){
+          if(!byProgram[wId])byProgram[wId]={label:w.label,days:{}};
+          if(!byProgram[wId].days[day.id])byProgram[wId].days[day.id]={name:day.name,exercises:[]};
+          byProgram[wId].days[day.id].exercises.push({name:ex.name,val});
+        }
+      });
+    });
+  });
+  if(!Object.keys(byProgram).length){
+    el.innerHTML=`<div class="storia-empty"><span>🏆</span>${isIt?'Nessun record ancora.<br>Inizia ad allenarti e i tuoi PR appariranno qui!':'No records yet.<br>Start training and your PRs will appear here!'}</div>`;
+    return;
+  }
+  el.innerHTML=Object.entries(byProgram).map(([wId,prog])=>`
+    <div style="margin-bottom:16px">
+      <div style="font-size:.68rem;font-weight:800;color:rgba(255,255,255,.35);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px">${prog.label}</div>
+      ${Object.values(prog.days).map(day=>`
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;margin-bottom:8px">
+          <div style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.06);font-size:.72rem;font-weight:800;color:rgba(255,255,255,.4);text-transform:uppercase">${day.name}</div>
+          ${day.exercises.sort((a,b)=>b.val-a.val).map(ex=>`
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;border-bottom:1px solid rgba(255,255,255,.04)">
+              <div style="font-size:.85rem;font-weight:600;color:#fff;flex:1;padding-right:12px">${ex.name}</div>
+              <div style="background:rgba(255,214,10,.12);border:1px solid rgba(255,214,10,.35);border-radius:8px;padding:5px 12px;font-size:.85rem;font-weight:800;color:var(--gold);white-space:nowrap">🏆 ${ex.val}kg</div>
+            </div>`).join('')}
+        </div>`).join('')}
+    </div>`).join('')+'<div style="height:20px"></div>';
+}
+</script>
 </body>
 </html>
