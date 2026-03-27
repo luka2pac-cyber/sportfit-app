@@ -9116,30 +9116,48 @@ function dietRenderSaved(){
 // ─── REST TIMER ─────────────────────────────────────────────────────────────
 let _sfTimerDur=90,_sfTimerRem=90,_sfTimerInt=null,_sfAudioUnlocked=false;
 const _sfBase='https://sport-fit.org/wp-content/uploads/2026/03/';
-const _sfSounds={warn:'https://sport-fit.org/wp-content/uploads/2026/03/ronnie_lightweight-baby.mp3',done1:_sfBase+'timer-done1.wav',done2:_sfBase+'timer-done2.wav',done3:_sfBase+'timer-done3.wav'};
+const _sfSounds={
+  yeahBuddy:_sfBase+'yea-buddy.mp3',
+  warn:_sfBase+'timer-warn.wav',
+  myinstants:_sfBase+'myinstants.mp3',
+  ronnie:_sfBase+'ronnie_lightweight-baby.mp3',
+  done1:_sfBase+'timer-done1.wav',
+  done2:_sfBase+'timer-done2.wav',
+  done3:_sfBase+'timer-done3.wav'
+};
 function _sfUnlockAudio(){
   if(_sfAudioUnlocked)return; _sfAudioUnlocked=true;
-  Object.values(_sfSounds).forEach(src=>{const a=new Audio(src);a.volume=0;a.play().then(()=>a.pause()).catch(()=>{});});
+  [_sfSounds.warn,_sfSounds.done1].forEach(src=>{const a=new Audio(src);a.volume=0;a.play().then(()=>a.pause()).catch(()=>{});});
 }
 document.addEventListener('touchstart',_sfUnlockAudio,{once:true});
 document.addEventListener('click',_sfUnlockAudio,{once:true});
 function _sfPlay(src,delay){setTimeout(()=>{try{new Audio(src).play().catch(()=>{});}catch(e){}},delay||0);}
-function _sfBeepWarn(){_sfPlay(_sfSounds.warn,0);}
+function _sfBeepAt10(){
+  // -10s: "Yeah buddy!"
+  _sfPlay(_sfSounds.yeahBuddy,0);
+}
+function _sfBeepAt5(){
+  // -5s: timer-warn.wav, then after ~1s myinstants.mp3
+  _sfPlay(_sfSounds.warn,0);
+  _sfPlay(_sfSounds.myinstants,1000);
+}
 function _sfBeepDone(){
-  // Play done sound looping for 5 seconds
-  try{
-    var a=new Audio(_sfSounds.done1);
-    a.loop=true;
-    a.play().catch(()=>{});
-    setTimeout(()=>{a.pause();a.currentTime=0;},5000);
-  }catch(e){
-    // fallback: repeat sequence
-    _sfPlay(_sfSounds.done1,0);_sfPlay(_sfSounds.done2,185);_sfPlay(_sfSounds.done3,370);
-    _sfPlay(_sfSounds.done1,1000);_sfPlay(_sfSounds.done2,1185);_sfPlay(_sfSounds.done3,1370);
-    _sfPlay(_sfSounds.done1,2000);_sfPlay(_sfSounds.done2,2185);_sfPlay(_sfSounds.done3,2370);
-    _sfPlay(_sfSounds.done1,3000);_sfPlay(_sfSounds.done2,3185);_sfPlay(_sfSounds.done3,3370);
-    _sfPlay(_sfSounds.done1,4000);_sfPlay(_sfSounds.done2,4185);_sfPlay(_sfSounds.done3,4370);
-  }
+  // 0s: Ronnie Coleman, then done1/2/3 loop for 5s
+  _sfPlay(_sfSounds.ronnie,0);
+  setTimeout(()=>{
+    try{
+      var a=new Audio(_sfSounds.done1);
+      a.loop=true;
+      a.play().catch(()=>{});
+      setTimeout(()=>{try{a.pause();a.currentTime=0;}catch(e){}},5000);
+    }catch(e){
+      _sfPlay(_sfSounds.done1,0);_sfPlay(_sfSounds.done2,185);_sfPlay(_sfSounds.done3,370);
+      _sfPlay(_sfSounds.done1,1000);_sfPlay(_sfSounds.done2,1185);_sfPlay(_sfSounds.done3,1370);
+      _sfPlay(_sfSounds.done1,2000);_sfPlay(_sfSounds.done2,2185);_sfPlay(_sfSounds.done3,2370);
+      _sfPlay(_sfSounds.done1,3000);_sfPlay(_sfSounds.done2,3185);_sfPlay(_sfSounds.done3,3370);
+      _sfPlay(_sfSounds.done1,4000);_sfPlay(_sfSounds.done2,4185);_sfPlay(_sfSounds.done3,4370);
+    }
+  },500);
 }
 function _sfFmtTime(s){return Math.floor(s/60)+':'+(String(s%60).padStart(2,'0'));}
 function _sfUpdateTimer(){
@@ -9162,7 +9180,8 @@ function sfStartTimer(){
   _sfUpdateTimer();
   _sfTimerInt=setInterval(()=>{
     _sfTimerRem--;_sfUpdateTimer();
-    if(_sfTimerRem===10)_sfBeepWarn();
+    if(_sfTimerRem===10)_sfBeepAt10();
+    if(_sfTimerRem===5)_sfBeepAt5();
     if(_sfTimerRem<=0){
       clearInterval(_sfTimerInt);_sfTimerInt=null;
       _sfBeepDone();
