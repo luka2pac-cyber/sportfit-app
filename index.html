@@ -8009,6 +8009,7 @@ function openWorkout(wId,backView){
         smSection.style.display='none';
       }
     }
+    updateWorkoutHeart(wId);
     showViewRaw('workout-view');
 }
 
@@ -8339,6 +8340,7 @@ function setNavActive(tab){
 function showViewRaw(id){
     document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
     const t2=document.getElementById(id);if(t2)t2.classList.add('active');
+    if(id==='attivi-view'){try{renderAttivi();updateAttiviBtnLabel();}catch(e){}}
     try{window.scrollTo(0,0);}catch(e){}
     try{var mc=document.getElementById('mainCont');if(mc)mc.scrollTop=0;}catch(e){}
 }
@@ -8347,6 +8349,7 @@ function showView(id){
     _viewHistory.push(id);
     showViewRaw(id);
     document.getElementById('bottomNav').style.display='none';
+    if(id==='attivi-view'){renderAttivi();updateAttiviBtnLabel();}
     try{ window.parent.postMessage({sfNav:'push'}, '*'); }catch(e){}
 }
 function goBack(id){
@@ -8378,6 +8381,7 @@ window.addEventListener('popstate', function(e){
     history.pushState({view:'sf'}, '', window.location.href);
 });
 history.pushState({view:'sf'}, '', window.location.href);
+try{renderAttivi();updateAttiviBtnLabel();}catch(e){}
 
 // ─── TOAST ─────────────────────────────────────────────────────────────────
 let toastT;
