@@ -162,14 +162,30 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
 .tb-stop{background:rgba(255,59,48,.15);color:#ff453a;border:1px solid rgba(255,59,48,.3)}
 .tb-add{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.15)}
 .tb-skip{background:rgba(52,199,89,.15);color:#30d158;border:1px solid rgba(52,199,89,.3)}
-.set-num{font-size:.72rem;font-weight:800;color:#fff;width:52px;flex-shrink:0;text-transform:uppercase}
+.set-num{font-size:.72rem;font-weight:800;color:#fff;width:18px;flex-shrink:0;text-transform:uppercase}
 .set-reps{font-size:.76rem;color:rgba(255,255,255,.85);flex:1}
-.w-wrap{display:flex;align-items:center;gap:5px}
-.w-input{background:var(--bg4);border:2px solid rgba(255,255,255,.25);border-radius:10px;color:#fff;font-size:.92rem;font-weight:700;width:66px;padding:9px 8px;text-align:center;outline:none;-moz-appearance:textfield}
+.sets-hdr-row{display:flex;align-items:center;gap:6px;padding:6px 12px;border-bottom:1px solid rgba(255,255,255,.08)}
+.sets-hdr-cell{font-size:.6rem;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.5px;flex:1;text-align:center}
+.sets-hdr-cell:first-child{width:18px;flex:none}
+.sets-hdr-cell.today-col{flex:2;text-align:center}
+.set-arch{font-size:.72rem;color:rgba(255,255,255,.5);flex:1;text-align:center;white-space:nowrap}
+.set-arch.is-pr-val{color:var(--gold);font-weight:700}
+.set-arr.up{color:#30d158;font-size:.65rem}
+.set-arr.down{color:#ff453a;font-size:.65rem}
+.set-arr.eq{color:rgba(255,255,255,.3);font-size:.65rem}
+.is-pr-row{background:rgba(255,214,10,.04)}
+.w-wrap{display:flex;align-items:center;gap:4px;flex:2;justify-content:center}
+.w-input{background:var(--bg4);border:2px solid rgba(255,255,255,.25);border-radius:10px;color:#fff;font-size:.85rem;font-weight:700;width:54px;padding:8px 4px;text-align:center;outline:none;-moz-appearance:textfield}
 .w-input::-webkit-inner-spin-button,.w-input::-webkit-outer-spin-button{-webkit-appearance:none}
 .w-input:focus{border-color:var(--blue)}
 .w-input.is-pr{border-color:var(--gold);color:var(--gold);background:rgba(255,214,10,.07)}
+.r-input{background:var(--bg4);border:2px solid rgba(255,255,255,.15);border-radius:10px;color:rgba(255,255,255,.75);font-size:.85rem;font-weight:700;width:40px;padding:8px 4px;text-align:center;outline:none;-moz-appearance:textfield}
+.r-input::-webkit-inner-spin-button,.r-input::-webkit-outer-spin-button{-webkit-appearance:none}
+.r-input:focus{border-color:rgba(255,255,255,.4)}
+.w-sep{font-size:.65rem;color:rgba(255,255,255,.25);font-weight:700}
 .kg{font-size:.65rem;font-weight:700;color:rgba(255,255,255,.55)}
+.set-row{display:flex;align-items:center;gap:6px;padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.05)}
+.set-row:last-child{border-bottom:none}
 
 /* WORKOUT HDR */
 .workout-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;position:relative}
@@ -2849,8 +2865,14 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       <button id="ba-sex-f" class="seg-btn" onclick="baSetSex('f',this)" data-t="sex_female">Donna</button>
     </div>
     <div style="display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap">
-      <button id="ba-m-jp3" class="seg-btn" onclick="baSelectMethod('jp3',this)">JP3 Caliper</button>
-      <button id="ba-m-parillo" class="seg-btn" onclick="baSelectMethod('parillo',this)">Parillo 9</button>
+      <div style="display:flex;align-items:center;gap:4px">
+        <button id="ba-m-jp3" class="seg-btn" onclick="baSelectMethod('jp3',this)">JP3 Caliper</button>
+        <button onclick="showCaliperGuide()" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:8px;color:rgba(255,255,255,.7);font-size:.75rem;padding:5px 8px;cursor:pointer;line-height:1">❓</button>
+      </div>
+      <div style="display:flex;align-items:center;gap:4px">
+        <button id="ba-m-parillo" class="seg-btn" onclick="baSelectMethod('parillo',this)">Parillo 9</button>
+        <button onclick="showCaliperGuide()" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:8px;color:rgba(255,255,255,.7);font-size:.75rem;padding:5px 8px;cursor:pointer;line-height:1">❓</button>
+      </div>
       <button id="ba-m-navy" class="seg-btn" onclick="baSelectMethod('navy',this)">Navy</button>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px">
@@ -7684,12 +7706,15 @@ const segState={sesso:'m',attivita:'sed',obiettivo:'cut',pasti:'3'};
 // ─── STORAGE ───────────────────────────────────────────────────────────────
 const SK={
     w:(wId,dId,eIdx,sIdx)=>`sf_w_${wId}_${dId}_${eIdx}_${sIdx}`,
+    r:(wId,dId,eIdx,sIdx)=>`sf_r_${wId}_${dId}_${eIdx}_${sIdx}`,
     pr:(wId,dId,eIdx)=>`sf_pr_${wId}_${dId}_${eIdx}`,
     hist:(wId)=>`sf_hist_${wId}`,
     attivi:'sf_attivi'
 };
 const getW=(wId,dId,eIdx,sIdx)=>localStorage.getItem(SK.w(wId,dId,eIdx,sIdx))||'';
 const setW=(wId,dId,eIdx,sIdx,v)=>v?localStorage.setItem(SK.w(wId,dId,eIdx,sIdx),v):localStorage.removeItem(SK.w(wId,dId,eIdx,sIdx));
+const getR=(wId,dId,eIdx,sIdx)=>localStorage.getItem(SK.r(wId,dId,eIdx,sIdx))||'';
+const setR=(wId,dId,eIdx,sIdx,v)=>v?localStorage.setItem(SK.r(wId,dId,eIdx,sIdx),v):localStorage.removeItem(SK.r(wId,dId,eIdx,sIdx));
 const getPR=(wId,dId,eIdx)=>parseFloat(localStorage.getItem(SK.pr(wId,dId,eIdx))||'0');
 const setPR_=(wId,dId,eIdx,v)=>localStorage.setItem(SK.pr(wId,dId,eIdx),v);
 function sfConfirm(msg, onYes){
@@ -8043,11 +8068,16 @@ function renderEx(wId,dId,eIdx,ex){
                      :`<span class="chip chip-pr" id="prbadge_${wId}_${dId}_${eIdx}" style="display:none"></span>`;
     const hist=getHist(wId);
     const pastSessions=hist.filter(h=>new Date(h.date).toDateString()!==new Date().toDateString()).slice(0,2).reverse();
-    function getArchW(sessIdx,sIdx){
+    function getArchWR(sessIdx,sIdx){
         const sess=pastSessions[sessIdx];if(!sess)return null;
         const day=sess.days.find(d=>d.id===dId);if(!day)return null;
         const ex2=day.exercises[eIdx];if(!ex2||!ex2.sets[sIdx])return null;
-        return parseFloat(ex2.sets[sIdx].w)||null;
+        return {w:parseFloat(ex2.sets[sIdx].w)||null,r:ex2.sets[sIdx].r||null};
+    }
+    function fmtWR(wr){
+        if(!wr||wr.w===null)return'—';
+        const rStr=wr.r&&String(wr.r).replace(/[^0-9\-]/g,'').length>0?' <span style="font-size:.6rem;opacity:.55">x'+wr.r+'</span>':''; 
+        return wr.w+'kg'+rStr;
     }
     function fmtDate(sess){
         if(!sess)return'—';
@@ -8067,21 +8097,27 @@ function renderEx(wId,dId,eIdx,ex){
             <div class="sets-hdr-cell"></div>
             <div class="sets-hdr-cell">${hdr1}</div>
             <div class="sets-hdr-cell">${hdr2}</div>
-            <div class="sets-hdr-cell today-col">${t('oggi')||'DANES'}</div>
+            <div class="sets-hdr-cell today-col">${t('oggi')||'OGGI'}</div>
         </div>`+Array.from({length:ex.s},(_,s)=>{
         const w=getW(wId,dId,eIdx,s);
+        const rv=getR(wId,dId,eIdx,s);
         const isPR=pr>0&&parseFloat(w)===pr;
-        const a0=getArchW(0,s),a1=getArchW(1,s);
+        const ar0=getArchWR(0,s),ar1=getArchWR(1,s);
+        const a0=ar0?ar0.w:null,a1=ar1?ar1.w:null;
         const isPRRow=(a0!==null&&a0===pr)||(a1!==null&&a1===pr);
         const arr01=arrow(a0,a1);
         return`<div class="set-row${isPRRow?' is-pr-row':''}">
             <div class="set-num">${s+1}</div>
-            <div class="set-arch${a0===pr?' is-pr-val':''}">${a0!==null?a0+'kg':'—'}</div>
-            <div class="set-arch${a1===pr?' is-pr-val':''}">${a1!==null?a1+'kg'+arr01:'—'}</div>
+            <div class="set-arch${a0===pr?' is-pr-val':''}">${fmtWR(ar0)}</div>
+            <div class="set-arch${a1===pr?' is-pr-val':''}">${ar1&&ar1.w!==null?fmtWR(ar1)+arr01:'—'}</div>
             <div class="w-wrap">
                 <input class="w-input${isPR?' is-pr':''}" id="inp_${wId}_${dId}_${eIdx}_${s}"
-                    type="number" step="0.5" min="0" placeholder="—" value="${w}"
+                    type="number" step="0.5" min="0" placeholder="kg" value="${w}"
                     oninput="onWInput('${wId}','${dId}',${eIdx},${s},this)" onclick="event.stopPropagation()" inputmode="decimal"/>
+                <span class="w-sep">×</span>
+                <input class="r-input" id="rinp_${wId}_${dId}_${eIdx}_${s}"
+                    type="number" step="1" min="0" placeholder="reps" value="${rv}"
+                    oninput="onRInput('${wId}','${dId}',${eIdx},${s},this)" onclick="event.stopPropagation()" inputmode="numeric"/>
             </div>
             <button class="set-timer-btn" onclick="event.stopPropagation();sfStartTimer()">⏱ Rest</button>
         </div>`;
@@ -8134,7 +8170,7 @@ function saveSession(wId){
     const snap={date:new Date().toISOString(),days:w.days.map(day=>({
         id:day.id,name:day.name,
         exercises:day.exercises.map((ex,eIdx)=>({name:ex.name,
-            sets:Array.from({length:ex.s},(_,sIdx)=>({w:getW(wId,day.id,eIdx,sIdx),r:ex.r})).filter(s=>s.w!=='')
+            sets:Array.from({length:ex.s},(_,sIdx)=>({w:getW(wId,day.id,eIdx,sIdx),r:getR(wId,day.id,eIdx,sIdx)||ex.r})).filter(s=>s.w!=='')
         })).filter(ex=>ex.sets.length>0)
     })).filter(d=>d.exercises.length>0)};
     if(!snap.days.length)return;
@@ -8143,6 +8179,10 @@ function saveSession(wId){
     filtered.unshift(snap);
     localStorage.setItem(SK.hist(wId),JSON.stringify(filtered.slice(0,84)));
     showToast(t('toast_saved'));
+}
+function onRInput(wId,dId,eIdx,sIdx,el){
+    const val=el.value;
+    setR(wId,dId,eIdx,sIdx,val);
 }
 
 // ─── STORIA ────────────────────────────────────────────────────────────────
@@ -9097,6 +9137,7 @@ function dietRenderSaved(){
       <div class="timer-display" id="sfTimerDisplay">1:30</div>
     </div>
     <div class="tb-presets">
+      <button class="tb-preset" onclick="sfSetDuration(30)" id="sfP30">30s</button>
       <button class="tb-preset" onclick="sfSetDuration(60)" id="sfP60">1 min</button>
       <button class="tb-preset tb-active" onclick="sfSetDuration(90)" id="sfP90">1:30</button>
       <button class="tb-preset" onclick="sfSetDuration(120)" id="sfP120">2 min</button>
@@ -9116,48 +9157,50 @@ function dietRenderSaved(){
 // ─── REST TIMER ─────────────────────────────────────────────────────────────
 let _sfTimerDur=90,_sfTimerRem=90,_sfTimerInt=null,_sfAudioUnlocked=false;
 const _sfBase='https://sport-fit.org/wp-content/uploads/2026/03/';
+const _sfBase2='https://sport-fit.org/wp-content/uploads/2026/03/';
 const _sfSounds={
-  yeahBuddy:_sfBase+'yea-buddy.mp3',
-  warn:_sfBase+'timer-warn.wav',
-  myinstants:_sfBase+'myinstants.mp3',
-  ronnie:_sfBase+'ronnie_lightweight-baby.mp3',
-  done1:_sfBase+'timer-done1.wav',
-  done2:_sfBase+'timer-done2.wav',
-  done3:_sfBase+'timer-done3.wav'
+  yeah:_sfBase2+'yea-buddy.mp3',
+  mid:_sfBase2+'myinstants.mp3',
+  ronnie:_sfBase2+'ronnie_lightweight-baby.mp3'
 };
+// Preloaded durations
+let _sfDur={yeah:3,mid:3}; // fallback in seconds
+let _sfAudioReady=false;
 function _sfUnlockAudio(){
   if(_sfAudioUnlocked)return; _sfAudioUnlocked=true;
-  [_sfSounds.warn,_sfSounds.done1].forEach(src=>{const a=new Audio(src);a.volume=0;a.play().then(()=>a.pause()).catch(()=>{});});
+  // Preload and measure durations
+  ['yeah','mid'].forEach(key=>{
+    try{
+      const a=new Audio(_sfSounds[key]);
+      a.volume=0;
+      a.addEventListener('loadedmetadata',()=>{
+        if(a.duration&&isFinite(a.duration))_sfDur[key]=a.duration;
+      });
+      a.play().then(()=>a.pause()).catch(()=>{});
+    }catch(e){}
+  });
+  try{const r=new Audio(_sfSounds.ronnie);r.volume=0;r.play().then(()=>r.pause()).catch(()=>{});}catch(e){}
 }
 document.addEventListener('touchstart',_sfUnlockAudio,{once:true});
 document.addEventListener('click',_sfUnlockAudio,{once:true});
-function _sfPlay(src,delay){setTimeout(()=>{try{new Audio(src).play().catch(()=>{});}catch(e){}},delay||0);}
-function _sfBeepAt10(){
-  // -10s: "Yeah buddy!"
-  _sfPlay(_sfSounds.yeahBuddy,0);
-}
-function _sfBeepAt5(){
-  // -5s: timer-warn.wav, then after ~1s myinstants.mp3
-  _sfPlay(_sfSounds.warn,0);
-  _sfPlay(_sfSounds.myinstants,1000);
+// Sequence: yeah → mid → (at 0) ronnie
+// Triggered from timer tick when rem === Math.ceil(dur.yeah + dur.mid)
+function _sfBeepSequence(){
+  try{
+    const a1=new Audio(_sfSounds.yeah);
+    a1.play().catch(()=>{});
+    a1.addEventListener('ended',()=>{
+      try{
+        const a2=new Audio(_sfSounds.mid);
+        a2.play().catch(()=>{});
+        // a2 ends at ~0s, ronnie plays on _sfBeepDone
+      }catch(e){}
+    });
+  }catch(e){}
 }
 function _sfBeepDone(){
-  // 0s: Ronnie Coleman, then done1/2/3 loop for 5s
-  _sfPlay(_sfSounds.ronnie,0);
-  setTimeout(()=>{
-    try{
-      var a=new Audio(_sfSounds.done1);
-      a.loop=true;
-      a.play().catch(()=>{});
-      setTimeout(()=>{try{a.pause();a.currentTime=0;}catch(e){}},5000);
-    }catch(e){
-      _sfPlay(_sfSounds.done1,0);_sfPlay(_sfSounds.done2,185);_sfPlay(_sfSounds.done3,370);
-      _sfPlay(_sfSounds.done1,1000);_sfPlay(_sfSounds.done2,1185);_sfPlay(_sfSounds.done3,1370);
-      _sfPlay(_sfSounds.done1,2000);_sfPlay(_sfSounds.done2,2185);_sfPlay(_sfSounds.done3,2370);
-      _sfPlay(_sfSounds.done1,3000);_sfPlay(_sfSounds.done2,3185);_sfPlay(_sfSounds.done3,3370);
-      _sfPlay(_sfSounds.done1,4000);_sfPlay(_sfSounds.done2,4185);_sfPlay(_sfSounds.done3,4370);
-    }
-  },500);
+  // At 0: Light weight baby! plays to completion
+  try{new Audio(_sfSounds.ronnie).play().catch(()=>{});}catch(e){}
 }
 function _sfFmtTime(s){return Math.floor(s/60)+':'+(String(s%60).padStart(2,'0'));}
 function _sfUpdateTimer(){
@@ -9180,8 +9223,9 @@ function sfStartTimer(){
   _sfUpdateTimer();
   _sfTimerInt=setInterval(()=>{
     _sfTimerRem--;_sfUpdateTimer();
-    if(_sfTimerRem===10)_sfBeepAt10();
-    if(_sfTimerRem===5)_sfBeepAt5();
+    // Trigger Coleman sequence: yeah+mid durations before 0
+    const _seqDur=Math.ceil((_sfDur.yeah||3)+(_sfDur.mid||3));
+    if(_sfTimerRem===_seqDur)_sfBeepSequence();
     if(_sfTimerRem<=0){
       clearInterval(_sfTimerInt);_sfTimerInt=null;
       _sfBeepDone();
@@ -9201,6 +9245,20 @@ function sfSetDuration(s){
   const btn=document.getElementById('sfP'+s);if(btn)btn.classList.add('tb-active');
   if(_sfTimerInt){_sfTimerRem=s;_sfUpdateTimer();}else sfStartTimer();
 }
+
+function showCaliperGuide(){
+  const m=document.getElementById('caliperModal');
+  if(m){m.style.display='flex';document.body.style.overflow='hidden';}
+}
+function hideCaliperGuide(){
+  const m=document.getElementById('caliperModal');
+  if(m){m.style.display='none';document.body.style.overflow='';}
+}
+// Close on backdrop tap
+document.addEventListener('click',function(e){
+  const m=document.getElementById('caliperModal');
+  if(m&&e.target===m){hideCaliperGuide();}
+});
 
 // ─── PR VIEW ─────────────────────────────────────────────────────────────────
 function buildPR(){
@@ -9241,5 +9299,16 @@ function buildPR(){
     </div>`).join('')+'<div style="height:20px"></div>';
 }
 </script>
+<!-- Caliper Guide Modal -->
+<div id="caliperModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.92);align-items:center;justify-content:center;flex-direction:column;padding:20px">
+  <div style="width:100%;max-width:400px;position:relative">
+    <button onclick="hideCaliperGuide()" style="position:absolute;top:-40px;right:0;background:rgba(255,255,255,.15);border:none;color:#fff;font-size:1.2rem;border-radius:50%;width:36px;height:36px;cursor:pointer;line-height:1">✕</button>
+    <div style="font-size:.8rem;font-weight:700;color:rgba(255,255,255,.5);text-align:center;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px">📏 Guida Misurazione Calipro</div>
+    <img src="https://sport-fit.org/wp-content/uploads/2026/03/caliper.gif" style="width:100%;border-radius:14px;display:block"/>
+    <div style="margin-top:12px;font-size:.72rem;color:rgba(255,255,255,.45);text-align:center;line-height:1.5">
+      Pizzica la piega cutanea tra pollice e indice,<br>applica il calipro a 1 cm dalle dita e leggi dopo 2s.
+    </div>
+  </div>
+</div>
 </body>
 </html>
