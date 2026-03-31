@@ -2,10 +2,12 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
+    <link rel="manifest" href="./manifest.json">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
 
 
 
@@ -15,7 +17,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Nunito:wght@800;900&display=swap" rel="stylesheet">
     <style>@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:900;src:local('Impact'),local('Arial Narrow');}</style>
 <style>
-:root{--red:#ff3b30;--dark-red:#7a0000;--green:#30d158;--blue:#0a84ff;--pink:#ff6b9d;--gold:#ffd60a;--bg:#000;--bg2:#111;--bg3:#1c1c1e;--bg4:#2c2c2e}
+:root{--iframe-bg:#000;--red:#ff3b30;--dark-red:#7a0000;--green:#30d158;--blue:#0a84ff;--pink:#ff6b9d;--gold:#ffd60a;--bg:#000;--bg2:#111;--bg3:#1c1c1e;--bg4:#2c2c2e}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;background:#000;color:#fff;font-family:-apple-system,'Helvetica Neue',sans-serif}
 body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-height:100%}
@@ -8458,7 +8460,7 @@ function renderEx(wId,dId,eIdx,ex){
         ${(()=>{
             if(wId!=='pb-fabio')return'';
             const rStr=String(ex.r);
-            const m=rStr.match(/\((\d+)(?:-\d+)?\s*tot\)/);
+            const m=rStr.match(/(\d+)(?:-\d+)?\s*reps?\s*tot/);
             if(!m)return'';
             const target=parseInt(m[1]);
             const isIt=typeof lang!=='undefined'&&lang==='it';
