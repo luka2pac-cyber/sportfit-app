@@ -105,6 +105,9 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
 
 /* PROG ITEMS */
 .prog-item{display:flex;align-items:center;background:var(--bg3);border-radius:14px;border:1.5px solid rgba(255,255,255,.15);margin-bottom:12px}
+.badge-mp{display:inline-flex;align-items:center;gap:3px;background:linear-gradient(135deg,#b8860b,#ffd700,#b8860b);color:#000;font-size:.65rem;font-weight:900;padding:3px 9px;border-radius:20px;text-transform:uppercase;letter-spacing:.8px;margin-left:6px;vertical-align:middle;flex-shrink:0}
+.badge-tc{display:inline-flex;align-items:center;gap:3px;background:linear-gradient(135deg,#7a6000,#ffd700,#7a6000);color:#000;font-size:.65rem;font-weight:900;padding:3px 9px;border-radius:20px;text-transform:uppercase;letter-spacing:.8px;margin-left:6px;vertical-align:middle;flex-shrink:0}
+.badge-sp{display:inline-flex;align-items:center;gap:3px;background:linear-gradient(135deg,#5a2d00,#ff9f0a,#5a2d00);color:#fff;font-size:.65rem;font-weight:900;padding:3px 9px;border-radius:20px;text-transform:uppercase;letter-spacing:.8px;margin-left:6px;vertical-align:middle;flex-shrink:0}
 .prog-item-btn{flex:1;padding:18px 16px;background:none;border:none;color:#fff;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:5px}
 .prog-item-btn:active{opacity:.6}
 .prog-item-name{font-size:1.05rem;font-weight:800;text-transform:uppercase;color:#fff}
@@ -694,12 +697,12 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       <div style="font-size:.62rem;font-weight:800;color:rgba(255,214,10,.7);letter-spacing:2px;text-transform:uppercase;white-space:nowrap" data-t="freq_div_3_4">📅 3-4 GIORNI / SETT.</div>
       <div style="flex:1;height:1px;background:rgba(255,214,10,.25)"></div>
     </div>
-    <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('lpp','uomini-inter-menu')"><div class="prog-item-name">🔵 Legs Push Pull</div><div class="prog-item-sub" data-t="lpp_sub">3 giorni · 3–6x / settimana</div></button><span class="prog-arr">›</span></div>
+    <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('lpp','uomini-inter-menu')"><div class="prog-item-name">🔵 Legs Push Pull<span class="badge-mp">🔥 Most Popular</span></div><div class="prog-item-sub" data-t="lpp_sub">3 giorni · 3–6x / settimana</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('abc_3day_u','uomini-inter-menu')"><div class="prog-item-name">🔴 <span data-t="abc_3day_u_label">Full Body A/B/C</span></div><div class="prog-item-sub" data-t="abc_3day_sub">3 giorni · A/B/C · 16 sett.</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('classic_4day_u','uomini-inter-menu')"><div class="prog-item-name">🟢 <span data-t="classic_4day_u_label">Classic Split 4 Giorni</span></div><div class="prog-item-sub" data-t="classic_4day_sub">4 giorni · Split · 16 sett.</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item" style="border:1.5px solid rgba(255,214,10,.3);background:rgba(255,214,10,.05)">
       <button class="prog-item-btn" onclick="showView('lyle-info-view')">
-        <div class="prog-item-name">📊 <span data-t="lyle_btn">Lyle McDonald GBR</span></div>
+        <div class="prog-item-name">📊 <span data-t="lyle_btn">Lyle McDonald GBR</span><span class="badge-tc">🏆 Top Choice</span></div>
         <div class="prog-item-sub"><span data-t="lyle_sub">Generic Bulking Routine — Upper/Lower 4 giorni</span></div>
       </button>
       <span class="prog-arr">›</span>
@@ -760,6 +763,13 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
   <div id="bb-methods-view" class="view">
     <button onclick="goBack('uomini-heavy-menu')" class="back-btn">← <span data-t="advanced_title">Avanzato</span></button>
     <div class="view-title" style="font-size:1.8rem">🏆 BB Methods<br><span style="font-size:1.2rem;color:rgba(255,255,255,.5)">&amp; Splits</span></div>
+    <div class="prog-item" style="border:1.5px solid rgba(255,159,10,.35);background:rgba(255,159,10,.07)">
+      <button class="prog-item-btn" onclick="showView('lpp6-adv-luka-info-view')">
+        <div class="prog-item-name">🔥 LPP 6 Avanzato <span style="font-size:.7rem;opacity:.6">by Luka</span><span class="badge-sp">⭐ Staff Pick</span></div>
+        <div class="prog-item-sub"><span data-t="lpp6adv_sub">4-6× / sett. · Legs · Push · Pull · Doppia progressione · RIR 1-2</span></div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
     <div class="prog-item" style="border:1.5px solid rgba(255,59,48,.35);background:rgba(255,59,48,.07)">
       <button class="prog-item-btn" onclick="showView('meadows-info-view')">
         <div class="prog-item-name">🐕 Mountain Dog PPL — <span style="font-size:.8rem;opacity:.7">John Meadows</span></div>
@@ -788,24 +798,10 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       </button>
       <span class="prog-arr">›</span>
     </div>
-    <div class="prog-item" style="border:1.5px solid rgba(52,199,89,.35);background:rgba(52,199,89,.07)">
-      <button class="prog-item-btn" onclick="showView('adv-lpp6-info-view')">
-        <div class="prog-item-name">🦵 Advanced LPP 6-Day <span style="font-size:.7rem;opacity:.6">by Luka</span></div>
-        <div class="prog-item-sub"><span data-t="advlpp6_sub">Legs A · Push A · Pull A · Legs B · Push B · Pull B · 4-6× / sett.</span></div>
-      </button>
-      <span class="prog-arr">›</span>
-    </div>
     <div class="prog-item" style="border:1.5px solid rgba(100,210,255,.35);background:rgba(100,210,255,.06)">
       <button class="prog-item-btn" onclick="showView('pp23-luka-u-info-view')">
         <div class="prog-item-name">🔀 Push/Pull 2-3 Day <span style="font-size:.7rem;opacity:.6">by Luka</span></div>
         <div class="prog-item-sub"><span data-t="pp23u_sub">Push · Pull · 2-3× / sett. · Doppia progressione</span></div>
-      </button>
-      <span class="prog-arr">›</span>
-    </div>
-    <div class="prog-item" style="border:1.5px solid rgba(255,159,10,.35);background:rgba(255,159,10,.07)">
-      <button class="prog-item-btn" onclick="showView('lpp6-adv-luka-info-view')">
-        <div class="prog-item-name">🔥 LPP 6 Avanzato <span style="font-size:.7rem;opacity:.6">by Luka</span></div>
-        <div class="prog-item-sub"><span data-t="lpp6adv_sub">4-6× / sett. · Legs · Push · Pull · Doppia progressione · RIR 1-2</span></div>
       </button>
       <span class="prog-arr">›</span>
     </div>
@@ -1921,7 +1917,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       <div style="font-size:.62rem;font-weight:800;color:rgba(255,214,10,.7);letter-spacing:2px;text-transform:uppercase;white-space:nowrap" data-t="freq_div_2_4">📅 2-4 GIORNI / SETT.</div>
       <div style="flex:1;height:1px;background:rgba(255,214,10,.25)"></div>
     </div>
-    <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('ul-d','donne-inter-menu')"><div class="prog-item-name">💙 <span data-t="ul_d_label">Upper/Lower Donna</span></div><div class="prog-item-sub" data-t="ul_d_sub">2–4x / settimana · Gambe + Parte Sup. · 16 sett.</div></button><span class="prog-arr">›</span></div>
+    <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('ul-d','donne-inter-menu')"><div class="prog-item-name">💙 <span data-t="ul_d_label">Upper/Lower Donna</span><span class="badge-mp">🔥 Most Popular</span></div><div class="prog-item-sub" data-t="ul_d_sub">2–4x / settimana · Gambe + Parte Sup. · 16 sett.</div></button><span class="prog-arr">›</span></div>
   </div>
 
   <!-- WORKOUT VIEW -->
