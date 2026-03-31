@@ -1543,7 +1543,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
         <div class="ai-bullet" data-t="pbf_str3"><b>Obiettivo:</b> portare ogni serie a 3 ripetizioni (8×3). Quando riesci → aggiungi peso</div>
         <div class="ai-bullet" data-t="pbf_str4a">Dopo le 8 serie: esercizi accessori per il gruppo muscolare del giorno</div>
         <div style="background:rgba(10,132,255,.1);border-radius:8px;padding:7px 10px;margin:4px 0;font-size:.7rem;color:rgba(255,255,255,.65)">
-          Fondamentali: 3 serie × 6-10 reps &nbsp;·&nbsp; Isolamenti: 3 serie × 8-12 reps
+          <span data-t="pbf_acc_box">Fondamentali: 3 serie × 6-10 reps &nbsp;·&nbsp; Isolamenti: 3 serie × 8-12 reps</span>
         </div>
       </div>
     </div>
@@ -1568,19 +1568,19 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
         <div style="background:rgba(255,59,48,.1);border:1px solid rgba(255,59,48,.3);border-radius:10px;padding:10px">
           <div style="font-size:.7rem;font-weight:800;color:#ff453a;margin-bottom:6px" data-t="pbf_w1_lbl">SETTIMANA 1</div>
           <div style="font-size:.68rem;color:rgba(255,255,255,.7);line-height:1.9">
-            🔴 Petto <span style="color:#ff9f0a;font-size:.6rem;font-weight:700">DENSITÀ</span><br>
-            🔵 Schiena <span style="color:#0a84ff;font-size:.6rem;font-weight:700">FORZA</span><br>
-            🟡 Spalle <span style="color:#ff9f0a;font-size:.6rem;font-weight:700">DENSITÀ</span><br>
-            🟢 Gambe <span style="color:#0a84ff;font-size:.6rem;font-weight:700">FORZA</span>
+            🔴 <span data-t="pbf_d1_name">Petto</span> <span style="color:#ff9f0a;font-size:.6rem;font-weight:700" data-t="pbf_density">DENSITÀ</span><br>
+            🔵 <span data-t="pbf_d2_name">Schiena</span> <span style="color:#0a84ff;font-size:.6rem;font-weight:700" data-t="pbf_strength">FORZA</span><br>
+            🟡 <span data-t="pbf_d3_name">Spalle</span> <span style="color:#ff9f0a;font-size:.6rem;font-weight:700" data-t="pbf_density">DENSITÀ</span><br>
+            🟢 <span data-t="pbf_d4_name">Gambe</span> <span style="color:#0a84ff;font-size:.6rem;font-weight:700" data-t="pbf_strength">FORZA</span>
           </div>
         </div>
         <div style="background:rgba(10,132,255,.1);border:1px solid rgba(10,132,255,.3);border-radius:10px;padding:10px">
           <div style="font-size:.7rem;font-weight:800;color:#0a84ff;margin-bottom:6px" data-t="pbf_w2_lbl">SETTIMANA 2</div>
           <div style="font-size:.68rem;color:rgba(255,255,255,.7);line-height:1.9">
-            🔴 Petto <span style="color:#0a84ff;font-size:.6rem;font-weight:700">FORZA</span><br>
-            🔵 Schiena <span style="color:#ff9f0a;font-size:.6rem;font-weight:700">DENSITÀ</span><br>
-            🟡 Spalle <span style="color:#0a84ff;font-size:.6rem;font-weight:700">FORZA</span><br>
-            🟢 Gambe <span style="color:#ff9f0a;font-size:.6rem;font-weight:700">DENSITÀ</span>
+            🔴 <span data-t="pbf_d1_name">Petto</span> <span style="color:#0a84ff;font-size:.6rem;font-weight:700" data-t="pbf_strength">FORZA</span><br>
+            🔵 <span data-t="pbf_d2_name">Schiena</span> <span style="color:#ff9f0a;font-size:.6rem;font-weight:700" data-t="pbf_density">DENSITÀ</span><br>
+            🟡 <span data-t="pbf_d3_name">Spalle</span> <span style="color:#0a84ff;font-size:.6rem;font-weight:700" data-t="pbf_strength">FORZA</span><br>
+            🟢 <span data-t="pbf_d4_name">Gambe</span> <span style="color:#ff9f0a;font-size:.6rem;font-weight:700" data-t="pbf_density">DENSITÀ</span>
           </div>
         </div>
       </div>
@@ -2168,10 +2168,10 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
         <div style="font-size:.72rem;color:rgba(255,255,255,.45);margin-bottom:10px" id="pbf-week-sub">Seleziona la settimana del programma</div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
           <button onclick="setPbFabioWeek(1)" id="pbf-btn-1" style="padding:10px 4px;border-radius:10px;border:1px solid rgba(255,59,48,.6);background:rgba(255,59,48,.25);color:#fff;font-size:.75rem;font-weight:700;font-family:inherit;cursor:pointer">
-            Settimana 1<br><span style="font-size:.62rem;opacity:.7">Densità: Petto·Spalle·Gambe</span>
+            <span id="pbf-btn1-lbl">Settimana 1</span><br><span style="font-size:.62rem;opacity:.7" id="pbf-btn1-sub">Densità: Petto·Spalle·Gambe</span>
           </button>
           <button onclick="setPbFabioWeek(2)" id="pbf-btn-2" style="padding:10px 4px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;font-size:.75rem;font-weight:700;font-family:inherit;cursor:pointer">
-            Settimana 2<br><span style="font-size:.62rem;opacity:.7">Densità: Schiena·Gambe</span>
+            <span id="pbf-btn2-lbl">Settimana 2</span><br><span style="font-size:.62rem;opacity:.7" id="pbf-btn2-sub">Densità: Schiena·Gambe</span>
           </button>
         </div>
       </div>
@@ -5440,6 +5440,8 @@ en:{
     pbf_split_title:'Split — Settimane Alternate',
     pbf_split_sub:'Le settimane si alternano: dispari (1,3,5...) e pari (2,4,6...)',
     pbf_w1_lbl:'SETTIMANA 1',pbf_w2_lbl:'SETTIMANA 2',
+    pbf_d1_name:'Petto',pbf_d2_name:'Schiena',pbf_d3_name:'Spalle',pbf_d4_name:'Gambe',
+    pbf_acc_box:'Fondamentali: 3 serie × 6-10 reps &nbsp;·&nbsp; Isolamenti: 3 serie × 8-12 reps',
     pbf_notes_title:'Prima di iniziare',
     pbf_note1:'Necessaria buona tecnica su panca, squat, stacco e lento avanti',
     pbf_note2:'Le prime 3-4 settimane servono per adattarsi alla densità',
@@ -5483,6 +5485,8 @@ en:{
     pbf_split_title:'Split — Alternating Weeks',
     pbf_split_sub:'Weeks alternate: odd (1,3,5...) and even (2,4,6...)',
     pbf_w1_lbl:'WEEK 1',pbf_w2_lbl:'WEEK 2',
+    pbf_d1_name:'Chest',pbf_d2_name:'Back',pbf_d3_name:'Shoulders',pbf_d4_name:'Legs',
+    pbf_acc_box:'Compounds: 3 sets × 6-10 reps &nbsp;·&nbsp; Isolation: 3 sets × 8-12 reps',
     pbf_notes_title:'Before you start',
     pbf_note1:'Good technique required on bench, squat, deadlift and overhead press',
     pbf_note2:'First 3-4 weeks are for adapting to density work',
@@ -7707,7 +7711,7 @@ const WORKOUTS_BASE = {
                 {it:'Panca Piana con Manubri / Panca Inclinata',en:'DB Bench / Incline Bench Press',s:7,r:'30 reps tot.',rest:'30→30→60→60→90→120s'},
                 {it:'Panca Stretta / Dips',en:'Close-Grip Bench / Dips',s:7,r:'30 reps tot.',rest:'30→30→60→60→90→120s'}]},
             {id:'pbf_w1_schiena',color:'var(--blue)',exercises:[
-                {it:'Stacco da Terra',en:'Deadlift',s:8,r:'2→3',rest:'2 min esatti'},
+                {it:'Stacco da Terra',en:'Deadlift',s:8,r:'2→3',rest:'2 min ⏱'},
                 {it:'Schiena 1 a scelta (es. Rematore, Pulley)',en:'Back Exercise 1 (e.g. Row, Cable Row)',s:3,r:'6-10',rest:'2 min'},
                 {it:'Schiena 2 a scelta (es. Lat Machine, Trazioni)',en:'Back Exercise 2 (e.g. Lat Pulldown, Pull-ups)',s:3,r:'6-10',rest:'2 min'},
                 {it:'Schiena 3 a scelta (es. Facepull, Shrug) — opzionale',en:'Back Exercise 3 (e.g. Face Pull, Shrug) — optional',s:3,r:'6-12',rest:'2 min'}]},
@@ -7716,24 +7720,24 @@ const WORKOUTS_BASE = {
                 {it:'Arnold Press / Upright Row',en:'Arnold Press / Upright Row',s:7,r:'30-40 reps tot.',rest:'30→30→60→60→90→120s'},
                 {it:'Curl con Bilanciere / Manubri in Piedi',en:'Barbell Curl / Standing DB Curl',s:7,r:'30-35 reps tot.',rest:'30→30→60→60→90→120s'}]},
             {id:'pbf_w1_gambe',color:'var(--green)',exercises:[
-                {it:'Squat',en:'Squat',s:8,r:'2→3',rest:'2 min esatti'},
+                {it:'Squat',en:'Squat',s:8,r:'2→3',rest:'2 min ⏱'},
                 {it:'Leg Press',en:'Leg Press',s:3,r:'6-10',rest:'2 min'},
                 {it:'Affondi / Step Up / Squat Bulgaro',en:'Lunges / Step Up / Bulgarian Split Squat',s:3,r:'6-15',rest:'2 min'},
                 {it:'Femorali 1 a scelta (es. Leg Curl, RDL)',en:'Hamstring Exercise 1 (e.g. Leg Curl, RDL)',s:3,r:'8-12',rest:'2 min'},
                 {it:'Femorali 2 a scelta — opzionale',en:'Hamstring Exercise 2 — optional',s:3,r:'8-12',rest:'2 min'}]},
             // SETTIMANA 2
             {id:'pbf_w2_petto',color:'var(--red)',exercises:[
-                {it:'Distensioni Panca Piana con Bilanciere',en:'Barbell Bench Press',s:8,r:'2→3',rest:'2 min esatti'},
+                {it:'Distensioni Panca Piana con Bilanciere',en:'Barbell Bench Press',s:8,r:'2→3',rest:'2 min ⏱'},
                 {it:'Petto 1 - Multi articolare (es. Press Inclinata, Dips)',en:'Chest 1 - Compound (e.g. Incline Press, Dips)',s:3,r:'6-10',rest:'2 min'},
                 {it:'Petto 2 - Isolamento (es. Croci, Pec Deck, Cavi)',en:'Chest 2 - Isolation (e.g. Fly, Pec Deck, Cable)',s:3,r:'6-10',rest:'2 min'},
                 {it:'Tricipiti 1 a scelta (es. French Press, Pushdown)',en:'Triceps Exercise 1 (e.g. Skull Crusher, Pushdown)',s:3,r:'8-12',rest:'2 min'},
                 {it:'Tricipiti 2 a scelta — opzionale',en:'Triceps Exercise 2 — optional',s:3,r:'8-12',rest:'2 min'}]},
             {id:'pbf_w2_schiena',color:'var(--blue)',exercises:[
-                {it:'Stacco da Terra — Serie Singole × 10 min (obiettivo: 15 reps)',en:'Deadlift — Singles × 10 min (target: 15 reps)',s:1,r:'singole × 10 min',rest:'a piacere'},
+                {it:'Stacco da Terra — Serie Singole × 10 min (obiettivo: 15 reps)',en:'Deadlift — Singles × 10 min (target: 15 reps)',s:1,r:'singole × 10 min',rest:'free rest'},
                 {it:'Rematore Bilanciere Presa Prona / Low Pulley',en:'Pronated Barbell Row / Low Pulley Row',s:7,r:'30 reps tot.',rest:'30→30→60→60→90→120s'},
                 {it:'Trazioni / Lat Machine Presa Neutra',en:'Pull-ups / Lat Pulldown Neutral Grip',s:7,r:'30 reps tot.',rest:'30→30→60→60→90→120s'}]},
             {id:'pbf_w2_spalle',color:'var(--gold)',exercises:[
-                {it:'Military Press / Lento Avanti dai Fermi',en:'OHP / Seated Press from Pins',s:8,r:'2→3',rest:'2 min esatti'},
+                {it:'Military Press / Lento Avanti dai Fermi',en:'OHP / Seated Press from Pins',s:8,r:'2→3',rest:'2 min ⏱'},
                 {it:'Spalle 1 - Laterali (es. Alz. Laterali Manubb.)',en:'Shoulders 1 - Lateral (e.g. DB Lateral Raise)',s:3,r:'6-10',rest:'2 min'},
                 {it:'Spalle 2 a scelta (es. Alzate Ant., Arnold, Upright Row)',en:'Shoulders 2 (e.g. Front Raise, Arnold, Upright Row)',s:3,r:'6-10',rest:'2 min'},
                 {it:'Spalle 3 a scelta — opzionale (es. Rear Delt, Face Pull)',en:'Shoulders 3 — optional (e.g. Rear Delt, Face Pull)',s:3,r:'6-12',rest:'2 min'},
@@ -8144,6 +8148,15 @@ function setPbFabioWeek(week){
         if(title)title.textContent=isIt?'📅 Settimana 2 — Pari':'📅 Week 2 — Even';
         if(sub)sub.textContent=isIt?'Forza: Petto · Spalle · Gambe | Densità: Schiena':'Strength: Chest · Shoulders · Legs | Density: Back';
     }
+    // Translate week selector buttons
+    const b1l=document.getElementById('pbf-btn1-lbl');
+    const b1s=document.getElementById('pbf-btn1-sub');
+    const b2l=document.getElementById('pbf-btn2-lbl');
+    const b2s=document.getElementById('pbf-btn2-sub');
+    if(b1l)b1l.textContent=isIt?'Settimana 1':'Week 1';
+    if(b1s)b1s.textContent=isIt?'Densità: Petto·Spalle·Gambe':'Density: Chest·Shoulders·Legs';
+    if(b2l)b2l.textContent=isIt?'Settimana 2':'Week 2';
+    if(b2s)b2s.textContent=isIt?'Densità: Schiena·Gambe':'Density: Back·Legs';
     // Re-render with filtered days
     if(typeof activeWId!=='undefined'&&activeWId==='pb-fabio'){
         const prefix=week===1?'pbf_w1_':'pbf_w2_';
