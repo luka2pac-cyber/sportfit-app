@@ -111,7 +111,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
 .badge-sp{display:inline-flex;align-items:center;gap:3px;background:linear-gradient(135deg,#5a2d00,#ff9f0a,#5a2d00);color:#fff;font-size:.65rem;font-weight:900;padding:3px 9px;border-radius:20px;text-transform:uppercase;letter-spacing:.8px;margin-left:6px;vertical-align:middle;flex-shrink:0}
 .prog-item-btn{flex:1;padding:18px 16px;background:none;border:none;color:#fff;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:5px}
 .prog-item-btn:active{opacity:.6}
-.prog-item-name{font-size:1.05rem;font-weight:800;text-transform:uppercase;color:#fff}
+.prog-item-name{font-size:1.05rem;font-weight:800;text-transform:uppercase;color:#fff;display:flex;align-items:center;flex-wrap:wrap;gap:6px;line-height:1.2}
 .prog-item-sub{font-size:.72rem;color:rgba(255,255,255,.7);font-weight:600}
 .prog-arr{padding:18px 14px;color:rgba(255,255,255,.5);font-size:1rem}
 
@@ -1463,6 +1463,13 @@ if('serviceWorker' in navigator){
   <div id="powerbuilding-concepts" class="view">
     <button onclick="goBack('uomini-heavy-menu')" class="back-btn">← <span data-t="advanced_title">Avanzato</span></button>
     <div class="view-title" style="font-size:1.8rem">🏗️ Powerbuilding<br><span style="font-size:1.2rem;color:rgba(255,255,255,.5)">Forza + Massa</span></div>
+    <div class="prog-item" style="border:1.5px solid rgba(255,59,48,.35);background:rgba(255,59,48,.07)">
+      <button class="prog-item-btn" onclick="showView('pb-fabio-info-view')">
+        <div class="prog-item-name">💥 Powerbuilding <span style="font-size:.7rem;opacity:.6">by Fabio</span><span class="badge-tc">🏆 Top Choice</span></div>
+        <div class="prog-item-sub">4 giorni · Densità + Forza alternati · 6+ sett.</div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
     <div class="prog-item" style="border:1.5px solid rgba(10,132,255,.35);background:rgba(10,132,255,.07)">
       <button class="prog-item-btn" onclick="showView('phat-info-view')">
         <div class="prog-item-name">⚡ PHAT — Layne Norton</div>
@@ -1484,6 +1491,118 @@ if('serviceWorker' in navigator){
       </button>
       <span class="prog-arr">›</span>
     </div>
+  </div>
+
+  <!-- POWERBUILDING BY FABIO INFO VIEW -->
+  <div id="pb-fabio-info-view" class="view">
+    <button onclick="goBack('powerbuilding-concepts')" class="back-btn">← Powerbuilding</button>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#7a0000,#c0392b)" onclick="openWorkout('pb-fabio','pb-fabio-info-view')">
+      ⚡ <span data-t="pbf_start_btn">Inizia il programma</span>
+    </button>
+    <div style="text-align:center;margin-bottom:16px">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:2px">Powerbuilding</div>
+      <div style="font-size:.8rem;color:rgba(255,255,255,.5);margin-top:2px">by Fabio</div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">
+      <span class="chip" data-t="pbf_chip1">4 Giorni / Sett.</span>
+      <span class="chip" data-t="pbf_chip2">60-75 min / sessione</span>
+      <span class="chip" data-t="pbf_chip3">6+ Settimane</span>
+      <span class="chip" data-t="pbf_chip4">Intermedio / Avanzato</span>
+    </div>
+
+    <!-- DESCRIZIONE -->
+    <div class="ai-block" style="margin-bottom:12px">
+      <div class="ai-block-title gold">📋 <span data-t="pbf_phi_title">Descrizione</span></div>
+      <div style="font-size:.78rem;color:rgba(255,255,255,.75);line-height:1.7" data-t="pbf_desc">
+        Programma per costruire massa muscolare e sviluppare forza generale e resistente. Usa due metodi alternati ogni settimana: <b style="color:#ff9f0a">Densità</b> e <b style="color:#0a84ff">Forza</b>. Non è adatto a chi si allena da poco — serve una buona tecnica nei fondamentali con bilanciere. Può essere portato avanti senza stalli per un anno intero se l'alimentazione è curata (no deficit calorico).
+      </div>
+    </div>
+
+    <!-- PRINCIPIO DENSITÀ -->
+    <div class="ai-block" style="margin-bottom:12px;border:1px solid rgba(255,159,10,.3);background:rgba(255,159,10,.05)">
+      <div class="ai-block-title gold">🔥 <span data-t="pbf_dens_title">Cos'è la Densità?</span></div>
+      <div style="font-size:.75rem;color:rgba(255,255,255,.75);line-height:1.7">
+        <div style="font-size:.73rem;color:rgba(255,255,255,.7);margin-bottom:6px" data-t="pbf_dens1">7 serie per esercizio — recuperi che si allungano progressivamente:</div>
+        <div style="background:rgba(255,159,10,.1);border-radius:8px;padding:8px 10px;margin-bottom:8px;font-size:.75rem;color:#ff9f0a;font-weight:700;text-align:center;letter-spacing:1px">
+          30s → 30s → 60s → 60s → 90s → 120s
+        </div>
+        <div class="ai-bullet" data-t="pbf_dens2"><b>Obiettivo:</b> 30 ripetizioni totali nelle 7 serie (es. 5+5+5+4+4+4+3 = 30)</div>
+        <div class="ai-bullet" data-t="pbf_dens3"><b>MAI andare a esaurimento</b> — fermati quando la tecnica peggiora, non quando non ce la fai più</div>
+        <div class="ai-bullet" data-t="pbf_dens4"><b>Progressione:</b> quando arrivi a 30 reps totali → aggiungi peso (+1kg spinta, +2.5kg squat/stacco)</div>
+        <div class="ai-bullet" data-t="pbf_dens5"><b>Normale non progredire le prime 3-4 settimane</b> — il corpo si sta adattando a questo tipo di lavoro insolito</div>
+        <div style="background:rgba(255,214,10,.1);border:1px solid rgba(255,214,10,.3);border-radius:8px;padding:9px 12px;margin-top:8px">
+          <div style="font-size:.68rem;font-weight:800;color:#ffd60a;margin-bottom:4px">⚖️ <span data-t="pbf_weight_title">Peso di partenza consigliato</span></div>
+          <div style="font-size:.7rem;color:rgba(255,255,255,.75);line-height:1.6" data-t="pbf_weight_desc">Usa circa il <b style="color:#ffd60a">60-65% del tuo 1RM</b> per ogni esercizio. Se non conosci il massimale, prendi il peso che usi per 10-12 reps a sforzo moderato e riducilo del 15-20%.</div>
+          <div style="font-size:.65rem;color:rgba(255,255,255,.4);margin-top:4px">Es: panca 1RM 100kg → densità 60-65kg &nbsp;·&nbsp; squat 1RM 120kg → densità 72-78kg</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRINCIPIO FORZA -->
+    <div class="ai-block" style="margin-bottom:12px;border:1px solid rgba(10,132,255,.3);background:rgba(10,132,255,.05)">
+      <div class="ai-block-title" style="color:#0a84ff">💪 <span data-t="pbf_str_title">Cos'è la Forza?</span></div>
+      <div style="font-size:.75rem;color:rgba(255,255,255,.75);line-height:1.7">
+        <div class="ai-bullet" data-t="pbf_str1">Esegui <b>8 serie da 2 ripetizioni</b> sull'esercizio principale (panca, squat, stacco, lento avanti)</div>
+        <div class="ai-bullet" data-t="pbf_str2">Recupero <b>ESATTAMENTE 2 minuti</b> — non di più, non di meno</div>
+        <div class="ai-bullet" data-t="pbf_str3"><b>Obiettivo:</b> portare ogni serie a 3 ripetizioni (8×3). Quando riesci → aggiungi peso</div>
+        <div class="ai-bullet" data-t="pbf_str4a">Dopo le 8 serie: esercizi accessori per il gruppo muscolare del giorno</div>
+        <div style="background:rgba(10,132,255,.1);border-radius:8px;padding:7px 10px;margin:4px 0;font-size:.7rem;color:rgba(255,255,255,.65)">
+          Fondamentali: 3 serie × 6-10 reps &nbsp;·&nbsp; Isolamenti: 3 serie × 8-12 reps
+        </div>
+      </div>
+    </div>
+
+    <!-- STACCO SPECIALE -->
+    <div class="ai-block" style="margin-bottom:12px;border:1px solid rgba(255,214,10,.2);background:rgba(255,214,10,.04)">
+      <div class="ai-block-title gold">⚡ <span data-t="pbf_dl_title">Stacco da Terra — Regola Speciale</span></div>
+      <div style="font-size:.75rem;color:rgba(255,255,255,.75);line-height:1.6">
+        <div style="background:rgba(255,214,10,.1);border-radius:8px;padding:8px 12px;margin-bottom:8px;font-size:.72rem;color:#ffd60a;font-weight:700" data-t="pbf_dl_rule">
+          Solo nel giorno Schiena Densità: serie singole (1 rep) ripetute per 10 minuti
+        </div>
+        <div class="ai-bullet" data-t="pbf_dl2">Recupera quanto vuoi tra una singola e l'altra — l'obiettivo è accumulare più reps possibili nei 10 minuti</div>
+        <div class="ai-bullet" data-t="pbf_dl3">Progressione: quando arrivi a 15 reps in 10 minuti → aggiungi peso la sessione successiva</div>
+      </div>
+    </div>
+
+    <!-- SPLIT SETTIMANALE -->
+    <div class="ai-block" style="margin-bottom:12px">
+      <div class="ai-block-title gold">📅 <span data-t="pbf_split_title">Split — Settimane Alternate</span></div>
+      <div style="font-size:.72rem;color:rgba(255,255,255,.5);margin-bottom:8px" data-t="pbf_split_sub">Le settimane si alternano: dispari (1,3,5...) e pari (2,4,6...)</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div style="background:rgba(255,59,48,.1);border:1px solid rgba(255,59,48,.3);border-radius:10px;padding:10px">
+          <div style="font-size:.7rem;font-weight:800;color:#ff453a;margin-bottom:6px" data-t="pbf_w1_lbl">SETTIMANA 1</div>
+          <div style="font-size:.68rem;color:rgba(255,255,255,.7);line-height:1.9">
+            🔴 Petto <span style="color:#ff9f0a;font-size:.6rem;font-weight:700">DENSITÀ</span><br>
+            🔵 Schiena <span style="color:#0a84ff;font-size:.6rem;font-weight:700">FORZA</span><br>
+            🟡 Spalle <span style="color:#ff9f0a;font-size:.6rem;font-weight:700">DENSITÀ</span><br>
+            🟢 Gambe <span style="color:#0a84ff;font-size:.6rem;font-weight:700">FORZA</span>
+          </div>
+        </div>
+        <div style="background:rgba(10,132,255,.1);border:1px solid rgba(10,132,255,.3);border-radius:10px;padding:10px">
+          <div style="font-size:.7rem;font-weight:800;color:#0a84ff;margin-bottom:6px" data-t="pbf_w2_lbl">SETTIMANA 2</div>
+          <div style="font-size:.68rem;color:rgba(255,255,255,.7);line-height:1.9">
+            🔴 Petto <span style="color:#0a84ff;font-size:.6rem;font-weight:700">FORZA</span><br>
+            🔵 Schiena <span style="color:#ff9f0a;font-size:.6rem;font-weight:700">DENSITÀ</span><br>
+            🟡 Spalle <span style="color:#0a84ff;font-size:.6rem;font-weight:700">FORZA</span><br>
+            🟢 Gambe <span style="color:#ff9f0a;font-size:.6rem;font-weight:700">DENSITÀ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOTE -->
+    <div class="ai-block" style="margin-bottom:16px;border:1px solid rgba(255,59,48,.2);background:rgba(255,59,48,.04)">
+      <div class="ai-block-title" style="color:#ff453a">⚠️ <span data-t="pbf_notes_title">Prima di iniziare</span></div>
+      <div class="ai-bullet" data-t="pbf_note1">Necessaria buona tecnica su panca, squat, stacco e lento avanti — se sei alle prime armi impara prima i fondamentali</div>
+      <div class="ai-bullet" data-t="pbf_note2">Le prime 3-4 settimane servono per adattarsi alla densità — non scoraggiarti se all'inizio fai poche reps per serie</div>
+      <div class="ai-bullet" data-t="pbf_note3">Funziona SOLO con alimentazione adeguata — surplus calorico o mantenimento. In deficit non produce risultati</div>
+      <div class="ai-bullet" data-t="pbf_note4">Polpacci e addominali: aggiungili 1-2 volte/sett. in qualsiasi giorno, solo se il recupero lo permette</div>
+      <div class="ai-bullet" data-t="pbf_note5">Durata consigliata: 6+ settimane. Con la giusta alimentazione può andare avanti anche 1 anno senza stalli</div>
+    </div>
+
+    <button class="ai-send-btn" style="margin-top:4px;background:linear-gradient(135deg,#7a0000,#c0392b)" onclick="openWorkout('pb-fabio','pb-fabio-info-view')">
+      ⚡ <span data-t="pbf_start_btn">Inizia il programma</span>
+    </button>
   </div>
 
   <!-- PHAT INFO VIEW -->
@@ -2043,6 +2162,20 @@ if('serviceWorker' in navigator){
           </button>
           <button onclick="setLpp6AdvPhase(3)" id="lpp6adv-btn-3" style="padding:8px 4px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;font-size:.75rem;font-weight:700;font-family:inherit;cursor:pointer">
             Deload<br><span style="font-size:.65rem;opacity:.8">Sett. 13 · 60-65%</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="pbf-week-section" style="display:none;margin-bottom:14px">
+      <div class="ai-block" style="border:1px solid rgba(255,59,48,.35);background:rgba(255,59,48,.06)">
+        <div class="ai-block-title" style="color:#ff453a" id="pbf-week-title">📅 Settimana attuale</div>
+        <div style="font-size:.72rem;color:rgba(255,255,255,.45);margin-bottom:10px" id="pbf-week-sub">Seleziona la settimana del programma</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <button onclick="setPbFabioWeek(1)" id="pbf-btn-1" style="padding:10px 4px;border-radius:10px;border:1px solid rgba(255,59,48,.6);background:rgba(255,59,48,.25);color:#fff;font-size:.75rem;font-weight:700;font-family:inherit;cursor:pointer">
+            Settimana 1<br><span style="font-size:.62rem;opacity:.7">Densità: Petto·Spalle·Gambe</span>
+          </button>
+          <button onclick="setPbFabioWeek(2)" id="pbf-btn-2" style="padding:10px 4px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;font-size:.75rem;font-weight:700;font-family:inherit;cursor:pointer">
+            Settimana 2<br><span style="font-size:.62rem;opacity:.7">Densità: Schiena·Gambe</span>
           </button>
         </div>
       </div>
@@ -3971,7 +4104,9 @@ const T = {
     tls_btn4:'4 giorni — Upper/Lower',
     tls_btn5:'5 giorni — Push/Pull/Lower',
     ul_pb_u_pills:[['4×','/ sett.'],['75-90 min','/ sessione'],['Periodizzazione','4 sett.']],
+    pb_fabio_pills:[['4 Giorni','/ sett.'],['60-75 min','/ sessione'],['Densità + Forza','Alternato']],
     level_ul_pb_u:'AVANZATO',
+    level_pb_fabio:'INTERMEDIO / AVANZATO',
     ulpb_start_btn:'Inizia Upper/Lower Powerbuilding',
     ulpb_level:'Avanzato',
     ulpb_ideal:'Ideale per chi ha almeno 2 anni di esperienza e vuole combinare forza nei fondamentali con volume ipertrofico. No cedimento sugli esercizi base.',
@@ -5282,6 +5417,52 @@ en:{
     phul_rest2_day:'Sat / Sun',
     phul_diff_title:'PHUL vs PHAT',
     phul_label:'PHUL - Power Hypertrophy Upper Lower',
+    pb_fabio_label:'Powerbuilding by Fabio',
+    pbf_start_btn:'Inizia il programma',
+    pbf_phi_title:'Descrizione',
+    pbf_desc:'Programma per costruire massa muscolare e sviluppare forza generale e resistente.',
+    pbf_chip1:'4 Giorni / Sett.',pbf_chip2:'60-75 min / sessione',pbf_chip3:'6+ Settimane',pbf_chip4:'Intermedio / Avanzato',
+    pbf_dens_title:"Cos'è la Densità?",
+    pbf_dens1:'7 serie per esercizio — recuperi che si allungano progressivamente:',
+    pbf_str4a:'Dopo le 8 serie: esercizi accessori per il gruppo muscolare del giorno',
+    pbf_dens2:'Obiettivo: 30 ripetizioni totali nelle 7 serie',
+    pbf_dens3:'MAI andare a esaurimento — fermati quando la tecnica peggiora',
+    pbf_dens4:'Progressione: quando arrivi a 30 reps → aggiungi peso (+1kg spinta, +2.5kg squat/stacco)',
+    pbf_dens5:'Normale non progredire le prime 3-4 settimane — il corpo si adatta',
+    pbf_weight_title:'Peso di partenza consigliato',
+    pbf_weight_desc:'Usa circa il 60-65% del tuo 1RM per ogni esercizio. Se non conosci il massimale, prendi il peso che usi per 10-12 reps e riducilo del 15-20%.',
+    pbf_str_title:"Cos'è la Forza?",
+    pbf_str1:'Esegui 8 serie da 2 ripetizioni sull\'esercizio principale',
+    pbf_str2:'Recupero ESATTAMENTE 2 minuti — non di più, non di meno',
+    pbf_str3:'Obiettivo: portare ogni serie a 3 reps (8×3). Quando riesci → aggiungi peso',
+    pbf_str4:'Dopo le 8 serie: accessori 3×6-10 fondamentali, 3×8-12 isolamenti',
+    pbf_dl_title:'Stacco da Terra — Regola Speciale',
+    pbf_dl_rule:'Solo nel giorno Schiena Densità: serie singole (1 rep) ripetute per 10 minuti',
+    pbf_dl1:'Schiena Densità: stacco con serie singole (1 rep) per 10 minuti',
+    pbf_dl2:'Fai quante più singole riesci — recupera a piacere tra una e l\'altra',
+    pbf_dl3:'Progressione: 15 reps in 10 min → aggiungi peso',
+    pbf_split_title:'Split — Settimane Alternate',
+    pbf_split_sub:'Le settimane si alternano: dispari (1,3,5...) e pari (2,4,6...)',
+    pbf_w1_lbl:'SETTIMANA 1',pbf_w2_lbl:'SETTIMANA 2',
+    pbf_notes_title:'Prima di iniziare',
+    pbf_note1:'Necessaria buona tecnica su panca, squat, stacco e lento avanti',
+    pbf_note2:'Le prime 3-4 settimane servono per adattarsi alla densità',
+    pbf_note3:'Funziona SOLO con alimentazione adeguata — surplus o mantenimento',
+    pbf_note4:'Polpacci e addominali: aggiungili 1-2 volte/sett. se il recupero lo permette',
+    pbf_note5:'Durata: 6+ settimane, con dieta giusta anche 1 anno senza stalli',
+    pbf_title:'Powerbuilding',
+    pbf_sub:'Mass + Strength · 4 days/week · 6+ weeks',
+    pbf_w1:'Week 1',
+    pbf_w2:'Week 2',
+    pbf_w1_sub:'Odd weeks — Density: Chest/Shoulders/Legs · Strength: Back',
+    pbf_w2_sub:'Even weeks — Strength: Chest/Shoulders/Legs · Density: Back',
+    pbf_d1:'🔴 Chest + Triceps',
+    pbf_d2:'🔵 Back',
+    pbf_d3:'🟡 Shoulders + Biceps',
+    pbf_d4:'🟢 Legs',
+    pbf_density:'DENSITY',
+    pbf_strength:'STRENGTH',
+
     phul_pills:[['4 days','/ week'],['Upper/Lower',''],['Strength+Vol','']],
     phat_founder:'PhD Nutrition & Natural Pro Bodybuilder',
     bret_btn:'Bret Contreras - Glute Lab',
@@ -5416,8 +5597,23 @@ en:{
     tls_btn4:'4 days — Upper/Lower',
     tls_btn5:'5 days — Push/Pull/Lower',
     ul_pb_u_label:'Upper/Lower Powerbuilding by Luka',
+    pb_fabio_label:'Powerbuilding by Fabio',
+    pbf_title:'Powerbuilding',
+    pbf_sub:'Massa + Forza · 4 giorni/sett. · 6+ sett.',
+    pbf_w1:'Settimana 1',
+    pbf_w2:'Settimana 2',
+    pbf_w1_sub:'Sett. dispari — Densità: Petto/Spalle/Gambe · Forza: Schiena',
+    pbf_w2_sub:'Sett. pari — Forza: Petto/Spalle/Gambe · Densità: Schiena',
+    pbf_d1:'🔴 Petto + Tricipiti',
+    pbf_d2:'🔵 Schiena',
+    pbf_d3:'🟡 Spalle + Bicipiti',
+    pbf_d4:'🟢 Gambe',
+    pbf_density:'DENSITÀ',
+    pbf_strength:'FORZA',
     ul_pb_u_pills:[['4×','/ week'],['75-90 min','/ session'],['Periodization','4 wks']],
+    pb_fabio_pills:[['4 Days','/ week'],['60-75 min','/ session'],['Density + Strength','Alternating']],
     level_ul_pb_u:'ADVANCED',
+    level_pb_fabio:'INTERMEDIATE / ADVANCED',
     ulpb_start_btn:'Start Upper/Lower Powerbuilding',
     ulpb_level:'Advanced',
     ulpb_ideal:'Ideal for those with at least 2 years of experience who want to combine strength on fundamentals with hypertrophy volume. No failure on base exercises.',
@@ -7474,6 +7670,53 @@ const WORKOUTS_BASE = {
                 {it:'Curl Bilanciere / Manubri',en:'DB / BB Biceps Curl',s:2,r:'12-10',rest:'1-2 min'},
                 {it:'Curl su Panca Scott',en:'Scott Curl',s:1,r:'12-10',rest:'1-2 min'}]}
         ]},
+
+    // ── POWERBUILDING BY FABIO ────────────────────────────────────────────
+    pb_fabio:{gender:'uomo',
+        days:[
+            // SETTIMANA 1
+            {id:'pbf_w1_petto',color:'var(--red)',exercises:[
+                {it:'Distensioni Panca Piana con Bilanciere',en:'Barbell Bench Press',s:7,r:'30 reps tot.',rest:'30→30→60→60→90→120s'},
+                {it:'Panca Piana con Manubri / Panca Inclinata',en:'DB Bench / Incline Bench Press',s:7,r:'30 reps tot.',rest:'30→30→60→60→90→120s'},
+                {it:'Panca Stretta / Dips',en:'Close-Grip Bench / Dips',s:7,r:'30 reps tot.',rest:'30→30→60→60→90→120s'}]},
+            {id:'pbf_w1_schiena',color:'var(--blue)',exercises:[
+                {it:'Stacco da Terra',en:'Deadlift',s:8,r:'2→3',rest:'2 min esatti'},
+                {it:'Schiena 1 a scelta (es. Rematore, Pulley)',en:'Back Exercise 1 (e.g. Row, Cable Row)',s:3,r:'6-10',rest:'2 min'},
+                {it:'Schiena 2 a scelta (es. Lat Machine, Trazioni)',en:'Back Exercise 2 (e.g. Lat Pulldown, Pull-ups)',s:3,r:'6-10',rest:'2 min'},
+                {it:'Schiena 3 a scelta (es. Facepull, Shrug) — opzionale',en:'Back Exercise 3 (e.g. Face Pull, Shrug) — optional',s:3,r:'6-12',rest:'2 min'}]},
+            {id:'pbf_w1_spalle',color:'var(--gold)',exercises:[
+                {it:'Military Press / Lento Avanti dai Fermi',en:'OHP / Seated Press from Pins',s:7,r:'30 reps tot.',rest:'30→30→60→60→90→120s'},
+                {it:'Arnold Press / Upright Row',en:'Arnold Press / Upright Row',s:7,r:'30-40 reps tot.',rest:'30→30→60→60→90→120s'},
+                {it:'Curl con Bilanciere / Manubri in Piedi',en:'Barbell Curl / Standing DB Curl',s:7,r:'30-35 reps tot.',rest:'30→30→60→60→90→120s'}]},
+            {id:'pbf_w1_gambe',color:'var(--green)',exercises:[
+                {it:'Squat',en:'Squat',s:8,r:'2→3',rest:'2 min esatti'},
+                {it:'Leg Press',en:'Leg Press',s:3,r:'6-10',rest:'2 min'},
+                {it:'Affondi / Step Up / Squat Bulgaro',en:'Lunges / Step Up / Bulgarian Split Squat',s:3,r:'6-15',rest:'2 min'},
+                {it:'Femorali 1 a scelta (es. Leg Curl, RDL)',en:'Hamstring Exercise 1 (e.g. Leg Curl, RDL)',s:3,r:'8-12',rest:'2 min'},
+                {it:'Femorali 2 a scelta — opzionale',en:'Hamstring Exercise 2 — optional',s:3,r:'8-12',rest:'2 min'}]},
+            // SETTIMANA 2
+            {id:'pbf_w2_petto',color:'var(--red)',exercises:[
+                {it:'Distensioni Panca Piana con Bilanciere',en:'Barbell Bench Press',s:8,r:'2→3',rest:'2 min esatti'},
+                {it:'Petto 1 - Multi articolare (es. Press Inclinata, Dips)',en:'Chest 1 - Compound (e.g. Incline Press, Dips)',s:3,r:'6-10',rest:'2 min'},
+                {it:'Petto 2 - Isolamento (es. Croci, Pec Deck, Cavi)',en:'Chest 2 - Isolation (e.g. Fly, Pec Deck, Cable)',s:3,r:'6-10',rest:'2 min'},
+                {it:'Tricipiti 1 a scelta (es. French Press, Pushdown)',en:'Triceps Exercise 1 (e.g. Skull Crusher, Pushdown)',s:3,r:'8-12',rest:'2 min'},
+                {it:'Tricipiti 2 a scelta — opzionale',en:'Triceps Exercise 2 — optional',s:3,r:'8-12',rest:'2 min'}]},
+            {id:'pbf_w2_schiena',color:'var(--blue)',exercises:[
+                {it:'Stacco da Terra — Serie Singole × 10 min (obiettivo: 15 reps)',en:'Deadlift — Singles × 10 min (target: 15 reps)',s:1,r:'singole × 10 min',rest:'a piacere'},
+                {it:'Rematore Bilanciere Presa Prona / Low Pulley',en:'Pronated Barbell Row / Low Pulley Row',s:7,r:'30 reps tot.',rest:'30→30→60→60→90→120s'},
+                {it:'Trazioni / Lat Machine Presa Neutra',en:'Pull-ups / Lat Pulldown Neutral Grip',s:7,r:'30 reps tot.',rest:'30→30→60→60→90→120s'}]},
+            {id:'pbf_w2_spalle',color:'var(--gold)',exercises:[
+                {it:'Military Press / Lento Avanti dai Fermi',en:'OHP / Seated Press from Pins',s:8,r:'2→3',rest:'2 min esatti'},
+                {it:'Spalle 1 - Laterali (es. Alz. Laterali Manubb.)',en:'Shoulders 1 - Lateral (e.g. DB Lateral Raise)',s:3,r:'6-10',rest:'2 min'},
+                {it:'Spalle 2 a scelta (es. Alzate Ant., Arnold, Upright Row)',en:'Shoulders 2 (e.g. Front Raise, Arnold, Upright Row)',s:3,r:'6-10',rest:'2 min'},
+                {it:'Spalle 3 a scelta — opzionale (es. Rear Delt, Face Pull)',en:'Shoulders 3 — optional (e.g. Rear Delt, Face Pull)',s:3,r:'6-12',rest:'2 min'},
+                {it:'Bicipiti 1 a scelta (es. Curl Bilanciere/EZ)',en:'Biceps Exercise 1 (e.g. Barbell/EZ Curl)',s:3,r:'6-10',rest:'2 min'},
+                {it:'Bicipiti 2 a scelta (es. Curl Manubri, Curl Cavi)',en:'Biceps Exercise 2 (e.g. DB Curl, Cable Curl)',s:3,r:'6-10',rest:'2 min'},
+                {it:'Bicipiti 3 a scelta — opzionale',en:'Biceps Exercise 3 — optional',s:3,r:'6-10',rest:'2 min'}]},
+            {id:'pbf_w2_gambe',color:'var(--green)',exercises:[
+                {it:'Squat — 7 serie → 30 reps totali (o 3-4×6-10, 120-180s)',en:'Squat — 7 sets → 30 total reps (or 3-4×6-10, 120-180s rest)',s:7,r:'30 reps tot.',rest:'30→30→60→60→90→120s'},
+                {it:'Leg Extension',en:'Leg Extension',s:7,r:'35-40 reps tot.',rest:'30→30→60→60→90→120s'},
+                {it:'Stiff Leg Deadlift (da terra ogni rep)',en:'Stiff Leg Deadlift (each rep from floor)',s:7,r:'30 reps tot.',rest:'30→30→60→60→90→120s'}]}]},
     ul_pb_u:{gender:'uomo',
         days:[
             {id:'ulpb_lme',color:'var(--red)',exercises:[
@@ -7515,7 +7758,7 @@ const WID_MAP = {'lpp':'lpp','ini-u':'ini_u','lyle-gbr':'lyle_gbr','ini-d':'ini_
   'corto-u-adv':'quick_u','corto-u-bas':'quick_u_basic',
   'corto-d-adv':'quick_d','corto-d-bas':'quick_d_basic',
   'dc-3day':'dc_3day','dc-4day':'dc_4day','mentzer-3day':'mentzer_3day','mentzer-cons':'mentzer_cons','dorian-bg':'dorian_bg','arthur-hit':'arthur_hit','ken-hit':'ken_hit','ken-bm':'ken_bm','phat':'phat','phul':'phul','bret':'bret','ashley':'ashley','tls-d':'tls_d','tls-3d':'tls_3d','tls-4d':'tls_4d','pp-luka-d':'pp_luka_d',
-  'ul-pb-u':'ul_pb_u',
+  'ul-pb-u':'ul_pb_u','pb-fabio':'pb_fabio',
   'lpp4-u':'lpp4_u',
   'ws4sb-u':'ws4sb_u',
   'madcow-u':'madcow_u',
@@ -7540,8 +7783,8 @@ function getWorkoutLocalized(wId){
     const baseId = WID_MAP[wId] || wId;
     const base = WORKOUTS_BASE[baseId];
     if(!base) return null;
-    const labelMap = {lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',ken_pp:'ken_pp_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label',lpp30_u:'lpp30_u_label',meadows_ppl:'meadows_ppl_label',adv_lpp6_u:'adv_lpp6_u_label',lpp6_adv_luka:'lpp6_adv_luka_label',pp23_luka_u:'pp23_luka_u_label',poliquin_arms:'poliquin_arms_label',layne_arms:'layne_arms_label',meadows_arms:'meadows_arms_label',meadows_shoulders:'meadows_sh_label',dante_shoulders:'dante_sh_label',meadows_chest:'meadows_chest_label',carter_bb:'carter_bb_label',gironda_4day:'gironda_4day_label',gironda_fb:'gironda_fb_label',ss_u:'ss_u_label',wendler_531:'wendler_531_label',texas_method:'texas_method_label',smolov_jr:'smolov_jr_label',hst_u:'hst_u_label',tls_d:'tls_d_label',tls_3d:'tls_3d_label',tls_4d:'tls_4d_label',lpp6_u:'lpp6_u_label',pp_luka_d:'pp_luka_d_label'};
-    const pillsMap = {lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',ken_pp:'ken_pp_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',lpp4_u:'lpp4_u_pills',ws4sb_u:'ws4sb_u_pills',madcow_u:'madcow_u_pills',lpp30_u:'lpp30_u_pills',meadows_ppl:'meadows_ppl_pills',carter_bb:'carter_bb_pills',gironda_4day:'gironda_4day_pills',gironda_fb:'gironda_fb_pills',ss_u:'ss_u_pills',wendler_531:'wendler_531_pills',texas_method:'texas_method_pills',smolov_jr:'smolov_jr_pills',hst_u:'hst_u_pills',tls_d:'tls_d_pills',tls_3d:'tls_3d_pills',tls_4d:'tls_4d_pills',lpp6_u:'lpp6_u_pills'};
+    const labelMap = {lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',ken_pp:'ken_pp_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',pb_fabio:'pb_fabio_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label',lpp30_u:'lpp30_u_label',meadows_ppl:'meadows_ppl_label',adv_lpp6_u:'adv_lpp6_u_label',lpp6_adv_luka:'lpp6_adv_luka_label',pp23_luka_u:'pp23_luka_u_label',poliquin_arms:'poliquin_arms_label',layne_arms:'layne_arms_label',meadows_arms:'meadows_arms_label',meadows_shoulders:'meadows_sh_label',dante_shoulders:'dante_sh_label',meadows_chest:'meadows_chest_label',carter_bb:'carter_bb_label',gironda_4day:'gironda_4day_label',gironda_fb:'gironda_fb_label',ss_u:'ss_u_label',wendler_531:'wendler_531_label',texas_method:'texas_method_label',smolov_jr:'smolov_jr_label',hst_u:'hst_u_label',tls_d:'tls_d_label',tls_3d:'tls_3d_label',tls_4d:'tls_4d_label',lpp6_u:'lpp6_u_label',pp_luka_d:'pp_luka_d_label'};
+    const pillsMap = {lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',ken_pp:'ken_pp_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',pb_fabio:'pb_fabio_pills',lpp4_u:'lpp4_u_pills',ws4sb_u:'ws4sb_u_pills',madcow_u:'madcow_u_pills',lpp30_u:'lpp30_u_pills',meadows_ppl:'meadows_ppl_pills',carter_bb:'carter_bb_pills',gironda_4day:'gironda_4day_pills',gironda_fb:'gironda_fb_pills',ss_u:'ss_u_pills',wendler_531:'wendler_531_pills',texas_method:'texas_method_pills',smolov_jr:'smolov_jr_pills',hst_u:'hst_u_pills',tls_d:'tls_d_pills',tls_3d:'tls_3d_pills',tls_4d:'tls_4d_pills',lpp6_u:'lpp6_u_pills'};
     const days = base.days.map(day=>{
         let badge, name;
         // DC 3-day: a=Upper A1, b=Lower B1, g1=Upper A2, g2=Lower B2, g3=Upper A3, full=Lower B3
@@ -7682,6 +7925,14 @@ function getWorkoutLocalized(wId){
         }else if(day.id==='lpp6adv_lb'){badge='LEGS B';name=lang==='it'?'Femorali · Quadricipiti · Polpacci · Addominali':'Hamstrings · Quads · Calves · Abs';
         }else if(day.id==='lpp6adv_pb'){badge='PUSH B';name=lang==='it'?'Petto · Spalle · Tricipiti':'Chest · Shoulders · Triceps';
         }else if(day.id==='lpp6adv_plb'){badge='PULL B';name=lang==='it'?'Schiena · Bicipiti · Deltoidi Post.':'Back · Biceps · Rear Delts';
+        }else if(day.id==='pbf_w1_petto'){badge=lang==='it'?'DENSITÀ':'DENSITY';name=lang==='it'?'Petto + Tricipiti':'Chest + Triceps';color='var(--red)';
+        }else if(day.id==='pbf_w1_schiena'){badge=lang==='it'?'FORZA':'STRENGTH';name=lang==='it'?'Schiena':'Back';color='var(--blue)';
+        }else if(day.id==='pbf_w1_spalle'){badge=lang==='it'?'DENSITÀ':'DENSITY';name=lang==='it'?'Spalle + Bicipiti':'Shoulders + Biceps';color='var(--gold)';
+        }else if(day.id==='pbf_w1_gambe'){badge=lang==='it'?'FORZA':'STRENGTH';name=lang==='it'?'Gambe':'Legs';color='var(--green)';
+        }else if(day.id==='pbf_w2_petto'){badge=lang==='it'?'FORZA':'STRENGTH';name=lang==='it'?'Petto + Tricipiti':'Chest + Triceps';color='var(--red)';
+        }else if(day.id==='pbf_w2_schiena'){badge=lang==='it'?'DENSITÀ':'DENSITY';name=lang==='it'?'Schiena':'Back';color='var(--blue)';
+        }else if(day.id==='pbf_w2_spalle'){badge=lang==='it'?'FORZA':'STRENGTH';name=lang==='it'?'Spalle + Bicipiti':'Shoulders + Biceps';color='var(--gold)';
+        }else if(day.id==='pbf_w2_gambe'){badge=lang==='it'?'DENSITÀ':'DENSITY';name=lang==='it'?'Gambe':'Legs';color='var(--green)';
         }else if(day.id==='pp23u_push'){badge='PUSH';name=lang==='it'?'Quadricipiti · Petto · Spalle · Tricipiti':'Quads · Chest · Shoulders · Triceps';
         }else if(day.id==='pp23u_pull'){badge='PULL';name=lang==='it'?'Schiena · Femorali · Bicipiti · Polpacci':'Back · Hamstrings · Biceps · Calves';
         }else if(day.id==='pol_arms_a'){badge='SESSION A';name=lang==='it'?'Bicipiti · Tricipiti — Superset A':'Biceps · Triceps — Superset A';
@@ -7846,6 +8097,36 @@ function calcTexas(){
   if(dl){const vol=round(dl*0.77);setW(wId,"tm_volume",2,0,String(vol));const i=document.getElementById("inp_"+wId+"_tm_volume_2_0");if(i)i.value=vol;}
 }
 let _wendlerWeek = 1;
+function setPbFabioWeek(week){
+    try{localStorage.setItem('pb_fabio_week',String(week));}catch(e){}
+    [1,2].forEach(w=>{
+        const btn=document.getElementById('pbf-btn-'+w);
+        if(!btn)return;
+        btn.style.border='1px solid rgba(255,255,255,.15)';
+        btn.style.background='rgba(255,255,255,.06)';
+    });
+    const activeBtn=document.getElementById('pbf-btn-'+week);
+    if(activeBtn){activeBtn.style.border='1px solid rgba(255,59,48,.6)';activeBtn.style.background='rgba(255,59,48,.25)';}
+    const sub=document.getElementById('pbf-week-sub');
+    const title=document.getElementById('pbf-week-title');
+    const isIt=(typeof lang==='undefined'?document.documentElement.lang!=='en':lang==='it');
+    if(week===1){
+        if(title)title.textContent=isIt?'📅 Settimana 1 — Dispari':'📅 Week 1 — Odd';
+        if(sub)sub.textContent=isIt?'Densità: Petto · Spalle · Gambe | Forza: Schiena':'Density: Chest · Shoulders · Legs | Strength: Back';
+    } else {
+        if(title)title.textContent=isIt?'📅 Settimana 2 — Pari':'📅 Week 2 — Even';
+        if(sub)sub.textContent=isIt?'Forza: Petto · Spalle · Gambe | Densità: Schiena':'Strength: Chest · Shoulders · Legs | Density: Back';
+    }
+    // Re-render with filtered days
+    if(typeof activeWId!=='undefined'&&activeWId==='pb-fabio'){
+        const prefix=week===1?'pbf_w1_':'pbf_w2_';
+        const w=getWorkoutLocalized('pb-fabio');
+        if(w){
+            const filtered=w.days.filter(d=>d.id.startsWith(prefix));
+            document.getElementById('workout-body').innerHTML=filtered.map(day=>renderDay('pb-fabio',day)).join('')+'<div style="height:20px"></div>';
+        }
+    }
+}
 function setLpp6AdvPhase(phase){
     // Phase 1: 4×8-6, Phase 2: 4×6-4, Deload: note only
     try{localStorage.setItem('lpp6adv_phase',String(phase));}catch(e){}
@@ -8043,6 +8324,16 @@ function openWorkout(wId,backView){
         tmSection.style.display='none';
       }
     }
+    const pbfSection=document.getElementById('pbf-week-section');
+    if(pbfSection){
+      if(wId==='pb-fabio'){
+        pbfSection.style.display='block';
+        const savedWeek=parseInt(localStorage.getItem('pb_fabio_week')||'1');
+        setPbFabioWeek(savedWeek);
+      } else {
+        pbfSection.style.display='none';
+      }
+    }
     const smSection=document.getElementById('smolov-calc-section');
     if(smSection){
       if(wId==='smolov-jr'){
@@ -8150,7 +8441,7 @@ function renderEx(wId,dId,eIdx,ex){
             <button class="set-timer-btn" onclick="event.stopPropagation();sfStartTimer()">⏱ Rest</button>
         </div>`;
     }).join('')+'</div>';
-    const _advancedWIds = ['dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','lpp4-u','quick-u','quick-u-basic','corto-u-adv','corto-u-bas','quick-d','quick-d-basic','corto-d-adv','corto-d-bas','ws4sb-u','madcow-u','lpp30-u','lpp6-u','ken-pp','meadows-ppl','adv-lpp6-u','lpp6-adv-luka','pp23-luka-u','poliquin-arms','layne-arms','meadows-arms','meadows-shoulders','dante-shoulders','meadows-chest','carter-bb','hst-u','gironda-4day','gironda-fb','ss-u','wendler-531','texas-method','smolov-jr','tls-d','tls-3d','tls-4d','pp-luka-d'];
+    const _advancedWIds = ['dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','pb-fabio','lpp4-u','quick-u','quick-u-basic','corto-u-adv','corto-u-bas','quick-d','quick-d-basic','corto-d-adv','corto-d-bas','ws4sb-u','madcow-u','lpp30-u','lpp6-u','ken-pp','meadows-ppl','adv-lpp6-u','lpp6-adv-luka','pp23-luka-u','poliquin-arms','layne-arms','meadows-arms','meadows-shoulders','dante-shoulders','meadows-chest','carter-bb','hst-u','gironda-4day','gironda-fb','ss-u','wendler-531','texas-method','smolov-jr','tls-d','tls-3d','tls-4d','pp-luka-d'];
     const _noImg = _advancedWIds.includes(wId);
     const imgKey = _noImg ? null : (EX_NAME_MAP[ex.it] || EX_NAME_MAP[ex.en] || null);
     const imgSrc = imgKey ? EX_IMAGES[imgKey] : null;
@@ -8170,6 +8461,18 @@ function renderEx(wId,dId,eIdx,ex){
             </div>
         </div>
         ${setsHtml}
+        ${(()=>{
+            if(wId!=='pb-fabio')return'';
+            const rStr=String(ex.r);
+            const m=rStr.match(/\((\d+)(?:-\d+)?\s*tot\)/);
+            if(!m)return'';
+            const target=parseInt(m[1]);
+            const isIt=typeof lang!=='undefined'&&lang==='it';
+            return`<div class="pbf-counter" id="pbfc_${wId}_${dId}_${eIdx}" data-target="${target}" style="margin:6px 12px 4px;padding:8px 14px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:space-between;transition:background .3s,border-color .3s">
+                <span style="font-size:.68rem;color:rgba(255,255,255,.45)">${isIt?'Totale reps':'Total reps'}</span>
+                <span id="pbfc-val_${wId}_${dId}_${eIdx}" style="font-size:1rem;font-weight:800;color:rgba(255,255,255,.5)">0 / ${target}</span>
+            </div>`;
+        })()}
     </div>`;
 }
 function toggleSets(spId,arId){
@@ -8181,6 +8484,15 @@ function toggleSets(spId,arId){
 }
 function onWInput(wId,dId,eIdx,sIdx,el){
     const val=el.value; setW(wId,dId,eIdx,sIdx,val);
+    // pb-fabio: copy weight from set 0 to all other sets immediately
+    if(wId==='pb-fabio' && sIdx===0 && val){
+        for(let s=1;s<10;s++){
+            const inp=document.getElementById('inp_'+wId+'_'+dId+'_'+eIdx+'_'+s);
+            if(!inp)break;
+            inp.value=val;
+            setW(wId,dId,eIdx,s,val);
+        }
+    }
     const num=parseFloat(val),pr=getPR(wId,dId,eIdx);
     if(!isNaN(num)&&num>0){
         if(num>pr){
@@ -8211,6 +8523,29 @@ function saveSession(wId){
 function onRInput(wId,dId,eIdx,sIdx,el){
     const val=el.value;
     setR(wId,dId,eIdx,sIdx,val);
+    if(wId==='pb-fabio')_pbfUpdateCounter(wId,dId,eIdx);
+}
+function _pbfUpdateCounter(wId,dId,eIdx){
+    const container=document.getElementById('pbfc_'+wId+'_'+dId+'_'+eIdx);
+    const valEl=document.getElementById('pbfc-val_'+wId+'_'+dId+'_'+eIdx);
+    if(!container||!valEl)return;
+    const target=parseInt(container.dataset.target)||30;
+    let total=0;
+    for(let s=0;s<10;s++){
+        const inp=document.getElementById('rinp_'+wId+'_'+dId+'_'+eIdx+'_'+s);
+        if(!inp)break;
+        total+=parseInt(inp.value)||0;
+    }
+    valEl.textContent=total+' / '+target;
+    if(total>=target){
+        container.style.background='rgba(48,209,88,.2)';
+        container.style.borderColor='rgba(48,209,88,.6)';
+        valEl.style.color='#30d158';
+    } else {
+        container.style.background='rgba(255,255,255,.06)';
+        container.style.borderColor='rgba(255,255,255,.12)';
+        valEl.style.color='rgba(255,255,255,.5)';
+    }
 }
 
 // ─── STORIA ────────────────────────────────────────────────────────────────
