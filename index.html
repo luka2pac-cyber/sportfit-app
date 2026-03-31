@@ -1522,10 +1522,10 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
         <div style="background:rgba(255,159,10,.1);border-radius:8px;padding:8px 10px;margin-bottom:8px;font-size:.75rem;color:#ff9f0a;font-weight:700;text-align:center;letter-spacing:1px">
           30s → 30s → 60s → 60s → 90s → 120s
         </div>
-        <div class="ai-bullet" data-t="pbf_dens2"><b>Obiettivo:</b> 30 ripetizioni totali nelle 7 serie (es. 5+5+5+4+4+4+3 = 30)</div>
-        <div class="ai-bullet" data-t="pbf_dens3"><b>MAI andare a esaurimento</b> — fermati quando la tecnica peggiora, non quando non ce la fai più</div>
-        <div class="ai-bullet" data-t="pbf_dens4"><b>Progressione:</b> quando arrivi a 30 reps totali → aggiungi peso (+1kg spinta, +2.5kg squat/stacco)</div>
-        <div class="ai-bullet" data-t="pbf_dens5"><b>Normale non progredire le prime 3-4 settimane</b> — il corpo si sta adattando a questo tipo di lavoro insolito</div>
+        <div class="ai-bullet" data-t="pbf_dens2">Obiettivo: 30 ripetizioni totali nelle 7 serie (es. 5+5+5+4+4+4+3 = 30)</div>
+        <div class="ai-bullet" data-t="pbf_dens3">MAI andare a esaurimento — fermati quando la tecnica peggiora</div>
+        <div class="ai-bullet" data-t="pbf_dens4">Progressione: quando arrivi a 30 reps totali → aggiungi peso (+1kg spinta, +2.5kg squat/stacco)</div>
+        <div class="ai-bullet" data-t="pbf_dens5">Normale non progredire le prime 3-4 settimane — il corpo si sta adattando</div>
         <div style="background:rgba(255,214,10,.1);border:1px solid rgba(255,214,10,.3);border-radius:8px;padding:9px 12px;margin-top:8px">
           <div style="font-size:.68rem;font-weight:800;color:#ffd60a;margin-bottom:4px">⚖️ <span data-t="pbf_weight_title">Peso di partenza consigliato</span></div>
           <div style="font-size:.7rem;color:rgba(255,255,255,.75);line-height:1.6" data-t="pbf_weight_desc">Usa circa il <b style="color:#ffd60a">60-65% del tuo 1RM</b> per ogni esercizio. Se non conosci il massimale, prendi il peso che usi per 10-12 reps a sforzo moderato e riducilo del 15-20%.</div>
@@ -1538,9 +1538,9 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     <div class="ai-block" style="margin-bottom:12px;border:1px solid rgba(10,132,255,.3);background:rgba(10,132,255,.05)">
       <div class="ai-block-title" style="color:#0a84ff">💪 <span data-t="pbf_str_title">Cos'è la Forza?</span></div>
       <div style="font-size:.75rem;color:rgba(255,255,255,.75);line-height:1.7">
-        <div class="ai-bullet" data-t="pbf_str1">Esegui <b>8 serie da 2 ripetizioni</b> sull'esercizio principale (panca, squat, stacco, lento avanti)</div>
-        <div class="ai-bullet" data-t="pbf_str2">Recupero <b>ESATTAMENTE 2 minuti</b> — non di più, non di meno</div>
-        <div class="ai-bullet" data-t="pbf_str3"><b>Obiettivo:</b> portare ogni serie a 3 ripetizioni (8×3). Quando riesci → aggiungi peso</div>
+        <div class="ai-bullet" data-t="pbf_str1">Esegui 8 serie da 2 ripetizioni sull'esercizio principale (panca, squat, stacco, lento avanti)</div>
+        <div class="ai-bullet" data-t="pbf_str2">Recupero ESATTAMENTE 2 minuti — non di più, non di meno</div>
+        <div class="ai-bullet" data-t="pbf_str3">Obiettivo: portare ogni serie a 3 ripetizioni (8×3). Quando riesci → aggiungi peso</div>
         <div class="ai-bullet" data-t="pbf_str4a">Dopo le 8 serie: esercizi accessori per il gruppo muscolare del giorno</div>
         <div style="background:rgba(10,132,255,.1);border-radius:8px;padding:7px 10px;margin:4px 0;font-size:.7rem;color:rgba(255,255,255,.65)">
           <span data-t="pbf_acc_box">Fondamentali: 3 serie × 6-10 reps &nbsp;·&nbsp; Isolamenti: 3 serie × 8-12 reps</span>
@@ -8782,7 +8782,7 @@ function setNavActive(tab){
 }
 function showViewRaw(id){
     document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
-    const t2=document.getElementById(id);if(t2)t2.classList.add('active');
+    const t2=document.getElementById(id);if(t2){t2.classList.add('active');try{t2.scrollTop=0;}catch(e){}}
     if(id==='attivi-view'){try{renderAttivi();updateAttiviBtnLabel();}catch(e){}}
     try{window.scrollTo(0,0);}catch(e){}
     try{var mc=document.getElementById('mainCont');if(mc)mc.scrollTop=0;}catch(e){}
