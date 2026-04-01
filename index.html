@@ -2072,6 +2072,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       <div style="font-size:.62rem;font-weight:800;color:rgba(255,214,10,.7);letter-spacing:2px;text-transform:uppercase;white-space:nowrap" data-t="freq_div_2_3">📅 2-3 GIORNI / SETT.</div>
       <div style="flex:1;height:1px;background:rgba(255,214,10,.25)"></div>
     </div>
+    <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('pp-d','donne-inter-menu')"><div class="prog-item-name">💜 <span data-t="pp_d_label">Push Pull Donna</span></div><div class="prog-item-sub" data-t="pp_d_sub">2-3x / sett. · Push + Pull alternato</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('ab-d','donne-inter-menu')"><div class="prog-item-name">🩷 <span data-t="ab_d_label">AB Donna</span></div><div class="prog-item-sub" data-t="ab_d_sub">2–3x / settimana · Metodo ABAB · 16 sett.</div></button><span class="prog-arr">›</span></div>
     <div style="display:flex;align-items:center;gap:10px;margin:16px 0 10px">
       <div style="flex:1;height:1px;background:rgba(255,214,10,.25)"></div>
@@ -3746,6 +3747,12 @@ const T = {
     ul_2day_u_label:'Superiore/Inferiore 3-4 Giorni',
     classic_4day_u_label:'Classic Split 4 Giorni',
     fb_ab_u_label:'Corpo Completo A/B', fb_ab_u_pills:[['2-3×','/ sett.'],['~55 min','/ sessione'],['12-16 sett.','']],
+    pp_d_label:'Push Pull Donna',
+    pp_d_sub:'2-3x / sett. · Push + Pull alternato',
+    pp_d_pills:[['2-3×','/ sett.'],['Push + Pull','A/B']],
+    level_pp_d:'INTERMEDIO',
+    ppd_push_name:'Push — Quadricipiti · Petto · Spalle · Tricipiti',
+    ppd_pull_name:'Pull — Schiena · Glutei · Femorali · Bicipiti',
     ab_d_label:'AB Donna', ab_d_pills:[['2-3×','/ sett.'],['~50 min','/ sessione'],['12-16 sett.','']],
     ul_d_label:'Superiore/Inferiore Donna', ul_d_pills:[['2-4×','/ sett.'],['~55 min','/ sessione'],['12-16 sett.','']],
     d_c_badge:'C', d_c_name:'ALLENAMENTO C',
@@ -5248,6 +5255,12 @@ en:{
     ul_2day_u_label:'Upper/Lower 3-4 Day',
     classic_4day_u_label:'Classic Split 4-Day',
     fb_ab_u_label:'Full Body A/B', fb_ab_u_pills:[['2-3×','/ week'],['~55 min','/ session'],['12-16 wks','']],
+    pp_d_label:'Push Pull Woman',
+    pp_d_sub:'2-3x / week · Alternating Push + Pull',
+    pp_d_pills:[['2-3×','/ week'],['Push + Pull','A/B']],
+    level_pp_d:'INTERMEDIATE',
+    ppd_push_name:'Push — Quads · Chest · Shoulders · Triceps',
+    ppd_pull_name:'Pull — Back · Glutes · Hamstrings · Biceps',
     ab_d_label:'AB Women', ab_d_pills:[['ABAB','method'],['2-3×','week'],['16','weeks']],
     ul_d_label:'Upper/Lower Women', ul_d_pills:[['Upper/Lower',''],['2-4×','week'],['16','weeks']],
     d_c_badge:'C', d_c_name:'WORKOUT C',
@@ -7843,6 +7856,27 @@ const WORKOUTS_BASE = {
                 {it:'Curl su Panca Scott',en:'Scott Curl (Machine/DB)',s:1,r:'12-10',rest:'1-2 min'}]}
         ]},
 
+    // ── PUSH PULL DONNA ──────────────────────────────────────────────────────
+    pp_d:{gender:'donna',
+        days:[
+            {id:'ppd_push',color:'var(--pink)',exercises:[
+                {it:'Squat / Squat Macchina / Leg Press',en:'Squat / Machine Squat / Leg Press',s:3,r:'10-8',rest:'2-3 min'},
+                {it:'Press Spalle (Macchina / Manubri / BB)',en:'Shoulder Press (Machine / DB / BB)',s:3,r:'10-8',rest:'2 min'},
+                {it:'Affondi / Step Up',en:'Lunges / Step Up',s:3,r:'10-8',rest:'2 min'},
+                {it:'Press Inclinata 30° con Manubri',en:'30 Degree Incline DB Press',s:3,r:'12-10',rest:'2-3 min'},
+                {it:'Leg Extension',en:'Leg Extension',s:2,r:'12-10',rest:'1-2 min'},
+                {it:'Alzate Laterali',en:'Lateral Raises',s:3,r:'12-10',rest:'1-2 min'},
+                {it:'Spinte in Basso (Tricipiti)',en:'Triceps Pushdown',s:2,r:'15-12',rest:'1-2 min'},
+                {it:'Addominali',en:'Abs',s:3,r:'15-20',rest:'1 min'}]},
+            {id:'ppd_pull',color:'var(--blue)',exercises:[
+                {it:'Lat Machine Presa Stretta / Larga',en:'Close/Wide Grip Lat Pulldown',s:3,r:'10-8',rest:'2 min'},
+                {it:'Hip Thrust',en:'Hip Thrust',s:3,r:'12-10',rest:'2-3 min'},
+                {it:'Pulley / Rematore Macchina',en:'Pulley / Machine Row',s:3,r:'10-8',rest:'2 min'},
+                {it:'Stacchi Gambe Tese / Iperestensioni',en:'RDL / Hyperextension',s:3,r:'12-10',rest:'2 min'},
+                {it:'Leg Curl',en:'Leg Curl',s:2,r:'12-10',rest:'1-2 min'},
+                {it:'Face Pull',en:'Face Pulls',s:2,r:'12-10',rest:'1-2 min'},
+                {it:'Curl Bicipiti',en:'Biceps Curl',s:3,r:'12-10',rest:'1-2 min'},
+                {it:'Calf Raise',en:'Calf Raises',s:3,r:'15-10',rest:'1-2 min'}]}]},
     // ── POWERBUILDING BY FABIO ────────────────────────────────────────────
     pb_fabio:{gender:'uomo',
         days:[
@@ -7930,7 +7964,7 @@ const WID_MAP = {'lpp':'lpp','ini-u':'ini_u','lyle-gbr':'lyle_gbr','ini-d':'ini_
   'corto-u-adv':'quick_u','corto-u-bas':'quick_u_basic',
   'corto-d-adv':'quick_d','corto-d-bas':'quick_d_basic',
   'dc-3day':'dc_3day','dc-4day':'dc_4day','mentzer-3day':'mentzer_3day','mentzer-cons':'mentzer_cons','dorian-bg':'dorian_bg','arthur-hit':'arthur_hit','ken-hit':'ken_hit','ken-bm':'ken_bm','phat':'phat','phul':'phul','bret':'bret','ashley':'ashley','tls-d':'tls_d','tls-3d':'tls_3d','tls-4d':'tls_4d','pp-luka-d':'pp_luka_d',
-  'ul-pb-u':'ul_pb_u','pb-fabio':'pb_fabio',
+  'ul-pb-u':'ul_pb_u','pb-fabio':'pb_fabio','pp-d':'pp_d',
   'lpp4-u':'lpp4_u',
   'ws4sb-u':'ws4sb_u',
   'madcow-u':'madcow_u',
@@ -7955,8 +7989,8 @@ function getWorkoutLocalized(wId){
     const baseId = WID_MAP[wId] || wId;
     const base = WORKOUTS_BASE[baseId];
     if(!base) return null;
-    const labelMap = {lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',ken_pp:'ken_pp_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',pb_fabio:'pb_fabio_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label',lpp30_u:'lpp30_u_label',meadows_ppl:'meadows_ppl_label',adv_lpp6_u:'adv_lpp6_u_label',lpp6_adv_luka:'lpp6_adv_luka_label',pp23_luka_u:'pp23_luka_u_label',poliquin_arms:'poliquin_arms_label',layne_arms:'layne_arms_label',meadows_arms:'meadows_arms_label',meadows_shoulders:'meadows_sh_label',dante_shoulders:'dante_sh_label',meadows_chest:'meadows_chest_label',carter_bb:'carter_bb_label',gironda_4day:'gironda_4day_label',gironda_fb:'gironda_fb_label',ss_u:'ss_u_label',wendler_531:'wendler_531_label',texas_method:'texas_method_label',smolov_jr:'smolov_jr_label',hst_u:'hst_u_label',tls_d:'tls_d_label',tls_3d:'tls_3d_label',tls_4d:'tls_4d_label',lpp6_u:'lpp6_u_label',pp_luka_d:'pp_luka_d_label'};
-    const pillsMap = {lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',ken_pp:'ken_pp_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',pb_fabio:'pb_fabio_pills',lpp4_u:'lpp4_u_pills',ws4sb_u:'ws4sb_u_pills',madcow_u:'madcow_u_pills',lpp30_u:'lpp30_u_pills',meadows_ppl:'meadows_ppl_pills',carter_bb:'carter_bb_pills',gironda_4day:'gironda_4day_pills',gironda_fb:'gironda_fb_pills',ss_u:'ss_u_pills',wendler_531:'wendler_531_pills',texas_method:'texas_method_pills',smolov_jr:'smolov_jr_pills',hst_u:'hst_u_pills',tls_d:'tls_d_pills',tls_3d:'tls_3d_pills',tls_4d:'tls_4d_pills',lpp6_u:'lpp6_u_pills'};
+    const labelMap = {lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',ken_pp:'ken_pp_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',pb_fabio:'pb_fabio_label',pp_d:'pp_d_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label',lpp30_u:'lpp30_u_label',meadows_ppl:'meadows_ppl_label',adv_lpp6_u:'adv_lpp6_u_label',lpp6_adv_luka:'lpp6_adv_luka_label',pp23_luka_u:'pp23_luka_u_label',poliquin_arms:'poliquin_arms_label',layne_arms:'layne_arms_label',meadows_arms:'meadows_arms_label',meadows_shoulders:'meadows_sh_label',dante_shoulders:'dante_sh_label',meadows_chest:'meadows_chest_label',carter_bb:'carter_bb_label',gironda_4day:'gironda_4day_label',gironda_fb:'gironda_fb_label',ss_u:'ss_u_label',wendler_531:'wendler_531_label',texas_method:'texas_method_label',smolov_jr:'smolov_jr_label',hst_u:'hst_u_label',tls_d:'tls_d_label',tls_3d:'tls_3d_label',tls_4d:'tls_4d_label',lpp6_u:'lpp6_u_label',pp_luka_d:'pp_luka_d_label'};
+    const pillsMap = {lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',ken_pp:'ken_pp_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',pb_fabio:'pb_fabio_pills',pp_d:'pp_d_pills',lpp4_u:'lpp4_u_pills',ws4sb_u:'ws4sb_u_pills',madcow_u:'madcow_u_pills',lpp30_u:'lpp30_u_pills',meadows_ppl:'meadows_ppl_pills',carter_bb:'carter_bb_pills',gironda_4day:'gironda_4day_pills',gironda_fb:'gironda_fb_pills',ss_u:'ss_u_pills',wendler_531:'wendler_531_pills',texas_method:'texas_method_pills',smolov_jr:'smolov_jr_pills',hst_u:'hst_u_pills',tls_d:'tls_d_pills',tls_3d:'tls_3d_pills',tls_4d:'tls_4d_pills',lpp6_u:'lpp6_u_pills'};
     const days = base.days.map(day=>{
         let badge, name;
         // DC 3-day: a=Upper A1, b=Lower B1, g1=Upper A2, g2=Lower B2, g3=Upper A3, full=Lower B3
@@ -8105,6 +8139,8 @@ function getWorkoutLocalized(wId){
         }else if(day.id==='pbf_w2_schiena'){badge=lang==='it'?'DENSITÀ':'DENSITY';name=lang==='it'?'Schiena':'Back';color='var(--blue)';
         }else if(day.id==='pbf_w2_spalle'){badge=lang==='it'?'FORZA':'STRENGTH';name=lang==='it'?'Spalle + Bicipiti':'Shoulders + Biceps';color='var(--gold)';
         }else if(day.id==='pbf_w2_gambe'){badge=lang==='it'?'DENSITÀ':'DENSITY';name=lang==='it'?'Gambe':'Legs';color='var(--green)';
+        }else if(day.id==='ppd_push'){badge='PUSH';name=lang==='it'?'Quadricipiti · Petto · Spalle · Tricipiti':'Quads · Chest · Shoulders · Triceps';color='var(--pink)';
+        }else if(day.id==='ppd_pull'){badge='PULL';name=lang==='it'?'Schiena · Glutei · Femorali · Bicipiti':'Back · Glutes · Hamstrings · Biceps';color='var(--blue)';
         }else if(day.id==='pp23u_push'){badge='PUSH';name=lang==='it'?'Quadricipiti · Petto · Spalle · Tricipiti':'Quads · Chest · Shoulders · Triceps';
         }else if(day.id==='pp23u_pull'){badge='PULL';name=lang==='it'?'Schiena · Femorali · Bicipiti · Polpacci':'Back · Hamstrings · Biceps · Calves';
         }else if(day.id==='pol_arms_a'){badge='SESSION A';name=lang==='it'?'Bicipiti · Tricipiti — Superset A':'Biceps · Triceps — Superset A';
@@ -8622,7 +8658,7 @@ function renderEx(wId,dId,eIdx,ex){
             <button class="set-timer-btn" onclick="event.stopPropagation();sfStartTimer()">⏱ Rest</button>
         </div>`;
     }).join('')+'</div>';
-    const _advancedWIds = ['dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','pb-fabio','lpp4-u','quick-u','quick-u-basic','corto-u-adv','corto-u-bas','quick-d','quick-d-basic','corto-d-adv','corto-d-bas','ws4sb-u','madcow-u','lpp30-u','lpp6-u','ken-pp','meadows-ppl','adv-lpp6-u','lpp6-adv-luka','pp23-luka-u','poliquin-arms','layne-arms','meadows-arms','meadows-shoulders','dante-shoulders','meadows-chest','carter-bb','hst-u','gironda-4day','gironda-fb','ss-u','wendler-531','texas-method','smolov-jr','tls-d','tls-3d','tls-4d','pp-luka-d'];
+    const _advancedWIds = ['dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','pb-fabio','pp-d','lpp4-u','quick-u','quick-u-basic','corto-u-adv','corto-u-bas','quick-d','quick-d-basic','corto-d-adv','corto-d-bas','ws4sb-u','madcow-u','lpp30-u','lpp6-u','ken-pp','meadows-ppl','adv-lpp6-u','lpp6-adv-luka','pp23-luka-u','poliquin-arms','layne-arms','meadows-arms','meadows-shoulders','dante-shoulders','meadows-chest','carter-bb','hst-u','gironda-4day','gironda-fb','ss-u','wendler-531','texas-method','smolov-jr','tls-d','tls-3d','tls-4d','pp-luka-d'];
     const _noImg = _advancedWIds.includes(wId);
     const imgKey = _noImg ? null : (EX_NAME_MAP[ex.it] || EX_NAME_MAP[ex.en] || null);
     const imgSrc = imgKey ? EX_IMAGES[imgKey] : null;
