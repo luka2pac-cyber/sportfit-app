@@ -1157,6 +1157,13 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       </button>
       <span class="prog-arr">›</span>
     </div>
+    <div class="prog-item" style="border:1.5px solid rgba(255,149,0,.35);background:rgba(255,149,0,.07)">
+      <button class="prog-item-btn" onclick="showView('candito-info-view')">
+        <div class="prog-item-name">🏆 Candito 6-Week — <span style="font-size:.8rem;opacity:.7">Jonnie Candito</span></div>
+        <div class="prog-item-sub">6 settimane · Squat · Bench · Stacco · Peaking al massimale</div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
     <div class="prog-item" style="border:1.5px solid rgba(48,209,88,.35);background:rgba(48,209,88,.07)">
       <button class="prog-item-btn" onclick="showView('madcow-info-view')">
         <div class="prog-item-name">🏋️ Madcow 5×5 — <span style="font-size:.8rem;opacity:.7">Bill Starr</span></div>
@@ -1174,6 +1181,67 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
   </div>
 
   <!-- SMOLOV JR INFO VIEW -->
+  <div id="candito-info-view" class="view">
+    <button onclick="goBack('strength-power')" class="back-btn">← Strength &amp; Power</button>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#7a3800,rgba(255,149,0,.9))" onclick="openWorkout('candito-6wk','candito-info-view')">
+      🏆 <span data-t="cand_start_btn">Inizia il Programma</span>
+    </button>
+    <div class="view-title" style="font-size:1.6rem">🏆 Candito 6-Week</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px">by Jonnie Candito · Powerlifting · Squat · Bench · Stacco · <b style="color:rgba(255,255,255,.7)">6 settimane</b></div>
+    <div class="disclaimer" style="background:rgba(255,149,0,.08);border-left:3px solid rgba(255,149,0,.7)">
+      <div class="disclaimer-icon">🏆</div>
+      <div class="disclaimer-text"><b data-t="cand_level">Intermedio / Avanzato</b> — <span data-t="cand_ideal">Programma di peaking per powerlifting. Porta al massimale su Squat, Bench e Stacco in 6 settimane. Particolarmente efficace su Squat e Stacco.</span></div>
+    </div>
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title gold">📌 <span data-t="cand_phi_title">Filosofia</span></div>
+      <div class="ai-bullet" data-t="cand_phi1">Periodizzazione a pendolo: volume alto nelle prime 2 settimane → intensità massima nelle settimane 4-5</div>
+      <div class="ai-bullet" data-t="cand_phi2">Sempre ~80% 1RM anche nelle fasi di conditioning — specificità mantenuta durante tutto il ciclo</div>
+      <div class="ai-bullet" data-t="cand_phi3">Settimana 6 opzionale: puoi testare il nuovo 1RM, fare deload o saltarla e stimare il massimale dalle serie W5</div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title" style="color:#ff9500">📅 <span data-t="cand_phases_title">Le 6 Fasi</span></div>
+      <div class="ai-stat-row" style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,.06)">
+        <span class="ai-stat-label" style="min-width:60px;color:#ff9500">Sett. 1</span>
+        <span class="ai-stat-val" data-t="cand_w1_desc">Muscular Conditioning (Moderata) · 5 sessioni · ~60-65% 1RM · 6-8 reps</span>
+      </div>
+      <div class="ai-stat-row" style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,.06)">
+        <span class="ai-stat-label" style="min-width:60px;color:#ff9500">Sett. 2</span>
+        <span class="ai-stat-val" data-t="cand_w2_desc">Conditioning / Ipertrofia · 5 sessioni · ~70-82.5% 1RM · Volume + back-off</span>
+      </div>
+      <div class="ai-stat-row" style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,.06)">
+        <span class="ai-stat-label" style="min-width:60px;color:#ff4444">Sett. 3</span>
+        <span class="ai-stat-val" data-t="cand_w3_desc">Linear Max OT Phase · 3 sessioni · 80-92.5% 1RM · 2-4 reps · No accessori</span>
+      </div>
+      <div class="ai-stat-row" style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,.06)">
+        <span class="ai-stat-label" style="min-width:60px;color:#ff4444">Sett. 4</span>
+        <span class="ai-stat-val" data-t="cand_w4_desc">Heavy Weight Acclimation · 2 sessioni · 87.5-92.5% · Singole pesanti</span>
+      </div>
+      <div class="ai-stat-row" style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,.06)">
+        <span class="ai-stat-label" style="min-width:60px;color:#ffd60a">Sett. 5</span>
+        <span class="ai-stat-val" data-t="cand_w5_desc">Alta Intensità (Picco) · 2 sessioni · 90%+ · 1-4 reps al massimo</span>
+      </div>
+      <div class="ai-stat-row" style="padding:6px 0">
+        <span class="ai-stat-label" style="min-width:60px;color:#30d158">Sett. 6</span>
+        <span class="ai-stat-val" data-t="cand_w6_desc">Test 1RM (opzionale) · Oppure deload · Oppure stima da W5</span>
+      </div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title blue">🧮 <span data-t="cand_calc_title">Calcolatore 1RM</span></div>
+      <div class="ai-bullet" data-t="cand_calc1">Inserisci i tuoi massimali nel calcolatore — l'app calcola automaticamente tutti i pesi per ogni settimana</div>
+      <div class="ai-bullet" data-t="cand_calc2">I pesi vengono arrotondati a 2.5kg. Se non conosci il tuo 1RM, usa la formula di Epley: peso × (1 + reps/30)</div>
+    </div>
+    <div class="ai-block" style="border:1px solid rgba(255,214,10,.25);background:rgba(255,214,10,.05)">
+      <div class="ai-block-title gold">⚠️ <span data-t="cand_notes_title">Note importanti</span></div>
+      <div class="ai-bullet" data-t="cand_note1">Bench Press: il programma originale è meno efficace sulla panca. Per risultati migliori considera il Candito Advanced Bench in abbinamento</div>
+      <div class="ai-bullet" data-t="cand_note2">Il programma funziona meglio a mantenimento calorico o lieve surplus — evita grandi deficit</div>
+      <div class="ai-bullet" data-t="cand_note3">Settimane 1-2: 5 sessioni/sett. (Lun-Ven). Settimane 3-5: 2-3 sessioni. Recupero abbondante nelle ultime settimane</div>
+      <div class="ai-bullet" data-t="cand_note4">Dopo il ciclo: puoi ripetere subito aumentando i massimali del 2-5% oppure fare deload prima</div>
+    </div>
+    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#7a3800,rgba(255,149,0,.9))" onclick="openWorkout('candito-6wk','candito-info-view')">
+      🏆 <span data-t="cand_start_btn">Inizia il Programma</span>
+    </button>
+  </div>
+
   <div id="smolov-info-view" class="view">
     <button onclick="goBack('strength-power')" class="back-btn">← Strength &amp; Power</button>
     <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#7a0000,var(--red))" onclick="openWorkout('smolov-jr','smolov-info-view')">
@@ -2043,8 +2111,8 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     </div>
     <div class="ai-block">
       <div class="ai-block-title" style="color:var(--green)">&#128200; <span data-t="arthur_prog_title">Progressione obbligatoria</span></div>
-      <div class="ai-bullet"><span data-t="arthur_prog1">Ad ogni trening: +1-5% peso OPPURE +1 rep alla stessa teža</span></div>
-      <div class="ai-bullet"><span data-t="arthur_prog2">2 treningi senza progresso sulla stessa vaja = segnale per +1 giorno riposo</span></div>
+      <div class="ai-bullet"><span data-t="arthur_prog1"></span></div>
+      <div class="ai-bullet"><span data-t="arthur_prog2"></span></div>
       <div class="ai-bullet"><span data-t="arthur_prog3">La serie finisce solo quando e fisicamente impossibile spostare il peso di 1 mm con buona tecnica</span></div>
     </div>
     <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#4a3800,rgba(255,214,10,.8))" onclick="openWorkout('arthur-hit','arthur-info-view')">
@@ -2196,6 +2264,41 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
             <span id="pbf-btn2-lbl">Settimana 2</span><br><span style="font-size:.62rem;opacity:.7" id="pbf-btn2-sub">Densità: Schiena·Gambe</span>
           </button>
         </div>
+      </div>
+    </div>
+    <div id="candito-week-section" style="display:none;margin-bottom:14px">
+      <div class="ai-block" style="border:1px solid rgba(255,149,0,.35);background:rgba(255,149,0,.06)">
+        <div class="ai-block-title gold" id="candito-week-title">📅 Settimana attuale</div>
+        <div style="font-size:.72rem;color:rgba(255,255,255,.45);margin-bottom:10px" id="candito-week-sub">Seleziona la settimana</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px">
+          <button onclick="setCandWeek(1)" id="cand-btn-1" style="padding:8px 4px;border-radius:10px;border:1px solid rgba(255,149,0,.6);background:rgba(255,149,0,.25);color:#fff;font-size:.7rem;font-weight:700;font-family:inherit;cursor:pointer">Sett. 1<br><span style="font-size:.58rem;opacity:.6">Conditioning</span></button>
+          <button onclick="setCandWeek(2)" id="cand-btn-2" style="padding:8px 4px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;font-size:.7rem;font-weight:700;font-family:inherit;cursor:pointer">Sett. 2<br><span style="font-size:.58rem;opacity:.6">Hypertrophy</span></button>
+          <button onclick="setCandWeek(3)" id="cand-btn-3" style="padding:8px 4px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;font-size:.7rem;font-weight:700;font-family:inherit;cursor:pointer">Sett. 3<br><span style="font-size:.58rem;opacity:.6">Linear Max</span></button>
+          <button onclick="setCandWeek(4)" id="cand-btn-4" style="padding:8px 4px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;font-size:.7rem;font-weight:700;font-family:inherit;cursor:pointer">Sett. 4<br><span style="font-size:.58rem;opacity:.6">Heavy Accl.</span></button>
+          <button onclick="setCandWeek(5)" id="cand-btn-5" style="padding:8px 4px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;font-size:.7rem;font-weight:700;font-family:inherit;cursor:pointer">Sett. 5<br><span style="font-size:.58rem;opacity:.6">Alta Intensità</span></button>
+          <button onclick="setCandWeek(6)" id="cand-btn-6" style="padding:8px 4px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;font-size:.7rem;font-weight:700;font-family:inherit;cursor:pointer">Sett. 6<br><span style="font-size:.58rem;opacity:.6">Test (opt.)</span></button>
+        </div>
+      </div>
+    </div>
+    <div id="candito-calc-section" style="display:none;margin-bottom:14px">
+      <div class="ai-block" style="border:1px solid rgba(255,149,0,.35);background:rgba(255,149,0,.06)">
+        <div class="ai-block-title gold" id="candito-calc-title">🧮 Calcola i pesi</div>
+        <div style="font-size:.7rem;color:rgba(255,255,255,.45);margin-bottom:10px" id="candito-calc-sub">Inserisci i tuoi 1RM — l'app calcola tutti i pesi</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px">
+          <div>
+            <div style="font-size:.6rem;color:rgba(255,255,255,.4);margin-bottom:4px" id="cand-sq-lbl">Squat 1RM (kg)</div>
+            <input id="cand-sq" type="number" placeholder="100" style="width:100%;padding:8px;border-radius:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:.85rem;font-family:inherit" oninput="calcCandito()"/>
+          </div>
+          <div>
+            <div style="font-size:.6rem;color:rgba(255,255,255,.4);margin-bottom:4px" id="cand-bp-lbl">Panca 1RM (kg)</div>
+            <input id="cand-bp" type="number" placeholder="80" style="width:100%;padding:8px;border-radius:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:.85rem;font-family:inherit" oninput="calcCandito()"/>
+          </div>
+          <div>
+            <div style="font-size:.6rem;color:rgba(255,255,255,.4);margin-bottom:4px" id="cand-dl-lbl">Stacco 1RM (kg)</div>
+            <input id="cand-dl" type="number" placeholder="120" style="width:100%;padding:8px;border-radius:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:.85rem;font-family:inherit" oninput="calcCandito()"/>
+          </div>
+        </div>
+        <div id="candito-calc-result" style="font-size:.72rem;line-height:1.8;color:rgba(255,255,255,.65)"></div>
       </div>
     </div>
     <div id="smolov-calc-section" style="display:none;margin-bottom:14px">
@@ -3992,6 +4095,8 @@ const T = {
     phul_diff_title:'PHUL vs PHAT',
     hdc_title:'Heavy Duty Concepts',
     hdc_title:'Heavy Duty Concepts',
+    hdc_title:'Heavy Duty Concepts',
+    hdc_title:'Heavy Duty Concepts',
     phul_label:'PHUL - Power Hypertrophy Upper Lower',
     phul_pills:[['4 giorni','/ sett.'],['Upper/Lower',''],['Forza+Volume','']],
     phat_founder:'PhD Nutrizione & Natural Pro Bodybuilder',
@@ -4483,6 +4588,32 @@ const T = {
     ss_u_label:'Starting Strength — Mark Rippetoe',
     ss_u_pills:[['3×','/ sett.'],['45-60 min','/ sessione'],['Progressione','lineare']],
     level_ss_u:'INIZIALE / INTERMEDIO',
+    candito_6wk_label:'Candito 6-Week Strength',
+    candito_6wk_pills:[['6 Sett.','Peaking'],['Squat','Bench · DL'],['Intermedio','/ Avanzato']],
+    cand_start_btn:'Inizia il Programma',
+    cand_level:'Intermedio / Avanzato',
+    cand_ideal:"Programma di peaking per powerlifting. Porta al massimale su Squat, Bench e Stacco in 6 settimane.",
+    cand_phi_title:'Come funziona',
+    cand_phi1:'Sett. 1-2: 5 allenamenti a settimana (Lun-Ven) con volume alto e pesi medi — costruisci la resistenza muscolare.',
+    cand_phi2:'Sett. 3-5: volume scende drasticamente, intensità sale — pochi esercizi ma pesantissimi. Arrivi al picco di forza.',
+    cand_phi3:'Sett. 6 opzionale: testa il nuovo massimale, fai deload, oppure saltala e stima il massimale dalle ultime serie.',
+    cand_phases_title:'Le 6 Settimane',
+    cand_w1_desc:'Sett. 1 — Conditioning · 5 giorni · Lun-Ven · Lower 2× + Upper 3× · Pesi medi',
+    cand_w2_desc:'Sett. 2 — Ipertrofia · 5 giorni · Lun-Ven · Lower 2× + Upper 3× · Volume più alto',
+    cand_w3_desc:'Sett. 3 — Linear Max OT · 3 giorni · Solo fondamentali · 2-4 reps pesanti',
+    cand_w4_desc:'Sett. 4 — Acclimazione · 2 giorni · Vicino al massimale · Singole pesanti',
+    cand_w5_desc:'Sett. 5 — Picco · 2 giorni · Massimo sforzo · 1-4 reps al limite assoluto',
+    cand_w6_desc:'Sett. 6 — Opzionale · Testa il 1RM o fai deload leggero',
+    cand_calc_title:'Calcolatore Pesi',
+    cand_calc1:"Inserisci i tuoi 1RM — l'app calcola i pesi orientativi. I valori esatti sono nel foglio Excel originale gratuito su canditotraininghq.com",
+    cand_calc2:'Pesi arrotondati a 2.5kg. Non conosci il massimale? Usa: peso × (1 + reps ÷ 30)',
+    cand_notes_title:'⚠️ Note sul programma originale',
+    cand_note1:'Il vero programma Candito usa il formato MR10 (massime reps, max 10) e back-off sets variabili. Questa scheda è una guida semplificata.',
+    cand_note2:'Per seguire il programma al 100% scarica il foglio Excel GRATUITO su canditotraininghq.com — si auto-calcola tutto.',
+    cand_note3:'Panca Piana: funziona meglio per squat e stacco. Per la panca considera il programma Candito Advanced Bench.',
+    cand_note4:'Mangia abbastanza — funziona meglio a mantenimento o lieve surplus. Dopo il ciclo: ripeti con +2-5kg ai massimali.',
+    candito_6wk_label:'Candito 6-Week Strength',
+    candito_6wk_pills:[['6 Wks','Peaking'],['Squat','Bench · DL'],['Intermediate','/ Advanced']],
     wendler_531_label:'5/3/1 — Jim Wendler',
     wendler_531_pills:[['4×','/ sett.'],['45-60 min','/ sessione'],['Cicli','4 settimane']],
     level_wendler_531:'INTERMEDIO / AVANZATO',
@@ -4735,8 +4866,8 @@ const T = {
     arthur_rest2:'Riposo totale',
     arthur_freq_note:'Se dopo Lun+Ven la forza NON cresce: passa a 1x ogni 6-7 giorni.',
     arthur_prog_title:'Progressione obbligatoria',
-    arthur_prog1:'Ad ogni trening: +1-5% peso OPPURE +1 rep alla stessa teza',
-    arthur_prog2:'2 treningi senza progresso sulla stessa vaja = segnale per +1 giorno riposo',
+    arthur_prog1:'Ad ogni allenamento: +1-5% peso OPPURE +1 rep allo stesso carico',
+    arthur_prog2:'2 allenamenti senza progresso sullo stesso esercizio = segnale per +1 giorno riposo',
     arthur_prog3:'La serie finisce solo quando e fisicamente impossibile spostare il peso di 1 mm',
     arthur_hit_label:'Arthur Jones - Consolidated Routine HIT',
     arthur_hit_pills:[['1-2x','/ sett.'],['5 vaje',''],['Tempo','2-1-4']],
@@ -6098,6 +6229,29 @@ en:{
     ss_u_label:'Starting Strength — Mark Rippetoe',
     ss_u_pills:[['3×','/ week'],['45-60 min','/ session'],['Linear','progression']],
     level_ss_u:'BEGINNER / INTERMEDIATE',
+
+    cand_start_btn:'Start the Program',
+    cand_level:'Intermediate / Advanced',
+    cand_ideal:'A 6-week powerlifting program to improve your Squat, Bench and Deadlift maximum.',
+    cand_phi_title:'How it works',
+    cand_phi1:'Weeks 1-2: 5 workouts per week (Mon-Fri) with high volume and moderate weight — build muscular endurance.',
+    cand_phi2:'Weeks 3-5: volume drops sharply, intensity rises — few exercises but very heavy. You peak your strength.',
+    cand_phi3:'Week 6 is optional: test your new 1RM, deload, or skip it and estimate the max from your Week 5 sets.',
+    cand_phases_title:'The 6 Weeks',
+    cand_w1_desc:'Week 1 — Conditioning · 5 days · Mon-Fri · Lower 2× + Upper 3× · Moderate weight',
+    cand_w2_desc:'Week 2 — Hypertrophy · 5 days · Mon-Fri · Lower 2× + Upper 3× · Higher volume',
+    cand_w3_desc:'Week 3 — Linear Max OT · 3 days · Compounds only · 2-4 heavy reps',
+    cand_w4_desc:'Week 4 — Acclimation · 2 days · Near maximum weight · Heavy singles',
+    cand_w5_desc:'Week 5 — Peak · 2 days · Max effort · 1-4 reps at absolute limit',
+    cand_w6_desc:'Week 6 — Optional · Test your 1RM or take a light deload',
+    cand_calc_title:'Weight Calculator',
+    cand_calc1:'Enter your 1RM — the app gives approximate weights. For exact values use the free Excel spreadsheet at canditotraininghq.com',
+    cand_calc2:'Weights rounded to 2.5kg. No 1RM? Estimate with: weight × (1 + reps ÷ 30)',
+    cand_notes_title:'⚠️ Notes on the original program',
+    cand_note1:'The real Candito program uses MR10 format (max reps, cap at 10) and variable back-off sets. This workout is a simplified guide.',
+    cand_note2:'For 100% accuracy download the FREE Excel spreadsheet at canditotraininghq.com — all weights auto-calculate.',
+    cand_note3:'Bench Press: works better for squat and deadlift. For bench consider the Candito Advanced Bench program.',
+    cand_note4:'Eat enough — works best at maintenance or slight surplus. After the cycle: repeat with +2-5kg on your maxes.',
     wendler_531_label:'5/3/1 — Jim Wendler',
     wendler_531_pills:[['4×','/ week'],['45-60 min','/ session'],['4-week','cycles']],
     level_wendler_531:'INTERMEDIATE / ADVANCED',
@@ -7283,8 +7437,8 @@ const WORKOUTS_BASE = {
         ]},
     // ── SMOLOV JR ─────────────────────────────────────────────────────────
     smolov_jr:{gender:'uomo',
-        note_it:'🔥 <b>Squat + Panca insieme è fattibile</b> — la Panca non stanca il SNC come lo Squat. Usa la calcolatrice sopra con i tuoi massimali separati. Incremento settimanale: +5kg Squat, +2.5kg Panca. Riposa 3-5 min tra le serie. Nessun altro esercizio pesante per gambe.',
-        note_en:'🔥 <b>Squat + Bench together is feasible</b> — Bench Press does not tax the CNS like Squat does. Use the calculator above with your separate maxes. Weekly increment: +5kg Squat, +2.5kg Bench. Rest 3-5 min between sets. No other heavy leg work.',
+        note_it:'⚠️ <b>Corri su UNA alzata sola per ciclo</b> — squat OPPURE panca, non entrambe insieme. Fare Smolov Jr. su 2 alzate simultaneamente è sconsigliato anche per avanzati. Incremento settimanale: +5kg Squat, +2.5kg Panca. Recupera 3-5 min tra le serie. Nessun altro esercizio pesante durante il ciclo.',
+        note_en:'⚠️ <b>Run on ONE lift only per cycle</b> — squat OR bench, not both simultaneously. Running Smolov Jr. on two lifts at the same time is not recommended even for advanced lifters. Weekly increment: +5kg Squat, +2.5kg Bench. Rest 3-5 min between sets. No other heavy compounds during the cycle.',
         days:[
             {id:'smolv_d1',color:'var(--blue)',exercises:[
                 {it:'Squat con Bilanciere — Giorno 1',en:'Barbell Squat — Day 1',s:6,r:'6 @70% 1RM'},
@@ -7322,53 +7476,86 @@ const WORKOUTS_BASE = {
         ]},
     // ── 5/3/1 — JIM WENDLER ──────────────────────────────────────────────
     wendler_531:{gender:'uomo',
-        note_it:'⚡ <b>Training Max (TM) = 90% del tuo vero 1RM.</b> Tutte le percentuali si calcolano sul TM. L\'ultima serie di ogni settimana è <b>AMRAP</b> (quante reps riesci con buona tecnica). Dopo ogni ciclo di 4 sett.: +2.5kg Panca/Press, +5kg Squat/Stacco. <b>BBB (Boring But Big):</b> dopo le serie principali, fai 5×10 dello stesso esercizio al 50-60% del TM.',
-        note_en:'⚡ <b>Training Max (TM) = 90% of your true 1RM.</b> All percentages are calculated from TM. The last set each week is <b>AMRAP</b> (as many reps as possible with good form). After each 4-week cycle: +2.5kg Bench/Press, +5kg Squat/Deadlift. <b>BBB (Boring But Big):</b> after main sets, do 5×10 of the same lift at 50-60% TM.',
         days:[
             {id:'w531_press',color:'var(--blue)',exercises:[
-                {it:'Press Militare @65% TM',en:'Overhead Press @65% TM',s:1,r:'5 reps'},
-                {it:'Press Militare @75% TM',en:'Overhead Press @75% TM',s:1,r:'5 reps'},
-                {it:'Press Militare @85% TM',en:'Overhead Press @85% TM',s:1,r:'5+ AMRAP'},
-                {it:'BBB · Press Militare @50-60% TM',en:'BBB · Overhead Press @50-60% TM',s:5,r:'10'},
-                {it:'Assistenza · Dip / Trazioni',en:'Assistance · Dips / Pull-ups',s:3,r:'10-15'},
-                {it:'Assistenza · Addominali / Core',en:'Assistance · Abs / Core',s:3,r:'15-20'}]},
+                {it:'Press Militare — S1',en:'Overhead Press — S1',s:1,r:'5',rest:'3 min',
+                 note_it:'W1: 65% TM · W2: 70% TM · W3: 75% TM · W4 Deload: 40% TM',
+                 note_en:'W1: 65% TM · W2: 70% TM · W3: 75% TM · W4 Deload: 40% TM'},
+                {it:'Press Militare — S2',en:'Overhead Press — S2',s:1,r:'5',rest:'3 min',
+                 note_it:'W1: 75% TM · W2: 80% TM · W3: 85% TM · W4 Deload: 50% TM',
+                 note_en:'W1: 75% TM · W2: 80% TM · W3: 85% TM · W4 Deload: 50% TM'},
+                {it:'Press Militare — S3 (AMRAP)',en:'Overhead Press — S3 (AMRAP)',s:1,r:'5+/3+/1+',rest:'5 min',
+                 note_it:'W1: 85% TM · W2: 90% TM · W3: 95% TM · W4 Deload: 60% TM (5 reps, NO AMRAP). Fai più reps possibili (W1-3).',
+                 note_en:'W1: 85% TM · W2: 90% TM · W3: 95% TM · W4 Deload: 60% TM (5 reps, NO AMRAP). Max reps possible (W1-3).'},
+                {it:'BBB — Press Militare 5×10',en:'BBB — Overhead Press 5×10',s:5,r:'10',rest:'1-2 min',
+                 note_it:'50-60% del Training Max. Boring But Big: volume ipertrofico obbligatorio.',
+                 note_en:'50-60% of Training Max. Boring But Big: mandatory hypertrophy volume.'},
+                {it:'Assistenza — Trazioni / Dip',en:'Assistance — Pull-ups / Dips',s:3,r:'10-15',rest:'1-2 min'},
+                {it:'Assistenza — Addominali / Core',en:'Assistance — Abs / Core',s:3,r:'15-20',rest:'1 min'}]},
             {id:'w531_dl',color:'var(--red)',exercises:[
-                {it:'Stacco da Terra @70% TM',en:'Deadlift @70% TM',s:1,r:'5 reps'},
-                {it:'Stacco da Terra @80% TM',en:'Deadlift @80% TM',s:1,r:'5 reps'},
-                {it:'Stacco da Terra @90% TM',en:'Deadlift @90% TM',s:1,r:'5+ AMRAP'},
-                {it:'BBB · Stacco o Leg Press @50-60% TM',en:'BBB · Deadlift or Leg Press @50-60% TM',s:5,r:'10'},
-                {it:'Assistenza · Curl Bilanciere / Rematore',en:'Assistance · Barbell Curl / Row',s:3,r:'10-15'},
-                {it:'Assistenza · Addominali / Iperestensioni',en:'Assistance · Abs / Hyperextension',s:3,r:'15-20'}]},
-            {id:'w531_bench',color:'var(--green)',exercises:[
-                {it:'Panca Piana @65% TM',en:'Bench Press @65% TM',s:1,r:'5 reps'},
-                {it:'Panca Piana @75% TM',en:'Bench Press @75% TM',s:1,r:'5 reps'},
-                {it:'Panca Piana @85% TM',en:'Bench Press @85% TM',s:1,r:'5+ AMRAP'},
-                {it:'BBB · Panca Piana @50-60% TM',en:'BBB · Bench Press @50-60% TM',s:5,r:'10'},
-                {it:'Assistenza · Dip / Rematore Manubri',en:'Assistance · Dips / DB Row',s:3,r:'10-15'},
-                {it:'Assistenza · Addominali / Core',en:'Assistance · Abs / Core',s:3,r:'15-20'}]},
-            {id:'w531_squat',color:'var(--gold)',exercises:[
-                {it:'Squat @70% TM',en:'Squat @70% TM',s:1,r:'5 reps'},
-                {it:'Squat @80% TM',en:'Squat @80% TM',s:1,r:'5 reps'},
-                {it:'Squat @90% TM',en:'Squat @90% TM',s:1,r:'5+ AMRAP'},
-                {it:'BBB · Squat @50-60% TM',en:'BBB · Squat @50-60% TM',s:5,r:'10'},
-                {it:'Assistenza · Leg Curl / RDL',en:'Assistance · Leg Curl / RDL',s:3,r:'10-15'},
-                {it:'Assistenza · Addominali / Core',en:'Assistance · Abs / Core',s:3,r:'15-20'}]}
-        ]},
-    // ── STARTING STRENGTH — MARK RIPPETOE ────────────────────────────────
+                {it:'Stacco da Terra — S1',en:'Deadlift — S1',s:1,r:'5',rest:'3 min',
+                 note_it:'W1: 65% TM · W2: 70% TM · W3: 75% TM · W4 Deload: 40% TM',
+                 note_en:'W1: 65% TM · W2: 70% TM · W3: 75% TM · W4 Deload: 40% TM'},
+                {it:'Stacco da Terra — S2',en:'Deadlift — S2',s:1,r:'5',rest:'3 min',
+                 note_it:'W1: 75% TM · W2: 80% TM · W3: 85% TM · W4 Deload: 50% TM',
+                 note_en:'W1: 75% TM · W2: 80% TM · W3: 85% TM · W4 Deload: 50% TM'},
+                {it:'Stacco da Terra — S3 (AMRAP)',en:'Deadlift — S3 (AMRAP)',s:1,r:'5+/3+/1+',rest:'5 min',
+                 note_it:'W1: 85% TM · W2: 90% TM · W3: 95% TM · W4 Deload: 60% TM (5 reps, NO AMRAP).',
+                 note_en:'W1: 85% TM · W2: 90% TM · W3: 95% TM · W4 Deload: 60% TM (5 reps, NO AMRAP).'},
+                {it:'BBB — Stacco / Leg Press 5×10',en:'BBB — Deadlift / Leg Press 5×10',s:5,r:'10',rest:'1-2 min',
+                 note_it:'50-60% del Training Max.',note_en:'50-60% of Training Max.'},
+                {it:'Assistenza — Curl / Rematore',en:'Assistance — Curl / Row',s:3,r:'10-15',rest:'1-2 min'},
+                {it:'Assistenza — Addominali / Iperest.',en:'Assistance — Abs / Back Ext.',s:3,r:'15-20',rest:'1 min'}]},
+            {id:'w531_bench',color:'var(--blue)',exercises:[
+                {it:'Panca Piana — S1',en:'Bench Press — S1',s:1,r:'5',rest:'3 min',
+                 note_it:'W1: 65% TM · W2: 70% TM · W3: 75% TM · W4 Deload: 40% TM',
+                 note_en:'W1: 65% TM · W2: 70% TM · W3: 75% TM · W4 Deload: 40% TM'},
+                {it:'Panca Piana — S2',en:'Bench Press — S2',s:1,r:'5',rest:'3 min',
+                 note_it:'W1: 75% TM · W2: 80% TM · W3: 85% TM · W4 Deload: 50% TM',
+                 note_en:'W1: 75% TM · W2: 80% TM · W3: 85% TM · W4 Deload: 50% TM'},
+                {it:'Panca Piana — S3 (AMRAP)',en:'Bench Press — S3 (AMRAP)',s:1,r:'5+/3+/1+',rest:'5 min',
+                 note_it:'W1: 85% TM · W2: 90% TM · W3: 95% TM · W4 Deload: 60% TM (5 reps, NO AMRAP).',
+                 note_en:'W1: 85% TM · W2: 90% TM · W3: 95% TM · W4 Deload: 60% TM (5 reps, NO AMRAP).'},
+                {it:'BBB — Panca Piana 5×10',en:'BBB — Bench Press 5×10',s:5,r:'10',rest:'1-2 min',
+                 note_it:'50-60% del Training Max.',note_en:'50-60% of Training Max.'},
+                {it:'Assistenza — Dip / Rematore Manubri',en:'Assistance — Dips / DB Row',s:3,r:'10-15',rest:'1-2 min'},
+                {it:'Assistenza — Addominali / Core',en:'Assistance — Abs / Core',s:3,r:'15-20',rest:'1 min'}]},
+            {id:'w531_squat',color:'var(--red)',exercises:[
+                {it:'Squat — S1',en:'Squat — S1',s:1,r:'5',rest:'3 min',
+                 note_it:'W1: 65% TM · W2: 70% TM · W3: 75% TM · W4 Deload: 40% TM',
+                 note_en:'W1: 65% TM · W2: 70% TM · W3: 75% TM · W4 Deload: 40% TM'},
+                {it:'Squat — S2',en:'Squat — S2',s:1,r:'5',rest:'3 min',
+                 note_it:'W1: 75% TM · W2: 80% TM · W3: 85% TM · W4 Deload: 50% TM',
+                 note_en:'W1: 75% TM · W2: 80% TM · W3: 85% TM · W4 Deload: 50% TM'},
+                {it:'Squat — S3 (AMRAP)',en:'Squat — S3 (AMRAP)',s:1,r:'5+/3+/1+',rest:'5 min',
+                 note_it:'W1: 85% TM · W2: 90% TM · W3: 95% TM · W4 Deload: 60% TM (5 reps, NO AMRAP).',
+                 note_en:'W1: 85% TM · W2: 90% TM · W3: 95% TM · W4 Deload: 60% TM (5 reps, NO AMRAP).'},
+                {it:'BBB — Squat 5×10',en:'BBB — Squat 5×10',s:5,r:'10',rest:'1-2 min',
+                 note_it:'50-60% del Training Max.',note_en:'50-60% of Training Max.'},
+                {it:'Assistenza — Leg Curl / RDL',en:'Assistance — Leg Curl / RDL',s:3,r:'10-15',rest:'1-2 min'},
+                {it:'Assistenza — Addominali / Core',en:'Assistance — Abs / Core',s:3,r:'15-20',rest:'1 min'}]}]},
     ss_u:{gender:'uomo',
         days:[
-            {id:'ss_a',color:'var(--red)',exercises:[
-                {it:'Squat con Bilanciere',en:'Barbell Squat',s:3,r:'5 (+2.5kg ogni sessione)'},
-                {it:'Panca Piana con Bilanciere',en:'Barbell Bench Press',s:3,r:'5 (+2.5kg ogni sessione)'},
-                {it:'Stacco da Terra',en:'Deadlift',s:1,r:'5 (+5kg ogni sessione)'},
-                {it:'Trazioni (opzionale)',en:'Chin-ups (optional)',s:3,r:'max reps'}]},
-            {id:'ss_b',color:'var(--blue)',exercises:[
-                {it:'Squat con Bilanciere',en:'Barbell Squat',s:3,r:'5 (+2.5kg ogni sessione)'},
-                {it:'Press Militare con Bilanciere',en:'Overhead Press',s:3,r:'5 (+2.5kg ogni sessione)'},
-                {it:'Stacco da Terra',en:'Deadlift',s:1,r:'5 (+5kg ogni sessione)'},
-                {it:'Trazioni (opzionale)',en:'Chin-ups (optional)',s:3,r:'max reps'}]}
-        ]},
-    // ── HST — HYPERTROPHY SPECIFIC TRAINING ───────────────────────────────
+            {id:'ss_a',color:'var(--blue)',exercises:[
+                {it:'Squat con Bilanciere',en:'Barbell Squat',s:3,r:'5',rest:'3-5 min',
+                 note_it:'Aggiungi +5kg ogni sessione. Prima alzata del giorno — il più importante.',
+                 note_en:'Add +5kg every session. First lift of the day — the most important.'},
+                {it:'Panca Piana con Bilanciere',en:'Bench Press',s:3,r:'5',rest:'3-5 min',
+                 note_it:'Alterna con Press Militare ogni sessione. +2.5kg ogni sessione.',
+                 note_en:'Alternate with Overhead Press every session. +2.5kg per session.'},
+                {it:'Stacco da Terra',en:'Deadlift',s:1,r:'5',rest:'5 min',
+                 note_it:'+5-10kg ogni sessione (fase novice). 1 sola serie pesante — basta così.',
+                 note_en:'+5-10kg every session (novice phase). 1 heavy set — that is enough.'}]},
+            {id:'ss_b',color:'var(--red)',exercises:[
+                {it:'Squat con Bilanciere',en:'Barbell Squat',s:3,r:'5',rest:'3-5 min',
+                 note_it:'+5kg rispetto alla sessione A. Squat ogni allenamento.',
+                 note_en:'+5kg vs session A. Squat every workout.'},
+                {it:'Press Militare con Bilanciere',en:'Overhead Press',s:3,r:'5',rest:'3-5 min',
+                 note_it:'Alterna con Panca ogni sessione. +2.5kg ogni sessione.',
+                 note_en:'Alternate with Bench Press every session. +2.5kg per session.'},
+                {it:'Stacco da Terra',en:'Deadlift',s:1,r:'5',rest:'5 min',
+                 note_it:'Alterna con Power Clean nelle fasi avanzate. +5-10kg ogni sessione.',
+                 note_en:'Alternate with Power Clean in advanced phases. +5-10kg per session.'}]}]},
     hst_u:{gender:'uomo',
         note_it:'📊 <b>3 blocchi × 2 settimane:</b> Sett.1-2 = 2×15 reps | Sett.3-4 = 2×10 reps | Sett.5-6 = 2×5 reps. <b>Carico aumenta ogni sessione</b> verso il massimale del blocco. Non andare al cedimento — il carico meccanico progressivo è lo stimolo, non la fatica. Dopo 6-8 settimane: <b>Strategic Deconditioning</b> di 9-14 giorni prima del prossimo ciclo.',
         note_en:'📊 <b>3 blocks × 2 weeks:</b> Wk1-2 = 2×15 reps | Wk3-4 = 2×10 reps | Wk5-6 = 2×5 reps. <b>Load increases every session</b> towards the block max. Do NOT go to failure — progressive mechanical load is the stimulus, not fatigue. After 6-8 weeks: <b>Strategic Deconditioning</b> of 9-14 days before next cycle.',
@@ -7383,7 +7570,7 @@ const WORKOUTS_BASE = {
                 {it:'Tricipiti — Dip / Pushdown',en:'Triceps — Dip / Pushdown',s:2,r:'15→10→5 (aumenta ogni sessione)'},
                 {it:'Polpacci — Calf Raise',en:'Calf Raise',s:2,r:'15→10→5 (aumenta ogni sessione)'}]}
         ]},
-    // ── PAUL CARTER — BASE BUILDING 3-DAY SPLIT ──────────────────────────
+    // ── PAUL CARTER — BASE BUILDING 3-DAY SPLIT ──────────────────────────,
     carter_bb:{gender:'uomo',
         note_it:'⚙️ <b>Ciclo progressivo (es. Squat 100kg 1RM):</b> 5 reps @70% → 4 reps @75% → 3 reps @80% → 2 reps @85% → 1 rep @90%. Poi torna al peso di partenza (70%) e fai quante reps riesci (AMRAP back-off). Ogni settimana batti quel numero o aggiungi 2.5kg. <b>Rest-Pause:</b> vai al cedimento → riposa 60s → fai il 50% delle reps. <b>350 Method:</b> 3 serie, obiettivo 50 reps totali, 2 min riposo.',
         note_en:'⚙️ <b>Progressive Cycle (e.g. Squat 100kg 1RM):</b> 5 reps @70% → 4 reps @75% → 3 reps @80% → 2 reps @85% → 1 rep @90%. Then return to start weight (70%) and do as many reps as possible (AMRAP back-off). Each week beat that number or add 2.5kg. <b>Rest-Pause:</b> go to failure → rest 60s → do 50% of previous reps. <b>350 Method:</b> 3 sets, target 50 total reps, 2 min rest.',
@@ -7404,7 +7591,7 @@ const WORKOUTS_BASE = {
                 {it:'Pullovers',en:'Pullovers',s:1,r:'30-40 rest-pause'},
                 {it:'Curl EZ / Curl Scott (rotazione)',en:'EZ Curl / Preacher Curl (rotate)',s:1,r:'20-30 rest-pause'}]}
         ]},
-    // ── VINCE GIRONDA — 4 DAY SPLIT 8×8 ─────────────────────────────────
+    // ── VINCE GIRONDA — 4 DAY SPLIT 8×8 ─────────────────────────────────,
     gironda_4day:{gender:'uomo',
         days:[
             {id:'gironda_chest_back',color:'var(--red)',exercises:[
@@ -7425,7 +7612,7 @@ const WORKOUTS_BASE = {
                 {it:'Leg Curl sdraiato',en:'Lying Leg Curl',s:8,r:'8 (30s rest)'},
                 {it:'Polpacci — Donkey Calf Raise / Leg Press Calves',en:'Calves — Donkey Calf Raise / Leg Press Calves',s:8,r:'20 (20s rest)'}]}
         ]},
-    // ── VINCE GIRONDA — FULL BODY 8×8 ────────────────────────────────────
+    // ── VINCE GIRONDA — FULL BODY 8×8 ────────────────────────────────────,
     gironda_fb:{gender:'uomo',
         days:[
             {id:'gironda_full',color:'var(--gold)',exercises:[
@@ -7439,7 +7626,7 @@ const WORKOUTS_BASE = {
         ]},
     // ── MOUNTAIN DOG PPL — John Meadows ──────────────────────────────────
     // ── PUSH/PULL 2-3 DAY BY LUKA (UOMO) ─────────────────────────────────
-    // ── SPECIALIZATION PROGRAMS ───────────────────────────────────────────
+    // ── SPECIALIZATION PROGRAMS ───────────────────────────────────────────,
     poliquin_arms:{gender:'uomo',
         note_it:'📖 <b>6-12-25 Method — Charles Poliquin</b> — Giant set 3 esercizi SENZA riposo: <b>6 reps</b> = compound pesante (tensione meccanica) → <b>12 reps</b> = isolamento moderato (danno muscolare) → <b>25 reps</b> = pump leggero (stress metabolico). Riposo 2-3 min tra i giant set. Bicipiti + Tricipiti nella stessa sessione. 3 sessioni diverse a settimana con esercizi ruotati.',
         note_en:'📖 <b>6-12-25 Method — Charles Poliquin</b> — Giant set 3 exercises with NO rest: <b>6 reps</b> = heavy compound (mechanical tension) → <b>12 reps</b> = moderate isolation (muscle damage) → <b>25 reps</b> = light pump (metabolic stress). Rest 2-3 min between giant sets. Biceps + Triceps in same session. 3 different sessions per week with rotated exercises.',
@@ -7575,56 +7762,7 @@ const WORKOUTS_BASE = {
                 {it:'Curl Bilanciere / Manubri',en:'Biceps Curl (BB / DB)',s:3,r:'12-10',rest:'1 min'},
                 {it:'Calf Raise',en:'Calf Raises',s:3,r:'15-10',rest:'1 min'}]}
         ]},
-    // ── ADVANCED LPP 6-DAY BY LUKA ────────────────────────────────────────
-
-    // ── LPP 6 AVANZATO BY LUKA ────────────────────────────────────────────
-    lpp6_adv_luka:{gender:'uomo',
-        note_it:'🔥 <b>LPP 6 Avanzato by Luka</b> — Rotazione continua 6 sessioni. <b>Doppia progressione:</b> es. 8-6 → porta tutte le serie a 8 reps, poi +2.5kg e riparti da 6. <b>RIR 1-2</b>: fermati sempre a 1-2 reps dal cedimento. Riposo 2-3 min composti, 1-2 min isolamenti. <b>Deload ogni 10-12 sett.</b> al 60-65%.',
-        note_en:'🔥 <b>LPP 6 Advanced by Luka</b> — Continuous 6-session rotation. <b>Double progression:</b> e.g. 8-6 → reach 8 reps on all sets, then +2.5kg restart at 6. <b>RIR 1-2</b>: always stop 1-2 reps before failure. Rest 2-3 min compounds, 1-2 min isolation. <b>Deload every 10-12 weeks</b> at 60-65%.',
-        days:[
-            {id:'lpp6adv_la',color:'var(--green)',exercises:[
-                {it:'Leg Press / Squat con Bilanciere',en:'Leg Press / Barbell Squat',s:3,r:'8-6',rest:'2-3 min'},
-                {it:'Affondi Statici / Bulgarian Squat',en:'Static Lunges / Bulgarian Squat',s:3,r:'10-8',rest:'2 min'},
-                {it:'Leg Curl',en:'Leg Curl',s:3,r:'12-10',rest:'1-2 min'},
-                {it:'Adduttori / Abduttori',en:'Adductors / Abductors',s:2,r:'15-12',rest:'1 min'},
-                {it:'Polpacci su Leg Press',en:'Calves on Leg Press',s:3,r:'15-10',rest:'1 min'},
-                {it:'Abs — Leg Raises',en:'Abs — Leg Raises',s:3,r:'15-10',rest:'1 min'}]},
-            {id:'lpp6adv_pa',color:'var(--blue)',exercises:[
-                {it:'Press Inclinata (Manubri, Smith, Macchina)',en:'Incline Press (DB, Smith, Machine)',s:3,r:'8-6',rest:'2-3 min'},
-                {it:'Panca Piana (Smith, BB, Manubri, Chest Press)',en:'Flat Press (Smith, BB, DB, Chest Press)',s:3,r:'10-8',rest:'2 min'},
-                {it:'Pec Deck / Crossover',en:'Pec Deck / Crossover',s:3,r:'12-10',rest:'1-2 min'},
-                {it:'Alzate Laterali alla Macchina',en:'Machine Lateral Raises',s:3,r:'12-10',rest:'1 min'},
-                {it:'Overhead Extension — Tricipiti',en:'Overhead Extension — Triceps',s:3,r:'12-10',rest:'1 min'},
-                {it:'Pushdown Tricipiti',en:'Triceps Pushdown',s:2,r:'15-12',rest:'1 min'}]},
-            {id:'lpp6adv_pla',color:'var(--red)',exercises:[
-                {it:'High Row / Lat Machine Presa Stretta',en:'High Row / Narrow Grip Pulldown',s:3,r:'8-6',rest:'2-3 min'},
-                {it:'One Arm Machine Row / Rematore Manubrio',en:'One Arm Machine Row / DB Row',s:3,r:'10-8',rest:'2 min'},
-                {it:'Upper Back Row (Macchina, Manubri Sdraiato)',en:'Upper Back Row (Machine, Lying DB)',s:2,r:'12-8',rest:'1-2 min'},
-                {it:'Face Pull',en:'Face Pulls',s:3,r:'12-10',rest:'1 min'},
-                {it:'Curl 45° / Curl Inclinato',en:'45° DB Curl / Incline Curl',s:3,r:'12-10',rest:'1 min'},
-                {it:'Curl Scott (Macchina, Manubri)',en:'Scott Curl (Machine, DB)',s:3,r:'12-10',rest:'1 min'}]},
-            {id:'lpp6adv_lb',color:'var(--green)',exercises:[
-                {it:'Hack Squat',en:'Hack Squat',s:3,r:'10-8',rest:'2-3 min'},
-                {it:'Leg Curl Unilaterale',en:'One Leg Curl',s:3,r:'12-10',rest:'1-2 min'},
-                {it:'RDL — Romanian Deadlift',en:'RDL — Romanian Deadlift',s:3,r:'10-8',rest:'2 min'},
-                {it:'Leg Extension',en:'Leg Extension',s:3,r:'15-10',rest:'1 min'},
-                {it:'Polpacci in Piedi',en:'Standing Calves',s:3,r:'10-8',rest:'1 min'},
-                {it:'Abs — Crunch',en:'Abs — Crunch',s:3,r:'15-12',rest:'1 min'}]},
-            {id:'lpp6adv_pb',color:'var(--blue)',exercises:[
-                {it:'Press Spalle (Macchina, Smith, BB, Manubri)',en:'Shoulder Press (Machine, Smith, BB, DB)',s:3,r:'8-6',rest:'2-3 min'},
-                {it:'Dip / Panca Declinata',en:'Dip / Decline Chest Press',s:3,r:'12-10',rest:'2 min'},
-                {it:'Pec Deck / Crossover',en:'Pec Deck / Crossover',s:3,r:'12-10',rest:'1-2 min'},
-                {it:'Alzate Laterali Cavo / Manubri',en:'Cable / DB Lateral Raises',s:3,r:'12-10',rest:'1 min'},
-                {it:'French Press',en:'French Press',s:3,r:'12-10',rest:'1 min'},
-                {it:'Cable Kickback / Single Pushdown',en:'Cable Kickback / Single Pushdown',s:2,r:'15-12',rest:'1 min'}]},
-            {id:'lpp6adv_plb',color:'var(--red)',exercises:[
-                {it:'Lat Pulldown / Pulldown Macchina',en:'Lat Pulldown / Pulldown Machine',s:3,r:'10-8',rest:'2-3 min'},
-                {it:'Pulley / Rematore Macchina',en:'Pulley / Machine Row',s:3,r:'10-8',rest:'2 min'},
-                {it:'Wide T-Bar Row / Bent Row',en:'Wide T-Bar Row / Bent Row',s:2,r:'12-10',rest:'2 min'},
-                {it:'Posteriori Spalle (Pec Deck, Cavo)',en:'Rear Delts (Pec Deck, Cable)',s:3,r:'15-10',rest:'1 min'},
-                {it:'Curl Bilanciere / Manubri',en:'Biceps Curl (BB, DB)',s:3,r:'12-10',rest:'1 min'},
-                {it:'Curl Hammer',en:'Hammer Curl',s:3,r:'12-10',rest:'1 min'}]}
-        ]},
+    // ── ADVANCED LPP 6-DAY BY LUKA ────────────────────────────────────────,
     adv_lpp6_u:{gender:'uomo',
         note_it:'🦵 <b>Advanced LPP 6-Day by Luka</b> — Rotazione: Legs A → Push A → Pull A → Legs B → Push B → Pull B → ripeti. <b>Doppia progressione:</b> es. 8-6 = porta prima tutte le serie a 8 reps, poi aggiungi 2.5kg e riparti da 6. Riposo 2-3 min composti, 1-2 min isolamenti. Fermati a 1-2 reps dal cedimento. <b>Deload ogni 10-12 sett.</b> al 60-65% del carico.',
         note_en:'🦵 <b>Advanced LPP 6-Day by Luka</b> — Rotation: Legs A → Push A → Pull A → Legs B → Push B → Pull B → repeat. <b>Double progression:</b> e.g. 8-6 = first reach 8 reps on all sets, then add 2.5kg and restart at 6. Rest 2-3 min compounds, 1-2 min isolation. Stop 1-2 reps before failure. <b>Deload every 10-12 weeks</b> at 60-65% load.',
@@ -7699,7 +7837,7 @@ const WORKOUTS_BASE = {
                 {it:'🟡 PUMP · Polpacci in piedi',en:'🟡 PUMP · Standing Calf Raise',s:3,r:'12-15 (failure + pause at bottom)'},
                 {it:'🟢 STRETCH · Affondi con manubri — tieni 30-60s in basso',en:'🟢 STRETCH · DB Lunges — hold 30-60s at bottom',s:1,r:'30-60 sec loaded hold'}]}
         ]},
-    // ── 30 MIN LEGS PUSH PULL ─────────────────────────────────────────────
+    // ── 30 MIN LEGS PUSH PULL ─────────────────────────────────────────────,
     lpp6_u:{gender:'uomo',
         note_it:'🟢 <b>LPP 6 Sessioni by Luka</b> — Rotazione: Gambe A → Spinte A → Rematori A → Gambe B → Spinte B → Rematori B. <b>4-5 sessioni / sett.</b>, doppia progressione (es. 12-10: prima arriva a 12 reps su tutte le serie, poi aggiungi peso e riparti da 10). Macchine e cavi — ideale per principianti/intermedi che imparano la tecnica.',
         note_en:'🟢 <b>LPP 6 Sessions by Luka</b> — Rotation: Legs A → Push A → Pull A → Legs B → Push B → Pull B. <b>4-5 sessions / week</b>, double progression (e.g. 12-10: first reach 12 reps on all sets, then add weight and restart at 10). Machines and cables — ideal for beginners/intermediates learning technique.',
@@ -7764,56 +7902,101 @@ const WORKOUTS_BASE = {
                 {it:'Pulley / Rematore Macchina',en:'Pulley / Machine Row',s:1,r:'10-8 RP'},
                 {it:'Curl Bicipiti (manubri / barra)',en:'Bicep Curl (dumbbells / barbell)',s:1,r:'12-10 RP'}]}
         ]},
-    // ── MADCOW 5×5 ────────────────────────────────────────────────────────
+    // ── MADCOW 5×5 ────────────────────────────────────────────────────────,
     madcow_u:{gender:'uomo',
         days:[
-            {id:'madcow_a',color:'var(--red)',exercises:[
-                {it:'A. Squat — 5 serie ascendenti × 5 reps (ramp fino al top set)',en:'A. Squat — 5 ascending sets × 5 reps (ramp to top set)',s:5,r:'5 (ramp → top set)',rest:'3-5 min'},
-                {it:'B. Panca Piana — 5 serie ascendenti × 5 reps',en:'B. Bench Press — 5 ascending sets × 5 reps',s:5,r:'5 (ramp → top set)',rest:'3-5 min'},
-                {it:'C. Rematore Bilanciere — 5 serie ascendenti × 5 reps',en:'C. Barbell Row — 5 ascending sets × 5 reps',s:5,r:'5 (ramp → top set)',rest:'3-5 min'},
-                {it:'D. Accessori (opzionale): Dip / Trazione / Curl / Addominali',en:'D. Accessories (optional): Dip / Chin-up / Curl / Abs',s:2,r:'8-12',rest:'2 min'}]},
-            {id:'madcow_b',color:'var(--blue)',exercises:[
-                {it:'A. Squat — 4 serie × 5 reps al 70-80% del top set lunedì',en:'A. Squat — 4 sets × 5 reps at 70-80% of Monday top set',s:4,r:'5 (light)',rest:'2-3 min'},
-                {it:'B. Press Militare / Press Inclinata — 4 serie ascendenti × 5 reps',en:'B. Overhead Press / Incline Press — 4 ascending sets × 5 reps',s:4,r:'5 (ramp → top set)',rest:'3-5 min'},
-                {it:'C. Stacco da Terra — 4 serie ascendenti × 5 reps (1 top set pesante)',en:'C. Deadlift — 4 ascending sets × 5 reps (1 heavy top set)',s:4,r:'5 (ramp → top set)',rest:'3-5 min'},
-                {it:'D. Accessori (opzionale): Trazioni / Curl / Addominali',en:'D. Accessories (optional): Chin-ups / Curl / Abs',s:2,r:'8-12',rest:'2 min'}]},
-            {id:'madcow_c',color:'var(--green)',exercises:[
-                {it:'A. Squat — 4 serie × 5 (ramp) + 1 × 3 (nuovo record) + 1 × 8 (back-off)',en:'A. Squat — 4 sets × 5 (ramp) + 1 × 3 (new PR) + 1 × 8 (back-off)',s:'4+1+1',r:'5 / 3 PR / 8 back-off',rest:'3-5 min'},
-                {it:'B. Panca Piana — 4 × 5 (ramp) + 1 × 3 (nuovo record) + 1 × 8 (back-off)',en:'B. Bench Press — 4 × 5 (ramp) + 1 × 3 (new PR) + 1 × 8 (back-off)',s:'4+1+1',r:'5 / 3 PR / 8 back-off',rest:'3-5 min'},
-                {it:'C. Rematore Bilanciere — 4 × 5 (ramp) + 1 × 3 (nuovo record) + 1 × 8 (back-off)',en:'C. Barbell Row — 4 × 5 (ramp) + 1 × 3 (new PR) + 1 × 8 (back-off)',s:'4+1+1',r:'5 / 3 PR / 8 back-off',rest:'3-5 min'},
-                {it:'D. Accessori (opzionale): Dip / Trazione / Curl / Addominali',en:'D. Accessories (optional): Dip / Chin-up / Curl / Abs',s:2,r:'8-12',rest:'2 min'}]}
-        ]},
-    // ── WESTSIDE FOR SKINNY BASTARDS — Joe DeFranco ───────────────────────
+            {id:'madcow_a',color:'var(--blue)',exercises:[
+                {it:'Squat — 5 serie ascendenti (ramp → top set ×5)',en:'Squat — 5 ascending sets (ramp → top set ×5)',s:5,r:'5',rest:'3-5 min',
+                 note_it:'LUNEDÌ — giorno medio. Ramp: 60%→70%→80%→90%→100% del top set. Il top set è il tuo PR settimanale da battere lunedì prossimo.',
+                 note_en:'MONDAY — medium day. Ramp: 60%→70%→80%→90%→100% of top set. Top set is your weekly PR to beat next Monday.'},
+                {it:'Panca Piana — 5 serie ascendenti (ramp → top set ×5)',en:'Bench Press — 5 ascending sets (ramp → top set ×5)',s:5,r:'5',rest:'3-5 min',
+                 note_it:'Ramp fino al top set settimanale. Stesso schema del Squat.',
+                 note_en:'Ramp to weekly top set. Same scheme as Squat.'},
+                {it:'Rematore con Bilanciere — 5 serie ascendenti (ramp → top set ×5)',en:'Barbell Row — 5 ascending sets (ramp → top set ×5)',s:5,r:'5',rest:'3 min',
+                 note_it:'Ramp fino al top set. Bilanciere row overhand o underhand.',
+                 note_en:'Ramp to top set. Overhand or underhand barbell row.'},
+                {it:'Accessori opzionali: Dip / Trazione / Curl / Addominali',en:'Optional accessories: Dips / Pull-ups / Curl / Abs',s:2,r:'8-12',rest:'1-2 min'}]},
+            {id:'madcow_b',color:'var(--green)',exercises:[
+                {it:'Squat — 4 serie leggere (ripeti 3a serie)',en:'Squat — 4 light sets (repeat 3rd set)',s:4,r:'5',rest:'2-3 min',
+                 note_it:'MERCOLEDÌ — giorno leggero. Sets 1-3 ascendenti; set 4 = ripeti il peso del set 3 (NON andare al top set). Circa 70-80% del top set di lunedì.',
+                 note_en:'WEDNESDAY — light day. Sets 1-3 ascending; set 4 = repeat set 3 weight (do NOT reach top set). About 70-80% of Monday top set.'},
+                {it:'Press Militare / Panca Inclinata — 4 serie ascendenti (ramp → top set ×5)',en:'Overhead Press / Incline Bench — 4 ascending sets (ramp → top set ×5)',s:4,r:'5',rest:'3 min',
+                 note_it:'Pressa alternata: OHP o Incline Bench. 4 serie ascendenti fino al top set della settimana.',
+                 note_en:'Alternate press: OHP or Incline Bench. 4 ascending sets to weekly top set.'},
+                {it:'Stacco da Terra — 4 serie ascendenti (ramp → top set ×5)',en:'Deadlift — 4 ascending sets (ramp → top set ×5)',s:4,r:'5',rest:'4-5 min',
+                 note_it:'Stacco pesante anche al mercoledì. 4 serie ascendenti fino al top set. Non alleggerire il DL.',
+                 note_en:'Heavy deadlift on Wednesday too. 4 ascending sets to top set. Do not go light on DL.'},
+                {it:'Accessori opzionali: Trazione / Curl / Addominali',en:'Optional accessories: Pull-ups / Curl / Abs',s:2,r:'8-12',rest:'1-2 min'}]},
+            {id:'madcow_c',color:'var(--red)',exercises:[
+                {it:'Squat — 4 serie ascendenti + 1×3 (PR) + 1×8 back-off',en:'Squat — 4 ascending sets + 1×3 (PR) + 1×8 back-off',s:6,r:'5/5/5/5/3/8',rest:'4-5 min',
+                 note_it:'VENERDÌ — giorno pesante/volume. Sets 1-4: ramp ×5. Set 5: +2.5% rispetto al top set di lunedì × 3 reps (nuovo PR). Set 6: torna al peso del set 3 × 8 reps (back-off).',
+                 note_en:'FRIDAY — heavy/volume day. Sets 1-4: ramp ×5. Set 5: +2.5% vs Monday top set × 3 reps (new PR). Set 6: return to set 3 weight × 8 reps (back-off).'},
+                {it:'Panca Piana — 4 serie ascendenti + 1×3 (PR) + 1×8 back-off',en:'Bench Press — 4 ascending sets + 1×3 (PR) + 1×8 back-off',s:6,r:'5/5/5/5/3/8',rest:'3-4 min',
+                 note_it:'Stessa struttura del Squat. Il ×3 è +2.5% vs lunedì — nuovo record settimanale.',
+                 note_en:'Same structure as Squat. The ×3 is +2.5% vs Monday — new weekly record.'},
+                {it:'Rematore con Bilanciere — 4 serie ascendenti + 1×3 (PR) + 1×8 back-off',en:'Barbell Row — 4 ascending sets + 1×3 (PR) + 1×8 back-off',s:6,r:'5/5/5/5/3/8',rest:'3 min',
+                 note_it:'Stessa struttura. L 8×back-off serve per volume ipertrofico dopo il PR.',
+                 note_en:'Same structure. The ×8 back-off adds hypertrophy volume after the PR.'},
+                {it:'Accessori opzionali: Dip / Trazione / Curl / Addominali',en:'Optional accessories: Dips / Pull-ups / Curl / Abs',s:2,r:'8-12',rest:'1-2 min'}]}]},
     ws4sb_u:{gender:'uomo',
         days:[
             {id:'ws4sb_meu',color:'var(--red)',exercises:[
-                {it:'A. MAX EFFORT (3-5RM): Panca Piana / Floor Press / Board Press / Press Inclinata / Press Manubri',en:'A. MAX EFFORT (3-5RM): Bench Press / Floor Press / Board Press / Incline Press / DB Press',s:'3-5RM',r:'3-5 (max set)',rest:'3-5 min'},
-                {it:'B. Supplemental Press (3-4×6-10): Press Inclinata Manubri / Dip / Panca Stretta / Push-Up Appesantito',en:'B. Supplemental Press (3-4×6-10): Incline DB Press / Dip / CGBP / Weighted Push-Up',s:3,r:'6-10',rest:'2-3 min'},
-                {it:'C. Horizontal Row (4×10-15): Rematore BB / Rematore Manubrio / Chest-Supported Row / Seated Row',en:'C. Horizontal Row (4×10-15): BB Row / DB Row / Chest-Supported Row / Seated Row',s:4,r:'10-15',rest:'2 min'},
-                {it:'D. Spalle Post. / Upper Back (2-3×12-15): Face Pull / Alzate Posteriori / Band Pull-Apart / Shrug',en:'D. Rear Delt / Upper Back (2-3×12-15): Face Pull / Rear Delt Fly / Band Pull-Apart / Shrug',s:2,r:'12-15',rest:'1-2 min'},
-                {it:'E. Addominali Appesantiti (3-4×8-15): Ab Wheel / Crunch con Disco / Pallof Press / Dragon Flag',en:'E. Weighted Abs (3-4×8-15): Ab Wheel / Weighted Crunch / Pallof Press / Dragon Flag',s:3,r:'8-15',rest:'1-2 min'}]},
-            {id:'ws4sb_lo',color:'var(--blue)',exercises:[
-                {it:'A. MAX EFFORT (3-5RM): Stacco da Terra / Box Squat / Squat / Trap Bar DL / Stacco Sumo',en:'A. MAX EFFORT (3-5RM): Deadlift / Box Squat / Squat / Trap Bar DL / Sumo DL',s:'3-5RM',r:'3-5 (max set)',rest:'3-5 min'},
-                {it:'B. Unilateral (3-4×8-15): Bulgarian Split Squat / Affondi / Step Up / Leg Press Monolat.',en:'B. Unilateral (3-4×8-15): Bulgarian Split Squat / Lunges / Step Up / Single Leg Press',s:3,r:'8-15',rest:'2-3 min'},
-                {it:'C. Hip Extension (3-4×8-15): Iperestensioni / RDL / Good Morning / Hip Thrust / Pull-Through',en:'C. Hip Extension (3-4×8-15): Hyperextension / RDL / Good Morning / Hip Thrust / Pull-Through',s:3,r:'8-15',rest:'2 min'},
-                {it:'D. Addominali — Circuito (nessuna pausa tra gli esercizi)',en:'D. Ab Circuit (no rest between exercises)',s:3,r:'circuit',rest:'1 min between circuits'}]},
-            {id:'ws4sb_reu',color:'var(--green)',exercises:[
-                {it:'A. RIPETIZIONI MAX (3 serie): Panca Piana / Dip / Press Manubri / Push-Up — 3 serie al massimo (non cedimento su set 1-2)',en:'A. MAX REPS (3 sets): Bench Press / Dip / DB Press / Push-Up — 3 sets max reps (leave 1-2 reps in tank on sets 1-2)',s:3,r:'max reps',rest:'60-90s'},
-                {it:'B. Horizontal Row (4×10-15): Rematore BB / Rematore Manubrio / Seated Row / T-Bar Row',en:'B. Horizontal Row (4×10-15): BB Row / DB Row / Seated Row / T-Bar Row',s:4,r:'10-15',rest:'2 min'},
-                {it:'C. Spalle Post. / Upper Back (2-3×12-15): Face Pull / Alzate Posteriori / Band Pull-Apart',en:'C. Rear Delt / Upper Back (2-3×12-15): Face Pull / Rear Delt Fly / Band Pull-Apart',s:2,r:'12-15',rest:'1-2 min'},
-                {it:'D. Alzate Laterali / Shrug (3×10-15)',en:'D. Lateral Raise / Shrug (3×10-15)',s:3,r:'10-15',rest:'1-2 min'},
-                {it:'E. Curl Bicipiti (3×8-10): Curl BB / Curl Manubri / Curl Martello / Curl Scott',en:'E. Bicep Curl (3×8-10): BB Curl / DB Curl / Hammer Curl / Preacher Curl',s:3,r:'8-10',rest:'1-2 min'}]}
-        ]},
-    // ── HEAVY DUTY LPP-4 by Luka ──────────────────────────────────────────
+                {it:'A. Max Effort Upper — lavora fino a 3-5RM',en:'A. Max Effort Upper — work up to 3-5RM',s:1,r:'3-5RM',rest:'3-5 min',
+                 note_it:'Scegli 1 esercizio e batti il record ogni settimana. Esempi: Panca Piana, Floor Press, Panca Inclinata, Board Press, Swiss Bar Bench, Push Press. Cambia esercizio ogni 2-3 settimane.',
+                 note_en:'Pick 1 exercise and beat your record each week. Examples: Bench Press, Floor Press, Incline Press, Board Press, Swiss Bar Bench, Push Press. Rotate every 2-3 weeks.'},
+                {it:'B. Supplemental Press (3-4×6-10)',en:'B. Supplemental Press (3-4×6-10)',s:3,r:'6-10',rest:'2 min',
+                 note_it:'Es: DB Press Inclinato, Dip, Panca Stretta, Push-Up Appesantito. Esercizio complementare alla ME lift.',
+                 note_en:'E.g.: Incline DB Press, Dips, Close-Grip Bench, Weighted Push-ups. Complementary to ME lift.'},
+                {it:'C. Horizontal Row (4×10-15)',en:'C. Horizontal Row (4×10-15)',s:4,r:'10-15',rest:'1-2 min',
+                 note_it:'Es: Rematore BB, Rematore Manubrio, Chest-Supported Row, Seated Cable Row.',
+                 note_en:'E.g.: Barbell Row, DB Row, Chest-Supported Row, Seated Cable Row.'},
+                {it:'D. Rear Delt / Upper Back (2-3×12-15)',en:'D. Rear Delt / Upper Back (2-3×12-15)',s:3,r:'12-15',rest:'1 min',
+                 note_it:'Es: Face Pull, Alzate Posteriori, Band Pull-Apart, Shrug.',
+                 note_en:'E.g.: Face Pulls, Rear Delt Raises, Band Pull-Aparts, Shrugs.'},
+                {it:'E. Addominali appesantiti (3-4×8-15)',en:'E. Weighted Abs (3-4×8-15)',s:3,r:'8-15',rest:'1 min',
+                 note_it:'Es: Ab Wheel, Crunch con Disco, Pallof Press, Dragon Flag.',
+                 note_en:'E.g.: Ab Wheel, Weighted Crunch, Pallof Press, Dragon Flag.'}]},
+            {id:'ws4sb_lo',color:'var(--green)',exercises:[
+                {it:'A. Max Effort Lower — lavora fino a 5RM',en:'A. Max Effort Lower — work up to 5RM',s:1,r:'5RM',rest:'4-5 min',
+                 note_it:'Scegli 1 esercizio e batti il record ogni settimana. Esempi: Box Squat, Front Squat, Stacco da Terra, Stacco Deficit, Romanian DL, Trap Bar DL. Cambia ogni 2-3 settimane.',
+                 note_en:'Pick 1 exercise and beat your record each week. Examples: Box Squat, Front Squat, Deadlift, Deficit DL, Romanian DL, Trap Bar DL. Rotate every 2-3 weeks.'},
+                {it:'B. Unilateral (3-4×8-15)',en:'B. Unilateral Movement (3-4×8-15)',s:3,r:'8-15',rest:'2 min',
+                 note_it:'Es: Bulgarian Split Squat, Affondi, Step Up, Leg Press Monolat. Fondamentale per correggere squilibri.',
+                 note_en:'E.g.: Bulgarian Split Squat, Lunges, Step Up, Single-leg Press. Essential for correcting imbalances.'},
+                {it:'C. Posterior Chain / Hip Extension (3-4×6-10)',en:'C. Posterior Chain / Hip Extension (3-4×6-10)',s:3,r:'6-10',rest:'2 min',
+                 note_it:'Es: Iperestensioni, RDL, Good Morning, Hip Thrust, Pull-Through.',
+                 note_en:'E.g.: Back Extensions, RDL, Good Morning, Hip Thrust, Pull-Through.'},
+                {it:'D. Grip Training (3 serie)',en:'D. Grip Training (3 sets)',s:3,r:'max / timed',rest:'1 min',
+                 note_it:'Es: Farmer Walk, Dead Hang, Crush Grip, Plate Pinch. Facoltativo ma raccomandato da DeFranco.',
+                 note_en:'E.g.: Farmer Walk, Dead Hang, Crush Grip, Plate Pinch. Optional but recommended by DeFranco.'}]},
+            {id:'ws4sb_reu',color:'var(--blue)',exercises:[
+                {it:'A. Repetition Lift — 3 serie al massimo (max reps)',en:'A. Repetition Lift — 3 sets max reps',s:3,r:'max reps',rest:'60s',
+                 note_it:'Non cedimento sul set 1-2 (tieni 1-2 reps in serbatoio). Set 3: all-out. Es: Panca Piana con peso fisso, Dip, DB Press, Push-Up. Obiettivo: battere i reps ogni settimana.',
+                 note_en:'Not to failure on sets 1-2 (keep 1-2 reps in the tank). Set 3: all-out. E.g.: Bench with fixed weight, Dips, DB Press, Push-ups. Goal: beat your reps each week.'},
+                {it:'B. Supplemental Triceps (3-4×5-10)',en:'B. Triceps Supplemental (3-4×5-10)',s:3,r:'5-10',rest:'2 min',
+                 note_it:'Es: Skull Crusher, Dip Appesantito, Pushdown, Overhead Extension.',
+                 note_en:'E.g.: Skull Crushers, Weighted Dips, Pushdowns, Overhead Extensions.'},
+                {it:'C. Vertical Pull (4×8-12)',en:'C. Vertical Pull (4×8-12)',s:4,r:'8-12',rest:'2 min',
+                 note_it:'Es: Trazioni / Chin-up (con zavorra se necessario), Lat Machine, Pulldown.',
+                 note_en:'E.g.: Pull-ups / Chin-ups (weighted if needed), Lat Pulldown.'},
+                {it:'D. Medial Delt / Trap (3×10-15)',en:'D. Medial Delt / Trap (3×10-15)',s:3,r:'10-15',rest:'1-2 min',
+                 note_it:'Es: Alzate Laterali, Upright Row, Shrug.',
+                 note_en:'E.g.: Lateral Raises, Upright Row, Shrugs.'},
+                {it:'E. Curl Bicipiti (3×8-10)',en:'E. Biceps Curl (3×8-10)',s:3,r:'8-10',rest:'1 min',
+                 note_it:'Es: Curl BB, Curl Manubri, Curl Martello, Curl Scott.',
+                 note_en:'E.g.: BB Curl, DB Curl, Hammer Curl, Preacher Curl.'},
+                {it:'F. Circuito Addominali',en:'F. Abdominal Circuit',s:3,r:'circuit',rest:'0s tra esercizi',
+                 note_it:'Scegli 3-4 esercizi addominali e falli in circuito senza riposo tra gli esercizi.',
+                 note_en:'Pick 3-4 ab exercises and do them in a circuit with no rest between exercises.'}]}]},
     lpp4_u:{gender:'uomo',
         days:[
             {id:'lpp4_a1',color:'var(--green)',exercises:[
                 {it:'Leg Press 45° o 90°',en:'Leg Press 45 or 90 degree',s:1,r:'8-6',rest:'3 min'},
-                {it:'',en:'',s:1,r:'12-8',rest:'3 min'},
-                {it:'Hack Squat',en:'Hack Squat',s:1,r:'10-8',rest:'2-3 min'},
-                {it:'Leg Curl',en:'Leg Curl',s:1,r:'RP 12-10',rest:'2 min'},
-                {it:'Adduttore (2-3 forzate)',en:'Adductor (2-3 forced reps)',s:1,r:'15-12',rest:'1-2 min'},
-                {it:'Calf Raise in Piedi',en:'Standing Calf Raise',s:1,r:'RP 10-8',rest:'1-2 min'}]},
+                {it:'',en:'',s:1,r:'10-8',rest:'3 min'},
+                {it:'Hack Squat',en:'Hack Squat',s:1,r:'12-10',rest:'2-3 min'},
+                {it:'Leg Curl',en:'Leg Curl',s:2,r:'12-10',rest:'2 min'},
+                {it:'Adduttore',en:'Adductor',s:2,r:'15-12',rest:'1-2 min'},
+                {it:'Calf Raise in Piedi',en:'Standing Calf Raise',s:2,r:'15-12',rest:'1-2 min'}]},
             {id:'lpp4_b1',color:'var(--gold)',exercises:[
                 {it:'Panca Inclinata Smith',en:'Incline Smith Press',s:1,r:'8-6',rest:'3 min'},
                 {it:'',en:'',s:1,r:'12-10',rest:'3 min'},
@@ -7821,46 +8004,39 @@ const WORKOUTS_BASE = {
                 {it:'',en:'',s:1,r:'12-10',rest:'3 min'},
                 {it:'CGBP su Smith (Presa Stretta)',en:'Close Grip Bench Press on Smith',s:1,r:'12-10',rest:'2 min'},
                 {it:'Pec Deck / Crossover',en:'Pec Deck / Crossover',s:1,r:'12-10',rest:'1-2 min'},
-                {it:'Alzate Laterali ai Cavi',en:'Cable Lateral Raises',s:2,r:'12-10',rest:'1-2 min'},
+                {it:'Alzate Laterali',en:'Lateral Raises',s:2,r:'12-10',rest:'1-2 min'},
                 {it:'Pushdown Tricipiti',en:'Triceps Pushdown',s:1,r:'15-12',rest:'1-2 min'}]},
             {id:'lpp4_c1',color:'var(--blue)',exercises:[
                 {it:'Lat Machine Presa Supina / Neutra',en:'Suppinated/Neutral Grip Pulldown',s:1,r:'8-6',rest:'3 min'},
                 {it:'',en:'',s:1,r:'12-10',rest:'3 min'},
-                {it:'Pulley / Rematore Macchina',en:'Pulley / Machine Row',s:1,r:'10-8',rest:'2 min'},
-                {it:'Rematore Schiena Alta DB / Macchina',en:'Upper Back DB Row / Machine Row',s:1,r:'10-8',rest:'2 min'},
-                {it:'Spalle Posteriori',en:'Rear Delt / Back Shoulders',s:1,r:'RP 15-12',rest:'1-2 min'},
-                {it:'Curl Manubri 45° (Inclinato)',en:'DB Biceps Curl 45 Degree',s:1,r:'RP 12-10',rest:'1-2 min'},
+                {it:'Pulley / Rematore Manubrio',en:'Pulley / DB Row',s:1,r:'10-8',rest:'2 min'},
+                {it:'Rematore Schiena Alta / Macchina',en:'Upper Back Row / Machine Row',s:1,r:'10-8',rest:'2 min'},
+                {it:'Spalle Posteriori',en:'Rear Delt / Back Shoulders',s:2,r:'15-12',rest:'1-2 min'},
+                {it:'Curl Manubri 45° (Inclinato)',en:'DB Biceps Curl 45 Degree',s:2,r:'12-10',rest:'1-2 min'},
                 {it:'Curl a Martello / Reverse Curl',en:'Hammer Curl / Reverse Curl',s:1,r:'15-12',rest:'1-2 min'}]},
             {id:'lpp4_a2',color:'var(--green)',exercises:[
-                {it:'Leg Curl Monolaterale',en:'One Leg Curl',s:1,r:'12-10',rest:'2 min'},
-                {it:'',en:'',s:1,r:'15-12',rest:'2 min'},
-                {it:'Leg Extension Monolaterale',en:'One Leg Extension',s:1,r:'12-10',rest:'2 min'},
-                {it:'',en:'',s:1,r:'15-12',rest:'2 min'},
+                {it:'Leg Curl Monolaterale',en:'One Leg Curl',s:2,r:'12-10',rest:'2 min'},
+                {it:'Leg Extension Monolaterale',en:'One Leg Extension',s:2,r:'12-10',rest:'2 min'},
                 {it:'RDL (senza cedimento)',en:'RDL (no failure)',s:1,r:'8-6',rest:'3 min'},
                 {it:'',en:'',s:1,r:'12-10',rest:'3 min'},
                 {it:'Hip Thrust',en:'Hip Thrust',s:1,r:'10-8',rest:'2-3 min'},
-                {it:'Calf Raise Seduto',en:'Seated Calf Raise',s:1,r:'RP 15-12',rest:'1-2 min'}]},
+                {it:'Calf Raise Seduto',en:'Seated Calf Raise',s:2,r:'15-12',rest:'1-2 min'}]},
             {id:'lpp4_b2',color:'var(--gold)',exercises:[
-                {it:'Chest Press Seduto / Panca Piana',en:'Seated Chest Press / Flat Press',s:1,r:'10-8',rest:'2-3 min'},
-                {it:'',en:'',s:1,r:'15-12',rest:'2-3 min'},
-                {it:'Press Spalle Macchina / Manubri',en:'Machine Shoulder Press / DB Press',s:1,r:'10-8',rest:'2-3 min'},
-                {it:'',en:'',s:1,r:'15-12',rest:'2-3 min'},
+                {it:'Chest Press Seduto / Panca Piana',en:'Seated Chest Press / Flat Press',s:2,r:'10-8',rest:'2-3 min'},
+                {it:'Press Spalle Macchina / Manubri',en:'Machine Shoulder Press / DB Press',s:2,r:'10-8',rest:'2-3 min'},
                 {it:'Dip',en:'Dip',s:1,r:'12-10',rest:'2 min'},
                 {it:'Crossover / Pec Deck',en:'Crossover / Pec Deck',s:1,r:'12-10',rest:'1-2 min'},
-                {it:'Alzate Laterali Macchina',en:'Machine Lateral Raises',s:1,r:'RP 10-8',rest:'1-2 min'},
-                {it:'Estensioni Sopra la Testa',en:'Overhead Triceps Extension',s:1,r:'RP 12-10',rest:'1-2 min'}]},
+                {it:'Alzate Laterali ai Cavi',en:'Cable Lateral Raises',s:2,r:'10-8',rest:'1-2 min'},
+                {it:'Estensioni Sopra la Testa',en:'Overhead Triceps Extension',s:2,r:'12-10',rest:'1-2 min'}]},
             {id:'lpp4_c2',color:'var(--blue)',exercises:[
-                {it:'Lat Machine / High Row',en:'Lat Pulldowns / High Row',s:1,r:'10-8',rest:'2-3 min'},
-                {it:'',en:'',s:1,r:'15-12',rest:'2-3 min'},
-                {it:'T-Bar Row / Rematore',en:'T-Bar Row / Bent Row',s:1,r:'8-6',rest:'3 min'},
-                {it:'',en:'',s:1,r:'12-10',rest:'3 min'},
-                {it:'Pullover',en:'Pullover',s:1,r:'12-10',rest:'2 min'},
-                {it:'Spalle Posteriori',en:'Rear Delt / Back Shoulders',s:1,r:'RP 15-12',rest:'1-2 min'},
-                {it:'Curl Bilanciere / Manubri',en:'DB / BB Biceps Curl',s:1,r:'RP 10-8',rest:'1-2 min'},
-                {it:'Curl su Panca Scott',en:'Scott Curl (Machine/DB)',s:1,r:'12-10',rest:'1-2 min'}]}
+                {it:'Lat Machine / High Row',en:'Lat Pulldowns / High Row',s:2,r:'10-8',rest:'2-3 min'},
+                {it:'T-Bar Row / Rematore Bilanciere',en:'T-Bar Row / Bent Row',s:1,r:'8-6',rest:'3 min'},
+                {it:'',en:'',s:1,r:'10-8',rest:'3 min'},
+                {it:'Spalle Posteriori',en:'Rear Delt / Back Shoulders',s:2,r:'15-12',rest:'1-2 min'},
+                {it:'Curl Bilanciere / Manubri',en:'DB / BB Biceps Curl',s:2,r:'12-10',rest:'1-2 min'},
+                {it:'Curl su Panca Scott',en:'Scott Curl',s:1,r:'12-10',rest:'1-2 min'}]}
         ]},
 
-    // ── PUSH PULL DONNA ──────────────────────────────────────────────────────
     pp_d:{gender:'donna',
         days:[
             {id:'ppd_push',color:'var(--pink)',exercises:[
@@ -7881,7 +8057,261 @@ const WORKOUTS_BASE = {
                 {it:'Face Pull',en:'Face Pulls',s:2,r:'12-10',rest:'1-2 min'},
                 {it:'Curl Bicipiti',en:'Biceps Curl',s:3,r:'12-10',rest:'1-2 min'},
                 {it:'Calf Raise',en:'Calf Raises',s:3,r:'15-10',rest:'1-2 min'}]}]},
-    // ── POWERBUILDING BY FABIO ────────────────────────────────────────────
+    lpp6_adv_luka:{gender:'uomo',
+        days:[
+            {id:'lpp6al_legs',color:'var(--red)',exercises:[
+                {it:'Squat',en:'Squat',s:4,r:'8-6',rest:'3 min'},
+                {it:'Leg Press',en:'Leg Press',s:4,r:'10-8',rest:'2-3 min'},
+                {it:'Leg Curl',en:'Leg Curl',s:3,r:'10-8',rest:'2 min'},
+                {it:'Calf Raise',en:'Calf Raise',s:4,r:'12-10',rest:'1-2 min'}]},
+            {id:'lpp6al_push',color:'var(--gold)',exercises:[
+                {it:'Panca Piana',en:'Bench Press',s:4,r:'8-6',rest:'3 min'},
+                {it:'Panca Inclinata',en:'Incline Press',s:4,r:'10-8',rest:'2-3 min'},
+                {it:'Press Spalle',en:'Shoulder Press',s:4,r:'10-8',rest:'2 min'},
+                {it:'Alzate Laterali',en:'Lateral Raises',s:3,r:'12-10',rest:'1-2 min'},
+                {it:'Spinte in Basso',en:'Triceps Pushdown',s:3,r:'12-10',rest:'1-2 min'}]},
+            {id:'lpp6al_pull',color:'var(--blue)',exercises:[
+                {it:'Stacco da Terra',en:'Deadlift',s:4,r:'6-4',rest:'3-4 min'},
+                {it:'Lat Machine',en:'Lat Pulldown',s:4,r:'10-8',rest:'2 min'},
+                {it:'Rematore',en:'Barbell Row',s:4,r:'8-6',rest:'2-3 min'},
+                {it:'Curl Bilanciere',en:'Barbell Curl',s:3,r:'10-8',rest:'1-2 min'}]}]},
+    // ── CANDITO 6-WEEK STRENGTH ──────────────────────────────────────────────
+    candito_6wk:{gender:'uomo',
+        days:[
+            // ── WEEK 1 — Muscular Conditioning (Mon/Tue/Thu/Fri/Sat) ─────────────
+            {id:'cand_w1_la',color:'var(--green)',exercises:[
+                {it:'Squat',en:'Squat',s:4,r:'6',rest:'2-3 min',
+                 note_it:'~80% del massimale — 4 serie uguali tutte allo stesso peso',
+                 note_en:'~80% of 1RM — 4 identical sets all at the same weight'},
+                {it:'Stacco (variante)',en:'Deadlift (variation)',s:2,r:'6',rest:'3 min',
+                 note_it:'Scegli 1 variante per tutto il ciclo: Stiff Leg, Deficit, Snatch Grip o Pause DL',
+                 note_en:'Pick 1 variation for the whole cycle: Stiff Leg, Deficit, Snatch Grip or Pause DL'},
+                {it:'Esercizio opzionale 1',en:'Optional exercise 1',s:1,r:'8-12',rest:'1-2 min'},
+                {it:'Esercizio opzionale 2',en:'Optional exercise 2',s:1,r:'8-12',rest:'1-2 min'}]},
+            {id:'cand_w1_ua',color:'var(--blue)',exercises:[
+                {it:'Panca Piana — serie 1',en:'Bench Press — set 1',s:1,r:'10',rest:'1 min',
+                 note_it:'~50% del massimale — serie di riscaldamento progressivo',
+                 note_en:'~50% of 1RM — progressive warm-up set'},
+                {it:'Panca Piana — serie 2',en:'Bench Press — set 2',s:1,r:'10',rest:'1 min',
+                 note_it:'~67% del massimale',note_en:'~67% of 1RM'},
+                {it:'Panca Piana — serie 3',en:'Bench Press — set 3',s:1,r:'8',rest:'1-2 min',
+                 note_it:'~75% del massimale',note_en:'~75% of 1RM'},
+                {it:'Panca Piana — serie 4',en:'Bench Press — set 4',s:1,r:'6',rest:'2 min',
+                 note_it:'~77% del massimale — serie di lavoro principale',
+                 note_en:'~77% of 1RM — main working set'},
+                {it:'Machine Row / Rematore',en:'Machine Row',s:4,r:'10/10/8/6',rest:'1-2 min'},
+                {it:'Press Spalle Manubri (in piedi)',en:'Standing Dumbbell OHP',s:4,r:'12/12/10/8',rest:'1-2 min'},
+                {it:'Trazioni con Zavorra / Lat Machine',en:'Weighted Pull-ups / Lat Pulldown',s:4,r:'12/12/10/8',rest:'1-2 min'},
+                {it:'Esercizio opzionale 1',en:'Optional exercise 1',s:4,r:'8-12',rest:'1 min'},
+                {it:'Esercizio opzionale 2',en:'Optional exercise 2',s:4,r:'8-12',rest:'1 min'}]},
+            {id:'cand_w1_ub',color:'var(--blue)',exercises:[
+                {it:'Panca Piana — serie 1',en:'Bench Press — set 1',s:1,r:'10',rest:'1 min',
+                 note_it:'~50% del massimale — serie di riscaldamento progressivo',
+                 note_en:'~50% of 1RM — progressive warm-up set'},
+                {it:'Panca Piana — serie 2',en:'Bench Press — set 2',s:1,r:'10',rest:'1 min',
+                 note_it:'~67% del massimale',note_en:'~67% of 1RM'},
+                {it:'Panca Piana — serie 3',en:'Bench Press — set 3',s:1,r:'8',rest:'1-2 min',
+                 note_it:'~75% del massimale',note_en:'~75% of 1RM'},
+                {it:'Panca Piana — serie 4',en:'Bench Press — set 4',s:1,r:'6',rest:'2 min',
+                 note_it:'~77% del massimale — serie di lavoro principale',
+                 note_en:'~77% of 1RM — main working set'},
+                {it:'Machine Row / Rematore',en:'Machine Row',s:4,r:'10/10/8/6',rest:'1-2 min'},
+                {it:'Press Spalle Manubri (in piedi)',en:'Standing Dumbbell OHP',s:4,r:'12/12/10/8',rest:'1-2 min'},
+                {it:'Trazioni con Zavorra / Lat Machine',en:'Weighted Pull-ups / Lat Pulldown',s:4,r:'12/12/10/8',rest:'1-2 min'},
+                {it:'Esercizio opzionale 1',en:'Optional exercise 1',s:4,r:'8-12',rest:'1 min'},
+                {it:'Esercizio opzionale 2',en:'Optional exercise 2',s:4,r:'8-12',rest:'1 min'}]},
+            {id:'cand_w1_lb',color:'var(--green)',exercises:[
+                {it:'Squat',en:'Squat',s:4,r:'8',rest:'2-3 min',
+                 note_it:'~70% del massimale — meno peso rispetto a lunedì, più reps. Stesso stile tecnico.',
+                 note_en:'~70% of 1RM — lighter than Monday, more reps. Same technical style.'},
+                {it:'Stacco (variante)',en:'Deadlift (variation)',s:2,r:'8',rest:'3 min',
+                 note_it:'Stessa variante scelta lunedì — ~70% del massimale',
+                 note_en:'Same variation as Monday — ~70% of 1RM'},
+                {it:'Esercizio opzionale 1',en:'Optional exercise 1',s:1,r:'8-12',rest:'1-2 min'},
+                {it:'Esercizio opzionale 2',en:'Optional exercise 2',s:1,r:'8-12',rest:'1-2 min'}]},
+            {id:'cand_w1_uc',color:'var(--blue)',exercises:[
+                {it:'Panca Piana — MR (massime reps)',en:'Bench Press — MR (max reps)',s:1,r:'MR',rest:'3 min',
+                 note_it:'~79% del massimale — fai il MASSIMO di ripetizioni possibili con buona tecnica',
+                 note_en:'~79% of 1RM — do as MANY reps as possible with good technique'},
+                {it:'Machine Row / Rematore',en:'Machine Row',s:4,r:'10/10/8/6',rest:'1-2 min'},
+                {it:'Press Spalle Manubri (in piedi)',en:'Standing Dumbbell OHP',s:4,r:'12/12/10/8',rest:'1-2 min'},
+                {it:'Trazioni con Zavorra / Lat Machine',en:'Weighted Pull-ups / Lat Pulldown',s:4,r:'12/12/10/8',rest:'1-2 min'},
+                {it:'Esercizio opzionale 1',en:'Optional exercise 1',s:4,r:'8-12',rest:'1 min'},
+                {it:'Esercizio opzionale 2',en:'Optional exercise 2',s:4,r:'8-12',rest:'1 min'}]},
+            // ── WEEK 2 — Muscular Conditioning/Hypertrophy (Mon/Tue/Thu/Fri/Sun) ──
+            {id:'cand_w2_la',color:'var(--green)',exercises:[
+                {it:'Squat — MR10',en:'Squat — MR10',s:1,r:'MR10 (max 10)',rest:'3 min',
+                 note_it:'~80% del massimale — fai MASSIMO reps ma non oltre 10. Se meno di 8 reps: riduci il massimale del 2.5% per le prossime settimane',
+                 note_en:'~80% of 1RM — do MAX reps but no more than 10. If less than 8 reps: reduce your entered max by 2.5% for following weeks'},
+                {it:'Squat — Extra Volume (5×3)',en:'Squat — Extra Volume (5×3)',s:5,r:'3',rest:'60s',
+                 note_it:'+2.5kg rispetto alla serie MR10 — 5 serie da 3 reps con 60 secondi di recupero. Fai SEMPRE queste serie anche se non hai raggiunto 8 reps sopra',
+                 note_en:'+2.5kg vs the MR10 set — 5 sets of 3 reps with 60 seconds rest. ALWAYS do these sets even if you got less than 8 reps above'},
+                {it:'Stacco (variante)',en:'Deadlift (variation)',s:3,r:'8',rest:'2-3 min',
+                 note_it:'Stessa variante di tutta la settimana — peso moderato',
+                 note_en:'Same variation throughout — moderate weight'},
+                {it:'Esercizio opzionale 1',en:'Optional exercise 1',s:1,r:'8-12',rest:'1-2 min'},
+                {it:'Esercizio opzionale 2',en:'Optional exercise 2',s:1,r:'8-12',rest:'1-2 min'}]},
+            {id:'cand_w2_ua',color:'var(--blue)',exercises:[
+                {it:'Panca Piana — serie 1',en:'Bench Press — set 1',s:1,r:'10',rest:'1-2 min',
+                 note_it:'~73% del massimale',note_en:'~73% of 1RM'},
+                {it:'Panca Piana — serie 2',en:'Bench Press — set 2',s:1,r:'8',rest:'1-2 min',
+                 note_it:'~77% del massimale',note_en:'~77% of 1RM'},
+                {it:'Panca Piana — serie 3',en:'Bench Press — set 3',s:1,r:'6-8',rest:'2-3 min',
+                 note_it:'~81% del massimale — serie principale',note_en:'~81% of 1RM — main working set'},
+                {it:'Machine Row / Rematore',en:'Machine Row',s:3,r:'10/8/8',rest:'1-2 min'},
+                {it:'Press Spalle Manubri (in piedi)',en:'Standing Dumbbell OHP',s:3,r:'10/8/6',rest:'1-2 min'},
+                {it:'Trazioni con Zavorra / Lat Machine',en:'Weighted Pull-ups / Lat Pulldown',s:3,r:'10/8/6',rest:'1-2 min'},
+                {it:'Esercizio opzionale 1',en:'Optional exercise 1',s:4,r:'8-12',rest:'1 min'},
+                {it:'Esercizio opzionale 2',en:'Optional exercise 2',s:4,r:'8-12',rest:'1 min'}]},
+            {id:'cand_w2_lb',color:'var(--green)',exercises:[
+                {it:'Squat — MR10 + Back Off',en:'Squat — MR10 + Back Off',s:1,r:'MR10 (max 10)',rest:'3 min',
+                 note_it:'~82% del massimale (+2.5kg rispetto a lunedì). Poi Back Off: riduci di 5kg e fai: 10×3 se hai fatto 10 reps | 8×3 se 8-9 reps | 5×3 se 7 reps | Salta se meno di 7',
+                 note_en:'~82% of 1RM (+2.5kg vs Monday). Then Back Off: reduce by 5kg and do: 10×3 if you got 10 reps | 8×3 if 8-9 | 5×3 if 7 | Skip if less than 7'},
+                {it:'Stacco (variante)',en:'Deadlift (variation)',s:3,r:'8',rest:'2-3 min'},
+                {it:'Esercizio opzionale 1',en:'Optional exercise 1',s:1,r:'8-12',rest:'1-2 min'},
+                {it:'Esercizio opzionale 2',en:'Optional exercise 2',s:1,r:'8-12',rest:'1-2 min'}]},
+            {id:'cand_w2_ub',color:'var(--blue)',exercises:[
+                {it:'Panca Piana — serie 1',en:'Bench Press — set 1',s:1,r:'10',rest:'1-2 min',
+                 note_it:'~73% del massimale',note_en:'~73% of 1RM'},
+                {it:'Panca Piana — serie 2',en:'Bench Press — set 2',s:1,r:'8',rest:'1-2 min',
+                 note_it:'~77% del massimale',note_en:'~77% of 1RM'},
+                {it:'Panca Piana — serie 3',en:'Bench Press — set 3',s:1,r:'6-8',rest:'2-3 min',
+                 note_it:'~81% del massimale — serie principale',note_en:'~81% of 1RM — main working set'},
+                {it:'Machine Row / Rematore',en:'Machine Row',s:3,r:'10/8/8',rest:'1-2 min'},
+                {it:'Press Spalle Manubri (in piedi)',en:'Standing Dumbbell OHP',s:3,r:'10/8/6',rest:'1-2 min'},
+                {it:'Trazioni con Zavorra / Lat Machine',en:'Weighted Pull-ups / Lat Pulldown',s:3,r:'10/8/6',rest:'1-2 min'},
+                {it:'Esercizio opzionale 1',en:'Optional exercise 1',s:4,r:'8-12',rest:'1 min'},
+                {it:'Esercizio opzionale 2',en:'Optional exercise 2',s:4,r:'8-12',rest:'1 min'}]},
+            {id:'cand_w2_uc',color:'var(--blue)',exercises:[
+                {it:'Panca Piana — MR (massime reps)',en:'Bench Press — MR (max reps)',s:1,r:'MR',rest:'3 min',
+                 note_it:'~77% del massimale — massimo di ripetizioni possibili',
+                 note_en:'~77% of 1RM — max reps possible'},
+                {it:'Machine Row / Rematore',en:'Machine Row',s:3,r:'10/8/8',rest:'1-2 min'},
+                {it:'Press Spalle Manubri (in piedi)',en:'Standing Dumbbell OHP',s:3,r:'10/8/6',rest:'1-2 min'},
+                {it:'Trazioni con Zavorra / Lat Machine',en:'Weighted Pull-ups / Lat Pulldown',s:3,r:'10/8/6',rest:'1-2 min'},
+                {it:'Esercizio opzionale 1',en:'Optional exercise 1',s:4,r:'8-12',rest:'1 min'},
+                {it:'Esercizio opzionale 2',en:'Optional exercise 2',s:4,r:'8-12',rest:'1 min'}]},
+            // ── WEEK 3 — Linear Max OT Phase (Mon/Wed/Fri/Sat — 4 sessioni) ───────
+            {id:'cand_w3_la',color:'var(--red)',exercises:[
+                {it:'Squat',en:'Squat',s:3,r:'4-6',rest:'3-5 min',
+                 note_it:'~87% del massimale — 3 serie uguali. Nessun accessorio dopo.',
+                 note_en:'~87% of 1RM — 3 identical sets. No accessories after.'},
+                {it:'Stacco da Terra',en:'Deadlift',s:2,r:'3-6',rest:'4-5 min',
+                 note_it:'~87.5% del massimale — stacco normale (non variante questa settimana)',
+                 note_en:'~87.5% of 1RM — regular deadlift (not variation this week)'},
+                {it:'⛔ Nessun esercizio accessorio',en:'⛔ No accessory lifts',s:0,r:'',rest:''}]},
+            {id:'cand_w3_ua',color:'var(--blue)',exercises:[
+                {it:'Panca Piana',en:'Bench Press',s:3,r:'4-6',rest:'3-5 min',
+                 note_it:'~85% del massimale — 3 serie uguali',
+                 note_en:'~85% of 1RM — 3 identical sets'},
+                {it:'Machine Row / Rematore',en:'Machine Row',s:3,r:'6',rest:'2 min'},
+                {it:'Press Spalle Manubri (in piedi)',en:'Standing Dumbbell OHP',s:3,r:'6',rest:'2 min'},
+                {it:'Trazioni con Zavorra / Lat Machine',en:'Weighted Pull-ups / Lat Pulldown',s:3,r:'6',rest:'2 min'},
+                {it:'⛔ Nessun esercizio opzionale',en:'⛔ No optional exercises',s:0,r:'',rest:''}]},
+            {id:'cand_w3_lb',color:'var(--red)',exercises:[
+                {it:'Squat',en:'Squat',s:1,r:'4-6',rest:'5 min',
+                 note_it:'~88.5% del massimale (+2.5kg rispetto a lunedì) — 1 sola serie massimale',
+                 note_en:'~88.5% of 1RM (+2.5kg vs Monday) — 1 single max-effort set'},
+                {it:'Stacco (variante)',en:'Deadlift (variation)',s:1,r:'8',rest:'3 min',
+                 note_it:'Torna alla variante — peso moderato questa sessione',
+                 note_en:'Back to the variation — moderate weight this session'},
+                {it:'⛔ Nessun esercizio accessorio',en:'⛔ No accessory lifts',s:0,r:'',rest:''}]},
+            {id:'cand_w3_ub',color:'var(--blue)',exercises:[
+                {it:'Panca Piana',en:'Bench Press',s:3,r:'4-6',rest:'3-5 min',
+                 note_it:'~87.5% del massimale (+2.5kg rispetto a mercoledì) — 3 serie uguali',
+                 note_en:'~87.5% of 1RM (+2.5kg vs Wednesday) — 3 identical sets'},
+                {it:'Machine Row / Rematore',en:'Machine Row',s:3,r:'6',rest:'2 min'},
+                {it:'Press Spalle Manubri (in piedi)',en:'Standing Dumbbell OHP',s:3,r:'6',rest:'2 min'},
+                {it:'Trazioni con Zavorra / Lat Machine',en:'Weighted Pull-ups / Lat Pulldown',s:3,r:'6',rest:'2 min'},
+                {it:'⛔ Nessun esercizio opzionale',en:'⛔ No optional exercises',s:0,r:'',rest:''}]},
+            // ── WEEK 4 — Heavy Weight Acclimation (Mon/Tue/Thu/Fri — 4 sessioni) ──
+            {id:'cand_w4_la',color:'var(--red)',exercises:[
+                {it:'Squat — serie 1',en:'Squat — set 1',s:1,r:'3',rest:'3 min',
+                 note_it:'~88% del massimale — prima serie ascendente',
+                 note_en:'~88% of 1RM — first ascending set'},
+                {it:'Squat — serie 2',en:'Squat — set 2',s:1,r:'3',rest:'3 min',
+                 note_it:'~90% del massimale',note_en:'~90% of 1RM'},
+                {it:'Squat — serie 3',en:'Squat — set 3',s:1,r:'3',rest:'4 min',
+                 note_it:'~91.7% del massimale — serie più pesante',
+                 note_en:'~91.7% of 1RM — heaviest set'},
+                {it:'Stacco (variante)',en:'Deadlift (variation)',s:2,r:'6',rest:'3 min'},
+                {it:'Esercizio opzionale 1',en:'Optional exercise 1',s:1,r:'8-12',rest:'1-2 min'},
+                {it:'Esercizio opzionale 2',en:'Optional exercise 2',s:1,r:'8-12',rest:'1-2 min'}]},
+            {id:'cand_w4_ua',color:'var(--blue)',exercises:[
+                {it:'Panca Piana — serie 1',en:'Bench Press — set 1',s:1,r:'3',rest:'3 min',
+                 note_it:'~83% del massimale',note_en:'~83% of 1RM'},
+                {it:'Panca Piana — serie 2',en:'Bench Press — set 2',s:1,r:'3',rest:'3 min',
+                 note_it:'~85% del massimale',note_en:'~85% of 1RM'},
+                {it:'Panca Piana — serie 3',en:'Bench Press — set 3',s:1,r:'3',rest:'4 min',
+                 note_it:'~90% del massimale — serie più pesante',note_en:'~90% of 1RM — heaviest set'},
+                {it:'Machine Row / Rematore',en:'Machine Row',s:4,r:'10/10/8/6',rest:'1-2 min'},
+                {it:'Press Spalle Manubri (in piedi)',en:'Standing Dumbbell OHP',s:4,r:'12/12/10/8',rest:'1-2 min'},
+                {it:'Trazioni con Zavorra / Lat Machine',en:'Weighted Pull-ups / Lat Pulldown',s:4,r:'12/12/10/8',rest:'1-2 min'},
+                {it:'Esercizio opzionale 1',en:'Optional exercise 1',s:4,r:'8-12',rest:'1 min'},
+                {it:'Esercizio opzionale 2',en:'Optional exercise 2',s:4,r:'8-12',rest:'1 min'}]},
+            {id:'cand_w4_lb',color:'var(--red)',exercises:[
+                {it:'Squat — serie 1',en:'Squat — set 1',s:1,r:'3',rest:'4 min',
+                 note_it:'~91.7% del massimale',note_en:'~91.7% of 1RM'},
+                {it:'Squat — serie 2 (quasi-massimale)',en:'Squat — set 2 (near max)',s:1,r:'1-2',rest:'5 min',
+                 note_it:'~95% del massimale — singola o doppia pesantissima',
+                 note_en:'~95% of 1RM — heavy single or double'},
+                {it:'Stacco da Terra — serie 1',en:'Deadlift — set 1',s:1,r:'3',rest:'4 min',
+                 note_it:'~91% del massimale',note_en:'~91% of 1RM'},
+                {it:'Stacco da Terra — serie 2 (quasi-massimale)',en:'Deadlift — set 2 (near max)',s:1,r:'1-2',rest:'5 min',
+                 note_it:'~95% del massimale — singola o doppia',
+                 note_en:'~95% of 1RM — heavy single or double'},
+                {it:'Esercizio opzionale 1',en:'Optional exercise 1',s:1,r:'8-12',rest:'1-2 min'},
+                {it:'Esercizio opzionale 2',en:'Optional exercise 2',s:1,r:'8-12',rest:'1-2 min'}]},
+            {id:'cand_w4_ub',color:'var(--blue)',exercises:[
+                {it:'Panca Piana — serie 1',en:'Bench Press — set 1',s:1,r:'3',rest:'3 min',
+                 note_it:'~87.5% del massimale',note_en:'~87.5% of 1RM'},
+                {it:'Panca Piana — serie 2',en:'Bench Press — set 2',s:1,r:'2-4',rest:'4 min',
+                 note_it:'~90% del massimale',note_en:'~90% of 1RM'},
+                {it:'Panca Piana — serie 3 (quasi-massimale)',en:'Bench Press — set 3 (near max)',s:1,r:'1-2',rest:'5 min',
+                 note_it:'~96% del massimale — singola o doppia pesantissima',
+                 note_en:'~96% of 1RM — heavy single or double'},
+                {it:'Machine Row / Rematore',en:'Machine Row',s:4,r:'10/10/8/6',rest:'1-2 min'},
+                {it:'Press Spalle Manubri (in piedi)',en:'Standing Dumbbell OHP',s:4,r:'12/12/10/8',rest:'1-2 min'},
+                {it:'Trazioni con Zavorra / Lat Machine',en:'Weighted Pull-ups / Lat Pulldown',s:4,r:'12/12/10/8',rest:'1-2 min'},
+                {it:'Esercizio opzionale 1',en:'Optional exercise 1',s:4,r:'8-12',rest:'1 min'},
+                {it:'Esercizio opzionale 2',en:'Optional exercise 2',s:4,r:'8-12',rest:'1 min'}]},
+            // ── WEEK 5 — High Intensity Strength (Mon/Wed/Fri — 3 sessioni) ────────
+            {id:'cand_w5_la',color:'var(--gold)',exercises:[
+                {it:'Squat — 1×1-4 (massimo sforzo)',en:'Squat — 1×1-4 (max effort)',s:1,r:'1-4',rest:'5-8 min',
+                 note_it:'~98% del massimale — fai il MASSIMO di reps possibili. Questo è il picco del programma!',
+                 note_en:'~98% of 1RM — do as MANY reps as you can. This is the peak of the program!'},
+                {it:'Stacco da Terra — serie 1',en:'Deadlift — set 1',s:1,r:'4',rest:'3 min',
+                 note_it:'~67.5% del massimale — warm-up pesante',note_en:'~67.5% of 1RM — heavy warm-up'},
+                {it:'Stacco da Terra — serie 2',en:'Deadlift — set 2',s:1,r:'4',rest:'3 min',
+                 note_it:'~70% del massimale',note_en:'~70% of 1RM'},
+                {it:'Stacco da Terra — serie 3',en:'Deadlift — set 3',s:1,r:'2',rest:'4 min',
+                 note_it:'~72.5% del massimale',note_en:'~72.5% of 1RM'},
+                {it:'Esercizio opzionale lower 1',en:'Optional lower body 1',s:1,r:'8-12',rest:'2 min'},
+                {it:'Esercizio opzionale lower 2',en:'Optional lower body 2',s:1,r:'8-12',rest:'2 min'}]},
+            {id:'cand_w5_u',color:'var(--blue)',exercises:[
+                {it:'Panca Piana — 1×1-4 (massimo sforzo)',en:'Bench Press — 1×1-4 (max effort)',s:1,r:'1-4',rest:'5-8 min',
+                 note_it:'~98% del massimale — massimo sforzo assoluto',
+                 note_en:'~98% of 1RM — absolute max effort'},
+                {it:'Machine Row / Rematore',en:'Machine Row',s:3,r:'8/6/6',rest:'2 min'},
+                {it:'Press Spalle Manubri (in piedi)',en:'Standing Dumbbell OHP',s:3,r:'8/6/6',rest:'2 min'},
+                {it:'Trazioni con Zavorra / Lat Machine',en:'Weighted Pull-ups / Lat Pulldown',s:3,r:'8/6/6',rest:'2 min'},
+                {it:'Esercizio opzionale 1',en:'Optional exercise 1',s:3,r:'8-12',rest:'1 min'},
+                {it:'Esercizio opzionale 2',en:'Optional exercise 2',s:3,r:'8-12',rest:'1 min'}]},
+            {id:'cand_w5_lb',color:'var(--gold)',exercises:[
+                {it:'Stacco da Terra — 1×1-4 (massimo sforzo)',en:'Deadlift — 1×1-4 (max effort)',s:1,r:'1-4',rest:'5-8 min',
+                 note_it:'~97.5% del massimale — massimo sforzo sul DL. Picco del programma!',
+                 note_en:'~97.5% of 1RM — max effort on DL. Program peak!'},
+                {it:'Esercizio opzionale lower 1',en:'Optional lower body 1',s:1,r:'8-12',rest:'2 min'},
+                {it:'Esercizio opzionale lower 2',en:'Optional lower body 2',s:1,r:'8-12',rest:'2 min'}]},
+            // ── WEEK 6 — Optional Test ────────────────────────────────────────────
+            {id:'cand_w6',color:'var(--gold)',exercises:[
+                {it:'Squat — TEST 1RM',en:'Squat — 1RM TEST',s:1,r:'1',rest:'8-10 min',
+                 note_it:'Opzionale. In alternativa: salta e stima il nuovo massimale dalle serie di W5 (formula: peso × 1.03 per 2 reps, × 1.06 per 3 reps, × 1.09 per 4 reps)',
+                 note_en:'Optional. Alternative: skip and estimate new max from W5 sets (formula: weight × 1.03 for 2 reps, × 1.06 for 3 reps, × 1.09 for 4 reps)'},
+                {it:'Panca Piana — TEST 1RM',en:'Bench Press — 1RM TEST',s:1,r:'1',rest:'8-10 min'},
+                {it:'Stacco — TEST 1RM',en:'Deadlift — 1RM TEST',s:1,r:'1',rest:'8-10 min'}]}
+        ]},
+    // ── POWERBUILDING BY FABIO    // ── POWERBUILDING BY FABIO ────────────────────────────────────────────
     pb_fabio:{gender:'uomo',
         days:[
             // SETTIMANA 1
@@ -7981,6 +8411,7 @@ const WID_MAP = {'lpp':'lpp','ini-u':'ini_u','lyle-gbr':'lyle_gbr','ini-d':'ini_
   'gironda-4day':'gironda_4day',
   'gironda-fb':'gironda_fb',
   'ss-u':'ss_u',
+  'candito-6wk':'candito_6wk',
   'wendler-531':'wendler_531',
   'texas-method':'texas_method',
   'smolov-jr':'smolov_jr'
@@ -7993,8 +8424,8 @@ function getWorkoutLocalized(wId){
     const baseId = WID_MAP[wId] || wId;
     const base = WORKOUTS_BASE[baseId];
     if(!base) return null;
-    const labelMap = {lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',ken_pp:'ken_pp_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',pb_fabio:'pb_fabio_label',pp_d:'pp_d_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label',lpp30_u:'lpp30_u_label',meadows_ppl:'meadows_ppl_label',adv_lpp6_u:'adv_lpp6_u_label',lpp6_adv_luka:'lpp6_adv_luka_label',pp23_luka_u:'pp23_luka_u_label',poliquin_arms:'poliquin_arms_label',layne_arms:'layne_arms_label',meadows_arms:'meadows_arms_label',meadows_shoulders:'meadows_sh_label',dante_shoulders:'dante_sh_label',meadows_chest:'meadows_chest_label',carter_bb:'carter_bb_label',gironda_4day:'gironda_4day_label',gironda_fb:'gironda_fb_label',ss_u:'ss_u_label',wendler_531:'wendler_531_label',texas_method:'texas_method_label',smolov_jr:'smolov_jr_label',hst_u:'hst_u_label',tls_d:'tls_d_label',tls_3d:'tls_3d_label',tls_4d:'tls_4d_label',lpp6_u:'lpp6_u_label',pp_luka_d:'pp_luka_d_label'};
-    const pillsMap = {lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',ken_pp:'ken_pp_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',pb_fabio:'pb_fabio_pills',pp_d:'pp_d_pills',lpp4_u:'lpp4_u_pills',ws4sb_u:'ws4sb_u_pills',madcow_u:'madcow_u_pills',lpp30_u:'lpp30_u_pills',meadows_ppl:'meadows_ppl_pills',carter_bb:'carter_bb_pills',gironda_4day:'gironda_4day_pills',gironda_fb:'gironda_fb_pills',ss_u:'ss_u_pills',wendler_531:'wendler_531_pills',texas_method:'texas_method_pills',smolov_jr:'smolov_jr_pills',hst_u:'hst_u_pills',tls_d:'tls_d_pills',tls_3d:'tls_3d_pills',tls_4d:'tls_4d_pills',lpp6_u:'lpp6_u_pills'};
+    const labelMap = {lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',ken_pp:'ken_pp_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',pb_fabio:'pb_fabio_label',pp_d:'pp_d_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label',lpp30_u:'lpp30_u_label',meadows_ppl:'meadows_ppl_label',adv_lpp6_u:'adv_lpp6_u_label',lpp6_adv_luka:'lpp6_adv_luka_label',pp23_luka_u:'pp23_luka_u_label',poliquin_arms:'poliquin_arms_label',layne_arms:'layne_arms_label',meadows_arms:'meadows_arms_label',meadows_shoulders:'meadows_sh_label',dante_shoulders:'dante_sh_label',meadows_chest:'meadows_chest_label',carter_bb:'carter_bb_label',gironda_4day:'gironda_4day_label',gironda_fb:'gironda_fb_label',ss_u:'ss_u_label',candito_6wk:'candito_6wk_label',wendler_531:'wendler_531_label',texas_method:'texas_method_label',smolov_jr:'smolov_jr_label',hst_u:'hst_u_label',tls_d:'tls_d_label',tls_3d:'tls_3d_label',tls_4d:'tls_4d_label',lpp6_u:'lpp6_u_label',pp_luka_d:'pp_luka_d_label'};
+    const pillsMap = {lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',ken_pp:'ken_pp_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',pb_fabio:'pb_fabio_pills',pp_d:'pp_d_pills',lpp4_u:'lpp4_u_pills',ws4sb_u:'ws4sb_u_pills',madcow_u:'madcow_u_pills',lpp30_u:'lpp30_u_pills',meadows_ppl:'meadows_ppl_pills',carter_bb:'carter_bb_pills',gironda_4day:'gironda_4day_pills',gironda_fb:'gironda_fb_pills',ss_u:'ss_u_pills',candito_6wk:'candito_6wk_pills',wendler_531:'wendler_531_pills',texas_method:'texas_method_pills',smolov_jr:'smolov_jr_pills',hst_u:'hst_u_pills',tls_d:'tls_d_pills',tls_3d:'tls_3d_pills',tls_4d:'tls_4d_pills',lpp6_u:'lpp6_u_pills'};
     const days = base.days.map(day=>{
         let badge, name;
         // DC 3-day: a=Upper A1, b=Lower B1, g1=Upper A2, g2=Lower B2, g3=Upper A3, full=Lower B3
@@ -8143,6 +8574,28 @@ function getWorkoutLocalized(wId){
         }else if(day.id==='pbf_w2_schiena'){badge=lang==='it'?'DENSITÀ':'DENSITY';name=lang==='it'?'Schiena':'Back';color='var(--blue)';
         }else if(day.id==='pbf_w2_spalle'){badge=lang==='it'?'FORZA':'STRENGTH';name=lang==='it'?'Spalle + Bicipiti':'Shoulders + Biceps';color='var(--gold)';
         }else if(day.id==='pbf_w2_gambe'){badge=lang==='it'?'DENSITÀ':'DENSITY';name=lang==='it'?'Gambe':'Legs';color='var(--green)';
+        }else if(day.id==='cand_w1_la'){badge='W1 LUN';name=lang==='it'?'Lower A — Squat 4×6 + Stacco':'Lower A — Squat 4×6 + Deadlift';color='var(--green)';
+        }else if(day.id==='cand_w1_ua'){badge='W1 MAR';name=lang==='it'?'Upper A — Panca piramide + Accessori':'Upper A — Bench pyramid + Accessories';color='var(--blue)';
+        }else if(day.id==='cand_w1_ub'){badge='W1 GIO';name=lang==='it'?'Upper B — Panca piramide + Accessori':'Upper B — Bench pyramid + Accessories';color='var(--blue)';
+        }else if(day.id==='cand_w1_lb'){badge='W1 VEN';name=lang==='it'?'Lower B — Squat 4×8 + Stacco':'Lower B — Squat 4×8 + Deadlift';color='var(--green)';
+        }else if(day.id==='cand_w1_uc'){badge='W1 SAB';name=lang==='it'?'Upper C — Panca MR + Accessori':'Upper C — Bench MR + Accessories';color='var(--blue)';
+        }else if(day.id==='cand_w2_la'){badge='W2 LUN';name=lang==='it'?'Lower A — Squat MR10 + Extra Volume':'Lower A — Squat MR10 + Extra Volume';color='var(--green)';
+        }else if(day.id==='cand_w2_ua'){badge='W2 MAR';name=lang==='it'?'Upper A — Panca ascendente':'Upper A — Ascending Bench';color='var(--blue)';
+        }else if(day.id==='cand_w2_lb'){badge='W2 GIO';name=lang==='it'?'Lower B — Squat MR10 + Back Off':'Lower B — Squat MR10 + Back Off';color='var(--green)';
+        }else if(day.id==='cand_w2_ub'){badge='W2 VEN';name=lang==='it'?'Upper B — Panca ascendente':'Upper B — Ascending Bench';color='var(--blue)';
+        }else if(day.id==='cand_w2_uc'){badge='W2 DOM';name=lang==='it'?'Upper C — Panca MR':'Upper C — Bench MR';color='var(--blue)';
+        }else if(day.id==='cand_w3_la'){badge='W3 LUN';name=lang==='it'?'Lower A — Squat 3×4-6 + DL 2×3-6':'Lower A — Squat 3×4-6 + DL 2×3-6';color='var(--red)';
+        }else if(day.id==='cand_w3_ua'){badge='W3 MER';name=lang==='it'?'Upper A — Panca 3×4-6':'Upper A — Bench 3×4-6';color='var(--blue)';
+        }else if(day.id==='cand_w3_lb'){badge='W3 VEN';name=lang==='it'?'Lower B — Squat 1×4-6 (più pesante)':'Lower B — Squat 1×4-6 (heavier)';color='var(--red)';
+        }else if(day.id==='cand_w3_ub'){badge='W3 SAB';name=lang==='it'?'Upper B — Panca 3×4-6 (più pesante)':'Upper B — Bench 3×4-6 (heavier)';color='var(--blue)';
+        }else if(day.id==='cand_w4_la'){badge='W4 LUN';name=lang==='it'?'Lower A — Squat ascendente 3×3':'Lower A — Ascending Squat 3×3';color='var(--red)';
+        }else if(day.id==='cand_w4_ua'){badge='W4 MAR';name=lang==='it'?'Upper A — Panca ascendente 3×3':'Upper A — Ascending Bench 3×3';color='var(--blue)';
+        }else if(day.id==='cand_w4_lb'){badge='W4 GIO';name=lang==='it'?'Lower B — Squat+DL quasi-massimali':'Lower B — Squat+DL near max';color='var(--red)';
+        }else if(day.id==='cand_w4_ub'){badge='W4 VEN';name=lang==='it'?'Upper B — Panca quasi-massimale':'Upper B — Bench near max';color='var(--blue)';
+        }else if(day.id==='cand_w5_la'){badge='W5 LUN';name=lang==='it'?'Lower A — Squat picco + DL volume':'Lower A — Squat peak + DL volume';color='var(--gold)';
+        }else if(day.id==='cand_w5_u'){badge='W5 MER';name=lang==='it'?'Upper — Panca picco':'Upper — Bench peak';color='var(--blue)';
+        }else if(day.id==='cand_w5_lb'){badge='W5 VEN';name=lang==='it'?'Lower B — Stacco picco':'Lower B — Deadlift peak';color='var(--gold)';
+        }else if(day.id==='cand_w6'){badge='W6 TEST';name=lang==='it'?'Test 1RM (Opzionale)':'1RM Test (Optional)';color='var(--gold)';
         }else if(day.id==='ppd_push'){badge='PUSH';name=lang==='it'?'Quadricipiti · Petto · Spalle · Tricipiti':'Quads · Chest · Shoulders · Triceps';color='var(--pink)';
         }else if(day.id==='ppd_pull'){badge='PULL';name=lang==='it'?'Schiena · Glutei · Femorali · Bicipiti':'Back · Glutes · Hamstrings · Biceps';color='var(--blue)';
         }else if(day.id==='pp23u_push'){badge='PUSH';name=lang==='it'?'Quadricipiti · Petto · Spalle · Tricipiti':'Quads · Chest · Shoulders · Triceps';
@@ -8309,6 +8762,188 @@ function calcTexas(){
   if(dl){const vol=round(dl*0.77);setW(wId,"tm_volume",2,0,String(vol));const i=document.getElementById("inp_"+wId+"_tm_volume_2_0");if(i)i.value=vol;}
 }
 let _wendlerWeek = 1;
+function setCandWeek(week){
+    try{localStorage.setItem('candito_week',String(week));}catch(e){}
+    const isIt=lang==='it';
+    // Update buttons
+    for(let w=1;w<=6;w++){
+        const btn=document.getElementById('cand-btn-'+w);
+        if(!btn)continue;
+        const active=(w===week);
+        btn.style.border=active?'1px solid rgba(255,149,0,.6)':'1px solid rgba(255,255,255,.15)';
+        btn.style.background=active?'rgba(255,149,0,.25)':'rgba(255,255,255,.06)';
+    }
+    const phases={
+        1:{it:'Sett. 1 — Muscular Conditioning · 5 sessioni (Lun/Mar/Gio/Ven/Sab) · ~70-80% 1RM',en:'Week 1 — Muscular Conditioning · 5 sessions (Mon/Tue/Thu/Fri/Sat) · ~70-80% 1RM'},
+        2:{it:'Sett. 2 — Conditioning/Ipertrofia · 5 sessioni (Lun/Mar/Gio/Ven/Dom) · MR10 + Back-off',en:'Week 2 — Conditioning/Hypertrophy · 5 sessions (Mon/Tue/Thu/Fri/Sun) · MR10 + Back-off'},
+        3:{it:'Sett. 3 — Linear Max OT · 4 sessioni (Lun/Mer/Ven/Sab) · ~85-89% 1RM',en:'Week 3 — Linear Max OT Phase · 4 sessions (Mon/Wed/Fri/Sat) · ~85-89% 1RM'},
+        4:{it:'Sett. 4 — Heavy Weight Acclimation · 4 sessioni (Lun/Mar/Gio/Ven) · ~88-96% 1RM',en:'Week 4 — Heavy Weight Acclimation · 4 sessions (Mon/Tue/Thu/Fri) · ~88-96% 1RM'},
+        5:{it:'Sett. 5 — Alta Intensità (PICCO) · 3 sessioni (Lun/Mer/Ven) · ~97-98% 1RM',en:'Week 5 — High Intensity Strength (PEAK) · 3 sessions (Mon/Wed/Fri) · ~97-98% 1RM'},
+        6:{it:'Sett. 6 — Test 1RM (Opzionale) · Oppure stima il massimale dalle serie W5',en:'Week 6 — 1RM Test (Optional) · Or estimate 1RM from W5 performance'}
+    };
+    const title=document.getElementById('candito-week-title');
+    const sub=document.getElementById('candito-week-sub');
+    if(title)title.textContent='📅 '+(isIt?phases[week].it:phases[week].en);
+    if(sub)sub.textContent=isIt?'I pesi calcolati qui sotto si aggiornano automaticamente':'Calculated weights below update automatically';
+    // Re-render filtered days
+    if(typeof activeWId!=='undefined'&&activeWId==='candito-6wk'){
+        const w=getWorkoutLocalized('candito-6wk');
+        if(w){
+            const prefix='cand_w'+week+'_';
+            const filtered=w.days.filter(d=>{
+                if(week===6)return d.id==='cand_w6';
+                if(week===5)return ['cand_w5_la','cand_w5_u','cand_w5_lb'].includes(d.id);
+                return d.id.startsWith(prefix);
+            });
+            document.getElementById('workout-body').innerHTML=filtered.map(day=>renderDay('candito-6wk',day)).join('')+'<div style="height:20px"></div>';
+        }
+    }
+    calcCandito();
+}
+
+function calcCandito(){
+    const sq=parseFloat(document.getElementById('cand-sq')?.value)||0;
+    const bp=parseFloat(document.getElementById('cand-bp')?.value)||0;
+    const dl=parseFloat(document.getElementById('cand-dl')?.value)||0;
+    const isIt=lang==='it';
+    try{localStorage.setItem('candito_maxes',JSON.stringify({sq,bp,dl}));}catch(e){}
+    const round=v=>Math.round(v/2.5)*2.5;
+    const week=parseInt(localStorage.getItem('candito_week')||'1');
+    const wId='candito-6wk';
+
+    // Map: {dayId: [{exIdx, sets, lift, pct}]}
+    // lift: 'sq'=squat, 'bp'=bench, 'dl'=deadlift
+    const fillMap={
+        // WEEK 1 — Correct percentages from original spreadsheet (1RM: Sq=150, BP=120, DL=200)
+        cand_w1_la:[
+            {exIdx:0,sets:4,lift:'sq',pct:0.80},  // Squat 4×6 @80%
+            {exIdx:1,sets:2,lift:'dl',pct:0.80}], // DL 2×6 @80%
+        cand_w1_ua:[
+            {exIdx:0,sets:1,lift:'bp',pct:0.50},  // Bench S1 @50%
+            {exIdx:1,sets:1,lift:'bp',pct:0.67},  // Bench S2 @67%
+            {exIdx:2,sets:1,lift:'bp',pct:0.75},  // Bench S3 @75%
+            {exIdx:3,sets:1,lift:'bp',pct:0.77}], // Bench S4 @77%
+        cand_w1_ub:[
+            {exIdx:0,sets:1,lift:'bp',pct:0.50},
+            {exIdx:1,sets:1,lift:'bp',pct:0.67},
+            {exIdx:2,sets:1,lift:'bp',pct:0.75},
+            {exIdx:3,sets:1,lift:'bp',pct:0.77}],
+        cand_w1_lb:[
+            {exIdx:0,sets:4,lift:'sq',pct:0.70},  // Squat 4×8 @70%
+            {exIdx:1,sets:2,lift:'dl',pct:0.70}], // DL 2×8 @70%
+        cand_w1_uc:[
+            {exIdx:0,sets:1,lift:'bp',pct:0.79}], // Bench MR @79%
+        // WEEK 2
+        cand_w2_la:[
+            {exIdx:0,sets:1,lift:'sq',pct:0.80},
+            {exIdx:1,sets:5,lift:'sq',pct:0.817}], // Squat MR10 @80% (back-off complex)
+        cand_w2_ua:[
+            {exIdx:0,sets:1,lift:'bp',pct:0.73},  // Bench S1 @73%
+            {exIdx:1,sets:1,lift:'bp',pct:0.77},  // Bench S2 @77%
+            {exIdx:2,sets:1,lift:'bp',pct:0.81}], // Bench S3 @81%
+        cand_w2_lb:[
+            {exIdx:0,sets:1,lift:'sq',pct:0.817}], // Squat MR10 @82% (+2.5kg)
+        cand_w2_ub:[
+            {exIdx:0,sets:1,lift:'bp',pct:0.73},
+            {exIdx:1,sets:1,lift:'bp',pct:0.77},
+            {exIdx:2,sets:1,lift:'bp',pct:0.81}],
+        cand_w2_uc:[
+            {exIdx:0,sets:1,lift:'bp',pct:0.77}], // Bench MR @77%
+        // WEEK 3
+        cand_w3_la:[
+            {exIdx:0,sets:3,lift:'sq',pct:0.867}, // Squat 3×4-6 @87%
+            {exIdx:1,sets:2,lift:'dl',pct:0.875}], // DL 2×3-6 @87.5%
+        cand_w3_ua:[
+            {exIdx:0,sets:3,lift:'bp',pct:0.854}], // Bench 3×4-6 @85%
+        cand_w3_lb:[
+            {exIdx:0,sets:1,lift:'sq',pct:0.883}], // Squat 1×4-6 @88.3%
+        cand_w3_ub:[
+            {exIdx:0,sets:3,lift:'bp',pct:0.875}], // Bench 3×4-6 @87.5%
+        // WEEK 4
+        cand_w4_la:[
+            {exIdx:0,sets:1,lift:'sq',pct:0.883}, // Squat S1 @88%
+            {exIdx:1,sets:1,lift:'sq',pct:0.90},  // Squat S2 @90%
+            {exIdx:2,sets:1,lift:'sq',pct:0.917}], // Squat S3 @91.7%
+        cand_w4_ua:[
+            {exIdx:0,sets:1,lift:'bp',pct:0.833}, // Bench S1 @83%
+            {exIdx:1,sets:1,lift:'bp',pct:0.854}, // Bench S2 @85%
+            {exIdx:2,sets:1,lift:'bp',pct:0.896}], // Bench S3 @90%
+        cand_w4_lb:[
+            {exIdx:0,sets:1,lift:'sq',pct:0.917}, // Squat S1 @91.7%
+            {exIdx:1,sets:1,lift:'sq',pct:0.95},  // Squat S2 @95%
+            {exIdx:2,sets:1,lift:'dl',pct:0.913}, // DL S1 @91%
+            {exIdx:3,sets:1,lift:'dl',pct:0.95}], // DL S2 @95%
+        cand_w4_ub:[
+            {exIdx:0,sets:1,lift:'bp',pct:0.875}, // Bench S1 @87.5%
+            {exIdx:1,sets:1,lift:'bp',pct:0.896}, // Bench S2 @90%
+            {exIdx:2,sets:1,lift:'bp',pct:0.958}], // Bench S3 @96%
+        // WEEK 5
+        cand_w5_la:[
+            {exIdx:0,sets:1,lift:'sq',pct:0.983}, // Squat 1×1-4 @98%
+            {exIdx:1,sets:1,lift:'dl',pct:0.675}, // DL S1 @67.5%
+            {exIdx:2,sets:1,lift:'dl',pct:0.70},  // DL S2 @70%
+            {exIdx:3,sets:1,lift:'dl',pct:0.725}], // DL S3 @72.5%
+        cand_w5_u:[
+            {exIdx:0,sets:1,lift:'bp',pct:0.979}], // Bench 1×1-4 @98%
+        cand_w5_lb:[
+            {exIdx:0,sets:1,lift:'dl',pct:0.975}], // DL 1×1-4 @97.5%
+        // WEEK 6
+        cand_w6:[
+            {exIdx:0,sets:1,lift:'sq',pct:1.0},
+            {exIdx:1,sets:1,lift:'bp',pct:1.0},
+            {exIdx:2,sets:1,lift:'dl',pct:1.0}]
+    };
+
+    const liftVals={sq,bp,dl};
+
+    // Pre-fill workout cards (weights + reps)
+    Object.entries(fillMap).forEach(([dId,fills])=>{
+        fills.forEach(({exIdx,sets,lift,pct})=>{
+            const val=liftVals[lift];
+            if(!val) return;
+            const kg=round(val*pct);
+            const wObj=getWorkoutLocalized(wId);
+            const dayObj=wObj?wObj.days.find(d=>d.id===dId):null;
+            const exObj=dayObj?dayObj.exercises[exIdx]:null;
+            const prescReps=exObj?String(exObj.r||''):'';
+            const rParts=prescReps.split('/');
+            for(let s=0;s<sets;s++){
+                setW(wId,dId,exIdx,s,String(kg));
+                const inp=document.getElementById(`inp_${wId}_${dId}_${exIdx}_${s}`);
+                if(inp){inp.value=kg;}
+                if(prescReps&&!getR(wId,dId,exIdx,s)){
+                    const rVal=rParts.length>1?(rParts[s]||rParts[rParts.length-1]):prescReps;
+                    if(rVal&&/^[0-9][0-9\-\.]*$/.test(rVal)){
+                        setR(wId,dId,exIdx,s,rVal);
+                        const rinp=document.getElementById(`rinp_${wId}_${dId}_${exIdx}_${s}`);
+                        if(rinp){rinp.value=rVal;}
+                    }
+                }
+            }
+        });
+    });
+
+    // Summary display
+    const pcts={
+        1:{squat:[0.80,0.70],bench:[0.50,0.67,0.75,0.77,0.79],dead:[0.80,0.70]},
+        2:{squat:[0.80,0.817],bench:[0.73,0.77,0.81,0.77],dead:[0.70]},
+        3:{squat:[0.867,0.883],bench:[0.854,0.875],dead:[0.875]},
+        4:{squat:[0.883,0.90,0.917,0.95],bench:[0.833,0.854,0.896,0.875,0.896,0.958],dead:[0.913,0.95]},
+        5:{squat:[0.983],bench:[0.979],dead:[0.675,0.70,0.725,0.975]},
+        6:{squat:[1.0],bench:[1.0],dead:[1.0]}
+    };
+    const p=pcts[week]||pcts[1];
+    let html='';
+    if(sq>0) html+=`<b style="color:#ff9f0a">Squat:</b> `+p.squat.map(pct=>`${Math.round(pct*100)}% = <b>${round(sq*pct)}kg</b>`).join(' · ')+`<br>`;
+    if(bp>0) html+=`<b style="color:#0a84ff">${isIt?'Panca':'Bench'}:</b> `+p.bench.map(pct=>`${Math.round(pct*100)}% = <b>${round(bp*pct)}kg</b>`).join(' · ')+`<br>`;
+    if(dl>0) html+=`<b style="color:#30d158">${isIt?'Stacco':'Deadlift'}:</b> `+p.dead.map(pct=>`${Math.round(pct*100)}% = <b>${round(dl*pct)}kg</b>`).join(' · ')+'<br>';
+    const res=document.getElementById('candito-calc-result');
+    if(res)res.innerHTML=html||(isIt?'Inserisci i tuoi massimali sopra':'Enter your maxes above');
+    if(html&&!res.querySelector('.cand-filled-note')){
+        res.innerHTML+=`<span class="cand-filled-note" style="color:#30d158;font-size:.68rem">✅ ${isIt?'Pesi inseriti automaticamente nella scheda':'Weights auto-filled in the workout'}</span>`;
+    }
+}
+
 function setPbFabioWeek(week){
     try{localStorage.setItem('pb_fabio_week',String(week));}catch(e){}
     [1,2].forEach(w=>{
@@ -8480,6 +9115,7 @@ function openWorkout(wId,backView){
         showViewRaw(backView);
         renderAttivi();
     };
+    if(!w){console.error('No workout data for',wId);showViewRaw(backView);return;}
     document.getElementById('workout-title').innerHTML=`<span class="c-blue">${w.label}</span>`;
     const baseId=window.WID_MAP?window.WID_MAP[wId]||wId:wId;
     const levelKey='level_'+baseId;
@@ -8553,6 +9189,25 @@ function openWorkout(wId,backView){
         setPbFabioWeek(savedWeek);
       } else {
         pbfSection.style.display='none';
+      }
+    }
+    const candWeekSection=document.getElementById('candito-week-section');
+    const candCalcSection=document.getElementById('candito-calc-section');
+    if(candWeekSection){
+      if(wId==='candito-6wk'){
+        candWeekSection.style.display='block';
+        candCalcSection.style.display='block';
+        const savedWeek=parseInt(localStorage.getItem('candito_week')||'1');
+        setCandWeek(savedWeek);
+        try{const sv=JSON.parse(localStorage.getItem('candito_maxes')||'{}');
+          if(sv.sq)document.getElementById('cand-sq').value=sv.sq;
+          if(sv.bp)document.getElementById('cand-bp').value=sv.bp;
+          if(sv.dl)document.getElementById('cand-dl').value=sv.dl;
+          calcCandito();
+        }catch(e){}
+      } else {
+        candWeekSection.style.display='none';
+        candCalcSection.style.display='none';
       }
     }
     const smSection=document.getElementById('smolov-calc-section');
@@ -8640,7 +9295,11 @@ function renderEx(wId,dId,eIdx,ex){
             <div class="sets-hdr-cell today-col">${t('oggi')||'OGGI'}</div>
         </div>`+Array.from({length:ex.s},(_,s)=>{
         const w=getW(wId,dId,eIdx,s);
-        const rv=getR(wId,dId,eIdx,s);
+        // Pre-fill reps: use saved value, else parse ex.r (supports '10/8/6' per-set or flat '6')
+        const _rvSaved=getR(wId,dId,eIdx,s);
+        const _rParts=(ex.r||'').split('/');
+        const _rDefault=_rParts.length>1?(_rParts[s]||_rParts[_rParts.length-1]):String(ex.r||'');
+        const rv=_rvSaved||(_rDefault&&!/[^0-9\-\.]/.test(_rDefault)?_rDefault:'');
         const isPR=pr>0&&parseFloat(w)===pr;
         const ar0=getArchWR(0,s),ar1=getArchWR(1,s);
         const a0=ar0?ar0.w:null,a1=ar1?ar1.w:null;
@@ -8662,7 +9321,7 @@ function renderEx(wId,dId,eIdx,ex){
             <button class="set-timer-btn" onclick="event.stopPropagation();sfStartTimer()">⏱ Rest</button>
         </div>`;
     }).join('')+'</div>';
-    const _advancedWIds = ['dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','pb-fabio','pp-d','lpp4-u','quick-u','quick-u-basic','corto-u-adv','corto-u-bas','quick-d','quick-d-basic','corto-d-adv','corto-d-bas','ws4sb-u','madcow-u','lpp30-u','lpp6-u','ken-pp','meadows-ppl','adv-lpp6-u','lpp6-adv-luka','pp23-luka-u','poliquin-arms','layne-arms','meadows-arms','meadows-shoulders','dante-shoulders','meadows-chest','carter-bb','hst-u','gironda-4day','gironda-fb','ss-u','wendler-531','texas-method','smolov-jr','tls-d','tls-3d','tls-4d','pp-luka-d'];
+    const _advancedWIds = ['dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','pb-fabio','pp-d','lpp4-u','quick-u','quick-u-basic','corto-u-adv','corto-u-bas','quick-d','quick-d-basic','corto-d-adv','corto-d-bas','ws4sb-u','madcow-u','lpp30-u','lpp6-u','ken-pp','meadows-ppl','adv-lpp6-u','lpp6-adv-luka','pp23-luka-u','poliquin-arms','layne-arms','meadows-arms','meadows-shoulders','dante-shoulders','meadows-chest','carter-bb','hst-u','gironda-4day','gironda-fb','candito-6wk','ss-u','wendler-531','texas-method','smolov-jr','tls-d','tls-3d','tls-4d','pp-luka-d'];
     const _noImg = _advancedWIds.includes(wId);
     const imgKey = _noImg ? null : (EX_NAME_MAP[ex.it] || EX_NAME_MAP[ex.en] || null);
     const imgSrc = imgKey ? EX_IMAGES[imgKey] : null;
@@ -8673,6 +9332,7 @@ function renderEx(wId,dId,eIdx,ex){
             <div class="ex-name" style="flex:1">
               ${ex.name}
               ${ex.rest ? '<span style="font-size:.58rem;font-weight:700;color:rgba(255,255,255,.25);margin-left:6px">⏱ '+ex.rest+'</span>' : ''}
+              ${(lang==='it'?ex.note_it:ex.note_en) ? '<div style="font-size:.62rem;color:rgba(255,200,60,.75);font-weight:500;margin-top:2px;line-height:1.4">ℹ️ '+(lang==='it'?ex.note_it:ex.note_en)+'</div>' : ''}
             </div>
             <div class="ex-right">
                 <span class="chip">${ex.s}×${ex.r}</span>
