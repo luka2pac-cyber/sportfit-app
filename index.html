@@ -29,7 +29,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
 .container{width:100%;max-width:430px;margin:0 auto;padding:48px 16px 90px}
 
 .view{display:none;animation:fadeUp .22s ease}
-.view.active{display:block;position:fixed;top:0;left:50%;right:auto;bottom:0;transform:translateX(-50%);width:100%;max-width:430px;height:100%;z-index:500;background:#000;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;touch-action:pan-y;padding:16px 16px 90px}
+.view.active{display:block;position:fixed;top:0;left:50%;right:auto;bottom:0;transform:translateX(-50%);width:100%;max-width:430px;height:100%;z-index:500;background:#000;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;touch-action:pan-y;padding:16px 16px calc(90px + env(safe-area-inset-bottom, 20px))}
 #home-view{position:fixed;inset:0;z-index:500;background:#000;display:none}
 #home-view.active{display:flex!important;flex-direction:column;overflow:hidden;padding:0;max-width:100%;transform:none;left:0}
 .view-scroll{padding:8px 16px 80px}
@@ -2061,6 +2061,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     <div class="prog-item" style="border:1.5px solid rgba(255,59,48,.35);background:rgba(255,59,48,.07)"><button class="prog-item-btn" onclick="showView('donne-avanzato-menu')"><div class="prog-item-name">🔴 <span data-t="level_advanced">Avanzato</span></div><div class="prog-item-sub" data-t="see_programs">Vedi programmi</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item" style="border:1.5px solid rgba(255,107,157,.35);background:rgba(255,107,157,.07)"><button class="prog-item-btn" onclick="showView('donne-corto-menu')"><div class="prog-item-name">⏱ <span data-t="allenamenti_30_btn">Allenamenti 30-40 min</span></div><div class="prog-item-sub" data-t="corto_info">Full Body A/B · Superset · Efficiente e completo</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item" style="border:1.5px solid rgba(48,209,88,.35);background:rgba(48,209,88,.07)"><button class="prog-item-btn" onclick="showView('custom-plan-view')"><div class="prog-item-name">🛠 <span data-t="make_own_plan">Crea il tuo programma</span></div><div class="prog-item-sub" data-t="make_own_plan_sub">Scegli giorni, muscoli ed esercizi personalizzati</div></button><span class="prog-arr">›</span></div>
+    <div class="prog-item" style="border:1.5px solid rgba(139,0,255,.5);background:rgba(139,0,255,.1)"><button class="prog-item-btn" onclick="window.open('https://www.sport-fit.org/booty','_blank')"><div class="prog-item-name">✨ <span data-t="btn_custom">Voglio un programma su misura</span></div><div class="prog-item-sub" data-t="btn_custom_sub">Programma personalizzato con Sport&amp;Fit</div></button><span class="prog-arr">→</span></div>
   </div>
 
   <!-- INTER MENU DONNA -->
@@ -2729,7 +2730,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
     <div style="color:rgba(255,255,255,.5);font-size:.82rem;line-height:1.5;margin-bottom:16px;padding:0 2px" data-t="advanced_desc">Programmi per atlete esperte con almeno 3-4 anni di allenamento. Alta intensità, tecniche avanzate e progressione continua.</div>
     <div class="prog-item" style="border:1.5px solid rgba(255,107,157,.35);background:rgba(255,107,157,.07)">
       <button class="prog-item-btn" onclick="showView('booty-builder-view')">
-        <div class="prog-item-name">🍑 Booty Builder</div>
+        <div class="prog-item-name"><span style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">🍑 Booty Builder</span><span class="badge-sp" style="background:linear-gradient(135deg,#8b00ff,#d400ff);color:#fff;white-space:nowrap">✨ Personalizzato</span></div>
         <div class="prog-item-sub" data-t="booty_sub">by Alessia Taglioni · Glutei & Gambe · Avanzato</div>
       </button>
       <span class="prog-arr">›</span>
@@ -3023,6 +3024,9 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
       </div>
     </div>
 
+    <button onclick="window.open('https://www.sport-fit.org/booty','_blank')" class="ai-send-btn" style="background:linear-gradient(135deg,#8b00ff,#d400ff);margin-bottom:8px">
+      ✨ <span data-t="btn_custom">Voglio un programma su misura</span>
+    </button>
     <button class="ai-send-btn" style="background:linear-gradient(135deg,#c0392b,#ff6b9d)" onclick="showToast('Coming soon!')">
       🍑 Inizia il Programma
     </button>
