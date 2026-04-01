@@ -34,7 +34,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
 #home-view.active{display:flex!important;flex-direction:column;overflow:hidden;padding:0;max-width:100%;transform:none;left:0}
 .view-scroll{padding:8px 16px 80px}
 .view-hdr{display:flex;align-items:center;justify-content:space-between;padding:8px 14px 6px;border-bottom:1px solid rgba(255,255,255,.07);background:#000;position:sticky;top:0;z-index:10}
-.view.active:has(.view-hdr){padding:0}
+.view.active:has(.view-hdr){padding:0;padding-bottom:calc(90px + env(safe-area-inset-bottom,20px))}
 @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
 /* BRAND */
@@ -6497,7 +6497,7 @@ function setLang(l){
         const w = getWorkoutLocalized(activeWId);
         document.getElementById('workout-title').innerHTML = `<span class="c-blue">${w.label}</span>`;
         document.getElementById('workout-pills').innerHTML = w.pills.map(([v,l2])=>`<div class="pill"><strong>${v}</strong> ${l2}</div>`).join('');
-        document.getElementById('workout-body').innerHTML = w.days.map(day=>renderDay(activeWId,day)).join('')+'<div style="height:20px"></div>';
+        document.getElementById('workout-body').innerHTML = w.days.map(day=>renderDay(activeWId,day)).join('')+'<div style="height:10px"></div>';
     }
     renderAttivi();
     homeUpdateScheda();
@@ -8796,7 +8796,7 @@ function setCandWeek(week){
                 if(week===5)return ['cand_w5_la','cand_w5_u','cand_w5_lb'].includes(d.id);
                 return d.id.startsWith(prefix);
             });
-            document.getElementById('workout-body').innerHTML=filtered.map(day=>renderDay('candito-6wk',day)).join('')+'<div style="height:20px"></div>';
+            document.getElementById('workout-body').innerHTML=filtered.map(day=>renderDay('candito-6wk',day)).join('')+'<div style="height:10px"></div>';
         }
     }
     calcCandito();
@@ -8980,7 +8980,7 @@ function setPbFabioWeek(week){
         const w=getWorkoutLocalized('pb-fabio');
         if(w){
             const filtered=w.days.filter(d=>d.id.startsWith(prefix));
-            document.getElementById('workout-body').innerHTML=filtered.map(day=>renderDay('pb-fabio',day)).join('')+'<div style="height:20px"></div>';
+            document.getElementById('workout-body').innerHTML=filtered.map(day=>renderDay('pb-fabio',day)).join('')+'<div style="height:10px"></div>';
         }
     }
 }
@@ -9010,7 +9010,7 @@ function setLpp6AdvPhase(phase){
     // Re-render workout if active
     if(typeof activeWId!=='undefined'&&activeWId==='lpp6-adv-luka'){
         const w=getWorkoutLocalized('lpp6-adv-luka');
-        if(w) document.getElementById('workout-body').innerHTML=w.days.map(day=>renderDay('lpp6-adv-luka',day)).join('')+'<div style="height:20px"></div>';
+        if(w) document.getElementById('workout-body').innerHTML=w.days.map(day=>renderDay('lpp6-adv-luka',day)).join('')+'<div style="height:10px"></div>';
     }
 }
 function setWendlerWeek(w){
@@ -9126,7 +9126,7 @@ function openWorkout(wId,backView){
     document.getElementById('workout-pills').innerHTML=levelHtml+(Array.isArray(w.pills)?w.pills:[]).map(p=>Array.isArray(p)?`<div class="pill"><strong>${p[0]}</strong>${p[1]?' '+p[1]:''}</div>`:`<div class="pill">${p}</div>`).join('');
     const noteEl=document.getElementById('workout-note');
     if(noteEl)noteEl.innerHTML=w.note?`<div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:10px 14px;margin:10px 0;font-size:.78rem;line-height:1.6;color:rgba(255,255,255,.7)">${w.note}</div>`:'';
-    document.getElementById('workout-body').innerHTML=w.days.map(day=>renderDay(wId,day)).join('')+'<div style="height:20px"></div>';
+    document.getElementById('workout-body').innerHTML=w.days.map(day=>renderDay(wId,day)).join('')+'<div style="height:10px"></div>';
     document.getElementById('bottomNav').style.display='flex';
     setNavActive('scheda');
     updateWorkoutHeart(wId);
@@ -9467,7 +9467,7 @@ function renderStoriaFor(wId,el){
         <div class="storia-week-body" id="wb_${key.replace('-','_')}">
             ${wkData.sessions.map(s=>renderSession(s)).join('')}
         </div>
-    </div>`).join('')+'<div style="height:20px"></div>';
+    </div>`).join('')+'<div style="height:10px"></div>';
 }
 function renderSession(session){
     const d=new Date(session.date);
@@ -10545,7 +10545,7 @@ function buildPR(){
               <div style="background:rgba(255,214,10,.12);border:1px solid rgba(255,214,10,.35);border-radius:8px;padding:5px 12px;font-size:.85rem;font-weight:800;color:var(--gold);white-space:nowrap">🏆 ${ex.val}kg</div>
             </div>`).join('')}
         </div>`).join('')}
-    </div>`).join('')+'<div style="height:20px"></div>';
+    </div>`).join('')+'<div style="height:10px"></div>';
 }
 </script>
 <!-- Caliper Guide Modal -->
