@@ -18,11 +18,15 @@
     <style>@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:900;src:local('Impact'),local('Arial Narrow');}</style>
 <style>
 :root{--iframe-bg:#000;--red:#ff3b30;--dark-red:#7a0000;--green:#30d158;--blue:#0a84ff;--pink:#ff6b9d;--gold:#ffd60a;--bg:#000;--bg2:#111;--bg3:#1c1c1e;--bg4:#2c2c2e}
+/* ⚠️ CRITICO — NON MODIFICARE MAI QUESTO BLOCCO
+   Questo CSS previene il bordo bianco. Non toccare mai!
+   ================================================================ */
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-html,body{height:100%;background:#000;color:#fff;font-family:-apple-system,'Helvetica Neue',sans-serif}
-body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-height:100%}
-
-/* WHITE BORDER */
+html{background:#000!important;margin:0!important;padding:0!important;overflow-x:hidden}
+body{background:#000!important;margin:0!important;padding:0!important;height:100%;color:#fff;font-family:-apple-system,'Helvetica Neue',sans-serif;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-height:100%}
+html,body{height:100%}
+/* ================================================================
+   Fine blocco critico ⚠️ */
 .app-frame{display:none}
 
 /* CONTAINER — centered, scrollable */
@@ -3671,6 +3675,8 @@ const T = {
     home_title1:'Inizia il tuo', home_title2:'Percorso Fitness',
     btn_men:'Uomini', btn_women:'Donne',
     btn_nutrition:'Nutrizione & Macros', btn_favorites:'Programmi Preferiti',
+    btn_custom:'Voglio un programma su misura', btn_custom_sub:'Programma personalizzato con Sport&Fit',
+    cancel_btn:'Annulla', confirm_btn:'Conferma',
     install_title:'Installa l\'app sulla schermata home',
     install_ios:'📱 iPhone: Safari → ⎙ Condividi → Aggiungi a Home',
     install_android:'🤖 Android: Chrome → ⋮ → Aggiungi a schermata home',
@@ -5119,6 +5125,7 @@ en:{
     booty_struct_ph:'Insert the program structure here (days, split, duration...).',
     booty_start:'🍑 Start the Program',
 
+    hdc_title:'Heavy Duty Concepts',
     hdc_sub:'Philosophy, methods and programs — Mike Mentzer & DC Training',
     dc_dante_sub:'Dante Trudel · Rest-Pause · Extreme stretch · High intensity',
     dc_creator:'Creator of DC Training',
@@ -5227,6 +5234,8 @@ en:{
     home_title1:'Start your', home_title2:'Fitness Journey',
     btn_men:'Men', btn_women:'Women',
     btn_nutrition:'Nutrition & Macros', btn_favorites:'Favorite Programs',
+    btn_custom:'I want a custom program', btn_custom_sub:'Personalized program with Sport&Fit',
+    cancel_btn:'Cancel', confirm_btn:'Confirm',
     install_title:'Install the app on your home screen',
     install_ios:'📱 iPhone: Safari → ⎙ Share → Add to Home Screen',
     install_android:'🤖 Android: Chrome → ⋮ → Add to Home Screen',
