@@ -159,6 +159,9 @@ html,body{height:100%}
 .set-timer-btn:active{background:rgba(10,132,255,.4);color:#fff}
 .timer-banner{position:fixed;bottom:0;left:0;right:0;background:#111;border-top:1px solid rgba(255,255,255,.12);padding:12px 16px calc(12px + env(safe-area-inset-bottom, 0px));transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);z-index:1001}
 .timer-banner.tb-visible{transform:translateY(0)}
+/* When timer visible, add padding to workout-view so content is not hidden */
+.timer-banner.tb-visible ~ #workout-view,
+#workout-view.timer-active{padding-bottom:calc(220px + env(safe-area-inset-bottom,0px)) !important}
 .timer-banner.tb-above-nav{bottom:80px}
 .timer-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px}
 .timer-display{font-size:2.2rem;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-1px}
@@ -10521,7 +10524,7 @@ function sfStartTimer(){
   const _nav=document.getElementById('bottomNav');
   if(_nav&&_nav.style.display==='flex'){_tb.classList.add('tb-above-nav');}
   else{_tb.classList.remove('tb-above-nav');}
-  _tb.classList.add('tb-visible');
+  _tb.classList.add('tb-visible');const _wv=document.getElementById('workout-view');if(_wv)_wv.classList.add('timer-active');
   _sfUpdateTimer();
   _sfTimerInt=setInterval(()=>{
     _sfTimerRem--;_sfUpdateTimer();
@@ -10534,12 +10537,12 @@ function sfStartTimer(){
       if(navigator.vibrate)navigator.vibrate([200,100,200]);
       const d=document.getElementById('sfTimerDisplay');
       if(d){d.className='timer-display tb-done';d.textContent='✓';}
-      setTimeout(()=>{const _tbd=document.getElementById('sfTimerBanner');_tbd.classList.remove('tb-visible');_tbd.classList.remove('tb-above-nav');},2000);
+      setTimeout(()=>{const _tbd=document.getElementById('sfTimerBanner');_tbd.classList.remove('tb-visible');_tbd.classList.remove('tb-above-nav');const _wvd=document.getElementById('workout-view');if(_wvd)_wvd.classList.remove('timer-active');},2000);
     }
   },1000);
 }
-function sfStopTimer(){if(_sfTimerInt){clearInterval(_sfTimerInt);_sfTimerInt=null;}const _ts=document.getElementById('sfTimerBanner');_ts.classList.remove('tb-visible');_ts.classList.remove('tb-above-nav');}
-function sfSkipTimer(){if(_sfTimerInt){clearInterval(_sfTimerInt);_sfTimerInt=null;}_sfPlay(_sfSounds.done3,0);const _tsk=document.getElementById('sfTimerBanner');_tsk.classList.remove('tb-visible');_tsk.classList.remove('tb-above-nav');}
+function sfStopTimer(){if(_sfTimerInt){clearInterval(_sfTimerInt);_sfTimerInt=null;}const _ts=document.getElementById('sfTimerBanner');_ts.classList.remove('tb-visible');_ts.classList.remove('tb-above-nav');const _wvs=document.getElementById('workout-view');if(_wvs)_wvs.classList.remove('timer-active');}
+function sfSkipTimer(){if(_sfTimerInt){clearInterval(_sfTimerInt);_sfTimerInt=null;}_sfPlay(_sfSounds.done3,0);const _tsk=document.getElementById('sfTimerBanner');_tsk.classList.remove('tb-visible');_tsk.classList.remove('tb-above-nav');const _wvsk=document.getElementById('workout-view');if(_wvsk)_wvsk.classList.remove('timer-active');}
 function sfAddTime(s){_sfTimerRem=Math.min(_sfTimerRem+s,600);_sfUpdateTimer();}
 function sfSetDuration(s){
   _sfTimerDur=s;
