@@ -178,7 +178,7 @@ body{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-heig
 .sets-hdr-cell{font-size:.6rem;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.5px;flex:1;text-align:center}
 .sets-hdr-cell:first-child{width:18px;flex:none}
 .sets-hdr-cell.today-col{flex:2;text-align:center}
-.set-arch{font-size:.72rem;color:rgba(255,255,255,.5);flex:1;text-align:center;white-space:nowrap}
+.set-arch{font-size:.72rem;color:rgba(255,255,255,.5);flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:80px}
 .set-arch.is-pr-val{color:var(--gold);font-weight:700}
 .set-arr.up{color:#30d158;font-size:.65rem}
 .set-arr.down{color:#ff453a;font-size:.65rem}
@@ -7036,47 +7036,90 @@ const WORKOUTS_BASE = {
                 {it:'Alzate sui Polpacci in Piedi',en:'Standing Calf Raise',s:1,r:'12-20 (cedimento assoluto)'}]}]},
     dorian_bg:{gender:'uomo',
         days:[
-            {id:'dy_d1',color:'var(--gold)',exercises:[
-                {it:'Press Manubri Seduto',en:'Seated DB Press',s:1,r:'6-8 (cedimento)'},
-                {it:'Alzate Laterali Manubri',en:'DB Lateral Raise',s:1,r:'6-8 (cedimento)'},
-                {it:'Alzate Laterali ai Cavi (un braccio)',en:'One-Arm Cable Lateral Raise',s:1,r:'8-10 (cedimento)'},
-                {it:'Scrollate con Manubri',en:'DB Shrug',s:1,r:'8-10 (cedimento)'},
-                {it:'Spinte in Basso ai Cavi',en:'Cable Pressdown',s:1,r:'6-8 (cedimento)'},
-                {it:'French Press EZ-Bar',en:'Lying EZ-Bar Extension',s:1,r:'6-8 (cedimento)'},
-                {it:'Estensione Tricipiti Macchina (un braccio)',en:'One-Arm Machine Extension',s:1,r:'6-8 (cedimento)'},
+            // ── DAY 1: DELTOIDI · TRAPEZI · TRICIPITI · ADDOMINALI ─────────
+            {id:'dy_d1',color:'var(--blue)',exercises:[
+                {it:'Press Spalle Smith / Macchina Seduto',en:'Smith / Machine Seated Shoulder Press',s:1,r:'6-8 (cedimento)',rest:'3-4 min',
+                 note_it:'Riscaldamento: 1x12 leggero + 1x10 moderato prima della serie di lavoro',
+                 note_en:'Warm-up: 1x12 light + 1x10 moderate before working set'},
+                {it:'Alzate Laterali Manubri',en:'Dumbbell Lateral Raise',s:1,r:'6-8 (cedimento)',rest:'2-3 min',
+                 note_it:'Riscaldamento: 1x10 prima della serie di lavoro',
+                 note_en:'Warm-up: 1x10 before working set'},
+                {it:'Alzate Laterali ai Cavi (un braccio)',en:'One-Arm Cable Lateral Raise',s:1,r:'8-10 (cedimento)',rest:'2 min'},
+                {it:'Scrollate con Manubri',en:'Dumbbell Shrug',s:1,r:'8-10 (cedimento)',rest:'2-3 min',
+                 note_it:'Riscaldamento: 1x10 prima della serie di lavoro',
+                 note_en:'Warm-up: 1x10 before working set'},
+                {it:'Spinte in Basso ai Cavi',en:'Cable Pressdown',s:1,r:'6-8 (cedimento)',rest:'2-3 min',
+                 note_it:'Riscaldamento: 1x10 prima della serie di lavoro',
+                 note_en:'Warm-up: 1x10 before working set'},
+                {it:'French Press con EZ-Bar',en:'Lying EZ-Bar Extension',s:1,r:'6-8 (cedimento)',rest:'2-3 min'},
+                {it:'Estensione Tricipiti Macchina (un braccio)',en:'One-Arm Machine Extension',s:1,r:'6-8 (cedimento)',rest:'2 min'},
                 {it:'Roman Chair Sit-Up',en:'Roman-Chair Sit-Up',s:1,r:'20'},
-                {it:'Crunch',en:'Crunch',s:1,r:'20'},
+                {it:'Crunch',en:'Crunch',s:2,r:'15'},
                 {it:'Crunch Inverso',en:'Reverse Crunch',s:1,r:'10'}]},
-            {id:'dy_d2',color:'var(--blue)',exercises:[
-                {it:'Hammer Pulldown presa inversa (o Machine Pullover)',en:'Hammer Pulldown rev. grip OR Machine Pullover (alternate)',s:1,r:'6-8 (cedimento)'},
-                {it:'Rematore Bilanciere',en:'Barbell Row',s:1,r:'6-8 (cedimento)'},
-                {it:'Rematore Hammer un braccio',en:'One-Arm Hammer Row',s:1,r:'6-8 (cedimento)'},
-                {it:'Pulley Basso presa prona',en:'Seated Cable Row (overhand grip)',s:1,r:'6-8 (cedimento)'},
-                {it:'Alzate Inverse Hammer Strength',en:'Rear-Delt Hammer Strength Flye Bentover',s:1,r:'6-8 (cedimento)'},
-                {it:'Alzate Laterali (deltoide post.)',en:'Rear Lateral Raise',s:1,r:'6-8 (cedimento)'},
-                {it:'Back Extension',en:'Back Extension',s:1,r:'6-8 (cedimento)'},
-                {it:'Stacchi da Terra',en:'Deadlift',s:1,r:'6-8 (stop 1-2 reps prima del cedimento)'}]},
-            {id:'dy_d4',color:'var(--red)',exercises:[
-                {it:'Panca Inclinata Bilanciere',en:'Incline Barbell Press',s:1,r:'6-8 (cedimento)'},
-                {it:'Panca Orizzontale Macchina',en:'Machine Seated Press',s:1,r:'6-8 (cedimento)'},
-                {it:'Croci Inclinata con Manubri',en:'Incline DB Flye',s:1,r:'8 (cedimento)'},
-                {it:'Croci ai Cavi',en:'Cable Crossover',s:1,r:'8-10 (cedimento)'},
-                {it:'Curl Inclinato con Manubri',en:'Incline DB Curl',s:1,r:'6-8 (cedimento)'},
-                {it:'Curl EZ-Bar in Piedi',en:'Standing EZ-Bar Curl',s:1,r:'6-8 (cedimento)'},
-                {it:'Curl Concentrato Macchina',en:'Preacher Machine Curl',s:1,r:'6-8 (cedimento)'},
+            // ── DAY 2: SCHIENA · DELTOIDI POST. ────────────────────────────
+            {id:'dy_d2',color:'var(--red)',exercises:[
+                {it:'Hammer Pulldown Presa Inversa / Lat Machine Presa Inversa',en:'Undergrip Hammer Pulldown / Undergrip Lat Pulldown',s:1,r:'6-8 (cedimento)',rest:'3 min',
+                 note_it:'Alternare ogni allenamento con Cable Pullover. Riscaldamento: 1x12 prima della serie di lavoro',
+                 note_en:'Alternate each workout with Cable Pullover. Warm-up: 1x12 before working set'},
+                {it:'Cable Pullover (alternativa)',en:'Cable Pullover (alternative)',s:1,r:'6-8 (cedimento)',rest:'3 min',
+                 note_it:'Alternare con Hammer Pulldown ogni allenamento. Riscaldamento: 1x10 prima della serie di lavoro',
+                 note_en:'Alternate with Hammer Pulldown each workout. Warm-up: 1x10 before working set'},
+                {it:'Rematore Hammer un braccio',en:'One-Arm Hammer Row',s:1,r:'6-8 (cedimento)',rest:'3 min',
+                 note_it:'Riscaldamento: 1x10 prima della serie di lavoro',
+                 note_en:'Warm-up: 1x10 before working set'},
+                {it:'Pulley Basso Presa Prona (Seated Cable Row)',en:'Seated Cable Row (Overhand Grip)',s:1,r:'6-8 (cedimento)',rest:'2-3 min'},
+                {it:'Alzate Inverse Hammer Strength',en:'Hammer Strength Fly',s:1,r:'6-8 (cedimento)',rest:'2 min'},
+                {it:'Alzate Inverse a Busto Piegato',en:'Bent-Over Rear Delt Raise',s:1,r:'6-8 (cedimento)',rest:'2 min'},
+                {it:'Alzate Laterali Deltoide Posteriore',en:'Rear Delt Lateral Raise',s:1,r:'6-8 (cedimento)',rest:'2 min'},
+                {it:'Iperestensioni / Back Extension',en:'Back Extension',s:1,r:'6-8 (cedimento)',rest:'2 min'},
+                {it:'Stacchi da Terra',en:'Deadlift',s:1,r:'6-8 (stop 1-2 reps prima del cedimento)',rest:'4 min',
+                 note_it:'Stop 1-2 reps prima del cedimento — mai cedimento assoluto sullo stacco',
+                 note_en:'Stop 1-2 reps short of failure — never train to absolute failure on deadlifts'}]},
+            // ── DAY 4: PETTO · BICIPITI · ADDOMINALI ───────────────────────
+            {id:'dy_d4',color:'var(--gold)',exercises:[
+                {it:'Panca Inclinata Bilanciere',en:'Incline Barbell Press',s:1,r:'6-8 (cedimento)',rest:'3-4 min',
+                 note_it:'Riscaldamento: 1x12 + 1x6-8 progressivi prima della serie di lavoro',
+                 note_en:'Warm-up: 1x12 + 1x6-8 progressive before working set'},
+                {it:'Press Seduto Macchina (Petto)',en:'Machine Seated Chest Press',s:1,r:'6-8 (cedimento)',rest:'3 min',
+                 note_it:'Riscaldamento: 1x6-8 moderato prima della serie di lavoro',
+                 note_en:'Warm-up: 1x6-8 moderate before working set'},
+                {it:'Croci Inclinata con Manubri',en:'Incline Dumbbell Flye',s:1,r:'6-8 (cedimento)',rest:'2-3 min',
+                 note_it:'Riscaldamento: 1x10 prima della serie di lavoro',
+                 note_en:'Warm-up: 1x10 before working set'},
+                {it:'Croci ai Cavi (Cable Crossover)',en:'Cable Crossover',s:1,r:'8-10 (cedimento)',rest:'2 min'},
+                {it:'Curl Inclinato con Manubri',en:'Incline Dumbbell Curl',s:1,r:'6-8 (cedimento)',rest:'2-3 min',
+                 note_it:'Riscaldamento: 1x10 prima della serie di lavoro',
+                 note_en:'Warm-up: 1x10 before working set'},
+                {it:'Curl EZ-Bar in Piedi',en:'Standing EZ-Bar Curl',s:1,r:'6-8 (cedimento)',rest:'2-3 min',
+                 note_it:'Riscaldamento: 1x8-10 prima della serie di lavoro',
+                 note_en:'Warm-up: 1x8-10 before working set'},
+                {it:'Curl Concentrato Macchina (Preacher)',en:'Preacher Machine Curl',s:1,r:'6-8 (cedimento)',rest:'2 min'},
                 {it:'Roman Chair Sit-Up',en:'Roman-Chair Sit-Up',s:1,r:'20'},
-                {it:'Crunch',en:'Crunch',s:2,r:'20'},
-                {it:'Crunch Inverso',en:'Reverse Crunch',s:2,r:'20'}]},
+                {it:'Crunch',en:'Crunch',s:2,r:'15'},
+                {it:'Crunch Inverso',en:'Reverse Crunch',s:2,r:'10'}]},
+            // ── DAY 6: GAMBE · POLPACCI ─────────────────────────────────────
             {id:'dy_d6',color:'var(--green)',exercises:[
-                {it:'Leg Extension',en:'Leg Extension',s:1,r:'10-12 (cedimento)'},
-                {it:'Leg Press',en:'Leg Press',s:1,r:'10-12 (cedimento)'},
-                {it:'Hack Squat',en:'Hack Squat',s:1,r:'8-10 (cedimento)'},
-                {it:'Leg Curl Sdraiato',en:'Lying Leg Curl',s:1,r:'8-10 (cedimento)'},
-                {it:'Stacchi Gambe Tese (Romanian DL)',en:'Stiff-Leg Deadlift (Romanian DL)',s:1,r:'10 (stop 1-2 reps prima del cedimento)'},
-                {it:'Leg Curl un gamba',en:'Single-Leg Curl',s:1,r:'8-10 (cedimento)'},
-                {it:'Polpacci in Piedi',en:'Standing Calf Raise',s:1,r:'10-12 (cedimento)'},
-                {it:'Polpacci Seduto',en:'Seated Calf Raise',s:1,r:'10-12 (cedimento)'}]}]}
-,
+                {it:'Leg Extension',en:'Leg Extension',s:1,r:'10-12 (cedimento)',rest:'2 min',
+                 note_it:'Riscaldamento: 1x15 + 1x12 progressivi prima della serie di lavoro',
+                 note_en:'Warm-up: 1x15 + 1x12 progressive before working set'},
+                {it:'Leg Press',en:'Leg Press',s:1,r:'10-12 (cedimento)',rest:'3-4 min',
+                 note_it:'Riscaldamento: 1x15 + 1x12 progressivi prima della serie di lavoro',
+                 note_en:'Warm-up: 1x15 + 1x12 progressive before working set'},
+                {it:'Hack Squat',en:'Hack Squat',s:1,r:'8-10 (cedimento)',rest:'3 min',
+                 note_it:'Riscaldamento: 1x10 prima della serie di lavoro',
+                 note_en:'Warm-up: 1x10 before working set'},
+                {it:'Leg Curl Sdraiato',en:'Lying Leg Curl',s:1,r:'8-10 (cedimento)',rest:'2-3 min',
+                 note_it:'Riscaldamento: 1x10 prima della serie di lavoro',
+                 note_en:'Warm-up: 1x10 before working set'},
+                {it:'Stacchi Gambe Tese (Stiff-Leg Deadlift)',en:'Stiff-Leg Deadlift',s:1,r:'8-10 (stop 1-2 reps prima del cedimento)',rest:'3 min',
+                 note_it:'Riscaldamento: 1x10. Mai cedimento assoluto su questo esercizio',
+                 note_en:'Warm-up: 1x10. Never train to absolute failure on this exercise'},
+                {it:'Leg Curl un gamba (Single-Leg Curl)',en:'Single-Leg Curl',s:1,r:'8-10 (cedimento)',rest:'2 min'},
+                {it:'Polpacci in Piedi (Calf Raise)',en:'Standing Calf Raise',s:1,r:'10-12 (cedimento)',rest:'2 min',
+                 note_it:'Riscaldamento: 1x10-12 prima della serie di lavoro',
+                 note_en:'Warm-up: 1x10-12 before working set'},
+                {it:'Polpacci Seduto',en:'Seated Calf Raise',s:1,r:'10-12 (cedimento)',rest:'2 min'}]}
+        ]},
     phat:{gender:'uomo',
         days:[
             {id:'phat_up',color:'var(--red)',exercises:[
@@ -9272,7 +9315,8 @@ function renderEx(wId,dId,eIdx,ex){
     }
     function fmtWR(wr){
         if(!wr||wr.w===null)return'—';
-        const rStr=wr.r&&String(wr.r).replace(/[^0-9\-]/g,'').length>0?' <span style="font-size:.6rem;opacity:.55">x'+wr.r+'</span>':''; 
+        const rRaw=wr.r?String(wr.r).split(' ')[0]:'';
+        const rStr=rRaw&&/[0-9]/.test(rRaw)?' <span style="font-size:.6rem;opacity:.55">x'+rRaw+'</span>':''; 
         return wr.w+'kg'+rStr;
     }
     function fmtDate(sess){
