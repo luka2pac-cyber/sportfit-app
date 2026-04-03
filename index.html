@@ -1514,8 +1514,8 @@ html,body{height:100%}
     <div class="ai-block" style="border:1px solid rgba(255,59,48,.35);background:rgba(255,59,48,.06)">
       <div class="ai-block-title red">🔥 <span data-t="lpp4_rp_title">Cos'è il Rest Pause (RP)?</span></div>
       <div style="font-size:.75rem;color:rgba(255,255,255,.75);line-height:1.7">
-        <div class="ai-bullet" data-t="lpp4_rp1">Tecnica stile Dante Trudel / Dogcrapp: vai al cedimento, riposa 15-20 secondi respirando profondamente, poi forza altre 2-3 reps, riposa ancora 15-20s, forza altre 1-2 reps. Tutto conta come 1 serie.</div>
-        <div class="ai-bullet" data-t="lpp4_rp2">Obiettivo: massimizzare le reps totali con quel peso usando pause brevissime — non è superserie, è una sola serie prolungata.</div>
+        <div class="ai-bullet" data-t="lpp4_rp1">Tecnica Dante Trudel / Dogcrapp: vai al cedimento, riposa 20-30s respirando profondamente, forza altre reps, riposa 20-30s, forza le ultime reps. Tutto è 1 serie.</div>
+        <div class="ai-bullet" data-t="lpp4_rp2">Obiettivo: arrivare con la prima serie nel range alto delle reps, poi massimizzare le mini serie successive.</div>
         <div class="ai-bullet" data-t="lpp4_rp3">Nella scheda gli esercizi con "RP" nel range delle reps usano questa tecnica.</div>
       </div>
     </div>
@@ -1963,6 +1963,14 @@ html,body{height:100%}
     <button onclick="goBack('uomini-heavy-menu')" class="back-btn">← Heavy Duty</button>
     <div class="view-title" style="font-size:1.8rem">📖 Heavy Duty<br><span style="font-size:1.2rem;color:rgba(255,255,255,.5)">Concetti & Programmi</span></div>
 
+    <div class="prog-item" style="border:1.5px solid rgba(48,209,88,.35);background:rgba(48,209,88,.07)">
+      <button class="prog-item-btn" onclick="showView('lpp4-info-view')">
+        <div class="prog-item-name">🦵 Heavy Duty LPP-4 <span style="font-size:.7rem;opacity:.6">by Luka</span><span class="badge-sp">⭐ Staff Pick</span></div>
+        <div class="prog-item-sub">4 giorni · Legs / Push / Pull · Rotazione A1 B1 C1 A2 B2 C2</div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+
     <div class="prog-item">
       <button class="prog-item-btn" onclick="showView('mentzer-info-view')">
         <div class="prog-item-name">💪 Mike Mentzer — Heavy Duty Classic</div>
@@ -1987,7 +1995,7 @@ html,body{height:100%}
     </div>
     <div class="prog-item">
       <button class="prog-item-btn" onclick="showView('dc-info-view')">
-        <div class="prog-item-name">🔥 DC Training — DoggCrapp</div>
+        <div class="prog-item-name">🔥 DC Training — DoggCrapp<span class="badge-tc">🏆 Top Choice</span></div>
         <div class="prog-item-sub"><span data-t="dc_dante_sub">Dante Trudel · Rest-Pause · Stretch estremo · Alta intensità</span></div>
       </button>
       <span class="prog-arr">›</span>
@@ -2003,13 +2011,6 @@ html,body{height:100%}
       <button class="prog-item-btn" onclick="showView('ken-info-view')">
         <div class="prog-item-name">&#128165; <span data-t="ken_btn">Dr. Ken Leistner &#8212; Steel Tip HIT</span></div>
         <div class="prog-item-sub"><span data-t="ken_sub">Full Body 2x / sett. &#8212; Squat 20 reps &#8212; 1 Serie al cedimento</span></div>
-      </button>
-      <span class="prog-arr">›</span>
-    </div>
-    <div class="prog-item" style="border:1.5px solid rgba(48,209,88,.35);background:rgba(48,209,88,.07)">
-      <button class="prog-item-btn" onclick="showView('lpp4-info-view')">
-        <div class="prog-item-name">🦵 Heavy Duty LPP-4 <span style="font-size:.7rem;opacity:.6">by Luka</span></div>
-        <div class="prog-item-sub">4 giorni · Legs / Push / Pull · Rotazione A1 B1 C1 A2 B2 C2</div>
       </button>
       <span class="prog-arr">›</span>
     </div>
@@ -2249,13 +2250,13 @@ html,body{height:100%}
         <div style="font-size:.72rem;color:rgba(255,255,255,.45);margin-bottom:10px" id="lpp6adv-phase-sub">Seleziona la fase del programma</div>
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
           <button onclick="setLpp6AdvPhase(1)" id="lpp6adv-btn-1" style="padding:8px 4px;border-radius:10px;border:1px solid rgba(255,159,10,.6);background:rgba(255,159,10,.3);color:#fff;font-size:.75rem;font-weight:700;font-family:inherit;cursor:pointer">
-            Fase 1<br><span style="font-size:.65rem;opacity:.8">Sett. 1-6 · 4×8-6</span>
+            Fase 1<br><span style="font-size:.65rem;opacity:.8">Sett. 1-3 · 3×10-8</span>
           </button>
           <button onclick="setLpp6AdvPhase(2)" id="lpp6adv-btn-2" style="padding:8px 4px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;font-size:.75rem;font-weight:700;font-family:inherit;cursor:pointer">
-            Fase 2<br><span style="font-size:.65rem;opacity:.8">Sett. 7-12 · 4×6-4</span>
+            Fase 2<br><span style="font-size:.65rem;opacity:.8">Sett. 4-6 · 3×8-6</span>
           </button>
           <button onclick="setLpp6AdvPhase(3)" id="lpp6adv-btn-3" style="padding:8px 4px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;font-size:.75rem;font-weight:700;font-family:inherit;cursor:pointer">
-            Deload<br><span style="font-size:.65rem;opacity:.8">Sett. 13 · 60-65%</span>
+            Fase 3<br><span style="font-size:.65rem;opacity:.8">Sett. 7-9 · 3×6-4</span>
           </button>
         </div>
       </div>
@@ -4307,7 +4308,7 @@ const T = {
     ulpb_p2:'Doppia progressione — es. 3×8-10: prima porta tutte le serie a 10 reps, poi aggiungi peso e riparti da 8',
     ulpb_p3:'1 settimana con tutti i pesi al 70% — poi ricomincia il ciclo',
     lpp4_u_label:'Heavy Duty LPP-4 by Luka',
-    lpp4_u_pills:[['4×','/ sett.'],['60-75 min','/ sessione'],['Legs/Push/Pull','rotazione']],
+    lpp4_u_pills:[['4×','/ sett.'],['45-60 min','/ sessione'],['Legs/Push/Pull','rotazione']],
     level_lpp4_u:'AVANZATO',
     lpp4_start_btn:'Inizia Heavy Duty LPP-4',
     lpp4_level:'Avanzato',
@@ -4325,8 +4326,8 @@ const T = {
     lpp4_d6:'Pull — esercizi diversi da C1',
     lpp4_prog_title:'Progressione',
     lpp4_rp_title:"Cos'è il Rest Pause (RP)?",
-    lpp4_rp1:'Tecnica Dante Trudel / Dogcrapp: vai al cedimento, riposa 15-20s, forza 2-3 reps, riposa 15-20s, forza 1-2 reps. Tutto è 1 serie.',
-    lpp4_rp2:'Massimizza le reps totali con pause brevissime — non superserie, una serie prolungata.',
+    lpp4_rp1:'Tecnica Dante Trudel / Dogcrapp: vai al cedimento, riposa 20-30s respirando profondamente, forza altre reps, riposa 20-30s, forza le ultime reps. Tutto è 1 serie.',
+    lpp4_rp2:'Obiettivo: arrivare con la prima serie nel range alto delle reps, poi massimizzare le mini serie successive.',
     lpp4_rp3:'Nella scheda gli esercizi con RP nel range usano questa tecnica.',
     lpp4_deload_title:'Deload e Cruise Week',
     lpp4_deload_lbl:'Deload Week (dopo 6-8 sett.):',
@@ -5927,7 +5928,7 @@ en:{
     ulpb_p2:'Double progression — e.g. 3×8-10: first get all sets to 10 reps, then add weight and restart at 8',
     ulpb_p3:'1 week with all weights at 70% — then restart the cycle',
     lpp4_u_label:'Heavy Duty LPP-4 by Luka',
-    lpp4_u_pills:[['4×','/ week'],['60-75 min','/ session'],['Legs/Push/Pull','rotation']],
+    lpp4_u_pills:[['4×','/ week'],['45-60 min','/ session'],['Legs/Push/Pull','rotation']],
     level_lpp4_u:'ADVANCED',
     lpp4_start_btn:'Start Heavy Duty LPP-4',
     lpp4_level:'Advanced',
@@ -5945,8 +5946,8 @@ en:{
     lpp4_d6:'Pull — different exercises from C1',
     lpp4_prog_title:'Progression',
     lpp4_rp_title:'What is Rest Pause (RP)?',
-    lpp4_rp1:'Dante Trudel / Dogcrapp: go to failure, rest 15-20s, force 2-3 reps, rest 15-20s, force 1-2 more. All counts as 1 set.',
-    lpp4_rp2:'Maximize total reps with very short pauses — not a superset, one extended set.',
+    lpp4_rp1:'Dante Trudel / Dogcrapp: go to failure, rest 20-30s breathing deeply, force more reps, rest 20-30s, final push. All counts as 1 set.',
+    lpp4_rp2:'Goal: reach the upper end of the rep range on the first set, then maximize the following mini sets.',
     lpp4_rp3:'In the workout, exercises showing RP in the rep range use this technique.',
     lpp4_deload_title:'Deload and Cruise Week',
     lpp4_deload_lbl:'Deload Week (after 6-8 weeks):',
@@ -8048,11 +8049,11 @@ const WORKOUTS_BASE = {
         days:[
             {id:'lpp4_a1',color:'var(--green)',exercises:[
                 {it:'Leg Press 45° o 90°',en:'Leg Press 45 or 90 degree',s:1,r:'8-6',rest:'3 min'},
-                {it:'',en:'',s:1,r:'10-8',rest:'3 min'},
-                {it:'Hack Squat',en:'Hack Squat',s:1,r:'12-10',rest:'2-3 min'},
-                {it:'Leg Curl',en:'Leg Curl',s:2,r:'12-10',rest:'2 min'},
-                {it:'Adduttore',en:'Adductor',s:2,r:'15-12',rest:'1-2 min'},
-                {it:'Calf Raise in Piedi',en:'Standing Calf Raise',s:2,r:'15-12',rest:'1-2 min'}]},
+                {it:'',en:'',s:1,r:'12-10',rest:'3 min'},
+                {it:'Hack Squat',en:'Hack Squat',s:1,r:'8-6',rest:'2-3 min',note_it:'Scendi lentamente in 2-3 secondi.',note_en:'Lower slowly in 2-3 seconds.'},
+                {it:'Leg Curl',en:'Leg Curl',s:1,r:'12-10 RP',rest:'2 min'},
+                {it:'Adduttore',en:'Adductor',s:1,r:'15-12 RP',rest:'1-2 min'},
+                {it:'Calf Raise in Piedi',en:'Standing Calf Raise',s:1,r:'15-12 RP',rest:'1-2 min'}]},
             {id:'lpp4_b1',color:'var(--gold)',exercises:[
                 {it:'Panca Inclinata Smith',en:'Incline Smith Press',s:1,r:'8-6',rest:'3 min'},
                 {it:'',en:'',s:1,r:'12-10',rest:'3 min'},
@@ -8060,36 +8061,42 @@ const WORKOUTS_BASE = {
                 {it:'',en:'',s:1,r:'12-10',rest:'3 min'},
                 {it:'CGBP su Smith (Presa Stretta)',en:'Close Grip Bench Press on Smith',s:1,r:'12-10',rest:'2 min'},
                 {it:'Pec Deck / Crossover',en:'Pec Deck / Crossover',s:1,r:'12-10',rest:'1-2 min'},
-                {it:'Alzate Laterali',en:'Lateral Raises',s:2,r:'12-10',rest:'1-2 min'},
-                {it:'Pushdown Tricipiti',en:'Triceps Pushdown',s:1,r:'15-12',rest:'1-2 min'}]},
+                {it:'Alzate Laterali',en:'Lateral Raises',s:1,r:'12-10 RP',rest:'1-2 min'},
+                {it:'Pushdown Tricipiti',en:'Triceps Pushdown',s:3,r:'Drop Set',rest:'1-2 min',note_it:'Drop set classico: 1° serie 15-12 reps → abbassa peso e continua senza pausa → abbassa ancora e continua.',note_en:'Classic drop set: 1st set 15-12 reps → reduce weight and continue without rest → reduce again and continue.'}]},
             {id:'lpp4_c1',color:'var(--blue)',exercises:[
                 {it:'Lat Machine Presa Supina / Neutra',en:'Suppinated/Neutral Grip Pulldown',s:1,r:'8-6',rest:'3 min'},
                 {it:'',en:'',s:1,r:'12-10',rest:'3 min'},
                 {it:'Pulley / Rematore Manubrio',en:'Pulley / DB Row',s:1,r:'10-8',rest:'2 min'},
-                {it:'Rematore Schiena Alta / Macchina',en:'Upper Back Row / Machine Row',s:1,r:'10-8',rest:'2 min'},
-                {it:'Spalle Posteriori',en:'Rear Delt / Back Shoulders',s:2,r:'15-12',rest:'1-2 min'},
-                {it:'Curl Manubri 45° (Inclinato)',en:'DB Biceps Curl 45 Degree',s:2,r:'12-10',rest:'1-2 min'},
+                {it:'',en:'',s:1,r:'15-12',rest:'2 min'},
+                {it:'Rematore Schiena Alta / Macchina',en:'Upper Back Row / Machine Row',s:1,r:'12-10',rest:'2 min'},
+                {it:'Spalle Posteriori',en:'Rear Delt / Back Shoulders',s:1,r:'15-12 RP',rest:'1-2 min'},
+                {it:'Curl Manubri 45° (Inclinato)',en:'DB Biceps Curl 45 Degree',s:1,r:'12-10 RP',rest:'1-2 min'},
                 {it:'Curl a Martello / Reverse Curl',en:'Hammer Curl / Reverse Curl',s:1,r:'15-12',rest:'1-2 min'}]},
             {id:'lpp4_a2',color:'var(--green)',exercises:[
-                {it:'Leg Curl Monolaterale',en:'One Leg Curl',s:2,r:'12-10',rest:'2 min'},
-                {it:'Leg Extension Monolaterale',en:'One Leg Extension',s:2,r:'12-10',rest:'2 min'},
+                {it:'Leg Curl',en:'Leg Curl',s:1,r:'12-10',rest:'2 min',note_it:'1° serie: bimanuale 1×12-10. 2° serie: monolaterale 1×15-12.',note_en:'1st set: bilateral 1×12-10. 2nd set: unilateral 1×15-12.'},
+                {it:'',en:'',s:1,r:'15-12',rest:'2 min'},
+                {it:'Leg Extension',en:'Leg Extension',s:1,r:'12-10',rest:'2 min',note_it:'1° serie: bimanuale 1×12-10. 2° serie: monolaterale 1×15-12.',note_en:'1st set: bilateral 1×12-10. 2nd set: unilateral 1×15-12.'},
+                {it:'',en:'',s:1,r:'15-12',rest:'2 min'},
                 {it:'RDL (senza cedimento)',en:'RDL (no failure)',s:1,r:'8-6',rest:'3 min'},
                 {it:'',en:'',s:1,r:'12-10',rest:'3 min'},
-                {it:'Hip Thrust',en:'Hip Thrust',s:1,r:'10-8',rest:'2-3 min'},
-                {it:'Calf Raise Seduto',en:'Seated Calf Raise',s:2,r:'15-12',rest:'1-2 min'}]},
+                {it:'Hip Thrust',en:'Hip Thrust',s:1,r:'12-10 RP',rest:'2-3 min',note_it:'Rest pause singolo (non doppio): raggiungi il cedimento, riposa 15-20s, poi 1 serie extra.',note_en:'Single rest pause (not double): reach failure, rest 15-20s, then 1 extra set.'},
+                {it:'Calf Raise Seduto',en:'Seated Calf Raise',s:1,r:'15-12 RP',rest:'1-2 min'}]},
             {id:'lpp4_b2',color:'var(--gold)',exercises:[
-                {it:'Chest Press Seduto / Panca Piana',en:'Seated Chest Press / Flat Press',s:2,r:'10-8',rest:'2-3 min'},
-                {it:'Press Spalle Macchina / Manubri',en:'Machine Shoulder Press / DB Press',s:2,r:'10-8',rest:'2-3 min'},
-                {it:'Dip',en:'Dip',s:1,r:'12-10',rest:'2 min'},
+                {it:'Chest Press Seduto / Panca Piana',en:'Seated Chest Press / Flat Press',s:1,r:'10-8',rest:'2-3 min'},
+                {it:'',en:'',s:1,r:'15-12',rest:'2-3 min'},
+                {it:'Press Spalle Macchina / Manubri',en:'Machine Shoulder Press / DB Press',s:1,r:'10-8',rest:'2-3 min'},
+                {it:'',en:'',s:1,r:'15-12',rest:'2-3 min'},
+                {it:'Dip',en:'Dip',s:1,r:'30 tot.',rest:'1 min (pausa ogni serie)',note_it:'30 reps totali bodyweight con 1 min di pausa. Quando riesci a fare 2 serie da 15 consecutive, aggiungi peso.',note_en:'30 total reps bodyweight with 1 min rest. When you can do 2 sets of 15 in a row, add weight.'},
                 {it:'Crossover / Pec Deck',en:'Crossover / Pec Deck',s:1,r:'12-10',rest:'1-2 min'},
-                {it:'Alzate Laterali ai Cavi',en:'Cable Lateral Raises',s:2,r:'10-8',rest:'1-2 min'},
-                {it:'Estensioni Sopra la Testa',en:'Overhead Triceps Extension',s:2,r:'12-10',rest:'1-2 min'}]},
+                {it:'Alzate Laterali ai Cavi',en:'Cable Lateral Raises',s:2,r:'12-10',rest:'1-2 min'},
+                {it:'Estensioni Sopra la Testa',en:'Overhead Triceps Extension',s:1,r:'12-10 RP',rest:'1-2 min'}]},
             {id:'lpp4_c2',color:'var(--blue)',exercises:[
-                {it:'Lat Machine / High Row',en:'Lat Pulldowns / High Row',s:2,r:'10-8',rest:'2-3 min'},
+                {it:'Lat Machine / High Row',en:'Lat Pulldowns / High Row',s:1,r:'10-8',rest:'2-3 min'},
+                {it:'',en:'',s:1,r:'15-12',rest:'2-3 min'},
                 {it:'T-Bar Row / Rematore Bilanciere',en:'T-Bar Row / Bent Row',s:1,r:'8-6',rest:'3 min'},
-                {it:'',en:'',s:1,r:'10-8',rest:'3 min'},
-                {it:'Spalle Posteriori',en:'Rear Delt / Back Shoulders',s:2,r:'15-12',rest:'1-2 min'},
-                {it:'Curl Bilanciere / Manubri',en:'DB / BB Biceps Curl',s:2,r:'12-10',rest:'1-2 min'},
+                {it:'',en:'',s:1,r:'12-10',rest:'3 min'},
+                {it:'Face Pulls',en:'Face Pulls',s:1,r:'15-12 RP',rest:'1-2 min'},
+                {it:'Curl Bilanciere / Manubri',en:'DB / BB Biceps Curl',s:1,r:'12-10 RP',rest:'1-2 min'},
                 {it:'Curl su Panca Scott',en:'Scott Curl',s:1,r:'12-10',rest:'1-2 min'}]}
         ]},
 
@@ -8115,22 +8122,48 @@ const WORKOUTS_BASE = {
                 {it:'Calf Raise',en:'Calf Raises',s:3,r:'15-10',rest:'1-2 min'}]}]},
     lpp6_adv_luka:{gender:'uomo',
         days:[
-            {id:'lpp6al_legs',color:'var(--red)',exercises:[
-                {it:'Squat',en:'Squat',s:4,r:'8-6',rest:'3 min'},
-                {it:'Leg Press',en:'Leg Press',s:4,r:'10-8',rest:'2-3 min'},
-                {it:'Leg Curl',en:'Leg Curl',s:3,r:'10-8',rest:'2 min'},
-                {it:'Calf Raise',en:'Calf Raise',s:4,r:'12-10',rest:'1-2 min'}]},
-            {id:'lpp6al_push',color:'var(--gold)',exercises:[
-                {it:'Panca Piana',en:'Bench Press',s:4,r:'8-6',rest:'3 min'},
-                {it:'Panca Inclinata',en:'Incline Press',s:4,r:'10-8',rest:'2-3 min'},
-                {it:'Press Spalle',en:'Shoulder Press',s:4,r:'10-8',rest:'2 min'},
-                {it:'Alzate Laterali',en:'Lateral Raises',s:3,r:'12-10',rest:'1-2 min'},
-                {it:'Spinte in Basso',en:'Triceps Pushdown',s:3,r:'12-10',rest:'1-2 min'}]},
-            {id:'lpp6al_pull',color:'var(--blue)',exercises:[
-                {it:'Stacco da Terra',en:'Deadlift',s:4,r:'6-4',rest:'3-4 min'},
-                {it:'Lat Machine',en:'Lat Pulldown',s:4,r:'10-8',rest:'2 min'},
-                {it:'Rematore',en:'Barbell Row',s:4,r:'8-6',rest:'2-3 min'},
-                {it:'Curl Bilanciere',en:'Barbell Curl',s:3,r:'10-8',rest:'1-2 min'}]}]},
+            {id:'lpp6al_legs_a',label_it:'LEGS A',label_en:'LEGS A',color:'var(--green)',exercises:[
+                {it:'Leg Press / Squat',en:'Leg Press / Squat',s:3,r:'8-6',rest:'2-3 min'},
+                {it:'Affondi Statici / Bulgarian Squat',en:'Static Lunges / Bulgarian Squat',s:3,r:'10-8',rest:'2 min'},
+                {it:'Leg Curl',en:'Leg Curl',s:3,r:'12-10',rest:'2 min'},
+                {it:'Adduttori / Abduttori',en:'Add / Abb',s:2,r:'15-12',rest:'1-2 min'},
+                {it:'Polpacci al Leg Press',en:'Calves on Leg Press',s:3,r:'15-10',rest:'1 min'},
+                {it:'Addominali — Leg Raises',en:'Abs — Leg Raises',s:3,r:'15-10',rest:'1 min'}]},
+            {id:'lpp6al_push_a',label_it:'PUSH A',label_en:'PUSH A',color:'var(--red)',exercises:[
+                {it:'Press Inclinata (Hummer / Smith)',en:'Incline Press (Hummer / Smith)',s:3,r:'8-6',rest:'2-3 min'},
+                {it:'Press Piana (Smith / BB / Manubri / Chest Press)',en:'Flat Press (Smith / BB / DB / Chest Press)',s:3,r:'10-8',rest:'2-3 min'},
+                {it:'Pec Deck / Crossover',en:'Pec Deck / Crossover',s:3,r:'12-10',rest:'1-2 min'},
+                {it:'Alzate Laterali Macchina',en:'Machine Lateral Raises',s:3,r:'12-10',rest:'1-2 min'},
+                {it:'Estensioni Overhead — Tricipiti',en:'Overhead Extension — Triceps',s:3,r:'12-10',rest:'1-2 min'},
+                {it:'Pushdown',en:'Pushdown',s:2,r:'15-12',rest:'1 min'}]},
+            {id:'lpp6al_pull_a',label_it:'PULL A',label_en:'PULL A',color:'var(--blue)',exercises:[
+                {it:'High Row / Lat Machine Presa Stretta',en:'High Row / Narrow Grip Pulldown',s:3,r:'8-6',rest:'2-3 min'},
+                {it:'Rematore Macchina Unilaterale / Manubrio',en:'One Arm Machine Row / DB Row',s:3,r:'10-8',rest:'2 min'},
+                {it:'Rematore Schiena Alta (Macchina / Manubri Distesi)',en:'Upper Back Row (Machine / Lying DB)',s:2,r:'12-10',rest:'2 min'},
+                {it:'Face Pull',en:'Face Pulls',s:3,r:'12-10',rest:'1 min'},
+                {it:'Curl 45° Manubri / Curl Besyan',en:'45 Degree DB Curl / Besyan Curl',s:3,r:'12-10',rest:'1-2 min'},
+                {it:'Curl Panca Scott (Macchina / Manubri)',en:'Scott Curl (Machine / DB)',s:3,r:'12-10',rest:'1-2 min'}]},
+            {id:'lpp6al_legs_b',label_it:'LEGS B',label_en:'LEGS B',color:'var(--green)',exercises:[
+                {it:'Hack Squat',en:'Hack Squat',s:3,r:'10-8',rest:'2-3 min'},
+                {it:'RDL',en:'RDL',s:3,r:'10-8',rest:'2 min'},
+                {it:'Leg Curl Unilaterale',en:'One Leg Curl',s:3,r:'12-10',rest:'2 min'},
+                {it:'Leg Extension',en:'Leg Extension',s:3,r:'15-10',rest:'1-2 min'},
+                {it:'Polpacci in Piedi',en:'Standing Calves',s:3,r:'10-8',rest:'1 min'},
+                {it:'Addominali — Crunch',en:'Abs — Crunch',s:3,r:'15-12',rest:'1 min'}]},
+            {id:'lpp6al_push_b',label_it:'PUSH B',label_en:'PUSH B',color:'var(--red)',exercises:[
+                {it:'Press Spalle (Macchina / Smith / BB / Manubri)',en:'Shoulder Press (Machine / Smith / BB / DB)',s:3,r:'8-6',rest:'2-3 min'},
+                {it:'Dip / Panca Declinata',en:'Dip / Decline Chest Press',s:3,r:'12-10',rest:'2 min'},
+                {it:'Pec Deck / Crossover',en:'Pec Deck / Crossover',s:3,r:'12-10',rest:'1-2 min'},
+                {it:'Alzate Laterali Cavo / Manubri',en:'Cable / DB Lateral Raises',s:3,r:'12-10',rest:'1-2 min'},
+                {it:'French Press',en:'French Press',s:3,r:'12-10',rest:'1-2 min'},
+                {it:'Cable Kickback / Pushdown Unilaterale',en:'Cable Kickback / Single Pushdown',s:2,r:'15-12',rest:'1 min'}]},
+            {id:'lpp6al_pull_b',label_it:'PULL B',label_en:'PULL B',color:'var(--blue)',exercises:[
+                {it:'Lat Machine / Pulldown Macchina',en:'Lat Pulldown / Pulldown Machine',s:3,r:'10-8',rest:'2-3 min'},
+                {it:'T-Bar Row Largo / Rematore a Busto Flesso',en:'Wide T-Bar Row / Bent Over Row',s:3,r:'12-10',rest:'2 min'},
+                {it:'Pulley / Rematore Macchina',en:'Pulley / Machine Row',s:3,r:'10-8',rest:'2 min'},
+                {it:'Spalle Posteriori (Pec Deck / Cavo)',en:'Back Shoulders (Pec Deck / Cable)',s:3,r:'15-10',rest:'1 min'},
+                {it:'Curl Bicipiti (BB / Manubri)',en:'Biceps Curl (BB / DB)',s:3,r:'12-10',rest:'1-2 min'},
+                {it:'Curl Hammer',en:'Hammer Curl',s:3,r:'12-10',rest:'1-2 min'}]}]},
     // ── CANDITO 6-WEEK STRENGTH ──────────────────────────────────────────────
     candito_6wk:{gender:'uomo',
         days:[
@@ -8434,7 +8467,7 @@ const WORKOUTS_BASE = {
                 {it:'ATG Squat / Hack Squat / Front Squat',en:'ATG Squat / Hack Squat / Front Squat',s:3,r:'10',rest:'2-3 min'},
                 {it:'Affondi / Bulgarian Split Squat / Leg Press',en:'Lunges / Bulgarian Split Squats / Leg Press',s:3,r:'12-10',rest:'2-3 min'},
                 {it:'Stacco Gambe Tese / Good Morning',en:'Straight Leg Deadlift / Good Morning',s:3,r:'12-10',rest:'2 min'},
-                {it:'Leg Curl',en:'Leg Curl',s:2,r:'12-10',rest:'2 min'},
+                {it:'Leg Curl',en:'Leg Curl',s:1,r:'12-10 RP',rest:'2 min'},
                 {it:'Calf Raise',en:'Calf Raise',s:3,r:'10-8',rest:'1-2 min'}]},
             {id:'ulpb_ume',color:'var(--green)',exercises:[
                 {it:'Panca Piana (Sett.1: 3×6 → Sett.2: 3×4 → Sett.3: 3×3 → Sett.4: 3×2)',en:'Bench Press (Wk1: 3×6 → Wk2: 3×4 → Wk3: 3×3 → Wk4: 3×2)',s:3,r:'6→2 (periodiz.)',rest:'3-5 min'},
@@ -8677,6 +8710,12 @@ function getWorkoutLocalized(wId){
         }else if(day.id==='advlpp6_lb'){badge='LEGS B';name=lang==='it'?'Femorali · Quadricipiti · Polpacci · Addominali':'Hamstrings · Quads · Calves · Abs';
         }else if(day.id==='advlpp6_pb'){badge='PUSH B';name=lang==='it'?'Spalle · Petto · Tricipiti':'Shoulders · Chest · Triceps';
         }else if(day.id==='advlpp6_plb'){badge='PULL B';name=lang==='it'?'Schiena · Bicipiti · Deltoidi Post.':'Back · Biceps · Rear Delts';
+        }else if(day.id==='lpp6al_legs_a'){badge='LEGS A';name=lang==='it'?'Quadricipiti · Femorali · Polpacci · Addominali':'Quads · Hamstrings · Calves · Abs';
+        }else if(day.id==='lpp6al_push_a'){badge='PUSH A';name=lang==='it'?'Petto · Spalle · Tricipiti':'Chest · Shoulders · Triceps';
+        }else if(day.id==='lpp6al_pull_a'){badge='PULL A';name=lang==='it'?'Schiena · Bicipiti · Deltoidi Post.':'Back · Biceps · Rear Delts';
+        }else if(day.id==='lpp6al_legs_b'){badge='LEGS B';name=lang==='it'?'Femorali · Quadricipiti · Polpacci · Addominali':'Hamstrings · Quads · Calves · Abs';
+        }else if(day.id==='lpp6al_push_b'){badge='PUSH B';name=lang==='it'?'Spalle · Petto · Tricipiti':'Shoulders · Chest · Triceps';
+        }else if(day.id==='lpp6al_pull_b'){badge='PULL B';name=lang==='it'?'Schiena · Bicipiti · Deltoidi Post.':'Back · Biceps · Rear Delts';
         }else{badge=t('d_full_badge');name=t('d_full_name');}
         const exercises = day.exercises.map(ex=>({...ex, name: lang==='en' ? ex.en : ex.it}));
         return {...day, badge, name, exercises};
@@ -9040,7 +9079,7 @@ function setPbFabioWeek(week){
     }
 }
 function setLpp6AdvPhase(phase){
-    // Phase 1: 4×8-6, Phase 2: 4×6-4, Deload: note only
+    // Phase 1: 3×10-8 / 3×12-8 | Phase 2: 3×8-6 / 3×10-8 | Phase 3: 3×6-4 / 3×8-6
     try{localStorage.setItem('lpp6adv_phase',String(phase));}catch(e){}
     [1,2,3].forEach(p=>{
         const btn=document.getElementById('lpp6adv-btn-'+p);
@@ -9053,14 +9092,14 @@ function setLpp6AdvPhase(phase){
     const sub=document.getElementById('lpp6adv-phase-sub');
     const title=document.getElementById('lpp6adv-phase-title');
     if(phase===1){
-        if(sub) sub.textContent=(typeof lang!=='undefined'&&lang==='en')?'Weeks 1-6 — First 2 exercises: 4×8-6 (double progression). Isolations unchanged.':'Settimane 1-6 — Primi 2 esercizi: 4×8-6 (doppia progressione). Isolamenti invariati.';
+        if(sub) sub.textContent=(typeof lang!=='undefined'&&lang==='en')?'Weeks 1-3 — First exercise: 3×10-8 · Second exercise: 3×12-8. Isolations unchanged.':'Settimane 1-3 — Primo esercizio: 3×10-8 · Secondo esercizio: 3×12-8. Isolamenti invariati.';
         if(title) title.textContent='🔥 Fase 1 — Accumulo';
     } else if(phase===2){
-        if(sub) sub.textContent=(typeof lang!=='undefined'&&lang==='en')?'Weeks 7-12 — First 2 exercises: 4×6-4 (heavier load). Isolations unchanged.':'Settimane 7-12 — Primi 2 esercizi: 4×6-4 (carico più pesante). Isolamenti invariati.';
+        if(sub) sub.textContent=(typeof lang!=='undefined'&&lang==='en')?'Weeks 4-6 — First exercise: 3×8-6 · Second exercise: 3×10-8. Isolations unchanged.':'Settimane 4-6 — Primo esercizio: 3×8-6 · Secondo esercizio: 3×10-8. Isolamenti invariati.';
         if(title) title.textContent='🔥 Fase 2 — Intensificazione';
     } else {
-        if(sub) sub.textContent=(typeof lang!=='undefined'&&lang==='en')?'Week 13 — All exercises at 60-65% weight. Same sets and reps. Active recovery.':'Settimana 13 — Tutti gli esercizi al 60-65% del peso. Stesse serie e reps. Recupero attivo.';
-        if(title) title.textContent='🔥 Deload — Recupero';
+        if(sub) sub.textContent=(typeof lang!=='undefined'&&lang==='en')?'Weeks 7-9 — First exercise: 3×6-4 · Second exercise: 3×8-6. Isolations unchanged.':'Settimane 7-9 — Primo esercizio: 3×6-4 · Secondo esercizio: 3×8-6. Isolamenti invariati.';
+        if(title) title.textContent='🔥 Fase 3 — Picco';
     }
     // Re-render workout if active
     if(typeof activeWId!=='undefined'&&activeWId==='lpp6-adv-luka'){
@@ -9305,13 +9344,13 @@ function renderEx(wId,dId,eIdx,ex){
     if(wId==='lpp6-adv-luka' && eIdx<2){
         const phase=parseInt((function(){try{return localStorage.getItem('lpp6adv_phase')||'1';}catch(e){return'1';}})());
         if(eIdx===0){
-            if(phase===1){ex={...ex,s:4,r:'8-6'};}
-            else if(phase===2){ex={...ex,s:4,r:'6-4'};}
-            else{ex={...ex,r:(typeof ex.r==='string'?ex.r:String(ex.r))+' (60-65%)'};}
+            if(phase===1){ex={...ex,s:3,r:'10-8'};}
+            else if(phase===2){ex={...ex,s:3,r:'8-6'};}
+            else{ex={...ex,s:3,r:'6-4'};}
         } else {
-            if(phase===1){ex={...ex,s:4,r:'10-8'};}
-            else if(phase===2){ex={...ex,s:4,r:'8-6'};}
-            else{ex={...ex,r:(typeof ex.r==='string'?ex.r:String(ex.r))+' (60-65%)'};}
+            if(phase===1){ex={...ex,s:3,r:'12-10'};}
+            else if(phase===2){ex={...ex,s:3,r:'10-8'};}
+            else{ex={...ex,s:3,r:'8-6'};}
         }
     }
     const pr=getPR(wId,dId,eIdx);
