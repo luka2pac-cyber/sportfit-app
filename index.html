@@ -119,6 +119,14 @@ html,body{height:100%}
 .badge-mp{display:inline-flex;align-items:center;gap:3px;background:linear-gradient(135deg,#b8860b,#ffd700,#b8860b);color:#000;font-size:.65rem;font-weight:900;padding:3px 9px;border-radius:20px;text-transform:uppercase;letter-spacing:.8px;margin-left:6px;vertical-align:middle;flex-shrink:0}
 .badge-tc{display:inline-flex;align-items:center;gap:3px;background:linear-gradient(135deg,#7a6000,#ffd700,#7a6000);color:#000;font-size:.65rem;font-weight:900;padding:3px 9px;border-radius:20px;text-transform:uppercase;letter-spacing:.8px;margin-left:6px;vertical-align:middle;flex-shrink:0}
 .badge-sp{display:inline-flex;align-items:center;gap:3px;background:linear-gradient(135deg,#5a2d00,#ff9f0a,#5a2d00);color:#fff;font-size:.65rem;font-weight:900;padding:3px 9px;border-radius:20px;text-transform:uppercase;letter-spacing:.8px;margin-left:6px;vertical-align:middle;flex-shrink:0}
+.badge-tough{display:inline-flex;align-items:center;gap:3px;background:linear-gradient(135deg,#1a0000,#8b0000,#1a0000);color:#ff4444;font-size:.58rem;font-weight:900;padding:3px 9px;border-radius:20px;text-transform:uppercase;letter-spacing:.8px;margin-left:6px;vertical-align:middle;flex-shrink:0;border:1px solid rgba(255,50,50,.4)}
+.hd-section-btn{display:flex;align-items:stretch;background:linear-gradient(135deg,#120000,#1e0000);border:3px solid #cc0000;border-radius:14px;margin-bottom:10px;cursor:pointer;overflow:hidden;width:100%;text-align:left;box-shadow:0 4px 20px rgba(200,0,0,.3)}
+.hd-section-stripe{width:6px;background:linear-gradient(180deg,#ff0000,#ff6060,#ff0000);flex-shrink:0}
+.hd-section-inner{flex:1;padding:14px;display:flex;flex-direction:column;gap:4px}
+.hd-section-title{font-size:1rem;font-weight:900;color:#fff;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.hd-section-sub{font-size:.7rem;color:rgba(255,100,100,.9)}
+.hd-section-list{font-size:.6rem;color:rgba(255,255,255,.28);margin-top:3px;line-height:1.7}
+.hd-count{background:#8b0000;color:#fff;font-size:.6rem;font-weight:900;padding:2px 8px;border-radius:20px;letter-spacing:.5px;flex-shrink:0}
 .prog-item-btn{flex:1;padding:18px 16px;background:none;border:none;color:#fff;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:5px}
 .prog-item-btn:active{opacity:.6}
 .prog-item-name{font-size:1.05rem;font-weight:800;text-transform:uppercase;color:#fff}
@@ -780,19 +788,24 @@ html,body{height:100%}
       <span class="prog-arr">›</span>
     </div>
 
-    <div class="prog-item">
-      <button class="prog-item-btn" onclick="showView('heavy-duty-concepts')">
-        <div class="prog-item-name">📖 <span data-t="hdc_title">Heavy Duty Concepts</span></div>
-        <div class="prog-item-sub"><span data-t="hdc_sub">Filosofia, metodi e programmi — Mike Mentzer & DC Training</span></div>
-      </button>
-      <span class="prog-arr">›</span>
-    </div>
   </div>
 
   <!-- BB METHODS & SPLITS VIEW -->
   <div id="bb-methods-view" class="view">
     <button onclick="goBack('uomini-heavy-menu')" class="back-btn">← <span data-t="advanced_title">Avanzato</span></button>
     <div class="view-title" style="font-size:1.8rem">💪 Bodybuilding<br><span style="font-size:1.2rem;color:rgba(255,255,255,.5)">Splits</span></div>
+    <button class="hd-section-btn" onclick="showView('heavy-duty-concepts')">
+      <div class="hd-section-stripe"></div>
+      <div class="hd-section-inner">
+        <div class="hd-section-title">
+          💀 Heavy Duty Concepts
+          <span class="hd-count">7 programmi</span>
+        </div>
+        <div class="hd-section-sub">Solo per atleti avanzati · 1 serie al cedimento assoluto</div>
+        <div class="hd-section-list">Mentzer Classic · Consolidated · Dorian Yates · DC Training · Arthur Jones · Dr. Ken · LPP-4</div>
+      </div>
+      <span style="padding:14px;color:rgba(255,80,80,.5);font-size:1.1rem">›</span>
+    </button>
     <div class="prog-item" style="border:1.5px solid rgba(255,159,10,.35);background:rgba(255,159,10,.07)">
       <button class="prog-item-btn" onclick="showView('lpp6-adv-luka-info-view')">
         <div class="prog-item-name">🔥 LPP 6 Avanzato <span style="font-size:.7rem;opacity:.6">by Luka</span><span class="badge-sp">⭐ Staff Pick</span></div>
@@ -1167,7 +1180,7 @@ html,body{height:100%}
     </div>
     <div class="prog-item" style="border:1.5px solid rgba(255,149,0,.35);background:rgba(255,149,0,.07)">
       <button class="prog-item-btn" onclick="showView('candito-info-view')">
-        <div class="prog-item-name">🏆 Candito 6-Week — <span style="font-size:.8rem;opacity:.7">Jonnie Candito</span></div>
+        <div class="prog-item-name">🏆 Candito 6-Week — <span style="font-size:.8rem;opacity:.7">Jonnie Candito</span><span class="badge-tc">🏆 Top Choice</span></div>
         <div class="prog-item-sub">6 settimane · Squat · Bench · Stacco · Peaking al massimale</div>
       </button>
       <span class="prog-arr">›</span>
@@ -1972,6 +1985,20 @@ html,body{height:100%}
     </div>
 
     <div class="prog-item">
+      <button class="prog-item-btn" onclick="showView('dc-info-view')">
+        <div class="prog-item-name">🔥 DC Training — DoggCrapp<span class="badge-tc">🏆 Top Choice</span><span class="badge-tough" style="color:#c084fc;background:linear-gradient(135deg,#1a0033,#3b0080,#1a0033);border-color:rgba(167,139,250,.5)">⚡ For Elite Only</span></div>
+        <div class="prog-item-sub"><span data-t="dc_dante_sub">Dante Trudel · Rest-Pause · Stretch estremo · Alta intensità</span></div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+    <div class="prog-item" style="border:1.5px solid rgba(255,149,0,.35);background:rgba(255,149,0,.07)">
+      <button class="prog-item-btn" onclick="showView('ken-info-view')">
+        <div class="prog-item-name">&#128165; <span data-t="ken_btn">Dr. Ken Leistner &#8212; Steel Tip HIT</span><span class="badge-tough">💀 Only for Tough Guys</span></div>
+        <div class="prog-item-sub"><span data-t="ken_sub">Full Body 2x / sett. &#8212; Squat 20 reps &#8212; 1 Serie al cedimento</span></div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+    <div class="prog-item">
       <button class="prog-item-btn" onclick="showView('mentzer-info-view')">
         <div class="prog-item-name">💪 Mike Mentzer — Heavy Duty Classic</div>
         <div class="prog-item-sub" data-t="mentzer_prog_sub">HIT · Tempo 4-2-4 · 1 Serie al cedimento assoluto</div>
@@ -1985,18 +2012,10 @@ html,body{height:100%}
       </button>
       <span class="prog-arr">›</span>
     </div>
-
     <div class="prog-item">
       <button class="prog-item-btn" onclick="showView('dorian-info-view')">
         <div class="prog-item-name">💥 Dorian Yates — Blood &amp; Guts</div>
         <div class="prog-item-sub"><span data-t="dorian_prog_sub">Blood &amp; Guts · 4 Giorni · 1 set al cedimento</span></div>
-      </button>
-      <span class="prog-arr">›</span>
-    </div>
-    <div class="prog-item">
-      <button class="prog-item-btn" onclick="showView('dc-info-view')">
-        <div class="prog-item-name">🔥 DC Training — DoggCrapp<span class="badge-tc">🏆 Top Choice</span></div>
-        <div class="prog-item-sub"><span data-t="dc_dante_sub">Dante Trudel · Rest-Pause · Stretch estremo · Alta intensità</span></div>
       </button>
       <span class="prog-arr">›</span>
     </div>
@@ -2007,15 +2026,7 @@ html,body{height:100%}
       </button>
       <span class="prog-arr">›</span>
     </div>
-    <div class="prog-item" style="border:1.5px solid rgba(255,149,0,.35);background:rgba(255,149,0,.07)">
-      <button class="prog-item-btn" onclick="showView('ken-info-view')">
-        <div class="prog-item-name">&#128165; <span data-t="ken_btn">Dr. Ken Leistner &#8212; Steel Tip HIT</span></div>
-        <div class="prog-item-sub"><span data-t="ken_sub">Full Body 2x / sett. &#8212; Squat 20 reps &#8212; 1 Serie al cedimento</span></div>
-      </button>
-      <span class="prog-arr">›</span>
-    </div>
   </div>
-
   <!-- DR. KEN LEISTNER INFO VIEW -->
   <div id="ken-info-view" class="view">
     <button onclick="goBack('heavy-duty-concepts')" class="back-btn">&#8592; Heavy Duty Concepts</button>
@@ -7644,9 +7655,9 @@ const WORKOUTS_BASE = {
                 {it:'Press Militare con Bilanciere',en:'Overhead Press',s:3,r:'5',rest:'3-5 min',
                  note_it:'Alterna con Panca ogni sessione. +2.5kg ogni sessione.',
                  note_en:'Alternate with Bench Press every session. +2.5kg per session.'},
-                {it:'Stacco da Terra',en:'Deadlift',s:1,r:'5',rest:'5 min',
-                 note_it:'Alterna con Power Clean nelle fasi avanzate. +5-10kg ogni sessione.',
-                 note_en:'Alternate with Power Clean in advanced phases. +5-10kg per session.'}]}]},
+                {it:'Power Clean',en:'Power Clean',s:5,r:'3',rest:'2 min',
+                 note_it:'Esercizio principale Sessione B. Alternative: Barbell Row 3×5 (Rippetoe lo accetta ma avverte che si perde l’elemento esplosivo) oppure Chin-up con peso 3×5.',
+                 note_en:'Main exercise Session B. Alternatives if you cannot/do not want to learn the Power Clean: Barbell Row 3×5 (Rippetoe accepts it but warns you lose the explosive element) or Weighted Chin-up 3×5.'}]}]},
     hst_u:{gender:'uomo',
         note_it:'📊 <b>3 blocchi × 2 settimane:</b> Sett.1-2 = 2×15 reps | Sett.3-4 = 2×10 reps | Sett.5-6 = 2×5 reps. <b>Carico aumenta ogni sessione</b> verso il massimale del blocco. Non andare al cedimento — il carico meccanico progressivo è lo stimolo, non la fatica. Dopo 6-8 settimane: <b>Strategic Deconditioning</b> di 9-14 giorni prima del prossimo ciclo.',
         note_en:'📊 <b>3 blocks × 2 weeks:</b> Wk1-2 = 2×15 reps | Wk3-4 = 2×10 reps | Wk5-6 = 2×5 reps. <b>Load increases every session</b> towards the block max. Do NOT go to failure — progressive mechanical load is the stimulus, not fatigue. After 6-8 weeks: <b>Strategic Deconditioning</b> of 9-14 days before next cycle.',
