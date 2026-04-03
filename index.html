@@ -2550,6 +2550,19 @@ html,body{height:100%}
       <div style="padding:6px 0;font-size:.78rem;color:var(--gold);font-weight:700"><span data-t="dc_rp_ex">Es: 100kg = 10 reps → 30s → 4 reps → 30s → 2 reps = DONE</span></div>
     </div>
 
+    <div class="ai-block" style="border:1px solid rgba(100,210,255,.35);background:rgba(100,210,255,.06)">
+      <div class="ai-block-title" style="color:#64d2ff">🔥 Extreme Stretching — Obbligatorio</div>
+      <div class="ai-bullet"><b>Cos'è:</b> <span>stretch statico con carico pesante — 60 secondi dopo ogni gruppo muscolare allenato</span></div>
+      <div class="ai-bullet"><b>Petto:</b> <span>manubri pesanti in posizione flyes, il più in basso possibile, 60s</span></div>
+      <div class="ai-bullet"><b>Tricipiti:</b> <span>manubrio dietro la testa (come estensione), leggera pressione della testa sul manubrio, 60s</span></div>
+      <div class="ai-bullet"><b>Spalle:</b> <span>bilanciere in rack all'altezza spalle, schiena rivolta, cammina finché diventa doloroso, 60s</span></div>
+      <div class="ai-bullet"><b>Bicipiti:</b> <span>bilanciere in rack altezza collo, schiena rivolta, prendi la barra e accovacciati — il peso del corpo è il carico, 45-60s</span></div>
+      <div class="ai-bullet"><b>Schiena (width):</b> <span>hang con peso appeso in vita su presa larga, 60s</span></div>
+      <div class="ai-bullet"><b>Femorali:</b> <span>gamba su barra alta, forza la gamba dritta con la mano libera, 60s</span></div>
+      <div class="ai-bullet"><b>Quadricipiti:</b> <span>sissy squat sotto il bilanciere in rack, in punta di piedi, piegati indietro il più possibile, 60s</span></div>
+      <div class="ai-bullet"><b>Polpacci:</b> <span>5s negativa + 15s stretch al fondo ad ogni rep — no stretch separato</span></div>
+    </div>
+
     <div class="ai-block">
       <div class="ai-block-title blue"><span data-t="dc_types_title">📐 Tipi di Serie</span></div>
       <div class="ai-bullet"><strong style="color:#fff">RP</strong><span data-t="dc_type1"> = Rest-Pause — vai al cedimento assoluto</span></div>
@@ -6745,94 +6758,115 @@ const WORKOUTS_BASE = {
                 {it:'🟢 C2 · Addominali',en:'🟢 C2 · Abs',s:3,r:'20-15',rest:'60-90s'}]}]},
         // ── DC TRAINING 3-DAY — Upper(A) / Lower(B) — 3 rotazioni ─────────────
     dc_3day:{gender:'uomo',
+        note_it:'⚡ <b>Rest-Pause (RP)</b>: vai al cedimento → 12-15 respiri profondi (~20s) → riprendi → 12-15 respiri → ultima spinta. Le rep indicate sono quelle del <b>primo set</b>. <b>Regola progressione</b>: batti il workout precedente di almeno 1 rep o 2.5kg — altrimenti cambia esercizio.',
+        note_en:'⚡ <b>Rest-Pause (RP)</b>: go to failure → 12-15 deep breaths (~20s) → push again → 12-15 breaths → final push. Reps shown are for the <b>first set</b>. <b>Progression rule</b>: beat previous workout by 1 rep or 2.5kg — otherwise change exercise.',
         days:[
             {id:'a',color:'var(--gold)',exercises:[
-                {it:'Smith Bench Press',en:'Smith Bench Press',s:1,r:'11-15 RP'},
-                {it:'Press Spalle Smith / OHP',en:'Shoulder Smith Press / OHP',s:1,r:'11-15 RP'},
-                {it:'French Press',en:'French Press',s:1,r:'11-15 RP'},
-                {it:'Trazioni Presa Stretta',en:'Narrow Grip Chins',s:1,r:'11-15 RP'},
-                {it:'Rematore Manubrio / One Arm Row',en:'DB Row / One Arm Machine Row',s:2,r:'11-15'}]},
+                {it:'Smith Bench Press',en:'Smith Bench Press',s:1,r:'8-6 RP',rest:'3 min'},
+                {it:'Shoulder Smith Press',en:'Shoulder Smith Press',s:1,r:'8-6 RP',rest:'3 min'},
+                {it:'French Press',en:'French Press',s:1,r:'12-10 RP',rest:'3 min'},
+                {it:'Narrow Grip Chins',en:'Narrow Grip Chins',s:1,r:'8-6 RP',rest:'3 min'},
+                {it:'DB Row / One Arm Machine Row',en:'DB Row / One Arm Machine Row',s:1,r:'8-6',rest:'3 min'},
+                {it:'',en:'',s:1,r:'12-10',rest:'3 min',note_it:'2 straight sets — no rest-pause.',note_en:'2 straight sets — no rest-pause.'}]},
             {id:'b',color:'var(--red)',exercises:[
-                {it:'Leg Press 45° o 90°',en:'Leg Press 45 or 90',s:2,r:'20 Widowmaker'},
-                {it:'RDL',en:'Romanian Deadlift',s:1,r:'11-15 RP'},
-                {it:'Curl Bilanciere / Manubri',en:'BB or DB Biceps Curl',s:1,r:'11-15 RP'},
-                {it:'Curl Martello',en:'Hammer Curl',s:1,r:'11-15 RP'},
-                {it:'Calf Raise in Piedi',en:'Standing Calf Raise',s:1,r:'12-20'}]},
+                {it:'Leg Press 45° o 90°',en:'Leg Press 45 or 90 degree',s:1,r:'8-6',rest:'3 min'},
+                {it:'',en:'',s:1,r:'20-25',rest:'3 min'},
+                {it:'RDL',en:'RDL',s:1,r:'8-6',rest:'3 min',note_it:'2 straight sets — no rest-pause.',note_en:'2 straight sets — no rest-pause.'},
+                {it:'',en:'',s:1,r:'12-10',rest:'3 min'},
+                {it:'BB o DB Biceps Curl',en:'BB or DB Biceps Curl',s:1,r:'10-8 RP',rest:'2 min'},
+                {it:'Curl a Martello',en:'Hummer Curl',s:1,r:'12-10',rest:'2 min'},
+                {it:'Calf Raise in Piedi',en:'Standing Calves',s:1,r:'15-12 RP',rest:'2 min'}]},
             {id:'g1',color:'var(--blue)',exercises:[
-                {it:'Press Inclinata / Incline Smith',en:'Incline Chest Press / Incline Smith',s:1,r:'11-15 RP'},
-                {it:'Press Spalle Macchina',en:'Machine Shoulder Press',s:1,r:'11-15 RP'},
-                {it:'Panca Stretta',en:'Close Grip Bench Press',s:1,r:'11-15 RP'},
-                {it:'Lat Machine / High Row',en:'Lat Pulldown / High Row',s:1,r:'11-15 RP'},
-                {it:'Pulley Presa Stretta',en:'Pulley Narrow Grip',s:1,r:'11-15 RP'}]},
+                {it:'Press Inclinata / Incline Smith Press',en:'Incline Chest Press / Incline Smith Press',s:1,r:'8-6 RP',rest:'3 min'},
+                {it:'Machine Shoulder Press',en:'Machine Shoulder Press',s:1,r:'10-8 RP',rest:'3 min'},
+                {it:'Panca Presa Stretta',en:'Close Grip Bench Press',s:1,r:'10-8 RP',rest:'3 min'},
+                {it:'Lat Machine / High Row',en:'Lat Pulldowns / High Row',s:1,r:'10-8 RP',rest:'3 min'},
+                {it:'Pulley',en:'Pulley',s:1,r:'10-8 RP',rest:'3 min'}]},
             {id:'g2',color:'var(--green)',exercises:[
-                {it:'Hack Squat',en:'Hack Squat',s:2,r:'20 Widowmaker'},
-                {it:'Leg Curl',en:'Leg Curl',s:1,r:'11-15 RP'},
-                {it:'Curl Panca Scott',en:'Scott Curl',s:1,r:'11-15 RP'},
-                {it:'Curl Manubri 45° Seduto',en:'45° Seated DB Curl',s:1,r:'11-15 RP'},
-                {it:'Polpacci Seduto',en:'Seated Calf Raise',s:1,r:'12-20'}]},
+                {it:'Hack Squat',en:'Hack Squat',s:1,r:'8-6',rest:'3 min'},
+                {it:'',en:'',s:1,r:'20-25',rest:'3 min'},
+                {it:'Leg Curl',en:'Leg Curl',s:1,r:'12-10 RP',rest:'2 min'},
+                {it:'Curl su Panca Scott',en:'Scott Curl',s:1,r:'12-10 RP',rest:'2 min'},
+                {it:'Curl Manubri 45° Seduto',en:'45 Degree Seated DB Curl',s:1,r:'20-15',rest:'2 min'},
+                {it:'Calf Raise Seduto',en:'Seated Calves',s:1,r:'15-12 RP',rest:'2 min'}]},
             {id:'g3',color:'var(--pink)',exercises:[
-                {it:'Press Petto Seduto',en:'Seated Chest Press',s:1,r:'11-15 RP'},
-                {it:'Press Militare / OHP',en:'OHP Military Press',s:1,r:'11-15 RP'},
-                {it:'Dip',en:'Dip',s:1,r:'11-15 RP'},
-                {it:'Lat Machine Presa Media 75°',en:'Medium Parallel Grip 75° Pulldown',s:1,r:'11-15 RP'},
-                {it:'Rack Pull / Rematore',en:'Rack Pulls / Bent Row',s:2,r:'11-15'}]},
+                {it:'Chest Press Seduto',en:'Seated Chest Press',s:1,r:'10-8 RP',rest:'3 min'},
+                {it:'OHP — Press Militare',en:'OHP — Military Press',s:1,r:'10-8 RP',rest:'3 min'},
+                {it:'Dip',en:'Dip',s:1,r:'12-10 RP',rest:'3 min'},
+                {it:'Lat Machine Presa Media 75°',en:'Medium Parallel Grip 75° Pulldown',s:1,r:'10-8 RP',rest:'3 min'},
+                {it:'Rack Pull / Rematore',en:'Rack Pulls / Bent Row',s:1,r:'8-6',rest:'3 min',note_it:'2 straight sets — no rest-pause.',note_en:'2 straight sets — no rest-pause.'},
+                {it:'',en:'',s:1,r:'12-10',rest:'3 min'}]},
             {id:'full',color:'var(--blue)',exercises:[
-                {it:'Squat Macchina',en:'Machine Squat',s:2,r:'20 Widowmaker'},
-                {it:'Leg Curl Monopodalico',en:'One Leg Curl',s:1,r:'11-15 RP'},
-                {it:'Curl Manubri 45° Seduto',en:'45° Seated DB Curl',s:1,r:'11-15 RP'},
-                {it:'Curl Martello Monobraccio su Scott',en:'One Arm Hammer Curl on Scott',s:1,r:'11-15 RP'},
-                {it:'Polpaccio Monopodalico',en:'One Leg Calf Raise',s:1,r:'12-20'}]}]},
-    // ── DC TRAINING 4-DAY — Push(A) / Pull(B) / Legs(C) — 3 rotazioni ────
+                {it:'Squat Macchina',en:'Machine Squat',s:1,r:'8-6',rest:'3 min'},
+                {it:'',en:'',s:1,r:'20-25',rest:'3 min'},
+                {it:'Leg Curl Monopodalico',en:'One Leg Curl',s:1,r:'12-10',rest:'2 min'},
+                {it:'',en:'',s:1,r:'12-10',rest:'2 min'},
+                {it:'Curl Manubri 45° Seduto',en:'45 Degree Seated DB Curl',s:1,r:'10-8 RP',rest:'2 min'},
+                {it:'Curl Martello Monobraccio su Scott',en:'One Arm Hummer Curl on Scott',s:1,r:'15-12',rest:'2 min'},
+                {it:'Calf Raise Monopodalico',en:'One Leg Calves',s:1,r:'15-12 RP',rest:'2 min'}]}]},
+    // ── DC TRAINING 4-DAY    // ── DC TRAINING 4-DAY    // ── DC TRAINING 4-DAY — Push(A) / Pull(B) / Legs(C) — 3 rotazioni ────
     dc_4day:{gender:'uomo',
+        note_it:'⚡ <b>Rest-Pause (RP)</b>: vai al cedimento → 12-15 respiri profondi (~20s) → riprendi → ultima spinta. Le rep indicate sono quelle del <b>primo set</b>. Split: A=Petto/Spalle/Tricipiti · B=Schiena/Bicipiti/Avambracci · C=Gambe. Ciclo A1–B1–C1–A2–B2–C2–A3–B3–C3.',
+        note_en:'⚡ <b>Rest-Pause (RP)</b>: go to failure → 12-15 deep breaths → push again → final push. Reps shown are the <b>first set</b>. Split: A=Chest/Shoulders/Triceps · B=Back/Biceps/Forearms · C=Legs. Cycle A1–B1–C1–A2–B2–C2–A3–B3–C3.',
         days:[
             {id:'a',color:'var(--gold)',exercises:[
-                {it:'Smith Bench Press',en:'Smith Bench Press',s:1,r:'11-15 RP'},
-                {it:'Press Spalle Smith / OHP',en:'Shoulder Smith Press / OHP',s:1,r:'11-15 RP'},
-                {it:'French Press',en:'French Press',s:1,r:'11-15 RP'},
-                {it:'Trazioni Presa Stretta',en:'Narrow Grip Chins',s:1,r:'11-15 RP'},
-                {it:'Rack Pull / Stacchi da Terra',en:'Rack Pulls / Deadlift',s:2,r:'11-15'},
-                {it:'Curl Bilanciere / Manubri',en:'BB Biceps Curl',s:1,r:'11-15 RP'},
-                {it:'Curl Martello',en:'Hammer Curl',s:1,r:'11-15 RP'}]},
-            {id:'b',color:'var(--red)',exercises:[
-                {it:'Lat Machine / High Row',en:'Lat Pulldowns / High Row',s:1,r:'11-15 RP'},
-                {it:'Pulley Presa Stretta',en:'Pulley Narrow Grip',s:1,r:'11-15 RP'},
-                {it:'Curl Panca Scott',en:'Scott Curl',s:1,r:'11-15 RP'},
-                {it:'Reverse Curl + Spalle Posteriori',en:'Reverse Curl + Back Shoulders',s:2,r:'11-15'}]},
-            {id:'g1',color:'var(--blue)',exercises:[
-                {it:'Leg Press 90° o 45°',en:'Leg Press 90 or 45',s:2,r:'20 Widowmaker'},
-                {it:'Leg Curl',en:'Torso Up Leg Curl',s:1,r:'11-15 RP'},
-                {it:'Adduttore',en:'Adductor',s:2,r:'15-12'},
-                {it:'Polpacci',en:'Calves',s:1,r:'12-20'}]},
-            {id:'g2',color:'var(--green)',exercises:[
-                {it:'Press Inclinata / Incline Smith',en:'Incline Chest Press / Incline Smith',s:1,r:'11-15 RP'},
-                {it:'Press Spalle Macchina',en:'Machine Shoulder Press',s:1,r:'11-15 RP'},
-                {it:'Panca Stretta',en:'Close Grip Bench Press',s:1,r:'11-15 RP'},
-                {it:'Alzate Laterali Macchina',en:'Machine Lateral Raises',s:1,r:'11-15 RP'}]},
-            {id:'g3',color:'var(--pink)',exercises:[
-                {it:'Lat Machine Presa Media 75°',en:'Medium Grip 75° Pulldown',s:1,r:'11-15 RP'},
-                {it:'Rematore T-Bar Presa Larga',en:'T-Bar Row Wide Grip',s:1,r:'11-15 RP'},
-                {it:'Curl Manubri 45° Seduto',en:'45° Seated DB Curl',s:1,r:'11-15 RP'},
-                {it:'Curl Besyan',en:'Besyan Curl',s:2,r:'11-15'}]},
+                {it:'Smith Bench Press',en:'Smith Bench Press',s:1,r:'8-6 RP',rest:'3 min'},
+                {it:'Shoulder Smith Press',en:'Shoulder Smith Press',s:1,r:'8-6 RP',rest:'3 min'},
+                {it:'French Press',en:'French Press',s:1,r:'12-10 RP',rest:'3 min'}]},
+            {id:'b',color:'var(--blue)',exercises:[
+                {it:'Narrow Grip Chins',en:'Narrow Grip Chins',s:1,r:'8-6 RP',rest:'3 min'},
+                {it:'Rack Pull / Stacco',en:'Rack Pulls / DL',s:1,r:'8-6',rest:'3 min',note_it:'2 straight sets — no rest-pause.',note_en:'2 straight sets — no rest-pause.'},
+                {it:'',en:'',s:1,r:'12-10',rest:'3 min'},
+                {it:'BB Biceps Curl',en:'BB Biceps Curl',s:1,r:'10-8 RP',rest:'2 min'},
+                {it:'Curl a Martello',en:'Hummer Curl',s:1,r:'10-8 RP',rest:'2 min'}]},
+            {id:'g1',color:'var(--red)',exercises:[
+                {it:'Leg Press 90° o 45°',en:'Leg Press 90 or 45 degree',s:1,r:'8-6',rest:'3 min'},
+                {it:'',en:'',s:1,r:'20+',rest:'3 min'},
+                {it:'Leg Curl Torso in Su',en:'Torso Up Leg Curl',s:1,r:'12-10 RP',rest:'2 min'},
+                {it:'Adduttore',en:'Adductor',s:1,r:'15-12',rest:'2 min'},
+                {it:'',en:'',s:1,r:'15-12',rest:'2 min'},
+                {it:'Calf Raise',en:'Calves',s:1,r:'15-12 RP',rest:'2 min'}]},
+            {id:'g2',color:'var(--gold)',exercises:[
+                {it:'Press Inclinata',en:'Incline Chest Press',s:1,r:'8-6 RP',rest:'3 min'},
+                {it:'Machine Shoulder Press',en:'Machine Shoulder Press',s:1,r:'10-8 RP',rest:'3 min'},
+                {it:'Panca Presa Stretta',en:'Close Grip Bench Press',s:1,r:'8-6 RP',rest:'3 min'},
+                {it:'Alzate Laterali Macchina',en:'Machine Lateral Raises',s:1,r:'12-10 RP',rest:'2 min'}]},
+            {id:'g3',color:'var(--blue)',exercises:[
+                {it:'Lat Machine / High Row',en:'Lat Pulldowns / High Row',s:1,r:'10-8 RP',rest:'3 min'},
+                {it:'Pulley Presa Stretta',en:'Pulley Narrow Grip',s:1,r:'10-8 RP',rest:'3 min'},
+                {it:'Curl su Panca Scott',en:'Scott Curl',s:1,r:'12-10 RP',rest:'2 min'},
+                {it:'Reverse Curl',en:'Reverse Curl',s:1,r:'15-12',rest:'2 min'},
+                {it:'',en:'',s:1,r:'15-12',rest:'2 min'},
+                {it:'Spalle Posteriori',en:'Back Shoulders',s:1,r:'15-12',rest:'2 min'},
+                {it:'',en:'',s:1,r:'15-12',rest:'2 min'}]},
             {id:'d1',color:'var(--red)',exercises:[
-                {it:'Hack Squat / Smith Squat',en:'Hack Squat / Smith Squat',s:2,r:'20 Widowmaker'},
-                {it:'RDL',en:'Romanian Deadlift',s:2,r:'11-15'},
-                {it:'Polpacci Donkey Style',en:'Calves Donkey Style',s:1,r:'12-20'}]},
-            {id:'d2',color:'var(--blue)',exercises:[
-                {it:'Press Petto Seduto / Decline Smith',en:'Seated Chest Press / Decline Smith',s:1,r:'11-15 RP'},
-                {it:'Press Militare / OHP',en:'OHP Military Press',s:1,r:'11-15 RP'},
-                {it:'Dip',en:'Dip',s:1,r:'11-15 RP'},
-                {it:'Alzate Laterali Macchina',en:'Machine Lateral Raises',s:1,r:'11-15 RP'}]},
-            {id:'d3',color:'var(--gold)',exercises:[
-                {it:'Lat Machine Presa Media 75°',en:'Medium Parallel Grip 75° Pulldown',s:1,r:'11-15 RP'},
-                {it:'Rematore T-Bar Presa Larga',en:'Bent Over Row / T-Bar Row Wide',s:2,r:'11-15'},
-                {it:'Curl Manubri 45° Seduto',en:'45° Seated DB Curl',s:1,r:'11-15 RP'},
-                {it:'Curl Besyan',en:'Besyan Curl',s:2,r:'11-15'}]},
-            {id:'e1',color:'var(--green)',exercises:[
-                {it:'Leg Press 90° o 45°',en:'Leg Press 90 or 45',s:2,r:'20 Widowmaker'},
-                {it:'Leg Curl',en:'Leg Curl',s:1,r:'11-15 RP'},
-                {it:'Leg Extension Monopodalico',en:'One Leg Extension',s:2,r:'15-12'},
-                {it:'Polpacci',en:'Calves',s:1,r:'12-20'}]}]},
+                {it:'Smith / Macchina Squat / Hack Squat',en:'Smith/Machine Squat / Hack Squat',s:1,r:'8-6',rest:'3 min'},
+                {it:'',en:'',s:1,r:'20+',rest:'3 min'},
+                {it:'RDL',en:'RDL',s:1,r:'8-6',rest:'3 min',note_it:'2 straight sets — no rest-pause.',note_en:'2 straight sets — no rest-pause.'},
+                {it:'',en:'',s:1,r:'12-10',rest:'3 min'},
+                {it:'Calf Raise al Leg Press (Donkey Style)',en:'Calves on Leg Press Donkey Style',s:1,r:'15-12 RP',rest:'2 min'}]},
+            {id:'d2',color:'var(--gold)',exercises:[
+                {it:'Chest Press Seduto / Decline Smith',en:'Seated Chest Press / Decline Smith',s:1,r:'10-8 RP',rest:'3 min'},
+                {it:'OHP — Press Militare',en:'OHP — Military Press',s:1,r:'10-8 RP',rest:'3 min'},
+                {it:'Dip',en:'Dip',s:1,r:'12-10 RP',rest:'3 min'},
+                {it:'Alzate Laterali Macchina',en:'Machine Lateral Raises',s:1,r:'10-10 RP',rest:'2 min'}]},
+            {id:'d3',color:'var(--blue)',exercises:[
+                {it:'Lat Machine Presa Media 75°',en:'Medium Parallel Grip 75° Pulldown',s:1,r:'10-8 RP',rest:'3 min'},
+                {it:'Rematore a Busto Flesso / T-Bar Row Largo',en:'Bent Over Row or T-Bar Row Wide',s:1,r:'8-6',rest:'3 min'},
+                {it:'',en:'',s:1,r:'12-10',rest:'3 min'},
+                {it:'Curl Manubri 45° Seduto',en:'45 Degree Seated DB Curl',s:1,r:'10-8 RP',rest:'2 min'},
+                {it:'Curl Besyan',en:'Besyan Curl',s:1,r:'15-12',rest:'2 min'},
+                {it:'',en:'',s:1,r:'15-12',rest:'2 min'}]},
+            {id:'e1',color:'var(--red)',exercises:[
+                {it:'Leg Press 90° o 45°',en:'Leg Press 90 or 45 degree',s:1,r:'8-6',rest:'3 min'},
+                {it:'',en:'',s:1,r:'20+',rest:'3 min'},
+                {it:'Leg Curl',en:'Leg Curl',s:1,r:'12-10 RP',rest:'2 min'},
+                {it:'Leg Extension Monopodalico',en:'One Leg Extension',s:1,r:'15-12',rest:'2 min'},
+                {it:'',en:'',s:1,r:'15-12',rest:'2 min'},
+                {it:'Calf Raise',en:'Calves',s:1,r:'15-12 RP',rest:'2 min'}]}]},
 
+    // ── ABC 3 GIORNI UOMO
+    // ── ABC 3 GIORNI UOMO
     // ── ABC 3 GIORNI UOMO ──────────────────────────────────────────
     abc_3day_u:{gender:'uomo',days:[
       {id:'a',color:'var(--blue)',exercises:[
@@ -8048,7 +8082,7 @@ const WORKOUTS_BASE = {
     lpp4_u:{gender:'uomo',
         days:[
             {id:'lpp4_a1',color:'var(--green)',exercises:[
-                {it:'Leg Press 45° o 90°',en:'Leg Press 45 or 90 degree',s:1,r:'8-6',rest:'3 min'},
+                {it:'Leg Press 45° o 90°',en:'Leg Press 45 or 90 degree',s:1,r:'8-6',rest:'3 min',note_it:'1° set: 2-3 secondi di discesa. 2° set: tensione continua.',note_en:'1st set: 2-3 second descent. 2nd set: continuous tension.'},
                 {it:'',en:'',s:1,r:'12-10',rest:'3 min'},
                 {it:'Hack Squat',en:'Hack Squat',s:1,r:'8-6',rest:'2-3 min',note_it:'Scendi lentamente in 2-3 secondi.',note_en:'Lower slowly in 2-3 seconds.'},
                 {it:'Leg Curl',en:'Leg Curl',s:1,r:'12-10 RP',rest:'2 min'},
@@ -8521,26 +8555,26 @@ function getWorkoutLocalized(wId){
         // DC 4-day: a=Push A1, b=Pull B1, g1=Legs C1, g2=Push A2, g3=Pull B2, d1=Legs C2, d2=Push A3, d3=Pull B3, e1=Legs C3
         var isDC3=(baseId==='dc_3day'),isDC4=(baseId==='dc_4day'),isULD=(baseId==='ul_d'),isULU=(baseId==='ul_u_base'),isABC=(baseId==='abc_u'),isCS=(baseId==='classic_4u'),isFullBody=(baseId==='fb_ab_u'||baseId==='ab_d'||baseId==='ini_u'||baseId==='ini_d'||baseId==='quick_u'||baseId==='quick_u_basic'||baseId==='quick_d'||baseId==='quick_d_basic');
         if(day.id==='a'){
-            if(isDC3){badge='UPPER A1';name=t('d_g1_name_ul')||'Upper A1';}
-            else if(isDC4){badge='PUSH A1';name=t('d_dc_push1_name')||'Push A1';}
+            if(isDC3){badge='PETTO · SPALLE · TRICIPITI · SCHIENA';name=lang==='it'?'Petto · Spalle · Tricipiti · Schiena Larghezza · Schiena Spessore':'Chest · Shoulders · Triceps · Back Width · Back Thickness';}
+            else if(isDC4){badge='PETTO · SPALLE · TRICIPITI';name=lang==='it'?'Petto · Spalle · Tricipiti':'Chest · Shoulders · Triceps';}
             else if(isFullBody){badge='A';name=t('d_fb_name')||'Full Body';}
             else{badge=t('d_a_badge');name=t('d_a_name');}
         }else if(day.id==='b'){
-            if(isDC3){badge='LOWER B1';name=t('d_g2_name_ul')||'Lower B1';}
-            else if(isDC4){badge='PULL B1';name=t('d_dc_pull1_name')||'Pull B1';}
+            if(isDC3){badge='BICIPITI · AVAMBRACCI · GAMBE';name=lang==='it'?'Bicipiti · Avambracci · Polpacci · Femorali · Gambe':'Biceps · Forearms · Calves · Hamstrings · Quads';}
+            else if(isDC4){badge='SCHIENA · BICIPITI · AVAMBRACCI';name=lang==='it'?'Schiena Larghezza · Schiena Spessore · Bicipiti · Avambracci':'Back Width · Back Thickness · Biceps · Forearms';}
             else if(isFullBody){badge='B';name=t('d_fb_name')||'Full Body';}
             else{badge=t('d_b_badge');name=t('d_b_name');}
         }else if(day.id==='g1'){
-            if(isDC3){badge='UPPER A2';name=t('d_g1_name_ul')||'Upper A2';}
-            else if(isDC4){badge='LEGS C1';name=t('d_dc_legs1_name')||'Legs C1';}
+            if(isDC3){badge='PETTO · SPALLE · TRICIPITI · SCHIENA';name=lang==='it'?'Petto · Spalle · Tricipiti · Schiena Larghezza · Schiena Spessore':'Chest · Shoulders · Triceps · Back Width · Back Thickness';}
+            else if(isDC4){badge='POLPACCI · FEMORALI · GAMBE';name=lang==='it'?'Polpacci · Femorali · Gambe':'Calves · Hamstrings · Quads';}
             else{badge=t('d_g1_badge');name=t('d_g1_name');}
         }else if(day.id==='g2'){
-            if(isDC3){badge='LOWER B2';name=t('d_g2_name_ul')||'Lower B2';}
-            else if(isDC4){badge='PUSH A2';name=t('d_dc_push2_name')||'Push A2';}
+            if(isDC3){badge='BICIPITI · AVAMBRACCI · GAMBE';name=lang==='it'?'Bicipiti · Avambracci · Polpacci · Femorali · Gambe':'Biceps · Forearms · Calves · Hamstrings · Quads';}
+            else if(isDC4){badge='PETTO · SPALLE · TRICIPITI';name=lang==='it'?'Petto · Spalle · Tricipiti':'Chest · Shoulders · Triceps';}
             else{badge=t('d_g2_badge');name=t('d_g2_name');}
         }else if(day.id==='g3'){
-            if(isDC3){badge='UPPER A3';name=t('d_g1_name_ul')||'Upper A3';}
-            else if(isDC4){badge='PULL B2';name=t('d_dc_pull2_name')||'Pull B2';}
+            if(isDC3){badge='PETTO · SPALLE · TRICIPITI · SCHIENA';name=lang==='it'?'Petto · Spalle · Tricipiti · Schiena Larghezza · Schiena Spessore':'Chest · Shoulders · Triceps · Back Width · Back Thickness';}
+            else if(isDC4){badge='SCHIENA · BICIPITI · AVAMBRACCI';name=lang==='it'?'Schiena Larghezza · Schiena Spessore · Bicipiti · Avambracci':'Back Width · Back Thickness · Biceps · Forearms';}
             else{badge=t('d_g3_badge');name=t('d_g3_name');}
         }else if(day.id==='g4'){
             badge=t('cs_g4_badge')||'G4';name=t('cs_g4_name')||'Petto · Bicipiti';
@@ -8553,10 +8587,10 @@ function getWorkoutLocalized(wId){
         }else if(day.id==='cs4'){badge=t('d_cs4_badge');name=t('d_cs4_name');
         }else if(day.id==='ul_d_lo'){badge=t('d_ul_d_lo_badge')||'LOWER';name=t('d_ul_d_lo_name')||(lang==='it'?'Gambe · Glutei · Polpacci':'Legs · Glutes · Calves');
         }else if(day.id==='ul_d_up'){badge=t('d_ul_d_up_badge')||'UPPER';name=t('d_ul_d_up_name')||(lang==='it'?'Petto · Schiena · Spalle · Braccia':'Chest · Back · Shoulders · Arms');
-        }else if(day.id==='d1'){badge='LEGS C2';name=t('d_dc_legs2_name')||'Legs C2';
-        }else if(day.id==='d2'){badge='PUSH A3';name=t('d_dc_push3_name')||'Push A3';
-        }else if(day.id==='d3'){badge='PULL B3';name=t('d_dc_pull3_name')||'Pull B3';
-        }else if(day.id==='e1'){badge='LEGS C3';name=t('d_dc_legs3_name')||'Legs C3';
+        }else if(day.id==='d1'){badge='POLPACCI · FEMORALI · GAMBE';name=lang==='it'?'Polpacci · Femorali · Gambe':'Calves · Hamstrings · Quads';
+        }else if(day.id==='d2'){badge='PETTO · SPALLE · TRICIPITI';name=lang==='it'?'Petto · Spalle · Tricipiti':'Chest · Shoulders · Triceps';
+        }else if(day.id==='d3'){badge='SCHIENA · BICIPITI · AVAMBRACCI';name=lang==='it'?'Schiena Larghezza · Schiena Spessore · Bicipiti · Avambracci':'Back Width · Back Thickness · Biceps · Forearms';
+        }else if(day.id==='e1'){badge='POLPACCI · FEMORALI · GAMBE';name=lang==='it'?'Polpacci · Femorali · Gambe':'Calves · Hamstrings · Quads';
         }else if(day.id==='mtz_chest_back'){badge='PETTO · SCHIENA';name=lang==='it'?'Pre-Exhaust Petto → Press → Pre-Exhaust Schiena → Rematori → Stacco':'Pre-Exhaust Chest → Press → Pre-Exhaust Back → Rows → Deadlift';
         }else if(day.id==='mtz_legs_abs'){badge='GAMBE · ABS';name=lang==='it'?'Pre-Exhaust Gambe → Leg Press → Leg Curl → Polpacci → Addominali':'Pre-Exhaust Legs → Leg Press → Leg Curl → Calves → Abs';
         }else if(day.id==='mtz_sh_arms'){badge='SPALLE · BRACCIA';name=lang==='it'?'Press Spalle → Laterali → Bicipiti → Tricipiti':'Shoulder Press → Lateral Raises → Biceps → Triceps';
@@ -8716,6 +8750,7 @@ function getWorkoutLocalized(wId){
         }else if(day.id==='lpp6al_legs_b'){badge='LEGS B';name=lang==='it'?'Femorali · Quadricipiti · Polpacci · Addominali':'Hamstrings · Quads · Calves · Abs';
         }else if(day.id==='lpp6al_push_b'){badge='PUSH B';name=lang==='it'?'Spalle · Petto · Tricipiti':'Shoulders · Chest · Triceps';
         }else if(day.id==='lpp6al_pull_b'){badge='PULL B';name=lang==='it'?'Schiena · Bicipiti · Deltoidi Post.':'Back · Biceps · Rear Delts';
+        }else if(day.id==='full'&&baseId==='dc_3day'){badge='BICIPITI · AVAMBRACCI · GAMBE';name=lang==='it'?'Bicipiti · Avambracci · Polpacci · Femorali · Gambe':'Biceps · Forearms · Calves · Hamstrings · Quads';
         }else{badge=t('d_full_badge');name=t('d_full_name');}
         const exercises = day.exercises.map(ex=>({...ex, name: lang==='en' ? ex.en : ex.it}));
         return {...day, badge, name, exercises};
