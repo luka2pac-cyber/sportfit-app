@@ -3585,6 +3585,35 @@ const EX_NAME_MAP = {
   "French Press": "french_press",
   "Reverse Fly": "reverse_fly",
   "Hammer Curl": "hammer_curl",
+  "Affondi / Step Up": "lunges",
+  "Lunges / Step Up": "lunges",
+  "Press Inclinata 30° con Manubri": "incline_press",
+  "30 Degree Incline DB Press": "incline_press",
+  "Lat Machine Presa Stretta / Larga": "lat_pulldown",
+  "Close/Wide Grip Lat Pulldown": "lat_pulldown",
+  "Stacchi Gambe Tese / Iperestensioni": "straight_deadlift",
+  "RDL / Hyperextension": "straight_deadlift",
+
+  // pp_luka_d mappings
+  "Squat / Machine Squat / Leg Press": "squat",
+  "Shoulder Press (Macchina / Manubri / Bilanciere)": "shoulder_press",
+  "Shoulder Press (Machine / DB / BB)": "shoulder_press",
+  "Affondi / Bulgarian Split Squat": "lunges",
+  "Lunges / Bulgarian Split Squat": "lunges",
+  "Dip / Panca Presa Stretta": "dips",
+  "Dip / Close Grip Bench Press": "dips",
+  "Pushdown Tricipiti": "pushdown",
+  "Triceps Pushdown": "pushdown",
+  "Lat Machine Presa Stretta / Lat Pulldown": "lat_pulldown",
+  "Close Grip Pulldown / Lat Pulldown": "lat_pulldown",
+  "RDL — Stacco Rumeno": "straight_deadlift",
+  "RDL — Romanian Deadlift": "straight_deadlift",
+  "Face Pull": "rear_delt",
+  "Face Pulls": "rear_delt",
+  "Curl Bilanciere / Manubri": "bicep_curl",
+  "Biceps Curl": "bicep_curl",
+  "Pulley / Machine Row": "machine_row",
+  "Calf Raises": "calf_raise",
 
   "Tirate al Mento": "upright_row",
   "Rematore Macchina": "machine_row",
@@ -8333,7 +8362,7 @@ const WORKOUTS_BASE = {
                 {it:'',en:'',s:1,r:'15-12',rest:'2-3 min'},
                 {it:'Press Spalle Macchina / Manubri',en:'Machine Shoulder Press / DB Press',s:1,r:'10-8',rest:'2-3 min'},
                 {it:'',en:'',s:1,r:'15-12',rest:'2-3 min'},
-                {it:'Dip',en:'Dip',s:1,r:'30 tot.',rest:'1 min (pausa ogni serie)',note_it:'30 reps totali bodyweight con 1 min di pausa. Quando riesci a fare 2 serie da 15 consecutive, aggiungi peso.',note_en:'30 total reps bodyweight with 1 min rest. When you can do 2 sets of 15 in a row, add weight.'},
+                {it:'Dip',en:'Dip',s:1,r:'30 tot.',rest:'1 min (pausa ogni serie)',note_it:'30 reps totali bodyweight con 1 min di pausa. Quando riesci a fare 30 ripetizioni totali in 2 serie, aggiungi peso.',note_en:'30 total reps bodyweight with 1 min rest. When you reach 30 total reps in 2 sets, add weight.'},
                 {it:'Crossover / Pec Deck',en:'Crossover / Pec Deck',s:1,r:'12-10',rest:'1-2 min'},
                 {it:'Alzate Laterali ai Cavi',en:'Cable Lateral Raises',s:2,r:'12-10',rest:'1-2 min'},
                 {it:'Estensioni Sopra la Testa',en:'Overhead Triceps Extension',s:1,r:'12-10 RP',rest:'1-2 min'}]},
@@ -9790,7 +9819,7 @@ function renderEx(wId,dId,eIdx,ex){
             <button class="set-timer-btn" onclick="event.stopPropagation();sfStartTimer()">⏱ Rest</button>
         </div>`;
     }).join('')+'</div>';
-    const _advancedWIds = ['pbhd-luka','pbhd_luka','dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','pb-fabio','pp-d','lpp4-u','quick-u','quick-u-basic','corto-u-adv','corto-u-bas','quick-d','quick-d-basic','corto-d-adv','corto-d-bas','ws4sb-u','madcow-u','lpp30-u','lpp6-u','ken-pp','meadows-ppl','adv-lpp6-u','lpp6-adv-luka','pp23-luka-u','poliquin-arms','layne-arms','meadows-arms','meadows-shoulders','dante-shoulders','meadows-chest','carter-bb','hst-u','gironda-4day','gironda-fb','candito-6wk','ss-u','wendler-531','texas-method','smolov-jr','tls-d','tls-3d','tls-4d','pp-luka-d'];
+    const _advancedWIds = ['pbhd-luka','pbhd_luka','dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','pb-fabio','lpp4-u','quick-u','quick-u-basic','corto-u-adv','corto-u-bas','quick-d','quick-d-basic','corto-d-adv','corto-d-bas','ws4sb-u','madcow-u','lpp30-u','lpp6-u','ken-pp','meadows-ppl','adv-lpp6-u','lpp6-adv-luka','pp23-luka-u','poliquin-arms','layne-arms','meadows-arms','meadows-shoulders','dante-shoulders','meadows-chest','carter-bb','hst-u','gironda-4day','gironda-fb','candito-6wk','ss-u','wendler-531','texas-method','smolov-jr','tls-d','tls-3d','tls-4d'];
     const _noImg = _advancedWIds.includes(wId);
     const imgKey = _noImg ? null : (EX_NAME_MAP[ex.it] || EX_NAME_MAP[ex.en] || null);
     const imgSrc = imgKey ? EX_IMAGES[imgKey] : null;
