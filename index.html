@@ -3693,7 +3693,7 @@ const EX_NAME_MAP = {
   "Adduttore": "adductor",
   "Reverse Curl + Spalle Post.": "reverse_fly",
   "Press Spalle Macchina": "shoulder_press",
-  "Pulley / Rematore Macchina": "lat_pulldown",
+  "Pulley / Rematore Macchina": "machine_row",
   "Leg Extension / Affondi / Leg Press": "leg_extension",
   "Dip / Flessioni Strette / Panca Stretta": "dips",
   "Iperestensioni 45° / RDL": "hyperextension",
@@ -4108,7 +4108,7 @@ const T = {
     booty_sub:'by Alessia Taglioni · Glutei & Gambe · Avanzato',
     d_full_badge:'Full Body', d_full_name:'Tutti i gruppi muscolari',
     lyle_gbr_label:'GBR — Lyle McDonald',
-    lyle_gbr_pills:[['Upper/Lower',''],['4×','/ settimana'],['~70 min','/ sessione']],
+    lyle_gbr_pills:[['2 Giorni','×2/sett.'],['Upper/Lower',''],['6-8 sett.','']],
     lyle_btn:'Lyle McDonald GBR', lyle_sub:'Generic Bulking Routine — Upper/Lower 4 giorni',
     lyle_subtitle:'Generic Bulking Routine — Scienza applicata',
     lyle_start_btn:'💪 Vai al Programma GBR',
@@ -5723,7 +5723,7 @@ en:{
     booty_sub:'by Alessia Taglioni · Glutes & Legs · Advanced',
     d_full_badge:'Full Body', d_full_name:'All muscle groups',
     lyle_gbr_label:'GBR — Lyle McDonald',
-    lyle_gbr_pills:[['Upper/Lower',''],['4×','/ week'],['~70 min','/ session']],
+    lyle_gbr_pills:[['2 Days','×2/week'],['Upper/Lower',''],['6-8 wks.','']],
     lyle_btn:'Lyle McDonald GBR', lyle_sub:'Generic Bulking Routine — Upper/Lower 4 days',
     lyle_subtitle:'Generic Bulking Routine — Science-based',
     lyle_start_btn:'💪 Go to GBR Program',
@@ -6851,7 +6851,7 @@ const WORKOUTS_BASE = {
                 {it:'Squat / Macchina Squat',en:'Squat / Machine Squat',s:3,r:'12-10',rest:'1-2 min'},
                 {it:'Press su Panca Inclinata',en:'Incline Press',s:3,r:'12-10',rest:'2-3 min'},
                 {it:'Tirate al Mento',en:'Upright Row',s:3,r:'12-10',rest:'2 min'},
-                {it:'Leg Curl',en:'Leg Curl',s:3,r:'12-10',rest:'1-2 min'},
+                {it:'Leg Curl',en:'Leg Curl',s:'2-3',r:'12-10',rest:'1-2 min'},
                 {it:'Dip',en:'Dip',s:3,r:'12-10',rest:'2-3 min'},
                 {it:'Rematore con Manubrio',en:'Dumbbell Row',s:3,r:'12-10',rest:'2-3 min'},
                 {it:'Curl Bicipiti',en:'Bicep Curl',s:3,r:'15-10',rest:'1-2 min'},
@@ -6859,7 +6859,7 @@ const WORKOUTS_BASE = {
             {id:'b',color:'var(--red)',exercises:[
                 {it:'Panca Piana',en:'Bench Press',s:3,r:'12-10',rest:'2-3 min'},
                 {it:'Rematore Macchina',en:'Machine Row',s:3,r:'12-10',rest:'1-2 min'},
-                {it:'Leg Press',en:'Leg Press',s:3,r:'12-10',rest:'2-3 min'},
+                {it:'Leg Press',en:'Leg Press',s:'2-3',r:'12-10',rest:'2-3 min'},
                 {it:'Press Manubri Spalle',en:'Shoulder Press',s:3,r:'12-10',rest:'2-3 min'},
                 {it:'Tirate al Mento',en:'Upright Row',s:3,r:'12-10',rest:'2 min'},
                 {it:'Stacchi / Iperestensioni',en:'Deadlift / Hyperextension',s:3,r:'12-10',rest:'1-2 min'},
@@ -6906,7 +6906,7 @@ const WORKOUTS_BASE = {
                 {it:'Squat / Macchina',en:'Squat / Machine',s:4,r:'12-8',rest:'1-2 min'},
                 {it:'Affondi / Leg Press',en:'Lunges / Leg Press',s:3,r:'12-10',rest:'2-3 min'},
                 {it:'Iperstensioni / Stacchi Gambe Tese',en:'Hyperextension / Straight Leg Deadlift',s:3,r:'12-10',rest:'2 min'},
-                {it:'Leg Curl',en:'Leg Curl',s:3,r:'12-10',rest:'1-2 min'},
+                {it:'Leg Curl',en:'Leg Curl',s:'2-3',r:'12-10',rest:'1-2 min'},
                 {it:'Hip Thrust',en:'Hip Thrust',s:3,r:'15-10',rest:'2-3 min'},
                 {it:'Macchina Aduttori-Glutei',en:'Adductor / Glute Machine',s:2,r:'20-15',rest:'1-2 min'},
                 {it:'Polpacci',en:'Calf Raise',s:3,r:'15-10',rest:'1-2 min'},
@@ -7115,7 +7115,7 @@ const WORKOUTS_BASE = {
         {it:'Squat / Macchina Squat',en:'Squat / Machine Squat',s:3,r:'10-6',rest:'1-2 min'},
         {it:'Press su Panca Piana',en:'Bench Press',s:3,r:'10-6',rest:'2-3 min'},
         {it:'Rematore Macchina',en:'Machine Row',s:3,r:'12-8',rest:'1-2 min'},
-        {it:'Leg Curl',en:'Leg Curl',s:3,r:'12-10',rest:'1-2 min'},
+        {it:'Leg Curl',en:'Leg Curl',s:'2-3',r:'12-10',rest:'1-2 min'},
         {it:'Alzate Laterali',en:'Lateral Raise',s:3,r:'12-10',rest:'1-2 min'},
         {it:'French Press',en:'French Press',s:3,r:'15-10',rest:'2-3 min'},
         {it:'Curl Bicipiti',en:'Bicep Curl',s:3,r:'15-10',rest:'1-2 min'},
@@ -7213,7 +7213,7 @@ const WORKOUTS_BASE = {
                 {it:'Squat / Macchina Squat',en:'Squat / Machine Squat',s:3,r:'10-6',img:'squat',rest:'1-2 min'},
                 {it:'Press su Panca Piana',en:'Bench Press',s:3,r:'10-6',img:'bench_press',rest:'2-3 min'},
                 {it:'Rematore Macchina',en:'Machine Row',s:3,r:'12-8',img:'machine_row',rest:'1-2 min'},
-                {it:'Leg Curl',en:'Leg Curl',s:3,r:'12-10',img:'leg_curl',rest:'1-2 min'},
+                {it:'Leg Curl',en:'Leg Curl',s:'2-3',r:'12-10',img:'leg_curl',rest:'1-2 min'},
                 {it:'Alzate Laterali',en:'Lateral Raises',s:3,r:'12-10',img:'lateral_raise',rest:'1-2 min'},
                 {it:'French Press',en:'French Press',s:3,r:'15-10',img:'french_press',rest:'2-3 min'},
                 {it:'Curl Bicipiti',en:'Bicep Curl',s:3,r:'15-10',img:'bicep_curl',rest:'1-2 min'},
@@ -7737,38 +7737,22 @@ const WORKOUTS_BASE = {
     // ── LYLE McDONALD GENERIC BULKING ROUTINE ─────────────────────────────
     lyle_gbr:{gender:'uomo',
         days:[
+            {id:'lyle_la',color:'var(--green)',exercises:[
+                {it:'Squat / Hack Machine Squat',en:'Squat / Hack Machine Squat',s:'3-4',r:'8-6',rest:'3 min'},
+                {it:'SDL / Iperestensioni',en:'SDL / Hyperextension',s:'3-4',r:'8-6',rest:'3 min'},
+                {it:'Leg Press',en:'Leg Press',s:'2-3',r:'12-10',rest:'2 min'},
+                {it:'Leg Curl',en:'Leg Curl',s:'2-3',r:'12-10',rest:'2 min'},
+                {it:'Polpacci in Piedi',en:'Standing Calf Raise',s:3,r:'12-8',rest:'1-2 min'},
+                {it:'Polpacci Seduto',en:'Seated Calf Raise',s:2,r:'15-10',rest:'1-2 min'}]},
             {id:'lyle_ua',color:'var(--blue)',exercises:[
-                {it:'Panca Piana con Bilanciere',en:'Barbell Bench Press',s:3,r:'6-8',rest:'3-4 min'},
-                {it:'Rematore con Bilanciere',en:'Barbell Row',s:3,r:'6-8',rest:'3-4 min'},
-                {it:'Press Militare con Bilanciere',en:'Overhead Press',s:3,r:'6-8',rest:'3 min'},
-                {it:'Lat Machine Presa Larga',en:'Wide Grip Pulldown',s:3,r:'6-8',rest:'3 min'},
-                {it:'Curl Bilanciere',en:'Barbell Curl',s:2,r:'6-8',rest:'2 min'},
-                {it:'Tricep Pushdown',en:'Tricep Pushdown',s:2,r:'6-8',rest:'2 min'}
-            ]},
-            {id:'lyle_la',color:'var(--red)',exercises:[
-                {it:'Squat con Bilanciere',en:'Barbell Squat',s:3,r:'6-8',rest:'3-4 min'},
-                {it:'Stacchi Rumeni',en:'Romanian Deadlift',s:3,r:'6-8',rest:'3-4 min'},
-                {it:'Leg Press',en:'Leg Press',s:2,r:'6-8',rest:'3 min'},
-                {it:'Leg Curl',en:'Leg Curl',s:2,r:'6-8',rest:'2 min'},
-                {it:'Calf Raise',en:'Standing Calf Raise',s:3,r:'8-10',rest:'2 min'}
-            ]},
-            {id:'lyle_ub',color:'var(--blue)',exercises:[
-                {it:'Panca Inclinata con Manubri',en:'Incline Dumbbell Press',s:3,r:'10-12',rest:'2 min'},
-                {it:'Rematore con Manubrio',en:'Dumbbell Row',s:3,r:'10-12',rest:'2 min'},
-                {it:'Press con Manubri (Spalle)',en:'Dumbbell Shoulder Press',s:3,r:'10-12',rest:'2 min'},
-                {it:'Trazioni alla Sbarra',en:'Pull-ups / Chin-ups',s:3,r:'10-12',rest:'2 min'},
-                {it:'Curl con Manubri',en:'Dumbbell Curl',s:2,r:'10-12',rest:'1-2 min'},
-                {it:'French Press',en:'Lying Tricep Extension',s:2,r:'10-12',rest:'1-2 min'}
-            ]},
-            {id:'lyle_lb',color:'var(--red)',exercises:[
-                {it:'Stacchi da Terra',en:'Conventional Deadlift',s:3,r:'6-8',rest:'3-4 min'},
-                {it:'Leg Press',en:'Leg Press',s:3,r:'10-12',rest:'2-3 min'},
-                {it:'Leg Curl Sdraiato',en:'Lying Leg Curl',s:3,r:'10-12',rest:'2 min'},
-                {it:'Calf Raise Seduto',en:'Seated Calf Raise',s:3,r:'10-12',rest:'1-2 min'},
-                {it:'Crunch / Addominali',en:'Abs / Crunches',s:3,r:'15-20',rest:'1 min'}
-            ]}
-        ]},
-    // ── SMOLOV JR ─────────────────────────────────────────────────────────
+                {it:'Bench Press / Chest Press',en:'Bench Press / Chest Press',s:'3-4',r:'8-6',rest:'3 min'},
+                {it:'Rematore Macchina / Pulley',en:'Machine Row / Pulley',s:'3-4',r:'8-6',rest:'3 min'},
+                {it:'Panca Inclinata / Press Spalle',en:'Incline Press / Shoulder Press',s:'2-4',r:'12-10',rest:'2 min'},
+                {it:'Pulldown / Lat Presa Suppina',en:'Pulldown / Underhand Lat Pulldown',s:'2-4',r:'12-10',rest:'2 min'},
+                {it:'Alzate Laterali',en:'Lateral Raises',s:'2-4',r:'15-10',rest:'1-2 min'},
+                {it:'Esercizio Bicipiti',en:'Biceps Exercise',s:'3-4',r:'15-10',rest:'2 min'},
+                {it:'Esercizio Tricipiti',en:'Triceps Exercise',s:'3-4',r:'15-10',rest:'2 min'}]}]},
+
     smolov_jr:{gender:'uomo',
         note_it:'⚠️ <b>Corri su UNA alzata sola per ciclo</b> — squat OPPURE panca, non entrambe insieme. Fare Smolov Jr. su 2 alzate simultaneamente è sconsigliato anche per avanzati. Incremento settimanale: +5kg Squat, +2.5kg Panca. Recupera 3-5 min tra le serie. Nessun altro esercizio pesante durante il ciclo.',
         note_en:'⚠️ <b>Run on ONE lift only per cycle</b> — squat OR bench, not both simultaneously. Running Smolov Jr. on two lifts at the same time is not recommended even for advanced lifters. Weekly increment: +5kg Squat, +2.5kg Bench. Rest 3-5 min between sets. No other heavy compounds during the cycle.',
@@ -8090,7 +8074,7 @@ const WORKOUTS_BASE = {
                 {it:'Lat Machine Presa Stretta / Lat Pulldown',en:'Close Grip Pulldown / Lat Pulldown',s:3,r:'8-6',rest:'2-3 min'},
                 {it:'RDL / Stacco Convenzionale',en:'RDL / Conventional Deadlift',s:3,r:'10-8',rest:'2-3 min'},
                 {it:'Pulley / Rematore Macchina',en:'Pulley / Machine Row',s:3,r:'10-8',rest:'2 min'},
-                {it:'Leg Curl',en:'Leg Curl',s:3,r:'12-10',rest:'1-2 min'},
+                {it:'Leg Curl',en:'Leg Curl',s:'2-3',r:'12-10',rest:'1-2 min'},
                 {it:'Face Pull',en:'Face Pulls',s:2,r:'12-10',rest:'1 min'},
                 {it:'Curl Bilanciere / Manubri',en:'Biceps Curl (BB / DB)',s:3,r:'12-10',rest:'1 min'},
                 {it:'Calf Raise',en:'Calf Raises',s:3,r:'15-10',rest:'1 min'}]}
@@ -8103,7 +8087,7 @@ const WORKOUTS_BASE = {
             {id:'advlpp6_la',label_it:'LEGS A',label_en:'LEGS A',color:'var(--green)',exercises:[
                 {it:'Leg Press / Squat',en:'Leg Press / Squat',s:3,r:'8-6',rest:'2-3 min'},
                 {it:'Affondi Statici / Bulgarian Squat',en:'Static Lunges / Bulgarian Squat',s:3,r:'10-8',rest:'2 min'},
-                {it:'Leg Curl',en:'Leg Curl',s:3,r:'12-10',rest:'1-2 min'},
+                {it:'Leg Curl',en:'Leg Curl',s:'2-3',r:'12-10',rest:'1-2 min'},
                 {it:'Adduttori / Abductor Machine',en:'Adductor / Abductor Machine',s:2,r:'15-12',rest:'1 min'},
                 {it:'Polpacci su Leg Press',en:'Calves on Leg Press',s:3,r:'15-10',rest:'1 min'},
                 {it:'Abs — Leg Raises',en:'Abs — Leg Raises',s:3,r:'15-10',rest:'1 min'}]},
@@ -8401,7 +8385,7 @@ const WORKOUTS_BASE = {
             {id:'lpp6al_legs_a',label_it:'LEGS A',label_en:'LEGS A',color:'var(--green)',exercises:[
                 {it:'Leg Press / Squat',en:'Leg Press / Squat',s:3,r:'8-6',rest:'2-3 min'},
                 {it:'Affondi Statici / Bulgarian Squat',en:'Static Lunges / Bulgarian Squat',s:3,r:'10-8',rest:'2 min'},
-                {it:'Leg Curl',en:'Leg Curl',s:3,r:'12-10',rest:'2 min'},
+                {it:'Leg Curl',en:'Leg Curl',s:'2-3',r:'12-10',rest:'2 min'},
                 {it:'Adduttori / Abduttori',en:'Add / Abb',s:2,r:'15-12',rest:'1-2 min'},
                 {it:'Polpacci al Leg Press',en:'Calves on Leg Press',s:3,r:'15-10',rest:'1 min'},
                 {it:'Addominali — Leg Raises',en:'Abs — Leg Raises',s:3,r:'15-10',rest:'1 min'}]},
@@ -8897,10 +8881,10 @@ function getWorkoutLocalized(wId){
         }else if(day.id==='mtz_chest_back'){badge=lang==='it'?'PETTO · SCHIENA':'CHEST · BACK';name=lang==='it'?'Pre-Exhaust Petto → Press → Pre-Exhaust Schiena → Rematori → Stacco':'Pre-Exhaust Chest → Press → Pre-Exhaust Back → Rows → Deadlift';
         }else if(day.id==='mtz_legs_abs'){badge=lang==='it'?'GAMBE · ABS':'LEGS · ABS';name=lang==='it'?'Pre-Exhaust Gambe → Leg Press → Leg Curl → Polpacci → Addominali':'Pre-Exhaust Legs → Leg Press → Leg Curl → Calves → Abs';
         }else if(day.id==='mtz_sh_arms'){badge=lang==='it'?'SPALLE · BRACCIA':'SHOULDERS · ARMS';name=lang==='it'?'Press Spalle → Laterali → Bicipiti → Tricipiti':'Shoulder Press → Lateral Raises → Biceps → Triceps';
-        }else if(day.id==='lyle_ua'){badge='UPPER A';name=t('lyle_ua_name')||(lang==='it'?'Upper A — Forza':'Upper A — Strength');
-        }else if(day.id==='lyle_la'){badge='LOWER A';name=t('lyle_la_name')||(lang==='it'?'Lower A — Forza':'Lower A — Strength');
-        }else if(day.id==='lyle_ub'){badge='UPPER B';name=t('lyle_ub_name')||(lang==='it'?'Upper B — Ipertrofia':'Upper B — Hypertrophy');
-        }else if(day.id==='lyle_lb'){badge='LOWER B';name=t('lyle_lb_name')||(lang==='it'?'Lower B — Ipertrofia':'Lower B — Hypertrophy');
+        }else if(day.id==='lyle_ua'){badge=lang==='it'?'UPPER':'UPPER';name=lang==='it'?'Upper — Petto · Schiena · Spalle · Braccia':'Upper — Chest · Back · Shoulders · Arms';
+        }else if(day.id==='lyle_la'){badge=lang==='it'?'LOWER':'LOWER';name=lang==='it'?'Lower — Gambe · Polpacci':'Lower — Legs · Calves';
+        }else if(day.id==='lyle_ub'){badge='UPPER B';name=lang==='it'?'Upper B — Ipertrofia':'Upper B — Hypertrophy';
+        }else if(day.id==='lyle_lb'){badge='LOWER B';name=lang==='it'?'Lower B — Ipertrofia':'Lower B — Hypertrophy';
         }else if(day.id==='ken_fb'){badge='STEEL TIP HIT';name=lang==='it'?'Full Body HIT · Squat 15-20 reps':'Full Body HIT · 15-20 rep Squat';
         }else if(day.id==='ken_bm'){badge='BRUTAL MINIMALISM';name=lang==='it'?'Brutal Minimalism · Atleti NFL':'Brutal Minimalism · NFL Athletes';
         }else if(day.id==='ken_pp_a'){badge='PUSH';name=lang==='it'?'Quadricipiti · Petto · Spalle · Tricipiti':'Quads · Chest · Shoulders · Triceps';
