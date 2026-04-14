@@ -2212,8 +2212,8 @@ html,body{height:100%}
     <div class="prog-item"><button class="prog-item-btn" onclick="showView('donne-inter-menu')"><div class="prog-item-name">🔵 <span data-t="level_intermediate">Intermedio</span></div><div class="prog-item-sub" data-t="see_programs">Vedi programmi</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item" style="border:1.5px solid rgba(255,59,48,.35);background:rgba(255,59,48,.07)"><button class="prog-item-btn" onclick="showView('donne-avanzato-menu')"><div class="prog-item-name">🔴 <span data-t="level_advanced">Avanzato</span></div><div class="prog-item-sub" data-t="see_programs">Vedi programmi</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item" style="border:1.5px solid rgba(255,107,157,.35);background:rgba(255,107,157,.07)"><button class="prog-item-btn" onclick="showView('donne-corto-menu')"><div class="prog-item-name">⏱ <span data-t="allenamenti_30_btn">Allenamenti 30-40 min</span></div><div class="prog-item-sub" data-t="corto_info">Full Body A/B · Superset · Efficiente e completo</div></button><span class="prog-arr">›</span></div>
+    <div class="prog-item" style="border:1.5px solid rgba(139,0,255,.5);background:rgba(139,0,255,.1)"><button class="prog-item-btn" onclick="showView('booty-builder-view')"><div class="prog-item-name">✨ <span data-t="btn_custom">Voglio un programma su misura</span></div><div class="prog-item-sub" data-t="btn_custom_sub">Programma personalizzato con Sport&amp;Fit</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item" style="border:1.5px solid rgba(48,209,88,.35);background:rgba(48,209,88,.07)"><button class="prog-item-btn" onclick="showView('custom-plan-view')"><div class="prog-item-name">🛠 <span data-t="make_own_plan">Crea il tuo programma</span></div><div class="prog-item-sub" data-t="make_own_plan_sub">Scegli giorni, muscoli ed esercizi personalizzati</div></button><span class="prog-arr">›</span></div>
-    <div class="prog-item" style="border:1.5px solid rgba(139,0,255,.5);background:rgba(139,0,255,.1)"><button class="prog-item-btn" onclick="window.open('https://www.sport-fit.org/booty','_blank')"><div class="prog-item-name">✨ <span data-t="btn_custom">Voglio un programma su misura</span></div><div class="prog-item-sub" data-t="btn_custom_sub">Programma personalizzato con Sport&amp;Fit</div></button><span class="prog-arr">→</span></div>
   </div>
 
   <!-- INTER MENU DONNA -->
@@ -2880,15 +2880,13 @@ html,body{height:100%}
     <div class="ai-block">
       <div class="ai-block-title blue">🅰 <span data-t="mcons_a_title">Allenamento A</span></div>
       <div class="ai-stat-row"><span class="ai-stat-label">1.</span><span class="ai-stat-val"><span data-t="mcons_a1">Squat o Leg Press — 1 serie (8–12 rip. al cedimento)</span></span></div>
-      <div class="ai-stat-row"><span class="ai-stat-label">2.</span><span class="ai-stat-val"><span data-t="mcons_a2">Lat Machine presa stretta supina — 1 serie (6–10 rip. al cedimento)</span></span></div>
-      <div class="ai-stat-row"><span class="ai-stat-label">3.</span><span class="ai-stat-val"><span data-t="mcons_a3">Dips alle Parallele — 1 serie (6–10 rip. al cedimento)</span></span></div>
+      <div class="ai-stat-row"><span class="ai-stat-label">2.</span><span class="ai-stat-val"><span data-t="mcons_a2">Lat Machine presa supina stretta — 1 serie × 6-10 rip. al cedimento assoluto</span></span></div>
     </div>
 
     <div class="ai-block">
       <div class="ai-block-title red">🅱 <span data-t="mcons_b_title">Allenamento B</span></div>
-      <div class="ai-stat-row"><span class="ai-stat-label">1.</span><span class="ai-stat-val"><span data-t="mcons_b1">Stacchi Trap Bar o Classici — 1 serie (5–8 rip. STOP prima cedimento)</span></span></div>
-      <div class="ai-stat-row"><span class="ai-stat-label">2.</span><span class="ai-stat-val"><span data-t="mcons_b2">Press Militare (seduto o in piedi) — 1 serie (6–10 rip. al cedimento)</span></span></div>
-      <div class="ai-stat-row"><span class="ai-stat-label">3.</span><span class="ai-stat-val"><span data-t="mcons_b3">Polpacci in Piedi — 1 serie (12–20 rip. al cedimento)</span></span></div>
+      <div class="ai-stat-row"><span class="ai-stat-label">1.</span><span class="ai-stat-val"><span data-t="mcons_b1">Stacco da Terra — 1 serie × 5-8 rip. al cedimento assoluto</span></span></div>
+      <div class="ai-stat-row"><span class="ai-stat-label">2.</span><span class="ai-stat-val"><span data-t="mcons_b2">Dip alle Parallele — 1 serie × 6-10 rip. al cedimento assoluto</span></span></div>
     </div>
 
     <div class="ai-block">
@@ -3073,80 +3071,59 @@ html,body{height:100%}
 
   <!-- ASHLEY HORNER INFO VIEW -->
   <div id="ashley-info-view" class="view">
-    <button onclick="goBack('donne-avanzato-menu')" class="back-btn">&#8592; <span data-t="level_advanced">Avanzato</span></button>
-    <div style="text-align:center;margin-bottom:12px">
-      <img src="https://sport-fit.org/wp-content/uploads/2026/03/dante_trudel1.jpg" style="max-width:120px;height:auto;border-radius:14px;display:inline-block"/>
-      <div style="margin-top:6px;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:900;color:#fff;text-transform:uppercase">Ashley Horner</div>
-      <div style="font-size:.7rem;color:rgba(255,255,255,.45);margin-top:2px"><span data-t="ashley_founder">IFBB Pro &amp; Strength Coach</span></div>
+    <button onclick="goBack('donne-avanzato-menu')" class="back-btn">← <span data-t="level_advanced">Avanzato</span></button>
+
+    <div style="position:relative;width:100%;height:220px;overflow:hidden;border-radius:14px;margin-bottom:16px">
+      <img src="https://sport-fit.org/wp-content/uploads/2026/03/dante_trudel1.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(.7)"/>
+      <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,#000 100%);border-radius:14px"></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:900;text-transform:uppercase;letter-spacing:2px;line-height:1;color:#fff">🍑 Booty Builder</div>
+        <div style="font-size:.75rem;color:rgba(255,255,255,.6);margin-top:4px;font-style:italic"><span data-t="booty_coach">by Alessia Taglioni · Personal Trainer &amp; Coach</span></div>
+      </div>
+      <div style="position:absolute;top:12px;right:12px;background:rgba(255,45,85,.9);border-radius:20px;padding:4px 10px;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#fff"><span data-t="booty_badge">Su misura</span></div>
     </div>
-    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#7b0022,rgba(255,45,85,.9))" onclick="openWorkout('ashley','ashley-info-view')">
-      <span data-t="ashley_start_btn">&#128293; Inizia Strong Program</span>
+
+    <div style="background:rgba(255,45,85,.08);border:1.5px solid rgba(255,45,85,.4);border-radius:14px;padding:14px;margin-bottom:14px">
+      <div style="font-size:.78rem;color:rgba(255,255,255,.85);line-height:1.6">
+        <span data-t="booty_bio">Alessia Taglioni è una personal trainer specializzata nell&apos;allenamento femminile. Il suo metodo combina scienza, progressione e personalizzazione: ogni programma viene costruito su di te, sui tuoi obiettivi e sul tuo livello — non su un template generico.</span>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px">
+      <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:10px;text-align:center">
+        <div style="font-size:1.2rem;margin-bottom:4px">🏋️‍♀️</div>
+        <div style="font-size:.6rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px">Focus</div>
+        <div style="font-size:.7rem;font-weight:700;margin-top:2px;color:#fff"><span data-t="booty_focus">Scultura Femminile</span></div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:10px;text-align:center">
+        <div style="font-size:1.2rem;margin-bottom:4px">📋</div>
+        <div style="font-size:.6rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px">Tipo</div>
+        <div style="font-size:.7rem;font-weight:700;margin-top:2px;color:#fff"><span data-t="booty_type">Personalizzato</span></div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:10px;text-align:center">
+        <div style="font-size:1.2rem;margin-bottom:4px">✨</div>
+        <div style="font-size:.6rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px">Livello</div>
+        <div style="font-size:.7rem;font-weight:700;margin-top:2px;color:#fff"><span data-t="booty_level">Tutti i livelli</span></div>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:12px;margin-bottom:16px">
+      <div style="font-size:.7rem;color:rgba(255,255,255,.5);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;font-weight:700"><span data-t="booty_includes_title">Cosa include</span></div>
+      <div style="font-size:.75rem;color:rgba(255,255,255,.8);line-height:1.9">
+        <span data-t="booty_inc1">✅ Scheda personalizzata su obiettivi e livello</span><br>
+        <span data-t="booty_inc2">✅ Progressione studiata settimana per settimana</span><br>
+        <span data-t="booty_inc3">✅ Supporto diretto con Alessia</span><br>
+        <span data-t="booty_inc4">✅ Adattamenti in base ai tuoi feedback</span>
+      </div>
+    </div>
+
+    <button onclick="window.open('https://sport-fit.org/booty','_blank')" style="width:100%;background:linear-gradient(135deg,#b5004a,#ff2d55);border:none;border-radius:14px;padding:16px;color:#fff;font-family:inherit;font-size:.95rem;font-weight:800;cursor:pointer;letter-spacing:.5px;text-transform:uppercase">
+      <span data-t="booty_cta">🍑 Voglio il mio programma su misura →</span>
     </button>
-    <div class="view-title" style="font-size:1.7rem">&#128293; Strong</div>
-    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:4px"><b style="color:#fff">Ashley Horner</b> &#8212; IFBB Pro &amp; Strength Coach</div>
-    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px"><span data-t="ashley_sub2">4 giorni / settimana &#8212; 12 settimane</span></div>
-    <div class="disclaimer red"><div class="disclaimer-icon">&#9888;&#65039;</div><div class="disclaimer-text"><b data-t="ashley_dis_bold">Avanzato</b> &#8212; <span data-t="ashley_disclaimer">Ibrido powerlifting + bodybuilding. Richiede tecnica solida su squat, stacco e panca. Alta intensita sul SNC.</span></div></div>
-    <div class="ai-block" style="margin-top:14px">
-      <div class="ai-block-title purple">&#128204; <span data-t="ashley_phi_title">Filosofia Strong</span></div>
-      <div class="ai-bullet"><span data-t="ashley_phi1">Ibrido powerlifting + bodybuilding: forza massimale + ipertrofia nella stessa settimana</span></div>
-      <div class="ai-bullet"><span data-t="ashley_phi2">Giorni Power: carichi al 80-90% 1RM, 3-5 reps &#8212; stimolo neurale massimo</span></div>
-      <div class="ai-bullet"><span data-t="ashley_phi3">Giorni Hypertrophy: stesso pattern di movimenti, 8-12 reps per massimo volume</span></div>
-      <div class="ai-bullet"><span data-t="ashley_phi4">Progressione lineare obbligatoria: ogni settimana aggiungi peso ai compound principali</span></div>
+
+    <div style="text-align:center;font-size:.62rem;color:rgba(255,255,255,.3);margin-top:8px;margin-bottom:20px">
+      <span data-t="booty_redirect">Verrai reindirizzata al sito di Alessia Taglioni</span>
     </div>
-    <div class="ai-block">
-      <div class="ai-block-title gold">&#9889; <span data-t="ashley_key_title">Struttura Settimanale</span></div>
-      <div class="ai-stat-row" style="align-items:flex-start;padding:7px 0">
-        <span class="ai-stat-label" style="min-width:80px">&#128308; <span data-t="ashley_d1_lbl">Giorno 1</span></span>
-        <span class="ai-stat-val" style="text-align:right;line-height:1.5">
-          <span style="font-size:.65rem;color:rgba(255,255,255,.4);display:block" data-t="ashley_d1_day">Luned&#236;</span>
-          <span data-t="ashley_day1">Upper Power &#8212; Panca &middot; OHP &middot; Rematore (3-5 reps)</span>
-        </span>
-      </div>
-      <div class="ai-stat-row" style="align-items:flex-start;padding:7px 0">
-        <span class="ai-stat-label" style="min-width:80px">&#128309; <span data-t="ashley_d2_lbl">Giorno 2</span></span>
-        <span class="ai-stat-val" style="text-align:right;line-height:1.5">
-          <span style="font-size:.65rem;color:rgba(255,255,255,.4);display:block" data-t="ashley_d2_day">Marted&#236;</span>
-          <span data-t="ashley_day2">Lower Power &#8212; Squat &middot; RDL (3-5 reps)</span>
-        </span>
-      </div>
-      <div class="ai-stat-row" style="align-items:flex-start;padding:7px 0">
-        <span class="ai-stat-label" style="min-width:80px;color:rgba(255,255,255,.3)">&#9711; <span data-t="ashley_rest1_lbl">Riposo</span></span>
-        <span class="ai-stat-val" style="text-align:right;line-height:1.5">
-          <span style="font-size:.65rem;color:rgba(255,255,255,.4);display:block" data-t="ashley_rest1_day">Mercoled&#236;</span>
-          <span style="color:rgba(255,255,255,.3)" data-t="ashley_rest_txt">Recupero attivo</span>
-        </span>
-      </div>
-      <div class="ai-stat-row" style="align-items:flex-start;padding:7px 0">
-        <span class="ai-stat-label" style="min-width:80px">&#128308; <span data-t="ashley_d4_lbl">Giorno 4</span></span>
-        <span class="ai-stat-val" style="text-align:right;line-height:1.5">
-          <span style="font-size:.65rem;color:rgba(255,255,255,.4);display:block" data-t="ashley_d4_day">Gioved&#236;</span>
-          <span data-t="ashley_day4">Upper Hypertrophy &#8212; Petto &middot; Schiena &middot; Spalle (8-12 reps)</span>
-        </span>
-      </div>
-      <div class="ai-stat-row" style="align-items:flex-start;padding:7px 0">
-        <span class="ai-stat-label" style="min-width:80px">&#128309; <span data-t="ashley_d5_lbl">Giorno 5</span></span>
-        <span class="ai-stat-val" style="text-align:right;line-height:1.5">
-          <span style="font-size:.65rem;color:rgba(255,255,255,.4);display:block" data-t="ashley_d5_day">Venerd&#236;</span>
-          <span data-t="ashley_day5">Lower Hypertrophy &#8212; Stacco &middot; Glutei &middot; Femorali (3-5 + 8-12 reps)</span>
-        </span>
-      </div>
-      <div class="ai-stat-row" style="align-items:flex-start;padding:7px 0">
-        <span class="ai-stat-label" style="min-width:80px;color:rgba(255,255,255,.3)">&#9711; <span data-t="ashley_rest2_lbl">Riposo</span></span>
-        <span class="ai-stat-val" style="text-align:right;line-height:1.5">
-          <span style="font-size:.65rem;color:rgba(255,255,255,.4);display:block" data-t="ashley_rest2_day">Sab / Dom</span>
-          <span style="color:rgba(255,255,255,.3)" data-t="ashley_rest_txt">Recupero attivo</span>
-        </span>
-      </div>
-    </div>
-    <div class="ai-block">
-      <div class="ai-block-title blue">&#128202; <span data-t="ashley_big3">La Grande Triplice</span></div>
-      <div class="ai-stat-row"><span class="ai-stat-label">Panca</span><span class="ai-stat-val" data-t="ashley_ex1">Upper Power (Lun) + Upper Hyper (Gio)</span></div>
-      <div class="ai-stat-row"><span class="ai-stat-label">Squat</span><span class="ai-stat-val" data-t="ashley_ex2">Lower Power (Mar) + varianti Gio/Ven</span></div>
-      <div class="ai-stat-row"><span class="ai-stat-label">Stacco</span><span class="ai-stat-val" data-t="ashley_ex3">Lower Hyper (Ven) 5x3-5 &#8212; main lift</span></div>
-    </div>
-    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#7b0022,rgba(255,45,85,.9))" onclick="openWorkout('ashley','ashley-info-view')">
-      <span data-t="ashley_start_btn">&#128293; Inizia Strong Program</span>
-    </button>
   </div>
 
   <!-- BRET CONTRERAS INFO VIEW -->
@@ -3231,32 +3208,51 @@ html,body{height:100%}
   <div id="booty-builder-view" class="view">
     <button onclick="goBack('donne-avanzato-menu')" class="back-btn">← Avanzato</button>
 
-    <!-- Logo -->
-    <div style="text-align:center;margin-bottom:20px;background:rgba(255,255,255,.97);border-radius:18px;padding:16px 12px">
-      <img src="https://sport-fit.org/wp-content/uploads/2026/03/booty1.jpg" style="max-width:100%;height:auto;display:block;margin:0 auto"/>
+    <div style="position:relative;width:100%;height:220px;overflow:hidden;border-radius:14px;margin-bottom:16px">
+      <img src="https://sport-fit.org/wp-content/uploads/2026/03/booty1.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(.7)"/>
+      <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,#000 100%);border-radius:14px"></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:900;text-transform:uppercase;letter-spacing:2px;line-height:1;color:#fff">🍑 Booty Builder</div>
+        <div style="font-size:.75rem;color:rgba(255,255,255,.6);margin-top:4px;font-style:italic" data-t="booty_coach">by Alessia Taglioni · Personal Trainer &amp; Coach</div>
+      </div>
+      <div style="position:absolute;top:12px;right:12px;background:rgba(255,45,85,.9);border-radius:20px;padding:4px 10px;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#fff" data-t="booty_badge">Su misura</div>
     </div>
 
-    <!-- Descrizione placeholder -->
-    <div class="ai-block" style="margin-bottom:14px">
-      <div class="ai-block-title pink"><span data-t="booty_desc_title">📋 DESCRIZIONE PROGRAMMA</span></div>
-      <div style="font-size:.82rem;color:rgba(255,255,255,.7);line-height:1.6">
-        Inserisci qui la descrizione del programma Booty Builder by Alessia Taglioni.
+    <div style="background:rgba(255,45,85,.08);border:1.5px solid rgba(255,45,85,.4);border-radius:14px;padding:14px;margin-bottom:14px">
+      <div style="font-size:.78rem;color:rgba(255,255,255,.85);line-height:1.6" data-t="booty_bio">Alessia Taglioni è una personal trainer specializzata nell&apos;allenamento femminile. Il suo metodo combina scienza, progressione e personalizzazione: ogni programma viene costruito su di te, sui tuoi obiettivi e sul tuo livello — non su un template generico.</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px">
+      <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:10px;text-align:center">
+        <div style="font-size:1.2rem;margin-bottom:4px">🏋️‍♀️</div>
+        <div style="font-size:.6rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px">Focus</div>
+        <div style="font-size:.7rem;font-weight:700;margin-top:2px;color:#fff" data-t="booty_focus">Scultura Femminile</div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:10px;text-align:center">
+        <div style="font-size:1.2rem;margin-bottom:4px">📋</div>
+        <div style="font-size:.6rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px">Tipo</div>
+        <div style="font-size:.7rem;font-weight:700;margin-top:2px;color:#fff" data-t="booty_type">Personalizzato</div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:10px;text-align:center">
+        <div style="font-size:1.2rem;margin-bottom:4px">✨</div>
+        <div style="font-size:.6rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px">Livello</div>
+        <div style="font-size:.7rem;font-weight:700;margin-top:2px;color:#fff" data-t="booty_level">Tutti i livelli</div>
       </div>
     </div>
 
-    <div class="ai-block" style="margin-bottom:14px">
-      <div class="ai-block-title purple">📅 STRUTTURA</div>
-      <div style="font-size:.82rem;color:rgba(255,255,255,.7);line-height:1.6">
-        Inserisci qui la struttura del programma (giorni, split, durata...).
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:12px;margin-bottom:16px">
+      <div style="font-size:.7rem;color:rgba(255,255,255,.5);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;font-weight:700" data-t="booty_includes_title">Cosa include</div>
+      <div style="font-size:.75rem;color:rgba(255,255,255,.8);line-height:1.9">
+        <span data-t="booty_inc1">✅ Scheda personalizzata su obiettivi e livello</span><br>
+        <span data-t="booty_inc2">✅ Progressione studiata settimana per settimana</span><br>
+        <span data-t="booty_inc3">✅ Supporto diretto con Alessia</span><br>
+        <span data-t="booty_inc4">✅ Adattamenti in base ai tuoi feedback</span>
       </div>
     </div>
 
-    <button onclick="window.open('https://www.sport-fit.org/booty','_blank')" class="ai-send-btn" style="background:linear-gradient(135deg,#8b00ff,#d400ff);margin-bottom:8px">
-      ✨ <span data-t="btn_custom">Voglio un programma su misura</span>
-    </button>
-    <button class="ai-send-btn" style="background:linear-gradient(135deg,#c0392b,#ff6b9d)" onclick="showToast('Coming soon!')">
-      🍑 Inizia il Programma
-    </button>
+    <button onclick="window.open('https://sport-fit.org/booty','_blank')" style="width:100%;background:linear-gradient(135deg,#b5004a,#ff2d55);border:none;border-radius:14px;padding:16px;color:#fff;font-family:inherit;font-size:.95rem;font-weight:800;cursor:pointer;letter-spacing:.5px;text-transform:uppercase" data-t="booty_cta">🍑 Voglio il mio programma su misura →</button>
+
+    <div style="text-align:center;font-size:.62rem;color:rgba(255,255,255,.3);margin-top:8px;margin-bottom:20px" data-t="booty_redirect">Verrai reindirizzata al sito di Alessia Taglioni</div>
   </div>
 
   <!-- BODY ANALYSIS VIEW -->
@@ -4295,6 +4291,19 @@ const T = {
     ashley_btn:'Ashley Horner - Strong',
     ashley_sub:'Upper/Lower 4 giorni - Forza + Massa',
     ashley_sub2:'4 giorni / settimana - 12 settimane',
+    booty_coach:'by Alessia Taglioni · Personal Trainer & Coach',
+    booty_badge:'Su misura',
+    booty_bio:'Alessia Taglioni è una personal trainer specializzata nell\'allenamento femminile. Il suo metodo combina scienza, progressione e personalizzazione: ogni programma viene costruito su di te, sui tuoi obiettivi e sul tuo livello — non su un template generico.',
+    booty_focus:'Scultura Femminile',
+    booty_type:'Personalizzato',
+    booty_level:'Tutti i livelli',
+    booty_includes_title:'Cosa include',
+    booty_inc1:'✅ Scheda personalizzata su obiettivi e livello',
+    booty_inc2:'✅ Progressione studiata settimana per settimana',
+    booty_inc3:'✅ Supporto diretto con Alessia',
+    booty_inc4:'✅ Adattamenti in base ai tuoi feedback',
+    booty_cta:'🍑 Voglio il mio programma su misura →',
+    booty_redirect:'Verrai reindirizzata al sito di Alessia Taglioni',
     ashley_start_btn:'Inizia Strong Program',
     ashley_dis_bold:'Avanzato',
     ashley_disclaimer:'Ibrido powerlifting + bodybuilding. Richiede tecnica solida su squat, stacco e panca. Alta intensita sul SNC.',
@@ -5190,17 +5199,17 @@ const T = {
     mcons_warn_text:'Richiede esperienza nel valutare il cedimento muscolare e la tecnica HIT.',
     mcons_phi_title:'Filosofia Consolidated',
     mcons_phi1:'Numero minimo di esercizi — solo movimenti composti multi-articolari',
-    mcons_phi2:'3 esercizi per allenamento sono sufficienti per il massimo stimolo',
+    mcons_phi2:'2 esercizi per allenamento — il minimo assoluto efficace secondo Mentzer',
     mcons_phi3:'Riposo tra sessioni: Lunedì A → Sabato B → Giovedì A...',
     mcons_phi4:'Meno = più: il corpo cresce nel riposo, non durante l\'allenamento',
     mcons_a_title:'Allenamento A',
-    mcons_a1:'Squat o Leg Press — 1 serie (8–12 rip. al cedimento)',
-    mcons_a2:'Lat Machine presa stretta supina — 1 serie (6–10 rip. al cedimento)',
-    mcons_a3:'Dips alle Parallele — 1 serie (6–10 rip. al cedimento)',
+    mcons_a1:'Squat — 1 serie × 8-15 rip. al cedimento assoluto (Leg Press alternativa)',
+    mcons_a2:'Lat Machine presa supina stretta — 1 serie × 6-10 rip. al cedimento assoluto',
+    mcons_a3:'[vedi Allenamento B nell\u2019originale Mentzer]',
     mcons_b_title:'Allenamento B',
-    mcons_b1:'Stacchi Trap Bar o Classici — 1 serie (5–8 rip. STOP prima cedimento)',
-    mcons_b2:'Press Militare (seduto o in piedi) — 1 serie (6–10 rip. al cedimento)',
-    mcons_b3:'Polpacci in Piedi — 1 serie (12–20 rip. al cedimento)',
+    mcons_b1:'Stacco da Terra — 1 serie × 5-8 rip. al cedimento assoluto',
+    mcons_b2:'Dip alle Parallele — 1 serie × 6-10 rip. al cedimento assoluto',
+    mcons_b3:'Ogni esercizio: 1 set al cedimento assoluto — no forza residua',
     mcons_sched_title:'Esempio Programma',
     mcons_sched_mon:'Lunedì', mcons_sched_sat:'Sabato', mcons_sched_thu:'Giovedì',
     mcons_sched_rest1:'Mar–Ven', mcons_sched_rest2:'Dom–Mer',
@@ -5324,17 +5333,17 @@ en:{
     mcons_warn_text:'Requires experience in evaluating muscular failure and HIT technique.',
     mcons_phi_title:'Consolidated Philosophy',
     mcons_phi1:'Minimum number of exercises — compound multi-joint movements only',
-    mcons_phi2:'3 exercises per workout are enough for maximum stimulus',
+    mcons_phi2:'2 exercises per workout — the absolute minimum effective dose according to Mentzer',
     mcons_phi3:'Rest between sessions: Monday A → Saturday B → Thursday A...',
     mcons_phi4:'Less = more: the body grows during rest, not during training',
     mcons_a_title:'Workout A',
-    mcons_a1:'Squat or Leg Press — 1 set (8–12 reps to failure)',
-    mcons_a2:'Close-Grip Underhand Pulldown — 1 set (6–10 reps to failure)',
-    mcons_a3:'Parallel Bar Dips — 1 set (6–10 reps to failure)',
+    mcons_a1:'Squat — 1 set × 8-15 reps to absolute failure (Leg Press as alternative)',
+    mcons_a2:'Close-Grip Palms-Up Lat Pulldown — 1 set × 6-10 reps to absolute failure',
+    mcons_a3:'[see Workout B in Mentzer\'s original]',
     mcons_b_title:'Workout B',
-    mcons_b1:'Trap Bar or Conventional Deadlift — 1 set (5–8 reps, STOP before failure)',
-    mcons_b2:'Overhead Press (seated or standing) — 1 set (6–10 reps to failure)',
-    mcons_b3:'Standing Calf Raise — 1 set (12–20 reps to failure)',
+    mcons_b1:'Deadlift — 1 set × 5-8 reps to absolute failure',
+    mcons_b2:'Parallel Bar Dip — 1 set × 6-10 reps to absolute failure',
+    mcons_b3:'Every exercise: 1 set to absolute failure — no strength remaining',
     mcons_sched_title:'Sample Schedule',
     mcons_sched_mon:'Monday', mcons_sched_sat:'Saturday', mcons_sched_thu:'Thursday',
     mcons_sched_rest1:'Tue–Fri', mcons_sched_rest2:'Sun–Wed',
@@ -6049,6 +6058,19 @@ en:{
     ashley_btn:'Ashley Horner - Strong',
     ashley_sub:'Upper/Lower 4 days - Strength + Mass',
     ashley_sub2:'4 days / week - 12 weeks',
+    booty_coach:'by Alessia Taglioni · Personal Trainer & Coach',
+    booty_badge:'Custom',
+    booty_bio:'Alessia Taglioni is a personal trainer specializing in female training. Her method combines science, progression, and personalization: every program is built around you, your goals, and your level — not a generic template.',
+    booty_focus:'Female Sculpting',
+    booty_type:'Personalized',
+    booty_level:'All levels',
+    booty_includes_title:'What\'s included',
+    booty_inc1:'✅ Custom plan based on your goals and level',
+    booty_inc2:'✅ Progression designed week by week',
+    booty_inc3:'✅ Direct support from Alessia',
+    booty_inc4:'✅ Adjustments based on your feedback',
+    booty_cta:'🍑 I want my custom program →',
+    booty_redirect:'You will be redirected to Alessia Taglioni\'s website',
     ashley_start_btn:'Start Strong Program',
     ashley_dis_bold:'Advanced',
     ashley_disclaimer:'Powerlifting + bodybuilding hybrid. Requires solid technique on squat, deadlift and bench. High CNS demand.',
@@ -7298,8 +7320,8 @@ const WORKOUTS_BASE = {
                 {it:'Pec Deck / Croci ai Cavi',en:'Pec Deck / Cable Crossover',s:1,r:'6-10 (cedimento)'},
                 {it:'Press Inclinata',en:'Incline Bench Press',s:1,r:'6-8 (cedimento)'},
                 {it:'Pullover ai Cavi',en:'Cable Pullover',s:1,r:'12-15 (cedimento)'},
-                {it:'Lat Machine Presa Chiusa (soprammano)',en:'Close-Grip Pulldown Overhand',s:1,r:'6-8 (cedimento)'},
-                {it:'T-Bar Row / Rematore Macchina',en:'T-Bar Row / Machine Row',s:1,r:'6-8 (cedimento)'}]},
+                {it:'Lat Machine Presa Supina Stretta',en:'Close-Grip Underhand Lat Pulldown',s:1,r:'6-8 (cedimento)'},
+                {it:'Stacco da Terra',en:'Deadlift',s:1,r:'5-8 (cedimento)',rest:'5 min',note_it:'Esercizio finale — Mentzer lo considerava il singolo miglior esercizio in assoluto. Tecnica perfetta obbligatoria.',note_en:'Final exercise — Mentzer considered it the single best exercise. Perfect technique mandatory.'}]},
             {id:'mtz_legs_abs',color:'var(--blue)',exercises:[
                 {it:'Leg Extension',en:'Leg Extension',s:1,r:'8-15 (cedimento)'},
                 {it:'Leg Press / Hack Squat / Smith Squat (ruota)',en:'Leg Press / Hack / Smith Squat (rotate)',s:1,r:'6-8 (cedimento)'},
@@ -7316,13 +7338,19 @@ const WORKOUTS_BASE = {
     mentzer_cons:{gender:'uomo',
         days:[
             {id:'mc_a',color:'var(--blue)',exercises:[
-                {it:'Squat o Leg Press (se problemi schiena)',en:'Squat or Leg Press (if back issues)',s:1,r:'8-15 (cedimento assoluto)'},
-                {it:'Lat Machine Presa Stretta Supina',en:'Lat Pulldown Narrow Underhand Grip',s:1,r:'6-10 (cedimento assoluto)'},
-                {it:'Dips alle Parallele',en:'Parallel Bar Dips',s:1,r:'6-10 (cedimento assoluto)'}]},
+                {it:'Squat',en:'Squat',s:1,r:'8-15',rest:'3-5 min',
+                 note_it:'Cedimento assoluto. Il principale catalizzatore anabolico sistemico. Leg Press come alternativa in caso di problemi alla schiena.',
+                 note_en:'Absolute failure. The primary systemic anabolic catalyst. Leg Press as alternative in case of back issues.'},
+                {it:'Lat Machine Presa Supina Stretta',en:'Close-Grip Palms-Up Lat Pulldown',s:1,r:'6-10',rest:'3 min',
+                 note_it:'Cedimento assoluto. Presa supina stretta (palmi verso di te) — stimola lat e bicipiti insieme come nei chin-up.',
+                 note_en:'Absolute failure. Close supinated grip (palms facing you) — hits lats and biceps together like chin-ups.'}]},
             {id:'mc_b',color:'var(--red)',exercises:[
-                {it:'Stacchi Trap Bar o Classici',en:'Trap Bar or Conventional Deadlift',s:1,r:'8-15 (cedimento assoluto)'},
-                {it:'Press Militare',en:'Overhead Press',s:1,r:'6-10 (cedimento assoluto)'},
-                {it:'Alzate sui Polpacci in Piedi',en:'Standing Calf Raise',s:1,r:'12-20 (cedimento assoluto)'}]}]},
+                {it:'Stacco da Terra',en:'Deadlift',s:1,r:'5-8',rest:'5 min',
+                 note_it:'Cedimento assoluto. Mentzer: se potessi scegliere un solo esercizio sarebbe lo stacco. Stimola tutta la catena posteriore. ⚠️ Tecnica perfetta — no touch & go.',
+                 note_en:'Absolute failure. Mentzer: if he could only choose one exercise it would be the deadlift. Stimulates entire posterior chain. ⚠️ Perfect technique — no touch & go.'},
+                {it:'Dip alle Parallele',en:'Parallel Bar Dip',s:1,r:'6-10',rest:'3 min',
+                 note_it:'Cedimento assoluto. Lo "squat per il busto" secondo Mentzer — petto, spalle anteriori e tricipiti in un solo movimento.',
+                 note_en:'Absolute failure. The "upper body squat" according to Mentzer — chest, anterior deltoids and triceps in one movement.'}]}]},
     dorian_bg:{gender:'uomo',
         days:[
             // ── DAY 1: DELTOIDI · TRAPEZI · TRICIPITI · ADDOMINALI ─────────
