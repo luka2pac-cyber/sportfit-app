@@ -33,8 +33,8 @@ html,body{height:100%}
 .container{width:100%;max-width:430px;margin:0 auto;padding:48px 16px 90px}
 
 .view{display:none;animation:fadeUp .22s ease}
-.view.active{display:block;position:fixed;top:0;left:50%;right:auto;bottom:0;transform:translateX(-50%);width:100%;max-width:430px;height:100%;z-index:500;background:#000;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;touch-action:pan-y;padding:16px 16px calc(150px + env(safe-area-inset-bottom, 0px))}
-#home-view{position:fixed;inset:0;z-index:500;background:#000;display:none}
+.view.active{display:block;position:fixed;top:0;left:50%;right:auto;bottom:0;transform:translateX(-50%);width:100%;max-width:430px;height:100%;z-index:500;background:#000;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;touch-action:pan-y;padding-top:44px;padding-top:calc(16px + env(safe-area-inset-top,16px));padding-left:16px;padding-right:16px;padding-bottom:calc(150px + env(safe-area-inset-bottom,0px))}
+#home-view{position:fixed;inset:0;z-index:500;background:#000;display:none;padding-top:44px;padding-top:env(safe-area-inset-top,44px)}
 #home-view.active{display:flex!important;flex-direction:column;overflow:hidden;padding:0;max-width:100%;transform:none;left:0}
 .view-scroll{padding:8px 16px 80px}
 .view-hdr{display:flex;align-items:center;justify-content:space-between;padding:8px 14px 6px;border-bottom:1px solid rgba(255,255,255,.07);background:#000;position:sticky;top:0;z-index:10}
@@ -720,6 +720,30 @@ html,body{height:100%}
     </button>
   </div>
 
+  <!-- TORSO LIMBS INFO VIEW -->
+  <div id="torso-limbs-info-view" class="view">
+    <button onclick="goBack('uomini-inter-menu')" class="back-btn">← <span data-t="level_inter">Intermedio</span></button>
+    <div style="text-align:center;margin-bottom:16px">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:900;text-transform:uppercase;letter-spacing:2px">🏗 TORSO / ARTI</div>
+      <div style="font-size:.75rem;color:rgba(255,255,255,.5);margin-top:4px" data-t="tl_sub">4 Giorni · Torso A/B + Arti A/B · Intermedio</div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title" data-t="tl_struct_title">📋 Struttura</div>
+      <div class="ai-stat-row"><span class="ai-stat-label" data-t="tl_day1_lbl">Giorno 1</span><span class="ai-stat-val" data-t="tl_day1">Torso A — Petto · Schiena · Spalle</span></div>
+      <div class="ai-stat-row"><span class="ai-stat-label" data-t="tl_day2_lbl">Giorno 2</span><span class="ai-stat-val" data-t="tl_day2">Arti A — Gambe · Braccia</span></div>
+      <div class="ai-stat-row"><span class="ai-stat-label" data-t="tl_day3_lbl">Giorno 3</span><span class="ai-stat-val" data-t="tl_day3">Torso B — Spalle · Schiena · Petto</span></div>
+      <div class="ai-stat-row"><span class="ai-stat-label" data-t="tl_day4_lbl">Giorno 4</span><span class="ai-stat-val" data-t="tl_day4">Arti B — Gambe · Braccia</span></div>
+      <div class="ai-stat-row"><span class="ai-stat-label" data-t="tl_freq_lbl">Frequenza</span><span class="ai-stat-val" data-t="tl_freq">4 giorni/sett. · es. Lun-Mar-Gio-Ven</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title" data-t="tl_phi_title">💡 Filosofia</div>
+      <div class="ai-bullet" data-t="tl_phi1">Ogni muscolo principale viene allenato 2 volte a settimana con stimoli diversi (A e B).</div>
+      <div class="ai-bullet" data-t="tl_phi2">I giorni Torso e Arti si alternano — mai due giorni pesanti di fila per lo stesso gruppo.</div>
+      <div class="ai-bullet" data-t="tl_phi3">Rep range misto: forza (6 rip.) nei compound, ipertrofia (10-15 rip.) negli isolamenti.</div>
+    </div>
+    <button class="ai-send-btn" onclick="openWorkout('torso-limbs','torso-limbs-info-view')">💪 <span data-t="tl_start_btn">Inizia il Programma</span></button>
+  </div>
+
   <div id="uomini-inter-menu" class="view">
     <button onclick="goBack('uomini-level')" class="back-btn">← <span data-t="back_levels">Livelli</span></button>
     <div class="view-title"><span data-t="programs_title">Programmi</span><br><span class="c-blue" data-t="level_intermediate">Intermedio</span></div>
@@ -735,6 +759,7 @@ html,body{height:100%}
       <div style="font-size:.62rem;font-weight:800;color:rgba(255,214,10,.7);letter-spacing:2px;text-transform:uppercase;white-space:nowrap" data-t="freq_div_3_4">📅 3-4 GIORNI / SETT.</div>
       <div style="flex:1;height:1px;background:rgba(255,214,10,.25)"></div>
     </div>
+    <div class="prog-item"><button class="prog-item-btn" onclick="showView('torso-limbs-info-view')"><div class="prog-item-name">🏗 <span data-t="tl_label">Torso/Arti — 4 Giorni</span></div><div class="prog-item-sub" data-t="tl_sub">4 Giorni · Torso A/B + Arti A/B · Intermedio</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('lpp','uomini-inter-menu')"><div class="prog-item-name">🔵 Legs Push Pull<span class="badge-mp">🔥 Most Popular</span></div><div class="prog-item-sub" data-t="lpp_sub">3 giorni · 3–6x / settimana</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('abc_3day_u','uomini-inter-menu')"><div class="prog-item-name">🔴 <span data-t="abc_3day_u_label">Full Body A/B/C</span></div><div class="prog-item-sub" data-t="abc_3day_sub">3 giorni · A/B/C · 16 sett.</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('classic_4day_u','uomini-inter-menu')"><div class="prog-item-name">🟢 <span data-t="classic_4day_u_label">Classic Split 4 Giorni</span></div><div class="prog-item-sub" data-t="classic_4day_sub">4 giorni · Split · 16 sett.</div></button><span class="prog-arr">›</span></div>
@@ -1086,12 +1111,12 @@ html,body{height:100%}
     </div>
     <div class="ai-block">
       <div class="ai-block-title blue">📅 <span data-t="gironda_compare_title">4 Day Split vs Full Body</span></div>
-      <div class="ai-stat-row" style="padding:6px 0"><span class="ai-stat-label" style="min-width:80px">4 Day</span><span class="ai-stat-val" data-t="gironda_4day_desc">Lun/Gio: Petto+Schiena · Mar/Ven: Sp+Br · Mer: Gambe</span></div>
+      <div class="ai-stat-row" style="padding:6px 0"><span class="ai-stat-label" style="min-width:80px">4 Day</span><span class="ai-stat-val" data-t="gironda_4day_desc">Gio 1: Petto+Bicipiti · Gio 2: Gambe · Gio 3: Sp+Tricipiti · Gio 4: Schiena+Add.</span></div>
       <div class="ai-stat-row" style="padding:6px 0"><span class="ai-stat-label" style="min-width:80px">Full Body</span><span class="ai-stat-val" data-t="gironda_fb_desc">3×/sett. · 1 esercizio per muscolo · 8×8 tutto</span></div>
     </div>
     <div class="ai-block">
       <div class="ai-block-title red">⚡ <span data-t="gironda_rules_title">Regole chiave</span></div>
-      <div class="ai-bullet"><b data-t="gironda_r1_lbl">Superset:</b> <span data-t="gironda_r1">nel 4 Day Split accoppia sempre antagonisti (petto + schiena, bicipiti + tricipiti)</span></div>
+      <div class="ai-bullet"><b data-t="gironda_r1_lbl">Serie dritte:</b> <span data-t="gironda_r1">nel 4 Day Split ogni esercizio è in serie dritte — 2-4 esercizi per gruppo muscolare</span></div>
       <div class="ai-bullet"><b data-t="gironda_r2_lbl">Esercizi preferiti:</b> <span data-t="gironda_r2">Panca al collo, Trazioni sterno, Hack Squat, Drag Curl, Dip a V</span></div>
       <div class="ai-bullet"><b data-t="gironda_r3_lbl">Polpacci:</b> <span data-t="gironda_r3">Gironda usava 8×20 reps — volume altissimo per massima crescita</span></div>
       <div class="ai-bullet"><b data-t="gironda_r4_lbl">Durata:</b> <span data-t="gironda_r4">ideale 4-8 settimane come shock training, poi cambio programma</span></div>
@@ -4103,6 +4128,19 @@ const T = {
     dc_dis_bold:'Solo avanzati',
     booty_sub:'by Alessia Taglioni · Glutei & Gambe · Avanzato',
     d_full_badge:'Full Body', d_full_name:'Tutti i gruppi muscolari',
+    tl_label:'Torso/Arti — 4 Giorni',
+    tl_sub:'4 Giorni · Torso A/B + Arti A/B · Intermedio',
+    tl_struct_title:'📋 Struttura',
+    tl_day1_lbl:'Giorno 1',tl_day1:'Torso A — Petto · Schiena · Spalle',
+    tl_day2_lbl:'Giorno 2',tl_day2:'Arti A — Gambe · Braccia',
+    tl_day3_lbl:'Giorno 3',tl_day3:'Torso B — Spalle · Schiena · Petto',
+    tl_day4_lbl:'Giorno 4',tl_day4:'Arti B — Gambe · Braccia',
+    tl_freq_lbl:'Frequenza',tl_freq:'4 giorni/sett. · es. Lun-Mar-Gio-Ven',
+    tl_phi_title:'💡 Filosofia',
+    tl_phi1:'Ogni muscolo principale viene allenato 2 volte a settimana con stimoli diversi (A e B).',
+    tl_phi2:'I giorni Torso e Arti si alternano — mai due giorni pesanti di fila per lo stesso gruppo.',
+    tl_phi3:'Rep range misto: forza (6 rip.) nei compound, ipertrofia (10-15 rip.) negli isolamenti.',
+    tl_start_btn:'Inizia il Programma',
     lyle_gbr_label:'GBR — Lyle McDonald',
     lyle_gbr_pills:[['2 Giorni','×2/sett.'],['Upper/Lower',''],['6-8 sett.','']],
     lyle_btn:'Lyle McDonald GBR', lyle_sub:'Generic Bulking Routine — Upper/Lower 4 giorni',
@@ -4926,11 +4964,11 @@ const T = {
     gironda_phi4:'Progressione: prima riduci il riposo (fino a 15s), poi aumenta il peso',
     gironda_phi5:'⚠️ No Squat classico — Gironda lo bandiva. Usa Hack Squat o Sissy Squat',
     gironda_compare_title:'4 Day Split vs Full Body',
-    gironda_4day_desc:'Lun/Gio: Petto+Schiena · Mar/Ven: Sp+Br · Mer: Gambe',
+    gironda_4day_desc:'Gio 1: Petto+Bicipiti · Gio 2: Gambe · Gio 3: Sp+Tricipiti · Gio 4: Schiena+Add. (rotazione)',
     gironda_fb_desc:'3×/sett. · 1 esercizio per muscolo · 8×8 tutto',
     gironda_rules_title:'Regole chiave',
-    gironda_r1_lbl:'Superset:',gironda_r2_lbl:'Esercizi preferiti:',gironda_r3_lbl:'Polpacci:',gironda_r4_lbl:'Durata:',
-    gironda_r1:'nel 4 Day Split accoppia sempre antagonisti (petto + schiena, bicipiti + tricipiti)',
+    gironda_r1_lbl:'Serie dritte:',gironda_r2_lbl:'Esercizi preferiti:',gironda_r3_lbl:'Polpacci:',gironda_r4_lbl:'Durata:',
+    gironda_r1:'nel 4 Day Split ogni esercizio è in serie dritte — 2-4 esercizi per gruppo muscolare',
     gironda_r2:'Panca al collo, Trazioni sterno, Hack Squat, Drag Curl, Dip a V',
     gironda_r3:'Gironda usava 8×20 reps — volume altissimo per massima crescita',
     gironda_r4:'ideale 4-8 settimane come shock training, poi cambio programma',
@@ -5731,6 +5769,32 @@ en:{
     dc_dis_bold:'Advanced only',
     booty_sub:'by Alessia Taglioni · Glutes & Legs · Advanced',
     d_full_badge:'Full Body', d_full_name:'All muscle groups',
+    tl_label:'Torso/Arti — 4 Giorni',
+    tl_sub:'4 Giorni · Torso A/B + Arti A/B · Intermedio',
+    tl_struct_title:'📋 Struttura',
+    tl_day1_lbl:'Giorno 1',tl_day1:'Torso A — Petto · Schiena · Spalle',
+    tl_day2_lbl:'Giorno 2',tl_day2:'Arti A — Gambe · Braccia',
+    tl_day3_lbl:'Giorno 3',tl_day3:'Torso B — Spalle · Schiena · Petto',
+    tl_day4_lbl:'Giorno 4',tl_day4:'Arti B — Gambe · Braccia',
+    tl_freq_lbl:'Frequenza',tl_freq:'4 giorni/sett. · es. Lun-Mar-Gio-Ven',
+    tl_phi_title:'💡 Filosofia',
+    tl_phi1:'Ogni muscolo principale viene allenato 2 volte a settimana con stimoli diversi (A e B).',
+    tl_phi2:'I giorni Torso e Arti si alternano — mai due giorni pesanti di fila per lo stesso gruppo.',
+    tl_phi3:'Rep range misto: forza (6 rip.) nei compound, ipertrofia (10-15 rip.) negli isolamenti.',
+    tl_start_btn:'Inizia il Programma',
+    tl_label:'Torso/Limbs — 4 Day',
+    tl_sub:'4 Days · Torso A/B + Limbs A/B · Intermediate',
+    tl_struct_title:'📋 Structure',
+    tl_day1_lbl:'Day 1',tl_day1:'Torso A — Chest · Back · Shoulders',
+    tl_day2_lbl:'Day 2',tl_day2:'Limbs A — Legs · Arms',
+    tl_day3_lbl:'Day 3',tl_day3:'Torso B — Shoulders · Back · Chest',
+    tl_day4_lbl:'Day 4',tl_day4:'Limbs B — Legs · Arms',
+    tl_freq_lbl:'Frequency',tl_freq:'4 days/week · e.g. Mon-Tue-Thu-Fri',
+    tl_phi_title:'💡 Philosophy',
+    tl_phi1:'Each major muscle is trained twice a week with different stimuli (A and B).',
+    tl_phi2:'Torso and Limbs days alternate — never two heavy days in a row for the same group.',
+    tl_phi3:'Mixed rep range: strength (6 reps) on compounds, hypertrophy (10-15 reps) on isolation.',
+    tl_start_btn:'Start the Program',
     lyle_gbr_label:'GBR — Lyle McDonald',
     lyle_gbr_pills:[['2 Days','×2/week'],['Upper/Lower',''],['6-8 wks.','']],
     lyle_btn:'Lyle McDonald GBR', lyle_sub:'Generic Bulking Routine — Upper/Lower 4 days',
@@ -6656,11 +6720,11 @@ en:{
     gironda_phi4:'Progression: first reduce rest (down to 15s), then increase weight',
     gironda_phi5:'⚠️ No classic Squat — Gironda banned it. Use Hack Squat or Sissy Squat',
     gironda_compare_title:'4 Day Split vs Full Body',
-    gironda_4day_desc:'Mon/Thu: Chest+Back · Tue/Fri: Sh+Arms · Wed: Legs',
+    gironda_4day_desc:'Day 1: Chest+Biceps · Day 2: Legs · Day 3: Sh+Triceps · Day 4: Back+Abs (rotating cycle)',
     gironda_fb_desc:'3×/week · 1 exercise per muscle · 8×8 everything',
     gironda_rules_title:'Key Rules',
-    gironda_r1_lbl:'Superset:',gironda_r2_lbl:'Favorite exercises:',gironda_r3_lbl:'Calves:',gironda_r4_lbl:'Duration:',
-    gironda_r1:'in the 4 Day Split always pair antagonists (chest + back, biceps + triceps)',
+    gironda_r1_lbl:'Serie dritte:',gironda_r2_lbl:'Favorite exercises:',gironda_r3_lbl:'Calves:',gironda_r4_lbl:'Duration:',
+    gironda_r1:'in the 4 Day Split every exercise uses straight sets — 2-4 exercises per muscle group',
     gironda_r2:'Bench to Neck, Sternum Chin-up, Hack Squat, Drag Curl, V-Bar Dips',
     gironda_r3:'Gironda used 8×20 reps — very high volume for maximum calf growth',
     gironda_r4:'ideal for 4-8 weeks as shock training, then switch program',
@@ -6873,7 +6937,7 @@ const WORKOUTS_BASE = {
                 {it:'Squat / Macchina Squat',en:'Squat / Machine Squat',s:3,r:'12-10',rest:'1-2 min'},
                 {it:'Press su Panca Inclinata',en:'Incline Press',s:3,r:'12-10',rest:'2-3 min'},
                 {it:'Tirate al Mento',en:'Upright Row',s:3,r:'12-10',rest:'2 min'},
-                {it:'Leg Curl',en:'Leg Curl',s:'2-3',r:'12-10',rest:'1-2 min'},
+                {it:'Leg Curl',en:'Leg Curl',s:3,r:'12-10',rest:'1-2 min'},
                 {it:'Dip',en:'Dip',s:3,r:'12-10',rest:'2-3 min'},
                 {it:'Rematore con Manubrio',en:'Dumbbell Row',s:3,r:'12-10',rest:'2-3 min'},
                 {it:'Curl Bicipiti',en:'Bicep Curl',s:3,r:'15-10',rest:'1-2 min'},
@@ -6928,7 +6992,7 @@ const WORKOUTS_BASE = {
                 {it:'Squat / Macchina',en:'Squat / Machine',s:4,r:'12-8',rest:'1-2 min'},
                 {it:'Affondi / Leg Press',en:'Lunges / Leg Press',s:3,r:'12-10',rest:'2-3 min'},
                 {it:'Iperstensioni / Stacchi Gambe Tese',en:'Hyperextension / Straight Leg Deadlift',s:3,r:'12-10',rest:'2 min'},
-                {it:'Leg Curl',en:'Leg Curl',s:'2-3',r:'12-10',rest:'1-2 min'},
+                {it:'Leg Curl',en:'Leg Curl',s:3,r:'12-10',rest:'1-2 min'},
                 {it:'Hip Thrust',en:'Hip Thrust',s:3,r:'15-10',rest:'2-3 min'},
                 {it:'Macchina Aduttori-Glutei',en:'Adductor / Glute Machine',s:2,r:'20-15',rest:'1-2 min'},
                 {it:'Polpacci',en:'Calf Raise',s:3,r:'15-10',rest:'1-2 min'},
@@ -7137,7 +7201,7 @@ const WORKOUTS_BASE = {
         {it:'Squat / Macchina Squat',en:'Squat / Machine Squat',s:3,r:'10-6',rest:'1-2 min'},
         {it:'Press su Panca Piana',en:'Bench Press',s:3,r:'10-6',rest:'2-3 min'},
         {it:'Rematore Macchina',en:'Machine Row',s:3,r:'12-8',rest:'1-2 min'},
-        {it:'Leg Curl',en:'Leg Curl',s:'2-3',r:'12-10',rest:'1-2 min'},
+        {it:'Leg Curl',en:'Leg Curl',s:3,r:'12-10',rest:'1-2 min'},
         {it:'Alzate Laterali',en:'Lateral Raise',s:3,r:'12-10',rest:'1-2 min'},
         {it:'French Press',en:'French Press',s:3,r:'15-10',rest:'2-3 min'},
         {it:'Curl Bicipiti',en:'Bicep Curl',s:3,r:'15-10',rest:'1-2 min'},
@@ -7936,26 +8000,69 @@ const WORKOUTS_BASE = {
                 {it:'Pullovers',en:'Pullovers',s:1,r:'30-40 rest-pause'},
                 {it:'Curl EZ / Curl Scott (rotazione)',en:'EZ Curl / Preacher Curl (rotate)',s:1,r:'20-30 rest-pause'}]}
         ]},
+    torso_limbs:{gender:'uomo',
+        days:[
+            {id:'tl_torso_a',color:'var(--red)',exercises:[
+                {it:'Panca Piana Bilanciere',en:'Barbell Bench Press',s:3,r:'6',rest:'2-3 min'},
+                {it:'Press Inclinata Macchina',en:'Machine Incline Chest Press',s:3,r:'10',rest:'2 min'},
+                {it:'T-Bar Row',en:'T-Bar Prone Row',s:3,r:'8',rest:'2 min'},
+                {it:'Lat Machine',en:'Machine Lat Pulldown',s:3,r:'8',rest:'2 min'},
+                {it:'Press Spalle Smith Machine',en:'Smith Machine Shoulder Press',s:3,r:'8',rest:'2 min'},
+                {it:'Tirate al Mento ai Cavi',en:'Cable Upright Row',s:3,r:'12',rest:'1-2 min'},
+                {it:'Alzate Laterali ai Cavi',en:'Cable Deltoid Raise',s:3,r:'12',rest:'1-2 min'}]},
+            {id:'tl_limbs_a',color:'var(--green)',exercises:[
+                {it:'Hack Squat',en:'Hack Squat',s:3,r:'6',rest:'2-3 min'},
+                {it:'Leg Press',en:'Machine Leg Press',s:3,r:'10',rest:'2 min'},
+                {it:'Leg Curl Sdraiato',en:'Machine Leg Curl (Prone)',s:3,r:'10',rest:'1-2 min'},
+                {it:'Leg Curl Seduto',en:'Machine Seated Leg Curl',s:3,r:'10',rest:'1-2 min'},
+                {it:'Curl Martello ai Cavi (Corda)',en:'Cable Rope Hammer Curl',s:3,r:'10',rest:'1-2 min'},
+                {it:'Estensioni Overhead ai Cavi',en:'Cable Overhead Tricep Extension',s:3,r:'10',rest:'1-2 min'},
+                {it:'Curl Bicipiti Macchina',en:'Machine Bicep Curl',s:3,r:'10',rest:'1-2 min'}]},
+            {id:'tl_torso_b',color:'var(--blue)',exercises:[
+                {it:'Press Spalle Smith Machine',en:'Smith Machine Shoulder Press',s:3,r:'8',rest:'2 min'},
+                {it:'Press Spalle Macchina',en:'Machine Shoulder Press',s:3,r:'10',rest:'2 min'},
+                {it:'Lat Machine Presa Larga',en:'Cable Lat Pulldown (Wide Grip)',s:3,r:'10',rest:'2 min'},
+                {it:'Rematore ai Cavi Seduto',en:'Cable Seated Row',s:3,r:'10',rest:'2 min'},
+                {it:'Panca Inclinata Bilanciere',en:'Barbell Incline Bench Press',s:3,r:'8',rest:'2 min'},
+                {it:'Face Pull ai Cavi (Corda)',en:'Cable Rope Face Pull',s:3,r:'12',rest:'1-2 min'},
+                {it:'Croci Macchina (Pec Deck)',en:'Machine Fly',s:3,r:'12',rest:'1-2 min'}]},
+            {id:'tl_limbs_b',color:'var(--gold)',exercises:[
+                {it:'Leg Extension Macchina',en:'Machine Leg Extension',s:3,r:'15',rest:'1-2 min'},
+                {it:'Abduzione Anca Macchina',en:'Machine Hip Abduction',s:3,r:'15',rest:'1-2 min'},
+                {it:'Leg Press',en:'Machine Leg Press',s:3,r:'10',rest:'2 min'},
+                {it:'Leg Curl Sdraiato',en:'Machine Leg Curl (Prone)',s:3,r:'10',rest:'1-2 min'},
+                {it:'French Press Bilanciere EZ',en:'EZ Bar French Press',s:3,r:'10',rest:'1-2 min'},
+                {it:'Curl Bicipiti Macchina',en:'Machine Bicep Curl',s:3,r:'10',rest:'1-2 min'},
+                {it:'Triceps Pushdown',en:'Triceps Pushdown',s:3,r:'10',rest:'1-2 min'}]}
+        ]},
     // ── VINCE GIRONDA — 4 DAY SPLIT 8×8 ─────────────────────────────────,
     gironda_4day:{gender:'uomo',
         days:[
-            {id:'gironda_chest_back',color:'var(--red)',exercises:[
-                {it:'🔵 SS1 · Panca Inclinata / Panca al Collo',en:'🔵 SS1 · Incline Press / Bench Press to Neck',s:4,r:'8 (30s rest)'},
-                {it:'🔵 SS1 · Dip a V / Dip alle Parallele',en:'🔵 SS1 · V-Bar Dips / Parallel Dips',s:4,r:'8 (30s rest)'},
-                {it:'🔴 SS2 · Lat Machine / Trazioni Sterno',en:'🔴 SS2 · Lat Pulldown / Sternum Chin-up',s:4,r:'8 (30s rest)'},
-                {it:'🔴 SS2 · Rematore Seduto / Rematore Macchina',en:'🔴 SS2 · Seated Row / Machine Row',s:4,r:'8 (30s rest)'}]},
-            {id:'gironda_sh_arms',color:'var(--blue)',exercises:[
-                {it:'Press Militare Seduto',en:'Seated Military Press',s:8,r:'8 (30s rest)'},
-                {it:'Alzate Laterali',en:'Lateral Raises',s:8,r:'8 (30s rest)'},
-                {it:'🔵 SS1 · Curl Inclinato Manubri / Drag Curl',en:'🔵 SS1 · Incline DB Curl / Drag Curl',s:4,r:'8 (30s rest)'},
-                {it:'🔵 SS1 · Curl Zottman',en:'🔵 SS1 · Zottman Curl',s:4,r:'8 (30s rest)'},
-                {it:'🔴 SS2 · Dip Parallele / French Press',en:'🔴 SS2 · Parallel Dips / French Press',s:4,r:'8 (30s rest)'},
-                {it:'🔴 SS2 · Estensioni Overhead ai Cavi',en:'🔴 SS2 · Kneeling Cable Overhead Extension',s:4,r:'8 (30s rest)'}]},
+            {id:'gironda_chest_bi',color:'var(--red)',exercises:[
+                {it:'Croci Cavi Bassi / Panca al Collo',en:'Low Cable Crossover / Bench Press to Neck',s:4,r:'8 (30s rest)'},
+                {it:'Press Inclinata Manubri / Dip a V',en:'Incline DB Press / V-Bar Dips',s:4,r:'8 (30s rest)'},
+                {it:'Drag Curl / Curl Inclinato Manubri',en:'Drag Curl / Incline DB Curl',s:4,r:'8 (30s rest)'},
+                {it:'Curl Scott / Curl Zottman',en:'Preacher Curl / Zottman Curl',s:4,r:'8 (30s rest)'},
+                {it:'Curl Bilanciere Avambracci / Wrist Curl',en:'Barbell Wrist Curl / Reverse Curl',s:4,r:'8 (30s rest)'}]},
             {id:'gironda_legs',color:'var(--green)',exercises:[
-                {it:'Hack Squat (NO Squat classico — Gironda lo bandiva)',en:'Hack Squat (NO classic Squat — Gironda banned it)',s:8,r:'8 (30s rest)'},
+                {it:'Front Squat / Hack Machine Squat',en:'Front Squat / Hack Machine Squat',s:4,r:'8 (30s rest)',note_it:'No Squat classico — Gironda lo bandiva perché allarga i fianchi.',note_en:'No classic Squat — Gironda banned it as it widens the hips.'},
                 {it:'Sissy Squat appesantito',en:'Weighted Sissy Squat',s:4,r:'8 (30s rest)'},
-                {it:'Leg Curl sdraiato',en:'Lying Leg Curl',s:8,r:'8 (30s rest)'},
-                {it:'Polpacci — Donkey Calf Raise / Leg Press Calves',en:'Calves — Donkey Calf Raise / Leg Press Calves',s:8,r:'20 (20s rest)'}]}
+                {it:'Leg Curl sdraiato / Leg Curl seduto',en:'Supine Leg Curl / Seated Leg Curl',s:4,r:'8 (30s rest)'},
+                {it:'Polpacci in Piedi',en:'Standing Calf Raise',s:4,r:'8 (30s rest)'},
+                {it:'Polpacci Seduto',en:'Seated Calf Raise',s:4,r:'8 (30s rest)'}]},
+            {id:'gironda_sh_tri',color:'var(--blue)',exercises:[
+                {it:'Alzate Laterali Seduto',en:'Seated Dumbbell Lateral Raise',s:4,r:'8 (30s rest)'},
+                {it:'Press Militare Bilanciere (Avanti/Dietro)',en:'Front-to-Back Barbell Shoulder Press',s:4,r:'8 (30s rest)'},
+                {it:'Alzate Posteriori Manubri',en:'Bent Over Rear Delt Lateral Raise',s:4,r:'8 (30s rest)'},
+                {it:'Estensioni Overhead ai Cavi',en:'Kneeling Rope Overhead Extension',s:4,r:'8 (30s rest)'},
+                {it:'French Press / Tricep Kickback Manubri',en:'Lying Tricep Extension / Dumbbell Kickback',s:4,r:'8 (30s rest)'}]},
+            {id:'gironda_back_abs',color:'var(--gold)',exercises:[
+                {it:'Trazioni Sterno / Trazioni Presa Supina',en:'Sternum Chin-up / Supinated Chin-up',s:4,r:'8 (30s rest)'},
+                {it:'Rematore Manubri (High Bench)',en:'High Bench Dumbbell Row',s:4,r:'8 (30s rest)'},
+                {it:'Pulley / Rematore Cavi Bassi',en:'Low Cable Row / Seated Cable Row',s:4,r:'8 (30s rest)'},
+                {it:'Lat Machine Presa Media',en:'Medium Grip Lat Pulldown to Chest',s:4,r:'8 (30s rest)'},
+                {it:'Crunch Doppio / Crunch Appesantito',en:'Double Crunch / Weighted Crunch',s:4,r:'8 (30s rest)'},
+                {it:'Leg Raise Sdraiato',en:'Lying Bent Knee Leg Raise',s:4,r:'8 (30s rest)'}]}
         ]},
     // ── VINCE GIRONDA — FULL BODY 8×8 ────────────────────────────────────,
     gironda_fb:{gender:'uomo',
@@ -8102,7 +8209,7 @@ const WORKOUTS_BASE = {
                 {it:'Lat Machine Presa Stretta / Lat Pulldown',en:'Close Grip Pulldown / Lat Pulldown',s:3,r:'8-6',rest:'2-3 min'},
                 {it:'RDL / Stacco Convenzionale',en:'RDL / Conventional Deadlift',s:3,r:'10-8',rest:'2-3 min'},
                 {it:'Pulley / Rematore Macchina',en:'Pulley / Machine Row',s:3,r:'10-8',rest:'2 min'},
-                {it:'Leg Curl',en:'Leg Curl',s:'2-3',r:'12-10',rest:'1-2 min'},
+                {it:'Leg Curl',en:'Leg Curl',s:3,r:'12-10',rest:'1-2 min'},
                 {it:'Face Pull',en:'Face Pulls',s:2,r:'12-10',rest:'1 min'},
                 {it:'Curl Bilanciere / Manubri',en:'Biceps Curl (BB / DB)',s:3,r:'12-10',rest:'1 min'},
                 {it:'Calf Raise',en:'Calf Raises',s:3,r:'15-10',rest:'1 min'}]}
@@ -8115,7 +8222,7 @@ const WORKOUTS_BASE = {
             {id:'advlpp6_la',label_it:'LEGS A',label_en:'LEGS A',color:'var(--green)',exercises:[
                 {it:'Leg Press / Squat',en:'Leg Press / Squat',s:3,r:'8-6',rest:'2-3 min'},
                 {it:'Affondi Statici / Bulgarian Squat',en:'Static Lunges / Bulgarian Squat',s:3,r:'10-8',rest:'2 min'},
-                {it:'Leg Curl',en:'Leg Curl',s:'2-3',r:'12-10',rest:'1-2 min'},
+                {it:'Leg Curl',en:'Leg Curl',s:3,r:'12-10',rest:'1-2 min'},
                 {it:'Adduttori / Abductor Machine',en:'Adductor / Abductor Machine',s:2,r:'15-12',rest:'1 min'},
                 {it:'Polpacci su Leg Press',en:'Calves on Leg Press',s:3,r:'15-10',rest:'1 min'},
                 {it:'Abs — Leg Raises',en:'Abs — Leg Raises',s:3,r:'15-10',rest:'1 min'}]},
@@ -8829,7 +8936,9 @@ const WORKOUTS_BASE = {
         ]}
 };
 
-const WID_MAP = {'pbhd-luka':'pbhd_luka','lpp':'lpp','ini-u':'ini_u','lyle-gbr':'lyle_gbr','ini-d':'ini_d','fb-ab-u':'fb_ab_u',
+const WID_MAP = {
+  'torso-limbs': 'torso_limbs',
+  'pbhd-luka':'pbhd_luka','lpp':'lpp','ini-u':'ini_u','lyle-gbr':'lyle_gbr','ini-d':'ini_d','fb-ab-u':'fb_ab_u',
   'ab-d':'ab_d','ul-d':'ul_d',
   'quick-u':'quick_u','quick-u-basic':'quick_u_basic',
   'quick-d':'quick_d','quick-d-basic':'quick_d_basic',
@@ -8862,8 +8971,15 @@ function getWorkoutLocalized(wId){
     const baseId = WID_MAP[wId] || wId;
     const base = WORKOUTS_BASE[baseId];
     if(!base) return null;
-    const labelMap = {lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',ken_pp:'ken_pp_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',pb_fabio:'pb_fabio_label',pbhd_luka:'pbhd_luka_label',pp_d:'pp_d_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label',lpp30_u:'lpp30_u_label',meadows_ppl:'meadows_ppl_label',adv_lpp6_u:'adv_lpp6_u_label',lpp6_adv_luka:'lpp6_adv_luka_label',pp23_luka_u:'pp23_luka_u_label',poliquin_arms:'poliquin_arms_label',layne_arms:'layne_arms_label',meadows_arms:'meadows_arms_label',meadows_shoulders:'meadows_sh_label',dante_shoulders:'dante_sh_label',meadows_chest:'meadows_chest_label',carter_bb:'carter_bb_label',gironda_4day:'gironda_4day_label',gironda_fb:'gironda_fb_label',ss_u:'ss_u_label',candito_6wk:'candito_6wk_label',wendler_531:'wendler_531_label',texas_method:'texas_method_label',smolov_jr:'smolov_jr_label',hst_u:'hst_u_label',tls_d:'tls_d_label',tls_3d:'tls_3d_label',tls_4d:'tls_4d_label',lpp6_u:'lpp6_u_label',pp_luka_d:'pp_luka_d_label'};
-    const pillsMap = {lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',ken_pp:'ken_pp_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',pb_fabio:'pb_fabio_pills','pbhd-luka':'pbhd_luka_pills','pbhd_luka':'pbhd_luka_pills',pp_d:'pp_d_pills',lpp4_u:'lpp4_u_pills',ws4sb_u:'ws4sb_u_pills',madcow_u:'madcow_u_pills',lpp30_u:'lpp30_u_pills',meadows_ppl:'meadows_ppl_pills',carter_bb:'carter_bb_pills',gironda_4day:'gironda_4day_pills',gironda_fb:'gironda_fb_pills',ss_u:'ss_u_pills',candito_6wk:'candito_6wk_pills',wendler_531:'wendler_531_pills',texas_method:'texas_method_pills',smolov_jr:'smolov_jr_pills',hst_u:'hst_u_pills',tls_d:'tls_d_pills',tls_3d:'tls_3d_pills',tls_4d:'tls_4d_pills',lpp6_u:'lpp6_u_pills'};
+    const labelMap = {
+  torso_limbs: {it:'Torso/Arti — 4 Giorni',en:'Torso/Limbs — 4 Day'},
+  lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',ken_pp:'ken_pp_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',pb_fabio:'pb_fabio_label',pbhd_luka:'pbhd_luka_label',pp_d:'pp_d_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label',lpp30_u:'lpp30_u_label',meadows_ppl:'meadows_ppl_label',adv_lpp6_u:'adv_lpp6_u_label',lpp6_adv_luka:'lpp6_adv_luka_label',pp23_luka_u:'pp23_luka_u_label',poliquin_arms:'poliquin_arms_label',layne_arms:'layne_arms_label',meadows_arms:'meadows_arms_label',meadows_shoulders:'meadows_sh_label',dante_shoulders:'dante_sh_label',meadows_chest:'meadows_chest_label',carter_bb:'carter_bb_label',gironda_4day:'gironda_4day_label',gironda_fb:'gironda_fb_label',ss_u:'ss_u_label',candito_6wk:'candito_6wk_label',wendler_531:'wendler_531_label',texas_method:'texas_method_label',smolov_jr:'smolov_jr_label',hst_u:'hst_u_label',tls_d:'tls_d_label',tls_3d:'tls_3d_label',tls_4d:'tls_4d_label',lpp6_u:'lpp6_u_label',pp_luka_d:'pp_luka_d_label'};
+    const pillsMap = {
+  torso_limbs: {
+    it:[['4 Giorni',''],['Torso/Arti',''],['Intermedio','']],
+    en:[['4 Days',''],['Torso/Limbs',''],['Intermediate','']]
+  },
+  lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',ken_pp:'ken_pp_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',pb_fabio:'pb_fabio_pills','pbhd-luka':'pbhd_luka_pills','pbhd_luka':'pbhd_luka_pills',pp_d:'pp_d_pills',lpp4_u:'lpp4_u_pills',ws4sb_u:'ws4sb_u_pills',madcow_u:'madcow_u_pills',lpp30_u:'lpp30_u_pills',meadows_ppl:'meadows_ppl_pills',carter_bb:'carter_bb_pills',gironda_4day:'gironda_4day_pills',gironda_fb:'gironda_fb_pills',ss_u:'ss_u_pills',candito_6wk:'candito_6wk_pills',wendler_531:'wendler_531_pills',texas_method:'texas_method_pills',smolov_jr:'smolov_jr_pills',hst_u:'hst_u_pills',tls_d:'tls_d_pills',tls_3d:'tls_3d_pills',tls_4d:'tls_4d_pills',lpp6_u:'lpp6_u_pills'};
     const days = base.days.map(day=>{
         let badge, name;
         // DC 3-day: a=Upper A1, b=Lower B1, g1=Upper A2, g2=Lower B2, g3=Upper A3, full=Lower B3
@@ -8909,6 +9025,10 @@ function getWorkoutLocalized(wId){
         }else if(day.id==='mtz_chest_back'){badge=lang==='it'?'PETTO · SCHIENA':'CHEST · BACK';name=lang==='it'?'Pre-Exhaust Petto → Press → Pre-Exhaust Schiena → Rematori → Stacco':'Pre-Exhaust Chest → Press → Pre-Exhaust Back → Rows → Deadlift';
         }else if(day.id==='mtz_legs_abs'){badge=lang==='it'?'GAMBE · ABS':'LEGS · ABS';name=lang==='it'?'Pre-Exhaust Gambe → Leg Press → Leg Curl → Polpacci → Addominali':'Pre-Exhaust Legs → Leg Press → Leg Curl → Calves → Abs';
         }else if(day.id==='mtz_sh_arms'){badge=lang==='it'?'SPALLE · BRACCIA':'SHOULDERS · ARMS';name=lang==='it'?'Press Spalle → Laterali → Bicipiti → Tricipiti':'Shoulder Press → Lateral Raises → Biceps → Triceps';
+        }else if(day.id==='tl_torso_a'){badge=lang==='it'?'TORSO A':'TORSO A';name=lang==='it'?'Petto · Schiena · Spalle':'Chest · Back · Shoulders';
+        }else if(day.id==='tl_limbs_a'){badge=lang==='it'?'ARTI A':'LIMBS A';name=lang==='it'?'Gambe · Braccia':'Legs · Arms';
+        }else if(day.id==='tl_torso_b'){badge=lang==='it'?'TORSO B':'TORSO B';name=lang==='it'?'Spalle · Schiena · Petto':'Shoulders · Back · Chest';
+        }else if(day.id==='tl_limbs_b'){badge=lang==='it'?'ARTI B':'LIMBS B';name=lang==='it'?'Gambe · Braccia':'Legs · Arms';
         }else if(day.id==='lyle_ua'){badge=lang==='it'?'UPPER':'UPPER';name=lang==='it'?'Upper — Petto · Schiena · Spalle · Braccia':'Upper — Chest · Back · Shoulders · Arms';
         }else if(day.id==='lyle_la'){badge=lang==='it'?'LOWER':'LOWER';name=lang==='it'?'Lower — Gambe · Polpacci':'Lower — Legs · Calves';
         }else if(day.id==='lyle_ub'){badge='UPPER B';name=lang==='it'?'Upper B — Ipertrofia':'Upper B — Hypertrophy';
@@ -8969,6 +9089,9 @@ function getWorkoutLocalized(wId){
         }else if(day.id==='carter_d1'){badge='SQUAT & PULL';name=lang==='it'?'Gambe · Schiena — Progressione + AMRAP':'Legs · Back — Progression + AMRAP';
         }else if(day.id==='carter_d2'){badge='PUSH';name=lang==='it'?'Petto · Spalle · Tricipiti':'Chest · Shoulders · Triceps';
         }else if(day.id==='carter_d3'){badge='PULL';name=lang==='it'?'Schiena · Bicipiti — T-Bar + Trazioni':'Back · Biceps — T-Bar + Chin-ups';
+        }else if(day.id==='gironda_chest_bi'){badge=lang==='it'?'PETTO & BICIPITI':'CHEST & BICEPS';name=lang==='it'?'Petto + Bicipiti — 8×8 · 30s riposo':'Chest + Biceps — 8×8 · 30s rest';
+        }else if(day.id==='gironda_sh_tri'){badge=lang==='it'?'SPALLE & TRICIPITI':'SHOULDERS & TRICEPS';name=lang==='it'?'Spalle + Tricipiti — 8×8 · 30s riposo':'Shoulders + Triceps — 8×8 · 30s rest';
+        }else if(day.id==='gironda_back_abs'){badge=lang==='it'?'SCHIENA & ADDOMINALI':'BACK & ABS';name=lang==='it'?'Schiena + Addominali — 8×8 · 30s riposo':'Back + Abs — 8×8 · 30s rest';
         }else if(day.id==='gironda_chest_back'){badge=lang==='it'?'PETTO & SCHIENA':'CHEST & BACK';name=lang==='it'?'Superset Antagonisti — 8×8 · 30s riposo':'Chest & Back Superset — 8×8 · 30s rest';
         }else if(day.id==='gironda_sh_arms'){badge=lang==='it'?'SPALLE & BRACCIA':'SHOULDERS & ARMS';name=lang==='it'?'Spalle · Bicipiti · Tricipiti — 8×8':'Shoulders · Biceps · Triceps — 8×8';
         }else if(day.id==='gironda_legs'){badge=lang==='it'?'GAMBE':'LEGS';name=lang==='it'?'Hack Squat · Femorali · Polpacci — 8×8':'Hack Squat · Hamstrings · Calves — 8×8';
