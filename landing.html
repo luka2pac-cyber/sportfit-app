@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sport&Fit Gorizia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   SPORT&FIT GORIZIA — Premium landing page
+   Per modificare i testi: cambia l'oggetto CONFIG qui sotto.
+   To edit content: change the CONFIG object below.
+   ============================================================ */
+:root{
+  --black:#0d0d0d;
+  --ink:#161616;
+  --red:#c1121f;
+  --red-deep:#8a0d17;
+  --white:#ffffff;
+  --paper:#f7f6f4;
+  --gray-100:#e8e7e4;
+  --gray-300:#c4c3bf;
+  --gray-500:#8a8985;
+  --gray-700:#4a4a47;
+  --line:rgba(255,255,255,0.12);
+  --line-dark:rgba(0,0,0,0.10);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.serif{font-family:'Cormorant Garamond',Georgia,serif}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.eyebrow{
+  font-size:11px;letter-spacing:.28em;text-transform:uppercase;
+  font-weight:500;color:var(--red);
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* ---------- NAV ---------- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 32px;
+  transition:background .4s ease,padding .4s ease,box-shadow .4s ease;
+}
+nav.solid{background:rgba(13,13,13,.94);backdrop-filter:blur(10px);padding:14px 32px;box-shadow:0 1px 0 var(--line)}
+.brand{display:flex;align-items:baseline;gap:2px;color:var(--white);font-weight:600;letter-spacing:.02em;font-size:19px}
+.brand .amp{color:var(--red);font-family:'Cormorant Garamond',serif;font-size:24px;line-height:0}
+.nav-links{display:flex;align-items:center;gap:34px}
+.nav-links a{color:rgba(255,255,255,.82);font-size:13.5px;font-weight:400;letter-spacing:.01em;transition:color .25s}
+.nav-links a:hover{color:var(--white)}
+.lang{display:flex;gap:2px;align-items:center;font-size:12px;color:rgba(255,255,255,.55);font-weight:500}
+.lang button{background:none;border:none;color:rgba(255,255,255,.5);cursor:pointer;font-size:12px;font-weight:500;padding:2px 5px;letter-spacing:.05em;transition:color .2s}
+.lang button.active{color:var(--white)}
+.lang .sep{opacity:.4}
+.burger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px}
+.burger span{width:22px;height:1.5px;background:var(--white);transition:.3s}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;min-height:100vh;
+  background:var(--black);color:var(--white);
+  display:flex;align-items:flex-end;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(120% 90% at 78% 12%, rgba(193,18,31,.16), transparent 55%),
+    linear-gradient(180deg,#141414 0%,#0a0a0a 100%);
+}
+.hero-bg::after{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:88px 88px;
+  mask-image:radial-gradient(80% 80% at 70% 40%,#000,transparent 78%);
+  opacity:.5;
+}
+.hero-inner{position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;padding:0 32px 84px}
+.hero-eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.hero-eyebrow .rule{width:52px;height:1px;background:var(--red)}
+.hero-eyebrow span{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gray-300);font-weight:500}
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:clamp(52px,9vw,116px);
+  line-height:.96;letter-spacing:-.01em;
+  margin-bottom:30px;
+}
+.hero h1 .accent{color:var(--red);font-style:italic}
+.hero-sub{max-width:440px;font-size:16px;color:rgba(255,255,255,.72);font-weight:300;margin-bottom:40px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:13.5px;font-weight:500;letter-spacing:.02em;
+  padding:15px 30px;border-radius:2px;cursor:pointer;
+  transition:transform .25s ease,background .25s ease,color .25s ease,border-color .25s;
+  border:1px solid transparent;
+}
+.btn-primary{background:var(--red);color:var(--white)}
+.btn-primary:hover{background:var(--red-deep);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--white);border-color:rgba(255,255,255,.28)}
+.btn-ghost:hover{border-color:var(--white);transform:translateY(-2px)}
+.btn .arr{transition:transform .25s}
+.btn:hover .arr{transform:translateX(4px)}
+.hero-meta{
+  position:absolute;bottom:84px;right:32px;z-index:2;
+  text-align:right;display:flex;flex-direction:column;gap:4px;
+}
+.hero-meta .k{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gray-500)}
+.hero-meta .v{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--white)}
+
+/* ---------- MARQUEE STRIP ---------- */
+.strip{background:var(--red);color:var(--white);overflow:hidden;padding:14px 0;white-space:nowrap}
+.strip-track{display:inline-flex;gap:48px;animation:scroll 28s linear infinite;will-change:transform}
+.strip-track span{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;opacity:.95}
+.strip-track .dot{opacity:.5;font-style:normal}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- SECTION SHELL ---------- */
+section{position:relative}
+.pad{padding:110px 0}
+.sec-head{margin-bottom:58px;max-width:640px}
+.sec-head .eyebrow{display:block;margin-bottom:18px}
+.sec-head h2{
+  font-family:'Cormorant Garamond',serif;font-weight:500;
+  font-size:clamp(34px,5vw,56px);line-height:1.03;letter-spacing:-.01em;
+}
+.sec-head p{margin-top:20px;font-size:16.5px;color:var(--gray-700);font-weight:300;max-width:520px}
+
+/* ---------- INTRO / ABOUT ---------- */
+.about{background:var(--paper)}
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.about-copy .eyebrow{display:block;margin-bottom:20px}
+.about-copy h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(32px,4.4vw,50px);line-height:1.04;margin-bottom:24px}
+.about-copy p{color:var(--gray-700);font-size:16.5px;font-weight:300;margin-bottom:18px}
+.about-stats{display:flex;gap:44px;margin-top:38px;flex-wrap:wrap}
+.stat .n{font-family:'Cormorant Garamond',serif;font-size:52px;color:var(--red);line-height:1;font-weight:600}
+.stat .l{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-500);margin-top:8px}
+.about-visual{position:relative;aspect-ratio:4/5;background:var(--black);border-radius:3px;overflow:hidden}
+.about-visual .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--gray-700);font-size:13px;letter-spacing:.15em;text-transform:uppercase;background:
+  radial-gradient(120% 80% at 30% 20%,rgba(193,18,31,.22),transparent 60%),
+  linear-gradient(160deg,#1a1a1a,#0a0a0a)}
+.about-visual .tag{position:absolute;left:22px;bottom:22px;color:var(--white);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;z-index:2}
+.about-visual .corner{position:absolute;top:20px;right:20px;width:40px;height:40px;border-top:1px solid var(--red);border-right:1px solid var(--red);z-index:2}
+
+/* ---------- DISCIPLINE ---------- */
+.disc{background:var(--ink);color:var(--white)}
+.disc .sec-head h2{color:var(--white)}
+.disc .sec-head p{color:rgba(255,255,255,.6)}
+.disc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.disc-card{
+  border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:40px 34px;min-height:280px;position:relative;
+  display:flex;flex-direction:column;justify-content:space-between;
+  transition:background .4s ease;
+}
+.disc-card:hover{background:rgba(193,18,31,.08)}
+.disc-card .num{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--red);letter-spacing:.1em}
+.disc-card h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:30px;margin:auto 0 12px;line-height:1.05}
+.disc-card p{font-size:14.5px;color:rgba(255,255,255,.6);font-weight:300}
+.disc-card .go{margin-top:20px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500);display:flex;align-items:center;gap:8px;transition:color .3s}
+.disc-card:hover .go{color:var(--red)}
+
+/* ---------- SCHEDULE ---------- */
+.sched{background:var(--paper)}
+.sched-wrap{border-top:2px solid var(--ink)}
+.sched-row{
+  display:grid;grid-template-columns:120px 1fr auto;gap:24px;align-items:center;
+  padding:26px 4px;border-bottom:1px solid var(--gray-300);
+  transition:padding-left .3s ease,background .3s ease;
+}
+.sched-row:hover{padding-left:16px;background:rgba(193,18,31,.03)}
+.sched-row .day{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500}
+.sched-row .slots{display:flex;flex-wrap:wrap;gap:10px}
+.slot{font-size:12.5px;color:var(--gray-700);border:1px solid var(--gray-300);border-radius:2px;padding:5px 12px}
+.sched-row .hrs{font-size:13px;color:var(--red);font-weight:500;letter-spacing:.04em;white-space:nowrap}
+
+/* ---------- PRICING ---------- */
+.price{background:var(--black);color:var(--white)}
+.price .sec-head{margin-left:auto;margin-right:auto;text-align:center}
+.price .sec-head h2{color:var(--white)}
+.price .sec-head p{color:rgba(255,255,255,.6);margin-left:auto;margin-right:auto}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.plan{
+  border:1px solid var(--line);border-radius:3px;padding:38px 32px;
+  display:flex;flex-direction:column;transition:transform .3s ease,border-color .3s ease;
+  background:rgba(255,255,255,.015);
+}
+.plan:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.25)}
+.plan.feat{border-color:var(--red);background:rgba(193,18,31,.06);position:relative}
+.plan.feat .badge{position:absolute;top:-11px;left:32px;background:var(--red);color:#fff;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;padding:5px 12px;border-radius:2px;font-weight:500}
+.plan .pname{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;margin-bottom:6px}
+.plan .pdesc{font-size:13.5px;color:rgba(255,255,255,.55);font-weight:300;margin-bottom:26px;min-height:38px}
+.plan .amt{display:flex;align-items:baseline;gap:4px;margin-bottom:28px}
+.plan .amt .cur{font-size:20px;color:var(--gray-300)}
+.plan .amt .val{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:600;line-height:1}
+.plan .amt .per{font-size:13px;color:var(--gray-500)}
+.plan ul{list-style:none;margin-bottom:30px;flex:1}
+.plan li{font-size:14px;color:rgba(255,255,255,.75);font-weight:300;padding:9px 0;border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:center}
+.plan li::before{content:"";width:5px;height:5px;background:var(--red);border-radius:50%;flex:none}
+.plan .btn{justify-content:center;width:100%}
+
+/* ---------- CONTACT / CTA ---------- */
+.contact{background:var(--paper)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.contact h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,5vw,58px);line-height:1.02;margin-bottom:24px}
+.contact h2 .accent{color:var(--red);font-style:italic}
+.contact p{color:var(--gray-700);font-size:16.5px;font-weight:300;margin-bottom:34px;max-width:420px}
+.contact-info{display:flex;flex-direction:column;gap:2px}
+.info-row{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--gray-300)}
+.info-row .k{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gray-500);padding-top:3px}
+.info-row .v{font-size:16px;color:var(--ink)}
+.info-row .v a:hover{color:var(--red)}
+.map-card{aspect-ratio:1/1;border-radius:3px;overflow:hidden;background:var(--black);position:relative}
+.map-card iframe{width:100%;height:100%;border:0;filter:grayscale(1) contrast(.95) brightness(.85)}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--black);color:var(--white);padding:56px 0 32px}
+.foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;padding-bottom:36px;border-bottom:1px solid var(--line)}
+.foot-brand .brand{font-size:24px;margin-bottom:14px}
+.foot-brand p{font-size:13.5px;color:rgba(255,255,255,.5);font-weight:300;max-width:280px}
+.foot-links{display:flex;gap:64px;flex-wrap:wrap}
+.foot-col h4{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:16px;font-weight:500}
+.foot-col a{display:block;font-size:14px;color:rgba(255,255,255,.65);padding:5px 0;font-weight:300;transition:color .2s}
+.foot-col a:hover{color:var(--white)}
+.foot-bot{padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12.5px;color:rgba(255,255,255,.4);font-weight:300}
+
+/* ---------- REVEAL ANIM ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .burger{display:flex}
+  .nav-links.open{display:flex;position:fixed;top:0;right:0;bottom:0;width:74%;max-width:320px;background:rgba(13,13,13,.98);flex-direction:column;justify-content:center;gap:28px;padding:40px;z-index:99}
+  .nav-links.open a{font-size:22px;font-family:'Cormorant Garamond',serif}
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:44px}
+  .disc-grid{grid-template-columns:1fr}
+  .price-grid{grid-template-columns:1fr;max-width:440px;margin:0 auto}
+  .hero-meta{display:none}
+  .sched-row{grid-template-columns:90px 1fr;gap:14px}
+  .sched-row .hrs{grid-column:1/-1}
+}
+@media(max-width:520px){
+  .wrap,.hero-inner{padding-left:22px;padding-right:22px}
+  nav{padding:16px 22px}
+  .pad{padding:76px 0}
+  .about-stats{gap:30px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important}
+  .reveal{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#top" class="brand">Sport<span class="amp">&amp;</span>Fit</a>
+  <div class="nav-links" id="navlinks">
+    <a href="#about" data-i18n="nav.about"></a>
+    <a href="#disc" data-i18n="nav.disc"></a>
+    <a href="#sched" data-i18n="nav.sched"></a>
+    <a href="#price" data-i18n="nav.price"></a>
+    <a href="#contact" data-i18n="nav.contact"></a>
+  </div>
+  <div class="lang">
+    <button data-lang="it">IT</button>
+    <span class="sep">/</span>
+    <button data-lang="en">EN</button>
+  </div>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow"><span class="rule"></span><span data-i18n="hero.eyebrow"></span></div>
+    <h1 data-i18n-html="hero.title"></h1>
+    <p class="hero-sub" data-i18n="hero.sub"></p>
+    <div class="hero-cta">
+      <a href="#price" class="btn btn-primary"><span data-i18n="hero.cta1"></span><span class="arr">→</span></a>
+      <a href="#sched" class="btn btn-ghost" data-i18n="hero.cta2"></a>
+    </div>
+  </div>
+  <div class="hero-meta">
+    <div class="k" data-i18n="hero.metaK"></div>
+    <div class="v">Corso Italia 187</div>
+    <div class="v">Gorizia</div>
+  </div>
+</header>
+
+<!-- STRIP -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track" id="strip"></div>
+</div>
+
+<!-- ABOUT -->
+<section class="about pad" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <span class="eyebrow" data-i18n="about.eyebrow"></span>
+        <h2 data-i18n="about.title"></h2>
+        <p data-i18n="about.p1"></p>
+        <p data-i18n="about.p2"></p>
+        <div class="about-stats">
+          <div class="stat"><div class="n">200<span style="font-size:32px">m²</span></div><div class="l" data-i18n="about.stat1"></div></div>
+          <div class="stat"><div class="n">4</div><div class="l" data-i18n="about.stat2"></div></div>
+          <div class="stat"><div class="n">6</div><div class="l" data-i18n="about.stat3"></div></div>
+        </div>
+      </div>
+      <div class="about-visual reveal">
+        <div class="ph" data-i18n="about.photo"></div>
+        <div class="corner"></div>
+        <div class="tag" data-i18n="about.tag"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCIPLINE -->
+<section class="disc pad" id="disc">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="disc.eyebrow"></span>
+      <h2 data-i18n="disc.title"></h2>
+      <p data-i18n="disc.sub"></p>
+    </div>
+    <div class="disc-grid" id="discGrid"></div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="sched pad" id="sched">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="sched.eyebrow"></span>
+      <h2 data-i18n="sched.title"></h2>
+      <p data-i18n="sched.sub"></p>
+    </div>
+    <div class="sched-wrap" id="schedWrap"></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="price pad" id="price">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="price.eyebrow"></span>
+      <h2 data-i18n="price.title"></h2>
+      <p data-i18n="price.sub"></p>
+    </div>
+    <div class="price-grid" id="priceGrid"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact pad" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="reveal">
+        <span class="eyebrow" data-i18n="contact.eyebrow" style="display:block;margin-bottom:18px"></span>
+        <h2 data-i18n-html="contact.title"></h2>
+        <p data-i18n="contact.sub"></p>
+        <div class="contact-info">
+          <div class="info-row"><div class="k" data-i18n="contact.addrK"></div><div class="v">Corso Italia 187<br>34170 Gorizia (GO)</div></div>
+          <div class="info-row"><div class="k" data-i18n="contact.phoneK"></div><div class="v"><a href="tel:+390000000000">+39 000 000 0000</a></div></div>
+          <div class="info-row"><div class="k">Email</div><div class="v"><a href="mailto:info@sport-fit.org">info@sport-fit.org</a></div></div>
+          <div class="info-row"><div class="k" data-i18n="contact.webK"></div><div class="v"><a href="https://sport-fit.org">sport-fit.org</a></div></div>
+        </div>
+      </div>
+      <div class="map-card reveal">
+        <iframe title="Mappa" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Corso+Italia+187,+Gorizia&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand">Sport<span class="amp">&amp;</span>Fit</div>
+        <p data-i18n="foot.tagline"></p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4 data-i18n="foot.navK"></h4>
+          <a href="#about" data-i18n="nav.about"></a>
+          <a href="#disc" data-i18n="nav.disc"></a>
+          <a href="#sched" data-i18n="nav.sched"></a>
+          <a href="#price" data-i18n="nav.price"></a>
+        </div>
+        <div class="foot-col">
+          <h4 data-i18n="foot.hoursK"></h4>
+          <a data-i18n="foot.h1"></a>
+          <a data-i18n="foot.h2"></a>
+          <a data-i18n="foot.h3"></a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© <span id="year"></span> ASD Sport&amp;Fit Gorizia</span>
+      <span data-i18n="foot.legal"></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   CONFIG — TUTTI I CONTENUTI MODIFICABILI QUI / ALL EDITABLE CONTENT HERE
+   ============================================================ */
+const CONFIG = {
+
+  /* Testi bilingue: it = italiano, en = inglese */
+  i18n: {
+    it: {
+      "nav.about":"Il centro","nav.disc":"Discipline","nav.sched":"Orari","nav.price":"Abbonamenti","nav.contact":"Contatti",
+      "hero.eyebrow":"Gorizia · Dal cuore della città",
+      "hero.title":'Forza, forma<br>e <span class="accent">disciplina</span>.',
+      "hero.sub":"Un centro fitness dove ogni allenamento è pensato per farti crescere. Sala pesi, corsi e personal training in un unico spazio.",
+      "hero.cta1":"Scopri gli abbonamenti","hero.cta2":"Vedi gli orari",
+      "hero.metaK":"Ci trovi in",
+      "strip":["Sala pesi","Personal training","Pilates","Pole dance","SBT","Preparazione atletica"],
+      "about.eyebrow":"Il centro",
+      "about.title":"Uno spazio serio, per chi fa sul serio.",
+      "about.p1":"Sport&Fit nasce a Gorizia come punto di riferimento per chi cerca un allenamento di qualità, seguito e senza compromessi. Attrezzature curate, ambiente pulito e un approccio basato sui risultati.",
+      "about.p2":"Che tu voglia costruire forza, ritrovare la forma o preparare una gara, qui trovi lo spazio e le persone giuste per farlo.",
+      "about.stat1":"Sala attrezzata","about.stat2":"Discipline","about.stat3":"Giorni a settimana",
+      "about.photo":"[ Foto della sala ]","about.tag":"Il tuo spazio",
+      "disc.eyebrow":"Cosa offriamo",
+      "disc.title":"Discipline",
+      "disc.sub":"Dalla sala pesi ai corsi guidati: un'offerta completa per ogni obiettivo e ogni livello.",
+      "sched.eyebrow":"Quando allenarti",
+      "sched.title":"Orari di apertura",
+      "sched.sub":"La sala è aperta con ampia disponibilità durante la settimana. I corsi seguono un calendario dedicato.",
+      "price.eyebrow":"Abbonamenti",
+      "price.title":"Scegli il tuo percorso",
+      "price.sub":"Formule flessibili, senza vincoli nascosti. Prezzi indicativi — contattaci per l'offerta attuale.",
+      "contact.eyebrow":"Vieni a trovarci",
+      "contact.title":'Inizia <span class="accent">oggi</span>.',
+      "contact.sub":"Passa in sede per una visita, oppure scrivici: ti raccontiamo tutto e fissiamo la tua prima sessione.",
+      "contact.addrK":"Indirizzo","contact.phoneK":"Telefono","contact.webK":"Web",
+      "foot.tagline":"Centro fitness e associazione sportiva dilettantistica a Gorizia.",
+      "foot.navK":"Naviga","foot.hoursK":"Orari",
+      "foot.h1":"Lun – Ven · 08:00 – 21:00","foot.h2":"Sabato · 09:00 – 13:00","foot.h3":"Domenica · chiuso",
+      "foot.legal":"P.IVA 00000000000 · Tutti i diritti riservati"
+    },
+    en: {
+      "nav.about":"The gym","nav.disc":"Disciplines","nav.sched":"Hours","nav.price":"Membership","nav.contact":"Contact",
+      "hero.eyebrow":"Gorizia · In the heart of the city",
+      "hero.title":'Strength, shape<br>and <span class="accent">discipline</span>.',
+      "hero.sub":"A fitness centre where every session is built to make you grow. Weight room, classes and personal training in one space.",
+      "hero.cta1":"See membership","hero.cta2":"View hours",
+      "hero.metaK":"Find us at",
+      "strip":["Weight room","Personal training","Pilates","Pole dance","SBT","Athletic prep"],
+      "about.eyebrow":"The gym",
+      "about.title":"A serious space, for people who mean it.",
+      "about.p1":"Sport&Fit is Gorizia's home for quality training — guided, uncompromising, results-driven. Well-kept equipment, a clean environment and an approach built around what actually works.",
+      "about.p2":"Whether you want to build strength, get back in shape or prep for a competition, you'll find the space and the people to do it here.",
+      "about.stat1":"Equipped floor","about.stat2":"Disciplines","about.stat3":"Days a week",
+      "about.photo":"[ Gym photo ]","about.tag":"Your space",
+      "disc.eyebrow":"What we offer",
+      "disc.title":"Disciplines",
+      "disc.sub":"From the weight room to guided classes — a complete offer for every goal and every level.",
+      "sched.eyebrow":"When to train",
+      "sched.title":"Opening hours",
+      "sched.sub":"The floor is open with wide availability through the week. Classes follow their own schedule.",
+      "price.eyebrow":"Membership",
+      "price.title":"Choose your path",
+      "price.sub":"Flexible plans, no hidden strings. Prices are indicative — get in touch for the current offer.",
+      "contact.eyebrow":"Come see us",
+      "contact.title":'Start <span class="accent">today</span>.',
+      "contact.sub":"Drop by for a look around, or write to us — we'll walk you through everything and book your first session.",
+      "contact.addrK":"Address","contact.phoneK":"Phone","contact.webK":"Web",
+      "foot.tagline":"Fitness centre and amateur sports association in Gorizia.",
+      "foot.navK":"Navigate","foot.hoursK":"Hours",
+      "foot.h1":"Mon – Fri · 08:00 – 21:00","foot.h2":"Saturday · 09:00 – 13:00","foot.h3":"Sunday · closed",
+      "foot.legal":"VAT 00000000000 · All rights reserved"
+    }
+  },
+
+  /* Discipline — modifica nome + descrizione per lingua */
+  disciplines: [
+    { it:{name:"Sala pesi",     desc:"Attrezzatura completa per forza e ipertrofia, con spazio per allenarti in libertà."},
+      en:{name:"Weight room",   desc:"Full equipment for strength and hypertrophy, with room to train your way."} },
+    { it:{name:"Personal training", desc:"Percorsi su misura, seguiti passo dopo passo verso il tuo obiettivo."},
+      en:{name:"Personal training", desc:"Tailored programmes, guided step by step toward your goal."} },
+    { it:{name:"Pilates",       desc:"Controllo, postura e forza profonda in lezioni curate nei dettagli."},
+      en:{name:"Pilates",       desc:"Control, posture and deep strength in carefully led classes."} },
+    { it:{name:"Pole dance",    desc:"Forza ed espressione insieme: un corso dinamico per ogni livello."},
+      en:{name:"Pole dance",    desc:"Strength and expression combined — a dynamic class for every level."} },
+    { it:{name:"SBT",           desc:"Allenamento funzionale total-body per resistenza e tonificazione."},
+      en:{name:"SBT",           desc:"Functional total-body training for endurance and toning."} },
+    { it:{name:"Preparazione atletica", desc:"Percorsi specifici per chi punta a una gara o a una performance."},
+      en:{name:"Athletic prep", desc:"Specific programmes for competition and performance goals."} }
+  ],
+
+  /* Orari — day (per lingua), fascia corsi, orario */
+  schedule: [
+    { it:{day:"Lun – Ven"}, en:{day:"Mon – Fri"}, slots:["Sala pesi","Corsi","Personal"], hrs:"08:00 – 21:00" },
+    { it:{day:"Sabato"},    en:{day:"Saturday"},  slots:["Sala pesi","Corsi"],            hrs:"09:00 – 13:00" },
+    { it:{day:"Domenica"},  en:{day:"Sunday"},    slots:[],                                hrs:"—" }
+  ],
+
+  /* Abbonamenti — prezzi indicativi, modifica liberamente */
+  plans: [
+    { feat:false,
+      it:{name:"Open",  desc:"Accesso libero alla sala pesi.", per:"/ mese", features:["Sala pesi illimitata","Fascia oraria completa","Scheda base inclusa"]},
+      en:{name:"Open",  desc:"Free access to the weight room.", per:"/ month", features:["Unlimited weight room","Full opening hours","Basic program included"]},
+      price:"39" },
+    { feat:true,
+      it:{name:"Full",  desc:"Sala pesi + tutti i corsi inclusi.", per:"/ mese", features:["Tutto di Open","Corsi illimitati","Check-up trimestrale","Priorità prenotazioni"], badge:"Più scelto"},
+      en:{name:"Full",  desc:"Weight room + all classes included.", per:"/ month", features:["Everything in Open","Unlimited classes","Quarterly check-up","Booking priority"], badge:"Most chosen"},
+      price:"59" },
+    { feat:false,
+      it:{name:"Personal", desc:"Percorso 1-a-1 con il tuo trainer.", per:"/ mese", features:["Sessioni personal dedicate","Programma su misura","Monitoraggio costante","Accesso sala incluso"]},
+      en:{name:"Personal", desc:"1-on-1 path with your trainer.", per:"/ month", features:["Dedicated personal sessions","Bespoke programme","Constant tracking","Floor access included"]},
+      price:"—" }
+  ]
+};
+
+/* ============================================================
+   ENGINE — normalmente non serve modificare / usually no need to edit
+   ============================================================ */
+let LANG = localStorage.getItem('sf-lang') || 'it';
+
+function t(key){ return (CONFIG.i18n[LANG] && CONFIG.i18n[LANG][key]) ?? ''; }
+
+function applyLang(){
+  document.documentElement.lang = LANG;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{ el.textContent = t(el.dataset.i18n); });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{ el.innerHTML = t(el.dataset.i18nHtml); });
+  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active', b.dataset.lang===LANG));
+  buildStrip(); buildDisc(); buildSched(); buildPrice();
+}
+
+function buildStrip(){
+  const words = CONFIG.i18n[LANG]["strip"] || [];
+  const seq = [...words, ...words];
+  document.getElementById('strip').innerHTML =
+    seq.map(w=>`<span>${w}</span><span class="dot">✦</span>`).join('');
+}
+
+function buildDisc(){
+  document.getElementById('discGrid').innerHTML = CONFIG.disciplines.map((d,i)=>{
+    const x = d[LANG];
+    const arrow = LANG==='it' ? 'Scopri' : 'Explore';
+    return `<div class="disc-card reveal">
+      <div class="num">0${i+1}</div>
+      <h3>${x.name}</h3>
+      <p>${x.desc}</p>
+      <div class="go">${arrow} <span>→</span></div>
+    </div>`;
+  }).join('');
+  observeReveals();
+}
+
+function buildSched(){
+  document.getElementById('schedWrap').innerHTML = CONFIG.schedule.map(r=>{
+    const day = r[LANG].day;
+    const slots = r.slots.length ? r.slots.map(s=>`<span class="slot">${s}</span>`).join('')
+      : `<span class="slot" style="opacity:.5">${LANG==='it'?'Chiuso':'Closed'}</span>`;
+    return `<div class="sched-row reveal">
+      <div class="day">${day}</div>
+      <div class="slots">${slots}</div>
+      <div class="hrs">${r.hrs}</div>
+    </div>`;
+  }).join('');
+  observeReveals();
+}
+
+function buildPrice(){
+  document.getElementById('priceGrid').innerHTML = CONFIG.plans.map(p=>{
+    const x = p[LANG];
+    const badge = p.feat ? `<span class="badge">${x.badge}</span>` : '';
+    const cta = LANG==='it' ? 'Richiedi info' : 'Get info';
+    const val = p.price==='—'
+      ? `<span class="val" style="font-size:34px">${LANG==='it'?'Su richiesta':'On request'}</span>`
+      : `<span class="cur">€</span><span class="val">${p.price}</span><span class="per">${x.per}</span>`;
+    return `<div class="plan ${p.feat?'feat':''} reveal">
+      ${badge}
+      <div class="pname">${x.name}</div>
+      <div class="pdesc">${x.desc}</div>
+      <div class="amt">${val}</div>
+      <ul>${x.features.map(f=>`<li>${f}</li>`).join('')}</ul>
+      <a href="#contact" class="btn btn-primary">${cta} <span class="arr">→</span></a>
+    </div>`;
+  }).join('');
+  observeReveals();
+}
+
+/* Reveal on scroll */
+let io;
+function observeReveals(){
+  if(!io){
+    io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:.12});
+  }
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+}
+
+/* Nav scroll state */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll',()=>{ nav.classList.toggle('solid', window.scrollY>40); },{passive:true});
+
+/* Lang buttons */
+document.querySelectorAll('.lang button').forEach(b=>{
+  b.addEventListener('click',()=>{ LANG=b.dataset.lang; localStorage.setItem('sf-lang',LANG); applyLang(); });
+});
+
+/* Burger */
+const burger=document.getElementById('burger'), navlinks=document.getElementById('navlinks');
+burger.addEventListener('click',()=>navlinks.classList.toggle('open'));
+navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navlinks.classList.remove('open')));
+
+document.getElementById('year').textContent=new Date().getFullYear();
+applyLang();
+observeReveals();
+</script>
+</body>
+</html>
