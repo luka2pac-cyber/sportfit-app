@@ -1,6 +1,8 @@
-// Sport&Fit GYM — service worker di pulizia.
-// Una versione precedente salvava index.html in cache e mostrava sempre la vecchia app.
-// Questo file cancella tutte le cache, si disattiva e ricarica la pagina con la versione aggiornata.
+// Sport&Fit GYM — service worker v3.
+// Sempre la versione più recente dalla rete; la cache serve solo se sei offline.
+// Necessario perché Chrome/Edge/Samsung mostrino il pulsante "Installa l'app".
+const CACHE = 'sportfit-v3';
+
 self.addEventListener('install', function () {
   self.skipWaiting();
 });
@@ -9,14 +11,27 @@ self.addEventListener('activate', function (event) {
   event.waitUntil((async function () {
     try {
       const keys = await caches.keys();
-      await Promise.all(keys.map(function (k) { return caches.delete(k); }));
+      await Promise.all(keys.filter(function (k) { return k !== CACHE; }).map(function (k) { return caches.delete(k); }));
     } catch (e) {}
-    try { await self.registration.unregister(); } catch (e) {}
-    try {
-      const clients = await self.clients.matchAll({ type: 'window' });
-      clients.forEach(function (c) { c.navigate(c.url); });
-    } catch (e) {}
+    await self.clients.claim();
   })());
 });
 
-// Nessuna gestione delle richieste: tutto viene caricato direttamente dalla rete.
+self.addEventListener('fetch', function (event) {
+  const req = event.request;
+  if (req.method !== 'GET' || req.mode !== 'navigate') return; // tutto il resto va direttamente in rete
+  event.respondWith(
+    fetch(req, { cache: 'no-cache' }).then(function (res) {
+      if (res && res.ok) {
+        const copy = res.clone();
+        caches.open(CACHE).then(function (c) { return c.put(req, copy); }).catch(function () {});
+      }
+      return res;
+    }).catch(async function () {
+      const hit = (await caches.match(req, { ignoreSearch: true })) ||
+                  (await caches.match('./', { ignoreSearch: true })) ||
+                  (await caches.match('./index.html', { ignoreSearch: true }));
+      return hit || Response.error();
+    })
+  );
+});

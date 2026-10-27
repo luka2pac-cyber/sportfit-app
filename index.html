@@ -14,6 +14,12 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>Sport&amp;Fit GYM</title>
+<script>
+/* Installazione app: cattura il prompt di Chrome/Edge/Samsung prima che vada perso */
+window._sfDeferredPrompt=null;
+window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();window._sfDeferredPrompt=e;});
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@400;700;900&family=Saira+Condensed:wght@500;600;700&family=Ultra&family=Nunito:wght@800;900&display=swap" rel="stylesheet">
     <style>@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:900;src:local('Impact'),local('Arial Narrow');}</style>
 <style>
@@ -442,6 +448,17 @@ html,body{height:100%}
 .sf-hb:active .ic{stroke:#fff}
 .sf-hero .home-footer{margin:0 0 6px;color:rgba(255,255,255,.4);font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.12em}
 .sf-install{background:rgba(17,17,17,.92);border-top:1px solid rgba(255,255,255,.1);padding:7px 14px calc(7px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:10px}
+.sf-install-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;min-height:42px;background:var(--sf-red);color:#fff;border:1px solid var(--sf-red);border-radius:0;font-family:'Saira Condensed','Arial Narrow',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.sf-install-btn svg{width:1.2em;height:1.2em;stroke:#fff;fill:none;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
+.sf-install-btn:active{background:#fff;color:var(--sf-red);border-color:#fff}
+.sf-install-btn:active svg{stroke:var(--sf-red)}
+.sf-inst-ov{position:fixed;inset:0;z-index:100000;background:rgba(0,0,0,.78);display:flex;align-items:flex-end;justify-content:center;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px))}
+.sf-inst-box{width:100%;max-width:420px;background:#191919;border-top:3px solid var(--sf-red);padding:18px 18px 16px;color:#fff;font-family:Barlow,-apple-system,sans-serif}
+.sf-inst-box h3{font-family:'Saira Condensed','Arial Narrow',sans-serif;font-weight:700;font-size:1.3rem;letter-spacing:.05em;text-transform:uppercase;margin-bottom:12px}
+.sf-inst-box ol{padding-left:20px;font-size:.95rem;line-height:1.5;color:rgba(255,255,255,.85)}
+.sf-inst-box li{margin-bottom:8px}
+.sf-inst-box p{font-size:.95rem;line-height:1.5;color:rgba(255,255,255,.85)}
+.sf-inst-close{margin-top:14px;width:100%;min-height:40px;background:transparent;color:#fff;border:1px solid #fff;font-family:'Saira Condensed','Arial Narrow',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
 </style>
 </head>
 <body>
@@ -485,15 +502,8 @@ html,body{height:100%}
         </div>
       </div>
       <div class="home-footer">Sport&amp;Fit GYM Inc © 2026</div>
-      <div class="sf-install">
-        <div style="flex-shrink:0;font-size:18px">📲</div>
-        <div style="flex:1;min-width:0">
-          <div style="font-size:.66rem;font-weight:700;color:rgba(255,255,255,.75)" data-t="install_title">Installa l'app sulla schermata home</div>
-          <div style="font-size:.56rem;color:rgba(255,255,255,.4);line-height:1.45;margin-top:1px">
-            <span data-t="install_ios">📱 iPhone: Safari → ⎙ Condividi → Aggiungi a Home</span><br>
-            <span data-t="install_android">🤖 Android: Chrome → ⋮ → Aggiungi a schermata home</span>
-          </div>
-        </div>
+      <div class="sf-install" id="sfInstallBar">
+        <button class="sf-install-btn" id="sfInstallBtn" type="button" onclick="sfInstallClick()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-t="install_btn">Installa l'app</span></button>
       </div>
     </div>
   </div>
@@ -3898,9 +3908,18 @@ const T = {
     btn_nutrition:'Nutrizione & Macros', btn_favorites:'Programmi Preferiti',
     btn_custom:'Voglio un programma su misura', btn_custom_sub:'Programma personalizzato con Sport&Fit',
     cancel_btn:'Annulla', confirm_btn:'Conferma',
-    install_title:'Installa l\'app sulla schermata home',
-    install_ios:'📱 iPhone: Safari → ⎙ Condividi → Aggiungi a Home',
-    install_android:'🤖 Android: Chrome → ⋮ → Aggiungi a schermata home',
+    install_btn:'Installa l\'app',
+    install_title:'Aggiungi alla schermata Home',
+    install_ios_1:'Tocca l\'icona <b>Condividi</b> ⎙ (in Safari, se non la vedi, tocca prima <b>•••</b>).',
+    install_ios_2:'Scorri e scegli <b>Aggiungi alla schermata Home</b>.',
+    install_ios_3:'Tocca <b>Aggiungi</b>: l\'icona Sport&amp;Fit apparirà sulla schermata Home.',
+    install_android_1:'Apri il menu del browser <b>⋮</b>.',
+    install_android_2:'Scegli <b>Installa app</b> oppure <b>Aggiungi a schermata Home</b>.',
+    install_mac:'Nel menu <b>File</b> di Safari scegli <b>Aggiungi al Dock</b>.',
+    install_desktop:'Questo browser non permette di installare app. Apri la pagina in <b>Chrome</b> o <b>Edge</b> e premi di nuovo <b>Installa l\'app</b>.',
+    install_inapp:'Sei nel browser interno di un\'altra app. Apri questa pagina in <b>Safari</b> (iPhone) o <b>Chrome</b> (Android), poi premi di nuovo <b>Installa l\'app</b>.',
+    install_close:'Chiudi',
+    install_done:'App installata ✓',
     level_title:'Biblioteca Allenamenti', level_men:'Uomo', level_women:'Donna',
     level_beginner:'Iniziale', level_intermediate:'Intermedio', level_advanced:'Avanzato',
     per_week:'settimana', see_programs:'Vedi programmi', coming_soon:'In arrivo...',
@@ -5548,9 +5567,18 @@ en:{
     btn_nutrition:'Nutrition & Macros', btn_favorites:'Favorite Programs',
     btn_custom:'I want a custom program', btn_custom_sub:'Personalized program with Sport&Fit',
     cancel_btn:'Cancel', confirm_btn:'Confirm',
-    install_title:'Install the app on your home screen',
-    install_ios:'📱 iPhone: Safari → ⎙ Share → Add to Home Screen',
-    install_android:'🤖 Android: Chrome → ⋮ → Add to Home Screen',
+    install_btn:'Install the app',
+    install_title:'Add to Home Screen',
+    install_ios_1:'Tap the <b>Share</b> icon ⎙ (in Safari, if you don\'t see it, tap <b>•••</b> first).',
+    install_ios_2:'Scroll down and choose <b>Add to Home Screen</b>.',
+    install_ios_3:'Tap <b>Add</b>: the Sport&amp;Fit icon will appear on your Home Screen.',
+    install_android_1:'Open the browser menu <b>⋮</b>.',
+    install_android_2:'Choose <b>Install app</b> or <b>Add to Home screen</b>.',
+    install_mac:'In Safari\'s <b>File</b> menu choose <b>Add to Dock</b>.',
+    install_desktop:'This browser can\'t install apps. Open this page in <b>Chrome</b> or <b>Edge</b> and press <b>Install the app</b> again.',
+    install_inapp:'You are in another app\'s built-in browser. Open this page in <b>Safari</b> (iPhone) or <b>Chrome</b> (Android), then press <b>Install the app</b> again.',
+    install_close:'Close',
+    install_done:'App installed ✓',
     level_title:'Training Library', level_men:'Men', level_women:'Women',
     level_beginner:'Beginner', level_intermediate:'Intermediate', level_advanced:'Advanced',
     per_week:'week', see_programs:'View programs', coming_soon:'Coming soon...',
@@ -10711,67 +10739,6 @@ function saveCustomPlan() {
     };
 })();
 
-// ─── SERVICE WORKER ──────────────────────────────────────────────────────
-if('serviceWorker' in navigator){
-    var _swCode = [
-        "const CACHE='sportfit-v2';",
-        "const FONTS=[",
-        "  'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Barlow:wght@400;600&display=swap',",
-        "  'https://fonts.gstatic.com'",
-        "];",
-        "self.addEventListener('install',function(e){",
-        "  self.skipWaiting();",
-        "  e.waitUntil(",
-        "    caches.open(CACHE).then(function(ca){",
-        "      return Promise.all([",
-        "        ca.add(new Request(self.registration.scope,{mode:'no-cors'})).catch(function(){}),",
-        "        FONTS.map(function(u){return ca.add(new Request(u,{mode:'no-cors'})).catch(function(){});});",
-        "      ]);",
-        "    })",
-        "  );",
-        "});",
-        "self.addEventListener('activate',function(e){",
-        "  e.waitUntil(",
-        "    caches.keys().then(function(keys){",
-        "      return Promise.all(keys.filter(function(k){return k!==CACHE;}).map(function(k){return caches.delete(k);}));",
-        "    }).then(function(){return clients.claim();})","  );",
-        "});",
-        "self.addEventListener('fetch',function(e){",
-        "  var url=e.request.url;",
-        "  if(e.request.mode==='navigate'){",
-        "    e.respondWith(caches.match(e.request).then(function(c){",
-        "      return c||fetch(e.request).then(function(r){",
-        "        var cl=r.clone();caches.open(CACHE).then(function(ca){ca.put(e.request,cl);});",
-        "        return r;",
-        "      }).catch(function(){return caches.match('/');});",
-        "    }));",
-        "    return;",
-        "  }",
-        "  e.respondWith(caches.match(e.request).then(function(c){",
-        "    if(c)return c;",
-        "    return fetch(e.request).then(function(r){",
-        "      if(!r||r.status!==200||r.type==='opaque')return r;",
-        "      var cl=r.clone();caches.open(CACHE).then(function(ca){ca.put(e.request,cl);});",
-        "      return r;",
-        "    }).catch(function(){return c||new Response('',{status:503});});",
-        "  }));",
-        "});"
-    ].join('\n');
-    var _swBlob = new Blob([_swCode],{type:'application/javascript'});
-    var _swURL = URL.createObjectURL(_swBlob);
-    navigator.serviceWorker.register(_swURL).then(function(reg){
-        // Pre-cache current page on first registration
-        if(reg.installing){
-            caches.open('sportfit-v2').then(function(ca){
-                ca.put(window.location.href, new Response(document.documentElement.outerHTML, {
-                    headers:{'Content-Type':'text/html; charset=utf-8'}
-                }));
-            });
-        }
-    }).catch(function(){});
-}
-
-
 // ─── BODY ANALYSIS + TRACKING ────────────────────────────────────────────────
 var _baSex='m',_baMethod=null;
 function baSetSex(s,btn){_baSex=s;document.querySelectorAll('#ba-sex-m,#ba-sex-f').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');if(_baMethod)baSelectMethod(_baMethod,document.getElementById('ba-m-'+_baMethod));}
@@ -11271,11 +11238,48 @@ function buildPR(){
   </div>
 </div>
 <script>
-/* Rimuove il vecchio service worker e le cache: evita che venga mostrata una versione vecchia dell'app */
+/* Service worker (sw.js): rete prima, cache solo come riserva offline. Rimuove le vecchie cache. */
 (function(){try{
-  if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(function(rs){rs.forEach(function(r){r.unregister();});}).catch(function(){});}
-  if(window.caches&&caches.keys){caches.keys().then(function(ks){ks.forEach(function(k){caches.delete(k);});}).catch(function(){});}
+  if(window.caches&&caches.keys){caches.keys().then(function(ks){ks.forEach(function(k){if(k!=='sportfit-v3')caches.delete(k);});}).catch(function(){});}
+  if('serviceWorker' in navigator){
+    navigator.serviceWorker.getRegistrations().then(function(rs){rs.forEach(function(r){var w=r.active||r.waiting||r.installing;if(w&&!/\/sw\.js(\?|$)/.test(w.scriptURL))r.unregister();});}).catch(function(){});
+    navigator.serviceWorker.register('./sw.js',{updateViaCache:'none'}).then(function(r){try{r.update();}catch(e){}}).catch(function(){});
+  }
 }catch(e){}})();
+
+/* Pulsante "Installa l'app" */
+function sfIsStandalone(){try{return (window.matchMedia&&(window.matchMedia('(display-mode: standalone)').matches||window.matchMedia('(display-mode: fullscreen)').matches||window.matchMedia('(display-mode: minimal-ui)').matches))||window.navigator.standalone===true;}catch(e){return false;}}
+function sfUpdateInstallBar(){var b=document.getElementById('sfInstallBar');if(b)b.style.display=sfIsStandalone()?'none':'';}
+function sfInstallInfo(){
+  var ua=navigator.userAgent||'';
+  var ios=/iPhone|iPad|iPod/.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+  var android=/Android/i.test(ua);
+  var inApp=/FBAN|FBAV|FB_IAB|Instagram|Messenger|Line\/|TikTok|musical_ly|Snapchat|Pinterest|LinkedInApp|Twitter|GSA\//.test(ua)||(android&&/; wv\)/.test(ua));
+  var mac=!ios&&/Macintosh/.test(ua)&&/Safari/.test(ua)&&!/Chrome|Chromium|CriOS|Edg|OPR|Firefox/.test(ua);
+  var html;
+  if(inApp) html='<p>'+t('install_inapp')+'</p>';
+  else if(ios) html='<ol><li>'+t('install_ios_1')+'</li><li>'+t('install_ios_2')+'</li><li>'+t('install_ios_3')+'</li></ol>';
+  else if(android) html='<ol><li>'+t('install_android_1')+'</li><li>'+t('install_android_2')+'</li></ol>';
+  else if(mac) html='<p>'+t('install_mac')+'</p>';
+  else html='<p>'+t('install_desktop')+'</p>';
+  var ov=document.createElement('div');ov.className='sf-inst-ov';ov.id='sfInstOv';
+  ov.innerHTML='<div class="sf-inst-box" role="dialog" aria-modal="true"><h3>'+t('install_title')+'</h3>'+html+'<button type="button" class="sf-inst-close">'+t('install_close')+'</button></div>';
+  ov.addEventListener('click',function(e){if(e.target===ov||e.target.classList.contains('sf-inst-close'))ov.remove();});
+  var old=document.getElementById('sfInstOv');if(old)old.remove();
+  document.body.appendChild(ov);
+}
+function sfInstallClick(){
+  var p=window._sfDeferredPrompt;
+  if(p){
+    window._sfDeferredPrompt=null;
+    try{p.prompt();if(p.userChoice)p.userChoice.then(function(){}).catch(function(){});}catch(e){sfInstallInfo();}
+    return;
+  }
+  sfInstallInfo();
+}
+window.addEventListener('appinstalled',function(){window._sfDeferredPrompt=null;try{showToast(t('install_done'));}catch(e){}sfUpdateInstallBar();});
+try{window.matchMedia('(display-mode: standalone)').addEventListener('change',sfUpdateInstallBar);}catch(e){}
+sfUpdateInstallBar();
 </script>
 </body>
 </html>
