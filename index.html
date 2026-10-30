@@ -9319,6 +9319,56 @@ const getR=(wId,dId,eIdx,sIdx)=>localStorage.getItem(SK.r(wId,dId,eIdx,sIdx))||'
 const setR=(wId,dId,eIdx,sIdx,v)=>v?localStorage.setItem(SK.r(wId,dId,eIdx,sIdx),v):localStorage.removeItem(SK.r(wId,dId,eIdx,sIdx));
 const getPR=(wId,dId,eIdx)=>parseFloat(localStorage.getItem(SK.pr(wId,dId,eIdx))||'0');
 const setPR_=(wId,dId,eIdx,v)=>localStorage.setItem(SK.pr(wId,dId,eIdx),v);
+// ── Data allenamento per giorno: il campo OGGI si svuota quando il giorno viene riaperto in una data diversa ──
+// Programmi con calcolatore (pesi calcolati dai massimali): comportamento invariato
+const SF_CALC_WIDS=['wendler-531','texas-method','candito-6wk','smolov-jr'];
+const _sfDayKey=(wId,dId)=>`sf_d_${wId}_${dId}`;
+const _sfToday=()=>new Date().toDateString();
+function sfMarkDay(wId,dId){try{localStorage.setItem(_sfDayKey(wId,dId),_sfToday());}catch(e){}}
+function sfDayIsToday(wId,dId){try{return localStorage.getItem(_sfDayKey(wId,dId))===_sfToday();}catch(e){return false;}}
+function sfPrepareDays(wId,days){
+    if(SF_CALC_WIDS.includes(wId)||!Array.isArray(days))return;
+    const today=_sfToday();
+    days.forEach(day=>{
+        const keys=[];
+        (day.exercises||[]).forEach((ex,eIdx)=>{
+            const n=Math.max(parseInt(ex.s)||0,10);
+            for(let s=0;s<n;s++){keys.push(SK.w(wId,day.id,eIdx,s),SK.r(wId,day.id,eIdx,s));}
+        });
+        let mark=null;
+        try{mark=localStorage.getItem(_sfDayKey(wId,day.id));}catch(e){}
+        if(mark===null){
+            // Prima apertura dopo l'aggiornamento: usa la data dell'ultimo allenamento salvato di questo giorno
+            const hasVal=keys.some(k=>localStorage.getItem(k));
+            if(!hasVal)return;
+            const last=getHist(wId).find(h=>h.days&&h.days.some(d=>d.id===day.id));
+            mark=last?new Date(last.date).toDateString():today;
+            try{localStorage.setItem(_sfDayKey(wId,day.id),mark);}catch(e){}
+        }
+        if(mark!==today){
+            // Se l'allenamento non è stato salvato (app chiusa senza tornare indietro), salvalo con la sua data
+            try{
+                const hist=getHist(wId);
+                const done=hist.some(h=>new Date(h.date).toDateString()===mark&&h.days&&h.days.some(d=>d.id===day.id));
+                if(!done){
+                    const exs=(day.exercises||[]).map((ex,eIdx)=>({name:ex.name,
+                        sets:Array.from({length:parseInt(ex.s)||0},(_,sIdx)=>({w:getW(wId,day.id,eIdx,sIdx),r:getR(wId,day.id,eIdx,sIdx)||ex.r})).filter(st=>st.w!=='')
+                    })).filter(ex=>ex.sets.length>0);
+                    if(exs.length){
+                        const dayObj={id:day.id,name:day.name,exercises:exs};
+                        const same=hist.find(h=>new Date(h.date).toDateString()===mark);
+                        if(same){same.days=(same.days||[]).filter(d=>d.id!==day.id);same.days.push(dayObj);}
+                        else{hist.push({date:new Date(mark).toISOString(),days:[dayObj]});}
+                        hist.sort((a,b)=>new Date(b.date)-new Date(a.date));
+                        localStorage.setItem(SK.hist(wId),JSON.stringify(hist.slice(0,84)));
+                    }
+                }
+            }catch(e){}
+            keys.forEach(k=>localStorage.removeItem(k));
+            localStorage.removeItem(_sfDayKey(wId,day.id));
+        }
+    });
+}
 function sfConfirm(msg, onYes){
     const ov=document.getElementById('sfConfirmOverlay');
     const msgEl=document.getElementById('sfConfirmMsg');
@@ -9852,6 +9902,7 @@ function openWorkout(wId,backView){
         }
         daysToRender = w.days.filter(d=>d.id!==excludeId);
     }
+    sfPrepareDays(wId,w.days);
     document.getElementById('workout-body').innerHTML=daysToRender.map(day=>renderDay(wId,day)).join('')+'<div style="height:10px"></div>';
     document.getElementById('bottomNav').style.display='flex';
     setNavActive('scheda');
@@ -10004,7 +10055,7 @@ function renderEx(wId,dId,eIdx,ex){
     const prHtml=pr>0?`<span class="chip chip-pr" id="prbadge_${wId}_${dId}_${eIdx}" onclick="resetPR('${wId}','${dId}',${eIdx})" title="Tocca per cancellare PR" style="cursor:pointer">PR ${pr}kg</span>`
                      :`<span class="chip chip-pr" id="prbadge_${wId}_${dId}_${eIdx}" style="display:none"></span>`;
     const hist=getHist(wId);
-    const pastSessions=hist.filter(h=>new Date(h.date).toDateString()!==new Date().toDateString()).slice(0,2).reverse();
+    const pastSessions=hist.filter(h=>new Date(h.date).toDateString()!==new Date().toDateString()&&h.days&&h.days.some(d=>d.id===dId)).slice(0,2).reverse();
     function getArchWR(sessIdx,sIdx){
         const sess=pastSessions[sessIdx];if(!sess)return null;
         const day=sess.days.find(d=>d.id===dId);if(!day)return null;
@@ -10107,7 +10158,7 @@ function toggleSets(spId,arId){
     if(ar)ar.classList.toggle('open',exRow.classList.contains('open'));
 }
 function onWInput(wId,dId,eIdx,sIdx,el){
-    const val=el.value; setW(wId,dId,eIdx,sIdx,val);
+    const val=el.value; setW(wId,dId,eIdx,sIdx,val); sfMarkDay(wId,dId);
     // pb-fabio: copy weight from set 0 to all other sets immediately
     if(wId==='pb-fabio' && sIdx===0 && val){
         for(let s=1;s<10;s++){
@@ -10131,7 +10182,8 @@ function onWInput(wId,dId,eIdx,sIdx,el){
 // ─── SAVE SESSION ──────────────────────────────────────────────────────────
 function saveSession(wId){
     const w=getWorkoutLocalized(wId);
-    const snap={date:new Date().toISOString(),days:w.days.map(day=>({
+    const _calc=SF_CALC_WIDS.includes(wId);
+    const snap={date:new Date().toISOString(),days:w.days.filter(day=>_calc||sfDayIsToday(wId,day.id)).map(day=>({
         id:day.id,name:day.name,
         exercises:day.exercises.map((ex,eIdx)=>({name:ex.name,
             sets:Array.from({length:ex.s},(_,sIdx)=>({w:getW(wId,day.id,eIdx,sIdx),r:getR(wId,day.id,eIdx,sIdx)||ex.r})).filter(s=>s.w!=='')
@@ -10146,7 +10198,7 @@ function saveSession(wId){
 }
 function onRInput(wId,dId,eIdx,sIdx,el){
     const val=el.value;
-    setR(wId,dId,eIdx,sIdx,val);
+    setR(wId,dId,eIdx,sIdx,val); sfMarkDay(wId,dId);
     if(wId==='pb-fabio')_pbfUpdateCounter(wId,dId,eIdx);
 }
 function _pbfUpdateCounter(wId,dId,eIdx){
