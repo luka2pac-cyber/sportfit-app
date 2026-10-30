@@ -819,6 +819,7 @@ html,body{height:100%}
     </div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('fb-ab-u','uomini-inter-menu')"><div class="prog-item-name">🟣 <span data-t="fb_ab_u_label">Full Body A/B</span></div><div class="prog-item-sub" data-t="fb_ab_sub">2–3x / settimana · Full Body · 16 sett.</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('ul_2day_u','uomini-inter-menu')"><div class="prog-item-name">🟡 <span data-t="ul_2day_u_label">Upper/Lower 2 Giorni</span></div><div class="prog-item-sub" data-t="ul_2day_sub">2 giorni · Upper/Lower · 16 sett.</div></button><span class="prog-arr">›</span></div>
+    <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('pp23_inter_u','uomini-inter-menu')"><div class="prog-item-name">🔀 <span data-t="pp23_inter_u_label">Push Pull 2/3 Giorni</span></div><div class="prog-item-sub" data-t="pp23_inter_u_sub">2-3 giorni · Push/Pull</div></button><span class="prog-arr">›</span></div>
     <div style="display:flex;align-items:center;gap:10px;margin:16px 0 10px">
       <div style="flex:1;height:1px;background:rgba(255,214,10,.25)"></div>
       <div style="font-size:.62rem;font-weight:800;color:rgba(255,214,10,.7);letter-spacing:2px;text-transform:uppercase;white-space:nowrap" data-t="freq_div_3_4">📅 3-4 GIORNI / SETT.</div>
@@ -3059,7 +3060,7 @@ html,body{height:100%}
     <div class="prog-item" style="border:1.5px solid rgba(255,45,85,.35);background:rgba(255,45,85,.07)">
       <button class="prog-item-btn" onclick="showView('ashley-info-view')">
         <div class="prog-item-name">&#128293; <span data-t="ashley_btn">Ashley Horner &#8212; Strong</span></div>
-        <div class="prog-item-sub"><span data-t="ashley_sub">Forza &amp; Corpo Completo &#8212; 5 giorni</span></div>
+        <div class="prog-item-sub"><span data-t="ashley_sub">Upper/Lower 4 giorni - Forza + Massa</span></div>
       </button>
       <span class="prog-arr">›</span>
     </div>
@@ -3160,59 +3161,80 @@ html,body{height:100%}
 
   <!-- ASHLEY HORNER INFO VIEW -->
   <div id="ashley-info-view" class="view">
-    <button onclick="goBack('donne-avanzato-menu')" class="back-btn">← <span data-t="level_advanced">Avanzato</span></button>
-
-    <div style="position:relative;width:100%;height:220px;overflow:hidden;border-radius:14px;margin-bottom:16px">
-      <img src="https://sport-fit.org/wp-content/uploads/2026/03/dante_trudel1.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(.7)"/>
-      <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,#000 100%);border-radius:14px"></div>
-      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px">
-        <div style="font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:900;text-transform:uppercase;letter-spacing:2px;line-height:1;color:#fff">🍑 Booty Builder</div>
-        <div style="font-size:.75rem;color:rgba(255,255,255,.6);margin-top:4px;font-style:italic"><span data-t="booty_coach">by Alessia Taglioni · Personal Trainer &amp; Coach</span></div>
-      </div>
-      <div style="position:absolute;top:12px;right:12px;background:rgba(255,45,85,.9);border-radius:20px;padding:4px 10px;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#fff"><span data-t="booty_badge">Su misura</span></div>
+    <button onclick="goBack('donne-avanzato-menu')" class="back-btn">&#8592; <span data-t="level_advanced">Avanzato</span></button>
+    <div style="text-align:center;margin-bottom:12px">
+      <img src="https://sport-fit.org/wp-content/uploads/2026/03/dante_trudel1.jpg" style="max-width:120px;height:auto;border-radius:14px;display:inline-block"/>
+      <div style="margin-top:6px;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:900;color:#fff;text-transform:uppercase">Ashley Horner</div>
+      <div style="font-size:.7rem;color:rgba(255,255,255,.45);margin-top:2px"><span data-t="ashley_founder">IFBB Pro &amp; Strength Coach</span></div>
     </div>
-
-    <div style="background:rgba(255,45,85,.08);border:1.5px solid rgba(255,45,85,.4);border-radius:14px;padding:14px;margin-bottom:14px">
-      <div style="font-size:.78rem;color:rgba(255,255,255,.85);line-height:1.6">
-        <span data-t="booty_bio">Alessia Taglioni è una personal trainer specializzata nell&apos;allenamento femminile. Il suo metodo combina scienza, progressione e personalizzazione: ogni programma viene costruito su di te, sui tuoi obiettivi e sul tuo livello — non su un template generico.</span>
-      </div>
-    </div>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px">
-      <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:10px;text-align:center">
-        <div style="font-size:1.2rem;margin-bottom:4px">🏋️‍♀️</div>
-        <div style="font-size:.6rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px">Focus</div>
-        <div style="font-size:.7rem;font-weight:700;margin-top:2px;color:#fff"><span data-t="booty_focus">Scultura Femminile</span></div>
-      </div>
-      <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:10px;text-align:center">
-        <div style="font-size:1.2rem;margin-bottom:4px">📋</div>
-        <div style="font-size:.6rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px">Tipo</div>
-        <div style="font-size:.7rem;font-weight:700;margin-top:2px;color:#fff"><span data-t="booty_type">Personalizzato</span></div>
-      </div>
-      <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:10px;text-align:center">
-        <div style="font-size:1.2rem;margin-bottom:4px">✨</div>
-        <div style="font-size:.6rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px">Livello</div>
-        <div style="font-size:.7rem;font-weight:700;margin-top:2px;color:#fff"><span data-t="booty_level">Tutti i livelli</span></div>
-      </div>
-    </div>
-
-    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:12px;margin-bottom:16px">
-      <div style="font-size:.7rem;color:rgba(255,255,255,.5);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;font-weight:700"><span data-t="booty_includes_title">Cosa include</span></div>
-      <div style="font-size:.75rem;color:rgba(255,255,255,.8);line-height:1.9">
-        <span data-t="booty_inc1">✅ Scheda personalizzata su obiettivi e livello</span><br>
-        <span data-t="booty_inc2">✅ Progressione studiata settimana per settimana</span><br>
-        <span data-t="booty_inc3">✅ Supporto diretto con Alessia</span><br>
-        <span data-t="booty_inc4">✅ Adattamenti in base ai tuoi feedback</span>
-      </div>
-    </div>
-
-    <button onclick="window.open('https://sport-fit.org/booty','_blank')" style="width:100%;background:linear-gradient(135deg,#b5004a,#ff2d55);border:none;border-radius:14px;padding:16px;color:#fff;font-family:inherit;font-size:.95rem;font-weight:800;cursor:pointer;letter-spacing:.5px;text-transform:uppercase">
-      <span data-t="booty_cta">🍑 Voglio il mio programma su misura →</span>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#7b0022,rgba(255,45,85,.9))" onclick="openWorkout('ashley','ashley-info-view')">
+      <span data-t="ashley_start_btn">&#128293; Inizia Strong Program</span>
     </button>
-
-    <div style="text-align:center;font-size:.62rem;color:rgba(255,255,255,.3);margin-top:8px;margin-bottom:20px">
-      <span data-t="booty_redirect">Verrai reindirizzata al sito di Alessia Taglioni</span>
+    <div class="view-title" style="font-size:1.7rem">&#128293; Strong</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:4px"><b style="color:#fff">Ashley Horner</b> &#8212; IFBB Pro &amp; Strength Coach</div>
+    <div style="color:rgba(255,255,255,.45);font-size:.75rem;margin-bottom:14px"><span data-t="ashley_sub2">4 giorni / settimana &#8212; 12 settimane</span></div>
+    <div class="disclaimer red"><div class="disclaimer-icon">&#9888;&#65039;</div><div class="disclaimer-text"><b data-t="ashley_dis_bold">Avanzato</b> &#8212; <span data-t="ashley_disclaimer">Ibrido powerlifting + bodybuilding. Richiede tecnica solida su squat, stacco e panca. Alta intensita sul SNC.</span></div></div>
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title purple">&#128204; <span data-t="ashley_phi_title">Filosofia Strong</span></div>
+      <div class="ai-bullet"><span data-t="ashley_phi1">Ibrido powerlifting + bodybuilding: forza massimale + ipertrofia nella stessa settimana</span></div>
+      <div class="ai-bullet"><span data-t="ashley_phi2">Giorni Power: carichi al 80-90% 1RM, 3-5 reps &#8212; stimolo neurale massimo</span></div>
+      <div class="ai-bullet"><span data-t="ashley_phi3">Giorni Hypertrophy: stesso pattern di movimenti, 8-12 reps per massimo volume</span></div>
+      <div class="ai-bullet"><span data-t="ashley_phi4">Progressione lineare obbligatoria: ogni settimana aggiungi peso ai compound principali</span></div>
     </div>
+    <div class="ai-block">
+      <div class="ai-block-title gold">&#9889; <span data-t="ashley_key_title">Struttura Settimanale</span></div>
+      <div class="ai-stat-row" style="align-items:flex-start;padding:7px 0">
+        <span class="ai-stat-label" style="min-width:80px">&#128308; <span data-t="ashley_d1_lbl">Giorno 1</span></span>
+        <span class="ai-stat-val" style="text-align:right;line-height:1.5">
+          <span style="font-size:.65rem;color:rgba(255,255,255,.4);display:block" data-t="ashley_d1_day">Luned&#236;</span>
+          <span data-t="ashley_day1">Upper Power &#8212; Panca &middot; OHP &middot; Rematore (3-5 reps)</span>
+        </span>
+      </div>
+      <div class="ai-stat-row" style="align-items:flex-start;padding:7px 0">
+        <span class="ai-stat-label" style="min-width:80px">&#128309; <span data-t="ashley_d2_lbl">Giorno 2</span></span>
+        <span class="ai-stat-val" style="text-align:right;line-height:1.5">
+          <span style="font-size:.65rem;color:rgba(255,255,255,.4);display:block" data-t="ashley_d2_day">Marted&#236;</span>
+          <span data-t="ashley_day2">Lower Power &#8212; Squat &middot; RDL (3-5 reps)</span>
+        </span>
+      </div>
+      <div class="ai-stat-row" style="align-items:flex-start;padding:7px 0">
+        <span class="ai-stat-label" style="min-width:80px;color:rgba(255,255,255,.3)">&#9711; <span data-t="ashley_rest1_lbl">Riposo</span></span>
+        <span class="ai-stat-val" style="text-align:right;line-height:1.5">
+          <span style="font-size:.65rem;color:rgba(255,255,255,.4);display:block" data-t="ashley_rest1_day">Mercoled&#236;</span>
+          <span style="color:rgba(255,255,255,.3)" data-t="ashley_rest_txt">Recupero attivo</span>
+        </span>
+      </div>
+      <div class="ai-stat-row" style="align-items:flex-start;padding:7px 0">
+        <span class="ai-stat-label" style="min-width:80px">&#128308; <span data-t="ashley_d4_lbl">Giorno 4</span></span>
+        <span class="ai-stat-val" style="text-align:right;line-height:1.5">
+          <span style="font-size:.65rem;color:rgba(255,255,255,.4);display:block" data-t="ashley_d4_day">Gioved&#236;</span>
+          <span data-t="ashley_day4">Upper Hypertrophy &#8212; Petto &middot; Schiena &middot; Spalle (8-12 reps)</span>
+        </span>
+      </div>
+      <div class="ai-stat-row" style="align-items:flex-start;padding:7px 0">
+        <span class="ai-stat-label" style="min-width:80px">&#128309; <span data-t="ashley_d5_lbl">Giorno 5</span></span>
+        <span class="ai-stat-val" style="text-align:right;line-height:1.5">
+          <span style="font-size:.65rem;color:rgba(255,255,255,.4);display:block" data-t="ashley_d5_day">Venerd&#236;</span>
+          <span data-t="ashley_day5">Lower Hypertrophy &#8212; Stacco &middot; Glutei &middot; Femorali (3-5 + 8-12 reps)</span>
+        </span>
+      </div>
+      <div class="ai-stat-row" style="align-items:flex-start;padding:7px 0">
+        <span class="ai-stat-label" style="min-width:80px;color:rgba(255,255,255,.3)">&#9711; <span data-t="ashley_rest2_lbl">Riposo</span></span>
+        <span class="ai-stat-val" style="text-align:right;line-height:1.5">
+          <span style="font-size:.65rem;color:rgba(255,255,255,.4);display:block" data-t="ashley_rest2_day">Sab / Dom</span>
+          <span style="color:rgba(255,255,255,.3)" data-t="ashley_rest_txt">Recupero attivo</span>
+        </span>
+      </div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title blue">&#128202; <span data-t="ashley_big3">La Grande Triplice</span></div>
+      <div class="ai-stat-row"><span class="ai-stat-label">Panca</span><span class="ai-stat-val" data-t="ashley_ex1">Upper Power (Lun) + Upper Hyper (Gio)</span></div>
+      <div class="ai-stat-row"><span class="ai-stat-label">Squat</span><span class="ai-stat-val" data-t="ashley_ex2">Lower Power (Mar) + varianti Gio/Ven</span></div>
+      <div class="ai-stat-row"><span class="ai-stat-label">Stacco</span><span class="ai-stat-val" data-t="ashley_ex3">Lower Hyper (Ven) 5x3-5 &#8212; main lift</span></div>
+    </div>
+    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#7b0022,rgba(255,45,85,.9))" onclick="openWorkout('ashley','ashley-info-view')">
+      <span data-t="ashley_start_btn">&#128293; Inizia Strong Program</span>
+    </button>
   </div>
 
   <!-- BRET CONTRERAS INFO VIEW -->
@@ -3295,7 +3317,7 @@ html,body{height:100%}
 
   <!-- BOOTY BUILDER VIEW -->
   <div id="booty-builder-view" class="view">
-    <button onclick="goBack('donne-avanzato-menu')" class="back-btn">← Avanzato</button>
+    <button onclick="goBack('donne-avanzato-menu')" class="back-btn">← <span data-t="level_advanced">Avanzato</span></button>
 
     <div style="position:relative;width:100%;height:220px;overflow:hidden;border-radius:14px;margin-bottom:16px">
       <img src="https://sport-fit.org/wp-content/uploads/2026/03/booty1.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(.7)"/>
@@ -4102,6 +4124,7 @@ const T = {
     classic_4u_pills:[['4×','/ sett.'],['~70-90 min','/ sessione'],['12-16 sett.','']],
     abc_3day_u_label:'Full Body A/B/C',
     ul_2day_u_label:'Superiore/Inferiore 3-4 Giorni',
+    pp23_inter_u_label:'Push Pull 2/3 Giorni', pp23_inter_u_sub:'2-3 giorni · Push/Pull', pp23_inter_u_pills:[['2-3×','/ sett.'],['Push·Pull','']], level_pp23_inter_u:'INTERMEDIO',
     classic_4day_u_label:'Classic Split 4 Giorni',
     fb_ab_u_label:'Corpo Completo A/B', fb_ab_u_pills:[['2-3×','/ sett.'],['~55 min','/ sessione'],['12-16 sett.','']],
     pp_d_label:'Push Pull Donna',
@@ -5766,6 +5789,7 @@ en:{
     classic_4u_pills:[['4x','/ week'],['~70-90 min','/ session'],['12-16 wks','']],
     abc_3day_u_label:'Full Body A/B/C',
     ul_2day_u_label:'Upper/Lower 3-4 Day',
+    pp23_inter_u_label:'Push Pull 2/3 Day', pp23_inter_u_sub:'2-3 days · Push/Pull', pp23_inter_u_pills:[['2-3×','/ week'],['Push·Pull','']], level_pp23_inter_u:'INTERMEDIATE',
     classic_4day_u_label:'Classic Split 4-Day',
     fb_ab_u_label:'Full Body A/B', fb_ab_u_pills:[['2-3×','/ week'],['~55 min','/ session'],['12-16 wks','']],
     pp_d_label:'Push Pull Woman',
@@ -7331,6 +7355,29 @@ const WORKOUTS_BASE = {
         {it:'Alzate Laterali (macchina o manubri)',en:'Lateral Raise (machine or DBs)',s:3,r:'15-12',rest:'1-2 min'},
         {it:'French Press / Estensioni dietro la testa',en:'French Press / Overhead Extension',s:3,r:'15-10',rest:'1-2 min'},
         {it:'Curl Bicipiti Manubri o Barra',en:'DB or Barbell Curl',s:3,r:'15-10',rest:'1-2 min'}
+      ]}
+    ]},
+
+    // ── PUSH PULL 2/3 GIORNI UOMO (INTERMEDIO) ─────────────────────
+    pp23_inter_u:{gender:'uomo',days:[
+      {id:'pp23i_push',color:'var(--green)',exercises:[
+        {it:'Squat / Machine Squat / Leg Press',en:'Squat / Machine Squat / Leg Press',s:3,r:'8-6'},
+        {it:'Press Inclinata (Manubri / Bilanciere / Macchina / Smith)',en:'Incline Press (DB / BB / Machine / Smith)',s:3,r:'8-6'},
+        {it:'Affondi / Bulgarian Squat / Leg Press Unilaterale',en:'Lunges / Bulgarian Squat / One Leg Press',s:3,r:'10-8'},
+        {it:'Dip / Panca Presa Stretta',en:'Dip / Close Grip Bench Press',s:3,r:'10-8'},
+        {it:'Leg Extension',en:'Leg Extension',s:2,r:'12-10'},
+        {it:'Alzate Laterali',en:'Lateral Raises',s:3,r:'12-10'},
+        {it:'French Press / Pushdown Tricipiti',en:'French Press / Triceps Pushdown',s:3,r:'12-10'},
+        {it:'Addominali',en:'Abs',s:3,r:'15-20'}
+      ]},
+      {id:'pp23i_pull',color:'var(--blue)',exercises:[
+        {it:'Lat Machine Presa Stretta / Lat Pulldown',en:'Close Grip Pulldown / Lat Pulldown',s:3,r:'8-6'},
+        {it:'RDL / Stacco Convenzionale',en:'RDL / Conventional Deadlift',s:3,r:'10-8'},
+        {it:'Pulley / Rematore Macchina',en:'Pulley / Machine Row',s:3,r:'10-8'},
+        {it:'Leg Curl',en:'Leg Curl',s:3,r:'12-10'},
+        {it:'Face Pull',en:'Face Pulls',s:2,r:'12-10'},
+        {it:'Curl Bilanciere / Manubri',en:'Biceps Curl (BB / DB)',s:3,r:'12-10'},
+        {it:'Calf Raise',en:'Calf Raises',s:3,r:'12-10'}
       ]}
     ]},
 
@@ -9058,13 +9105,13 @@ function getWorkoutLocalized(wId){
     if(!base) return null;
     const labelMap = {
   torso_limbs: 'tl_label',
-  lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',ken_pp:'ken_pp_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',pb_fabio:'pb_fabio_label',pbhd_luka:'pbhd_luka_label',pp_d:'pp_d_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label',lpp30_u:'lpp30_u_label',meadows_ppl:'meadows_ppl_label',adv_lpp6_u:'adv_lpp6_u_label',lpp6_adv_luka:'lpp6_adv_luka_label',pp23_luka_u:'pp23_luka_u_label',poliquin_arms:'poliquin_arms_label',layne_arms:'layne_arms_label',meadows_arms:'meadows_arms_label',meadows_shoulders:'meadows_sh_label',dante_shoulders:'dante_sh_label',meadows_chest:'meadows_chest_label',carter_bb:'carter_bb_label',gironda_4day:'gironda_4day_label',gironda_fb:'gironda_fb_label',ss_u:'ss_u_label',candito_6wk:'candito_6wk_label',wendler_531:'wendler_531_label',texas_method:'texas_method_label',smolov_jr:'smolov_jr_label',hst_u:'hst_u_label',tls_d:'tls_d_label',tls_3d:'tls_3d_label',tls_4d:'tls_4d_label',lpp6_u:'lpp6_u_label',pp_luka_d:'pp_luka_d_label'};
+  lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',pp23_inter_u:'pp23_inter_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',ken_pp:'ken_pp_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',pb_fabio:'pb_fabio_label',pbhd_luka:'pbhd_luka_label',pp_d:'pp_d_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label',lpp30_u:'lpp30_u_label',meadows_ppl:'meadows_ppl_label',adv_lpp6_u:'adv_lpp6_u_label',lpp6_adv_luka:'lpp6_adv_luka_label',pp23_luka_u:'pp23_luka_u_label',poliquin_arms:'poliquin_arms_label',layne_arms:'layne_arms_label',meadows_arms:'meadows_arms_label',meadows_shoulders:'meadows_sh_label',dante_shoulders:'dante_sh_label',meadows_chest:'meadows_chest_label',carter_bb:'carter_bb_label',gironda_4day:'gironda_4day_label',gironda_fb:'gironda_fb_label',ss_u:'ss_u_label',candito_6wk:'candito_6wk_label',wendler_531:'wendler_531_label',texas_method:'texas_method_label',smolov_jr:'smolov_jr_label',hst_u:'hst_u_label',tls_d:'tls_d_label',tls_3d:'tls_3d_label',tls_4d:'tls_4d_label',lpp6_u:'lpp6_u_label',pp_luka_d:'pp_luka_d_label'};
     const pillsMap = {
   torso_limbs: {
     it:[['4 Giorni',''],['Torso/Arti',''],['Intermedio','']],
     en:[['4 Days',''],['Torso/Limbs',''],['Intermediate','']]
   },
-  lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',ken_pp:'ken_pp_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',pb_fabio:'pb_fabio_pills','pbhd-luka':'pbhd_luka_pills','pbhd_luka':'pbhd_luka_pills',pp_d:'pp_d_pills',lpp4_u:'lpp4_u_pills',ws4sb_u:'ws4sb_u_pills',madcow_u:'madcow_u_pills',lpp30_u:'lpp30_u_pills',meadows_ppl:'meadows_ppl_pills',carter_bb:'carter_bb_pills',gironda_4day:'gironda_4day_pills',gironda_fb:'gironda_fb_pills',ss_u:'ss_u_pills',candito_6wk:'candito_6wk_pills',wendler_531:'wendler_531_pills',texas_method:'texas_method_pills',smolov_jr:'smolov_jr_pills',hst_u:'hst_u_pills',tls_d:'tls_d_pills',tls_3d:'tls_3d_pills',tls_4d:'tls_4d_pills',lpp6_u:'lpp6_u_pills'};
+  lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',pp23_inter_u:'pp23_inter_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',ken_pp:'ken_pp_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',pb_fabio:'pb_fabio_pills','pbhd-luka':'pbhd_luka_pills','pbhd_luka':'pbhd_luka_pills',pp_d:'pp_d_pills',lpp4_u:'lpp4_u_pills',ws4sb_u:'ws4sb_u_pills',madcow_u:'madcow_u_pills',lpp30_u:'lpp30_u_pills',meadows_ppl:'meadows_ppl_pills',carter_bb:'carter_bb_pills',gironda_4day:'gironda_4day_pills',gironda_fb:'gironda_fb_pills',ss_u:'ss_u_pills',candito_6wk:'candito_6wk_pills',wendler_531:'wendler_531_pills',texas_method:'texas_method_pills',smolov_jr:'smolov_jr_pills',hst_u:'hst_u_pills',tls_d:'tls_d_pills',tls_3d:'tls_3d_pills',tls_4d:'tls_4d_pills',lpp6_u:'lpp6_u_pills'};
     const days = base.days.map(day=>{
         let badge, name;
         // DC 3-day: a=Upper A1, b=Lower B1, g1=Upper A2, g2=Lower B2, g3=Upper A3, full=Lower B3
@@ -9249,6 +9296,8 @@ function getWorkoutLocalized(wId){
         }else if(day.id==='cand_w6'){badge='W6 TEST';name=lang==='it'?'Test 1RM (Opzionale)':'1RM Test (Optional)';color='var(--gold)';
         }else if(day.id==='ppd_push'){badge='PUSH';name=lang==='it'?'Quadricipiti · Petto · Spalle · Tricipiti':'Quads · Chest · Shoulders · Triceps';color='var(--pink)';
         }else if(day.id==='ppd_pull'){badge='PULL';name=lang==='it'?'Schiena · Glutei · Femorali · Bicipiti':'Back · Glutes · Hamstrings · Biceps';color='var(--blue)';
+        }else if(day.id==='pp23i_push'){badge='PUSH';name=lang==='it'?'Quadricipiti · Petto · Spalle · Tricipiti':'Quads · Chest · Shoulders · Triceps';
+        }else if(day.id==='pp23i_pull'){badge='PULL';name=lang==='it'?'Schiena · Femorali · Bicipiti · Polpacci':'Back · Hamstrings · Biceps · Calves';
         }else if(day.id==='pp23u_push'){badge='PUSH';name=lang==='it'?'Quadricipiti · Petto · Spalle · Tricipiti':'Quads · Chest · Shoulders · Triceps';
         }else if(day.id==='pp23u_pull'){badge='PULL';name=lang==='it'?'Schiena · Femorali · Bicipiti · Polpacci':'Back · Hamstrings · Biceps · Calves';
         }else if(day.id==='pol_arms_a'){badge='SESSION A';name=lang==='it'?'Bicipiti · Tricipiti — Superset A':'Biceps · Triceps — Superset A';
