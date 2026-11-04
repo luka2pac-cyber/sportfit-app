@@ -1241,6 +1241,13 @@ html,body{height:100%}
   <div id="strength-power" class="view">
     <button onclick="goBack('uomini-heavy-menu')" class="back-btn">← <span data-t="advanced_title">Avanzato</span></button>
     <div class="view-title" style="font-size:1.8rem">💪 Strength<br><span style="font-size:1.2rem;color:rgba(255,255,255,.5)">&amp; Power</span></div>
+    <div class="prog-item" style="border:1.5px solid rgba(142,68,173,.45);background:rgba(142,68,173,.08)">
+      <button class="prog-item-btn" onclick="showView('gpl-info-view')">
+        <div class="prog-item-name">🏋️ Generic Powerlifting <span style="font-size:.7rem;opacity:.6">by Lyle McDonald</span></div>
+        <div class="prog-item-sub" data-t="gpl_btn_sub">4 giorni · Squat · Panca · Stacco · Pesante / Leggero</div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
     <div class="prog-item" style="border:1.5px solid rgba(48,209,88,.35);background:rgba(48,209,88,.07)">
       <button class="prog-item-btn" onclick="showView('ss-info-view')">
         <div class="prog-item-name">🟢 Starting Strength — <span style="font-size:.8rem;opacity:.7">Mark Rippetoe</span></div>
@@ -1694,18 +1701,11 @@ html,body{height:100%}
       </button>
       <span class="prog-arr">›</span>
     </div>
-    <div class="prog-item" style="border:1.5px solid rgba(142,68,173,.45);background:rgba(142,68,173,.08)">
-      <button class="prog-item-btn" onclick="showView('gpl-info-view')">
-        <div class="prog-item-name">🏋️ Generic Powerlifting <span style="font-size:.7rem;opacity:.6">by Lyle McDonald</span></div>
-        <div class="prog-item-sub" data-t="gpl_btn_sub">4 giorni · Squat · Panca · Stacco · Pesante / Leggero</div>
-      </button>
-      <span class="prog-arr">›</span>
-    </div>
   </div>
 
   <!-- GENERIC POWERLIFTING (LYLE MCDONALD) INFO VIEW -->
   <div id="gpl-info-view" class="view">
-    <button onclick="goBack('powerbuilding-concepts')" class="back-btn">← Powerbuilding</button>
+    <button onclick="goBack('strength-power')" class="back-btn">← Strength &amp; Power</button>
     <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#3a0a5a,#8e44ad)" onclick="openWorkout('gpl-u','gpl-info-view')">
       🏋️ <span data-t="gpl_start_btn">Inizia Generic Powerlifting</span>
     </button>
