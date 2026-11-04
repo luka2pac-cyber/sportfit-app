@@ -1694,6 +1694,114 @@ html,body{height:100%}
       </button>
       <span class="prog-arr">›</span>
     </div>
+    <div class="prog-item" style="border:1.5px solid rgba(142,68,173,.45);background:rgba(142,68,173,.08)">
+      <button class="prog-item-btn" onclick="showView('gpl-info-view')">
+        <div class="prog-item-name">🏋️ Generic Powerlifting <span style="font-size:.7rem;opacity:.6">by Lyle McDonald</span></div>
+        <div class="prog-item-sub" data-t="gpl_btn_sub">4 giorni · Squat · Panca · Stacco · Pesante / Leggero</div>
+      </button>
+      <span class="prog-arr">›</span>
+    </div>
+  </div>
+
+  <!-- GENERIC POWERLIFTING (LYLE MCDONALD) INFO VIEW -->
+  <div id="gpl-info-view" class="view">
+    <button onclick="goBack('powerbuilding-concepts')" class="back-btn">← Powerbuilding</button>
+    <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#3a0a5a,#8e44ad)" onclick="openWorkout('gpl-u','gpl-info-view')">
+      🏋️ <span data-t="gpl_start_btn">Inizia Generic Powerlifting</span>
+    </button>
+    <div style="text-align:center;margin-bottom:14px">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:2px">Generic Powerlifting</div>
+      <div style="font-size:.8rem;color:rgba(255,255,255,.5);margin-top:2px">by Lyle McDonald · <span data-t="gpl_sub">stile Ed Coan</span></div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">
+      <span class="chip" data-t="gpl_chip1">4 Giorni / Sett.</span>
+      <span class="chip" data-t="gpl_chip2">Squat · Panca · Stacco</span>
+      <span class="chip" data-t="gpl_chip3">Ciclo 12-13 sett.</span>
+      <span class="chip" data-t="gpl_chip4">Intermedio / Avanzato</span>
+    </div>
+    <div class="disclaimer" style="background:rgba(142,68,173,.1);border-left:3px solid #8e44ad"><div class="disclaimer-icon">🏋️</div><div class="disclaimer-text"><b data-t="gpl_level">Intermedio / Avanzato</b> — <span data-t="gpl_ideal">Programma base di powerlifting, collaudato da tantissimi atleti. Ideale per iniziare ad allenarsi seriamente su Squat, Panca e Stacco.</span></div></div>
+    <div class="ai-block" style="margin-top:14px">
+      <div class="ai-block-title red">📌 <span data-t="gpl_phi_title">Il programma in parole semplici</span></div>
+      <div class="ai-bullet"><span data-t="gpl_phi1">L'obiettivo è uno solo: diventare più forte nei 3 movimenti di gara — <b>Squat, Panca e Stacco</b>.</span></div>
+      <div class="ai-bullet"><span data-t="gpl_phi2">Ogni movimento si allena <b>2 volte a settimana</b>: un giorno <b>pesante</b> (per la forza) e un giorno <b>leggero</b> (per la tecnica).</span></div>
+      <div class="ai-bullet"><span data-t="gpl_phi3">Poche ripetizioni (1-5) con pesi veri: sotto l'80% del massimale serve a poco, tranne per i principianti.</span></div>
+      <div class="ai-bullet"><span data-t="gpl_phi4">Tutto il resto (punti deboli, ipertrofia, core) è solo un aiuto per i 3 movimenti — <b>non sei un bodybuilder</b>: niente volumi da bodybuilding.</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title gold">📖 <span data-t="gpl_gloss_title">Parole da sapere</span></div>
+      <div class="ai-bullet"><b style="color:#fff" data-t="gpl_g1_lbl">1RM (massimale):</b> <span data-t="gpl_g1">il peso più alto che riesci a sollevare per 1 sola ripetizione.</span></div>
+      <div class="ai-bullet"><b style="color:#fff" data-t="gpl_g2_lbl">%:</b> <span data-t="gpl_g2">percentuale del tuo 1RM. Es. 1RM 100 kg → 85% = 85 kg.</span></div>
+      <div class="ai-bullet"><b style="color:#fff" data-t="gpl_g3_lbl">Singola · Doppia · Tripla:</b> <span data-t="gpl_g3">una serie da 1 · 2 · 3 ripetizioni.</span></div>
+      <div class="ai-bullet"><b style="color:#fff" data-t="gpl_g4_lbl">Serie di lavoro:</b> <span data-t="gpl_g4">le serie vere, tutte con lo <b>stesso peso</b>. Le serie di riscaldamento prima (peso che sale piano piano) non contano.</span></div>
+      <div class="ai-bullet"><b style="color:#fff" data-t="gpl_g5_lbl">Stile gara:</b> <span data-t="gpl_g5">come in gara: squat sotto il parallelo, panca con fermo sul petto, stacco ripartendo da fermo a ogni ripetizione.</span></div>
+      <div class="ai-bullet"><b style="color:#fff" data-t="gpl_g6_lbl">Punto debole:</b> <span data-t="gpl_g6">il punto del movimento dove il bilanciere rallenta o si blocca. Si allena con un esercizio specifico (3×3).</span></div>
+      <div class="ai-bullet"><b style="color:#fff" data-t="gpl_g7_lbl">Peak week:</b> <span data-t="gpl_g7">l'ultima settimana prima di una gara: si scarica per arrivare freschi.</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title blue">⚖️ <span data-t="gpl_pct_title">Come scegliere il peso</span></div>
+      <div style="font-size:.75rem;color:rgba(255,255,255,.75);line-height:1.6;margin-bottom:8px"><span data-t="gpl_pct_intro">Scegli la percentuale del giorno, poi guarda quante ripetizioni fare per serie:</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:70px;color:#ffd60a;font-weight:800">80%</span><span class="ai-stat-val" data-t="gpl_pct_80">triple (a volte 5)</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:70px;color:#ffd60a;font-weight:800">85%</span><span class="ai-stat-val" data-t="gpl_pct_85">triple o doppie</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:70px;color:#ffd60a;font-weight:800">90%</span><span class="ai-stat-val" data-t="gpl_pct_90">doppie o singole</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:70px;color:#ffd60a;font-weight:800">95%+</span><span class="ai-stat-val" data-t="gpl_pct_95p">solo singole</span></div>
+      <div style="background:rgba(255,214,10,.1);border:1px solid rgba(255,214,10,.3);border-radius:8px;padding:9px 12px;margin-top:10px">
+        <div style="font-size:.68rem;font-weight:800;color:#ffd60a;margin-bottom:4px">🧮 <span data-t="gpl_ex_title">Esempio pratico</span></div>
+        <div style="font-size:.72rem;color:rgba(255,255,255,.8);line-height:1.7"><span data-t="gpl_ex_body">Squat 1RM = 100 kg. Oggi lavori all'<b>85% = 85 kg</b>.<br>1) Riscaldamento: 20 kg → 40 → 60 → 75 kg (poche ripetizioni, non contano).<br>2) Serie di lavoro: <b>5 serie da 3 con 85 kg</b> (o da 2 se la tecnica peggiora).<br>3) Giorno leggero: 75% del peso del giorno pesante → 85 kg × 0,75 = <b>63,75 kg</b> → ~64 kg (uomini) · 85 kg × 0,85 = <b>72,25 kg</b> → ~72 kg (donne).</span></div>
+      </div>
+      <div class="ai-bullet"><span data-t="gpl_pct_n1">Tutte le serie di lavoro con lo <b>stesso peso</b> — non è una piramide.</span></div>
+      <div class="ai-bullet"><span data-t="gpl_pct_n2">Solo le serie più pesanti (90%+) possono diventare faticose e lente. Le altre devono essere veloci e pulite.</span></div>
+      <div class="ai-bullet"><span data-t="gpl_pct_n3"><b>Uomini:</b> lavora più spesso a percentuali più basse (80-85%), il 90% solo ogni tanto. <b>Donne:</b> serve più pratica a percentuali alte (85-90%+).</span></div>
+      <div class="ai-bullet"><span data-t="gpl_pct_n4">Non conosci il massimale? Parti più leggero con più ripetizioni (5) e sali gradualmente.</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title gold">📅 <span data-t="gpl_wk_title">La settimana</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:80px">🔴 <span data-t="gpl_wd1_day">Lun</span></span><span class="ai-stat-val" data-t="gpl_wd1">Squat PESANTE + Stacco LEGGERO</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:80px">🔵 <span data-t="gpl_wd2_day">Mer</span></span><span class="ai-stat-val" data-t="gpl_wd2">Panca PESANTE</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:80px">🟢 <span data-t="gpl_wd3_day">Ven</span></span><span class="ai-stat-val" data-t="gpl_wd3">Squat LEGGERO + Stacco PESANTE</span></div>
+      <div class="ai-stat-row" style="padding:5px 0"><span class="ai-stat-label" style="min-width:80px">🟡 <span data-t="gpl_wd4_day">Sab</span></span><span class="ai-stat-val" data-t="gpl_wd4">Panca LEGGERA</span></div>
+      <div class="ai-bullet"><span data-t="gpl_wk_n1">Non ti alleni nel weekend? Usa <b>Lun · Mar · Gio · Ven</b>.</span></div>
+      <div class="ai-bullet"><span data-t="gpl_wk_n2">Lo Squat si fa <b>sempre prima</b> dello Stacco — come in gara.</span></div>
+      <div class="ai-bullet"><span data-t="gpl_wk_n3">L'ordine dei giorni si può invertire (es. Stacco pesante il sabato) per far cadere l'ultimo giorno pesante 14 giorni prima della gara.</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title red">🎯 <span data-t="gpl_t_title">Tecnica — stile gara</span></div>
+      <div class="ai-bullet"><span data-t="gpl_t1">Panca: se fai singole → <b>pausa sul petto a ogni ripetizione</b>, senza eccezioni.</span></div>
+      <div class="ai-bullet"><span data-t="gpl_t2">Panca: se fai più ripetizioni → metti in pausa <b>almeno 1 ripetizione per serie</b>. Più difficile (e più utile) se è l'ultima, quando sei già stanco.</span></div>
+      <div class="ai-bullet"><span data-t="gpl_t3">Squat: profondità piena, <b>niente mezze ripetizioni</b>. Panca: niente rimbalzo sul petto.</span></div>
+      <div class="ai-bullet"><span data-t="gpl_t4">Stacco: <b>riparti da fermo a ogni ripetizione</b> (bilanciere fermo a terra, riposizionati).</span></div>
+      <div class="ai-bullet"><span data-t="gpl_t5">Giorno leggero: setup perfetto, velocità e chiusura — è allenamento della tecnica, non della fatica.</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title blue">🧩 <span data-t="gpl_a_title">Esercizi complementari</span></div>
+      <div class="ai-bullet"><span data-t="gpl_a1">Dove nella scheda vedi più esercizi separati da <b>/</b> → <b>scegline UNO</b> e tienilo per tutto il periodo.</span></div>
+      <div class="ai-bullet"><span data-t="gpl_a2"><b>Punto debole (3×3):</b> se il punto debole resta lo stesso, l'esercizio resta lo stesso. Se cambia, cambia l'esercizio ogni 3-4 settimane.</span></div>
+      <div class="ai-bullet"><span data-t="gpl_a3"><b>Ipertrofia:</b> 4-8 serie totali per giorno. Un muscolo più grande può diventare più forte e ti tiene equilibrato e senza infortuni.</span></div>
+    </div>
+    <div class="ai-block">
+      <div class="ai-block-title gold">🧱 <span data-t="gpl_c_title">Core e zona lombare</span></div>
+      <div class="ai-bullet"><span data-t="gpl_c1">Addome da tutte le direzioni: avanti-dietro, rotazione e stabilità laterale. Il corpo non è simmetrico — se ti giri sotto carico senza preparazione, ti fai male.</span></div>
+      <div class="ai-bullet"><span data-t="gpl_c2"><b>Cable Crunch pesante</b> 2× / sett. · <b>Pallof Press o Woodchop</b> 1× / sett. · <b>Flessione laterale statica al cavo</b> (30 s per lato) 1× / sett. — 2-3 serie, pesante e progressivo.</span></div>
+      <div class="ai-bullet"><span data-t="gpl_c3"><b>Iperestensioni a schiena tonda</b> 2× / sett. nei giorni gambe: 2-3 serie da 8+, tieni 1-2 secondi in alto. Servono resistenza lombare dinamica e statica — fondamentale per non arrotondare sotto carico in gara.</span></div>
+      <div class="ai-bullet"><span data-t="gpl_c4"><b>Forza lombare:</b> Good Morning, RDL o Rack Pull con poche ripetizioni.</span></div>
+    </div>
+    <div class="ai-block" style="border:1px solid rgba(48,209,88,.3);background:rgba(48,209,88,.05)">
+      <div class="ai-block-title green">🌱 <span data-t="gpl_f_title">Il primo ciclo</span></div>
+      <div class="ai-bullet"><span data-t="gpl_f1">Nel <b>primo ciclo salta gli esercizi per il punto debole</b>: non sai ancora quali sono. Solo movimenti di gara + lavoro di base.</span></div>
+      <div class="ai-bullet"><span data-t="gpl_f2">Alla fine del primo ciclo testa i massimali → guarda dove il bilanciere rallenta → dal 2° ciclo inserisci gli esercizi per il punto debole.</span></div>
+    </div>
+    <div class="ai-block" style="border:1px solid rgba(10,132,255,.3);background:rgba(10,132,255,.05)">
+      <div class="ai-block-title blue">🔄 <span data-t="gpl_cy_title">Il ciclo (12-13 settimane)</span></div>
+      <div class="ai-stat-row" style="align-items:flex-start;padding:6px 0"><span class="ai-stat-label" style="min-width:95px;color:#ffd60a;font-weight:800" data-t="gpl_cy1_lbl">Sett. 1-2</span><span class="ai-stat-val" style="text-align:left;line-height:1.5" data-t="gpl_cy1">Riavvio graduale dal ciclo precedente — non partire subito pesante.</span></div>
+      <div class="ai-stat-row" style="align-items:flex-start;padding:6px 0"><span class="ai-stat-label" style="min-width:95px;color:#ffd60a;font-weight:800" data-t="gpl_cy2_lbl">1ª metà</span><span class="ai-stat-val" style="text-align:left;line-height:1.5" data-t="gpl_cy2">Movimenti di gara all'80-90% per restare abituato ai pesi veri. Spingi <b>forte</b> su punti deboli e ipertrofia: cerca record del ciclo anche lì.</span></div>
+      <div class="ai-stat-row" style="align-items:flex-start;padding:6px 0"><span class="ai-stat-label" style="min-width:95px;color:#ffd60a;font-weight:800" data-t="gpl_cy3_lbl">Ultime 3 sett.</span><span class="ai-stat-val" style="text-align:left;line-height:1.5" data-t="gpl_cy3">Complementari in <b>mantenimento</b> (punto debole 1×3 · ipertrofia 4×8, senza aumentare il peso). Tutta l'energia sui movimenti di gara: serie al 90% o anche massimali.</span></div>
+      <div class="ai-stat-row" style="align-items:flex-start;padding:6px 0"><span class="ai-stat-label" style="min-width:95px;color:#ffd60a;font-weight:800" data-t="gpl_cy4_lbl">Gara</span><span class="ai-stat-val" style="text-align:left;line-height:1.5" data-t="gpl_cy4">Se prepari una gara, l'ultima settimana è la peak week: conta il ciclo all'indietro dalla data della gara.</span></div>
+      <div class="ai-bullet"><span data-t="gpl_cy5"><b>Opzionale:</b> una sessione SBD il sabato (Squat + Panca + Stacco nello stesso giorno) — in gara li fai tutti e 3 lo stesso giorno, quindi va allenato.</span></div>
+      <div class="ai-bullet"><span data-t="gpl_cy6">Se fai gare: allenati con i <b>comandi di gara</b> su tutte le serie di lavoro per almeno 3 settimane prima.</span></div>
+      <div class="ai-bullet"><span data-t="gpl_cy7">Durata: <b>12-13 settimane</b> (se parti molto leggero può essere più lungo). Dopo le 2 settimane di riavvio restano 9-10 settimane di lavoro vero.</span></div>
+    </div>
+    <button class="ai-send-btn" style="margin-top:16px;background:linear-gradient(135deg,#3a0a5a,#8e44ad)" onclick="openWorkout('gpl-u','gpl-info-view')">
+      🏋️ <span data-t="gpl_start_btn">Inizia Generic Powerlifting</span>
+    </button>
   </div>
 
   <!-- POWERBUILDING HEAVY DUTY BY LUKA INFO VIEW -->
@@ -5447,6 +5555,92 @@ const T = {
     level_inter:'Intermedio',
     arthur_key_title:'Split Settimanale',
     ul_pb_u_label:'Upper/Lower Powerbuilding by Luka',
+    gpl_start_btn:"Inizia Generic Powerlifting",
+    gpl_sub:"stile Ed Coan",
+    gpl_chip1:"4 Giorni / Sett.",
+    gpl_chip2:"Squat · Panca · Stacco",
+    gpl_chip3:"Ciclo 12-13 sett.",
+    gpl_chip4:"Intermedio / Avanzato",
+    gpl_ideal:"Programma base di powerlifting, collaudato da tantissimi atleti. Ideale per iniziare ad allenarsi seriamente su Squat, Panca e Stacco.",
+    gpl_level:"Intermedio / Avanzato",
+    gpl_phi1:"L'obiettivo è uno solo: diventare più forte nei 3 movimenti di gara — <b>Squat, Panca e Stacco</b>.",
+    gpl_phi2:"Ogni movimento si allena <b>2 volte a settimana</b>: un giorno <b>pesante</b> (per la forza) e un giorno <b>leggero</b> (per la tecnica).",
+    gpl_phi3:"Poche ripetizioni (1-5) con pesi veri: sotto l'80% del massimale serve a poco, tranne per i principianti.",
+    gpl_phi4:"Tutto il resto (punti deboli, ipertrofia, core) è solo un aiuto per i 3 movimenti — <b>non sei un bodybuilder</b>: niente volumi da bodybuilding.",
+    gpl_phi_title:"Il programma in parole semplici",
+    gpl_g1:"il peso più alto che riesci a sollevare per 1 sola ripetizione.",
+    gpl_g1_lbl:"1RM (massimale):",
+    gpl_g2:"percentuale del tuo 1RM. Es. 1RM 100 kg → 85% = 85 kg.",
+    gpl_g2_lbl:"%:",
+    gpl_g3:"una serie da 1 · 2 · 3 ripetizioni.",
+    gpl_g3_lbl:"Singola · Doppia · Tripla:",
+    gpl_g4:"le serie vere, tutte con lo <b>stesso peso</b>. Le serie di riscaldamento prima (peso che sale piano piano) non contano.",
+    gpl_g4_lbl:"Serie di lavoro:",
+    gpl_g5:"come in gara: squat sotto il parallelo, panca con fermo sul petto, stacco ripartendo da fermo a ogni ripetizione.",
+    gpl_g5_lbl:"Stile gara:",
+    gpl_g6:"il punto del movimento dove il bilanciere rallenta o si blocca. Si allena con un esercizio specifico (3×3).",
+    gpl_g6_lbl:"Punto debole:",
+    gpl_g7:"l'ultima settimana prima di una gara: si scarica per arrivare freschi.",
+    gpl_g7_lbl:"Peak week:",
+    gpl_gloss_title:"Parole da sapere",
+    gpl_pct_intro:"Scegli la percentuale del giorno, poi guarda quante ripetizioni fare per serie:",
+    gpl_pct_80:"triple (a volte 5)",
+    gpl_pct_85:"triple o doppie",
+    gpl_pct_90:"doppie o singole",
+    gpl_pct_95p:"solo singole",
+    gpl_ex_title:"Esempio pratico",
+    gpl_ex_body:"Squat 1RM = 100 kg. Oggi lavori all'<b>85% = 85 kg</b>.<br>1) Riscaldamento: 20 kg → 40 → 60 → 75 kg (poche ripetizioni, non contano).<br>2) Serie di lavoro: <b>5 serie da 3 con 85 kg</b> (o da 2 se la tecnica peggiora).<br>3) Giorno leggero: 75% del peso del giorno pesante → 85 kg × 0,75 = <b>63,75 kg</b> → ~64 kg (uomini) · 85 kg × 0,85 = <b>72,25 kg</b> → ~72 kg (donne).",
+    gpl_pct_n1:"Tutte le serie di lavoro con lo <b>stesso peso</b> — non è una piramide.",
+    gpl_pct_n2:"Solo le serie più pesanti (90%+) possono diventare faticose e lente. Le altre devono essere veloci e pulite.",
+    gpl_pct_n3:"<b>Uomini:</b> lavora più spesso a percentuali più basse (80-85%), il 90% solo ogni tanto. <b>Donne:</b> serve più pratica a percentuali alte (85-90%+).",
+    gpl_pct_n4:"Non conosci il massimale? Parti più leggero con più ripetizioni (5) e sali gradualmente.",
+    gpl_pct_title:"Come scegliere il peso",
+    gpl_wd1_day:"Lun",
+    gpl_wd1:"Squat PESANTE + Stacco LEGGERO",
+    gpl_wd2_day:"Mer",
+    gpl_wd2:"Panca PESANTE",
+    gpl_wd3_day:"Ven",
+    gpl_wd3:"Squat LEGGERO + Stacco PESANTE",
+    gpl_wd4_day:"Sab",
+    gpl_wd4:"Panca LEGGERA",
+    gpl_wk_n1:"Non ti alleni nel weekend? Usa <b>Lun · Mar · Gio · Ven</b>.",
+    gpl_wk_n2:"Lo Squat si fa <b>sempre prima</b> dello Stacco — come in gara.",
+    gpl_wk_n3:"L'ordine dei giorni si può invertire (es. Stacco pesante il sabato) per far cadere l'ultimo giorno pesante 14 giorni prima della gara.",
+    gpl_wk_title:"La settimana",
+    gpl_t1:"Panca: se fai singole → <b>pausa sul petto a ogni ripetizione</b>, senza eccezioni.",
+    gpl_t2:"Panca: se fai più ripetizioni → metti in pausa <b>almeno 1 ripetizione per serie</b>. Più difficile (e più utile) se è l'ultima, quando sei già stanco.",
+    gpl_t3:"Squat: profondità piena, <b>niente mezze ripetizioni</b>. Panca: niente rimbalzo sul petto.",
+    gpl_t4:"Stacco: <b>riparti da fermo a ogni ripetizione</b> (bilanciere fermo a terra, riposizionati).",
+    gpl_t5:"Giorno leggero: setup perfetto, velocità e chiusura — è allenamento della tecnica, non della fatica.",
+    gpl_t_title:"Tecnica — stile gara",
+    gpl_a1:"Dove nella scheda vedi più esercizi separati da <b>/</b> → <b>scegline UNO</b> e tienilo per tutto il periodo.",
+    gpl_a2:"<b>Punto debole (3×3):</b> se il punto debole resta lo stesso, l'esercizio resta lo stesso. Se cambia, cambia l'esercizio ogni 3-4 settimane.",
+    gpl_a3:"<b>Ipertrofia:</b> 4-8 serie totali per giorno. Un muscolo più grande può diventare più forte e ti tiene equilibrato e senza infortuni.",
+    gpl_a_title:"Esercizi complementari",
+    gpl_c1:"Addome da tutte le direzioni: avanti-dietro, rotazione e stabilità laterale. Il corpo non è simmetrico — se ti giri sotto carico senza preparazione, ti fai male.",
+    gpl_c2:"<b>Cable Crunch pesante</b> 2× / sett. · <b>Pallof Press o Woodchop</b> 1× / sett. · <b>Flessione laterale statica al cavo</b> (30 s per lato) 1× / sett. — 2-3 serie, pesante e progressivo.",
+    gpl_c3:"<b>Iperestensioni a schiena tonda</b> 2× / sett. nei giorni gambe: 2-3 serie da 8+, tieni 1-2 secondi in alto. Servono resistenza lombare dinamica e statica — fondamentale per non arrotondare sotto carico in gara.",
+    gpl_c4:"<b>Forza lombare:</b> Good Morning, RDL o Rack Pull con poche ripetizioni.",
+    gpl_c_title:"Core e zona lombare",
+    gpl_f1:"Nel <b>primo ciclo salta gli esercizi per il punto debole</b>: non sai ancora quali sono. Solo movimenti di gara + lavoro di base.",
+    gpl_f2:"Alla fine del primo ciclo testa i massimali → guarda dove il bilanciere rallenta → dal 2° ciclo inserisci gli esercizi per il punto debole.",
+    gpl_f_title:"Il primo ciclo",
+    gpl_cy1_lbl:"Sett. 1-2",
+    gpl_cy1:"Riavvio graduale dal ciclo precedente — non partire subito pesante.",
+    gpl_cy2_lbl:"1ª metà",
+    gpl_cy2:"Movimenti di gara all'80-90% per restare abituato ai pesi veri. Spingi <b>forte</b> su punti deboli e ipertrofia: cerca record del ciclo anche lì.",
+    gpl_cy3_lbl:"Ultime 3 sett.",
+    gpl_cy3:"Complementari in <b>mantenimento</b> (punto debole 1×3 · ipertrofia 4×8, senza aumentare il peso). Tutta l'energia sui movimenti di gara: serie al 90% o anche massimali.",
+    gpl_cy4_lbl:"Gara",
+    gpl_cy4:"Se prepari una gara, l'ultima settimana è la peak week: conta il ciclo all'indietro dalla data della gara.",
+    gpl_cy5:"<b>Opzionale:</b> una sessione SBD il sabato (Squat + Panca + Stacco nello stesso giorno) — in gara li fai tutti e 3 lo stesso giorno, quindi va allenato.",
+    gpl_cy6:"Se fai gare: allenati con i <b>comandi di gara</b> su tutte le serie di lavoro per almeno 3 settimane prima.",
+    gpl_cy7:"Durata: <b>12-13 settimane</b> (se parti molto leggero può essere più lungo). Dopo le 2 settimane di riavvio restano 9-10 settimane di lavoro vero.",
+    gpl_cy_title:"Il ciclo (12-13 settimane)",
+    gpl_btn_sub:"4 giorni · Squat · Panca · Stacco · Pesante / Leggero",
+    gpl_u_label:"Generic Powerlifting — Lyle McDonald",
+    level_gpl_u:"INTERMEDIO / AVANZATO",
+    gpl_u_pills:[['4×','/ sett.'],['12-13','sett.'],['Squat','Panca · Stacco']],
   },
 en:{
     level_inter:'Intermediate',
@@ -6941,6 +7135,92 @@ en:{
     candito_6wk_pills:[['6 Wks.','Peaking'],['Squat','Bench · DL'],['Intermediate','/ Advanced']],
     m_disclaimer:'Requires experience in evaluating muscle failure and performing high intensity techniques.',
     pbf_dl1:'Back Density: deadlift singles (1 rep) for 10 minutes',
+    gpl_start_btn:"Start Generic Powerlifting",
+    gpl_sub:"Ed Coan style",
+    gpl_chip1:"4 Days / Week",
+    gpl_chip2:"Squat · Bench · Deadlift",
+    gpl_chip3:"12-13 Week Cycle",
+    gpl_chip4:"Intermediate / Advanced",
+    gpl_ideal:"A basic, time-tested powerlifting program used by countless lifters. Ideal for getting into serious Squat, Bench and Deadlift training.",
+    gpl_level:"Intermediate / Advanced",
+    gpl_phi1:"There is only one goal: get stronger in the 3 competition lifts — <b>Squat, Bench and Deadlift</b>.",
+    gpl_phi2:"Each lift is trained <b>2 times a week</b>: one <b>heavy</b> day (for strength) and one <b>light</b> day (for technique).",
+    gpl_phi3:"Few reps (1-5) with real weights: below 80% of your max is of little use, except for beginners.",
+    gpl_phi4:"Everything else (weak points, hypertrophy, core) only serves the 3 lifts — <b>you are not a bodybuilder</b>: no bodybuilding volumes.",
+    gpl_phi_title:"The program in plain words",
+    gpl_g1:"the heaviest weight you can lift for 1 single rep.",
+    gpl_g1_lbl:"1RM (max):",
+    gpl_g2:"percentage of your 1RM. E.g. 1RM 100 kg → 85% = 85 kg.",
+    gpl_g2_lbl:"%:",
+    gpl_g3:"a set of 1 · 2 · 3 reps.",
+    gpl_g3_lbl:"Single · Double · Triple:",
+    gpl_g4:"the real sets, all with the <b>same weight</b>. The warm-up sets before (weight going up gradually) do not count.",
+    gpl_g4_lbl:"Work sets:",
+    gpl_g5:"like at a meet: squat below parallel, bench with a pause on the chest, deadlift reset from a dead stop every rep.",
+    gpl_g5_lbl:"Competition style:",
+    gpl_g6:"the part of the lift where the bar slows down or stalls. It is trained with a specific exercise (3×3).",
+    gpl_g6_lbl:"Weak point:",
+    gpl_g7:"the last week before a meet: you back off to arrive fresh.",
+    gpl_g7_lbl:"Peak week:",
+    gpl_gloss_title:"Words to know",
+    gpl_pct_intro:"Pick the percentage for the day, then check how many reps to do per set:",
+    gpl_pct_80:"triples (sometimes 5s)",
+    gpl_pct_85:"triples or doubles",
+    gpl_pct_90:"doubles or singles",
+    gpl_pct_95p:"singles only",
+    gpl_ex_title:"Worked example",
+    gpl_ex_body:"Squat 1RM = 100 kg. Today you work at <b>85% = 85 kg</b>.<br>1) Warm-up: 20 kg → 40 → 60 → 75 kg (few reps, they do not count).<br>2) Work sets: <b>5 sets of 3 with 85 kg</b> (or doubles if technique breaks down).<br>3) Light day: 75% of the heavy day weight → 85 kg × 0.75 = <b>63.75 kg</b> → ~64 kg (men) · 85 kg × 0.85 = <b>72.25 kg</b> → ~72 kg (women).",
+    gpl_pct_n1:"All work sets with the <b>same weight</b> — it is not a pyramid.",
+    gpl_pct_n2:"Only the heaviest sets (90%+) may get grindy and slow. The others must be fast and clean.",
+    gpl_pct_n3:"<b>Men:</b> work more often at lower percentages (80-85%), 90% only occasionally. <b>Women:</b> need more practice at higher percentages (85-90%+).",
+    gpl_pct_n4:"Don't know your max? Start lighter with more reps (5) and build up gradually.",
+    gpl_pct_title:"How to pick the weight",
+    gpl_wd1_day:"Mon",
+    gpl_wd1:"HEAVY Squat + LIGHT Deadlift",
+    gpl_wd2_day:"Wed",
+    gpl_wd2:"HEAVY Bench",
+    gpl_wd3_day:"Fri",
+    gpl_wd3:"LIGHT Squat + HEAVY Deadlift",
+    gpl_wd4_day:"Sat",
+    gpl_wd4:"LIGHT Bench",
+    gpl_wk_n1:"Can't train on weekends? Use <b>Mon · Tue · Thu · Fri</b>.",
+    gpl_wk_n2:"Squat always comes <b>before</b> the Deadlift — like at a meet.",
+    gpl_wk_n3:"The order of days can be reversed (e.g. heavy Deadlift on Saturday) so the last heavy day falls 14 days before the meet.",
+    gpl_wk_title:"The week",
+    gpl_t1:"Bench: if you do singles → <b>pause on the chest every rep</b>, no exceptions.",
+    gpl_t2:"Bench: if you do multiple reps → pause <b>at least 1 rep per set</b>. Harder (and more useful) if it is the last one, when you are already tired.",
+    gpl_t3:"Squat: full depth, <b>no half reps</b>. Bench: no bouncing off the chest.",
+    gpl_t4:"Deadlift: <b>reset from a dead stop every rep</b> (bar still on the floor, set up again).",
+    gpl_t5:"Light day: perfect setup, speed and lockout — it is technique practice, not fatigue.",
+    gpl_t_title:"Technique — competition style",
+    gpl_a1:"Where the plan shows several exercises separated by <b>/</b> → <b>pick ONE</b> and keep it for the whole period.",
+    gpl_a2:"<b>Weak point (3×3):</b> if the weak point stays the same, the exercise stays the same. If it changes, change the exercise every 3-4 weeks.",
+    gpl_a3:"<b>Hypertrophy:</b> 4-8 total sets per day. A bigger muscle can become a stronger muscle and keeps you balanced and injury-free.",
+    gpl_a_title:"Assistance work",
+    gpl_c1:"Abs from every direction: front-to-back, rotation and lateral stability. The body is not symmetrical — if you twist under load unprepared, you get hurt.",
+    gpl_c2:"<b>Heavy Cable Crunch</b> 2× / week · <b>Pallof Press or Woodchop</b> 1× / week · <b>Static Cable Side Bend</b> (30 s per side) 1× / week — 2-3 sets, heavy and progressive.",
+    gpl_c3:"<b>Round-back hyperextensions</b> 2× / week on lower body days: 2-3 sets of 8+, hold 1-2 seconds at the top. You need dynamic and static low back endurance — key to not rounding under load at a meet.",
+    gpl_c4:"<b>Low back strength:</b> Good Mornings, RDLs or Rack Pulls for low reps.",
+    gpl_c_title:"Core and low back",
+    gpl_f1:"In your <b>first cycle skip the weak point exercises</b>: you don't know your weak points yet. Only competition lifts + basic work.",
+    gpl_f2:"At the end of the first cycle test your maxes → see where the bar slows down → from the 2nd cycle add the weak point exercises.",
+    gpl_f_title:"Your first cycle",
+    gpl_cy1_lbl:"Wk 1-2",
+    gpl_cy1:"Gradual build-up from the previous cycle — don't start heavy right away.",
+    gpl_cy2_lbl:"1st half",
+    gpl_cy2:"Competition lifts at 80-90% to stay in touch with real weights. Push <b>hard</b> on weak points and hypertrophy: chase cycle PRs there too.",
+    gpl_cy3_lbl:"Last 3 wks",
+    gpl_cy3:"Assistance on <b>maintenance</b> (weak point 1×3 · hypertrophy 4×8, no weight increases). All energy into the competition lifts: sets at 90% or even maxes.",
+    gpl_cy4_lbl:"Meet",
+    gpl_cy4:"If you are preparing for a meet, the last week is peak week: count the cycle backwards from the meet date.",
+    gpl_cy5:"<b>Optional:</b> a Saturday SBD session (Squat + Bench + Deadlift on the same day) — at a meet you do all 3 the same day, so practice it.",
+    gpl_cy6:"If you compete: practice <b>meet commands</b> on all work sets for at least 3 weeks before.",
+    gpl_cy7:"Length: <b>12-13 weeks</b> (longer if you start very light). After the 2 build-up weeks you have 9-10 weeks of real work.",
+    gpl_cy_title:"The cycle (12-13 weeks)",
+    gpl_btn_sub:"4 days · Squat · Bench · Deadlift · Heavy / Light",
+    gpl_u_label:"Generic Powerlifting — Lyle McDonald",
+    level_gpl_u:"INTERMEDIATE / ADVANCED",
+    gpl_u_pills:[['4×','/ week'],['12-13','wks'],['Squat','Bench · DL']],
   }
 };
 
@@ -9067,6 +9347,41 @@ const WORKOUTS_BASE = {
                 {it:'Dip alle Parallele',en:'Parallel Bar Dip',s:3,r:'8-6',rest:'2-3 min'},
                 {it:'Curl a Martello',en:'Hammer Curl',s:3,r:'8-6',rest:'2 min'},
                 {it:'French Press',en:'French Press / Skull Crusher',s:2,r:'10-8',rest:'2 min'}]}
+        ]},
+    gpl_u:{gender:'uomo',
+        note_it:"<b>Come leggere la scheda:</b> le serie indicate sono <b>serie di lavoro</b>, tutte con lo stesso peso (prima fai il riscaldamento). Dove vedi più esercizi separati da <b>/</b>, scegline <b>uno</b>. I % si riferiscono al tuo massimale (1RM) — vedi la tabella nella pagina info.",
+        note_en:"<b>How to read the plan:</b> the sets shown are <b>work sets</b>, all with the same weight (warm up first). Where you see several exercises separated by <b>/</b>, pick <b>one</b>. The % refer to your max (1RM) — see the table on the info page.",
+        days:[
+            {id:'gpl_d1',color:'var(--red)',exercises:[
+                {it:"Squat (stile gara) — PESANTE",en:"Squat (competition style) — HEAVY",s:5,r:"5-1",note_it:"85-100% del 1RM. Stesso peso in tutte le serie. 80% = 5-3 ripetizioni · 85% = 3-2 · 90% = 2-1 · 95%+ = 1",note_en:"85-100% of 1RM. Same weight on all sets. 80% = 5-3 reps · 85% = 3-2 · 90% = 2-1 · 95%+ = 1"},
+                {it:"Stacco LEGGERO — singole di tecnica",en:"LIGHT Deadlift — technique singles",s:5,r:"1",note_it:"4-5 singole perfette: uomini 75% · donne 85% del peso del giorno di stacco pesante. Setup, velocità, chiusura.",note_en:"4-5 perfect singles: men 75% · women 85% of the heavy deadlift day weight. Setup, speed, lockout."},
+                {it:"Punto debole Squat: Squat con Pausa / Front Squat / Box Squat / Pin Squat",en:"Squat weak point: Pause Squat / Front Squat / Box Squat / Pin Squat",s:3,r:"3",note_it:"Solo dal 2° ciclo — nel 1° ciclo saltalo. Scegli 1 esercizio.",note_en:"Only from the 2nd cycle — skip it in the 1st cycle. Pick 1 exercise."},
+                {it:"Quadricipiti: Leg Press / Hack Squat / Bulgarian Split Squat",en:"Quads: Leg Press / Hack Squat / Bulgarian Split Squat",s:3,r:"10-8",note_it:"Scegli 1 esercizio.",note_en:"Pick 1 exercise."},
+                {it:"Femorali · Glutei: Leg Curl / Hip Thrust / Glute Ham Raise",en:"Hamstrings · Glutes: Leg Curl / Hip Thrust / Glute Ham Raise",s:3,r:"12-10",note_it:"Scegli 1 esercizio.",note_en:"Pick 1 exercise."},
+                {it:"Iperestensioni a Schiena Tonda",en:"Round-Back Hyperextension",s:3,r:"8+",note_it:"Tieni 1-2 s in alto. Pesante e progressivo.",note_en:"Hold 1-2 s at the top. Heavy and progressive."},
+                {it:"Cable Crunch Pesante",en:"Heavy Cable Crunch",s:3,r:"10-8",note_it:"Pesante e progressivo.",note_en:"Heavy and progressive."}]},
+            {id:'gpl_d2',color:'var(--blue)',exercises:[
+                {it:"Panca (stile gara) — PESANTE",en:"Bench Press (competition style) — HEAVY",s:5,r:"5-1",note_it:"85-100% del 1RM. Singole: pausa su ogni ripetizione. Più ripetizioni: almeno 1 ripetizione in pausa per serie. Stesso peso in tutte le serie. 80% = 5-3 ripetizioni · 85% = 3-2 · 90% = 2-1 · 95%+ = 1",note_en:"85-100% of 1RM. Singles: pause every rep. Multiple reps: at least 1 paused rep per set. Same weight on all sets. 80% = 5-3 reps · 85% = 3-2 · 90% = 2-1 · 95%+ = 1"},
+                {it:"Punto debole Panca: Panca Presa Stretta / Pin Press / Spoto Press / Board Press",en:"Bench weak point: Close Grip Bench Press / Pin Press / Spoto Press / Board Press",s:3,r:"3",note_it:"Solo dal 2° ciclo — nel 1° ciclo saltalo. Scegli 1 esercizio.",note_en:"Only from the 2nd cycle — skip it in the 1st cycle. Pick 1 exercise."},
+                {it:"Schiena: Rematore Bilanciere / Rematore Manubrio / Lat Machine",en:"Back: Bent-Over Barbell Row / One-Arm DB Row / Lat Pulldown",s:3,r:"10-8",note_it:"Scegli 1 esercizio.",note_en:"Pick 1 exercise."},
+                {it:"Spalle · Petto: Military Press Manubri / Alzate Laterali / Croci",en:"Shoulders · Chest: DB Shoulder Press / Lateral Raises / Flyes",s:2,r:"12-10",note_it:"Scegli 1 esercizio.",note_en:"Pick 1 exercise."},
+                {it:"Braccia: Spinte in Basso / Curl",en:"Arms: Triceps Pushdown / Curl",s:2,r:"12-10",note_it:"Scegli 1 esercizio.",note_en:"Pick 1 exercise."},
+                {it:"Pallof Press / Woodchop al Cavo",en:"Pallof Press / Cable Woodchop",s:3,r:"10-8",note_it:"Per lato. Scegli 1 esercizio.",note_en:"Per side. Pick 1 exercise."},
+                {it:"Flessione Laterale Statica al Cavo",en:"Static Cable Side Bend",s:3,r:"30s",note_it:"Tieni 30 secondi per lato.",note_en:"Hold 30 seconds per side."}]},
+            {id:'gpl_d3',color:'var(--green)',exercises:[
+                {it:"Squat LEGGERO — fallo per PRIMO",en:"LIGHT Squat — do it FIRST",s:4,r:"3-2",note_it:"Uomini 75% · donne 85% del peso del giorno di squat pesante. Doppie o triple, tecnica perfetta.",note_en:"Men 75% · women 85% of the heavy squat day weight. Doubles or triples, perfect technique."},
+                {it:"Stacco (stile gara) — PESANTE",en:"Deadlift (competition style) — HEAVY",s:5,r:"2-1",note_it:"85-100% del 1RM. Singole o doppie. Riparti da fermo a ogni ripetizione.",note_en:"85-100% of 1RM. Singles or doubles. Reset from a dead stop every rep."},
+                {it:"Punto debole Stacco: Stacco Deficit / Rack Pull / Stacco con Pausa",en:"Deadlift weak point: Deficit Deadlift / Rack Pull / Paused Deadlift",s:3,r:"3",note_it:"Solo dal 2° ciclo — nel 1° ciclo saltalo. Scegli 1 esercizio.",note_en:"Only from the 2nd cycle — skip it in the 1st cycle. Pick 1 exercise."},
+                {it:"Lombari · Femorali: RDL / Good Morning / Rack Pull",en:"Low Back · Hamstrings: RDL / Good Morning / Rack Pull",s:3,r:"5-3",note_it:"Scegli 1 esercizio.",note_en:"Pick 1 exercise."},
+                {it:"Quadricipiti · Glutei: Leg Press / Affondi / Hip Thrust",en:"Quads · Glutes: Leg Press / Lunges / Hip Thrust",s:3,r:"10-8",note_it:"Scegli 1 esercizio.",note_en:"Pick 1 exercise."},
+                {it:"Iperestensioni a Schiena Tonda",en:"Round-Back Hyperextension",s:3,r:"8+",note_it:"Tieni 1-2 s in alto. Pesante e progressivo.",note_en:"Hold 1-2 s at the top. Heavy and progressive."},
+                {it:"Cable Crunch Pesante",en:"Heavy Cable Crunch",s:3,r:"10-8",note_it:"Pesante e progressivo.",note_en:"Heavy and progressive."}]},
+            {id:'gpl_d4',color:'var(--gold)',exercises:[
+                {it:"Panca LEGGERA — tecnica e velocità",en:"LIGHT Bench Press — technique and speed",s:4,r:"5-2",note_it:"75% del peso del giorno di panca pesante. Ogni ripetizione veloce e pulita.",note_en:"75% of the heavy bench day weight. Every rep fast and clean."},
+                {it:"Punto debole Panca: Panca Presa Stretta / Pin Press / Spoto Press / Board Press",en:"Bench weak point: Close Grip Bench Press / Pin Press / Spoto Press / Board Press",s:3,r:"3",note_it:"Solo dal 2° ciclo. Può essere diverso dal giorno 2. Scegli 1 esercizio.",note_en:"Only from the 2nd cycle. Can differ from day 2. Pick 1 exercise."},
+                {it:"Schiena: Trazioni / Lat Machine / Pulley",en:"Back: Pull-ups / Lat Pulldown / Seated Cable Row",s:3,r:"10-8",note_it:"Scegli 1 esercizio.",note_en:"Pick 1 exercise."},
+                {it:"Spalle: Alzate Laterali / Face Pull",en:"Shoulders: Lateral Raises / Face Pull",s:2,r:"15-12",note_it:"Scegli 1 esercizio.",note_en:"Pick 1 exercise."},
+                {it:"Tricipiti: French Press / Dip / Spinte in Basso",en:"Triceps: French Press / Dips / Triceps Pushdown",s:2,r:"12-10",note_it:"Scegli 1 esercizio.",note_en:"Pick 1 exercise."}]}
         ]}
 };
 
@@ -9095,7 +9410,8 @@ const WID_MAP = {
   'candito-6wk':'candito_6wk',
   'wendler-531':'wendler_531',
   'texas-method':'texas_method',
-  'smolov-jr':'smolov_jr'
+  'smolov-jr':'smolov_jr',
+  'gpl-u':'gpl_u'
 };
 
 // Map old IDs
@@ -9107,13 +9423,13 @@ function getWorkoutLocalized(wId){
     if(!base) return null;
     const labelMap = {
   torso_limbs: 'tl_label',
-  lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',pp23_inter_u:'pp23_inter_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',ken_pp:'ken_pp_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',pb_fabio:'pb_fabio_label',pbhd_luka:'pbhd_luka_label',pp_d:'pp_d_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label',lpp30_u:'lpp30_u_label',meadows_ppl:'meadows_ppl_label',adv_lpp6_u:'adv_lpp6_u_label',lpp6_adv_luka:'lpp6_adv_luka_label',pp23_luka_u:'pp23_luka_u_label',poliquin_arms:'poliquin_arms_label',layne_arms:'layne_arms_label',meadows_arms:'meadows_arms_label',meadows_shoulders:'meadows_sh_label',dante_shoulders:'dante_sh_label',meadows_chest:'meadows_chest_label',carter_bb:'carter_bb_label',gironda_4day:'gironda_4day_label',gironda_fb:'gironda_fb_label',ss_u:'ss_u_label',candito_6wk:'candito_6wk_label',wendler_531:'wendler_531_label',texas_method:'texas_method_label',smolov_jr:'smolov_jr_label',hst_u:'hst_u_label',tls_d:'tls_d_label',tls_3d:'tls_3d_label',tls_4d:'tls_4d_label',lpp6_u:'lpp6_u_label',pp_luka_d:'pp_luka_d_label'};
+  gpl_u:'gpl_u_label',lpp:'w_lpp_label','lyle_gbr':'lyle_gbr_label',abc_3day_u:'abc_3day_u_label',ul_2day_u:'ul_2day_u_label',pp23_inter_u:'pp23_inter_u_label',classic_4day_u:'classic_4day_u_label',ini_u:'w_iniu_label',ini_d:'w_inid_label',fb_ab_u:'fb_ab_u_label',ab_d:'ab_d_label',ul_d:'ul_d_label',quick_u:'quick_u_label',quick_u_basic:'quick_u_basic_label',quick_d:'quick_d_label',quick_d_basic:'quick_d_basic_label',dc_3day:'dc_3day_label',dc_4day:'dc_4day_label',mentzer_3day:'mentzer_label',mentzer_cons:'mentzer_label',dorian_bg:'dorian_bg_label','arthur-hit':'arthur_hit_label',ken_hit:'ken_hit_label',ken_bm:'ken_bm_label',ken_pp:'ken_pp_label',phat:'phat_label',phul:'phul_label',bret:'bret_label',ashley:'ashley_label',abc_u:'abc_u_label',ul_u_base:'ul_u_base_label',classic_4u:'classic_4u_label',ul_pb_u:'ul_pb_u_label',pb_fabio:'pb_fabio_label',pbhd_luka:'pbhd_luka_label',pp_d:'pp_d_label',lpp4_u:'lpp4_u_label',ws4sb_u:'ws4sb_u_label',madcow_u:'madcow_u_label',lpp30_u:'lpp30_u_label',meadows_ppl:'meadows_ppl_label',adv_lpp6_u:'adv_lpp6_u_label',lpp6_adv_luka:'lpp6_adv_luka_label',pp23_luka_u:'pp23_luka_u_label',poliquin_arms:'poliquin_arms_label',layne_arms:'layne_arms_label',meadows_arms:'meadows_arms_label',meadows_shoulders:'meadows_sh_label',dante_shoulders:'dante_sh_label',meadows_chest:'meadows_chest_label',carter_bb:'carter_bb_label',gironda_4day:'gironda_4day_label',gironda_fb:'gironda_fb_label',ss_u:'ss_u_label',candito_6wk:'candito_6wk_label',wendler_531:'wendler_531_label',texas_method:'texas_method_label',smolov_jr:'smolov_jr_label',hst_u:'hst_u_label',tls_d:'tls_d_label',tls_3d:'tls_3d_label',tls_4d:'tls_4d_label',lpp6_u:'lpp6_u_label',pp_luka_d:'pp_luka_d_label'};
     const pillsMap = {
   torso_limbs: {
     it:[['4 Giorni',''],['Torso/Arti',''],['Intermedio','']],
     en:[['4 Days',''],['Torso/Limbs',''],['Intermediate','']]
   },
-  lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',pp23_inter_u:'pp23_inter_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',ken_pp:'ken_pp_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',pb_fabio:'pb_fabio_pills','pbhd-luka':'pbhd_luka_pills','pbhd_luka':'pbhd_luka_pills',pp_d:'pp_d_pills',lpp4_u:'lpp4_u_pills',ws4sb_u:'ws4sb_u_pills',madcow_u:'madcow_u_pills',lpp30_u:'lpp30_u_pills',meadows_ppl:'meadows_ppl_pills',carter_bb:'carter_bb_pills',gironda_4day:'gironda_4day_pills',gironda_fb:'gironda_fb_pills',ss_u:'ss_u_pills',candito_6wk:'candito_6wk_pills',wendler_531:'wendler_531_pills',texas_method:'texas_method_pills',smolov_jr:'smolov_jr_pills',hst_u:'hst_u_pills',tls_d:'tls_d_pills',tls_3d:'tls_3d_pills',tls_4d:'tls_4d_pills',lpp6_u:'lpp6_u_pills'};
+  gpl_u:'gpl_u_pills',lpp:'w_lpp_pills','lyle_gbr':'lyle_gbr_pills',abc_3day_u:'abc_3day_u_pills',ul_2day_u:'ul_2day_u_pills',pp23_inter_u:'pp23_inter_u_pills',classic_4day_u:'classic_4day_u_pills',ini_u:'w_ini_pills',ini_d:'w_ini_pills',fb_ab_u:'fb_ab_u_pills',ab_d:'ab_d_pills',ul_d:'ul_d_pills',quick_u:'quick_u_pills',quick_u_basic:'quick_u_basic_pills',quick_d:'quick_d_pills',quick_d_basic:'quick_d_basic_pills',dc_3day:'dc_3day_pills',dc_4day:'dc_4day_pills',mentzer_3day:'mentzer_pills',mentzer_cons:'mentzer_pills',dorian_bg:'dorian_bg_pills','arthur-hit':'arthur_hit_pills',ken_hit:'ken_hit_pills',ken_bm:'ken_bm_pills',ken_pp:'ken_pp_pills',phat:'phat_pills',phul:'phul_pills',bret:'bret_pills',ashley:'ashley_pills',abc_u:'abc_u_pills',ul_u_base:'ul_u_base_pills',classic_4u:'classic_4u_pills',ul_pb_u:'ul_pb_u_pills',pb_fabio:'pb_fabio_pills','pbhd-luka':'pbhd_luka_pills','pbhd_luka':'pbhd_luka_pills',pp_d:'pp_d_pills',lpp4_u:'lpp4_u_pills',ws4sb_u:'ws4sb_u_pills',madcow_u:'madcow_u_pills',lpp30_u:'lpp30_u_pills',meadows_ppl:'meadows_ppl_pills',carter_bb:'carter_bb_pills',gironda_4day:'gironda_4day_pills',gironda_fb:'gironda_fb_pills',ss_u:'ss_u_pills',candito_6wk:'candito_6wk_pills',wendler_531:'wendler_531_pills',texas_method:'texas_method_pills',smolov_jr:'smolov_jr_pills',hst_u:'hst_u_pills',tls_d:'tls_d_pills',tls_3d:'tls_3d_pills',tls_4d:'tls_4d_pills',lpp6_u:'lpp6_u_pills'};
     const days = base.days.map(day=>{
         let badge, name;
         // DC 3-day: a=Upper A1, b=Lower B1, g1=Upper A2, g2=Lower B2, g3=Upper A3, full=Lower B3
@@ -9193,6 +9509,10 @@ function getWorkoutLocalized(wId){
         }else if(day.id==='ashley_lp'){badge='LOWER POWER';name=lang==='it'?'Quadricipiti · Femorali · Core':'Quads · Hamstrings · Core';
         }else if(day.id==='ashley_uh'){badge='UPPER HYPER';name=lang==='it'?'Petto · Schiena · Spalle (Volume)':'Chest · Back · Shoulders (Volume)';
         }else if(day.id==='ashley_lh'){badge='LOWER HYPER';name=lang==='it'?'Stacco · Glutei · Femorali (Volume)':'Deadlift · Glutes · Hamstrings (Volume)';
+        }else if(day.id==='gpl_d1'){badge=lang==='it'?'SQUAT PESANTE · STACCO LEGGERO':'HEAVY SQUAT · LIGHT DEADLIFT';name=lang==='it'?'Quadricipiti · Femorali · Glutei · Lombari · Addome':'Quads · Hamstrings · Glutes · Low Back · Abs';
+        }else if(day.id==='gpl_d2'){badge=lang==='it'?'PANCA PESANTE':'HEAVY BENCH';name=lang==='it'?'Petto · Schiena · Spalle · Braccia · Addome':'Chest · Back · Shoulders · Arms · Abs';
+        }else if(day.id==='gpl_d3'){badge=lang==='it'?'SQUAT LEGGERO · STACCO PESANTE':'LIGHT SQUAT · HEAVY DEADLIFT';name=lang==='it'?'Femorali · Lombari · Glutei · Quadricipiti · Addome':'Hamstrings · Low Back · Glutes · Quads · Abs';
+        }else if(day.id==='gpl_d4'){badge=lang==='it'?'PANCA LEGGERA':'LIGHT BENCH';name=lang==='it'?'Petto · Schiena · Spalle · Tricipiti':'Chest · Back · Shoulders · Triceps';
         }else if(day.id==='ulpb_lme'){badge='LOWER ME';name=lang==='it'?'Gambe · Forza Massimale':'Legs · Max Effort';
         }else if(day.id==='ulpb_uvol'){badge='UPPER VOL';name=lang==='it'?'Petto · Schiena · Spalle · Braccia':'Chest · Back · Shoulders · Arms';
         }else if(day.id==='ulpb_lvol'){badge='LOWER VOL';name=lang==='it'?'Gambe · Volume · Ipertrofia':'Legs · Volume · Hypertrophy';
@@ -10166,7 +10486,7 @@ function renderEx(wId,dId,eIdx,ex){
             <button class="set-timer-btn" onclick="event.stopPropagation();sfStartTimer()">⏱ Rest</button>
         </div>`;
     }).join('')+'</div>';
-    const _advancedWIds = ['torso-limbs','pbhd-luka','pbhd_luka','dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','pb-fabio','lpp4-u','quick-u','quick-u-basic','corto-u-adv','corto-u-bas','quick-d','quick-d-basic','corto-d-adv','corto-d-bas','ws4sb-u','madcow-u','lpp30-u','lpp6-u','ken-pp','meadows-ppl','adv-lpp6-u','lpp6-adv-luka','pp23-luka-u','pp23_inter_u','poliquin-arms','layne-arms','meadows-arms','meadows-shoulders','dante-shoulders','meadows-chest','carter-bb','hst-u','gironda-4day','gironda-fb','candito-6wk','ss-u','wendler-531','texas-method','smolov-jr','tls-d','tls-3d','tls-4d'];
+    const _advancedWIds = ['gpl-u','torso-limbs','pbhd-luka','pbhd_luka','dc-3day','dc-4day','mentzer-3day','mentzer-cons','lyle-gbr','dorian-bg','phat','phul','bret','ashley','ul-pb-u','pb-fabio','lpp4-u','quick-u','quick-u-basic','corto-u-adv','corto-u-bas','quick-d','quick-d-basic','corto-d-adv','corto-d-bas','ws4sb-u','madcow-u','lpp30-u','lpp6-u','ken-pp','meadows-ppl','adv-lpp6-u','lpp6-adv-luka','pp23-luka-u','pp23_inter_u','poliquin-arms','layne-arms','meadows-arms','meadows-shoulders','dante-shoulders','meadows-chest','carter-bb','hst-u','gironda-4day','gironda-fb','candito-6wk','ss-u','wendler-531','texas-method','smolov-jr','tls-d','tls-3d','tls-4d'];
     const _noImg = _advancedWIds.includes(wId);
     const imgKey = (ex.img && EX_IMAGES[ex.img]) ? ex.img : (_noImg ? null : (EX_NAME_MAP[ex.it] || EX_NAME_MAP[ex.en] || null));
     const imgSrc = imgKey ? EX_IMAGES[imgKey] : null;
