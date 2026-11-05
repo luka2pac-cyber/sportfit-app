@@ -516,7 +516,8 @@ html,body{height:100%}
     <div class="view-title"><span data-t="level_title">Biblioteca Allenamenti</span><br><span class="c-red" data-t="level_men">Uomo</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="openWorkout('ini-u','uomini-level')"><div class="prog-item-name">🟢 <span data-t="level_beginner">Iniziale</span></div><div class="prog-item-sub" data-t="see_programs">Vedi programmi</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item"><button class="prog-item-btn" onclick="showView('uomini-inter-menu')"><div class="prog-item-name">🔵 <span data-t="level_intermediate">Intermedio</span></div><div class="prog-item-sub" data-t="see_programs">Vedi programmi</div></button><span class="prog-arr">›</span></div>
-    <div class="prog-item"><button class="prog-item-btn" onclick="showView('uomini-heavy-menu')"><div class="prog-item-name">🔴 <span data-t="level_advanced">Avanzato</span></div><div class="prog-item-sub" data-t="see_programs">Vedi programmi</div></button><span class="prog-arr">›</span></div>
+    <div class="prog-item"><button class="prog-item-btn" onclick="showView('uomini-heavy-menu')"><div class="prog-item-name">🔴 <span data-t="level_advanced">Avanzato</span></div><div class="prog-item-sub" data-t="adv_sub_u">Bodybuilding · Powerbuilding</div></button><span class="prog-arr">›</span></div>
+    <div class="prog-item"><button class="prog-item-btn" onclick="showView('strength-power')"><div class="prog-item-name">🏋️ <span data-t="pl_btn">Powerlifting &amp; Forza</span></div><div class="prog-item-sub" data-t="pl_btn_sub">Squat · Panca · Stacco · 5/3/1 · Candito · Smolov · Generic PL</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item" style="border:1.5px solid rgba(255,159,10,.35);background:rgba(255,159,10,.07)"><button class="prog-item-btn" onclick="showView('uomini-corto-menu')"><div class="prog-item-name">⏱ <span data-t="allenamenti_30_btn">Allenamenti 30-40 min</span></div><div class="prog-item-sub" data-t="corto_sub_u">A/B Full Body · Basic & Intermedio · 2–4x sett.</div></button><span class="prog-arr">›</span></div>
     <div class="prog-item" style="border:1.5px solid rgba(255,55,95,.35);background:rgba(255,55,95,.07)"><button class="prog-item-btn" onclick="showView('specialization-menu')"><div class="prog-item-name">🎯 <span data-t="spec_btn">Specialization Programs</span></div><div class="prog-item-sub" data-t="spec_sub">Braccia · Spalle · Petto · Focus muscolare 6-8 sett.</div></button><span class="prog-arr">›</span></div>
   </div>
@@ -867,14 +868,7 @@ html,body{height:100%}
     <div class="prog-item" style="border:1.5px solid rgba(255,149,0,.35);background:rgba(255,149,0,.07)">
       <button class="prog-item-btn" onclick="showView('powerbuilding-concepts')">
         <div class="prog-item-name">🏗️ Powerbuilding Concepts</div>
-        <div class="prog-item-sub">PHAT · PHUL · Upper/Lower by Luka</div>
-      </button>
-      <span class="prog-arr">›</span>
-    </div>
-    <div class="prog-item" style="border:1.5px solid rgba(10,132,255,.35);background:rgba(10,132,255,.07)">
-      <button class="prog-item-btn" onclick="showView('strength-power')">
-        <div class="prog-item-name">💪 Strength &amp; Power</div>
-        <div class="prog-item-sub">Starting Strength · 5/3/1 · Texas Method · Smolov Jr. · Madcow · WS4SB</div>
+        <div class="prog-item-sub">Fabio · Upper/Lower · PHAT · PHUL · Heavy Duty by Luka</div>
       </button>
       <span class="prog-arr">›</span>
     </div>
@@ -1239,8 +1233,8 @@ html,body{height:100%}
 
   <!-- STRENGTH & POWER VIEW -->
   <div id="strength-power" class="view">
-    <button onclick="goBack('uomini-heavy-menu')" class="back-btn">← <span data-t="advanced_title">Avanzato</span></button>
-    <div class="view-title" style="font-size:1.8rem">💪 Strength<br><span style="font-size:1.2rem;color:rgba(255,255,255,.5)">&amp; Power</span></div>
+    <button onclick="goBack('uomini-level')" class="back-btn">← <span data-t="level_men">Uomo</span></button>
+    <div class="view-title" style="font-size:1.8rem">🏋️ Powerlifting<br><span style="font-size:1.2rem;color:rgba(255,255,255,.5)" data-t="pl_title_sub">&amp; Forza</span></div>
     <div class="prog-item" style="border:1.5px solid rgba(142,68,173,.45);background:rgba(142,68,173,.08)">
       <button class="prog-item-btn" onclick="showView('gpl-info-view')">
         <div class="prog-item-name">🏋️ Generic Powerlifting <span style="font-size:.7rem;opacity:.6">by Lyle McDonald</span></div>
@@ -1301,7 +1295,7 @@ html,body{height:100%}
 
   <!-- SMOLOV JR INFO VIEW -->
   <div id="candito-info-view" class="view">
-    <button onclick="goBack('strength-power')" class="back-btn">← Strength &amp; Power</button>
+    <button onclick="goBack('strength-power')" class="back-btn">← Powerlifting</button>
     <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#7a3800,rgba(255,149,0,.9))" onclick="openWorkout('candito-6wk','candito-info-view')">
       🏆 <span data-t="cand_start_btn">Inizia il Programma</span>
     </button>
@@ -1362,7 +1356,7 @@ html,body{height:100%}
   </div>
 
   <div id="smolov-info-view" class="view">
-    <button onclick="goBack('strength-power')" class="back-btn">← Strength &amp; Power</button>
+    <button onclick="goBack('strength-power')" class="back-btn">← Powerlifting</button>
     <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#7a0000,var(--red))" onclick="openWorkout('smolov-jr','smolov-info-view')">
       🔥 <span data-t="smolov_start_btn">Inizia Smolov Jr.</span>
     </button>
@@ -1412,7 +1406,7 @@ html,body{height:100%}
 
   <!-- TEXAS METHOD INFO VIEW -->
   <div id="tm-info-view" class="view">
-    <button onclick="goBack('strength-power')" class="back-btn">← Strength &amp; Power</button>
+    <button onclick="goBack('strength-power')" class="back-btn">← Powerlifting</button>
     <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#4a3800,rgba(255,214,10,.85))" onclick="openWorkout('texas-method','tm-info-view')">
       🏋️ <span data-t="tm_start_btn">Inizia Texas Method</span>
     </button>
@@ -1470,7 +1464,7 @@ html,body{height:100%}
 
   <!-- 5/3/1 INFO VIEW -->
   <div id="w531-info-view" class="view">
-    <button onclick="goBack('strength-power')" class="back-btn">← Strength &amp; Power</button>
+    <button onclick="goBack('strength-power')" class="back-btn">← Powerlifting</button>
     <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#003a5a,rgba(10,132,255,.9))" onclick="openWorkout('wendler-531','w531-info-view')">
       ⚡ <span data-t="w531_start_btn">Inizia 5/3/1</span>
     </button>
@@ -1521,7 +1515,7 @@ html,body{height:100%}
   </div>
   <!-- STARTING STRENGTH INFO VIEW -->
   <div id="ss-info-view" class="view">
-    <button onclick="goBack('strength-power')" class="back-btn">← Strength &amp; Power</button>
+    <button onclick="goBack('strength-power')" class="back-btn">← Powerlifting</button>
     <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#1a3a00,var(--green))" onclick="openWorkout('ss-u','ss-info-view')">
       🟢 <span data-t="ss_start_btn">Inizia Starting Strength</span>
     </button>
@@ -1705,7 +1699,7 @@ html,body{height:100%}
 
   <!-- GENERIC POWERLIFTING (LYLE MCDONALD) INFO VIEW -->
   <div id="gpl-info-view" class="view">
-    <button onclick="goBack('strength-power')" class="back-btn">← Strength &amp; Power</button>
+    <button onclick="goBack('strength-power')" class="back-btn">← Powerlifting</button>
     <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#3a0a5a,#8e44ad)" onclick="openWorkout('gpl-u','gpl-info-view')">
       🏋️ <span data-t="gpl_start_btn">Inizia Generic Powerlifting</span>
     </button>
@@ -2125,7 +2119,7 @@ html,body{height:100%}
 
   <!-- MADCOW 5×5 INFO VIEW -->
   <div id="madcow-info-view" class="view">
-    <button onclick="goBack('strength-power')" class="back-btn">← <span data-t="advanced_title">Avanzato</span></button>
+    <button onclick="goBack('strength-power')" class="back-btn">← Powerlifting</button>
     <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#1a3a00,var(--green))" onclick="openWorkout('madcow-u','madcow-info-view')">
       💪 <span data-t="madcow_start_btn">Inizia Madcow 5×5</span>
     </button>
@@ -2173,7 +2167,7 @@ html,body{height:100%}
 
   <!-- WS4SB INFO VIEW -->
   <div id="ws4sb-info-view" class="view">
-    <button onclick="goBack('strength-power')" class="back-btn">← <span data-t="advanced_title">Avanzato</span></button>
+    <button onclick="goBack('strength-power')" class="back-btn">← Powerlifting</button>
     <button class="ai-send-btn" style="margin-bottom:14px;background:linear-gradient(135deg,#7a0000,var(--red))" onclick="openWorkout('ws4sb-u','ws4sb-info-view')">
       🏈 <span data-t="ws4sb_start_btn">Inizia WS4SB</span>
     </button>
@@ -5640,6 +5634,10 @@ const T = {
     gpl_btn_sub:"4 giorni · Squat · Panca · Stacco · Pesante / Leggero",
     gpl_u_label:"Generic Powerlifting — Lyle McDonald",
     level_gpl_u:"INTERMEDIO / AVANZATO",
+    adv_sub_u:'Bodybuilding · Powerbuilding',
+    pl_btn:'Powerlifting &amp; Forza',
+    pl_btn_sub:'Squat · Panca · Stacco · 5/3/1 · Candito · Smolov · Generic PL',
+    pl_title_sub:'&amp; Forza',
     gpl_u_pills:[['4×','/ sett.'],['12-13','sett.'],['Squat','Panca · Stacco']],
   },
 en:{
@@ -7220,6 +7218,10 @@ en:{
     gpl_btn_sub:"4 days · Squat · Bench · Deadlift · Heavy / Light",
     gpl_u_label:"Generic Powerlifting — Lyle McDonald",
     level_gpl_u:"INTERMEDIATE / ADVANCED",
+    adv_sub_u:'Bodybuilding · Powerbuilding',
+    pl_btn:'Powerlifting &amp; Strength',
+    pl_btn_sub:'Squat · Bench · Deadlift · 5/3/1 · Candito · Smolov · Generic PL',
+    pl_title_sub:'&amp; Strength',
     gpl_u_pills:[['4×','/ week'],['12-13','wks'],['Squat','Bench · DL']],
   }
 };
