@@ -19,7 +19,10 @@
   }
  ],
  "alert": "Apertura invernale prevista per sabato 5 dicembre 2026.",
- "css_modifiers": [],
- "updated": "2026-11-15T23:09+00:00",
- "checked": "2026-11-15T23:09+00:00"
+ "css_modifiers": [
+  "close",
+  "open"
+ ],
+ "updated": "2026-11-15T23:10+00:00",
+ "checked": "2026-11-15T23:10+00:00"
 }
