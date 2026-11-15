@@ -16,6 +16,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ultra&family=Saira+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.6.1/dist/chart.umd.min.js"></script>
 <style>
 :root{
@@ -155,6 +157,28 @@ section{padding:80px 0 10px}
 .diff{margin-left:auto;font-family:var(--display);font-weight:700;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;white-space:nowrap}
 .d1{color:#7ee08f;border:1px solid #7ee08f55}.d2{color:#ffc65c;border:1px solid #ffc65c55}.d3{color:#ff6b6b;border:1px solid #ff6b6b55}
 
+.mapwrap{position:relative;border:1px solid var(--line);margin-bottom:12px}
+#map{height:min(70vh,560px);background:#222}
+.mapbar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.fbtn{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.9rem;background:var(--bg-2);color:var(--muted);border:1px solid var(--line);padding:7px 12px;cursor:pointer}
+.fbtn.on{background:var(--ice-deep);border-color:var(--ice-deep);color:#fff}
+.fbtn.loc{margin-left:auto;color:#fff;border-color:#fff}
+.mapwarn{background:#2a2410;border-left:4px solid #ffc65c;padding:10px 14px;font-size:.9rem;margin-bottom:10px}
+.mapwarn b{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;color:#ffc65c}
+.rinfo{display:none;background:var(--bg-2);border:1px solid var(--line);border-top:4px solid var(--c);padding:14px 16px;margin-bottom:14px}
+.rinfo.on{display:block}
+.rinfo h3{font-family:var(--display);font-weight:700;font-size:1.4rem;letter-spacing:.04em;display:flex;align-items:center;gap:10px}
+.rstats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.rstats div{border-left:3px solid var(--line);padding-left:8px}
+.rstats span{display:block;font-family:var(--display);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.rstats b{font-family:var(--display);font-size:1.3rem}
+.rg li{cursor:pointer}
+.rg li:hover,.rg li.sel{color:var(--ice)}
+.leaflet-container{font-family:var(--body)}
+.pin{width:22px;height:22px;border-radius:50%;border:2px solid #fff;display:flex;align-items:center;justify-content:center;font:700 11px/1 var(--body);color:#fff;box-shadow:0 1px 4px #0008}
+.pin.end{border-radius:3px;background:#111!important}
+.stpin{background:#fff;color:#0b0b0b;font:700 12px/1.1 var(--body);padding:3px 6px;border:2px solid var(--ice-deep);white-space:nowrap;box-shadow:0 1px 4px #0008}
+@media(max-width:900px){.rstats{grid-template-columns:1fr 1fr}.fbtn.loc{margin-left:0}}
 .vids{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
 .vid{position:relative;padding-top:56.25%;background:#000;border:1px solid var(--line)}
 .vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
@@ -324,11 +348,22 @@ footer a{color:var(--ice)}
 <section id="discese" class="rv">
   <div class="head">
     <span class="eyebrow">Le linee</span>
-    <h2 class="title">Discese e mappe</h2>
-    <p class="intro">Tocca una mappa per aprirla a schermo intero. I numeri delle discese corrispondono alla prima mappa. Segui sempre le indicazioni sul posto.</p>
+    <h2 class="title">Mappa delle discese</h2>
   </div>
-  <div class="gal" id="gallery"></div>
+  <div class="mapwarn"><b>⚠ Tracciati indicativi</b> – linee e punti sono ricostruiti dal cartello ufficiale e <b>non hanno coordinate precise</b> (errore possibile di 100 m e oltre). Non usarli per navigare: segui le indicazioni sul posto e valuta sempre il terreno. Quote e lunghezze approssimative.</div>
+  <div class="mapbar" id="mapbar">
+    <button class="fbtn on" data-f="all">Tutte</button>
+    <button class="fbtn" data-f="Golovec">Golovec</button>
+    <button class="fbtn" data-f="Forato">Forato</button>
+    <button class="fbtn" data-f="1">Facili</button>
+    <button class="fbtn" data-f="3">Difficili</button>
+    <button class="fbtn loc" id="locBtn">📍 Dove sono</button>
+  </div>
+  <div class="mapwrap"><div id="map"></div></div>
+  <div class="rinfo" id="rinfo"></div>
   <div class="rgroups" id="routes"></div>
+  <div class="head" style="margin-top:30px"><span class="eyebrow">Cartelli e panorami</span></div>
+  <div class="gal" id="gallery"></div>
 </section>
 
 <section id="video" class="rv">
@@ -406,7 +441,7 @@ const CONFIG = {
     { src:"panorama.jpg", t:"Panorama – lato Montasio", credit:"Fonte: sellaneveaparco.it" },
     { src:"panorama2.jpg", t:"Panorama – lato Canin", credit:"Fonte: TurismoFVG.it" }
   ],
-  // difficoltà: 1 facile, 2 media, 3 medio-difficile
+  // difficoltà: 1 facile, 2 media, 3 medio-difficile · geo: tracciati indicativi (non precisi)
   routes: [
     { n:1,  name:"Livinallunc Classica",     zone:"Golovec", d:2 },
     { n:2,  name:"Livinallunc Mediana",      zone:"Golovec", d:2 },
@@ -420,6 +455,7 @@ const CONFIG = {
     { n:10, name:"Forato Orientale",         zone:"Forato",  d:3 },
     { n:11, name:"Canale Pecorelle",         zone:"Forato",  d:3 }
   ],
+  geo: {"1":{"p":[[46.36852,13.47752],[46.369,13.47867],[46.37078,13.47902],[46.37282,13.47954],[46.37358,13.48012],[46.3746,13.48096],[46.37618,13.48175],[46.37667,13.48123],[46.37701,13.48018],[46.37741,13.47978],[46.37818,13.47751],[46.37942,13.4754],[46.38066,13.47338],[46.38173,13.47267]],"top":2050,"bot":1300,"len":1.9},"2":{"p":[[46.36875,13.47736],[46.37017,13.47722],[46.37211,13.47733],[46.37373,13.47784],[46.3745,13.47843],[46.37517,13.47917],[46.37617,13.47845],[46.37771,13.47734],[46.37803,13.47701],[46.37942,13.4754],[46.38066,13.47338],[46.38173,13.47267]],"top":2000,"bot":1300,"len":1.6},"3":{"p":[[46.36869,13.47727],[46.36997,13.47656],[46.37144,13.47601],[46.37285,13.47587],[46.37376,13.47531],[46.37413,13.47496],[46.37524,13.47469],[46.37596,13.47453],[46.37728,13.47407],[46.37817,13.47367],[46.37917,13.47181],[46.38011,13.47101],[46.38095,13.47045],[46.38144,13.47046]],"top":2000,"bot":1400,"len":1.6},"4":{"p":[[46.36864,13.47711],[46.36941,13.47541],[46.37089,13.47478],[46.37253,13.47399],[46.37355,13.47368],[46.3743,13.47361],[46.37512,13.47289],[46.37553,13.47241],[46.37724,13.47211],[46.37917,13.47181],[46.38011,13.47101],[46.38095,13.47045],[46.38144,13.47046]],"top":1950,"bot":1400,"len":1.6},"5":{"p":[[46.36859,13.47695],[46.36945,13.47623],[46.37097,13.47527],[46.37265,13.47415],[46.37327,13.47368],[46.37341,13.47254],[46.37417,13.47092],[46.37462,13.47068],[46.37523,13.47028],[46.37603,13.46948],[46.37744,13.46942],[46.37857,13.46935],[46.37943,13.4692],[46.38067,13.46988],[46.3811,13.47037],[46.38144,13.47046]],"top":2000,"bot":1400,"len":1.7},"6":{"p":[[46.37436,13.46602],[46.37511,13.4662],[46.37539,13.46677],[46.37603,13.46834],[46.37689,13.46933],[46.37744,13.46942],[46.37857,13.46935],[46.38017,13.46889],[46.38038,13.46775]],"top":1750,"bot":1450,"len":0.9},"7":{"p":[[46.37435,13.46382],[46.37526,13.46441],[46.3762,13.46418],[46.37671,13.46345]],"top":1750,"bot":1600,"len":0.3},"8":{"p":[[46.36857,13.47711],[46.36934,13.47541],[46.37063,13.47347],[46.37131,13.4725],[46.37175,13.4712],[46.37204,13.47064],[46.37318,13.46878],[46.3734,13.46699]],"top":1950,"bot":1800,"len":1.0},"9":{"p":[[46.3593,13.4728],[46.35972,13.47167],[46.36001,13.46939],[46.36079,13.46875],[46.36234,13.46812],[46.3633,13.46764],[46.36429,13.46701],[46.36551,13.46621],[46.36656,13.46508],[46.36791,13.4638],[46.36968,13.46424],[46.37171,13.46484],[46.37211,13.46501]],"top":2400,"bot":1800,"len":1.7},"10":{"p":[[46.3593,13.4728],[46.35972,13.47167],[46.36001,13.46939],[46.36079,13.46875],[46.36234,13.46812],[46.36321,13.46781],[46.36409,13.46864],[46.36441,13.46946],[46.36517,13.47175],[46.36602,13.47226],[46.3669,13.47194],[46.36836,13.47205]],"top":2400,"bot":1800,"len":1.4},"11":{"p":[[46.36115,13.47479],[46.36159,13.47414],[46.36296,13.47433],[46.36384,13.47402],[46.36462,13.47337],[46.36515,13.47192],[46.36602,13.47226],[46.3669,13.47194],[46.36836,13.47205]],"top":2400,"bot":1800,"len":0.9}},
   videos: [
     { id:"vohoUgxHd7o", t:"Freeride Ski Sella Nevea – guide of some lines" }
   ],
@@ -461,14 +497,14 @@ function initStatic(){
   const zones=[...new Set(CONFIG.routes.map(r=>r.zone))];
   $("routes").innerHTML = zones.map(z=>`<div class="rg" style="--c:${zoneCol[z]||'#777'}"><h3>Freeride ${z}</h3><ol>`+
     CONFIG.routes.filter(r=>r.zone===z).map(r=>{const [t,c]=diffTxt[r.d];
-      return `<li><span class="num">${r.n}</span>${r.name}<span class="diff ${c}">${t}</span></li>`}).join("")+`</ol></div>`).join("");
+      return `<li data-n="${r.n}"><span class="num">${r.n}</span>${r.name}<span class="diff ${c}">${t}</span></li>`}).join("")+`</ol></div>`).join("");
   $("videos").innerHTML = CONFIG.videos.map(v=>
     `<div><div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/${v.id}" title="${v.t}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div><p class="vt">${v.t}</p></div>`).join("");
   $("safety").innerHTML = CONFIG.safety.filter(x=>x.url).map(x=>`<a href="${x.url}" target="_blank" rel="noopener"><b>${x.t}</b><span>${x.s}</span></a>`).join("");
   $("social").innerHTML = CONFIG.social.filter(x=>x.url).map(x=>`<a class="btn btn-line" href="${x.url}" target="_blank" rel="noopener">${ICON[x.t]||""}${x.t}</a>`).join("");
   $("disclaimer").textContent = CONFIG.disclaimer;
   $("foot").innerHTML = `<div class="flogos"><img src="${CONFIG.logo}" alt="${CONFIG.title}"><img class="sq" src="${CONFIG.logo2}" alt="Freeride Arena Sella Nevea"></div>
-    Dati meteo: <a href="https://monitor.protezionecivile.fvg.it" target="_blank" rel="noopener">Protezione Civile della Regione FVG</a> (CC BY 4.0) · Bollettino valanghe: AINEVA / Protezione Civile FVG · Previsioni: <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo.com</a> (CC BY 4.0) · misure non validate.<br>© ${new Date().getFullYear()} ${CONFIG.title}`;
+    Dati meteo: <a href="https://monitor.protezionecivile.fvg.it" target="_blank" rel="noopener">Protezione Civile della Regione FVG</a> (CC BY 4.0) · Bollettino valanghe: AINEVA / Protezione Civile FVG · Previsioni: <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo.com</a> (CC BY 4.0) · Mappa: OpenTopoMap / OpenStreetMap · misure non validate.<br>© ${new Date().getFullYear()} ${CONFIG.title}`;
 }
 
 const fmtUTC = d => d.toISOString().slice(0,19).replace("T"," ");
@@ -497,7 +533,7 @@ function render(){
   const {snow,temp,wind,gust,dir}=DATA, cut=new Date(Date.now()-hours*3600e3), f=a=>a.filter(x=>x.t>=cut);
   const ls=last(snow);
   if(ls){
-    $("cSnow").textContent=`${Math.round(ls.v)} cm`; $("chSnowV").textContent=`${Math.round(ls.v)} cm`;
+    $("cSnow").textContent=`${Math.round(ls.v)} cm`; setStationPin(Math.round(ls.v)); $("chSnowV").textContent=`${Math.round(ls.v)} cm`;
     const p=valueAt(snow,new Date(ls.t-24*3600e3));
     if(p){const d=Math.round(ls.v-p.v); $("cSnowD").textContent=`${d>=0?'+':''}${d} cm in 24 h`;}
     $("updated").textContent=`Ultimo dato: ${ls.t.toLocaleString("it-IT")} (ora locale) · aggiornamento automatico ogni 15 min.`;
@@ -534,6 +570,79 @@ function draw(id,series,opt){
 }
 $("range").addEventListener("click",e=>{const b=e.target.closest("button"); if(!b) return; hours=+b.dataset.h;
   document.querySelectorAll("#range button").forEach(x=>x.classList.toggle("on",x===b)); if(DATA) render();});
+
+
+/* ---------- mappa discese ---------- */
+const DCOLOR={1:"#7ee08f",2:"#ffc65c",3:"#ff6b6b"};
+let MAP=null, LAYERS={}, locMarker=null;
+function initMap(){
+  if(!window.L) return;
+  MAP=L.map("map",{scrollWheelZoom:false,tap:true}).setView([46.3705,13.4715],14);
+  const topo=L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",{maxZoom:17,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, SRTM | © <a href="https://opentopomap.org">OpenTopoMap</a> (CC-BY-SA)'}).addTo(MAP);
+  const sat=L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",{maxZoom:18,attribution:"Imagery © Esri"});
+  L.control.layers({"Topografica":topo,"Satellite":sat},null,{position:"topright"}).addTo(MAP);
+  L.control.scale({imperial:false}).addTo(MAP);
+  const all=[];
+  CONFIG.routes.forEach(r=>{
+    const g=CONFIG.geo[r.n]; if(!g) return;
+    const col=DCOLOR[r.d], zc=zoneCol[r.zone];
+    const halo=L.polyline(g.p,{color:"#000",weight:7,opacity:.5});
+    const line=L.polyline(g.p,{color:col,weight:4,opacity:.95,dashArray:"8 6"});
+    const hit=L.polyline(g.p,{color:col,weight:22,opacity:0});
+    const start=L.marker(g.p[0],{icon:L.divIcon({className:"",html:`<div class="pin" style="background:${zc}">${r.n}</div>`,iconSize:[22,22],iconAnchor:[11,11]})});
+    const end=L.marker(g.p[g.p.length-1],{icon:L.divIcon({className:"",html:`<div class="pin end">${r.n}</div>`,iconSize:[22,22],iconAnchor:[11,11]})});
+    const grp=L.featureGroup([halo,line,hit,start,end]).addTo(MAP);
+    grp.on("click",()=>selectRoute(r.n));
+    LAYERS[r.n]={grp,line,r}; all.push(...g.p);
+  });
+  // punti di riferimento
+  L.marker([46.37434,13.47033],{icon:L.divIcon({className:"",html:`<div class="stpin" id="stPin">📡 Livinal Lunc</div>`,iconSize:null,iconAnchor:[50,12]})}).addTo(MAP).on("click",()=>location.hash="neve");
+  L.marker([46.37167,13.46126],{icon:L.divIcon({className:"",html:`<div class="stpin">🏠 Rif. Gilberti</div>`,iconSize:null,iconAnchor:[45,12]})}).addTo(MAP);
+  if(all.length) MAP.fitBounds(L.latLngBounds(all),{padding:[20,20]});
+  MAP.on("click",e=>{ if(e.originalEvent.target.id==="map") clearSel(); });
+}
+function setStationPin(cm){ const el=document.getElementById("stPin"); if(el) el.textContent=`📡 Livinal Lunc · ${cm} cm`; }
+function selectRoute(n){
+  const o=LAYERS[n]; if(!o) return; const r=o.r, g=CONFIG.geo[n], [t]=diffTxt[r.d];
+  Object.values(LAYERS).forEach(x=>{x.line.setStyle({weight:x===o?6:4,opacity:x===o?1:.35})});
+  o.grp.bringToFront();
+  MAP.fitBounds(o.line.getBounds(),{padding:[40,40],maxZoom:16});
+  const el=$("rinfo"); el.style.setProperty("--c",DCOLOR[r.d]); el.classList.add("on");
+  el.innerHTML=`<h3><span class="num" style="background:${zoneCol[r.zone]}">${r.n}</span>${r.name}</h3>
+    <div class="rstats"><div><span>Difficoltà</span><b style="color:${DCOLOR[r.d]}">${t}</b></div>
+    <div><span>Zona</span><b>Freeride ${r.zone}</b></div>
+    <div><span>Quota ≈</span><b>${g.top} → ${g.bot} m</b></div>
+    <div><span>Lunghezza ≈</span><b>${g.len} km</b></div></div>
+    <p class="meta">● cerchio = partenza · ■ quadrato = arrivo. Valori approssimativi, tracciato non preciso.</p>`;
+  document.querySelectorAll(".rg li").forEach(li=>li.classList.toggle("sel",+li.dataset.n===n));
+}
+function clearSel(){ Object.values(LAYERS).forEach(x=>x.line.setStyle({weight:4,opacity:.95})); $("rinfo").classList.remove("on"); document.querySelectorAll(".rg li").forEach(li=>li.classList.remove("sel")); }
+function applyFilter(f){
+  Object.values(LAYERS).forEach(x=>{
+    const ok=f==="all"||x.r.zone===f||(f==="1"&&x.r.d===1)||(f==="3"&&x.r.d===3);
+    ok?x.grp.addTo(MAP):x.grp.remove();
+  });
+  document.querySelectorAll(".rg li").forEach(li=>{const r=CONFIG.routes.find(x=>x.n===+li.dataset.n);
+    li.style.display=(f==="all"||r.zone===f||(f==="1"&&r.d===1)||(f==="3"&&r.d===3))?"":"none";});
+  clearSel();
+}
+function initMapUI(){
+  $("mapbar").addEventListener("click",e=>{const b=e.target.closest(".fbtn[data-f]"); if(!b) return;
+    document.querySelectorAll(".fbtn[data-f]").forEach(x=>x.classList.toggle("on",x===b)); if(MAP) applyFilter(b.dataset.f);});
+  $("routes").addEventListener("click",e=>{const li=e.target.closest("li[data-n]"); if(!li||!MAP) return;
+    selectRoute(+li.dataset.n); $("map").scrollIntoView({behavior:"smooth",block:"center"});});
+  $("locBtn").addEventListener("click",()=>{
+    if(!navigator.geolocation||!MAP){ alert("Posizione non disponibile su questo dispositivo."); return; }
+    $("locBtn").textContent="📍 Cerco…";
+    navigator.geolocation.getCurrentPosition(p=>{
+      const ll=[p.coords.latitude,p.coords.longitude];
+      if(locMarker) locMarker.remove();
+      locMarker=L.layerGroup([L.circle(ll,{radius:p.coords.accuracy,color:"#5ec8f2",weight:1,fillOpacity:.15}),
+        L.circleMarker(ll,{radius:8,color:"#fff",weight:3,fillColor:"#2f9fd0",fillOpacity:1})]).addTo(MAP);
+      MAP.setView(ll,15); $("locBtn").textContent="📍 Dove sono";
+    },()=>{ $("locBtn").textContent="📍 Dove sono"; alert("Non riesco a leggere la posizione. Controlla i permessi del browser."); },{enableHighAccuracy:true,timeout:15000});
+  });
+}
 
 /* ---------- previsioni ---------- */
 const WMO={0:["☀️","Sereno"],1:["🌤️","Quasi sereno"],2:["⛅","Parz. nuvoloso"],3:["☁️","Nuvoloso"],45:["🌫️","Nebbia"],48:["🌫️","Nebbia"],
@@ -638,7 +747,7 @@ function initUI(){
   document.querySelectorAll("section[id]").forEach(s=>so.observe(s));
 }
 
-initStatic(); initInstall(); initUI(); loadForecast(); loadBulletin(); load();
+initStatic(); initInstall(); initUI(); initMap(); initMapUI(); loadForecast(); loadBulletin(); load();
 setInterval(load,15*60e3);
 setInterval(loadForecast,60*60e3);
 </script>
