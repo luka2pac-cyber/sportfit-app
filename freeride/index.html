@@ -221,7 +221,7 @@ section>.head:first-child .eyebrow::before,section>.fc-head .eyebrow::before,.co
 .links a b{display:block;font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-size:1.05rem}
 .links a span{font-size:.88rem;color:var(--muted)}
 .pro{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;background:var(--bg-2);border:1px solid var(--line);border-left:4px solid var(--ice);padding:20px 22px;margin-top:22px}
-.pro .plogo{width:84px;height:84px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex:none;font-family:var(--display);font-weight:700;color:#0b0b0b;font-size:1.3rem;letter-spacing:.04em;overflow:hidden}
+.pro .plogo{width:112px;height:112px;padding:8px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex:none;font-family:var(--display);font-weight:700;color:#0b0b0b;font-size:1.3rem;letter-spacing:.04em;overflow:hidden}
 .pro .plogo img{width:100%;height:100%;object-fit:contain}
 .pro .pt{flex:1;min-width:240px}
 .pro h3{font-family:var(--display);font-weight:700;font-size:1.4rem;letter-spacing:.04em}
@@ -242,6 +242,8 @@ footer{margin-top:80px;border-top:1px solid var(--line);padding:34px 0 50px;text
 .flogos{display:flex;gap:20px;justify-content:center;align-items:center;margin-bottom:16px}
 .flogos img{height:96px;width:auto;background:#fff;border-radius:50%;padding:4px}
 .flogos img.sq{border-radius:10px}
+.flogos img.snme{height:96px;padding:6px}
+.flogos a{display:block;line-height:0}
 footer a{color:var(--ice)}
 
 .lb,.ihelp{position:fixed;inset:0;z-index:60;display:none}
@@ -442,14 +444,16 @@ footer a{color:var(--ice)}
     <p class="intro">Vuoi imparare a leggere la neve o scoprire le linee con qualcuno che conosce il Canin da sempre?</p>
   </div>
   <div class="pro" id="snme">
-    <div class="plogo" id="snmeLogo">SNME</div>
+    <a class="plogo" id="snmeLogo" href="https://www.sellaneveamountain.com/" target="_blank" rel="noopener"><img src="snme-logo.png" alt="Sella Nevea Mountain Experience"></a>
     <div class="pt">
       <h3>Sella Nevea Mountain Experience</h3>
       <div class="who">Livio Sadoch · maestro di sci & guida alpina</div>
       <p>Uscite e corsi in piccoli gruppi con un maestro di sci e una guida alpina: freeride, scialpinismo, neve e valanghe, autosoccorso con ARTVA, pala e sonda.</p>
       <ul><li>Rider House</li><li>Classic Igloo Experience</li><li>Film Festival</li></ul>
       <div class="acts">
-        <a class="btn btn-fill" href="https://sellanevea.net/it/mountainexperience" target="_blank" rel="noopener">Info e programma</a>
+        <a class="btn btn-fill" href="https://www.sellaneveamountain.com/" target="_blank" rel="noopener">Sito web</a>
+        <a class="btn btn-line" href="https://www.instagram.com/sellaneveamountainexperience/" target="_blank" rel="noopener">Instagram</a>
+        <a class="btn btn-line" href="https://www.facebook.com/SellaNeveaMountainExperience" target="_blank" rel="noopener">Facebook</a>
         <a class="btn btn-line" href="https://www.youtube.com/channel/UCYUUnvThFLVrzDniZIVtWPg" target="_blank" rel="noopener">Video</a>
       </div>
       <p class="mail">✉ sellaneveamountainexperience@outlook.it</p>
@@ -592,7 +596,7 @@ function initStatic(){
   $("safety").innerHTML = CONFIG.safety.filter(x=>x.url).map(x=>`<a href="${x.url}" target="_blank" rel="noopener"><b>${x.t}</b><span>${x.s}</span></a>`).join("");
   $("social").innerHTML = CONFIG.social.filter(x=>x.url).map(x=>`<a class="btn btn-line" href="${x.url}" target="_blank" rel="noopener">${ICON[x.t]||""}${x.t}</a>`).join("");
   $("disclaimer").textContent = CONFIG.disclaimer;
-  $("foot").innerHTML = `<div class="flogos"><img src="${CONFIG.logo}" alt="${CONFIG.title}"><img class="sq" src="${CONFIG.logo2}" alt="Freeride Arena Sella Nevea"></div>
+  $("foot").innerHTML = `<div class="flogos"><img src="${CONFIG.logo}" alt="${CONFIG.title}"><img class="sq" src="${CONFIG.logo2}" alt="Freeride Arena Sella Nevea"><a href="https://www.sellaneveamountain.com/" target="_blank" rel="noopener" title="Sella Nevea Mountain Experience"><img class="snme" src="snme-logo.png" alt="Sella Nevea Mountain Experience"></a></div>
     Dati meteo: <a href="https://monitor.protezionecivile.fvg.it" target="_blank" rel="noopener">Protezione Civile della Regione FVG</a> (CC BY 4.0) · Bollettino valanghe: AINEVA / Protezione Civile FVG · Previsioni: <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo.com</a> (CC BY 4.0) · Mappa: OpenTopoMap / OpenStreetMap · misure non validate.<br>© ${new Date().getFullYear()} ${CONFIG.title}`;
 }
 
