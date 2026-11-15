@@ -5,7 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sella Nevea Freeride Arena</title>
 <meta name="description" content="Sella Nevea Freeride Arena: neve live al Livinal Lunc, discese freeride, sicurezza e community.">
-<link rel="icon" href="logo.png">
+<link rel="icon" href="icon-192.png">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0f2a3a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Freeride Sella">
+<meta name="mobile-web-app-capable" content="yes">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.6.1/dist/chart.umd.min.js"></script>
@@ -79,22 +85,29 @@ ul.clean{padding-left:18px;margin:6px 0}
 .powder small{display:block;font-weight:400;font-size:13px;opacity:.9}
 .powder.quiet{display:block;background:#fff;color:var(--mut);border:1px solid var(--line);font-weight:400;font-size:14px}
 .today{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
-.sem,.sub-form{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.sem{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
 .lab{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.hero{position:relative}
+.hero .txt{flex:1}
+.install{position:absolute;top:0;right:16px;display:none;align-items:center;gap:6px;background:#fff;color:#0f2a3a;border:0;border-radius:999px;padding:8px 14px;font:inherit;font-weight:700;font-size:13px;cursor:pointer;box-shadow:0 2px 8px #0004}
+.install.on{display:inline-flex}
+.ihelp{position:fixed;inset:0;background:#000b;z-index:60;display:none;align-items:flex-end;justify-content:center}
+.ihelp.on{display:flex}
+.ihelp div{background:#fff;border-radius:16px 16px 0 0;padding:18px 18px 28px;max-width:480px;width:100%}
+.ihelp h3{margin:0 0 8px}
+.ihelp ol{margin:0;padding-left:20px;line-height:1.8}
+.ihelp button{margin-top:12px;width:100%;padding:10px;border:0;border-radius:8px;background:var(--blue-d);color:#fff;font:inherit;font-weight:700}
+.foot-logos{display:flex;gap:18px;align-items:center;justify-content:center;margin-bottom:12px}
+.foot-logos img{height:90px;width:auto;background:#fff;border-radius:12px;padding:4px}
+.foot-logos img.round{border-radius:50%}
 .lights{display:flex;gap:8px;margin:10px 0 6px}
 .lights span{flex:1;height:22px;border-radius:6px;opacity:.18}
 .lights span[data-l="1"]{background:#ccff66}.lights span[data-l="2"]{background:#ffff00}.lights span[data-l="3"]{background:#ff9900}.lights span[data-l="4"]{background:#ff0000}
 .lights span[data-l="5"]{background:repeating-linear-gradient(45deg,#ff0000 0 6px,#000 6px 12px)}
 .lights span.on{opacity:1;box-shadow:0 0 0 2px #0f1a22}
 .lvl{font-size:20px;font-weight:800}
-.sub-form{display:flex;flex-direction:column;gap:6px}
-.sub-form input[type=email]{font:inherit;padding:9px 10px;border:1px solid var(--line);border-radius:8px;margin-top:4px}
-.sub-form label{font-size:14px;display:flex;gap:6px;align-items:flex-start}
-.sub-form label.small{font-size:11px;color:var(--mut)}
-.sub-form button{font:inherit;font-weight:700;padding:10px;border:0;border-radius:8px;background:var(--blue-d);color:#fff;cursor:pointer}
-.sub-form button:disabled{opacity:.5}
 footer{margin-top:30px;padding:20px 0 40px;font-size:12px;color:var(--mut);border-top:1px solid var(--line)}
-@media(max-width:520px){.hero img{width:72px;height:72px}.hero h1{font-size:22px}.card .val{font-size:24px}}
+@media(max-width:520px){.hero{flex-wrap:wrap}.install.on{position:static;margin-left:auto}.hero img{width:72px;height:72px}.hero h1{font-size:22px}.card .val{font-size:24px}}
 </style>
 </head>
 <body>
@@ -102,12 +115,18 @@ footer{margin-top:30px;padding:20px 0 40px;font-size:12px;color:var(--mut);borde
 <header>
   <div class="wrap hero">
     <img id="logo" alt="Sella Nevea Freeride Arena">
-    <div>
+    <div class="txt">
       <h1 id="title"></h1>
       <p id="tagline"></p>
     </div>
+    <button class="install" id="installBtn">📲 Aggiungi alla Home</button>
   </div>
 </header>
+<div class="ihelp" id="ihelp"><div>
+  <h3>Aggiungi alla schermata Home</h3>
+  <ol id="ihelpSteps"></ol>
+  <button id="ihelpClose">OK</button>
+</div></div>
 <nav><div class="wrap">
   <a href="#neve">Neve live</a>
   <a href="#discese">Discese</a>
@@ -129,15 +148,6 @@ footer{margin-top:30px;padding:20px 0 40px;font-size:12px;color:var(--mut);borde
       <div class="lvl" id="semLvl">Carico bollettino…</div>
       <div class="note" id="semNote">&nbsp;</div>
     </div>
-    <form class="sub-form" id="subForm">
-      <div class="lab">Alert via e-mail</div>
-      <input type="email" id="subEmail" placeholder="la tua e-mail" required>
-      <label><input type="checkbox" id="subPowder" checked> Powder alert (neve fresca)</label>
-      <label><input type="checkbox" id="subAva" checked> Pericolo valanghe forte (4–5)</label>
-      <label class="small"><input type="checkbox" id="subPriv" required> Acconsento al trattamento della mia e-mail solo per l'invio di questi alert. Disiscrizione in ogni momento dal link in ogni e-mail.</label>
-      <button type="submit">Iscriviti</button>
-      <div class="note" id="subMsg"></div>
-    </form>
   </div>
 </section>
 
@@ -212,6 +222,8 @@ const CONFIG = {
   title: "Sella Nevea Freeride Arena",
   tagline: "Community freeride del Canin – Sella Nevea",
   logo: "logo.png",
+  logo2: "logo-classic.jpg",      // logo storico, nel footer
+  pageUrl: "https://luka2pac-cyber.github.io/sportfit-app/freeride/",
   station: { id: 541, name: "Livinal Lunc",
              sensors: { snow: 23, temp: 2, wind: 6, gust: 7, dir: 5 } },
   api: "https://monitor.protezionecivile.fvg.it/api",
@@ -221,7 +233,6 @@ const CONFIG = {
     region: "IT-36-UD-04",        // zona CANIN nel bollettino FVG
     page: "https://www.protezionecivile.fvg.it/it/bollettino-valanghe"
   },
-  alertsEndpoint: "",             // URL della Web App Google Apps Script (alerts.gs)
   stationPage: "https://monitor.protezionecivile.fvg.it/stazione/541",
   gallery: [
     { src:"mappa-discese.jpg", t:"Discese freeride 1–11 con pendenze", credit:"Fonte: cartello ufficiale freeride Sella Nevea, cartografia © Casa Editrice Tabacco" },
@@ -288,7 +299,7 @@ function initStatic(){
   $("safety").innerHTML = lk(CONFIG.safety);
   $("social").innerHTML = lk(CONFIG.social);
   $("disclaimer").textContent = CONFIG.disclaimer;
-  $("foot").innerHTML = `Dati meteo: <a href="https://monitor.protezionecivile.fvg.it" target="_blank" rel="noopener">Protezione Civile della Regione FVG</a>, licenza CC BY 4.0 – misure automatiche non validate. · ${CONFIG.title}`;
+  $("foot").innerHTML = `<div class="foot-logos"><img class="round" src="${CONFIG.logo}" alt="${CONFIG.title}"><img src="${CONFIG.logo2}" alt="Freeride Arena Sella Nevea"></div>Dati meteo: <a href="https://monitor.protezionecivile.fvg.it" target="_blank" rel="noopener">Protezione Civile della Regione FVG</a>, licenza CC BY 4.0 – misure automatiche non validate. · ${CONFIG.title}`;
 }
 
 /* ---------- dati live ---------- */
@@ -434,35 +445,37 @@ async function loadBulletin(){
   const link=`<a href="${CONFIG.bulletin.page}" target="_blank" rel="noopener">Bollettino completo</a>`;
   let j=null;
   try{ const r=await fetch(CONFIG.bulletin.url,{cache:"no-store"}); if(r.ok) j=await r.json(); }catch(e){}
-  if(!j && CONFIG.alertsEndpoint){
-    try{ const r=await fetch(CONFIG.alertsEndpoint+"?a=bulletin"); if(r.ok) j=await r.json(); }catch(e){}
-  }
   if(!j){ show(0,"Bollettino non disponibile",`Nessun bollettino FVG in questo momento (fuori stagione?). ${link}`); return; }
   const b=parseBulletin(j);
   if(!b||b.expired||!b.level){ show(0,"Bollettino non disponibile",`Nessun bollettino valido per il Canin oggi. ${link}`); return; }
   show(b.level,b.txt,`${b.elev?b.elev+" · ":""}valido ${b.day}<br>${b.highlights} ${link}`);
 }
 
-/* ---------- iscrizione alert ---------- */
-function initSubscribe(){
-  const f=$("subForm");
-  if(!CONFIG.alertsEndpoint){ f.style.display="none"; return; }
-  f.addEventListener("submit",async e=>{
-    e.preventDefault();
-    const btn=f.querySelector("button"); btn.disabled=true; $("subMsg").textContent="Invio…";
-    const body=new URLSearchParams({a:"subscribe",email:$("subEmail").value.trim(),
-      powder:$("subPowder").checked?"1":"0",ava:$("subAva").checked?"1":"0"});
-    try{
-      const r=await fetch(CONFIG.alertsEndpoint,{method:"POST",body});
-      const j=await r.json();
-      $("subMsg").textContent=j.ok?"Fatto! Controlla la tua e-mail e conferma l'iscrizione.":(j.error||"Errore, riprova.");
-    }catch(err){ $("subMsg").textContent="Errore di rete, riprova più tardi."; }
-    btn.disabled=false;
+/* ---------- aggiungi alla Home ---------- */
+function initInstall(){
+  const btn=$("installBtn"), help=$("ihelp");
+  const standalone=matchMedia("(display-mode: standalone)").matches||navigator.standalone;
+  if(standalone) return;
+  const inFrame=window.self!==window.top;
+  const ios=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+  let deferred=null;
+  window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferred=e;});
+  window.addEventListener("appinstalled",()=>btn.classList.remove("on"));
+  btn.classList.add("on");
+  btn.addEventListener("click",async()=>{
+    if(inFrame){ window.open(CONFIG.pageUrl,"_blank"); return; }   // dentro iframe (WordPress) non si può installare
+    if(deferred){ deferred.prompt(); await deferred.userChoice; deferred=null; return; }
+    $("ihelpSteps").innerHTML = ios
+      ? "<li>Tocca il pulsante <b>Condividi</b> ⬆️ in basso (Safari)</li><li>Scorri e scegli <b>Aggiungi alla schermata Home</b></li><li>Tocca <b>Aggiungi</b></li>"
+      : "<li>Apri il menu del browser <b>⋮</b> in alto a destra</li><li>Scegli <b>Aggiungi a schermata Home</b> o <b>Installa app</b></li><li>Conferma</li>";
+    help.classList.add("on");
   });
+  $("ihelpClose").addEventListener("click",()=>help.classList.remove("on"));
+  if("serviceWorker" in navigator && !inFrame) navigator.serviceWorker.register("sw.js").catch(()=>{});
 }
 
 initStatic();
-initSubscribe();
+initInstall();
 loadBulletin();
 load();
 setInterval(load,15*60e3);
