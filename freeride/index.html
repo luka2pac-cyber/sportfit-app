@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sella Nevea Freeride Arena</title>
+<meta name="description" content="Sella Nevea Freeride Arena: neve live al Livinal Lunc, discese freeride, sicurezza e community.">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.6.1/dist/chart.umd.min.js"></script>
+<style>
+:root{--blue:#5fa8c8;--blue-d:#2c6f8f;--ink:#0f1a22;--mut:#5b6b77;--bg:#f4f8fb;--card:#fff;--line:#dde7ee;--red:#d64545;--org:#e8913a;--grn:#3a9a5b}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
+a{color:var(--blue-d)}
+.wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+header{background:linear-gradient(180deg,#0f2a3a 0%,#1d4e66 100%);color:#fff;padding:28px 0 22px}
+.hero{display:flex;gap:18px;align-items:center}
+.hero img{width:96px;height:96px;border-radius:50%;background:#fff}
+.hero h1{margin:0;font-size:28px;font-weight:800;letter-spacing:.5px}
+.hero p{margin:4px 0 0;opacity:.85}
+nav{position:sticky;top:0;z-index:5;background:#0f2a3a;border-top:1px solid #ffffff22}
+nav .wrap{display:flex;gap:4px;overflow-x:auto}
+nav a{color:#fff;text-decoration:none;padding:10px 12px;font-weight:600;font-size:14px;white-space:nowrap;opacity:.85}
+nav a:hover{opacity:1}
+section{padding:28px 0 8px}
+h2{font-size:22px;margin:0 0 4px}
+.sub{color:var(--mut);margin:0 0 16px;font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.card .lab{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.card .val{font-size:28px;font-weight:800;margin-top:2px}
+.card .val small{font-size:15px;font-weight:600;color:var(--mut)}
+.card .note{font-size:13px;color:var(--mut)}
+.up{color:var(--blue-d)}.down{color:var(--red)}
+.toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;margin-bottom:10px;background:#fff}
+.toggle button{border:0;background:none;padding:6px 14px;font:inherit;font-size:14px;cursor:pointer}
+.toggle button.on{background:var(--blue-d);color:#fff}
+.chart{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:12px}
+.chart h3{margin:0 0 6px;font-size:15px}
+.chart .box{position:relative;height:220px}
+.err{background:#fff4e5;border:1px solid #f3c88b;border-radius:12px;padding:12px;margin-bottom:12px;display:none}
+.meta{font-size:12px;color:var(--mut)}
+.routes{display:grid;gap:8px}
+.route{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.num{flex:0 0 34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
+.route .name{font-weight:600}
+.route .zone{font-size:13px;color:var(--mut)}
+.badge{margin-left:auto;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;white-space:nowrap}
+.b1{background:#e3f4e8;color:#2b7a46}.b2{background:#fff1dc;color:#9a5a12}.b3{background:#fde4e4;color:#a12f2f}
+.mapimg{width:100%;border-radius:12px;border:1px solid var(--line);display:block;margin:14px 0 4px}
+.warn{background:#fde4e4;border-left:4px solid var(--red);padding:12px 14px;border-radius:8px;margin:12px 0}
+ul.clean{padding-left:18px;margin:6px 0}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.links a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--ink)}
+.links a b{display:block}
+.links a span{font-size:13px;color:var(--mut)}
+footer{margin-top:30px;padding:20px 0 40px;font-size:12px;color:var(--mut);border-top:1px solid var(--line)}
+@media(max-width:520px){.hero img{width:72px;height:72px}.hero h1{font-size:22px}.card .val{font-size:24px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hero">
+    <img id="logo" alt="Sella Nevea Freeride Arena">
+    <div>
+      <h1 id="title"></h1>
+      <p id="tagline"></p>
+    </div>
+  </div>
+</header>
+<nav><div class="wrap">
+  <a href="#neve">Neve live</a>
+  <a href="#discese">Discese</a>
+  <a href="#sicurezza">Sicurezza</a>
+  <a href="#community">Community</a>
+</div></nav>
+
+<main class="wrap">
+
+<section id="neve">
+  <h2>Condizioni live – Livinal Lunc</h2>
+  <p class="sub">Stazione automatica Protezione Civile FVG, 1837 m, versante nord del Canin (sopra Rif. Gilberti). Dati ogni 15 min, non validati.</p>
+
+  <div class="err" id="err">
+    Non riesco a caricare i dati in diretta. Guardali direttamente sul sito della Protezione Civile:
+    <a id="errlink" target="_blank" rel="noopener">monitor.protezionecivile.fvg.it – Livinal Lunc</a>
+  </div>
+
+  <div class="cards">
+    <div class="card"><div class="lab">Neve al suolo</div><div class="val" id="cSnow">–</div><div class="note" id="cSnowD">&nbsp;</div></div>
+    <div class="card"><div class="lab">Temperatura</div><div class="val" id="cTemp">–</div><div class="note" id="cTempR">&nbsp;</div></div>
+    <div class="card"><div class="lab">Vento</div><div class="val" id="cWind">–</div><div class="note" id="cWindD">&nbsp;</div></div>
+    <div class="card"><div class="lab">Raffica max</div><div class="val" id="cGust">–</div><div class="note" id="cGustT">&nbsp;</div></div>
+  </div>
+
+  <div class="toggle" id="range">
+    <button data-h="24" class="on">24 ore</button>
+    <button data-h="48">48 ore</button>
+  </div>
+
+  <div class="chart"><h3>Altezza neve (cm)</h3><div class="box"><canvas id="chSnow"></canvas></div></div>
+  <div class="chart"><h3>Temperatura aria (°C)</h3><div class="box"><canvas id="chTemp"></canvas></div></div>
+  <div class="chart"><h3>Vento e raffiche (km/h)</h3><div class="box"><canvas id="chWind"></canvas></div></div>
+  <p class="meta" id="updated"></p>
+</section>
+
+<section id="discese">
+  <h2>Discese principali</h2>
+  <p class="sub">Dal cartello ufficiale all'ingresso dei percorsi freeride. Seguire sempre le indicazioni sul posto.</p>
+  <div class="routes" id="routes"></div>
+  <img class="mapimg" id="map1" alt="Mappa discese freeride Golovec e Forato">
+  <p class="meta" id="map1credit"></p>
+  <img class="mapimg" id="map2" alt="Panorama Sella Nevea d'inverno">
+  <p class="meta" id="map2credit"></p>
+</section>
+
+<section id="sicurezza">
+  <h2>Sicurezza</h2>
+  <div class="warn"><b>Fuori pista sei in terreno non controllato.</b> I percorsi indicati sono da ritenersi sicuri solo in condizioni di buon innevamento; con innevamento insufficiente è sconsigliato uscire dalle piste battute.</div>
+  <ul class="clean">
+    <li>Kit obbligatorio: ARTVA, pala e sonda – e saperli usare.</li>
+    <li>Leggi il bollettino valanghe <b>prima</b> di partire, ogni giorno.</li>
+    <li>Mai da soli. Una persona alla volta sui pendii ripidi.</li>
+    <li>Emergenza: <b>112</b>.</li>
+  </ul>
+  <div class="links" id="safety"></div>
+  <p class="meta" id="disclaimer"></p>
+</section>
+
+<section id="community">
+  <h2>Community</h2>
+  <p class="sub">Uscite di gruppo, foto, video e info in tempo reale.</p>
+  <div class="links" id="social"></div>
+</section>
+
+</main>
+
+<footer><div class="wrap" id="foot"></div></footer>
+
+<script>
+/* ================= CONFIG – modifica qui ================= */
+const CONFIG = {
+  title: "Sella Nevea Freeride Arena",
+  tagline: "Community freeride del Canin – Sella Nevea",
+  logo: "logo.png",
+  station: { id: 541, name: "Livinal Lunc",
+             sensors: { snow: 23, temp: 2, wind: 6, gust: 7, dir: 5 } },
+  api: "https://monitor.protezionecivile.fvg.it/api",
+  stationPage: "https://monitor.protezionecivile.fvg.it/stazione/541",
+  map1: "mappa-discese.jpg",
+  map1credit: "Fonte mappa: cartello ufficiale freeride di Sella Nevea, cartografia © Casa Editrice Tabacco.",
+  map2: "panorama.jpg",
+  map2credit: "Fonte panorama: sellaneveaparco.it (testo cit. sellaneveaparco.it).",
+  // difficoltà: 1 facile, 2 media, 3 medio-difficile
+  routes: [
+    { n:1,  name:"Livinallunc Classica",     zone:"Golovec", d:2 },
+    { n:2,  name:"Livinallunc Mediana",      zone:"Golovec", d:2 },
+    { n:3,  name:"Golovec Diretta",          zone:"Golovec", d:3 },
+    { n:4,  name:"Pic Majot Orientale",      zone:"Golovec", d:2 },
+    { n:5,  name:"Pic Majot Occidentale",    zone:"Golovec", d:2 },
+    { n:6,  name:"Pic Majot Agonistica",     zone:"Golovec", d:1 },
+    { n:7,  name:"Vecchia Funivia",          zone:"Golovec", d:1 },
+    { n:8,  name:"Cresta Golovec e varianti",zone:"Golovec", d:1 },
+    { n:9,  name:"Forato Diretta",           zone:"Forato",  d:3 },
+    { n:10, name:"Forato Orientale",         zone:"Forato",  d:3 },
+    { n:11, name:"Canale Pecorelle",         zone:"Forato",  d:3 }
+  ],
+  safety: [
+    { t:"Bollettini valanghe (AINEVA)", s:"Tutti i bollettini dell'arco alpino italiano, incluso FVG", url:"https://www.aineva.it" },
+    { t:"Livinal Lunc – dati completi", s:"Protezione Civile FVG", url:"https://monitor.protezionecivile.fvg.it/stazione/541" },
+    { t:"Neve – stazioni FVG (OSMER)", s:"Altezza neve, tutte le stazioni", url:"https://www.osmer.fvg.it/neve.php" }
+  ],
+  social: [
+    { t:"Facebook", s:"Gruppo Sella Nevea Freeride Arena", url:"https://www.facebook.com/share/g/18TUgDUXA9/" },
+    { t:"Instagram", s:"@sella_nevea_freeride_arena", url:"https://www.instagram.com/sella_nevea_freeride_arena" },
+    { t:"Sport&Fit Gorizia", s:"Preparazione atletica per freeride e scialpinismo", url:"https://www.sport-fit.org" }
+  ],
+  disclaimer: "Le informazioni su questa pagina hanno solo scopo informativo. Ognuno pratica il fuoripista sotto la propria responsabilità."
+};
+/* ========================================================== */
+
+const $ = id => document.getElementById(id);
+const diffTxt = {1:["facile","b1"],2:["media","b2"],3:["medio-difficile","b3"]};
+const zoneCol = {Golovec:"#2f7fc1",Forato:"#2f8a4f"};
+const DIRS = ["N","NE","E","SE","S","SO","O","NO"];
+
+function initStatic(){
+  $("title").textContent = CONFIG.title;
+  $("tagline").textContent = CONFIG.tagline;
+  $("logo").src = CONFIG.logo;
+  $("errlink").href = CONFIG.stationPage;
+  if(CONFIG.map1){$("map1").src=CONFIG.map1;$("map1credit").textContent=CONFIG.map1credit}else $("map1").remove();
+  if(CONFIG.map2){$("map2").src=CONFIG.map2;$("map2credit").textContent=CONFIG.map2credit}else $("map2").remove();
+  $("routes").innerHTML = CONFIG.routes.map(r=>{
+    const [t,c]=diffTxt[r.d];
+    return `<div class="route"><div class="num" style="background:${zoneCol[r.zone]||'#555'}">${r.n}</div>
+      <div><div class="name">${r.name}</div><div class="zone">Freeride ${r.zone}</div></div>
+      <span class="badge ${c}">${t}</span></div>`}).join("");
+  const lk = arr => arr.filter(x=>x.url).map(x=>`<a href="${x.url}" target="_blank" rel="noopener"><b>${x.t}</b><span>${x.s}</span></a>`).join("");
+  $("safety").innerHTML = lk(CONFIG.safety);
+  $("social").innerHTML = lk(CONFIG.social);
+  $("disclaimer").textContent = CONFIG.disclaimer;
+  $("foot").innerHTML = `Dati meteo: <a href="https://monitor.protezionecivile.fvg.it" target="_blank" rel="noopener">Protezione Civile della Regione FVG</a>, licenza CC BY 4.0 – misure automatiche non validate. · ${CONFIG.title}`;
+}
+
+/* ---------- dati live ---------- */
+const fmtUTC = d => d.toISOString().slice(0,19).replace("T"," ");
+const tLabel = d => d.toLocaleString("it-IT",{weekday:"short",hour:"2-digit",minute:"2-digit"});
+
+async function getSensor(sid, from, to){
+  const u = `${CONFIG.api}/stations/${CONFIG.station.id}/sensors/${sid}/measures?from=${encodeURIComponent(fmtUTC(from))}&to=${encodeURIComponent(fmtUTC(to))}`;
+  const r = await fetch(u);
+  if(!r.ok) throw new Error("HTTP "+r.status);
+  const j = await r.json();
+  if(j.result!=="OK") throw new Error("API");
+  const seen = new Set();
+  return j.measures.filter(m=>!seen.has(m.dt)&&seen.add(m.dt))
+    .map(m=>({t:new Date(m.dt.replace(" ","T")+"Z"), v:m.value}))
+    .sort((a,b)=>a.t-b.t);
+}
+
+let DATA=null, charts={}, hours=24;
+
+async function load(){
+  const to = new Date(), from = new Date(to.getTime()-48*3600e3);
+  const s = CONFIG.station.sensors;
+  try{
+    const [snow,temp,wind,gust,dir] = await Promise.all(
+      [s.snow,s.temp,s.wind,s.gust,s.dir].map(id=>getSensor(id,from,to)));
+    DATA={snow,temp,wind,gust,dir};
+    render();
+  }catch(e){
+    console.error(e);
+    $("err").style.display="block";
+  }
+}
+
+function last(a){return a.length?a[a.length-1]:null}
+function valueAt(a,t){ // ultimo valore <= t
+  let r=null; for(const x of a){ if(x.t<=t) r=x; else break } return r;
+}
+
+function render(){
+  const {snow,temp,wind,gust,dir}=DATA;
+  const cut = new Date(Date.now()-hours*3600e3);
+  const f = a => a.filter(x=>x.t>=cut);
+
+  // cards
+  const ls=last(snow);
+  if(ls){
+    $("cSnow").innerHTML=`${Math.round(ls.v)} <small>cm</small>`;
+    const p=valueAt(snow,new Date(ls.t-24*3600e3));
+    if(p){const d=Math.round(ls.v-p.v); $("cSnowD").innerHTML=`<span class="${d>=0?'up':'down'}">${d>=0?'+':''}${d} cm</span> in 24 h`;}
+  }
+  const lt=last(temp);
+  if(lt){
+    $("cTemp").innerHTML=`${lt.v.toFixed(1)} <small>°C</small>`;
+    const t24=temp.filter(x=>x.t>=new Date(lt.t-24*3600e3)).map(x=>x.v);
+    $("cTempR").textContent=`24 h: min ${(Math.min(...t24)+0).toFixed(1).replace("-0.0","0.0")} / max ${(Math.max(...t24)+0).toFixed(1).replace("-0.0","0.0")}`;
+  }
+  const lw=last(wind), ld=last(dir);
+  if(lw){
+    $("cWind").innerHTML=`${Math.round(lw.v*3.6)} <small>km/h</small>`;
+    if(ld){const i=Math.round(((ld.v%360)/45))%8;
+      $("cWindD").innerHTML=`da ${DIRS[i]} (${Math.round(ld.v)}°) <span style="display:inline-block;transform:rotate(${ld.v+180}deg)">↑</span>`;}
+  }
+  const g24=gust.filter(x=>x.t>=new Date(Date.now()-24*3600e3));
+  if(g24.length){
+    const mx=g24.reduce((a,b)=>b.v>a.v?b:a);
+    $("cGust").innerHTML=`${Math.round(mx.v*3.6)} <small>km/h</small>`;
+    $("cGustT").textContent=`ultime 24 h, ${tLabel(mx.t)}`;
+  }
+  if(ls) $("updated").textContent=`Ultimo dato: ${ls.t.toLocaleString("it-IT")} (ora locale). Aggiornamento automatico ogni 15 min.`;
+
+  // charts
+  draw("chSnow",[{label:"Neve cm",data:f(snow),color:"#2c6f8f",fill:true}],{suggestedMin:0});
+  draw("chTemp",[{label:"°C",data:f(temp),color:"#d64545"}],{zero:true});
+  draw("chWind",[
+    {label:"Vento",data:f(wind).map(x=>({t:x.t,v:x.v*3.6})),color:"#5fa8c8",fill:true},
+    {label:"Raffica",data:f(wind).map(x=>{const g=valueAt(gust,x.t);return {t:x.t,v:g?g.v*3.6:null}}),color:"#e8913a"}],{suggestedMin:0,legend:true});
+}
+
+function draw(id,series,opt){
+  if(charts[id]) charts[id].destroy();
+  const labels=series[0].data.map(x=>tLabel(x.t));
+  charts[id]=new Chart($(id),{
+    type:"line",
+    data:{labels,datasets:series.map(s=>({label:s.label,data:s.data.map(x=>x.v),borderColor:s.color,
+      backgroundColor:s.color+"33",fill:!!s.fill,pointRadius:0,borderWidth:2,tension:.25}))},
+    options:{responsive:true,maintainAspectRatio:false,interaction:{mode:"index",intersect:false},
+      plugins:{legend:{display:!!opt.legend}},
+      scales:{x:{ticks:{maxTicksLimit:7,autoSkip:true},grid:{display:false}},
+        y:{suggestedMin:opt.suggestedMin,grid:{color:c=>opt.zero&&c.tick.value===0?"#d64545":"#e8eef2"}}}}
+  });
+}
+
+$("range").addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b) return;
+  hours=+b.dataset.h;
+  document.querySelectorAll("#range button").forEach(x=>x.classList.toggle("on",x===b));
+  if(DATA) render();
+});
+
+initStatic();
+load();
+setInterval(load,15*60e3);
+</script>
+</body>
+</html>
