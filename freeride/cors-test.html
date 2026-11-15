@@ -1,0 +1,4 @@
+<!doctype html><meta charset="utf-8"><pre id="o">...</pre><script>
+const o=document.getElementById('o');
+fetch('https://www.turismofvg.it/montagna/infoneve?hub=sella&day=today&type=4').then(r=>r.text()).then(t=>{o.textContent='OK '+t.length+'\n'+(t.match(/Funifor[^<]{0,80}/)||['no match'])[0]}).catch(e=>o.textContent='ERR '+e);
+</script>
