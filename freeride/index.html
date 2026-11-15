@@ -61,15 +61,6 @@ p{margin:0}
 @keyframes zoom{to{transform:scale(1.1)}}
 .hero-photo img{position:absolute;inset:0}
 #heroImg2{object-position:60% 36%;opacity:0}
-/* A: dissolvenza */
-.hv-a #heroImg2{animation:zoom 22s ease-out forwards,xfade 16s ease-in-out infinite}
-@keyframes xfade{0%,40%{opacity:0}50%,90%{opacity:1}100%{opacity:0}}
-/* B: diagonale */
-.hv-b #heroImg{clip-path:polygon(0 0,61.2% 0,54.3% 100%,0 100%);left:-16%;width:116%;max-width:none}
-.hv-b #heroImg2{opacity:1;left:30%;width:70%;object-position:72% 36%;clip-path:polygon(36.6% 0,100% 0,100% 100%,25.1% 100%)}
-.hv-b .hero-photo{background:var(--ice)}
-.hv-b .hero-photo img{animation:none;transform:none}
-/* C: sfondo intero + banner discese */
 .hv-c .hero-photo{position:absolute;inset:0 0 auto 0;height:min(94vh,860px);aspect-ratio:auto;max-height:none}
 .hv-c #heroImg{display:none}
 .hv-c #heroImg2{opacity:1;object-position:70% 30%}
@@ -120,7 +111,13 @@ html{overflow-x:clip}
 .lights span[data-l="5"]{background:repeating-linear-gradient(45deg,#ff0000 0 6px,#000 6px 12px)}
 .lights span.on{opacity:1;outline:2px solid #fff;outline-offset:2px}
 .lvl{font-family:var(--display);font-weight:700;font-size:1.6rem;text-transform:uppercase;letter-spacing:.03em}
-.cell a{color:var(--ice)}
+.cell a,.avabox a{color:var(--ice)}
+.avabox{background:var(--bg-2);border:1px solid var(--line);border-top:4px solid var(--ice);padding:20px 22px;margin-bottom:16px;text-align:center}
+.avabox .lights{max-width:420px;margin:12px auto 8px}
+.avabox .note{color:var(--muted);font-size:.95rem;margin-top:4px}
+a.chip{color:inherit;text-decoration:none}
+a.chip:hover{border-color:var(--ice)}
+.chip.powder{background:linear-gradient(160deg,#0f3a52,#0b0b0b);border-color:var(--ice);box-shadow:0 0 18px rgba(94,200,242,.45)}
 .now{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;margin-top:10px;text-align:left}
 .now div{border-left:3px solid var(--line);padding-left:10px}
 .now span{display:block;font-family:var(--display);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.78rem;color:var(--muted)}
@@ -150,7 +147,7 @@ html{overflow-x:clip}
 section{padding:76px 0 64px;position:relative}
 section.alt{background:#060708;box-shadow:0 0 0 100vmax #060708;clip-path:inset(0 -100vmax);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 main{counter-reset:sec}
-section>.head:first-child .eyebrow::before,section>.fc-head .eyebrow::before,.comm .eyebrow::before{counter-increment:sec;content:counter(sec,decimal-leading-zero);display:inline-block;margin-right:10px;padding-right:10px;border-right:1px solid var(--line);color:var(--muted)}
+section>.head:first-child .eyebrow::before,section>.secbanner+.head .eyebrow::before,section>.fc-head .eyebrow::before,.comm .eyebrow::before{counter-increment:sec;content:counter(sec,decimal-leading-zero);display:inline-block;margin-right:10px;padding-right:10px;border-right:1px solid var(--line);color:var(--muted)}
 #corsi .pro{margin-top:0}
 .eyebrow{font-family:var(--display);font-weight:600;font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ice);margin-bottom:8px;display:block}
 .title{font-size:clamp(1.75rem,3.6vw,2.6rem)}
@@ -333,8 +330,10 @@ footer a{color:var(--ice)}
     <p class="tag" id="tagline"></p>
     <div class="chips">
       <span class="chip">❄ Neve <b id="chSnowV">–</b></span>
+      <span class="chip" id="chNew">Nuova 24 h <b id="chNewV">–</b></span>
       <span class="chip">🌡 <b id="chTempV">–</b></span>
-      <span class="chip"><span class="dot" id="chDot"></span> Valanghe <b id="chAvaV">–</b></span>
+      <span class="chip">💨 <b id="chWindV">–</b></span>
+      <a class="chip" href="#sicurezza"><span class="dot" id="chDot"></span> Valanghe <b id="chAvaV">–</b></a>
     </div>
     <a class="mini" href="#meteo" id="mini" aria-label="Previsioni 4 giorni"></a>
     <div class="mini-cap">Previsioni 4 giorni · tocca per i dettagli</div>
@@ -349,31 +348,6 @@ footer a{color:var(--ice)}
     <button class="btn btn-fill hero-install" id="installBtn2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 7v7M9 11l3 3 3-3M10 18h4"/></svg>Aggiungi alla Home</button>
   </div>
 </header>
-
-<div class="wrap strip">
-  <div class="strip-grid">
-    <div class="cell" id="powderCell">
-      <div class="k">❄ Neve fresca 24 h</div>
-      <div class="big" id="powderV">–</div>
-      <div class="note" id="powderN">Livinal Lunc · 1837 m</div>
-    </div>
-    <div class="cell">
-      <div class="k">⚠ Pericolo valanghe · Canin</div>
-      <div class="lights"><span data-l="1"></span><span data-l="2"></span><span data-l="3"></span><span data-l="4"></span><span data-l="5"></span></div>
-      <div class="lvl" id="semLvl">Carico…</div>
-      <div class="note" id="semNote">&nbsp;</div>
-    </div>
-    <div class="cell">
-      <div class="k">📡 Ora al Livinal Lunc</div>
-      <div class="now">
-        <div><span>Neve al suolo</span><b id="cSnow">–</b><i id="cSnowD">&nbsp;</i></div>
-        <div><span>Temperatura</span><b id="cTemp">–</b><i id="cTempR">&nbsp;</i></div>
-        <div><span>Vento</span><b id="cWind">–</b><i id="cWindD">&nbsp;</i></div>
-        <div><span>Raffica max 24 h</span><b id="cGust">–</b><i id="cGustT">&nbsp;</i></div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <main class="wrap">
 
@@ -413,6 +387,12 @@ footer a{color:var(--ice)}
   <div class="head">
     <span class="eyebrow">Prima di partire</span>
     <h2 class="title">Sicurezza</h2>
+  </div>
+  <div class="avabox">
+    <div class="k">⚠ Pericolo valanghe · Canin</div>
+    <div class="lights"><span data-l="1"></span><span data-l="2"></span><span data-l="3"></span><span data-l="4"></span><span data-l="5"></span></div>
+    <div class="lvl" id="semLvl">Carico…</div>
+    <div class="note" id="semNote">&nbsp;</div>
   </div>
   <div class="warn"><b>Fuori pista sei in terreno non controllato</b>I percorsi indicati sono da ritenersi sicuri solo in condizioni di buon innevamento; con innevamento insufficiente è sconsigliato uscire dalle piste battute.</div>
   <div class="kit">
@@ -511,7 +491,7 @@ footer a{color:var(--ice)}
 </div></div>
 
 <script>
-(function(){var v=(new URLSearchParams(location.search).get("hero")||"a").toLowerCase();if(!/^[abc]$/.test(v))v="a";document.documentElement.classList.add("hv-"+v)})();
+document.documentElement.classList.add("hv-c");
 /* ================= CONFIG – modifica qui ================= */
 const CONFIG = {
   title: "Sella Nevea Freeride Arena",
@@ -561,6 +541,7 @@ const CONFIG = {
   // video di altri autori (embed YouTube): id = codice dopo "v=" nel link
   communityVideos: [
     { id:"VMe2FjuWMxk", t:"Sella Nevea, Italy – Almost Live S6 E3 (TGR)", a:"Teton Gravity Research" },
+    { id:"2iWD3MCejlc", t:"Passing the Virgin Ridge above Prevala (Sella Nevea Freeride)", a:"Luka Filipič" },
     { id:"gI11gKdgchs", t:"31springs - Freeride Sella Nevea", a:"Peter Bijuklič" },
     { id:"FczSvciWCq8", t:"Skiing from Okno Prestreljenik Window - Foro del Monte Forato", a:"Philipp Troschl - FIT for LIFE!" },
     { id:"-fEt7Hkfm7Q", t:"Sella Nevea Mountain Experience Classic 2015", a:"Livio Sadoch" },
@@ -654,24 +635,17 @@ function render(){
   const {snow,temp,wind,gust,dir}=DATA, cut=new Date(Date.now()-hours*3600e3), f=a=>a.filter(x=>x.t>=cut);
   const ls=last(snow);
   if(ls){
-    $("cSnow").textContent=`${Math.round(ls.v)} cm`; setStationPin(Math.round(ls.v)); $("chSnowV").textContent=`${Math.round(ls.v)} cm`;
-    const p=valueAt(snow,new Date(ls.t-24*3600e3));
-    if(p){const d=Math.round(ls.v-p.v); $("cSnowD").textContent=`${d>=0?'+':''}${d} cm in 24 h`;}
+    setStationPin(Math.round(ls.v)); $("chSnowV").textContent=`${Math.round(ls.v)} cm`;
     $("updated").textContent=`Ultimo dato: ${ls.t.toLocaleString("it-IT")} (ora locale) · aggiornamento automatico ogni 15 min.`;
   }
   const lt=last(temp);
   if(lt){
-    $("cTemp").textContent=`${fix1(lt.v)} °C`; $("chTempV").textContent=`${fix1(lt.v)} °C`;
-    const t24=temp.filter(x=>x.t>=new Date(lt.t-24*3600e3)).map(x=>x.v);
-    $("cTempR").textContent=`min ${fix1(Math.min(...t24))} / max ${fix1(Math.max(...t24))}`;
+    $("chTempV").textContent=`${fix1(lt.v)} °C`;
   }
   const lw=last(wind), ld=last(dir);
   if(lw){
-    $("cWind").textContent=`${Math.round(lw.v*3.6)} km/h`;
-    if(ld){const i=Math.round((ld.v%360)/45)%8; $("cWindD").innerHTML=`da ${DIRS[i]} <span style="display:inline-block;transform:rotate(${ld.v+180}deg)">↑</span>`;}
+    $("chWindV").textContent=`${Math.round(lw.v*3.6)} km/h`+(ld?` ${DIRS[Math.round((ld.v%360)/45)%8]}`:"");
   }
-  const g24=gust.filter(x=>x.t>=new Date(Date.now()-24*3600e3));
-  if(g24.length){const mx=g24.reduce((a,b)=>b.v>a.v?b:a); $("cGust").textContent=`${Math.round(mx.v*3.6)} km/h`; $("cGustT").textContent=tLabel(mx.t);}
   draw("chSnow",[{label:"Neve cm",data:f(snow),color:"#5ec8f2",fill:true}],{suggestedMin:0});
   draw("chTemp",[{label:"°C",data:f(temp),color:"#ff7a59"}],{zero:true});
   draw("chWind",[{label:"Vento",data:f(wind).map(x=>({t:x.t,v:x.v*3.6})),color:"#5ec8f2",fill:true},
@@ -809,9 +783,9 @@ function newSnow24(snow){
 }
 function renderPowder(){
   const n=newSnow24(DATA.snow); if(n===null) return;
-  $("powderV").innerHTML=`+${n} <small>cm</small>`;
-  if(n>=CONFIG.powderThreshold){ $("powderCell").classList.add("powder-on"); $("powderN").innerHTML=`<b style="color:#5ec8f2">❄ POWDER ALERT</b> · controlla il pericolo valanghe`; }
-  else { $("powderCell").classList.remove("powder-on"); $("powderN").textContent=`Livinal Lunc 1837 m · powder alert da +${CONFIG.powderThreshold} cm`; }
+  const on=n>=CONFIG.powderThreshold;
+  $("chNewV").textContent=`+${n} cm`+(on?" · POWDER!":"");
+  $("chNew").classList.toggle("powder",on);
 }
 
 const DANGER={low:[1,"1 · Debole"],moderate:[2,"2 · Moderato"],considerable:[3,"3 · Marcato"],high:[4,"4 · Forte"],very_high:[5,"5 · Molto forte"]};
