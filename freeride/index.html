@@ -73,6 +73,26 @@ ul.clean{padding-left:18px;margin:6px 0}
 .links a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--ink)}
 .links a b{display:block}
 .links a span{font-size:13px;color:var(--mut)}
+#oggi{padding-top:18px}
+.powder{display:none;border-radius:12px;padding:14px 16px;margin-bottom:12px;font-weight:700;font-size:18px;color:#fff;background:linear-gradient(90deg,#2c6f8f,#5fa8c8)}
+.powder.on{display:block}
+.powder small{display:block;font-weight:400;font-size:13px;opacity:.9}
+.powder.quiet{display:block;background:#fff;color:var(--mut);border:1px solid var(--line);font-weight:400;font-size:14px}
+.today{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.sem,.sub-form{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.lab{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.lights{display:flex;gap:8px;margin:10px 0 6px}
+.lights span{flex:1;height:22px;border-radius:6px;opacity:.18}
+.lights span[data-l="1"]{background:#ccff66}.lights span[data-l="2"]{background:#ffff00}.lights span[data-l="3"]{background:#ff9900}.lights span[data-l="4"]{background:#ff0000}
+.lights span[data-l="5"]{background:repeating-linear-gradient(45deg,#ff0000 0 6px,#000 6px 12px)}
+.lights span.on{opacity:1;box-shadow:0 0 0 2px #0f1a22}
+.lvl{font-size:20px;font-weight:800}
+.sub-form{display:flex;flex-direction:column;gap:6px}
+.sub-form input[type=email]{font:inherit;padding:9px 10px;border:1px solid var(--line);border-radius:8px;margin-top:4px}
+.sub-form label{font-size:14px;display:flex;gap:6px;align-items:flex-start}
+.sub-form label.small{font-size:11px;color:var(--mut)}
+.sub-form button{font:inherit;font-weight:700;padding:10px;border:0;border-radius:8px;background:var(--blue-d);color:#fff;cursor:pointer}
+.sub-form button:disabled{opacity:.5}
 footer{margin-top:30px;padding:20px 0 40px;font-size:12px;color:var(--mut);border-top:1px solid var(--line)}
 @media(max-width:520px){.hero img{width:72px;height:72px}.hero h1{font-size:22px}.card .val{font-size:24px}}
 </style>
@@ -97,6 +117,29 @@ footer{margin-top:30px;padding:20px 0 40px;font-size:12px;color:var(--mut);borde
 </div></nav>
 
 <main class="wrap">
+
+<section id="oggi">
+  <div class="powder" id="powder"></div>
+  <div class="today">
+    <div class="sem" id="sem">
+      <div class="lab">Pericolo valanghe – Canin</div>
+      <div class="lights">
+        <span data-l="1"></span><span data-l="2"></span><span data-l="3"></span><span data-l="4"></span><span data-l="5"></span>
+      </div>
+      <div class="lvl" id="semLvl">Carico bollettino…</div>
+      <div class="note" id="semNote">&nbsp;</div>
+    </div>
+    <form class="sub-form" id="subForm">
+      <div class="lab">Alert via e-mail</div>
+      <input type="email" id="subEmail" placeholder="la tua e-mail" required>
+      <label><input type="checkbox" id="subPowder" checked> Powder alert (neve fresca)</label>
+      <label><input type="checkbox" id="subAva" checked> Pericolo valanghe forte (4–5)</label>
+      <label class="small"><input type="checkbox" id="subPriv" required> Acconsento al trattamento della mia e-mail solo per l'invio di questi alert. Disiscrizione in ogni momento dal link in ogni e-mail.</label>
+      <button type="submit">Iscriviti</button>
+      <div class="note" id="subMsg"></div>
+    </form>
+  </div>
+</section>
 
 <section id="neve">
   <h2>Condizioni live – Livinal Lunc</h2>
@@ -172,6 +215,13 @@ const CONFIG = {
   station: { id: 541, name: "Livinal Lunc",
              sensors: { snow: 23, temp: 2, wind: 6, gust: 7, dir: 5 } },
   api: "https://monitor.protezionecivile.fvg.it/api",
+  powderThreshold: 15,            // cm di neve fresca in 24 h per il "Powder alert"
+  bulletin: {
+    url: "https://bollettini.aineva.it/albina_files/latest/IT-36_it_CAAMLv6.json",
+    region: "IT-36-UD-04",        // zona CANIN nel bollettino FVG
+    page: "https://www.protezionecivile.fvg.it/it/bollettino-valanghe"
+  },
+  alertsEndpoint: "",             // URL della Web App Google Apps Script (alerts.gs)
   stationPage: "https://monitor.protezionecivile.fvg.it/stazione/541",
   gallery: [
     { src:"mappa-discese.jpg", t:"Discese freeride 1–11 con pendenze", credit:"Fonte: cartello ufficiale freeride Sella Nevea, cartografia © Casa Editrice Tabacco" },
@@ -267,6 +317,7 @@ async function load(){
       [s.snow,s.temp,s.wind,s.gust,s.dir].map(id=>getSensor(id,from,to)));
     DATA={snow,temp,wind,gust,dir};
     render();
+    renderPowder();
   }catch(e){
     console.error(e);
     $("err").style.display="block";
@@ -339,7 +390,80 @@ $("range").addEventListener("click",e=>{
   if(DATA) render();
 });
 
+/* ---------- powder alert ---------- */
+function median(a){const s=[...a].sort((x,y)=>x-y);return s.length?s[Math.floor(s.length/2)]:null}
+function newSnow24(snow){
+  // neve fresca = mediana ultimo ora − minimo delle 24 h precedenti (filtra il rumore del nivometro)
+  if(snow.length<8) return null;
+  const lastT=snow[snow.length-1].t;
+  const now=median(snow.filter(x=>x.t>new Date(lastT-3600e3)).map(x=>x.v));
+  const win=snow.filter(x=>x.t>=new Date(lastT-24*3600e3));
+  const base=Math.min(...win.map(x=>x.v));
+  return Math.max(0,Math.round(now-base));
+}
+function renderPowder(){
+  const el=$("powder"); const n=newSnow24(DATA.snow);
+  if(n===null){el.className="powder";return}
+  if(n>=CONFIG.powderThreshold){
+    el.className="powder on";
+    el.innerHTML=`❄️ POWDER ALERT: +${n} cm nelle ultime 24 h<small>Livinal Lunc 1837 m · controlla sempre il pericolo valanghe qui sotto</small>`;
+  }else{
+    el.className="powder quiet";
+    el.textContent=`Neve fresca ultime 24 h al Livinal Lunc: +${n} cm (powder alert da +${CONFIG.powderThreshold} cm)`;
+  }
+}
+
+/* ---------- semaforo valanghe ---------- */
+const DANGER={low:[1,"1 – Debole"],moderate:[2,"2 – Moderato"],considerable:[3,"3 – Marcato"],high:[4,"4 – Forte"],very_high:[5,"5 – Molto forte"]};
+function parseBulletin(j){
+  const b=(j.bulletins||[]).find(x=>(x.regions||[]).some(r=>r.regionID===CONFIG.bulletin.region));
+  if(!b) return null;
+  const end=new Date(b.validTime.endTime);
+  if(end<new Date()) return {expired:true};
+  let max=0,txt="",elev="";
+  (b.dangerRatings||[]).forEach(d=>{const v=DANGER[d.mainValue]; if(v&&v[0]>max){max=v[0];txt=v[1];
+    elev=d.elevation?(d.elevation.lowerBound?`sopra ${d.elevation.lowerBound} m`:d.elevation.upperBound?`sotto ${d.elevation.upperBound} m`:""):""}});
+  return {level:max,txt,elev,highlights:(b.avalancheActivity||{}).highlights||"",
+    day:new Date(new Date(b.validTime.startTime).getTime()+12*3600e3).toLocaleDateString("it-IT",{weekday:"long",day:"numeric",month:"long"})};
+}
+async function loadBulletin(){
+  const show=(lvl,txt,note)=>{
+    document.querySelectorAll("#sem .lights span").forEach(s=>s.classList.toggle("on",+s.dataset.l===lvl));
+    $("semLvl").textContent=txt; $("semNote").innerHTML=note;
+  };
+  const link=`<a href="${CONFIG.bulletin.page}" target="_blank" rel="noopener">Bollettino completo</a>`;
+  let j=null;
+  try{ const r=await fetch(CONFIG.bulletin.url,{cache:"no-store"}); if(r.ok) j=await r.json(); }catch(e){}
+  if(!j && CONFIG.alertsEndpoint){
+    try{ const r=await fetch(CONFIG.alertsEndpoint+"?a=bulletin"); if(r.ok) j=await r.json(); }catch(e){}
+  }
+  if(!j){ show(0,"Bollettino non disponibile",`Nessun bollettino FVG in questo momento (fuori stagione?). ${link}`); return; }
+  const b=parseBulletin(j);
+  if(!b||b.expired||!b.level){ show(0,"Bollettino non disponibile",`Nessun bollettino valido per il Canin oggi. ${link}`); return; }
+  show(b.level,b.txt,`${b.elev?b.elev+" · ":""}valido ${b.day}<br>${b.highlights} ${link}`);
+}
+
+/* ---------- iscrizione alert ---------- */
+function initSubscribe(){
+  const f=$("subForm");
+  if(!CONFIG.alertsEndpoint){ f.style.display="none"; return; }
+  f.addEventListener("submit",async e=>{
+    e.preventDefault();
+    const btn=f.querySelector("button"); btn.disabled=true; $("subMsg").textContent="Invio…";
+    const body=new URLSearchParams({a:"subscribe",email:$("subEmail").value.trim(),
+      powder:$("subPowder").checked?"1":"0",ava:$("subAva").checked?"1":"0"});
+    try{
+      const r=await fetch(CONFIG.alertsEndpoint,{method:"POST",body});
+      const j=await r.json();
+      $("subMsg").textContent=j.ok?"Fatto! Controlla la tua e-mail e conferma l'iscrizione.":(j.error||"Errore, riprova.");
+    }catch(err){ $("subMsg").textContent="Errore di rete, riprova più tardi."; }
+    btn.disabled=false;
+  });
+}
+
 initStatic();
+initSubscribe();
+loadBulletin();
 load();
 setInterval(load,15*60e3);
 </script>
