@@ -42,14 +42,31 @@ h2{font-size:22px;margin:0 0 4px}
 .chart .box{position:relative;height:220px}
 .err{background:#fff4e5;border:1px solid #f3c88b;border-radius:12px;padding:12px;margin-bottom:12px;display:none}
 .meta{font-size:12px;color:var(--mut)}
-.routes{display:grid;gap:8px}
-.route{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
-.num{flex:0 0 34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
-.route .name{font-weight:600}
-.route .zone{font-size:13px;color:var(--mut)}
-.badge{margin-left:auto;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;white-space:nowrap}
+.gal{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin-bottom:14px}
+.gal figure{flex:0 0 78%;max-width:420px;margin:0;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:zoom-in}
+.gal img{width:100%;height:220px;object-fit:cover;display:block}
+.gal figcaption{padding:8px 10px;font-size:13px}
+.gal figcaption b{display:block}
+.gal figcaption span{color:var(--mut);font-size:11px}
+.rgroups{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.rg{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.rg h3{margin:0 0 6px;font-size:15px;display:flex;align-items:center;gap:8px}
+.rg h3 i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.rg ol{list-style:none;margin:0;padding:0}
+.rg li{display:flex;align-items:center;gap:8px;padding:4px 0;font-size:14px;border-top:1px solid #eef3f6}
+.rg li:first-child{border-top:0}
+.num{flex:0 0 24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;color:#fff}
+.dot{margin-left:auto;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap}
 .b1{background:#e3f4e8;color:#2b7a46}.b2{background:#fff1dc;color:#9a5a12}.b3{background:#fde4e4;color:#a12f2f}
-.mapimg{width:100%;border-radius:12px;border:1px solid var(--line);display:block;margin:14px 0 4px}
+.legend{font-size:12px;color:var(--mut);margin-top:8px}
+.vid{position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;background:#000;margin-bottom:6px}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vt{font-weight:600;margin:0 0 16px;font-size:14px}
+.lb{position:fixed;inset:0;background:#000e;z-index:50;display:none;flex-direction:column;align-items:center;justify-content:center;padding:12px}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:85vh;object-fit:contain}
+.lb p{color:#ccc;font-size:12px;margin:8px 0 0;text-align:center}
+.lb button{position:absolute;top:10px;right:12px;background:#fff2;color:#fff;border:0;font-size:22px;width:40px;height:40px;border-radius:50%;cursor:pointer}
 .warn{background:#fde4e4;border-left:4px solid var(--red);padding:12px 14px;border-radius:8px;margin:12px 0}
 ul.clean{padding-left:18px;margin:6px 0}
 .links{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
@@ -74,6 +91,7 @@ footer{margin-top:30px;padding:20px 0 40px;font-size:12px;color:var(--mut);borde
 <nav><div class="wrap">
   <a href="#neve">Neve live</a>
   <a href="#discese">Discese</a>
+  <a href="#video">Video</a>
   <a href="#sicurezza">Sicurezza</a>
   <a href="#community">Community</a>
 </div></nav>
@@ -108,14 +126,19 @@ footer{margin-top:30px;padding:20px 0 40px;font-size:12px;color:var(--mut);borde
 </section>
 
 <section id="discese">
-  <h2>Discese principali</h2>
-  <p class="sub">Dal cartello ufficiale all'ingresso dei percorsi freeride. Seguire sempre le indicazioni sul posto.</p>
-  <div class="routes" id="routes"></div>
-  <img class="mapimg" id="map1" alt="Mappa discese freeride Golovec e Forato">
-  <p class="meta" id="map1credit"></p>
-  <img class="mapimg" id="map2" alt="Panorama Sella Nevea d'inverno">
-  <p class="meta" id="map2credit"></p>
+  <h2>Discese e mappe</h2>
+  <p class="sub">Tocca una mappa per aprirla a schermo intero. Seguire sempre le indicazioni sul posto.</p>
+  <div class="gal" id="gallery"></div>
+  <div class="rgroups" id="routes"></div>
 </section>
+
+<section id="video">
+  <h2>Video</h2>
+  <p class="sub">Le linee viste dagli sci.</p>
+  <div id="videos"></div>
+</section>
+
+<div class="lb" id="lb"><button aria-label="Chiudi">✕</button><img alt=""><p></p></div>
 
 <section id="sicurezza">
   <h2>Sicurezza</h2>
@@ -150,10 +173,15 @@ const CONFIG = {
              sensors: { snow: 23, temp: 2, wind: 6, gust: 7, dir: 5 } },
   api: "https://monitor.protezionecivile.fvg.it/api",
   stationPage: "https://monitor.protezionecivile.fvg.it/stazione/541",
-  map1: "mappa-discese.jpg",
-  map1credit: "Fonte mappa: cartello ufficiale freeride di Sella Nevea, cartografia © Casa Editrice Tabacco.",
-  map2: "panorama.jpg",
-  map2credit: "Fonte panorama: sellaneveaparco.it (testo cit. sellaneveaparco.it).",
+  gallery: [
+    { src:"mappa-discese.jpg", t:"Discese freeride 1–11 con pendenze", credit:"Fonte: cartello ufficiale freeride Sella Nevea, cartografia © Casa Editrice Tabacco" },
+    { src:"mappa-topo.jpg", t:"Mappa topografica Golovec e Forato", credit:"Fonte: cartello ufficiale freeride Sella Nevea" },
+    { src:"panorama.jpg", t:"Panorama Sella Nevea – lato Montasio", credit:"Fonte: sellaneveaparco.it" },
+    { src:"panorama2.jpg", t:"Panorama Sella Nevea – lato Canin", credit:"Fonte: TurismoFVG.it" }
+  ],
+  videos: [
+    { id:"vohoUgxHd7o", t:"Freeride Ski Sella Nevea (guide of some lines) – Luka Filipič" }
+  ],
   // difficoltà: 1 facile, 2 media, 3 medio-difficile
   routes: [
     { n:1,  name:"Livinallunc Classica",     zone:"Golovec", d:2 },
@@ -192,13 +220,20 @@ function initStatic(){
   $("tagline").textContent = CONFIG.tagline;
   $("logo").src = CONFIG.logo;
   $("errlink").href = CONFIG.stationPage;
-  if(CONFIG.map1){$("map1").src=CONFIG.map1;$("map1credit").textContent=CONFIG.map1credit}else $("map1").remove();
-  if(CONFIG.map2){$("map2").src=CONFIG.map2;$("map2credit").textContent=CONFIG.map2credit}else $("map2").remove();
-  $("routes").innerHTML = CONFIG.routes.map(r=>{
-    const [t,c]=diffTxt[r.d];
-    return `<div class="route"><div class="num" style="background:${zoneCol[r.zone]||'#555'}">${r.n}</div>
-      <div><div class="name">${r.name}</div><div class="zone">Freeride ${r.zone}</div></div>
-      <span class="badge ${c}">${t}</span></div>`}).join("");
+  $("gallery").innerHTML = CONFIG.gallery.map((g,i)=>
+    `<figure data-i="${i}"><img src="${g.src}" alt="${g.t}" loading="lazy"><figcaption><b>${g.t}</b><span>${g.credit}</span></figcaption></figure>`).join("");
+  $("gallery").addEventListener("click",e=>{
+    const f=e.target.closest("figure"); if(!f) return; const g=CONFIG.gallery[+f.dataset.i];
+    const lb=$("lb"); lb.querySelector("img").src=g.src; lb.querySelector("p").textContent=g.t+" · "+g.credit; lb.classList.add("on");
+  });
+  $("lb").addEventListener("click",()=>$("lb").classList.remove("on"));
+  const zones=[...new Set(CONFIG.routes.map(r=>r.zone))];
+  $("routes").innerHTML = zones.map(z=>`<div class="rg"><h3><i style="background:${zoneCol[z]||'#555'}"></i>Freeride ${z}</h3><ol>`+
+    CONFIG.routes.filter(r=>r.zone===z).map(r=>{const [t,c]=diffTxt[r.d];
+      return `<li><span class="num" style="background:${zoneCol[z]||'#555'}">${r.n}</span>${r.name}<span class="dot ${c}">${t}</span></li>`}).join("")+
+    `</ol></div>`).join("") + `<p class="legend">I numeri corrispondono alla prima mappa.</p>`;
+  $("videos").innerHTML = CONFIG.videos.map(v=>
+    `<div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/${v.id}" title="${v.t}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div><p class="vt">${v.t}</p>`).join("");
   const lk = arr => arr.filter(x=>x.url).map(x=>`<a href="${x.url}" target="_blank" rel="noopener"><b>${x.t}</b><span>${x.s}</span></a>`).join("");
   $("safety").innerHTML = lk(CONFIG.safety);
   $("social").innerHTML = lk(CONFIG.social);
