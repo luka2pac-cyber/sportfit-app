@@ -44,6 +44,7 @@ p{margin:0}
 .brand small{display:block;color:var(--ice);font-size:.78rem;letter-spacing:.14em}
 .menu{display:flex;gap:2px;margin-left:auto}
 .menu a{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:.95rem;text-decoration:none;color:var(--muted);padding:8px 10px;border-bottom:2px solid transparent}
+.menu a svg{width:15px;height:15px;vertical-align:-2px;margin-right:5px;opacity:.8}
 .menu a:hover,.menu a.on{color:#fff;border-color:var(--ice)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.02rem;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;padding:10px 20px;border:2px solid transparent;cursor:pointer;color:#fff;background:none;transition:.2s}
 .btn svg{width:20px;height:20px;flex:none}
@@ -286,7 +287,7 @@ footer a{color:var(--ice)}
 <div class="top"><div class="wrap">
   <a class="brand" href="#top"><img id="tlogo" alt=""><span>Freeride Arena<small>Sella Nevea</small></span></a>
   <nav class="menu">
-    <a href="#neve">Neve</a><a href="#meteo">Meteo</a><a href="#discese">Discese</a><a href="#video">Video</a><a href="#sicurezza">Sicurezza</a><a href="#community">Community</a>
+    <a href="#neve"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1 19.1 4.9"/><path d="m9 4 3 3 3-3M9 20l3-3 3 3M4 9l3 3-3 3M20 9l-3 3 3 3"/></svg>Neve</a><a href="#meteo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v2M4.9 4.9l1.4 1.4M20 12h2M19.1 4.9l-1.4 1.4"/><path d="M15.9 13A4 4 0 0 0 8.3 10.3"/><path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z"/></svg>Meteo</a><a href="#discese"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>Discese</a><a href="#video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="m22 8-5 4 5 4V8z"/></svg>Video</a><a href="#sicurezza"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Sicurezza</a><a href="#community"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>Community</a>
   </nav>
   <button class="btn btn-fill install" id="installBtn">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M12 7v7m-3-3 3 3 3-3"/></svg><span class="il">Installa </span>app
@@ -307,13 +308,14 @@ footer a{color:var(--ice)}
     <a class="mini" href="#meteo" id="mini" aria-label="Previsioni 4 giorni"></a>
     <div class="mini-cap">Previsioni 4 giorni · tocca per i dettagli</div>
     <div class="hero-btns">
-      <a class="btn btn-line" href="#neve">Neve live</a>
-      <a class="btn btn-line" href="#meteo">Meteo</a>
-      <a class="btn btn-line" href="#discese">Discese</a>
-      <a class="btn btn-line" href="#video">Video</a>
-      <a class="btn btn-line" href="#community">Community</a>
+      <a class="btn btn-line" href="#neve"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1 19.1 4.9"/><path d="m9 4 3 3 3-3M9 20l3-3 3 3M4 9l3 3-3 3M20 9l-3 3 3 3"/></svg>Neve live</a>
+      <a class="btn btn-line" href="#meteo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v2M4.9 4.9l1.4 1.4M20 12h2M19.1 4.9l-1.4 1.4"/><path d="M15.9 13A4 4 0 0 0 8.3 10.3"/><path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z"/></svg>Meteo</a>
+      <a class="btn btn-line" href="#discese"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>Discese</a>
+      <a class="btn btn-line" href="#video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="m22 8-5 4 5 4V8z"/></svg>Video</a>
+      <a class="btn btn-line" href="#sicurezza"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Sicurezza</a>
+      <a class="btn btn-line" href="#community"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>Community</a>
     </div>
-    <button class="btn btn-fill hero-install" id="installBtn2">📲 Aggiungi alla Home</button>
+    <button class="btn btn-fill hero-install" id="installBtn2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 7v7M9 11l3 3 3-3M10 18h4"/></svg>Aggiungi alla Home</button>
   </div>
 </header>
 
@@ -518,16 +520,12 @@ const CONFIG = {
     { id:"gI11gKdgchs", t:"31springs - Freeride Sella Nevea", a:"Peter Bijuklič" },
     { id:"FczSvciWCq8", t:"Skiing from Okno Prestreljenik Window - Foro del Monte Forato", a:"Philipp Troschl - FIT for LIFE!" },
     { id:"-fEt7Hkfm7Q", t:"Sella Nevea Mountain Experience Classic 2015", a:"Livio Sadoch" },
-    { id:"R-OQVClxeQM", t:"Sella Nevea un pò di sci e contorno", a:"Livio Sadoch" },
     { id:"Cdnzecmsw6A", t:"Freeride Kanin - Sella Nevea Ski Resort", a:"Alpska šola Bovec" },
     { id:"pktYwMHRJDM", t:"Sella Nevea Mountain Experience 2016", a:"Livio Sadoch" },
     { id:"88Qbq_mrk_o", t:"Europas Freeride-Paradies, von dem niemand weiß", a:"Tao Kreibich" },
     { id:"G6N9vPsnrWo", t:"Kanin - Sella Nevea Clip", a:"Sončni Kanin" },
     { id:"mgxtmfLWsO0", t:"360° freeriding Kanin-Sella Nevea", a:"Ivica Kostelić" },
     { id:"cxdQJZUQw_c", t:"Sella Nevea con Margherita Granbassi", a:"friuliveneziagiulia.turismo" },
-    { id:"cTA2z6kRCyI", t:"Sella Nevea Freeride", a:"zaronc" },
-    { id:"y7oEuF3wJLE", t:"Freeride 2011 - Sella Nevea The Invasion", a:"DomePowder" },
-    { id:"CJRd9nqalFY", t:"Snowboard Freeride Sella Nevea Big Avalanche", a:"Dirtsee" }
   ],
   safety: [
     { t:"Bollettino valanghe FVG", s:"Protezione Civile FVG", url:"https://www.protezionecivile.fvg.it/it/bollettino-valanghe" },
