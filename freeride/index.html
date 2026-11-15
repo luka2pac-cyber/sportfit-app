@@ -90,6 +90,26 @@ p{margin:0}
 .now b{font-family:var(--display);font-weight:700;font-size:1.5rem;line-height:1.1}
 .now i{font-style:normal;font-size:.85rem;color:var(--muted);display:block}
 
+.fc{padding-top:44px}
+.fc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.fc-tot{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.05em;background:var(--bg-2);border:1px solid var(--line);padding:8px 14px}
+.fc-tot b{color:var(--ice);font-size:1.4rem}
+.days{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.day{background:var(--bg-2);border:1px solid var(--line);padding:16px 14px;text-align:center;position:relative}
+.day.snowy{border-color:var(--ice);background:linear-gradient(180deg,#0f2f42,#121212 70%)}
+.day .dn{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.day .dd{font-size:.8rem;color:var(--muted)}
+.day .wi{font-size:2.6rem;line-height:1.2;margin:6px 0 2px}
+.day .wt{font-size:.85rem;color:var(--muted);min-height:2.6em}
+.day .tt{font-family:var(--display);font-weight:700;font-size:1.3rem}
+.day .tt span{color:var(--muted);font-size:1rem}
+.day .sn{font-family:var(--display);font-weight:700;font-size:2rem;color:var(--ice);margin-top:6px;line-height:1}
+.day .sn small{font-size:.9rem;color:var(--muted)}
+.day ul{list-style:none;padding:0;margin:10px 0 0;font-size:.85rem;color:var(--muted);text-align:left}
+.day li{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:4px 0}
+.day li b{color:var(--ink);font-weight:600}
+.fc-src{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:12px}
+.fc-src .meta{margin:0}
 section{padding:80px 0 10px}
 .eyebrow{font-family:var(--display);font-weight:600;font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ice);margin-bottom:8px;display:block}
 .title{font-size:clamp(1.75rem,3.6vw,2.6rem)}
@@ -174,6 +194,7 @@ footer a{color:var(--ice)}
   .strip-grid{grid-template-columns:1fr}
   .cell{border-right:0;border-bottom:1px solid var(--line)}
   .charts,.rgroups{grid-template-columns:1fr}
+  .days{grid-template-columns:1fr 1fr}
   .kit{grid-template-columns:1fr 1fr}
   .links{grid-template-columns:1fr}
   section{padding-top:60px}
@@ -198,7 +219,7 @@ footer a{color:var(--ice)}
 <div class="top"><div class="wrap">
   <a class="brand" href="#top"><img id="tlogo" alt=""><span>Freeride Arena<small>Sella Nevea</small></span></a>
   <nav class="menu">
-    <a href="#neve">Neve</a><a href="#discese">Discese</a><a href="#video">Video</a><a href="#sicurezza">Sicurezza</a><a href="#community">Community</a>
+    <a href="#meteo">Meteo</a><a href="#neve">Neve</a><a href="#discese">Discese</a><a href="#video">Video</a><a href="#sicurezza">Sicurezza</a><a href="#community">Community</a>
   </nav>
   <button class="btn btn-fill install" id="installBtn">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M12 7v7m-3-3 3 3 3-3"/></svg><span class="il">Installa </span>app
@@ -217,9 +238,9 @@ footer a{color:var(--ice)}
       <span class="chip"><span class="dot" id="chDot"></span> Valanghe <b id="chAvaV">–</b></span>
     </div>
     <div class="hero-btns">
+      <a class="btn btn-line" href="#meteo">Meteo 3 giorni</a>
       <a class="btn btn-line" href="#neve">Neve live</a>
       <a class="btn btn-line" href="#discese">Discese</a>
-      <a class="btn btn-line" href="#video">Video</a>
       <a class="btn btn-line" href="#community">Community</a>
     </div>
   </div>
@@ -251,6 +272,21 @@ footer a{color:var(--ice)}
 </div>
 
 <main class="wrap">
+
+<section id="meteo" class="fc">
+  <div class="fc-head">
+    <div>
+      <span class="eyebrow">Previsioni a 1800 m</span>
+      <h2 class="title">Meteo e neve prevista</h2>
+    </div>
+    <div class="fc-tot" id="fcTot">Neve prevista 3 giorni: <b>–</b></div>
+  </div>
+  <div class="days" id="days"></div>
+  <div class="fc-src">
+    <p class="meta">Modello: Open-Meteo (best match per l'Europa), quota 1837 m. Le previsioni di neve sono indicative.</p>
+    <a class="btn btn-line" id="bfLink" target="_blank" rel="noopener">Confronta su bergfex</a>
+  </div>
+</section>
 
 <section id="neve" class="rv">
   <div class="head">
@@ -337,6 +373,10 @@ const CONFIG = {
   station: { id: 541, name: "Livinal Lunc", sensors: { snow: 23, temp: 2, wind: 6, gust: 7, dir: 5 } },
   api: "https://monitor.protezionecivile.fvg.it/api",
   stationPage: "https://monitor.protezionecivile.fvg.it/stazione/541",
+  forecast: {
+    url: "https://api.open-meteo.com/v1/forecast?latitude=46.3743&longitude=13.4703&elevation=1837&daily=weather_code,temperature_2m_max,temperature_2m_min,snowfall_sum,precipitation_sum,wind_gusts_10m_max&hourly=freezing_level_height&timezone=Europe%2FRome&forecast_days=4",
+    bergfex: "https://www.bergfex.com/sella-nevea/wetter/berg/"
+  },
   powderThreshold: 15,            // cm di neve fresca in 24 h per il "Powder alert"
   bulletin: {
     url: "https://bollettini.aineva.it/albina_files/latest/IT-36_it_CAAMLv6.json",
@@ -411,7 +451,7 @@ function initStatic(){
   $("social").innerHTML = CONFIG.social.filter(x=>x.url).map(x=>`<a class="btn btn-line" href="${x.url}" target="_blank" rel="noopener">${ICON[x.t]||""}${x.t}</a>`).join("");
   $("disclaimer").textContent = CONFIG.disclaimer;
   $("foot").innerHTML = `<div class="flogos"><img src="${CONFIG.logo}" alt="${CONFIG.title}"><img class="sq" src="${CONFIG.logo2}" alt="Freeride Arena Sella Nevea"></div>
-    Dati meteo: <a href="https://monitor.protezionecivile.fvg.it" target="_blank" rel="noopener">Protezione Civile della Regione FVG</a> (CC BY 4.0) · Bollettino valanghe: AINEVA / Protezione Civile FVG · misure non validate.<br>© ${new Date().getFullYear()} ${CONFIG.title}`;
+    Dati meteo: <a href="https://monitor.protezionecivile.fvg.it" target="_blank" rel="noopener">Protezione Civile della Regione FVG</a> (CC BY 4.0) · Bollettino valanghe: AINEVA / Protezione Civile FVG · Previsioni: <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo.com</a> (CC BY 4.0) · misure non validate.<br>© ${new Date().getFullYear()} ${CONFIG.title}`;
 }
 
 const fmtUTC = d => d.toISOString().slice(0,19).replace("T"," ");
@@ -477,6 +517,36 @@ function draw(id,series,opt){
 }
 $("range").addEventListener("click",e=>{const b=e.target.closest("button"); if(!b) return; hours=+b.dataset.h;
   document.querySelectorAll("#range button").forEach(x=>x.classList.toggle("on",x===b)); if(DATA) render();});
+
+/* ---------- previsioni ---------- */
+const WMO={0:["☀️","Sereno"],1:["🌤️","Quasi sereno"],2:["⛅","Parz. nuvoloso"],3:["☁️","Nuvoloso"],45:["🌫️","Nebbia"],48:["🌫️","Nebbia"],
+ 51:["🌦️","Pioviggine"],53:["🌦️","Pioviggine"],55:["🌧️","Pioviggine"],56:["🌧️","Pioggia gelata"],57:["🌧️","Pioggia gelata"],
+ 61:["🌧️","Pioggia debole"],63:["🌧️","Pioggia"],65:["🌧️","Pioggia forte"],66:["🌧️","Pioggia gelata"],67:["🌧️","Pioggia gelata"],
+ 71:["🌨️","Neve debole"],73:["🌨️","Neve"],75:["❄️","Neve forte"],77:["🌨️","Nevischio"],80:["🌦️","Rovesci"],81:["🌧️","Rovesci"],82:["⛈️","Rovesci forti"],
+ 85:["🌨️","Rovesci di neve"],86:["❄️","Rovesci di neve forti"],95:["⛈️","Temporale"],96:["⛈️","Temporale"],99:["⛈️","Temporale"]};
+async function loadForecast(){
+  $("bfLink").href=CONFIG.forecast.bergfex;
+  try{
+    const j=await (await fetch(CONFIG.forecast.url)).json(), d=j.daily, h=j.hourly;
+    let tot=0;
+    $("days").innerHTML=d.time.map((t,i)=>{
+      const dt=new Date(t+"T12:00"), sn=Math.round((d.snowfall_sum[i]||0)*10)/10;
+      if(i>0) tot+=sn;
+      const fz=h.time.map((x,k)=>[x,h.freezing_level_height[k]]).filter(([x])=>x.startsWith(t)&&+x.slice(11,13)>=6&&+x.slice(11,13)<=18).map(a=>a[1]);
+      const [ic,tx]=WMO[d.weather_code[i]]||["❔",""];
+      const name=i===0?"Oggi":i===1?"Domani":dt.toLocaleDateString("it-IT",{weekday:"long"});
+      const sTxt=sn>=1?`+${Math.round(sn)} <small>cm</small>`:sn>0?`&lt;1 <small>cm</small>`:`0 <small>cm</small>`;
+      return `<div class="day${sn>=5?" snowy":""}"><div class="dn">${name}</div><div class="dd">${dt.toLocaleDateString("it-IT",{day:"numeric",month:"short"})}</div>
+        <div class="wi">${ic}</div><div class="wt">${tx}</div>
+        <div class="tt">${Math.round(d.temperature_2m_max[i])}° <span>/ ${Math.round(d.temperature_2m_min[i])}°</span></div>
+        <div class="sn">${sTxt}</div>
+        <ul><li>Precipitazioni <b>${(d.precipitation_sum[i]||0).toFixed(1)} mm</b></li>
+        <li>Raffiche <b>${Math.round(d.wind_gusts_10m_max[i])} km/h</b></li>
+        ${fz.length?(()=>{const a=Math.round(Math.min(...fz)/50)*50,b=Math.round(Math.max(...fz)/50)*50;return `<li>Zero termico <b>${a===b?a:a+"–"+b} m</b></li>`})():""}</ul></div>`;
+    }).join("");
+    $("fcTot").innerHTML=`Neve prevista prossimi 3 giorni: <b>${tot>0&&tot<1?"&lt;1":Math.round(tot)} cm</b>`;
+  }catch(e){ console.error(e); $("days").innerHTML=`<p class="meta">Previsioni non disponibili. <a href="${CONFIG.forecast.bergfex}" target="_blank" rel="noopener" style="color:var(--ice)">Vedi su bergfex</a></p>`; }
+}
 
 function median(a){const s=[...a].sort((x,y)=>x-y);return s.length?s[Math.floor(s.length/2)]:null}
 function newSnow24(snow){
@@ -548,8 +618,9 @@ function initUI(){
   document.querySelectorAll("section[id]").forEach(s=>so.observe(s));
 }
 
-initStatic(); initInstall(); initUI(); loadBulletin(); load();
+initStatic(); initInstall(); initUI(); loadForecast(); loadBulletin(); load();
 setInterval(load,15*60e3);
+setInterval(loadForecast,60*60e3);
 </script>
 </body>
 </html>
