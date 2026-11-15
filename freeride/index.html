@@ -206,6 +206,17 @@ section{padding:80px 0 10px}
 .links a:hover{border-color:var(--ice)}
 .links a b{display:block;font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-size:1.05rem}
 .links a span{font-size:.88rem;color:var(--muted)}
+.pro{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;background:var(--bg-2);border:1px solid var(--line);border-left:4px solid var(--ice);padding:20px 22px;margin-top:22px}
+.pro .plogo{width:84px;height:84px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex:none;font-family:var(--display);font-weight:700;color:#0b0b0b;font-size:1.3rem;letter-spacing:.04em;overflow:hidden}
+.pro .plogo img{width:100%;height:100%;object-fit:contain}
+.pro .pt{flex:1;min-width:240px}
+.pro h3{font-family:var(--display);font-weight:700;font-size:1.4rem;letter-spacing:.04em}
+.pro .who{color:var(--ice);font-family:var(--display);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.9rem;margin:2px 0 8px}
+.pro p{color:#cfccc7;font-size:.95rem}
+.pro ul{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:10px 0}
+.pro li{font-family:var(--display);font-weight:600;font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--line);padding:3px 9px}
+.pro .acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.pro .mail{font-size:.85rem;color:var(--muted);margin-top:8px}
 .disc{font-size:.85rem;color:var(--muted);margin-top:14px}
 
 .comm{background:linear-gradient(135deg,#0f2a3a,#0b0b0b);border:1px solid var(--line);padding:34px;display:flex;gap:28px;align-items:center;flex-wrap:wrap}
@@ -403,6 +414,20 @@ footer a{color:var(--ice)}
     <div><div class="ic">👥</div><b>Mai da soli</b><span>uno alla volta sui ripidi · 112</span></div>
   </div>
   <div class="links" id="safety"></div>
+  <div class="pro" id="snme">
+    <div class="plogo" id="snmeLogo">SNME</div>
+    <div class="pt">
+      <h3>Sella Nevea Mountain Experience</h3>
+      <div class="who">Livio Sadoch · maestro di sci & guida alpina</div>
+      <p>Uscite e corsi in piccoli gruppi con un maestro di sci e una guida alpina: freeride, scialpinismo, neve e valanghe, autosoccorso con ARTVA, pala e sonda.</p>
+      <ul><li>Rider House</li><li>Classic Igloo Experience</li><li>Film Festival</li></ul>
+      <div class="acts">
+        <a class="btn btn-fill" href="https://sellanevea.net/it/mountainexperience" target="_blank" rel="noopener">Info e programma</a>
+        <a class="btn btn-line" href="https://www.youtube.com/channel/UCYUUnvThFLVrzDniZIVtWPg" target="_blank" rel="noopener">Video</a>
+      </div>
+      <p class="mail">✉ sellaneveamountainexperience@outlook.it</p>
+    </div>
+  </div>
   <p class="disc" id="disclaimer"></p>
 </section>
 
@@ -481,7 +506,6 @@ const CONFIG = {
     { id:"FczSvciWCq8", t:"Skiing from Okno Prestreljenik Window - Foro del Monte Forato", a:"Philipp Troschl - FIT for LIFE!" },
     { id:"-fEt7Hkfm7Q", t:"Sella Nevea Mountain Experience Classic 2015", a:"Livio Sadoch" },
     { id:"R-OQVClxeQM", t:"Sella Nevea un pò di sci e contorno", a:"Livio Sadoch" },
-    { id:"clpwSS4Yi5E", t:"A day with Snow Addicts – Saisera, Lavinal dell'Orso, Huda Paliza", a:"Livio Sadoch" },
     { id:"Cdnzecmsw6A", t:"Freeride Kanin - Sella Nevea Ski Resort", a:"Alpska šola Bovec" },
     { id:"pktYwMHRJDM", t:"Sella Nevea Mountain Experience 2016", a:"Livio Sadoch" },
     { id:"88Qbq_mrk_o", t:"Europas Freeride-Paradies, von dem niemand weiß", a:"Tao Kreibich" },
