@@ -125,7 +125,11 @@ p{margin:0}
 .day li b{color:var(--ink);font-weight:600}
 .fc-src{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:12px}
 .fc-src .meta{margin:0}
-section{padding:80px 0 10px}
+section{padding:76px 0 64px;position:relative}
+section.alt{background:#060708;box-shadow:0 0 0 100vmax #060708;clip-path:inset(0 -100vmax);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+main{counter-reset:sec}
+section>.head:first-child .eyebrow::before,section>.fc-head .eyebrow::before,.comm .eyebrow::before{counter-increment:sec;content:counter(sec,decimal-leading-zero);display:inline-block;margin-right:10px;padding-right:10px;border-right:1px solid var(--line);color:var(--muted)}
+#corsi .pro{margin-top:0}
 .eyebrow{font-family:var(--display);font-weight:600;font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ice);margin-bottom:8px;display:block}
 .title{font-size:clamp(1.75rem,3.6vw,2.6rem)}
 .intro{color:var(--muted);max-width:60ch;margin-top:12px}
@@ -264,7 +268,7 @@ footer a{color:var(--ice)}
   .days{grid-template-columns:1fr 1fr}
   .kit{grid-template-columns:1fr 1fr}
   .links{grid-template-columns:1fr}
-  section{padding-top:60px}
+  section{padding:52px 0 48px}
 }
 @media(max-width:520px){
   body{font-size:16px}
@@ -287,7 +291,7 @@ footer a{color:var(--ice)}
 <div class="top"><div class="wrap">
   <a class="brand" href="#top"><img id="tlogo" alt=""><span>Freeride Arena<small>Sella Nevea</small></span></a>
   <nav class="menu">
-    <a href="#neve"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1 19.1 4.9"/><path d="m9 4 3 3 3-3M9 20l3-3 3 3M4 9l3 3-3 3M20 9l-3 3 3 3"/></svg>Neve</a><a href="#meteo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v2M4.9 4.9l1.4 1.4M20 12h2M19.1 4.9l-1.4 1.4"/><path d="M15.9 13A4 4 0 0 0 8.3 10.3"/><path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z"/></svg>Meteo</a><a href="#discese"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>Discese</a><a href="#video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="m22 8-5 4 5 4V8z"/></svg>Video</a><a href="#sicurezza"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Sicurezza</a><a href="#community"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>Community</a>
+    <a href="#neve"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1 19.1 4.9"/><path d="m9 4 3 3 3-3M9 20l3-3 3 3M4 9l3 3-3 3M20 9l-3 3 3 3"/></svg>Neve</a><a href="#meteo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v2M4.9 4.9l1.4 1.4M20 12h2M19.1 4.9l-1.4 1.4"/><path d="M15.9 13A4 4 0 0 0 8.3 10.3"/><path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z"/></svg>Meteo</a><a href="#sicurezza"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Sicurezza</a><a href="#discese"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>Discese</a><a href="#video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="m22 8-5 4 5 4V8z"/></svg>Video</a><a href="#community"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>Community</a>
   </nav>
   <button class="btn btn-fill install" id="installBtn">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M12 7v7m-3-3 3 3 3-3"/></svg><span class="il">Installa </span>app
@@ -310,9 +314,9 @@ footer a{color:var(--ice)}
     <div class="hero-btns">
       <a class="btn btn-line" href="#neve"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1 19.1 4.9"/><path d="m9 4 3 3 3-3M9 20l3-3 3 3M4 9l3 3-3 3M20 9l-3 3 3 3"/></svg>Neve live</a>
       <a class="btn btn-line" href="#meteo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v2M4.9 4.9l1.4 1.4M20 12h2M19.1 4.9l-1.4 1.4"/><path d="M15.9 13A4 4 0 0 0 8.3 10.3"/><path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z"/></svg>Meteo</a>
+      <a class="btn btn-line" href="#sicurezza"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Sicurezza</a>
       <a class="btn btn-line" href="#discese"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>Discese</a>
       <a class="btn btn-line" href="#video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="m22 8-5 4 5 4V8z"/></svg>Video</a>
-      <a class="btn btn-line" href="#sicurezza"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Sicurezza</a>
       <a class="btn btn-line" href="#community"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>Community</a>
     </div>
     <button class="btn btn-fill hero-install" id="installBtn2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 7v7M9 11l3 3 3-3M10 18h4"/></svg>Aggiungi alla Home</button>
@@ -363,7 +367,7 @@ footer a{color:var(--ice)}
   <p class="meta" id="updated"></p>
 </section>
 
-<section id="meteo">
+<section id="meteo" class="alt">
   <div class="fc-head">
     <div>
       <span class="eyebrow">Previsioni a 1800 m</span>
@@ -378,7 +382,23 @@ footer a{color:var(--ice)}
   </div>
 </section>
 
-<section id="discese" class="rv">
+<section id="sicurezza" class="rv">
+  <div class="head">
+    <span class="eyebrow">Prima di partire</span>
+    <h2 class="title">Sicurezza</h2>
+  </div>
+  <div class="warn"><b>Fuori pista sei in terreno non controllato</b>I percorsi indicati sono da ritenersi sicuri solo in condizioni di buon innevamento; con innevamento insufficiente è sconsigliato uscire dalle piste battute.</div>
+  <div class="kit">
+    <div><div class="ic">📡</div><b>ARTVA</b><span>acceso e testato</span></div>
+    <div><div class="ic">⛏️</div><b>Pala e sonda</b><span>sempre nello zaino</span></div>
+    <div><div class="ic">📋</div><b>Bollettino</b><span>letto ogni giorno</span></div>
+    <div><div class="ic">👥</div><b>Mai da soli</b><span>uno alla volta sui ripidi · 112</span></div>
+  </div>
+  <div class="links" id="safety"></div>
+  <p class="disc" id="disclaimer"></p>
+</section>
+
+<section id="discese" class="rv alt">
   <div class="head">
     <span class="eyebrow">Le linee</span>
     <h2 class="title">Mappa delle discese</h2>
@@ -415,19 +435,12 @@ footer a{color:var(--ice)}
   <div class="cvbar"><span id="cvcount"></span><button id="cvall">Mostra tutti</button></div>
 </section>
 
-<section id="sicurezza" class="rv">
+<section id="corsi" class="rv alt">
   <div class="head">
-    <span class="eyebrow">Prima di partire</span>
-    <h2 class="title">Sicurezza</h2>
+    <span class="eyebrow">Con chi la conosce</span>
+    <h2 class="title">Corsi e uscite guidate</h2>
+    <p class="intro">Vuoi imparare a leggere la neve o scoprire le linee con qualcuno che conosce il Canin da sempre?</p>
   </div>
-  <div class="warn"><b>Fuori pista sei in terreno non controllato</b>I percorsi indicati sono da ritenersi sicuri solo in condizioni di buon innevamento; con innevamento insufficiente è sconsigliato uscire dalle piste battute.</div>
-  <div class="kit">
-    <div><div class="ic">📡</div><b>ARTVA</b><span>acceso e testato</span></div>
-    <div><div class="ic">⛏️</div><b>Pala e sonda</b><span>sempre nello zaino</span></div>
-    <div><div class="ic">📋</div><b>Bollettino</b><span>letto ogni giorno</span></div>
-    <div><div class="ic">👥</div><b>Mai da soli</b><span>uno alla volta sui ripidi · 112</span></div>
-  </div>
-  <div class="links" id="safety"></div>
   <div class="pro" id="snme">
     <div class="plogo" id="snmeLogo">SNME</div>
     <div class="pt">
@@ -442,7 +455,6 @@ footer a{color:var(--ice)}
       <p class="mail">✉ sellaneveamountainexperience@outlook.it</p>
     </div>
   </div>
-  <p class="disc" id="disclaimer"></p>
 </section>
 
 <section id="community" class="rv">
