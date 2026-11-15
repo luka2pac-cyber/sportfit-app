@@ -115,6 +115,15 @@ html{overflow-x:clip}
 .avabox{background:var(--bg-2);border:1px solid var(--line);border-top:4px solid var(--ice);padding:20px 22px;margin-bottom:16px;text-align:center}
 .avabox .lights{max-width:420px;margin:12px auto 8px}
 .avabox .note{color:var(--muted);font-size:.95rem;margin-top:4px}
+.lifts{display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;align-items:center;margin:14px auto 0;padding:9px 14px;max-width:640px;background:rgba(0,0,0,.6);border:1px solid var(--line);text-decoration:none;color:var(--ink);font-family:var(--display);font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:.95rem}
+.lifts:empty{display:none}
+.lifts:hover{border-color:var(--ice)}
+.lifts .lk{color:var(--ice)}
+.lifts .li{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.lifts .ld{width:11px;height:11px;border-radius:50%;background:#666;flex:none}
+.lifts .ld.open{background:#3ddc6b;box-shadow:0 0 8px rgba(61,220,107,.8)}
+.lifts .ld.close{background:#e5383b}
+.lifts .ln{width:100%;text-align:center;font-family:var(--body);font-weight:400;text-transform:none;letter-spacing:0;font-size:.82rem;color:var(--muted)}
 a.chip{color:inherit;text-decoration:none}
 a.chip:hover{border-color:var(--ice)}
 .chip.powder{background:linear-gradient(160deg,#0f3a52,#0b0b0b);border-color:var(--ice);box-shadow:0 0 18px rgba(94,200,242,.45)}
@@ -335,6 +344,7 @@ footer a{color:var(--ice)}
       <span class="chip">💨 <b id="chWindV">–</b></span>
       <a class="chip" href="#sicurezza"><span class="dot" id="chDot"></span> Valanghe <b id="chAvaV">–</b></a>
     </div>
+    <a class="lifts" id="lifts" href="https://www.turismofvg.it/montagna/infoneve?hub=sella&day=today&type=4" target="_blank" rel="noopener" aria-label="Stato impianti"></a>
     <a class="mini" href="#meteo" id="mini" aria-label="Previsioni 4 giorni"></a>
     <div class="mini-cap">Previsioni 4 giorni · tocca per i dettagli</div>
     <div class="hero-btns">
@@ -814,6 +824,24 @@ async function loadBulletin(){
   if(!b||b.expired||!b.level){ show(0,"Non disponibile",`Nessun bollettino valido oggi (fuori stagione?). ${link}`,"n.d."); return; }
   show(b.level,b.txt,`${b.elev?b.elev+" · ":""}${b.day}<br>${b.highlights} ${link}`,b.txt.split(" · ")[1]);
 }
+
+
+async function loadLifts(){
+  const el=$("lifts"); let j;
+  try{ const r=await fetch("lifts.json?t="+Date.now(),{cache:"no-store"}); if(!r.ok) return; j=await r.json(); }catch(e){ return; }
+  const L=(j.lifts||[]); if(!L.length) return;
+  const order=n=>/funifor/i.test(n)?0:/telecabina/i.test(n)?1:2;
+  const short=n=>n.replace(/^Telecabina /,"Cabinovia ").replace(/^Seggiovia /,"Seggiovia ").replace(/^Tappeto /,"Tappeto ");
+  const known=s=>s==="open"||s==="close";
+  const items=L.filter(x=>!/tappeto/i.test(x.name)).sort((a,b)=>order(a.name)-order(b.name)).map(x=>{
+    const st=known(x.status)?x.status:"";
+    const t=x.status==="open"?"aperto":x.status==="close"?"chiuso":"stato n.d.";
+    return `<span class="li" title="${x.name}: ${t}"><span class="ld ${st}"></span>${short(x.name)}</span>`;}).join("");
+  const chk=j.checked?new Date(j.checked).toLocaleString("it-IT",{weekday:"short",hour:"2-digit",minute:"2-digit"}):"";
+  const note=(j.alert?j.alert+" · ":"")+(chk?`agg. ${chk} · `:"")+"fonte PromoTurismoFVG ↗";
+  el.innerHTML=`<span class="lk">Impianti</span>${items}<span class="ln">${note}</span>`;
+}
+loadLifts();
 
 function initInstall(){
   const btn=$("installBtn"), btn2=$("installBtn2"), help=$("ihelp");

@@ -27,7 +27,8 @@ def main():
     a = re.search(r'c-snowreportdetail__headeralert">(.*?)</div>', h, re.S)
     alert = html.unescape(re.sub(r"<[^>]+>", " ", a.group(1))).strip() if a else ""
     mods = set()
-    for href in re.findall(r'<link[^>]+href="([^"]+\.css[^"]*)"', h):
+    hrefs = [m for t in re.findall(r'<link[^>]*>', h) if 'stylesheet' in t or '.css' in t for m in re.findall(r'href="([^"]+)"', t)]
+    for href in hrefs:
         try: mods |= set(re.findall(r'\.o-status--([\w-]+)', get(urllib.parse.urljoin(URL, href))))
         except Exception: pass
     data = {"source": URL, "lifts": lifts, "alert": alert, "css_modifiers": sorted(mods)}
