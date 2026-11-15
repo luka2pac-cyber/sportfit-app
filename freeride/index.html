@@ -4,244 +4,350 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sella Nevea Freeride Arena</title>
-<meta name="description" content="Sella Nevea Freeride Arena: neve live al Livinal Lunc, discese freeride, sicurezza e community.">
+<meta name="description" content="Sella Nevea Freeride Arena: neve live al Livinal Lunc, pericolo valanghe, discese freeride, video e community.">
 <link rel="icon" href="icon-192.png">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#0f2a3a">
+<meta name="theme-color" content="#0b0b0b">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Freeride Sella">
 <meta name="mobile-web-app-capable" content="yes">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ultra&family=Saira+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.6.1/dist/chart.umd.min.js"></script>
 <style>
-:root{--blue:#5fa8c8;--blue-d:#2c6f8f;--ink:#0f1a22;--mut:#5b6b77;--bg:#f4f8fb;--card:#fff;--line:#dde7ee;--red:#d64545;--org:#e8913a;--grn:#3a9a5b}
+:root{
+  --bg:#0b0b0b;--bg-2:#121212;--bg-3:#181818;--ink:#f2f1ee;--muted:#a3a09b;--line:rgba(242,241,238,.12);
+  --ice:#5ec8f2;--ice-deep:#2f9fd0;--red:#EE1C25;
+  --display:'Saira Condensed','Arial Narrow',sans-serif;
+  --head:'Ultra','Rockwell','Georgia',serif;
+  --body:'Barlow',ui-sans-serif,system-ui,sans-serif;
+}
 *{box-sizing:border-box}
-body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
-a{color:var(--blue-d)}
-.wrap{max-width:1000px;margin:0 auto;padding:0 16px}
-header{background:linear-gradient(180deg,#0f2a3a 0%,#1d4e66 100%);color:#fff;padding:28px 0 22px}
-.hero{display:flex;gap:18px;align-items:center}
-.hero img{width:96px;height:96px;border-radius:50%;background:#fff}
-.hero h1{margin:0;font-size:28px;font-weight:800;letter-spacing:.5px}
-.hero p{margin:4px 0 0;opacity:.85}
-nav{position:sticky;top:0;z-index:5;background:#0f2a3a;border-top:1px solid #ffffff22}
-nav .wrap{display:flex;gap:4px;overflow-x:auto}
-nav a{color:#fff;text-decoration:none;padding:10px 12px;font-weight:600;font-size:14px;white-space:nowrap;opacity:.85}
-nav a:hover{opacity:1}
-section{padding:28px 0 8px}
-h2{font-size:22px;margin:0 0 4px}
-.sub{color:var(--mut);margin:0 0 16px;font-size:14px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
-.card .lab{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
-.card .val{font-size:28px;font-weight:800;margin-top:2px}
-.card .val small{font-size:15px;font-weight:600;color:var(--mut)}
-.card .note{font-size:13px;color:var(--mut)}
-.up{color:var(--blue-d)}.down{color:var(--red)}
-.toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;margin-bottom:10px;background:#fff}
-.toggle button{border:0;background:none;padding:6px 14px;font:inherit;font-size:14px;cursor:pointer}
-.toggle button.on{background:var(--blue-d);color:#fff}
-.chart{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:12px}
-.chart h3{margin:0 0 6px;font-size:15px}
-.chart .box{position:relative;height:220px}
-.err{background:#fff4e5;border:1px solid #f3c88b;border-radius:12px;padding:12px;margin-bottom:12px;display:none}
-.meta{font-size:12px;color:var(--mut)}
-.gal{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin-bottom:14px}
-.gal figure{flex:0 0 78%;max-width:420px;margin:0;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:zoom-in}
-.gal img{width:100%;height:220px;object-fit:cover;display:block}
-.gal figcaption{padding:8px 10px;font-size:13px}
-.gal figcaption b{display:block}
-.gal figcaption span{color:var(--mut);font-size:11px}
-.rgroups{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
-.rg{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
-.rg h3{margin:0 0 6px;font-size:15px;display:flex;align-items:center;gap:8px}
-.rg h3 i{width:12px;height:12px;border-radius:3px;display:inline-block}
-.rg ol{list-style:none;margin:0;padding:0}
-.rg li{display:flex;align-items:center;gap:8px;padding:4px 0;font-size:14px;border-top:1px solid #eef3f6}
-.rg li:first-child{border-top:0}
-.num{flex:0 0 24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;color:#fff}
-.dot{margin-left:auto;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap}
-.b1{background:#e3f4e8;color:#2b7a46}.b2{background:#fff1dc;color:#9a5a12}.b3{background:#fde4e4;color:#a12f2f}
-.legend{font-size:12px;color:var(--mut);margin-top:8px}
-.vid{position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;background:#000;margin-bottom:6px}
-.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.vt{font-weight:600;margin:0 0 16px;font-size:14px}
-.lb{position:fixed;inset:0;background:#000e;z-index:50;display:none;flex-direction:column;align-items:center;justify-content:center;padding:12px}
-.lb.on{display:flex}
-.lb img{max-width:100%;max-height:85vh;object-fit:contain}
-.lb p{color:#ccc;font-size:12px;margin:8px 0 0;text-align:center}
-.lb button{position:absolute;top:10px;right:12px;background:#fff2;color:#fff;border:0;font-size:22px;width:40px;height:40px;border-radius:50%;cursor:pointer}
-.warn{background:#fde4e4;border-left:4px solid var(--red);padding:12px 14px;border-radius:8px;margin:12px 0}
-ul.clean{padding-left:18px;margin:6px 0}
-.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
-.links a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--ink)}
-.links a b{display:block}
-.links a span{font-size:13px;color:var(--mut)}
-#oggi{padding-top:18px}
-.powder{display:none;border-radius:12px;padding:14px 16px;margin-bottom:12px;font-weight:700;font-size:18px;color:#fff;background:linear-gradient(90deg,#2c6f8f,#5fa8c8)}
-.powder.on{display:block}
-.powder small{display:block;font-weight:400;font-size:13px;opacity:.9}
-.powder.quiet{display:block;background:#fff;color:var(--mut);border:1px solid var(--line);font-weight:400;font-size:14px}
-.today{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
-.sem{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
-.lab{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
-.hero{position:relative}
-.hero .txt{flex:1}
-.install{position:absolute;top:0;right:16px;display:none;align-items:center;gap:6px;background:#fff;color:#0f2a3a;border:0;border-radius:999px;padding:8px 14px;font:inherit;font-weight:700;font-size:13px;cursor:pointer;box-shadow:0 2px 8px #0004}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%}
+h1,h2,h3{font-family:var(--head);font-weight:400;color:#fff;margin:0;text-transform:uppercase;line-height:1.08;letter-spacing:.01em;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+.top{position:sticky;top:0;z-index:20;background:rgba(0,0,0,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:14px;height:62px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{width:40px;height:40px;border-radius:50%;background:#fff}
+.brand span{font-family:var(--display);font-weight:700;font-size:1.15rem;letter-spacing:.06em;text-transform:uppercase;line-height:1}
+.brand small{display:block;color:var(--ice);font-size:.78rem;letter-spacing:.14em}
+.menu{display:flex;gap:2px;margin-left:auto}
+.menu a{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:.95rem;text-decoration:none;color:var(--muted);padding:8px 10px;border-bottom:2px solid transparent}
+.menu a:hover,.menu a.on{color:#fff;border-color:var(--ice)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.02rem;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;padding:10px 20px;border:2px solid transparent;cursor:pointer;color:#fff;background:none;transition:.2s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-fill{background:var(--ice-deep);border-color:var(--ice-deep)}
+.btn-fill:hover{background:var(--ice);border-color:var(--ice);color:#000}
+.btn-line{border-color:#fff;background:rgba(0,0,0,.55)}
+.btn-line:hover{background:var(--ice);border-color:var(--ice);color:#000}
+.install{display:none;padding:8px 14px;font-size:.95rem}
 .install.on{display:inline-flex}
-.ihelp{position:fixed;inset:0;background:#000b;z-index:60;display:none;align-items:flex-end;justify-content:center}
-.ihelp.on{display:flex}
-.ihelp div{background:#fff;border-radius:16px 16px 0 0;padding:18px 18px 28px;max-width:480px;width:100%}
-.ihelp h3{margin:0 0 8px}
-.ihelp ol{margin:0;padding-left:20px;line-height:1.8}
-.ihelp button{margin-top:12px;width:100%;padding:10px;border:0;border-radius:8px;background:var(--blue-d);color:#fff;font:inherit;font-weight:700}
-.foot-logos{display:flex;gap:18px;align-items:center;justify-content:center;margin-bottom:12px}
-.foot-logos img{height:90px;width:auto;background:#fff;border-radius:12px;padding:4px}
-.foot-logos img.round{border-radius:50%}
-.lights{display:flex;gap:8px;margin:10px 0 6px}
-.lights span{flex:1;height:22px;border-radius:6px;opacity:.18}
+
+.hero{position:relative;isolation:isolate;min-height:min(760px,88vh);display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero>img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:60% 40%;transform:scale(1.04);animation:zoom 22s ease-out forwards}
+@keyframes zoom{to{transform:scale(1.12)}}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.55) 55%,var(--bg) 100%)}
+.hero-in{padding:60px 20px 90px;max-width:900px}
+.hero .logo{width:130px;height:130px;border-radius:50%;background:#fff;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+.hero h1{font-size:clamp(2.3rem,7vw,4.6rem);margin-top:18px;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+.hero h1 em{display:block;font-style:normal;font-family:var(--display);font-weight:700;color:var(--ice);letter-spacing:.22em;font-size:.5em;margin-top:6px}
+.hero .tag{font-family:var(--display);font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-top:12px;color:#e8e6e1}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:22px}
+.chip{font-family:var(--display);font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:1rem;background:rgba(0,0,0,.6);border:1px solid var(--line);padding:6px 12px;display:inline-flex;gap:6px;align-items:center}
+.chip b{color:var(--ice)}
+.chip .dot{width:12px;height:12px;border-radius:3px;background:#555}
+.hero-btns{display:grid;grid-template-columns:repeat(2,minmax(0,220px));gap:10px;justify-content:center;margin-top:26px}
+
+.strip{position:relative;z-index:2;margin-top:-60px}
+.strip-grid{display:grid;grid-template-columns:repeat(3,1fr);background:var(--bg-2);border-top:4px solid var(--ice);box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.cell{padding:22px 24px;border-right:1px solid var(--line);text-align:center}
+.cell:last-child{border-right:0}
+.k{font-family:var(--display);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ice);font-size:.95rem;display:flex;align-items:center;gap:6px;justify-content:center}
+.big{font-family:var(--display);font-weight:700;font-size:3rem;line-height:1.05;margin-top:6px}
+.big small{font-size:1.2rem;color:var(--muted)}
+.cell .note{color:var(--muted);font-size:.92rem;margin-top:4px}
+.cell.powder-on{background:linear-gradient(160deg,#0f3a52,#121212 70%)}
+.cell.powder-on .big{color:var(--ice);text-shadow:0 0 24px rgba(94,200,242,.45)}
+.lights{display:flex;gap:6px;margin:12px 0 8px}
+.lights span{flex:1;height:18px;opacity:.15}
 .lights span[data-l="1"]{background:#ccff66}.lights span[data-l="2"]{background:#ffff00}.lights span[data-l="3"]{background:#ff9900}.lights span[data-l="4"]{background:#ff0000}
 .lights span[data-l="5"]{background:repeating-linear-gradient(45deg,#ff0000 0 6px,#000 6px 12px)}
-.lights span.on{opacity:1;box-shadow:0 0 0 2px #0f1a22}
-.lvl{font-size:20px;font-weight:800}
-footer{margin-top:30px;padding:20px 0 40px;font-size:12px;color:var(--mut);border-top:1px solid var(--line)}
-@media(max-width:520px){.hero{flex-wrap:wrap}.install.on{position:static;margin-left:auto}.hero img{width:72px;height:72px}.hero h1{font-size:22px}.card .val{font-size:24px}}
+.lights span.on{opacity:1;outline:2px solid #fff;outline-offset:2px}
+.lvl{font-family:var(--display);font-weight:700;font-size:1.6rem;text-transform:uppercase;letter-spacing:.03em}
+.cell a{color:var(--ice)}
+.now{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;margin-top:10px;text-align:left}
+.now div{border-left:3px solid var(--line);padding-left:10px}
+.now span{display:block;font-family:var(--display);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.78rem;color:var(--muted)}
+.now b{font-family:var(--display);font-weight:700;font-size:1.5rem;line-height:1.1}
+.now i{font-style:normal;font-size:.85rem;color:var(--muted);display:block}
+
+section{padding:80px 0 10px}
+.eyebrow{font-family:var(--display);font-weight:600;font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ice);margin-bottom:8px;display:block}
+.title{font-size:clamp(1.75rem,3.6vw,2.6rem)}
+.intro{color:var(--muted);max-width:60ch;margin-top:12px}
+.head{margin-bottom:28px}
+
+.toggle{display:inline-flex;border:1px solid var(--line);margin-bottom:14px}
+.toggle button{border:0;background:none;color:var(--muted);padding:7px 16px;font-family:var(--display);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.95rem;cursor:pointer}
+.toggle button.on{background:var(--ice-deep);color:#fff}
+.charts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.chart{background:var(--bg-2);border:1px solid var(--line);padding:16px}
+.chart h3{font-family:var(--display);font-weight:700;font-size:1.1rem;letter-spacing:.06em;margin-bottom:8px}
+.chart .box{position:relative;height:220px}
+.meta{font-size:.85rem;color:var(--muted);margin-top:10px}
+.err{display:none;background:#2a1414;border-left:4px solid var(--red);padding:12px 14px;margin-bottom:14px}
+.err a{color:var(--ice)}
+
+.gal{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin-bottom:24px;scrollbar-color:#444 transparent}
+.gal figure{flex:0 0 min(80%,440px);margin:0;scroll-snap-align:start;background:var(--bg-2);border:1px solid var(--line);cursor:zoom-in;overflow:hidden}
+.gal img{width:100%;height:240px;object-fit:cover;display:block;transition:transform .4s}
+.gal figure:hover img{transform:scale(1.05)}
+.gal figcaption{padding:10px 12px}
+.gal figcaption b{display:block;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.gal figcaption span{color:var(--muted);font-size:.78rem}
+.rgroups{display:grid;grid-template-columns:2fr 1fr;gap:14px}
+.rg{background:var(--bg-2);border:1px solid var(--line);border-top:4px solid var(--c);padding:16px 18px}
+.rg h3{font-family:var(--display);font-weight:700;font-size:1.3rem;letter-spacing:.06em;margin-bottom:8px}
+.rg ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:0 18px}
+.rg li{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-weight:500}
+.num{flex:0 0 28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;color:#fff;background:var(--c)}
+.diff{margin-left:auto;font-family:var(--display);font-weight:700;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;white-space:nowrap}
+.d1{color:#7ee08f;border:1px solid #7ee08f55}.d2{color:#ffc65c;border:1px solid #ffc65c55}.d3{color:#ff6b6b;border:1px solid #ff6b6b55}
+
+.vids{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.vid{position:relative;padding-top:56.25%;background:#000;border:1px solid var(--line)}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vt{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-top:8px}
+
+.warn{background:var(--bg-2);border-left:4px solid var(--red);padding:18px 20px}
+.warn b{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-size:1.1rem;display:block;margin-bottom:4px}
+.kit{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+.kit>div{background:var(--bg-2);border:1px solid var(--line);padding:16px;text-align:center}
+.kit .ic{font-size:1.8rem}
+.kit b{display:block;font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;margin-top:4px}
+.kit span{font-size:.88rem;color:var(--muted)}
+.links{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.links a{display:block;background:var(--bg-2);border:1px solid var(--line);padding:14px 16px;text-decoration:none;transition:.2s}
+.links a:hover{border-color:var(--ice)}
+.links a b{display:block;font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-size:1.05rem}
+.links a span{font-size:.88rem;color:var(--muted)}
+.disc{font-size:.85rem;color:var(--muted);margin-top:14px}
+
+.comm{background:linear-gradient(135deg,#0f2a3a,#0b0b0b);border:1px solid var(--line);padding:34px;display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.comm img{width:140px;height:140px;border-radius:50%;background:#fff}
+.comm .t{flex:1;min-width:240px}
+.soc{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+
+footer{margin-top:80px;border-top:1px solid var(--line);padding:34px 0 50px;text-align:center;color:var(--muted);font-size:.85rem}
+.flogos{display:flex;gap:20px;justify-content:center;align-items:center;margin-bottom:16px}
+.flogos img{height:96px;width:auto;background:#fff;border-radius:50%;padding:4px}
+.flogos img.sq{border-radius:10px}
+footer a{color:var(--ice)}
+
+.lb,.ihelp{position:fixed;inset:0;z-index:60;display:none}
+.lb{background:rgba(0,0,0,.94);flex-direction:column;align-items:center;justify-content:center;padding:14px}
+.lb.on,.ihelp.on{display:flex}
+.lb img{max-width:100%;max-height:86vh;object-fit:contain}
+.lb p{color:#bbb;font-size:.8rem;margin-top:8px;text-align:center}
+.lb button{position:absolute;top:12px;right:14px;background:rgba(255,255,255,.15);color:#fff;border:0;font-size:22px;width:42px;height:42px;border-radius:50%;cursor:pointer}
+.ihelp{background:rgba(0,0,0,.7);align-items:flex-end;justify-content:center}
+.ihelp>div{background:var(--bg-3);border-top:4px solid var(--ice);padding:20px 20px 30px;max-width:480px;width:100%}
+.ihelp h3{font-family:var(--display);font-weight:700;letter-spacing:.05em;font-size:1.4rem;margin-bottom:8px}
+.ihelp ol{margin:0;padding-left:20px;line-height:1.9}
+.ihelp .btn{width:100%;margin-top:14px}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .menu{display:none}
+  .install{margin-left:auto}
+  .strip-grid{grid-template-columns:1fr}
+  .cell{border-right:0;border-bottom:1px solid var(--line)}
+  .charts,.rgroups{grid-template-columns:1fr}
+  .kit{grid-template-columns:1fr 1fr}
+  .links{grid-template-columns:1fr}
+  section{padding-top:60px}
+}
+@media(max-width:520px){
+  body{font-size:16px}
+  .hero{min-height:82vh}
+  .hero .logo{width:104px;height:104px}
+  .hero-btns{grid-template-columns:1fr 1fr;width:100%}
+  .big{font-size:2.6rem}
+  .comm{padding:24px}
+  .comm img{width:100px;height:100px}
+  .il{display:none}
+  .brand span{font-size:1rem}
+  .install{padding:7px 12px}
+}
+@media(prefers-reduced-motion:reduce){.hero>img{animation:none}.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap hero">
-    <img id="logo" alt="Sella Nevea Freeride Arena">
-    <div class="txt">
-      <h1 id="title"></h1>
-      <p id="tagline"></p>
+<div class="top"><div class="wrap">
+  <a class="brand" href="#top"><img id="tlogo" alt=""><span>Freeride Arena<small>Sella Nevea</small></span></a>
+  <nav class="menu">
+    <a href="#neve">Neve</a><a href="#discese">Discese</a><a href="#video">Video</a><a href="#sicurezza">Sicurezza</a><a href="#community">Community</a>
+  </nav>
+  <button class="btn btn-fill install" id="installBtn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M12 7v7m-3-3 3 3 3-3"/></svg><span class="il">Installa </span>app
+  </button>
+</div></div>
+
+<header class="hero" id="top">
+  <img id="heroImg" alt="Freerider sulla cresta del Canin a Sella Nevea">
+  <div class="hero-in">
+    <img class="logo" id="logo" alt="Sella Nevea Freeride Arena">
+    <h1>Sella Nevea<em>Freeride Arena</em></h1>
+    <p class="tag" id="tagline"></p>
+    <div class="chips">
+      <span class="chip">❄ Neve <b id="chSnowV">–</b></span>
+      <span class="chip">🌡 <b id="chTempV">–</b></span>
+      <span class="chip"><span class="dot" id="chDot"></span> Valanghe <b id="chAvaV">–</b></span>
     </div>
-    <button class="install" id="installBtn">📲 Aggiungi alla Home</button>
+    <div class="hero-btns">
+      <a class="btn btn-line" href="#neve">Neve live</a>
+      <a class="btn btn-line" href="#discese">Discese</a>
+      <a class="btn btn-line" href="#video">Video</a>
+      <a class="btn btn-line" href="#community">Community</a>
+    </div>
   </div>
 </header>
-<div class="ihelp" id="ihelp"><div>
-  <h3>Aggiungi alla schermata Home</h3>
-  <ol id="ihelpSteps"></ol>
-  <button id="ihelpClose">OK</button>
-</div></div>
-<nav><div class="wrap">
-  <a href="#neve">Neve live</a>
-  <a href="#discese">Discese</a>
-  <a href="#video">Video</a>
-  <a href="#sicurezza">Sicurezza</a>
-  <a href="#community">Community</a>
-</div></nav>
+
+<div class="wrap strip">
+  <div class="strip-grid">
+    <div class="cell" id="powderCell">
+      <div class="k">❄ Neve fresca 24 h</div>
+      <div class="big" id="powderV">–</div>
+      <div class="note" id="powderN">Livinal Lunc · 1837 m</div>
+    </div>
+    <div class="cell">
+      <div class="k">⚠ Pericolo valanghe · Canin</div>
+      <div class="lights"><span data-l="1"></span><span data-l="2"></span><span data-l="3"></span><span data-l="4"></span><span data-l="5"></span></div>
+      <div class="lvl" id="semLvl">Carico…</div>
+      <div class="note" id="semNote">&nbsp;</div>
+    </div>
+    <div class="cell">
+      <div class="k">📡 Ora al Livinal Lunc</div>
+      <div class="now">
+        <div><span>Neve al suolo</span><b id="cSnow">–</b><i id="cSnowD">&nbsp;</i></div>
+        <div><span>Temperatura</span><b id="cTemp">–</b><i id="cTempR">&nbsp;</i></div>
+        <div><span>Vento</span><b id="cWind">–</b><i id="cWindD">&nbsp;</i></div>
+        <div><span>Raffica max 24 h</span><b id="cGust">–</b><i id="cGustT">&nbsp;</i></div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <main class="wrap">
 
-<section id="oggi">
-  <div class="powder" id="powder"></div>
-  <div class="today">
-    <div class="sem" id="sem">
-      <div class="lab">Pericolo valanghe – Canin</div>
-      <div class="lights">
-        <span data-l="1"></span><span data-l="2"></span><span data-l="3"></span><span data-l="4"></span><span data-l="5"></span>
-      </div>
-      <div class="lvl" id="semLvl">Carico bollettino…</div>
-      <div class="note" id="semNote">&nbsp;</div>
-    </div>
+<section id="neve" class="rv">
+  <div class="head">
+    <span class="eyebrow">Dati live</span>
+    <h2 class="title">Neve, temperatura e vento</h2>
+    <p class="intro">Stazione automatica della Protezione Civile FVG al Livinal Lunc (1837 m), versante nord del Canin sopra il Rif. Gilberti. Dati ogni 15 minuti, non validati.</p>
   </div>
-</section>
-
-<section id="neve">
-  <h2>Condizioni live – Livinal Lunc</h2>
-  <p class="sub">Stazione automatica Protezione Civile FVG, 1837 m, versante nord del Canin (sopra Rif. Gilberti). Dati ogni 15 min, non validati.</p>
-
-  <div class="err" id="err">
-    Non riesco a caricare i dati in diretta. Guardali direttamente sul sito della Protezione Civile:
-    <a id="errlink" target="_blank" rel="noopener">monitor.protezionecivile.fvg.it – Livinal Lunc</a>
+  <div class="err" id="err">Non riesco a caricare i dati in diretta. Guardali sul sito della Protezione Civile: <a id="errlink" target="_blank" rel="noopener">Livinal Lunc</a></div>
+  <div class="toggle" id="range"><button data-h="24" class="on">24 ore</button><button data-h="48">48 ore</button></div>
+  <div class="charts">
+    <div class="chart"><h3>Altezza neve · cm</h3><div class="box"><canvas id="chSnow"></canvas></div></div>
+    <div class="chart"><h3>Temperatura · °C</h3><div class="box"><canvas id="chTemp"></canvas></div></div>
+    <div class="chart"><h3>Vento e raffiche · km/h</h3><div class="box"><canvas id="chWind"></canvas></div></div>
   </div>
-
-  <div class="cards">
-    <div class="card"><div class="lab">Neve al suolo</div><div class="val" id="cSnow">–</div><div class="note" id="cSnowD">&nbsp;</div></div>
-    <div class="card"><div class="lab">Temperatura</div><div class="val" id="cTemp">–</div><div class="note" id="cTempR">&nbsp;</div></div>
-    <div class="card"><div class="lab">Vento</div><div class="val" id="cWind">–</div><div class="note" id="cWindD">&nbsp;</div></div>
-    <div class="card"><div class="lab">Raffica max</div><div class="val" id="cGust">–</div><div class="note" id="cGustT">&nbsp;</div></div>
-  </div>
-
-  <div class="toggle" id="range">
-    <button data-h="24" class="on">24 ore</button>
-    <button data-h="48">48 ore</button>
-  </div>
-
-  <div class="chart"><h3>Altezza neve (cm)</h3><div class="box"><canvas id="chSnow"></canvas></div></div>
-  <div class="chart"><h3>Temperatura aria (°C)</h3><div class="box"><canvas id="chTemp"></canvas></div></div>
-  <div class="chart"><h3>Vento e raffiche (km/h)</h3><div class="box"><canvas id="chWind"></canvas></div></div>
   <p class="meta" id="updated"></p>
 </section>
 
-<section id="discese">
-  <h2>Discese e mappe</h2>
-  <p class="sub">Tocca una mappa per aprirla a schermo intero. Seguire sempre le indicazioni sul posto.</p>
+<section id="discese" class="rv">
+  <div class="head">
+    <span class="eyebrow">Le linee</span>
+    <h2 class="title">Discese e mappe</h2>
+    <p class="intro">Tocca una mappa per aprirla a schermo intero. I numeri delle discese corrispondono alla prima mappa. Segui sempre le indicazioni sul posto.</p>
+  </div>
   <div class="gal" id="gallery"></div>
   <div class="rgroups" id="routes"></div>
 </section>
 
-<section id="video">
-  <h2>Video</h2>
-  <p class="sub">Le linee viste dagli sci.</p>
-  <div id="videos"></div>
+<section id="video" class="rv">
+  <div class="head">
+    <span class="eyebrow">Guarda</span>
+    <h2 class="title">Video</h2>
+  </div>
+  <div class="vids" id="videos"></div>
 </section>
 
-<div class="lb" id="lb"><button aria-label="Chiudi">✕</button><img alt=""><p></p></div>
-
-<section id="sicurezza">
-  <h2>Sicurezza</h2>
-  <div class="warn"><b>Fuori pista sei in terreno non controllato.</b> I percorsi indicati sono da ritenersi sicuri solo in condizioni di buon innevamento; con innevamento insufficiente è sconsigliato uscire dalle piste battute.</div>
-  <ul class="clean">
-    <li>Kit obbligatorio: ARTVA, pala e sonda – e saperli usare.</li>
-    <li>Leggi il bollettino valanghe <b>prima</b> di partire, ogni giorno.</li>
-    <li>Mai da soli. Una persona alla volta sui pendii ripidi.</li>
-    <li>Emergenza: <b>112</b>.</li>
-  </ul>
+<section id="sicurezza" class="rv">
+  <div class="head">
+    <span class="eyebrow">Prima di partire</span>
+    <h2 class="title">Sicurezza</h2>
+  </div>
+  <div class="warn"><b>Fuori pista sei in terreno non controllato</b>I percorsi indicati sono da ritenersi sicuri solo in condizioni di buon innevamento; con innevamento insufficiente è sconsigliato uscire dalle piste battute.</div>
+  <div class="kit">
+    <div><div class="ic">📡</div><b>ARTVA</b><span>acceso e testato</span></div>
+    <div><div class="ic">⛏️</div><b>Pala e sonda</b><span>sempre nello zaino</span></div>
+    <div><div class="ic">📋</div><b>Bollettino</b><span>letto ogni giorno</span></div>
+    <div><div class="ic">👥</div><b>Mai da soli</b><span>uno alla volta sui ripidi · 112</span></div>
+  </div>
   <div class="links" id="safety"></div>
-  <p class="meta" id="disclaimer"></p>
+  <p class="disc" id="disclaimer"></p>
 </section>
 
-<section id="community">
-  <h2>Community</h2>
-  <p class="sub">Uscite di gruppo, foto, video e info in tempo reale.</p>
-  <div class="links" id="social"></div>
+<section id="community" class="rv">
+  <div class="comm">
+    <img id="clogo" alt="">
+    <div class="t">
+      <span class="eyebrow">Unisciti a noi</span>
+      <h2 class="title">La community</h2>
+      <p class="intro">Uscite di gruppo, foto, video e condizioni in tempo reale dai rider di Sella Nevea.</p>
+      <div class="soc" id="social"></div>
+    </div>
+  </div>
 </section>
 
 </main>
 
 <footer><div class="wrap" id="foot"></div></footer>
 
+<div class="lb" id="lb"><button aria-label="Chiudi">✕</button><img alt=""><p></p></div>
+<div class="ihelp" id="ihelp"><div>
+  <h3>Aggiungi alla schermata Home</h3>
+  <ol id="ihelpSteps"></ol>
+  <button class="btn btn-fill" id="ihelpClose">OK</button>
+</div></div>
+
 <script>
 /* ================= CONFIG – modifica qui ================= */
 const CONFIG = {
   title: "Sella Nevea Freeride Arena",
-  tagline: "Community freeride del Canin – Sella Nevea",
+  tagline: "La community freeride del Canin",
   logo: "logo.png",
-  logo2: "logo-classic.jpg",      // logo storico, nel footer
+  logo2: "logo-classic.jpg",
+  hero: "hero.jpg",
   pageUrl: "https://luka2pac-cyber.github.io/sportfit-app/freeride/",
-  station: { id: 541, name: "Livinal Lunc",
-             sensors: { snow: 23, temp: 2, wind: 6, gust: 7, dir: 5 } },
+  station: { id: 541, name: "Livinal Lunc", sensors: { snow: 23, temp: 2, wind: 6, gust: 7, dir: 5 } },
   api: "https://monitor.protezionecivile.fvg.it/api",
+  stationPage: "https://monitor.protezionecivile.fvg.it/stazione/541",
   powderThreshold: 15,            // cm di neve fresca in 24 h per il "Powder alert"
   bulletin: {
     url: "https://bollettini.aineva.it/albina_files/latest/IT-36_it_CAAMLv6.json",
     region: "IT-36-UD-04",        // zona CANIN nel bollettino FVG
     page: "https://www.protezionecivile.fvg.it/it/bollettino-valanghe"
   },
-  stationPage: "https://monitor.protezionecivile.fvg.it/stazione/541",
   gallery: [
     { src:"mappa-discese.jpg", t:"Discese freeride 1–11 con pendenze", credit:"Fonte: cartello ufficiale freeride Sella Nevea, cartografia © Casa Editrice Tabacco" },
     { src:"mappa-topo.jpg", t:"Mappa topografica Golovec e Forato", credit:"Fonte: cartello ufficiale freeride Sella Nevea" },
-    { src:"panorama.jpg", t:"Panorama Sella Nevea – lato Montasio", credit:"Fonte: sellaneveaparco.it" },
-    { src:"panorama2.jpg", t:"Panorama Sella Nevea – lato Canin", credit:"Fonte: TurismoFVG.it" }
-  ],
-  videos: [
-    { id:"vohoUgxHd7o", t:"Freeride Ski Sella Nevea (guide of some lines) – Luka Filipič" }
+    { src:"panorama.jpg", t:"Panorama – lato Montasio", credit:"Fonte: sellaneveaparco.it" },
+    { src:"panorama2.jpg", t:"Panorama – lato Canin", credit:"Fonte: TurismoFVG.it" }
   ],
   // difficoltà: 1 facile, 2 media, 3 medio-difficile
   routes: [
@@ -257,29 +363,36 @@ const CONFIG = {
     { n:10, name:"Forato Orientale",         zone:"Forato",  d:3 },
     { n:11, name:"Canale Pecorelle",         zone:"Forato",  d:3 }
   ],
+  videos: [
+    { id:"vohoUgxHd7o", t:"Freeride Ski Sella Nevea – guide of some lines" }
+  ],
   safety: [
-    { t:"Bollettini valanghe (AINEVA)", s:"Tutti i bollettini dell'arco alpino italiano, incluso FVG", url:"https://www.aineva.it" },
-    { t:"Livinal Lunc – dati completi", s:"Protezione Civile FVG", url:"https://monitor.protezionecivile.fvg.it/stazione/541" },
-    { t:"Neve – stazioni FVG (OSMER)", s:"Altezza neve, tutte le stazioni", url:"https://www.osmer.fvg.it/neve.php" }
+    { t:"Bollettino valanghe FVG", s:"Protezione Civile FVG", url:"https://www.protezionecivile.fvg.it/it/bollettino-valanghe" },
+    { t:"Bollettini AINEVA", s:"Tutto l'arco alpino italiano", url:"https://www.aineva.it" },
+    { t:"Livinal Lunc – dati completi", s:"Protezione Civile FVG", url:"https://monitor.protezionecivile.fvg.it/stazione/541" }
   ],
   social: [
-    { t:"Facebook", s:"Gruppo Sella Nevea Freeride Arena", url:"https://www.facebook.com/share/g/18TUgDUXA9/" },
-    { t:"Instagram", s:"@sella_nevea_freeride_arena", url:"https://www.instagram.com/sella_nevea_freeride_arena" },
-    { t:"Sport&Fit Gorizia", s:"Preparazione atletica per freeride e scialpinismo", url:"https://www.sport-fit.org" }
+    { t:"Facebook", url:"https://www.facebook.com/share/g/18TUgDUXA9/" },
+    { t:"Instagram", url:"https://www.instagram.com/sella_nevea_freeride_arena" },
+    { t:"Sport&Fit Gorizia", url:"https://www.sport-fit.org" }
   ],
   disclaimer: "Le informazioni su questa pagina hanno solo scopo informativo. Ognuno pratica il fuoripista sotto la propria responsabilità."
 };
 /* ========================================================== */
 
 const $ = id => document.getElementById(id);
-const diffTxt = {1:["facile","b1"],2:["media","b2"],3:["medio-difficile","b3"]};
-const zoneCol = {Golovec:"#2f7fc1",Forato:"#2f8a4f"};
+const diffTxt = {1:["facile","d1"],2:["media","d2"],3:["medio-difficile","d3"]};
+const zoneCol = {Golovec:"#2f9fd0",Forato:"#2fa35c"};
 const DIRS = ["N","NE","E","SE","S","SO","O","NO"];
+const ICON = {
+  Facebook:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-4 1.7-4 4.3V10H7v4h3v8h4v-8h3l1-4h-4V8.6c0-.4.3-.6.6-.6z"/></svg>',
+  Instagram:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>'
+};
 
 function initStatic(){
-  $("title").textContent = CONFIG.title;
   $("tagline").textContent = CONFIG.tagline;
-  $("logo").src = CONFIG.logo;
+  $("logo").src = $("tlogo").src = $("clogo").src = CONFIG.logo;
+  $("heroImg").src = CONFIG.hero;
   $("errlink").href = CONFIG.stationPage;
   $("gallery").innerHTML = CONFIG.gallery.map((g,i)=>
     `<figure data-i="${i}"><img src="${g.src}" alt="${g.t}" loading="lazy"><figcaption><b>${g.t}</b><span>${g.credit}</span></figcaption></figure>`).join("");
@@ -289,148 +402,103 @@ function initStatic(){
   });
   $("lb").addEventListener("click",()=>$("lb").classList.remove("on"));
   const zones=[...new Set(CONFIG.routes.map(r=>r.zone))];
-  $("routes").innerHTML = zones.map(z=>`<div class="rg"><h3><i style="background:${zoneCol[z]||'#555'}"></i>Freeride ${z}</h3><ol>`+
+  $("routes").innerHTML = zones.map(z=>`<div class="rg" style="--c:${zoneCol[z]||'#777'}"><h3>Freeride ${z}</h3><ol>`+
     CONFIG.routes.filter(r=>r.zone===z).map(r=>{const [t,c]=diffTxt[r.d];
-      return `<li><span class="num" style="background:${zoneCol[z]||'#555'}">${r.n}</span>${r.name}<span class="dot ${c}">${t}</span></li>`}).join("")+
-    `</ol></div>`).join("") + `<p class="legend">I numeri corrispondono alla prima mappa.</p>`;
+      return `<li><span class="num">${r.n}</span>${r.name}<span class="diff ${c}">${t}</span></li>`}).join("")+`</ol></div>`).join("");
   $("videos").innerHTML = CONFIG.videos.map(v=>
-    `<div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/${v.id}" title="${v.t}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div><p class="vt">${v.t}</p>`).join("");
-  const lk = arr => arr.filter(x=>x.url).map(x=>`<a href="${x.url}" target="_blank" rel="noopener"><b>${x.t}</b><span>${x.s}</span></a>`).join("");
-  $("safety").innerHTML = lk(CONFIG.safety);
-  $("social").innerHTML = lk(CONFIG.social);
+    `<div><div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/${v.id}" title="${v.t}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div><p class="vt">${v.t}</p></div>`).join("");
+  $("safety").innerHTML = CONFIG.safety.filter(x=>x.url).map(x=>`<a href="${x.url}" target="_blank" rel="noopener"><b>${x.t}</b><span>${x.s}</span></a>`).join("");
+  $("social").innerHTML = CONFIG.social.filter(x=>x.url).map(x=>`<a class="btn btn-line" href="${x.url}" target="_blank" rel="noopener">${ICON[x.t]||""}${x.t}</a>`).join("");
   $("disclaimer").textContent = CONFIG.disclaimer;
-  $("foot").innerHTML = `<div class="foot-logos"><img class="round" src="${CONFIG.logo}" alt="${CONFIG.title}"><img src="${CONFIG.logo2}" alt="Freeride Arena Sella Nevea"></div>Dati meteo: <a href="https://monitor.protezionecivile.fvg.it" target="_blank" rel="noopener">Protezione Civile della Regione FVG</a>, licenza CC BY 4.0 – misure automatiche non validate. · ${CONFIG.title}`;
+  $("foot").innerHTML = `<div class="flogos"><img src="${CONFIG.logo}" alt="${CONFIG.title}"><img class="sq" src="${CONFIG.logo2}" alt="Freeride Arena Sella Nevea"></div>
+    Dati meteo: <a href="https://monitor.protezionecivile.fvg.it" target="_blank" rel="noopener">Protezione Civile della Regione FVG</a> (CC BY 4.0) · Bollettino valanghe: AINEVA / Protezione Civile FVG · misure non validate.<br>© ${new Date().getFullYear()} ${CONFIG.title}`;
 }
 
-/* ---------- dati live ---------- */
 const fmtUTC = d => d.toISOString().slice(0,19).replace("T"," ");
 const tLabel = d => d.toLocaleString("it-IT",{weekday:"short",hour:"2-digit",minute:"2-digit"});
-
 async function getSensor(sid, from, to){
   const u = `${CONFIG.api}/stations/${CONFIG.station.id}/sensors/${sid}/measures?from=${encodeURIComponent(fmtUTC(from))}&to=${encodeURIComponent(fmtUTC(to))}`;
-  const r = await fetch(u);
-  if(!r.ok) throw new Error("HTTP "+r.status);
-  const j = await r.json();
-  if(j.result!=="OK") throw new Error("API");
+  const r = await fetch(u); if(!r.ok) throw new Error("HTTP "+r.status);
+  const j = await r.json(); if(j.result!=="OK") throw new Error("API");
   const seen = new Set();
   return j.measures.filter(m=>!seen.has(m.dt)&&seen.add(m.dt))
-    .map(m=>({t:new Date(m.dt.replace(" ","T")+"Z"), v:m.value}))
-    .sort((a,b)=>a.t-b.t);
+    .map(m=>({t:new Date(m.dt.replace(" ","T")+"Z"), v:m.value})).sort((a,b)=>a.t-b.t);
 }
-
 let DATA=null, charts={}, hours=24;
-
 async function load(){
-  const to = new Date(), from = new Date(to.getTime()-48*3600e3);
-  const s = CONFIG.station.sensors;
+  const to=new Date(), from=new Date(to.getTime()-48*3600e3), s=CONFIG.station.sensors;
   try{
-    const [snow,temp,wind,gust,dir] = await Promise.all(
-      [s.snow,s.temp,s.wind,s.gust,s.dir].map(id=>getSensor(id,from,to)));
-    DATA={snow,temp,wind,gust,dir};
-    render();
-    renderPowder();
-  }catch(e){
-    console.error(e);
-    $("err").style.display="block";
-  }
+    const [snow,temp,wind,gust,dir]=await Promise.all([s.snow,s.temp,s.wind,s.gust,s.dir].map(id=>getSensor(id,from,to)));
+    DATA={snow,temp,wind,gust,dir}; render(); renderPowder();
+  }catch(e){ console.error(e); $("err").style.display="block"; }
 }
-
-function last(a){return a.length?a[a.length-1]:null}
-function valueAt(a,t){ // ultimo valore <= t
-  let r=null; for(const x of a){ if(x.t<=t) r=x; else break } return r;
-}
+const last=a=>a.length?a[a.length-1]:null;
+function valueAt(a,t){let r=null;for(const x of a){if(x.t<=t)r=x;else break}return r}
+const fix1=v=>(v+0).toFixed(1).replace("-0.0","0.0");
 
 function render(){
-  const {snow,temp,wind,gust,dir}=DATA;
-  const cut = new Date(Date.now()-hours*3600e3);
-  const f = a => a.filter(x=>x.t>=cut);
-
-  // cards
+  const {snow,temp,wind,gust,dir}=DATA, cut=new Date(Date.now()-hours*3600e3), f=a=>a.filter(x=>x.t>=cut);
   const ls=last(snow);
   if(ls){
-    $("cSnow").innerHTML=`${Math.round(ls.v)} <small>cm</small>`;
+    $("cSnow").textContent=`${Math.round(ls.v)} cm`; $("chSnowV").textContent=`${Math.round(ls.v)} cm`;
     const p=valueAt(snow,new Date(ls.t-24*3600e3));
-    if(p){const d=Math.round(ls.v-p.v); $("cSnowD").innerHTML=`<span class="${d>=0?'up':'down'}">${d>=0?'+':''}${d} cm</span> in 24 h`;}
+    if(p){const d=Math.round(ls.v-p.v); $("cSnowD").textContent=`${d>=0?'+':''}${d} cm in 24 h`;}
+    $("updated").textContent=`Ultimo dato: ${ls.t.toLocaleString("it-IT")} (ora locale) · aggiornamento automatico ogni 15 min.`;
   }
   const lt=last(temp);
   if(lt){
-    $("cTemp").innerHTML=`${lt.v.toFixed(1)} <small>°C</small>`;
+    $("cTemp").textContent=`${fix1(lt.v)} °C`; $("chTempV").textContent=`${fix1(lt.v)} °C`;
     const t24=temp.filter(x=>x.t>=new Date(lt.t-24*3600e3)).map(x=>x.v);
-    $("cTempR").textContent=`24 h: min ${(Math.min(...t24)+0).toFixed(1).replace("-0.0","0.0")} / max ${(Math.max(...t24)+0).toFixed(1).replace("-0.0","0.0")}`;
+    $("cTempR").textContent=`min ${fix1(Math.min(...t24))} / max ${fix1(Math.max(...t24))}`;
   }
   const lw=last(wind), ld=last(dir);
   if(lw){
-    $("cWind").innerHTML=`${Math.round(lw.v*3.6)} <small>km/h</small>`;
-    if(ld){const i=Math.round(((ld.v%360)/45))%8;
-      $("cWindD").innerHTML=`da ${DIRS[i]} (${Math.round(ld.v)}°) <span style="display:inline-block;transform:rotate(${ld.v+180}deg)">↑</span>`;}
+    $("cWind").textContent=`${Math.round(lw.v*3.6)} km/h`;
+    if(ld){const i=Math.round((ld.v%360)/45)%8; $("cWindD").innerHTML=`da ${DIRS[i]} <span style="display:inline-block;transform:rotate(${ld.v+180}deg)">↑</span>`;}
   }
   const g24=gust.filter(x=>x.t>=new Date(Date.now()-24*3600e3));
-  if(g24.length){
-    const mx=g24.reduce((a,b)=>b.v>a.v?b:a);
-    $("cGust").innerHTML=`${Math.round(mx.v*3.6)} <small>km/h</small>`;
-    $("cGustT").textContent=`ultime 24 h, ${tLabel(mx.t)}`;
-  }
-  if(ls) $("updated").textContent=`Ultimo dato: ${ls.t.toLocaleString("it-IT")} (ora locale). Aggiornamento automatico ogni 15 min.`;
-
-  // charts
-  draw("chSnow",[{label:"Neve cm",data:f(snow),color:"#2c6f8f",fill:true}],{suggestedMin:0});
-  draw("chTemp",[{label:"°C",data:f(temp),color:"#d64545"}],{zero:true});
-  draw("chWind",[
-    {label:"Vento",data:f(wind).map(x=>({t:x.t,v:x.v*3.6})),color:"#5fa8c8",fill:true},
-    {label:"Raffica",data:f(wind).map(x=>{const g=valueAt(gust,x.t);return {t:x.t,v:g?g.v*3.6:null}}),color:"#e8913a"}],{suggestedMin:0,legend:true});
+  if(g24.length){const mx=g24.reduce((a,b)=>b.v>a.v?b:a); $("cGust").textContent=`${Math.round(mx.v*3.6)} km/h`; $("cGustT").textContent=tLabel(mx.t);}
+  draw("chSnow",[{label:"Neve cm",data:f(snow),color:"#5ec8f2",fill:true}],{suggestedMin:0});
+  draw("chTemp",[{label:"°C",data:f(temp),color:"#ff7a59"}],{zero:true});
+  draw("chWind",[{label:"Vento",data:f(wind).map(x=>({t:x.t,v:x.v*3.6})),color:"#5ec8f2",fill:true},
+    {label:"Raffica",data:f(wind).map(x=>{const g=valueAt(gust,x.t);return {t:x.t,v:g?g.v*3.6:null}}),color:"#ffc65c"}],{suggestedMin:0,legend:true});
 }
-
+if(window.Chart){ Chart.defaults.color="#a3a09b"; Chart.defaults.font.family="Barlow, sans-serif"; }
 function draw(id,series,opt){
+  if(!window.Chart) return;
   if(charts[id]) charts[id].destroy();
-  const labels=series[0].data.map(x=>tLabel(x.t));
-  charts[id]=new Chart($(id),{
-    type:"line",
-    data:{labels,datasets:series.map(s=>({label:s.label,data:s.data.map(x=>x.v),borderColor:s.color,
-      backgroundColor:s.color+"33",fill:!!s.fill,pointRadius:0,borderWidth:2,tension:.25}))},
+  charts[id]=new Chart($(id),{type:"line",
+    data:{labels:series[0].data.map(x=>tLabel(x.t)),datasets:series.map(s=>({label:s.label,data:s.data.map(x=>x.v),borderColor:s.color,
+      backgroundColor:s.color+"30",fill:!!s.fill,pointRadius:0,borderWidth:2,tension:.25}))},
     options:{responsive:true,maintainAspectRatio:false,interaction:{mode:"index",intersect:false},
-      plugins:{legend:{display:!!opt.legend}},
-      scales:{x:{ticks:{maxTicksLimit:7,autoSkip:true},grid:{display:false}},
-        y:{suggestedMin:opt.suggestedMin,grid:{color:c=>opt.zero&&c.tick.value===0?"#d64545":"#e8eef2"}}}}
-  });
+      plugins:{legend:{display:!!opt.legend,labels:{boxWidth:12}}},
+      scales:{x:{ticks:{maxTicksLimit:6},grid:{display:false}},
+        y:{suggestedMin:opt.suggestedMin,grid:{color:c=>opt.zero&&c.tick.value===0?"#EE1C25":"rgba(242,241,238,.08)"}}}}});
 }
+$("range").addEventListener("click",e=>{const b=e.target.closest("button"); if(!b) return; hours=+b.dataset.h;
+  document.querySelectorAll("#range button").forEach(x=>x.classList.toggle("on",x===b)); if(DATA) render();});
 
-$("range").addEventListener("click",e=>{
-  const b=e.target.closest("button"); if(!b) return;
-  hours=+b.dataset.h;
-  document.querySelectorAll("#range button").forEach(x=>x.classList.toggle("on",x===b));
-  if(DATA) render();
-});
-
-/* ---------- powder alert ---------- */
 function median(a){const s=[...a].sort((x,y)=>x-y);return s.length?s[Math.floor(s.length/2)]:null}
 function newSnow24(snow){
-  // neve fresca = mediana ultimo ora − minimo delle 24 h precedenti (filtra il rumore del nivometro)
   if(snow.length<8) return null;
   const lastT=snow[snow.length-1].t;
   const now=median(snow.filter(x=>x.t>new Date(lastT-3600e3)).map(x=>x.v));
-  const win=snow.filter(x=>x.t>=new Date(lastT-24*3600e3));
-  const base=Math.min(...win.map(x=>x.v));
+  const base=Math.min(...snow.filter(x=>x.t>=new Date(lastT-24*3600e3)).map(x=>x.v));
   return Math.max(0,Math.round(now-base));
 }
 function renderPowder(){
-  const el=$("powder"); const n=newSnow24(DATA.snow);
-  if(n===null){el.className="powder";return}
-  if(n>=CONFIG.powderThreshold){
-    el.className="powder on";
-    el.innerHTML=`❄️ POWDER ALERT: +${n} cm nelle ultime 24 h<small>Livinal Lunc 1837 m · controlla sempre il pericolo valanghe qui sotto</small>`;
-  }else{
-    el.className="powder quiet";
-    el.textContent=`Neve fresca ultime 24 h al Livinal Lunc: +${n} cm (powder alert da +${CONFIG.powderThreshold} cm)`;
-  }
+  const n=newSnow24(DATA.snow); if(n===null) return;
+  $("powderV").innerHTML=`+${n} <small>cm</small>`;
+  if(n>=CONFIG.powderThreshold){ $("powderCell").classList.add("powder-on"); $("powderN").innerHTML=`<b style="color:#5ec8f2">❄ POWDER ALERT</b> · controlla il pericolo valanghe`; }
+  else { $("powderCell").classList.remove("powder-on"); $("powderN").textContent=`Livinal Lunc 1837 m · powder alert da +${CONFIG.powderThreshold} cm`; }
 }
 
-/* ---------- semaforo valanghe ---------- */
-const DANGER={low:[1,"1 – Debole"],moderate:[2,"2 – Moderato"],considerable:[3,"3 – Marcato"],high:[4,"4 – Forte"],very_high:[5,"5 – Molto forte"]};
+const DANGER={low:[1,"1 · Debole"],moderate:[2,"2 · Moderato"],considerable:[3,"3 · Marcato"],high:[4,"4 · Forte"],very_high:[5,"5 · Molto forte"]};
+const DCOL={1:"#ccff66",2:"#ffff00",3:"#ff9900",4:"#ff0000",5:"#ff0000"};
 function parseBulletin(j){
   const b=(j.bulletins||[]).find(x=>(x.regions||[]).some(r=>r.regionID===CONFIG.bulletin.region));
   if(!b) return null;
-  const end=new Date(b.validTime.endTime);
-  if(end<new Date()) return {expired:true};
+  if(new Date(b.validTime.endTime)<new Date()) return {expired:true};
   let max=0,txt="",elev="";
   (b.dangerRatings||[]).forEach(d=>{const v=DANGER[d.mainValue]; if(v&&v[0]>max){max=v[0];txt=v[1];
     elev=d.elevation?(d.elevation.lowerBound?`sopra ${d.elevation.lowerBound} m`:d.elevation.upperBound?`sotto ${d.elevation.upperBound} m`:""):""}});
@@ -438,24 +506,22 @@ function parseBulletin(j){
     day:new Date(new Date(b.validTime.startTime).getTime()+12*3600e3).toLocaleDateString("it-IT",{weekday:"long",day:"numeric",month:"long"})};
 }
 async function loadBulletin(){
-  const show=(lvl,txt,note)=>{
-    document.querySelectorAll("#sem .lights span").forEach(s=>s.classList.toggle("on",+s.dataset.l===lvl));
-    $("semLvl").textContent=txt; $("semNote").innerHTML=note;
-  };
   const link=`<a href="${CONFIG.bulletin.page}" target="_blank" rel="noopener">Bollettino completo</a>`;
+  const show=(lvl,txt,note,chip)=>{
+    document.querySelectorAll(".lights span").forEach(s=>s.classList.toggle("on",+s.dataset.l===lvl));
+    $("semLvl").textContent=txt; $("semNote").innerHTML=note;
+    $("chAvaV").textContent=chip; $("chDot").style.background=DCOL[lvl]||"#555";
+  };
   let j=null;
   try{ const r=await fetch(CONFIG.bulletin.url,{cache:"no-store"}); if(r.ok) j=await r.json(); }catch(e){}
-  if(!j){ show(0,"Bollettino non disponibile",`Nessun bollettino FVG in questo momento (fuori stagione?). ${link}`); return; }
-  const b=parseBulletin(j);
-  if(!b||b.expired||!b.level){ show(0,"Bollettino non disponibile",`Nessun bollettino valido per il Canin oggi. ${link}`); return; }
-  show(b.level,b.txt,`${b.elev?b.elev+" · ":""}valido ${b.day}<br>${b.highlights} ${link}`);
+  const b=j&&parseBulletin(j);
+  if(!b||b.expired||!b.level){ show(0,"Non disponibile",`Nessun bollettino valido oggi (fuori stagione?). ${link}`,"n.d."); return; }
+  show(b.level,b.txt,`${b.elev?b.elev+" · ":""}${b.day}<br>${b.highlights} ${link}`,b.txt.split(" · ")[1]);
 }
 
-/* ---------- aggiungi alla Home ---------- */
 function initInstall(){
   const btn=$("installBtn"), help=$("ihelp");
-  const standalone=matchMedia("(display-mode: standalone)").matches||navigator.standalone;
-  if(standalone) return;
+  if(matchMedia("(display-mode: standalone)").matches||navigator.standalone) return;
   const inFrame=window.self!==window.top;
   const ios=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
   let deferred=null;
@@ -463,21 +529,26 @@ function initInstall(){
   window.addEventListener("appinstalled",()=>btn.classList.remove("on"));
   btn.classList.add("on");
   btn.addEventListener("click",async()=>{
-    if(inFrame){ window.open(CONFIG.pageUrl,"_blank"); return; }   // dentro iframe (WordPress) non si può installare
+    if(inFrame){ window.open(CONFIG.pageUrl,"_blank"); return; }
     if(deferred){ deferred.prompt(); await deferred.userChoice; deferred=null; return; }
     $("ihelpSteps").innerHTML = ios
-      ? "<li>Tocca il pulsante <b>Condividi</b> ⬆️ in basso (Safari)</li><li>Scorri e scegli <b>Aggiungi alla schermata Home</b></li><li>Tocca <b>Aggiungi</b></li>"
-      : "<li>Apri il menu del browser <b>⋮</b> in alto a destra</li><li>Scegli <b>Aggiungi a schermata Home</b> o <b>Installa app</b></li><li>Conferma</li>";
+      ? "<li>Tocca <b>Condividi</b> ⬆️ in Safari</li><li>Scegli <b>Aggiungi alla schermata Home</b></li><li>Tocca <b>Aggiungi</b></li>"
+      : "<li>Apri il menu del browser <b>⋮</b></li><li>Scegli <b>Installa app</b> o <b>Aggiungi a schermata Home</b></li><li>Conferma</li>";
     help.classList.add("on");
   });
   $("ihelpClose").addEventListener("click",()=>help.classList.remove("on"));
   if("serviceWorker" in navigator && !inFrame) navigator.serviceWorker.register("sw.js").catch(()=>{});
 }
 
-initStatic();
-initInstall();
-loadBulletin();
-load();
+function initUI(){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.08});
+  document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+  const links=[...document.querySelectorAll(".menu a")];
+  const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting) links.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id))}),{rootMargin:"-40% 0px -55% 0px"});
+  document.querySelectorAll("section[id]").forEach(s=>so.observe(s));
+}
+
+initStatic(); initInstall(); initUI(); loadBulletin(); load();
 setInterval(load,15*60e3);
 </script>
 </body>
