@@ -1,0 +1,21 @@
+name: Stato impianti Sella Nevea
+on:
+  schedule:
+    - cron: "*/20 * * * *"
+  workflow_dispatch:
+  push:
+    paths: [".github/scripts/**", ".github/workflows/lifts.yml"]
+permissions:
+  contents: write
+concurrency: lifts
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 .github/scripts/lifts_debug.py
+      - run: |
+          git config user.name "lifts-bot"
+          git config user.email "lifts-bot@users.noreply.github.com"
+          git add freeride/lifts-debug.txt
+          git diff --cached --quiet || (git commit -m "debug impianti" && git push)
