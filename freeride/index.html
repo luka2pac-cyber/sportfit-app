@@ -230,7 +230,7 @@ footer a{color:var(--ice)}
 <div class="top"><div class="wrap">
   <a class="brand" href="#top"><img id="tlogo" alt=""><span>Freeride Arena<small>Sella Nevea</small></span></a>
   <nav class="menu">
-    <a href="#meteo">Meteo</a><a href="#neve">Neve</a><a href="#discese">Discese</a><a href="#video">Video</a><a href="#sicurezza">Sicurezza</a><a href="#community">Community</a>
+    <a href="#neve">Neve</a><a href="#meteo">Meteo</a><a href="#discese">Discese</a><a href="#video">Video</a><a href="#sicurezza">Sicurezza</a><a href="#community">Community</a>
   </nav>
   <button class="btn btn-fill install" id="installBtn">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M12 7v7m-3-3 3 3 3-3"/></svg><span class="il">Installa </span>app
@@ -251,8 +251,8 @@ footer a{color:var(--ice)}
     <a class="mini" href="#meteo" id="mini" aria-label="Previsioni 4 giorni"></a>
     <div class="mini-cap">Previsioni 4 giorni · tocca per i dettagli</div>
     <div class="hero-btns">
-      <a class="btn btn-line" href="#meteo">Meteo</a>
       <a class="btn btn-line" href="#neve">Neve live</a>
+      <a class="btn btn-line" href="#meteo">Meteo</a>
       <a class="btn btn-line" href="#discese">Discese</a>
       <a class="btn btn-line" href="#community">Community</a>
     </div>
@@ -287,22 +287,8 @@ footer a{color:var(--ice)}
 
 <main class="wrap">
 
-<section id="meteo" class="fc">
-  <div class="fc-head">
-    <div>
-      <span class="eyebrow">Previsioni a 1800 m</span>
-      <h2 class="title">Meteo e neve prevista</h2>
-    </div>
-    <div class="fc-tot" id="fcTot">Neve prevista 3 giorni: <b>–</b></div>
-  </div>
-  <div class="days" id="days"></div>
-  <div class="fc-src">
-    <p class="meta">Modello: Open-Meteo (best match per l'Europa), quota 1837 m. Le previsioni di neve sono indicative.</p>
-    <a class="btn btn-line" id="bfLink" target="_blank" rel="noopener">Confronta su bergfex</a>
-  </div>
-</section>
 
-<section id="neve" class="rv">
+<section id="neve" class="fc">
   <div class="head">
     <span class="eyebrow">Dati live</span>
     <h2 class="title">Neve, temperatura e vento</h2>
@@ -316,6 +302,21 @@ footer a{color:var(--ice)}
     <div class="chart"><h3>Vento e raffiche · km/h</h3><div class="box"><canvas id="chWind"></canvas></div></div>
   </div>
   <p class="meta" id="updated"></p>
+</section>
+
+<section id="meteo">
+  <div class="fc-head">
+    <div>
+      <span class="eyebrow">Previsioni a 1800 m</span>
+      <h2 class="title">Meteo e neve prevista</h2>
+    </div>
+    <div class="fc-tot" id="fcTot">Neve prevista 3 giorni: <b>–</b></div>
+  </div>
+  <div class="days" id="days"></div>
+  <div class="fc-src">
+    <p class="meta">Modello: Open-Meteo (best match per l'Europa), quota 1837 m. Le previsioni di neve sono indicative.</p>
+    <a class="btn btn-line" id="bfLink" target="_blank" rel="noopener">Confronta su bergfex</a>
+  </div>
 </section>
 
 <section id="discese" class="rv">
