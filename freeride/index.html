@@ -179,7 +179,16 @@ section{padding:80px 0 10px}
 .pin.end{border-radius:3px;background:#111!important}
 .stpin{background:#fff;color:#0b0b0b;font:700 12px/1.1 var(--body);padding:3px 6px;border:2px solid var(--ice-deep);white-space:nowrap;box-shadow:0 1px 4px #0008}
 @media(max-width:900px){.rstats{grid-template-columns:1fr 1fr}.fbtn.loc{margin-left:0}}
-.cvids{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.cvwrap{position:relative}
+.cvids{display:grid;grid-auto-flow:column;grid-auto-columns:min(78%,300px);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;padding-bottom:8px;-webkit-overflow-scrolling:touch}
+.cvids>.cv{scroll-snap-align:start}
+.cvids.all{grid-auto-flow:row;grid-auto-columns:auto;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));overflow:visible}
+.cvnav{position:absolute;top:calc(min(78vw,300px)*.28);width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:rgba(10,14,20,.85);color:#fff;font-size:20px;cursor:pointer;z-index:2}
+.cvnav.l{left:-6px}.cvnav.r{right:-6px}
+.cvids.all~.cvnav{display:none}
+.cvbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:10px 0 0;font-size:.9rem;color:var(--muted)}
+.cvbar button{background:none;border:1px solid var(--line);color:var(--ice);font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.06em;padding:8px 14px;cursor:pointer}
+@media(hover:none){.cvnav{display:none}}
 .cv{background:var(--bg-2);border:1px solid var(--line)}
 .cv .th{position:relative;padding-top:56.25%;background:#000 center/cover no-repeat;cursor:pointer;border:0;width:100%;display:block}
 .cv .th::after{content:"▶";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:40px;border-radius:10px;background:rgba(238,28,37,.9);color:#fff;font-size:18px;display:flex;align-items:center;justify-content:center}
@@ -301,6 +310,7 @@ footer a{color:var(--ice)}
       <a class="btn btn-line" href="#neve">Neve live</a>
       <a class="btn btn-line" href="#meteo">Meteo</a>
       <a class="btn btn-line" href="#discese">Discese</a>
+      <a class="btn btn-line" href="#video">Video</a>
       <a class="btn btn-line" href="#community">Community</a>
     </div>
     <button class="btn btn-fill hero-install" id="installBtn2">📲 Aggiungi alla Home</button>
@@ -398,7 +408,9 @@ footer a{color:var(--ice)}
     <h3 class="title" style="font-size:clamp(1.4rem,3vw,2rem)">Altri video da Sella Nevea</h3>
     <p class="intro">Video pubblici di altri rider su YouTube, come esempio di linee e condizioni. Tutti i diritti ai rispettivi autori.</p>
   </div>
-  <div class="cvids" id="cvideos"></div>
+  <div class="cvwrap"><div class="cvids" id="cvideos"></div>
+    <button class="cvnav l" data-d="-1" aria-label="Precedenti">‹</button><button class="cvnav r" data-d="1" aria-label="Successivi">›</button></div>
+  <div class="cvbar"><span id="cvcount"></span><button id="cvall">Mostra tutti</button></div>
 </section>
 
 <section id="sicurezza" class="rv">
@@ -561,6 +573,10 @@ function initStatic(){
   $("cvideos").innerHTML = CONFIG.communityVideos.map(v=>
     `<div class="cv"><button class="th" data-id="${v.id}" aria-label="Guarda ${v.t}" style="background-image:url(https://i.ytimg.com/vi/${v.id}/hqdefault.jpg)"></button>
      <div class="ct"><b>${v.t}</b><span>di ${v.a}</span> · <a href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener">YouTube ↗</a></div></div>`).join("");
+  $("cvcount").textContent = `${CONFIG.communityVideos.length} video · scorri ⇆`;
+  document.querySelectorAll(".cvnav").forEach(b=>b.onclick=()=>{const g=$("cvideos");g.scrollBy({left:+b.dataset.d*g.clientWidth*.9,behavior:"smooth"})});
+  $("cvall").onclick=()=>{const g=$("cvideos"),on=g.classList.toggle("all");$("cvall").textContent=on?"Mostra meno":"Mostra tutti";
+    $("cvcount").textContent=`${CONFIG.communityVideos.length} video`+(on?"":" · scorri ⇆"); if(!on) $("video").scrollIntoView({behavior:"smooth"});};
   $("cvideos").addEventListener("click",e=>{const b=e.target.closest(".th[data-id]"); if(!b) return;
     b.outerHTML=`<div class="th"><iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.id}?autoplay=1" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>`;});
   $("safety").innerHTML = CONFIG.safety.filter(x=>x.url).map(x=>`<a href="${x.url}" target="_blank" rel="noopener"><b>${x.t}</b><span>${x.s}</span></a>`).join("");
