@@ -65,6 +65,17 @@ p{margin:0}
 .chip{font-family:var(--display);font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:1rem;background:rgba(0,0,0,.6);border:1px solid var(--line);padding:6px 12px;display:inline-flex;gap:6px;align-items:center}
 .chip b{color:var(--ice)}
 .chip .dot{width:12px;height:12px;border-radius:3px;background:#555}
+.mini{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:16px auto 0;max-width:460px;background:rgba(0,0,0,.6);border:1px solid var(--line);text-decoration:none;transition:.2s}
+.mini:hover{border-color:var(--ice)}
+.mini div{padding:6px 4px;border-right:1px solid var(--line);font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.04em;line-height:1.2}
+.mini div:last-child{border-right:0}
+.mini .md{font-size:.8rem;color:var(--muted)}
+.mini .mi{font-size:1.3rem}
+.mini .ms{color:var(--ice);font-size:1rem}
+.mini .mt{font-size:.78rem;color:#ddd}
+.mini-cap{font-family:var(--display);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.hero-install{display:none;margin:18px auto 0}
+.hero-install.on{display:inline-flex}
 .hero-btns{display:grid;grid-template-columns:repeat(2,minmax(0,220px));gap:10px;justify-content:center;margin-top:26px}
 
 .strip{position:relative;z-index:2;margin-top:-60px}
@@ -237,12 +248,15 @@ footer a{color:var(--ice)}
       <span class="chip">🌡 <b id="chTempV">–</b></span>
       <span class="chip"><span class="dot" id="chDot"></span> Valanghe <b id="chAvaV">–</b></span>
     </div>
+    <a class="mini" href="#meteo" id="mini" aria-label="Previsioni 4 giorni"></a>
+    <div class="mini-cap">Previsioni 4 giorni · tocca per i dettagli</div>
     <div class="hero-btns">
-      <a class="btn btn-line" href="#meteo">Meteo 3 giorni</a>
+      <a class="btn btn-line" href="#meteo">Meteo</a>
       <a class="btn btn-line" href="#neve">Neve live</a>
       <a class="btn btn-line" href="#discese">Discese</a>
       <a class="btn btn-line" href="#community">Community</a>
     </div>
+    <button class="btn btn-fill hero-install" id="installBtn2">📲 Aggiungi alla Home</button>
   </div>
 </header>
 
@@ -544,6 +558,8 @@ async function loadForecast(){
         <li>Raffiche <b>${Math.round(d.wind_gusts_10m_max[i])} km/h</b></li>
         ${fz.length?(()=>{const a=Math.round(Math.min(...fz)/50)*50,b=Math.round(Math.max(...fz)/50)*50;return `<li>Zero termico <b>${a===b?a:a+"–"+b} m</b></li>`})():""}</ul></div>`;
     }).join("");
+    $("mini").innerHTML=d.time.map((t,i)=>{const dt=new Date(t+"T12:00"),sn=d.snowfall_sum[i]||0;
+      return `<div><span class="md">${i===0?"Oggi":dt.toLocaleDateString("it-IT",{weekday:"short"})}</span><br><span class="mi">${(WMO[d.weather_code[i]]||["❔"])[0]}</span><br><span class="ms">${sn>=1?"+"+Math.round(sn):sn>0?"&lt;1":"0"} cm</span><br><span class="mt">${Math.round(d.temperature_2m_max[i])}°/${Math.round(d.temperature_2m_min[i])}°</span></div>`}).join("");
     $("fcTot").innerHTML=`Neve prevista prossimi 3 giorni: <b>${tot>0&&tot<1?"&lt;1":Math.round(tot)} cm</b>`;
   }catch(e){ console.error(e); $("days").innerHTML=`<p class="meta">Previsioni non disponibili. <a href="${CONFIG.forecast.bergfex}" target="_blank" rel="noopener" style="color:var(--ice)">Vedi su bergfex</a></p>`; }
 }
@@ -590,22 +606,23 @@ async function loadBulletin(){
 }
 
 function initInstall(){
-  const btn=$("installBtn"), help=$("ihelp");
+  const btn=$("installBtn"), btn2=$("installBtn2"), help=$("ihelp");
   if(matchMedia("(display-mode: standalone)").matches||navigator.standalone) return;
   const inFrame=window.self!==window.top;
   const ios=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
   let deferred=null;
   window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferred=e;});
-  window.addEventListener("appinstalled",()=>btn.classList.remove("on"));
-  btn.classList.add("on");
-  btn.addEventListener("click",async()=>{
+  window.addEventListener("appinstalled",()=>{btn.classList.remove("on");btn2.classList.remove("on")});
+  btn.classList.add("on"); btn2.classList.add("on");
+  const go=async()=>{
     if(inFrame){ window.open(CONFIG.pageUrl,"_blank"); return; }
     if(deferred){ deferred.prompt(); await deferred.userChoice; deferred=null; return; }
     $("ihelpSteps").innerHTML = ios
       ? "<li>Tocca <b>Condividi</b> ⬆️ in Safari</li><li>Scegli <b>Aggiungi alla schermata Home</b></li><li>Tocca <b>Aggiungi</b></li>"
       : "<li>Apri il menu del browser <b>⋮</b></li><li>Scegli <b>Installa app</b> o <b>Aggiungi a schermata Home</b></li><li>Conferma</li>";
     help.classList.add("on");
-  });
+  };
+  btn.addEventListener("click",go); btn2.addEventListener("click",go);
   $("ihelpClose").addEventListener("click",()=>help.classList.remove("on"));
   if("serviceWorker" in navigator && !inFrame) navigator.serviceWorker.register("sw.js").catch(()=>{});
 }
