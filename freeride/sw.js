@@ -1,5 +1,5 @@
 // Sella Nevea Freeride – service worker: sempre dalla rete, cache solo offline.
-const CACHE = 'freeride-v9';
+const CACHE = 'freeride-v10';
 self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', e => e.waitUntil((async () => {
   const keys = await caches.keys();

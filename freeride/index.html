@@ -59,6 +59,28 @@ p{margin:0}
 .hero-photo{position:relative;width:100%;aspect-ratio:900/320;max-height:520px;overflow:hidden}
 .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:38% 50%;display:block;transform:scale(1.03);animation:zoom 22s ease-out forwards}
 @keyframes zoom{to{transform:scale(1.1)}}
+.hero-photo img{position:absolute;inset:0}
+#heroImg2{object-position:72% 45%;opacity:0}
+/* A: dissolvenza */
+.hv-a #heroImg2{animation:zoom 22s ease-out forwards,xfade 16s ease-in-out infinite}
+@keyframes xfade{0%,40%{opacity:0}50%,90%{opacity:1}100%{opacity:0}}
+/* B: diagonale */
+.hv-b #heroImg{clip-path:polygon(0 0,61.2% 0,54.3% 100%,0 100%);left:-16%;width:116%;max-width:none}
+.hv-b #heroImg2{opacity:1;left:30%;width:70%;object-position:72% 40%;clip-path:polygon(36.6% 0,100% 0,100% 100%,25.1% 100%)}
+.hv-b .hero-photo{background:var(--ice)}
+.hv-b .hero-photo img{animation:none;transform:none}
+/* C: sfondo intero + banner discese */
+.hv-c .hero-photo{position:absolute;inset:0 0 auto 0;height:min(94vh,860px);aspect-ratio:auto;max-height:none}
+.hv-c #heroImg{display:none}
+.hv-c #heroImg2{opacity:1;object-position:72% 30%}
+.hv-c .hero-photo::after{background:linear-gradient(180deg,rgba(11,11,11,0) 0%,rgba(11,11,11,.25) 35%,rgba(11,11,11,.8) 60%,var(--bg) 100%)}
+.hv-c .hero-in{margin-top:0;padding-top:min(42vh,400px)}
+.secbanner{display:none}
+.hv-c .secbanner{display:block;position:relative;margin:-76px calc(50% - 50vw) 44px;height:clamp(170px,28vw,360px);overflow:hidden}
+.secbanner img{width:100%;height:100%;object-fit:cover;object-position:38% 50%;display:block}
+.secbanner::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,7,8,0) 50%,#060708 100%)}
+html{overflow-x:clip}
+
 .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,var(--bg) 100%)}
 .hero-in{position:relative;padding:0 20px 90px;max-width:900px;margin:-70px auto 0;z-index:1}
 .hero .logo{width:130px;height:130px;border-radius:50%;background:#fff;box-shadow:0 10px 40px rgba(0,0,0,.5)}
@@ -275,6 +297,9 @@ footer a{color:var(--ice)}
 @media(max-width:520px){
   body{font-size:16px}
   .hero-photo{aspect-ratio:16/9}
+  .hv-c .hero-photo{height:125vw}
+  .hv-c .hero-in{padding-top:58vw}
+  .hv-c .secbanner{margin-top:-52px}
   .hero-in{margin-top:-52px}
   .hero .logo{width:96px;height:96px}
   .hero-btns{grid-template-columns:1fr 1fr;width:100%}
@@ -301,7 +326,7 @@ footer a{color:var(--ice)}
 </div></div>
 
 <header class="hero" id="top">
-  <div class="hero-photo"><img id="heroImg" alt="Freerider in neve fresca"></div>
+  <div class="hero-photo"><img id="heroImg" alt="Freerider in neve fresca"><img id="heroImg2" alt="Sulla cresta del Golovec, Sella Nevea"></div>
   <div class="hero-in">
     <img class="logo" id="logo" alt="Sella Nevea Freeride Arena">
     <h1>Sella Nevea<em>Freeride Arena</em></h1>
@@ -401,6 +426,7 @@ footer a{color:var(--ice)}
 </section>
 
 <section id="discese" class="rv alt">
+  <div class="secbanner"><img alt="Neve fresca a Sella Nevea" loading="lazy"></div>
   <div class="head">
     <span class="eyebrow">Le linee</span>
     <h2 class="title">Mappa delle discese</h2>
@@ -485,6 +511,7 @@ footer a{color:var(--ice)}
 </div></div>
 
 <script>
+(function(){var v=(new URLSearchParams(location.search).get("hero")||"a").toLowerCase();if(!/^[abc]$/.test(v))v="a";document.documentElement.classList.add("hv-"+v)})();
 /* ================= CONFIG – modifica qui ================= */
 const CONFIG = {
   title: "Sella Nevea Freeride Arena",
@@ -492,6 +519,7 @@ const CONFIG = {
   logo: "logo.png",
   logo2: "logo-classic.jpg",
   hero: "hero.jpg",
+  hero2: "hero2.jpg",
   pageUrl: "https://luka2pac-cyber.github.io/sportfit-app/freeride/",
   station: { id: 541, name: "Livinal Lunc", sensors: { snow: 23, temp: 2, wind: 6, gust: 7, dir: 5 } },
   api: "https://monitor.protezionecivile.fvg.it/api",
@@ -569,7 +597,7 @@ const ICON = {
 function initStatic(){
   $("tagline").textContent = CONFIG.tagline;
   $("logo").src = $("tlogo").src = $("clogo").src = CONFIG.logo;
-  $("heroImg").src = CONFIG.hero;
+  $("heroImg").src = CONFIG.hero; $("heroImg2").src = CONFIG.hero2; document.querySelectorAll(".secbanner img").forEach(i=>i.src=CONFIG.hero);
   $("errlink").href = CONFIG.stationPage;
   $("gallery").innerHTML = CONFIG.gallery.map((g,i)=>
     `<figure data-i="${i}"><img src="${g.src}" alt="${g.t}" loading="lazy"><figcaption><b>${g.t}</b><span>${g.credit}</span></figcaption></figure>`).join("");
