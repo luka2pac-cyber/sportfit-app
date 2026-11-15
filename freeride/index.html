@@ -179,6 +179,16 @@ section{padding:80px 0 10px}
 .pin.end{border-radius:3px;background:#111!important}
 .stpin{background:#fff;color:#0b0b0b;font:700 12px/1.1 var(--body);padding:3px 6px;border:2px solid var(--ice-deep);white-space:nowrap;box-shadow:0 1px 4px #0008}
 @media(max-width:900px){.rstats{grid-template-columns:1fr 1fr}.fbtn.loc{margin-left:0}}
+.cvids{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.cv{background:var(--bg-2);border:1px solid var(--line)}
+.cv .th{position:relative;padding-top:56.25%;background:#000 center/cover no-repeat;cursor:pointer;border:0;width:100%;display:block}
+.cv .th::after{content:"▶";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:40px;border-radius:10px;background:rgba(238,28,37,.9);color:#fff;font-size:18px;display:flex;align-items:center;justify-content:center}
+.cv .th:hover::after{background:#EE1C25}
+.cv iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.cv .ct{padding:10px 12px}
+.cv .ct b{display:block;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.03em;line-height:1.2}
+.cv .ct span{font-size:.85rem;color:var(--muted)}
+.cv .ct a{color:var(--ice);font-size:.85rem}
 .vids{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
 .vid{position:relative;padding-top:56.25%;background:#000;border:1px solid var(--line)}
 .vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
@@ -372,6 +382,12 @@ footer a{color:var(--ice)}
     <h2 class="title">Video</h2>
   </div>
   <div class="vids" id="videos"></div>
+  <div class="head" style="margin-top:36px">
+    <span class="eyebrow">Dalla community</span>
+    <h3 class="title" style="font-size:clamp(1.4rem,3vw,2rem)">Altri video da Sella Nevea</h3>
+    <p class="intro">Video pubblici di altri rider su YouTube, come esempio di linee e condizioni. Tutti i diritti ai rispettivi autori.</p>
+  </div>
+  <div class="cvids" id="cvideos"></div>
 </section>
 
 <section id="sicurezza" class="rv">
@@ -459,6 +475,16 @@ const CONFIG = {
   videos: [
     { id:"vohoUgxHd7o", t:"Freeride Ski Sella Nevea – guide of some lines" }
   ],
+  // video di altri autori (embed YouTube): id = codice dopo "v=" nel link
+  communityVideos: [
+    { id:"88Qbq_mrk_o", t:"Europas Freeride-Paradies, von dem niemand weiß", a:"Tao Kreibich" },
+    { id:"G6N9vPsnrWo", t:"Kanin - Sella Nevea Clip", a:"Sončni Kanin" },
+    { id:"mgxtmfLWsO0", t:"360° freeriding Kanin-Sella Nevea", a:"Ivica Kostelić" },
+    { id:"cxdQJZUQw_c", t:"Sella Nevea con Margherita Granbassi", a:"friuliveneziagiulia.turismo" },
+    { id:"cTA2z6kRCyI", t:"Sella Nevea Freeride", a:"zaronc" },
+    { id:"y7oEuF3wJLE", t:"Freeride 2011 - Sella Nevea The Invasion", a:"DomePowder" },
+    { id:"CJRd9nqalFY", t:"Snowboard Freeride Sella Nevea Big Avalanche", a:"Dirtsee" }
+  ],
   safety: [
     { t:"Bollettino valanghe FVG", s:"Protezione Civile FVG", url:"https://www.protezionecivile.fvg.it/it/bollettino-valanghe" },
     { t:"Bollettini AINEVA", s:"Tutto l'arco alpino italiano", url:"https://www.aineva.it" },
@@ -500,6 +526,11 @@ function initStatic(){
       return `<li data-n="${r.n}"><span class="num">${r.n}</span>${r.name}<span class="diff ${c}">${t}</span></li>`}).join("")+`</ol></div>`).join("");
   $("videos").innerHTML = CONFIG.videos.map(v=>
     `<div><div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/${v.id}" title="${v.t}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div><p class="vt">${v.t}</p></div>`).join("");
+  $("cvideos").innerHTML = CONFIG.communityVideos.map(v=>
+    `<div class="cv"><button class="th" data-id="${v.id}" aria-label="Guarda ${v.t}" style="background-image:url(https://i.ytimg.com/vi/${v.id}/hqdefault.jpg)"></button>
+     <div class="ct"><b>${v.t}</b><span>di ${v.a}</span> · <a href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener">YouTube ↗</a></div></div>`).join("");
+  $("cvideos").addEventListener("click",e=>{const b=e.target.closest(".th[data-id]"); if(!b) return;
+    b.outerHTML=`<div class="th"><iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.id}?autoplay=1" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>`;});
   $("safety").innerHTML = CONFIG.safety.filter(x=>x.url).map(x=>`<a href="${x.url}" target="_blank" rel="noopener"><b>${x.t}</b><span>${x.s}</span></a>`).join("");
   $("social").innerHTML = CONFIG.social.filter(x=>x.url).map(x=>`<a class="btn btn-line" href="${x.url}" target="_blank" rel="noopener">${ICON[x.t]||""}${x.t}</a>`).join("");
   $("disclaimer").textContent = CONFIG.disclaimer;
