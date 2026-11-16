@@ -124,6 +124,17 @@ html{overflow-x:clip}
 .lifts .ld.open{background:#3ddc6b;box-shadow:0 0 8px rgba(61,220,107,.8)}
 .lifts .ld.close{background:#e5383b}
 .lifts .ln{width:100%;text-align:center;font-family:var(--body);font-weight:400;text-transform:none;letter-spacing:0;font-size:.82rem;color:var(--muted)}
+#webcam>.note{color:var(--muted);font-size:.85rem;margin-top:10px}
+.cams{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cam{margin:0;background:var(--bg-2);border:1px solid var(--line)}
+.camf{position:relative;aspect-ratio:16/10;background:#000}
+.camf iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.cam figcaption{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;padding:12px 14px}
+.cam figcaption b{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em}
+.cam figcaption span{color:var(--muted);font-size:.9rem}
+.cam figcaption a{margin-left:auto;color:var(--ice);font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:.85rem;text-decoration:none}
+@media(max-width:800px){.cams{grid-template-columns:1fr}.camf{aspect-ratio:4/3}}
+.hero-btns a:last-child:nth-child(odd){grid-column:1/-1;justify-self:center;width:calc(50% - 5px)}
 a.chip{color:inherit;text-decoration:none}
 a.chip:hover{border-color:var(--ice)}
 .chip.powder{background:linear-gradient(160deg,#0f3a52,#0b0b0b);border-color:var(--ice);box-shadow:0 0 18px rgba(94,200,242,.45)}
@@ -324,7 +335,7 @@ footer a{color:var(--ice)}
 <div class="top"><div class="wrap">
   <a class="brand" href="#top"><img id="tlogo" alt=""><span>Freeride Arena<small>Sella Nevea</small></span></a>
   <nav class="menu">
-    <a href="#neve"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1 19.1 4.9"/><path d="m9 4 3 3 3-3M9 20l3-3 3 3M4 9l3 3-3 3M20 9l-3 3 3 3"/></svg>Neve</a><a href="#meteo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v2M4.9 4.9l1.4 1.4M20 12h2M19.1 4.9l-1.4 1.4"/><path d="M15.9 13A4 4 0 0 0 8.3 10.3"/><path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z"/></svg>Meteo</a><a href="#sicurezza"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Sicurezza</a><a href="#discese"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>Discese</a><a href="#video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="m22 8-5 4 5 4V8z"/></svg>Video</a><a href="#community"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>Community</a>
+    <a href="#neve"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1 19.1 4.9"/><path d="m9 4 3 3 3-3M9 20l3-3 3 3M4 9l3 3-3 3M20 9l-3 3 3 3"/></svg>Neve</a><a href="#meteo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v2M4.9 4.9l1.4 1.4M20 12h2M19.1 4.9l-1.4 1.4"/><path d="M15.9 13A4 4 0 0 0 8.3 10.3"/><path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z"/></svg>Meteo</a><a href="#webcam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>Webcam</a><a href="#sicurezza"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Sicurezza</a><a href="#discese"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>Discese</a><a href="#video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="m22 8-5 4 5 4V8z"/></svg>Video</a><a href="#community"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>Community</a>
   </nav>
   <button class="btn btn-fill install" id="installBtn">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M12 7v7m-3-3 3 3 3-3"/></svg><span class="il">Installa </span>app
@@ -350,6 +361,7 @@ footer a{color:var(--ice)}
     <div class="hero-btns">
       <a class="btn btn-line" href="#neve"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1 19.1 4.9"/><path d="m9 4 3 3 3-3M9 20l3-3 3 3M4 9l3 3-3 3M20 9l-3 3 3 3"/></svg>Neve live</a>
       <a class="btn btn-line" href="#meteo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v2M4.9 4.9l1.4 1.4M20 12h2M19.1 4.9l-1.4 1.4"/><path d="M15.9 13A4 4 0 0 0 8.3 10.3"/><path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z"/></svg>Meteo</a>
+      <a class="btn btn-line" href="#webcam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>Webcam</a>
       <a class="btn btn-line" href="#sicurezza"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Sicurezza</a>
       <a class="btn btn-line" href="#discese"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>Discese</a>
       <a class="btn btn-line" href="#video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="m22 8-5 4 5 4V8z"/></svg>Video</a>
@@ -376,6 +388,21 @@ footer a{color:var(--ice)}
     <div class="chart"><h3>Vento e raffiche · km/h</h3><div class="box"><canvas id="chWind"></canvas></div></div>
   </div>
   <p class="meta" id="updated"></p>
+</section>
+
+<section id="webcam" class="rv">
+  <div class="head">
+    <span class="eyebrow">Guarda adesso</span>
+    <h2 class="title">Webcam</h2>
+    <p class="intro">Panorami a 360° aggiornati ogni pochi minuti. Trascina per girare la vista.</p>
+  </div>
+  <div class="cams">
+    <figure class="cam"><div class="camf"><iframe src="https://sellanevea.panomax.com/" title="Webcam Sella Nevea in quota (1870 m)" loading="lazy" allowfullscreen></iframe></div>
+      <figcaption><b>In quota · 1870 m</b><span>Canin, arrivo cabinovia</span><a href="https://sellanevea.panomax.com/" target="_blank" rel="noopener">Schermo intero ↗</a></figcaption></figure>
+    <figure class="cam"><div class="camf"><iframe src="https://sellaneveavalle.panomax.com/" title="Webcam Sella Nevea a valle" loading="lazy" allowfullscreen></iframe></div>
+      <figcaption><b>A valle · 1140 m</b><span>Campo scuola, Sella Nevea</span><a href="https://sellaneveavalle.panomax.com/" target="_blank" rel="noopener">Schermo intero ↗</a></figcaption></figure>
+  </div>
+  <p class="note">Webcam © Panomax / PromoTurismoFVG.</p>
 </section>
 
 <section id="meteo" class="alt">
@@ -510,7 +537,7 @@ const CONFIG = {
   logo2: "logo-classic.jpg",
   hero: "hero.jpg",
   hero2: "hero2.jpg",
-  pageUrl: "https://luka2pac-cyber.github.io/sportfit-app/freeride/",
+  pageUrl: "https://luka2pac-cyber.github.io/freeride-sella/",
   station: { id: 541, name: "Livinal Lunc", sensors: { snow: 23, temp: 2, wind: 6, gust: 7, dir: 5 } },
   api: "https://monitor.protezionecivile.fvg.it/api",
   stationPage: "https://monitor.protezionecivile.fvg.it/stazione/541",
@@ -533,6 +560,7 @@ const CONFIG = {
   // difficoltà: 1 facile, 2 media, 3 medio-difficile · geo: tracciati indicativi (non precisi)
   routes: [
     { n:1,  name:"Livinallunc Classica",     zone:"Golovec", d:2 },
+    { n:"1a", name:"636",                     zone:"Golovec", d:1, note:"Prima parte come la Livinallunc Classica, poi traverso verso la mulattiera del Poviz e giù lungo la mulattiera fino a Sella Nevea." },
     { n:2,  name:"Livinallunc Mediana",      zone:"Golovec", d:2 },
     { n:3,  name:"Golovec Diretta",          zone:"Golovec", d:3 },
     { n:4,  name:"Pic Majot Orientale",      zone:"Golovec", d:2 },
@@ -544,7 +572,7 @@ const CONFIG = {
     { n:10, name:"Forato Orientale",         zone:"Forato",  d:3 },
     { n:11, name:"Canale Pecorelle",         zone:"Forato",  d:3 }
   ],
-  geo: {"1":{"p":[[46.36852,13.47752],[46.369,13.47867],[46.37078,13.47902],[46.37282,13.47954],[46.37358,13.48012],[46.3746,13.48096],[46.37618,13.48175],[46.37667,13.48123],[46.37701,13.48018],[46.37741,13.47978],[46.37818,13.47751],[46.37942,13.4754],[46.38066,13.47338],[46.38173,13.47267]],"top":2050,"bot":1300,"len":1.9},"2":{"p":[[46.36875,13.47736],[46.37017,13.47722],[46.37211,13.47733],[46.37373,13.47784],[46.3745,13.47843],[46.37517,13.47917],[46.37617,13.47845],[46.37771,13.47734],[46.37803,13.47701],[46.37942,13.4754],[46.38066,13.47338],[46.38173,13.47267]],"top":2000,"bot":1300,"len":1.6},"3":{"p":[[46.36869,13.47727],[46.36997,13.47656],[46.37144,13.47601],[46.37285,13.47587],[46.37376,13.47531],[46.37413,13.47496],[46.37524,13.47469],[46.37596,13.47453],[46.37728,13.47407],[46.37817,13.47367],[46.37917,13.47181],[46.38011,13.47101],[46.38095,13.47045],[46.38144,13.47046]],"top":2000,"bot":1400,"len":1.6},"4":{"p":[[46.36864,13.47711],[46.36941,13.47541],[46.37089,13.47478],[46.37253,13.47399],[46.37355,13.47368],[46.3743,13.47361],[46.37512,13.47289],[46.37553,13.47241],[46.37724,13.47211],[46.37917,13.47181],[46.38011,13.47101],[46.38095,13.47045],[46.38144,13.47046]],"top":1950,"bot":1400,"len":1.6},"5":{"p":[[46.36859,13.47695],[46.36945,13.47623],[46.37097,13.47527],[46.37265,13.47415],[46.37327,13.47368],[46.37341,13.47254],[46.37417,13.47092],[46.37462,13.47068],[46.37523,13.47028],[46.37603,13.46948],[46.37744,13.46942],[46.37857,13.46935],[46.37943,13.4692],[46.38067,13.46988],[46.3811,13.47037],[46.38144,13.47046]],"top":2000,"bot":1400,"len":1.7},"6":{"p":[[46.37436,13.46602],[46.37511,13.4662],[46.37539,13.46677],[46.37603,13.46834],[46.37689,13.46933],[46.37744,13.46942],[46.37857,13.46935],[46.38017,13.46889],[46.38038,13.46775]],"top":1750,"bot":1450,"len":0.9},"7":{"p":[[46.37435,13.46382],[46.37526,13.46441],[46.3762,13.46418],[46.37671,13.46345]],"top":1750,"bot":1600,"len":0.3},"8":{"v":[[[46.37197,13.47062],[46.37136,13.46989],[46.37075,13.46916],[46.37045,13.46864]],[[46.37168,13.47137],[46.37097,13.47073],[46.37023,13.4704]],[[46.37103,13.47299],[46.37035,13.47232],[46.36967,13.47176]],[[46.37036,13.47386],[46.3696,13.47319],[46.3688,13.47292]],[[46.36959,13.47509],[46.36894,13.47494],[46.36831,13.47503]]],"p":[[46.36857,13.47711],[46.36934,13.47541],[46.37063,13.47347],[46.37131,13.4725],[46.37175,13.4712],[46.37204,13.47064],[46.37318,13.46878],[46.3734,13.46699]],"top":1950,"bot":1800,"len":1.0},"9":{"p":[[46.3593,13.4728],[46.35972,13.47167],[46.36001,13.46939],[46.36079,13.46875],[46.36234,13.46812],[46.3633,13.46764],[46.36429,13.46701],[46.36551,13.46621],[46.36656,13.46508],[46.36791,13.4638],[46.36968,13.46424],[46.37171,13.46484],[46.37211,13.46501]],"top":2400,"bot":1800,"len":1.7},"10":{"p":[[46.3593,13.4728],[46.35972,13.47167],[46.36001,13.46939],[46.36079,13.46875],[46.36234,13.46812],[46.36321,13.46781],[46.36409,13.46864],[46.36441,13.46946],[46.36517,13.47175],[46.36602,13.47226],[46.3669,13.47194],[46.36836,13.47205]],"top":2400,"bot":1800,"len":1.4},"11":{"p":[[46.36115,13.47479],[46.36159,13.47414],[46.36296,13.47433],[46.36384,13.47402],[46.36462,13.47337],[46.36515,13.47192],[46.36602,13.47226],[46.3669,13.47194],[46.36836,13.47205]],"top":2400,"bot":1800,"len":0.9}},
+  geo: {"1":{"p":[[46.36852,13.47752],[46.369,13.47867],[46.37078,13.47902],[46.37282,13.47954],[46.37358,13.48012],[46.3746,13.48096],[46.37618,13.48175],[46.37667,13.48123],[46.37701,13.48018],[46.37741,13.47978],[46.37818,13.47751],[46.37942,13.4754],[46.38066,13.47338],[46.38173,13.47267]],"top":2050,"bot":1300,"len":1.9},"2":{"p":[[46.36875,13.47736],[46.37017,13.47722],[46.37211,13.47733],[46.37373,13.47784],[46.3745,13.47843],[46.37517,13.47917],[46.37617,13.47845],[46.37771,13.47734],[46.37803,13.47701],[46.37942,13.4754],[46.38066,13.47338],[46.38173,13.47267]],"top":2000,"bot":1300,"len":1.6},"3":{"p":[[46.36869,13.47727],[46.36997,13.47656],[46.37144,13.47601],[46.37285,13.47587],[46.37376,13.47531],[46.37413,13.47496],[46.37524,13.47469],[46.37596,13.47453],[46.37728,13.47407],[46.37817,13.47367],[46.37917,13.47181],[46.38011,13.47101],[46.38095,13.47045],[46.38144,13.47046]],"top":2000,"bot":1400,"len":1.6},"4":{"p":[[46.36864,13.47711],[46.36941,13.47541],[46.37089,13.47478],[46.37253,13.47399],[46.37355,13.47368],[46.3743,13.47361],[46.37512,13.47289],[46.37553,13.47241],[46.37724,13.47211],[46.37917,13.47181],[46.38011,13.47101],[46.38095,13.47045],[46.38144,13.47046]],"top":1950,"bot":1400,"len":1.6},"5":{"p":[[46.36859,13.47695],[46.36945,13.47623],[46.37097,13.47527],[46.37265,13.47415],[46.37327,13.47368],[46.37341,13.47254],[46.37417,13.47092],[46.37462,13.47068],[46.37523,13.47028],[46.37603,13.46948],[46.37744,13.46942],[46.37857,13.46935],[46.37943,13.4692],[46.38067,13.46988],[46.3811,13.47037],[46.38144,13.47046]],"top":2000,"bot":1400,"len":1.7},"6":{"p":[[46.37436,13.46602],[46.37511,13.4662],[46.37539,13.46677],[46.37603,13.46834],[46.37689,13.46933],[46.37744,13.46942],[46.37857,13.46935],[46.38017,13.46889],[46.38038,13.46775]],"top":1750,"bot":1450,"len":0.9},"7":{"p":[[46.37435,13.46382],[46.37526,13.46441],[46.3762,13.46418],[46.37671,13.46345]],"top":1750,"bot":1600,"len":0.3},"8":{"v":[[[46.37197,13.47062],[46.37136,13.46989],[46.37075,13.46916],[46.37045,13.46864]],[[46.37168,13.47137],[46.37097,13.47073],[46.37023,13.4704]],[[46.37103,13.47299],[46.37035,13.47232],[46.36967,13.47176]],[[46.37036,13.47386],[46.3696,13.47319],[46.3688,13.47292]],[[46.36959,13.47509],[46.36894,13.47494],[46.36831,13.47503]]],"p":[[46.36857,13.47711],[46.36934,13.47541],[46.37063,13.47347],[46.37131,13.4725],[46.37175,13.4712],[46.37204,13.47064],[46.37318,13.46878],[46.3734,13.46699]],"top":1950,"bot":1800,"len":1.0},"9":{"p":[[46.3593,13.4728],[46.35972,13.47167],[46.36001,13.46939],[46.36079,13.46875],[46.36234,13.46812],[46.3633,13.46764],[46.36429,13.46701],[46.36551,13.46621],[46.36656,13.46508],[46.36791,13.4638],[46.36968,13.46424],[46.37171,13.46484],[46.37211,13.46501]],"top":2400,"bot":1800,"len":1.7},"10":{"p":[[46.3593,13.4728],[46.35972,13.47167],[46.36001,13.46939],[46.36079,13.46875],[46.36234,13.46812],[46.36321,13.46781],[46.36409,13.46864],[46.36441,13.46946],[46.36517,13.47175],[46.36602,13.47226],[46.3669,13.47194],[46.36836,13.47205]],"top":2400,"bot":1800,"len":1.4},"11":{"p":[[46.36115,13.47479],[46.36159,13.47414],[46.36296,13.47433],[46.36384,13.47402],[46.36462,13.47337],[46.36515,13.47192],[46.36602,13.47226],[46.3669,13.47194],[46.36836,13.47205]],"top":2400,"bot":1800,"len":0.9},"1a":{"p":[[46.36852,13.47752],[46.369,13.47867],[46.37078,13.47902],[46.37282,13.47954],[46.37358,13.48012],[46.3746,13.48096],[46.37618,13.48175],[46.37888,13.4869],[46.37898,13.48692],[46.37903,13.48634],[46.37944,13.48605],[46.37984,13.48569],[46.38025,13.4854],[46.38055,13.48526],[46.38045,13.4849],[46.38041,13.48418],[46.38021,13.48361],[46.38011,13.48289],[46.38027,13.48232],[46.38057,13.48196],[46.38032,13.48145],[46.38058,13.48109],[46.38118,13.48102],[46.38168,13.48123],[46.38199,13.48137],[46.38219,13.48073],[46.3823,13.48001],[46.3824,13.47929],[46.38261,13.47871],[46.38291,13.47828],[46.38332,13.47828],[46.38377,13.47871],[46.38401,13.47928],[46.38432,13.47964],[46.38472,13.47992],[46.38532,13.48035],[46.38562,13.48035],[46.38552,13.47985],[46.38563,13.47927],[46.38609,13.47841],[46.38629,13.47754]],"top":2050,"bot":1150,"len":3.1,"mul":7}},
   videos: [
     { id:"vohoUgxHd7o", t:"Freeride Ski Sella Nevea – guide of some lines" }
   ],
@@ -720,8 +748,8 @@ function selectRoute(n){
     <div><span>Zona</span><b>Freeride ${r.zone}</b></div>
     <div><span>Quota ≈</span><b>${g.top} → ${g.bot} m</b></div>
     <div><span>Lunghezza ≈</span><b>${g.len} km</b></div></div>
-    ${g.v?`<p class="meta">Dalla cresta ${g.v.length} varianti in discesa (tratteggio corto) verso il Piano del Prevala.</p>`:""}<p class="meta">● cerchio = partenza · ■ quadrato = arrivo. Valori approssimativi, tracciato non preciso.</p>`;
-  document.querySelectorAll(".rg li").forEach(li=>li.classList.toggle("sel",+li.dataset.n===n));
+    ${r.note?`<p class="meta">${r.note}</p>`:""}${g.v?`<p class="meta">Dalla cresta ${g.v.length} varianti in discesa (tratteggio corto) verso il Piano del Prevala.</p>`:""}<p class="meta">● cerchio = partenza · ■ quadrato = arrivo. Valori approssimativi, tracciato non preciso.</p>`;
+  document.querySelectorAll(".rg li").forEach(li=>li.classList.toggle("sel",li.dataset.n===String(n)));
 }
 function clearSel(){ Object.values(LAYERS).forEach(x=>x.line.setStyle({weight:4,opacity:.95})); $("rinfo").classList.remove("on"); document.querySelectorAll(".rg li").forEach(li=>li.classList.remove("sel")); }
 function applyFilter(f){
@@ -729,7 +757,7 @@ function applyFilter(f){
     const ok=f==="all"||x.r.zone===f||(f==="1"&&x.r.d===1)||(f==="3"&&x.r.d===3);
     ok?x.grp.addTo(MAP):x.grp.remove();
   });
-  document.querySelectorAll(".rg li").forEach(li=>{const r=CONFIG.routes.find(x=>x.n===+li.dataset.n);
+  document.querySelectorAll(".rg li").forEach(li=>{const r=CONFIG.routes.find(x=>String(x.n)===li.dataset.n);
     li.style.display=(f==="all"||r.zone===f||(f==="1"&&r.d===1)||(f==="3"&&r.d===3))?"":"none";});
   clearSel();
 }
@@ -737,7 +765,7 @@ function initMapUI(){
   $("mapbar").addEventListener("click",e=>{const b=e.target.closest(".fbtn[data-f]"); if(!b) return;
     document.querySelectorAll(".fbtn[data-f]").forEach(x=>x.classList.toggle("on",x===b)); if(MAP) applyFilter(b.dataset.f);});
   $("routes").addEventListener("click",e=>{const li=e.target.closest("li[data-n]"); if(!li||!MAP) return;
-    selectRoute(+li.dataset.n); $("map").scrollIntoView({behavior:"smooth",block:"center"});});
+    selectRoute(CONFIG.routes.find(x=>String(x.n)===li.dataset.n).n); $("map").scrollIntoView({behavior:"smooth",block:"center"});});
   $("locBtn").addEventListener("click",()=>{
     if(!navigator.geolocation||!MAP){ alert("Posizione non disponibile su questo dispositivo."); return; }
     $("locBtn").textContent="📍 Cerco…";
